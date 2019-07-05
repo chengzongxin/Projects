@@ -1,0 +1,29 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'DouYin' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for DouYin
+  pod 'ZFPlayer'
+  pod 'ZFPlayer/AVPlayer'
+  pod 'ZFPlayer/ControlView'
+#  pod 'ZFPlayer/ijkplayer'
+#  pod 'ZFPlayer/KSYMediaPlayer'
+  pod 'FDFullscreenPopGesture'
+  pod 'MJRefresh'
+  pod 'AFNetworking'
+  pod 'MJExtension'
+
+  target 'DouYinTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'DouYinUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end

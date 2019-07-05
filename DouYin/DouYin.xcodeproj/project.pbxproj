@@ -1,0 +1,788 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		302F6589A5DA4DE2B70C0649 /* Pods_DouYinUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F544A7762877036A098887E /* Pods_DouYinUITests.framework */; };
+		598C7F8E22C21D74007DB428 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 598C7F8D22C21D74007DB428 /* AppDelegate.m */; };
+		598C7F9122C21D74007DB428 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 598C7F9022C21D74007DB428 /* ViewController.m */; };
+		598C7F9422C21D74007DB428 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 598C7F9222C21D74007DB428 /* Main.storyboard */; };
+		598C7F9622C21D76007DB428 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 598C7F9522C21D76007DB428 /* Assets.xcassets */; };
+		598C7F9922C21D76007DB428 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 598C7F9722C21D76007DB428 /* LaunchScreen.storyboard */; };
+		598C7F9C22C21D76007DB428 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 598C7F9B22C21D76007DB428 /* main.m */; };
+		598C7FA622C21D76007DB428 /* DouYinTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 598C7FA522C21D76007DB428 /* DouYinTests.m */; };
+		598C7FB122C21D76007DB428 /* DouYinUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 598C7FB022C21D76007DB428 /* DouYinUITests.m */; };
+		598C7FC022C220EE007DB428 /* ZFDouYinCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 598C7FBF22C220EE007DB428 /* ZFDouYinCell.m */; };
+		598C7FC322C22118007DB428 /* ZFDouYinControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 598C7FC222C22118007DB428 /* ZFDouYinControlView.m */; };
+		598C7FC622C221F5007DB428 /* ZFTableData.m in Sources */ = {isa = PBXBuildFile; fileRef = 598C7FC422C221F4007DB428 /* ZFTableData.m */; };
+		598C7FC822C2228C007DB428 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 598C7FC722C2228C007DB428 /* data.json */; };
+		598C7FCB22C2246F007DB428 /* NetworkRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 598C7FCA22C2246F007DB428 /* NetworkRequest.m */; };
+		598C7FCE22C2362C007DB428 /* DynamicListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 598C7FCD22C2362C007DB428 /* DynamicListModel.m */; };
+		598C7FD122C236DA007DB428 /* DynamicRecommendListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 598C7FCF22C236DA007DB428 /* DynamicRecommendListModel.m */; };
+		59BCC64522CEF3CD00888AB4 /* DouYinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59BCC64422CEF3CD00888AB4 /* DouYinViewController.m */; };
+		59BCC68622CF3DE300888AB4 /* AVPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 59BCC68522CF3DE300888AB4 /* AVPlayerView.m */; };
+		59BCC68C22CF481000888AB4 /* Downloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 59BCC68B22CF481000888AB4 /* Downloader.m */; };
+		E74D0C2C7D62C81435E3A91A /* Pods_DouYin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF7139BCB32AF57EE67E0313 /* Pods_DouYin.framework */; };
+		FBBBC71494FEB1F1AFB7DFD0 /* Pods_DouYinTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AF71E7B9115CA1C47204931 /* Pods_DouYinTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		598C7FA222C21D76007DB428 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 598C7F8122C21D74007DB428 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 598C7F8822C21D74007DB428;
+			remoteInfo = DouYin;
+		};
+		598C7FAD22C21D76007DB428 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 598C7F8122C21D74007DB428 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 598C7F8822C21D74007DB428;
+			remoteInfo = DouYin;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		08C91B2C0228E608B75289DF /* Pods-DouYin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DouYin.release.xcconfig"; path = "Target Support Files/Pods-DouYin/Pods-DouYin.release.xcconfig"; sourceTree = "<group>"; };
+		375E7F674B9B7863C32D8E5B /* Pods-DouYinUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DouYinUITests.debug.xcconfig"; path = "Target Support Files/Pods-DouYinUITests/Pods-DouYinUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		4F6FC56FF8A1A764D6292B39 /* Pods-DouYinUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DouYinUITests.release.xcconfig"; path = "Target Support Files/Pods-DouYinUITests/Pods-DouYinUITests.release.xcconfig"; sourceTree = "<group>"; };
+		598C7F8922C21D74007DB428 /* DouYin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DouYin.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		598C7F8C22C21D74007DB428 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		598C7F8D22C21D74007DB428 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		598C7F8F22C21D74007DB428 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		598C7F9022C21D74007DB428 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		598C7F9322C21D74007DB428 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		598C7F9522C21D76007DB428 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		598C7F9822C21D76007DB428 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		598C7F9A22C21D76007DB428 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		598C7F9B22C21D76007DB428 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		598C7FA122C21D76007DB428 /* DouYinTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DouYinTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		598C7FA522C21D76007DB428 /* DouYinTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DouYinTests.m; sourceTree = "<group>"; };
+		598C7FA722C21D76007DB428 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		598C7FAC22C21D76007DB428 /* DouYinUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DouYinUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		598C7FB022C21D76007DB428 /* DouYinUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DouYinUITests.m; sourceTree = "<group>"; };
+		598C7FB222C21D76007DB428 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		598C7FBE22C220EE007DB428 /* ZFDouYinCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFDouYinCell.h; sourceTree = "<group>"; };
+		598C7FBF22C220EE007DB428 /* ZFDouYinCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFDouYinCell.m; sourceTree = "<group>"; };
+		598C7FC122C22118007DB428 /* ZFDouYinControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFDouYinControlView.h; sourceTree = "<group>"; };
+		598C7FC222C22118007DB428 /* ZFDouYinControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFDouYinControlView.m; sourceTree = "<group>"; };
+		598C7FC422C221F4007DB428 /* ZFTableData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFTableData.m; sourceTree = "<group>"; };
+		598C7FC522C221F4007DB428 /* ZFTableData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFTableData.h; sourceTree = "<group>"; };
+		598C7FC722C2228C007DB428 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		598C7FC922C2246F007DB428 /* NetworkRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkRequest.h; sourceTree = "<group>"; };
+		598C7FCA22C2246F007DB428 /* NetworkRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkRequest.m; sourceTree = "<group>"; };
+		598C7FCC22C2362C007DB428 /* DynamicListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DynamicListModel.h; sourceTree = "<group>"; };
+		598C7FCD22C2362C007DB428 /* DynamicListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DynamicListModel.m; sourceTree = "<group>"; };
+		598C7FCF22C236DA007DB428 /* DynamicRecommendListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DynamicRecommendListModel.m; sourceTree = "<group>"; };
+		598C7FD022C236DA007DB428 /* DynamicRecommendListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DynamicRecommendListModel.h; sourceTree = "<group>"; };
+		59BCC64322CEF3CD00888AB4 /* DouYinViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DouYinViewController.h; sourceTree = "<group>"; };
+		59BCC64422CEF3CD00888AB4 /* DouYinViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DouYinViewController.m; sourceTree = "<group>"; };
+		59BCC68422CF3DE300888AB4 /* AVPlayerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AVPlayerView.h; sourceTree = "<group>"; };
+		59BCC68522CF3DE300888AB4 /* AVPlayerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AVPlayerView.m; sourceTree = "<group>"; };
+		59BCC68A22CF481000888AB4 /* Downloader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Downloader.h; sourceTree = "<group>"; };
+		59BCC68B22CF481000888AB4 /* Downloader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Downloader.m; sourceTree = "<group>"; };
+		5AF71E7B9115CA1C47204931 /* Pods_DouYinTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DouYinTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F544A7762877036A098887E /* Pods_DouYinUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DouYinUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7419261608662C64AE9D65AB /* Pods-DouYin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DouYin.debug.xcconfig"; path = "Target Support Files/Pods-DouYin/Pods-DouYin.debug.xcconfig"; sourceTree = "<group>"; };
+		78A4F6C4D888436D1D2E43AA /* Pods-DouYinTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DouYinTests.release.xcconfig"; path = "Target Support Files/Pods-DouYinTests/Pods-DouYinTests.release.xcconfig"; sourceTree = "<group>"; };
+		F374DA144EEE6D5AA9A226B1 /* Pods-DouYinTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DouYinTests.debug.xcconfig"; path = "Target Support Files/Pods-DouYinTests/Pods-DouYinTests.debug.xcconfig"; sourceTree = "<group>"; };
+		FF7139BCB32AF57EE67E0313 /* Pods_DouYin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DouYin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		598C7F8622C21D74007DB428 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E74D0C2C7D62C81435E3A91A /* Pods_DouYin.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		598C7F9E22C21D76007DB428 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBBBC71494FEB1F1AFB7DFD0 /* Pods_DouYinTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		598C7FA922C21D76007DB428 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				302F6589A5DA4DE2B70C0649 /* Pods_DouYinUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		008F2579CFF154EFEBCB289F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7419261608662C64AE9D65AB /* Pods-DouYin.debug.xcconfig */,
+				08C91B2C0228E608B75289DF /* Pods-DouYin.release.xcconfig */,
+				F374DA144EEE6D5AA9A226B1 /* Pods-DouYinTests.debug.xcconfig */,
+				78A4F6C4D888436D1D2E43AA /* Pods-DouYinTests.release.xcconfig */,
+				375E7F674B9B7863C32D8E5B /* Pods-DouYinUITests.debug.xcconfig */,
+				4F6FC56FF8A1A764D6292B39 /* Pods-DouYinUITests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		211FCEF18B6D496BEE4F6ED1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FF7139BCB32AF57EE67E0313 /* Pods_DouYin.framework */,
+				5AF71E7B9115CA1C47204931 /* Pods_DouYinTests.framework */,
+				6F544A7762877036A098887E /* Pods_DouYinUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		598C7F8022C21D74007DB428 = {
+			isa = PBXGroup;
+			children = (
+				598C7F8B22C21D74007DB428 /* DouYin */,
+				598C7FA422C21D76007DB428 /* DouYinTests */,
+				598C7FAF22C21D76007DB428 /* DouYinUITests */,
+				598C7F8A22C21D74007DB428 /* Products */,
+				008F2579CFF154EFEBCB289F /* Pods */,
+				211FCEF18B6D496BEE4F6ED1 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		598C7F8A22C21D74007DB428 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				598C7F8922C21D74007DB428 /* DouYin.app */,
+				598C7FA122C21D76007DB428 /* DouYinTests.xctest */,
+				598C7FAC22C21D76007DB428 /* DouYinUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		598C7F8B22C21D74007DB428 /* DouYin */ = {
+			isa = PBXGroup;
+			children = (
+				598C7F8C22C21D74007DB428 /* AppDelegate.h */,
+				598C7F8D22C21D74007DB428 /* AppDelegate.m */,
+				59BCC64122CEF39F00888AB4 /* ZFPlayer */,
+				59BCC64222CEF3B800888AB4 /* DouYin */,
+				598C7FC922C2246F007DB428 /* NetworkRequest.h */,
+				598C7FCA22C2246F007DB428 /* NetworkRequest.m */,
+				598C7FD022C236DA007DB428 /* DynamicRecommendListModel.h */,
+				598C7FCF22C236DA007DB428 /* DynamicRecommendListModel.m */,
+				598C7FCC22C2362C007DB428 /* DynamicListModel.h */,
+				598C7FCD22C2362C007DB428 /* DynamicListModel.m */,
+				598C7FC722C2228C007DB428 /* data.json */,
+				598C7F9222C21D74007DB428 /* Main.storyboard */,
+				598C7F9522C21D76007DB428 /* Assets.xcassets */,
+				598C7F9722C21D76007DB428 /* LaunchScreen.storyboard */,
+				598C7F9A22C21D76007DB428 /* Info.plist */,
+				598C7F9B22C21D76007DB428 /* main.m */,
+			);
+			path = DouYin;
+			sourceTree = "<group>";
+		};
+		598C7FA422C21D76007DB428 /* DouYinTests */ = {
+			isa = PBXGroup;
+			children = (
+				598C7FA522C21D76007DB428 /* DouYinTests.m */,
+				598C7FA722C21D76007DB428 /* Info.plist */,
+			);
+			path = DouYinTests;
+			sourceTree = "<group>";
+		};
+		598C7FAF22C21D76007DB428 /* DouYinUITests */ = {
+			isa = PBXGroup;
+			children = (
+				598C7FB022C21D76007DB428 /* DouYinUITests.m */,
+				598C7FB222C21D76007DB428 /* Info.plist */,
+			);
+			path = DouYinUITests;
+			sourceTree = "<group>";
+		};
+		59BCC64122CEF39F00888AB4 /* ZFPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				598C7F8F22C21D74007DB428 /* ViewController.h */,
+				598C7F9022C21D74007DB428 /* ViewController.m */,
+				598C7FBE22C220EE007DB428 /* ZFDouYinCell.h */,
+				598C7FBF22C220EE007DB428 /* ZFDouYinCell.m */,
+				598C7FC122C22118007DB428 /* ZFDouYinControlView.h */,
+				598C7FC222C22118007DB428 /* ZFDouYinControlView.m */,
+				598C7FC522C221F4007DB428 /* ZFTableData.h */,
+				598C7FC422C221F4007DB428 /* ZFTableData.m */,
+			);
+			path = ZFPlayer;
+			sourceTree = "<group>";
+		};
+		59BCC64222CEF3B800888AB4 /* DouYin */ = {
+			isa = PBXGroup;
+			children = (
+				59BCC64322CEF3CD00888AB4 /* DouYinViewController.h */,
+				59BCC64422CEF3CD00888AB4 /* DouYinViewController.m */,
+				59BCC68422CF3DE300888AB4 /* AVPlayerView.h */,
+				59BCC68522CF3DE300888AB4 /* AVPlayerView.m */,
+				59BCC68A22CF481000888AB4 /* Downloader.h */,
+				59BCC68B22CF481000888AB4 /* Downloader.m */,
+			);
+			path = DouYin;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		598C7F8822C21D74007DB428 /* DouYin */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 598C7FB522C21D76007DB428 /* Build configuration list for PBXNativeTarget "DouYin" */;
+			buildPhases = (
+				738FCE45E9B1A9E352990AD6 /* [CP] Check Pods Manifest.lock */,
+				598C7F8522C21D74007DB428 /* Sources */,
+				598C7F8622C21D74007DB428 /* Frameworks */,
+				598C7F8722C21D74007DB428 /* Resources */,
+				AE57EAB32802A40B6B9A0B6A /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DouYin;
+			productName = DouYin;
+			productReference = 598C7F8922C21D74007DB428 /* DouYin.app */;
+			productType = "com.apple.product-type.application";
+		};
+		598C7FA022C21D76007DB428 /* DouYinTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 598C7FB822C21D76007DB428 /* Build configuration list for PBXNativeTarget "DouYinTests" */;
+			buildPhases = (
+				D738F2C2998AA29B222ACD78 /* [CP] Check Pods Manifest.lock */,
+				598C7F9D22C21D76007DB428 /* Sources */,
+				598C7F9E22C21D76007DB428 /* Frameworks */,
+				598C7F9F22C21D76007DB428 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				598C7FA322C21D76007DB428 /* PBXTargetDependency */,
+			);
+			name = DouYinTests;
+			productName = DouYinTests;
+			productReference = 598C7FA122C21D76007DB428 /* DouYinTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		598C7FAB22C21D76007DB428 /* DouYinUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 598C7FBB22C21D76007DB428 /* Build configuration list for PBXNativeTarget "DouYinUITests" */;
+			buildPhases = (
+				39F3C69834E26C34AB582004 /* [CP] Check Pods Manifest.lock */,
+				598C7FA822C21D76007DB428 /* Sources */,
+				598C7FA922C21D76007DB428 /* Frameworks */,
+				598C7FAA22C21D76007DB428 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				598C7FAE22C21D76007DB428 /* PBXTargetDependency */,
+			);
+			name = DouYinUITests;
+			productName = DouYinUITests;
+			productReference = 598C7FAC22C21D76007DB428 /* DouYinUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		598C7F8122C21D74007DB428 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = Joe;
+				TargetAttributes = {
+					598C7F8822C21D74007DB428 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					598C7FA022C21D76007DB428 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 598C7F8822C21D74007DB428;
+					};
+					598C7FAB22C21D76007DB428 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 598C7F8822C21D74007DB428;
+					};
+				};
+			};
+			buildConfigurationList = 598C7F8422C21D74007DB428 /* Build configuration list for PBXProject "DouYin" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 598C7F8022C21D74007DB428;
+			productRefGroup = 598C7F8A22C21D74007DB428 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				598C7F8822C21D74007DB428 /* DouYin */,
+				598C7FA022C21D76007DB428 /* DouYinTests */,
+				598C7FAB22C21D76007DB428 /* DouYinUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		598C7F8722C21D74007DB428 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				598C7F9922C21D76007DB428 /* LaunchScreen.storyboard in Resources */,
+				598C7F9622C21D76007DB428 /* Assets.xcassets in Resources */,
+				598C7F9422C21D74007DB428 /* Main.storyboard in Resources */,
+				598C7FC822C2228C007DB428 /* data.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		598C7F9F22C21D76007DB428 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		598C7FAA22C21D76007DB428 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		39F3C69834E26C34AB582004 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DouYinUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		738FCE45E9B1A9E352990AD6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DouYin-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AE57EAB32802A40B6B9A0B6A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DouYin/Pods-DouYin-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DouYin/Pods-DouYin-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DouYin/Pods-DouYin-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D738F2C2998AA29B222ACD78 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DouYinTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		598C7F8522C21D74007DB428 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				598C7F9122C21D74007DB428 /* ViewController.m in Sources */,
+				598C7FC022C220EE007DB428 /* ZFDouYinCell.m in Sources */,
+				59BCC68C22CF481000888AB4 /* Downloader.m in Sources */,
+				598C7FC622C221F5007DB428 /* ZFTableData.m in Sources */,
+				598C7FC322C22118007DB428 /* ZFDouYinControlView.m in Sources */,
+				598C7FD122C236DA007DB428 /* DynamicRecommendListModel.m in Sources */,
+				598C7FCB22C2246F007DB428 /* NetworkRequest.m in Sources */,
+				59BCC64522CEF3CD00888AB4 /* DouYinViewController.m in Sources */,
+				598C7F9C22C21D76007DB428 /* main.m in Sources */,
+				598C7F8E22C21D74007DB428 /* AppDelegate.m in Sources */,
+				598C7FCE22C2362C007DB428 /* DynamicListModel.m in Sources */,
+				59BCC68622CF3DE300888AB4 /* AVPlayerView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		598C7F9D22C21D76007DB428 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				598C7FA622C21D76007DB428 /* DouYinTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		598C7FA822C21D76007DB428 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				598C7FB122C21D76007DB428 /* DouYinUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		598C7FA322C21D76007DB428 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 598C7F8822C21D74007DB428 /* DouYin */;
+			targetProxy = 598C7FA222C21D76007DB428 /* PBXContainerItemProxy */;
+		};
+		598C7FAE22C21D76007DB428 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 598C7F8822C21D74007DB428 /* DouYin */;
+			targetProxy = 598C7FAD22C21D76007DB428 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		598C7F9222C21D74007DB428 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				598C7F9322C21D74007DB428 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		598C7F9722C21D76007DB428 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				598C7F9822C21D76007DB428 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		598C7FB322C21D76007DB428 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		598C7FB422C21D76007DB428 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		598C7FB622C21D76007DB428 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7419261608662C64AE9D65AB /* Pods-DouYin.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = DouYin/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.silknets.DouYin;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		598C7FB722C21D76007DB428 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 08C91B2C0228E608B75289DF /* Pods-DouYin.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = DouYin/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.silknets.DouYin;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		598C7FB922C21D76007DB428 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F374DA144EEE6D5AA9A226B1 /* Pods-DouYinTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = DouYinTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.silknets.DouYinTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DouYin.app/DouYin";
+			};
+			name = Debug;
+		};
+		598C7FBA22C21D76007DB428 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 78A4F6C4D888436D1D2E43AA /* Pods-DouYinTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = DouYinTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.silknets.DouYinTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DouYin.app/DouYin";
+			};
+			name = Release;
+		};
+		598C7FBC22C21D76007DB428 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 375E7F674B9B7863C32D8E5B /* Pods-DouYinUITests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = DouYinUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.silknets.DouYinUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DouYin;
+			};
+			name = Debug;
+		};
+		598C7FBD22C21D76007DB428 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F6FC56FF8A1A764D6292B39 /* Pods-DouYinUITests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = DouYinUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.silknets.DouYinUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DouYin;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		598C7F8422C21D74007DB428 /* Build configuration list for PBXProject "DouYin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				598C7FB322C21D76007DB428 /* Debug */,
+				598C7FB422C21D76007DB428 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		598C7FB522C21D76007DB428 /* Build configuration list for PBXNativeTarget "DouYin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				598C7FB622C21D76007DB428 /* Debug */,
+				598C7FB722C21D76007DB428 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		598C7FB822C21D76007DB428 /* Build configuration list for PBXNativeTarget "DouYinTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				598C7FB922C21D76007DB428 /* Debug */,
+				598C7FBA22C21D76007DB428 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		598C7FBB22C21D76007DB428 /* Build configuration list for PBXNativeTarget "DouYinUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				598C7FBC22C21D76007DB428 /* Debug */,
+				598C7FBD22C21D76007DB428 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 598C7F8122C21D74007DB428 /* Project object */;
+}

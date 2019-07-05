@@ -1,0 +1,54 @@
+PODS:
+  - AFNetworking (3.2.1):
+    - AFNetworking/NSURLSession (= 3.2.1)
+    - AFNetworking/Reachability (= 3.2.1)
+    - AFNetworking/Security (= 3.2.1)
+    - AFNetworking/Serialization (= 3.2.1)
+    - AFNetworking/UIKit (= 3.2.1)
+  - AFNetworking/NSURLSession (3.2.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.2.1)
+  - AFNetworking/Security (3.2.1)
+  - AFNetworking/Serialization (3.2.1)
+  - AFNetworking/UIKit (3.2.1):
+    - AFNetworking/NSURLSession
+  - FDFullscreenPopGesture (1.1)
+  - MJExtension (3.0.17)
+  - MJRefresh (3.2.0)
+  - ZFPlayer (3.2.11):
+    - ZFPlayer/Core (= 3.2.11)
+  - ZFPlayer/AVPlayer (3.2.11):
+    - ZFPlayer/Core
+  - ZFPlayer/ControlView (3.2.11):
+    - ZFPlayer/Core
+  - ZFPlayer/Core (3.2.11)
+
+DEPENDENCIES:
+  - AFNetworking
+  - FDFullscreenPopGesture
+  - MJExtension
+  - MJRefresh
+  - ZFPlayer
+  - ZFPlayer/AVPlayer
+  - ZFPlayer/ControlView
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AFNetworking
+    - FDFullscreenPopGesture
+    - MJExtension
+    - MJRefresh
+    - ZFPlayer
+
+SPEC CHECKSUMS:
+  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
+  MJExtension: 74ec83124a68891619fb7ba9c5c811bbf1691076
+  MJRefresh: ed450d6eb9d3346a2cb033ab7eb6de090aeef437
+  ZFPlayer: 4260b232df83cc7d571ffaa81e9317b3a74eb57c
+
+PODFILE CHECKSUM: efd0613a0dec9092a50e172e46253deb0a954ebe
+
+COCOAPODS: 1.7.2
