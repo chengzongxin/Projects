@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "DownloadOperation.h"
 
 @interface ViewController ()
 
@@ -37,7 +38,24 @@
     
 //    [self operationPriority];
     
-    [self communication];
+//    [self communication];
+    
+    NSString *imgUrl = @"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1562612860471&di=c9732b1711ca76dd8ee9155e230ebf10&imgtype=0&src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fimages%2F20190615%2Fce0b3c83f12a4a119ca9a63d3a2c0ae5.jpeg";
+    
+    DownloadOperation *op = [DownloadOperation downloadImageWithURLString:imgUrl andFinishBlock:^(UIImage * _Nonnull img) {
+        UIImageView *imgv = [[UIImageView alloc] initWithImage:img];
+        imgv.frame = self.view.bounds;
+        imgv.contentMode = UIViewContentModeScaleAspectFit;
+        [self.view addSubview:imgv];
+    }];
+    
+    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+    [queue addOperation:op];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [op cancel];
+        
+//        [queue cancelAllOperations];
+    });
 }
 
 /**

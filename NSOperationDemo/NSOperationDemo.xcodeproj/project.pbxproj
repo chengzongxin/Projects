@@ -15,6 +15,7 @@
 		59BCC66222CEFB1600888AB4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 59BCC66122CEFB1600888AB4 /* main.m */; };
 		59BCC66C22CEFB1600888AB4 /* NSOperationDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 59BCC66B22CEFB1600888AB4 /* NSOperationDemoTests.m */; };
 		59BCC67722CEFB1600888AB4 /* NSOperationDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 59BCC67622CEFB1600888AB4 /* NSOperationDemoUITests.m */; };
+		D848F06822D3A3E4002A201A /* DownloadOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D848F06722D3A3E4002A201A /* DownloadOperation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		59BCC67222CEFB1600888AB4 /* NSOperationDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NSOperationDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		59BCC67622CEFB1600888AB4 /* NSOperationDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSOperationDemoUITests.m; sourceTree = "<group>"; };
 		59BCC67822CEFB1600888AB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D848F06622D3A3E4002A201A /* DownloadOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DownloadOperation.h; sourceTree = "<group>"; };
+		D848F06722D3A3E4002A201A /* DownloadOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DownloadOperation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +108,8 @@
 				59BCC65322CEFB1400888AB4 /* AppDelegate.m */,
 				59BCC65522CEFB1400888AB4 /* ViewController.h */,
 				59BCC65622CEFB1400888AB4 /* ViewController.m */,
+				D848F06622D3A3E4002A201A /* DownloadOperation.h */,
+				D848F06722D3A3E4002A201A /* DownloadOperation.m */,
 				59BCC65822CEFB1400888AB4 /* Main.storyboard */,
 				59BCC65B22CEFB1600888AB4 /* Assets.xcassets */,
 				59BCC65D22CEFB1600888AB4 /* LaunchScreen.storyboard */,
@@ -265,6 +270,7 @@
 				59BCC65722CEFB1400888AB4 /* ViewController.m in Sources */,
 				59BCC66222CEFB1600888AB4 /* main.m in Sources */,
 				59BCC65422CEFB1400888AB4 /* AppDelegate.m in Sources */,
+				D848F06822D3A3E4002A201A /* DownloadOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
