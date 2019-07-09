@@ -55,8 +55,13 @@
 - (void)drawRect:(CGRect)rect {
     // Drawing code
     for (UIBezierPath *path in self.paths) {
-        [path.color set];
-        [path stroke];
+        if ([path isKindOfClass:[UIImage class]]) {
+            UIImage *img = (UIImage *)path;
+            [img drawInRect:rect];
+        }else{
+            [path.color set];
+            [path stroke];
+        }
     }
 }
 
@@ -80,6 +85,11 @@
 
 - (void)erase{
     self.color = UIColor.whiteColor;
+}
+
+- (void)setImage:(UIImage *)image {
+    [self.paths addObject:image];
+    [self setNeedsDisplay];
 }
 
 @end

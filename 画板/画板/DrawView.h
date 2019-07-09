@@ -22,6 +22,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)erase;
 
+- (void)setImage:(UIImage *)image;
+
 @end
 
 NS_ASSUME_NONNULL_END
