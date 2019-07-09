@@ -19,7 +19,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    NSString *url = @"https://video1.matafy.com/pipixia/201906/pipixia_6705665578272561422.mp4";
+    NSString *url = @"https://video1.matafy.com/pipixia/201906/pipixia_6704993604315650317.mp4";
     
     AVPlayerView *player = [[AVPlayerView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:player];

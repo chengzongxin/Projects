@@ -11,6 +11,7 @@
 #import <MobileCoreServices/MobileCoreServices.h>
 #import <CommonCrypto/CommonCrypto.h>
 
+
 @interface AVPlayerView ()<AVAssetResourceLoaderDelegate>
 
 @property (nonatomic ,strong) NSURL                *sourceURL;              //视频路径
@@ -153,6 +154,7 @@
 
 //  该函数表示代理类是否可以处理该请求，这里需要返回True表示可以处理该请求，然后在这里保存所有发出的请求，然后发出我们自己构造的NSUrlRequest。
 - (BOOL)resourceLoader:(AVAssetResourceLoader *)resourceLoader shouldWaitForLoadingOfRequestedResource:(AVAssetResourceLoadingRequest *)loadingRequest{
+    NSLog(@"loadingRequest = %@",loadingRequest);
     //将当前的请求路径的scheme换成https，进行普通的网络请求
     NSURL *url = [self urlScheme:self.sourceScheme url:[loadingRequest.request URL].absoluteString];
 //    Downloader *download = [[Downloader alloc] initWithURL:url completion:^(id _Nonnull data) {
@@ -168,12 +170,17 @@
         self.expectedContentLength = response.expectedContentLength;
         [self processPendingRequests];
     } progressBlock:^(NSInteger receivedSize, NSInteger expectedSize, NSData *data) {
-        [self.data appendData:data];
+//        [self.data appendData:data];
+        self.data = [data mutableCopy];
         //处理视频数据加载请求
         [self processPendingRequests];
     } completedBlock:^(NSData *data, NSError *error, BOOL finished) {
         if(!error && finished) {
+            NSLog(@"download finish");
+//            [loadingRequest.dataRequest respondWithData:data];
             //下载完毕，将缓存数据保存到本地
+            NSString *file = [NSString stringWithFormat:@"/Users/Joe/Desktop/download/douyin_%.0f.mp4",[NSDate date].timeIntervalSince1970];
+            [self.data writeToFile:file atomically:YES];
 //            [self.data writeToFile:@"/Users/Joe/Desktop/download/douyin.mp4" atomically:YES];
 //            [[WebCacheHelpler sharedWebCache] storeDataToDiskCache:wself.data key:wself.cacheFileKey extension:@"mp4"];
 //            [self storeDataToDiskCache:self.data key:url.absoluteString extension:@"mp4"];

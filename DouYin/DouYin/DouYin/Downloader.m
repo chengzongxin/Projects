@@ -8,6 +8,18 @@
 
 #import "Downloader.h"
 
+
+#define SemaphoreBegin \
+static dispatch_semaphore_t semaphore; \
+static dispatch_once_t onceToken; \
+dispatch_once(&onceToken, ^{ \
+semaphore = dispatch_semaphore_create(1); \
+}); \
+dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+
+#define SemaphoreEnd \
+dispatch_semaphore_signal(semaphore);
+
 @interface Downloader () 
 
 @property (strong, nonatomic) NSURLSession *session;
@@ -216,9 +228,11 @@
 //接收网络资源下载数据
 - (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveData:(NSData *)data {
     [self.data appendData:data];
+    
     if (self.progressBlock) {
-        self.progressBlock(self.data.length, self.expectedSize, data);
+        self.progressBlock(self.data.length, self.expectedSize, self.data);
     }
+    
 }
 //网络缓存数据复用
 -(void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask willCacheResponse:(NSCachedURLResponse *)proposedResponse completionHandler:(void (^)(NSCachedURLResponse * _Nullable))completionHandler {
