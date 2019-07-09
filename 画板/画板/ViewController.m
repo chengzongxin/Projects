@@ -51,6 +51,7 @@
     [self dismissViewControllerAnimated:YES completion:nil];
     
     UIView *view = [[UIView alloc] initWithFrame:self.drawView.frame];
+    view.backgroundColor = UIColor.clearColor;
     UIImageView *imageV = [[UIImageView alloc] initWithFrame:(CGRect){CGPointZero,view.frame.size}];
     imageV.image = img;
     [self.view addSubview:view];
