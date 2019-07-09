@@ -35,6 +35,8 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+        //初始化存储AVAssetResourceLoadingRequest的数组
+        _pendingRequests = [NSMutableArray array];
         //初始化播放器
         _player = [AVPlayer new];
         //添加视频播放器图形化载体AVPlayerLayer
@@ -172,15 +174,16 @@
     } completedBlock:^(NSData *data, NSError *error, BOOL finished) {
         if(!error && finished) {
             //下载完毕，将缓存数据保存到本地
-            [self.data writeToFile:@"/Users/Joe/Desktop/download/douyin.mp4" atomically:YES];
+//            [self.data writeToFile:@"/Users/Joe/Desktop/download/douyin.mp4" atomically:YES];
 //            [[WebCacheHelpler sharedWebCache] storeDataToDiskCache:wself.data key:wself.cacheFileKey extension:@"mp4"];
-            [self storeDataToDiskCache:self.data key:url.absoluteString extension:@"mp4"];
+//            [self storeDataToDiskCache:self.data key:url.absoluteString extension:@"mp4"];
         }
     } cancelBlock:^{
         
     }];
     
     [[[NSOperationQueue alloc] init] addOperation:op];
+//    [NSOperationQueue.mainQueue addOperation:op];
     
     //将视频加载请求依此存储到pendingRequests中，因为当前方法会多次调用，所以需用数组缓存
     [_pendingRequests addObject:loadingRequest];
