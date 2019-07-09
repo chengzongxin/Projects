@@ -62,17 +62,41 @@
                                     <constraint firstAttribute="height" constant="44" id="Dxj-Fb-Xh3"/>
                                 </constraints>
                             </stackView>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="50" translatesAutoresizingMaskIntoConstraints="NO" id="AdJ-WI-xQ0">
+                                <rect key="frame" x="101" y="582" width="268" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="NYz-dr-HMz"/>
+                                </constraints>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="volume:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F7U-eN-XhX">
+                                <rect key="frame" x="0.0" y="581" width="102" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="102" id="pxX-75-GUd"/>
+                                    <constraint firstAttribute="height" constant="30" id="xI6-MS-lWK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mTT-oh-ISK" secondAttribute="trailing" id="30h-he-bl0"/>
+                            <constraint firstItem="F7U-eN-XhX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="3aI-fs-DJE"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="mTT-oh-ISK" secondAttribute="bottom" id="9AN-sH-NFh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="AdJ-WI-xQ0" secondAttribute="trailing" constant="8" id="JGg-nu-vig"/>
+                            <constraint firstItem="AdJ-WI-xQ0" firstAttribute="leading" secondItem="F7U-eN-XhX" secondAttribute="trailing" constant="1" id="JXf-0B-IHB"/>
+                            <constraint firstItem="mTT-oh-ISK" firstAttribute="top" secondItem="F7U-eN-XhX" secondAttribute="bottom" constant="12" id="Rz8-tk-8tQ"/>
+                            <constraint firstItem="mTT-oh-ISK" firstAttribute="top" secondItem="AdJ-WI-xQ0" secondAttribute="bottom" constant="12" id="Y1h-Ev-p5o"/>
                             <constraint firstItem="mTT-oh-ISK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="vDI-BG-PuS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="AdJ-WI-xQ0" secondAttribute="trailing" constant="8" id="ywM-wB-9zy"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="slider" destination="AdJ-WI-xQ0" id="toI-9o-EO8"/>
                         <outlet property="textView" destination="NB3-qU-ZvW" id="GoQ-HV-Zlu"/>
+                        <outlet property="volumeLabel" destination="F7U-eN-XhX" id="4n8-xN-Qnc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

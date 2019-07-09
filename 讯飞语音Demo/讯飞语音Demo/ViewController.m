@@ -18,6 +18,10 @@
 
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 
+@property (weak, nonatomic) IBOutlet UISlider *slider;
+
+@property (weak, nonatomic) IBOutlet UILabel *volumeLabel;
+
 @end
 
 @implementation ViewController
@@ -25,9 +29,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
+    [self setupRecognizer];
+}
+
+- (void)setupRecognizer{
     //创建语音识别对象
     _iFlySpeechRecognizer = [IFlySpeechRecognizer sharedInstance];
+    _iFlySpeechRecognizer.delegate = self;
     //设置识别参数
     //设置为听写模式
     [_iFlySpeechRecognizer setParameter: @"iat" forKey: [IFlySpeechConstant IFLY_DOMAIN]];
@@ -94,6 +102,13 @@
 //识别结果返回代理
 - (void) onResults:(NSArray *) results isLast:(BOOL)isLast{
     NSLog(@"%s",__FUNCTION__);
+    NSMutableString *result = [NSMutableString stringWithString:self.textView.text];
+    NSLog(@"%@",result);
+    NSDictionary *dic = [results objectAtIndex:0];
+    for (NSString *key in dic){
+        [result appendFormat:@"%@",key];//合并结果
+    }
+    self.textView.text = result;
 }
 //识别会话结束返回代理
 - (void)onCompleted: (IFlySpeechError *) error{
@@ -109,7 +124,9 @@
 }
 //音量回调函数
 - (void) onVolumeChanged: (int)volume{
-    NSLog(@"%s",__FUNCTION__);
+//    NSLog(@"%s",__FUNCTION__);
+    self.slider.value = volume;
+    self.volumeLabel.text = [NSString stringWithFormat:@"Volume:%d",volume];
 }
 //会话取消回调
 - (void) onCancel{
