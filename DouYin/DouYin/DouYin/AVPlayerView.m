@@ -170,10 +170,12 @@
         self.expectedContentLength = response.expectedContentLength;
         [self processPendingRequests];
     } progressBlock:^(NSInteger receivedSize, NSInteger expectedSize, NSData *data) {
-//        [self.data appendData:data];
-        self.data = [data mutableCopy];
-        //处理视频数据加载请求
-        [self processPendingRequests];
+//            [self.data appendData:data];
+            self.data = [data mutableCopy];
+            //处理视频数据加载请求
+            [self processPendingRequests];
+        
+        
     } completedBlock:^(NSData *data, NSError *error, BOOL finished) {
         if(!error && finished) {
             NSLog(@"download finish");
@@ -189,7 +191,13 @@
         
     }];
     
-    [[[NSOperationQueue alloc] init] addOperation:op];
+    //初始化高优先级下载队列
+    NSOperationQueue *queue = [NSOperationQueue new];
+    queue.name = @"com.priorityhigh.webdownloader";
+    queue.maxConcurrentOperationCount = 1;
+    queue.qualityOfService = NSQualityOfServiceUserInteractive;
+//    [queue addObserver:self forKeyPath:@"operations" options:NSKeyValueObservingOptionNew context:nil];
+    [queue addOperation:op];
 //    [NSOperationQueue.mainQueue addOperation:op];
     
     //将视频加载请求依此存储到pendingRequests中，因为当前方法会多次调用，所以需用数组缓存
