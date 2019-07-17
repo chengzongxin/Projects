@@ -16,9 +16,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (strong, nonatomic) AVPlayerView *playerView;
 
+@property (strong, nonatomic) UIView *playerStatusBar;
+
 @property (strong, nonatomic) DynamicListModelDataList *model;
 
+@property (nonatomic,copy) void (^onPlayerReady)(void);
+@property (nonatomic, assign) BOOL             isPlayerReady;
+
 - (void)startDownloadForegroundTask;
+
 - (void)startDownloadBackgroundTask;
 
 @end

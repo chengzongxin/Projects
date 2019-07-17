@@ -141,9 +141,9 @@
                 }
             }
             //更新视频播放进度方法回调
-//            if(weakSelf.delegate) {
-//                [weakSelf.delegate onProgressUpdate:current total:total];
-//            }
+            if(weakSelf.delegate) {
+                [weakSelf.delegate onProgressUpdate:current total:total];
+            }
         }
     }];
 }
@@ -161,12 +161,12 @@
         if(_playerItem.status == AVPlayerItemStatusReadyToPlay) {
             [self.playerLayer setHidden:NO];
             
-            [self.player play];
+//            [self.player play];
         }
         //视频播放状体更新方法回调
-//        if(_delegate) {
-//            [_delegate onPlayItemStatusUpdate:_playerItem.status];
-//        }
+        if(_delegate) {
+            [_delegate onPlayItemStatusUpdate:_playerItem.status];
+        }
     }else {
         return [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
     }
