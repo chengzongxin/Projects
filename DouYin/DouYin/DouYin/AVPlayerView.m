@@ -179,17 +179,12 @@
 #pragma mark - Private
 //开始视频资源下载任务
 - (void)startDownloadTask:(NSURL *)URL isBackground:(BOOL)isBackground {
-    
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:URL cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:15];
-    request.HTTPShouldUsePipelining = YES;
-    
-    self.downloadOperation = [[WebDownloadOperation alloc] initWithRequest:request responseBlock:^(NSHTTPURLResponse *response) {
+    self.downloadOperation = [[Downloader sharedDownloader] downloadWithURL:URL responseBlock:^(NSHTTPURLResponse *response) {
         self.data = [NSMutableData data];
         self.mimeType = response.MIMEType;
         self.expectedContentLength = response.expectedContentLength;
         [self processPendingRequests];
     } progressBlock:^(NSInteger receivedSize, NSInteger expectedSize, NSData *data) {
-        //        [self.data appendData:data];
         [self.data appendData:data];
         //处理视频数据加载请求
         [self processPendingRequests];
@@ -206,15 +201,7 @@
         }
     } cancelBlock:^{
         
-    }];
-    
-    //初始化高优先级下载队列
-    NSOperationQueue *queue = [NSOperationQueue new];
-    queue.name = @"com.priorityhigh.webdownloader";
-    queue.maxConcurrentOperationCount = 1;
-    queue.qualityOfService = NSQualityOfServiceUserInteractive;
-    //    [queue addObserver:self forKeyPath:@"operations" options:NSKeyValueObservingOptionNew context:nil];
-    [queue addOperation:self.downloadOperation];
+    } isBackground:NO];
 }
 
 #pragma mark - Getter  &  Setter

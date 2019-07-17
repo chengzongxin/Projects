@@ -22,76 +22,115 @@ dispatch_semaphore_signal(semaphore);
 
 @interface Downloader () 
 
-@property (strong, nonatomic) NSURLSession *session;
-@property (strong, nonatomic) NSURLSessionDataTask *dataTask;
-
 @end
 
 @implementation Downloader
 
-- (instancetype)initWithURL:(NSURL *)url completion:(void (^)(id _Nonnull))completion{
-    if (self = [super init]) {
+//单例
++ (Downloader *)sharedDownloader {
+    static dispatch_once_t once;
+    static id instance;
+    dispatch_once(&once, ^{
+        instance = [self new];
+    });
+    return instance;
+}
+
+//初始化
+- (instancetype)init {
+    self = [super init];
+    if(self) {
+        //初始化并行下载队列
+        _downloadConcurrentQueue = [NSOperationQueue new];
+        _downloadConcurrentQueue.name = @"com.concurrent.webdownloader";
+        _downloadConcurrentQueue.maxConcurrentOperationCount = 6;
         
-        //    let configuration = URLSessionConfiguration.default
-        //    configuration.requestCachePolicy = .reloadIgnoringLocalAndRemoteCacheData
-        //    configuration.networkServiceType = .video
-        //    configuration.allowsCellularAccess = true
-        //    var urlRequst = URLRequest.init(url: initialUrl, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 20) // 20s超时
-        //    urlRequst.setValue("application/octet-stream", forHTTPHeaderField: "Content-Type")
-        //    urlRequst.httpMethod = "GET"
-        //    session = URLSession(configuration: configuration, delegate: self, delegateQueue: nil)
-        //    session?.dataTask(with: urlRequst).resume()
-        //}
-        ////保存原始请求
-        //self.pendingRequests.insert(loadingRequest)
-        ////每次发送请求都遍历处理一遍原始请求数组
-        //self.processPendingRequests()
-        
-        NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
-        configuration.requestCachePolicy = NSURLRequestReloadIgnoringLocalAndRemoteCacheData;
-        configuration.networkServiceType = NSURLNetworkServiceTypeVideo;
-        configuration.allowsCellularAccess = YES;
-        
-        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:20.0];
-        [request setValue:@"application/octet-stream" forHTTPHeaderField:@"Content-Type"];
-        request.HTTPMethod = @"GET";
-        
-        NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration
-                                                              delegate:self
-                                                         delegateQueue:[NSOperationQueue mainQueue]];
-        NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request];
-        [dataTask resume];
+        //初始化串行下载队列
+        _downloadSerialQueue = [NSOperationQueue new];
+        _downloadSerialQueue.name = @"com.serial.webdownloader";
+        _downloadSerialQueue.maxConcurrentOperationCount = 1;
         
         
-        self.session = session;
-        self.dataTask = dataTask;
+        //初始化后台串行下载队列
+        _downloadBackgroundQueue = [NSOperationQueue new];
+        _downloadBackgroundQueue.name = @"com.background.webdownloader";
+        _downloadBackgroundQueue.maxConcurrentOperationCount = 1;
+        _downloadBackgroundQueue.qualityOfService = NSQualityOfServiceBackground;
+        
+        //初始化高优先级下载队列
+        _downloadPriorityHighQueue = [NSOperationQueue new];
+        _downloadPriorityHighQueue.name = @"com.priorityhigh.webdownloader";
+        _downloadPriorityHighQueue.maxConcurrentOperationCount = 1;
+        _downloadPriorityHighQueue.qualityOfService = NSQualityOfServiceUserInteractive;
+        [_downloadPriorityHighQueue addObserver:self forKeyPath:@"operations" options:NSKeyValueObservingOptionNew context:nil];
         
     }
     return self;
 }
 
-
-
-- (void)URLSession:(NSURLSession *)session didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition, NSURLCredential * _Nullable))completionHandler{
-    NSLog(@"%s",__FUNCTION__);
-}
-
-// 1.接收到服务器响应的时候
--(void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveResponse:(NSURLResponse *)response completionHandler:(void (^)(NSURLSessionResponseDisposition))completionHandler{
-    NSLog(@"%s",__FUNCTION__);
-}
-
-// 2.接收到服务器返回数据的时候调用,会调用多次
--(void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveData:(NSData *)data{
-    NSLog(@"%s",__FUNCTION__);
+- (WebDownloadOperation *)downloadWithURL:(NSURL *)url
+                            responseBlock:(WebDownloaderResponseBlock)responseBlock
+                            progressBlock:(WebDownloaderProgressBlock)progressBlock
+                           completedBlock:(WebDownloaderCompletedBlock)completedBlock
+                              cancelBlock:(WebDownloaderCancelBlock)cancelBlock
+                             isBackground:(BOOL)isBackground{
     
+    //未查找到则创建下载网络资源的WebDownloadOperation任务，并赋值组合任务WebCombineOperation
+    //初始化网络资源下载请求
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:15];
+    request.HTTPShouldUsePipelining = YES;
+    WebDownloadOperation *downloadOperation = [[WebDownloadOperation alloc] initWithRequest:request responseBlock:^(NSHTTPURLResponse *response) {
+        if(responseBlock) {
+            responseBlock(response);
+        }
+    } progressBlock:progressBlock completedBlock:^(NSData *data, NSError *error, BOOL finished) {
+        //网络资源下载完毕，处理返回数据
+        if(completedBlock) {
+            if(finished && !error) {
+                //任务完成回调
+                completedBlock(data, nil, YES);
+            }else {
+                //任务失败回调
+                completedBlock(data, error, NO);
+            }
+        }
+    } cancelBlock:^{
+        //任务取消回调
+        if(cancelBlock) {
+            cancelBlock();
+        }
+    }];
+    
+    //将下载任务添加进队列
+    if (isBackground) {
+        //添加后台下载任务
+        [self.downloadBackgroundQueue addOperation:downloadOperation];
+    } else {
+        //添加高优先级下载任务，队列中每次只执行1个任务
+        [self.downloadPriorityHighQueue cancelAllOperations];
+        [self.downloadPriorityHighQueue addOperation:downloadOperation];
+    }
+    return downloadOperation;
 }
 
-// 3.请求结束的时候调用(成功|失败),如果失败那么error有值
--(void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(NSError *)error{
-    NSLog(@"%s",__FUNCTION__);
+//更新当前正在执行的队列,保证downloadPriorityHighQueue执行任务时downloadBackgroundQueue暂停
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
+    if ([keyPath isEqualToString:@"operations"]) {
+        @synchronized (self) {
+            if ([_downloadPriorityHighQueue.operations count] == 0) {
+                [_downloadBackgroundQueue setSuspended:NO];
+            } else {
+                [_downloadBackgroundQueue setSuspended:YES];
+            }
+        }
+    }else {
+        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+    }
 }
 
+- (void)dealloc {
+    [_downloadPriorityHighQueue removeObserver:self forKeyPath:@"operations"];
+}
 
 @end
 

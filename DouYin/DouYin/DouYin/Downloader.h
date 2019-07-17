@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+@class WebDownloadOperation;
 
 //缓存清除完毕后的回调block
 typedef void(^WebCacheClearCompletedBlock)(NSString *cacheSize);
@@ -25,7 +26,22 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Downloader : NSObject <NSURLSessionTaskDelegate, NSURLSessionDataDelegate>
 
-- (instancetype)initWithURL:(NSURL *)url completion:(void (^)(id _Nonnull))completion;
+//用于处理下载任务的NSOperationQueue队列
+@property (strong, nonatomic) NSOperationQueue *downloadConcurrentQueue;
+@property (strong, nonatomic) NSOperationQueue *downloadSerialQueue;
+
+@property (strong, nonatomic) NSOperationQueue *downloadBackgroundQueue;
+@property (strong, nonatomic) NSOperationQueue *downloadPriorityHighQueue;
+//单例
++ (Downloader *)sharedDownloader;
+//下载指定URL网络资源
+
+- (WebDownloadOperation *)downloadWithURL:(NSURL *)url
+                           responseBlock:(WebDownloaderResponseBlock)responseBlock
+                           progressBlock:(WebDownloaderProgressBlock)progressBlock
+                          completedBlock:(WebDownloaderCompletedBlock)completedBlock
+                             cancelBlock:(WebDownloaderCancelBlock)cancelBlock
+                            isBackground:(BOOL)isBackground;
 
 @end
 
