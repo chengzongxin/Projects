@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		302F6589A5DA4DE2B70C0649 /* Pods_DouYinUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F544A7762877036A098887E /* Pods_DouYinUITests.framework */; };
+		594791F122DF251700CBB35E /* DouYinCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 594791EF22DF251700CBB35E /* DouYinCell.m */; };
 		598C7F8E22C21D74007DB428 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 598C7F8D22C21D74007DB428 /* AppDelegate.m */; };
 		598C7F9122C21D74007DB428 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 598C7F9022C21D74007DB428 /* ViewController.m */; };
 		598C7F9422C21D74007DB428 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 598C7F9222C21D74007DB428 /* Main.storyboard */; };
@@ -51,6 +52,8 @@
 		08C91B2C0228E608B75289DF /* Pods-DouYin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DouYin.release.xcconfig"; path = "Target Support Files/Pods-DouYin/Pods-DouYin.release.xcconfig"; sourceTree = "<group>"; };
 		375E7F674B9B7863C32D8E5B /* Pods-DouYinUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DouYinUITests.debug.xcconfig"; path = "Target Support Files/Pods-DouYinUITests/Pods-DouYinUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4F6FC56FF8A1A764D6292B39 /* Pods-DouYinUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DouYinUITests.release.xcconfig"; path = "Target Support Files/Pods-DouYinUITests/Pods-DouYinUITests.release.xcconfig"; sourceTree = "<group>"; };
+		594791EE22DF251700CBB35E /* DouYinCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DouYinCell.h; sourceTree = "<group>"; };
+		594791EF22DF251700CBB35E /* DouYinCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DouYinCell.m; sourceTree = "<group>"; };
 		598C7F8922C21D74007DB428 /* DouYin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DouYin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		598C7F8C22C21D74007DB428 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		598C7F8D22C21D74007DB428 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -228,6 +231,8 @@
 			children = (
 				59BCC64322CEF3CD00888AB4 /* DouYinViewController.h */,
 				59BCC64422CEF3CD00888AB4 /* DouYinViewController.m */,
+				594791EE22DF251700CBB35E /* DouYinCell.h */,
+				594791EF22DF251700CBB35E /* DouYinCell.m */,
 				59BCC68422CF3DE300888AB4 /* AVPlayerView.h */,
 				59BCC68522CF3DE300888AB4 /* AVPlayerView.m */,
 				59BCC68A22CF481000888AB4 /* Downloader.h */,
@@ -469,6 +474,7 @@
 				598C7F8E22C21D74007DB428 /* AppDelegate.m in Sources */,
 				598C7FCE22C2362C007DB428 /* DynamicListModel.m in Sources */,
 				59BCC68622CF3DE300888AB4 /* AVPlayerView.m in Sources */,
+				594791F122DF251700CBB35E /* DouYinCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

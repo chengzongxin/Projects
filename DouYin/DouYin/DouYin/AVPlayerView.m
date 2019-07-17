@@ -60,6 +60,28 @@
 }
 
 #pragma mark - Public
+
+- (void)play{
+    [_player play];
+}
+
+- (void)pause{
+    [_player pause];
+}
+
+- (void)updatePlayerState{
+    if(_player.rate == 0) {
+        [self play];
+    }else {
+        [self pause];
+    }
+}
+
+- (void)replay{
+    [_player seekToTime:kCMTimeZero];
+    [_player play];
+}
+
 - (void)setPlayerUrl:(NSString *)url {
     //播放路径
     self.sourceURL = [NSURL URLWithString:url];
