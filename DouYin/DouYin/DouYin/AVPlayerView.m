@@ -183,7 +183,7 @@
     if (!self.downloadOperation) {
         //将当前的请求路径的scheme换成https，进行普通的网络请求
         NSURL *url = [self urlScheme:self.sourceScheme url:[loadingRequest.request URL].absoluteString];
-        [self startDownloadTask:url isBackground:NO];
+        [self startDownloadTask:url isBackground:YES];
     }
     
     //将视频加载请求依此存储到pendingRequests中，因为当前方法会多次调用，所以需用数组缓存
@@ -223,7 +223,7 @@
         }
     } cancelBlock:^{
         
-    } isBackground:NO];
+    } isBackground:isBackground];
 }
 
 #pragma mark - Getter  &  Setter
