@@ -230,7 +230,7 @@ dispatch_semaphore_signal(semaphore);
     [self.data appendData:data];
     
     if (self.progressBlock) {
-        self.progressBlock(self.data.length, self.expectedSize, self.data);
+        self.progressBlock(self.data.length, self.expectedSize, data);
     }
     
 }

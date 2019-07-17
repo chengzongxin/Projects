@@ -22,6 +22,7 @@
 @property (nonatomic ,strong) AVPlayerLayer        *playerLayer;            //视频播放器图形化载体
 @property (nonatomic, strong) NSMutableArray       *pendingRequests;        //存储AVAssetResourceLoadingRequest的数组
 
+@property (strong, nonatomic) WebDownloadOperation *downloadOperation;      //下载操作
 @property (nonatomic, strong) NSMutableData        *data;                   //视频缓冲数据
 @property (nonatomic, copy) NSString               *mimeType;               //资源格式
 @property (nonatomic, assign) long long            expectedContentLength;   //资源大小
@@ -155,50 +156,13 @@
 //  该函数表示代理类是否可以处理该请求，这里需要返回True表示可以处理该请求，然后在这里保存所有发出的请求，然后发出我们自己构造的NSUrlRequest。
 - (BOOL)resourceLoader:(AVAssetResourceLoader *)resourceLoader shouldWaitForLoadingOfRequestedResource:(AVAssetResourceLoadingRequest *)loadingRequest{
     NSLog(@"loadingRequest = %@",loadingRequest);
-    //将当前的请求路径的scheme换成https，进行普通的网络请求
-    NSURL *url = [self urlScheme:self.sourceScheme url:[loadingRequest.request URL].absoluteString];
-//    Downloader *download = [[Downloader alloc] initWithURL:url completion:^(id _Nonnull data) {
-//
-//    }];
-    //初始化网络资源下载请求
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:15];
-    request.HTTPShouldUsePipelining = YES;
     
-    WebDownloadOperation *op = [[WebDownloadOperation alloc] initWithRequest:request responseBlock:^(NSHTTPURLResponse *response) {
-        self.data = [NSMutableData data];
-        self.mimeType = response.MIMEType;
-        self.expectedContentLength = response.expectedContentLength;
-        [self processPendingRequests];
-    } progressBlock:^(NSInteger receivedSize, NSInteger expectedSize, NSData *data) {
-//            [self.data appendData:data];
-            self.data = [data mutableCopy];
-            //处理视频数据加载请求
-            [self processPendingRequests];
-        
-        
-    } completedBlock:^(NSData *data, NSError *error, BOOL finished) {
-        if(!error && finished) {
-            NSLog(@"download finish");
-//            [loadingRequest.dataRequest respondWithData:data];
-            //下载完毕，将缓存数据保存到本地
-            NSString *file = [NSString stringWithFormat:@"/Users/Joe/Desktop/download/douyin_%.0f.mp4",[NSDate date].timeIntervalSince1970];
-            [self.data writeToFile:file atomically:YES];
-//            [self.data writeToFile:@"/Users/Joe/Desktop/download/douyin.mp4" atomically:YES];
-//            [[WebCacheHelpler sharedWebCache] storeDataToDiskCache:wself.data key:wself.cacheFileKey extension:@"mp4"];
-//            [self storeDataToDiskCache:self.data key:url.absoluteString extension:@"mp4"];
-        }
-    } cancelBlock:^{
-        
-    }];
-    
-    //初始化高优先级下载队列
-    NSOperationQueue *queue = [NSOperationQueue new];
-    queue.name = @"com.priorityhigh.webdownloader";
-    queue.maxConcurrentOperationCount = 1;
-    queue.qualityOfService = NSQualityOfServiceUserInteractive;
-//    [queue addObserver:self forKeyPath:@"operations" options:NSKeyValueObservingOptionNew context:nil];
-    [queue addOperation:op];
-//    [NSOperationQueue.mainQueue addOperation:op];
+    //创建用于下载视频源的NSURLSessionDataTask，当前方法会多次调用，所以需判断self.task == nil
+    if (!self.downloadOperation) {
+        //将当前的请求路径的scheme换成https，进行普通的网络请求
+        NSURL *url = [self urlScheme:self.sourceScheme url:[loadingRequest.request URL].absoluteString];
+        [self startDownloadTask:url isBackground:NO];
+    }
     
     //将视频加载请求依此存储到pendingRequests中，因为当前方法会多次调用，所以需用数组缓存
     [_pendingRequests addObject:loadingRequest];
@@ -212,6 +176,46 @@
     [_pendingRequests removeObject:loadingRequest];
 }
 
+#pragma mark - Private
+//开始视频资源下载任务
+- (void)startDownloadTask:(NSURL *)URL isBackground:(BOOL)isBackground {
+    
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:URL cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:15];
+    request.HTTPShouldUsePipelining = YES;
+    
+    self.downloadOperation = [[WebDownloadOperation alloc] initWithRequest:request responseBlock:^(NSHTTPURLResponse *response) {
+        self.data = [NSMutableData data];
+        self.mimeType = response.MIMEType;
+        self.expectedContentLength = response.expectedContentLength;
+        [self processPendingRequests];
+    } progressBlock:^(NSInteger receivedSize, NSInteger expectedSize, NSData *data) {
+        //        [self.data appendData:data];
+        [self.data appendData:data];
+        //处理视频数据加载请求
+        [self processPendingRequests];
+    } completedBlock:^(NSData *data, NSError *error, BOOL finished) {
+        if(!error && finished) {
+            NSLog(@"download finish");
+            //            [loadingRequest.dataRequest respondWithData:data];
+            //下载完毕，将缓存数据保存到本地
+            NSString *file = [NSString stringWithFormat:@"/Users/Joe/Desktop/download/douyin_%.0f.mp4",[NSDate date].timeIntervalSince1970];
+            [self.data writeToFile:file atomically:YES];
+            //            [self.data writeToFile:@"/Users/Joe/Desktop/download/douyin.mp4" atomically:YES];
+            //            [[WebCacheHelpler sharedWebCache] storeDataToDiskCache:wself.data key:wself.cacheFileKey extension:@"mp4"];
+            //            [self storeDataToDiskCache:self.data key:url.absoluteString extension:@"mp4"];
+        }
+    } cancelBlock:^{
+        
+    }];
+    
+    //初始化高优先级下载队列
+    NSOperationQueue *queue = [NSOperationQueue new];
+    queue.name = @"com.priorityhigh.webdownloader";
+    queue.maxConcurrentOperationCount = 1;
+    queue.qualityOfService = NSQualityOfServiceUserInteractive;
+    //    [queue addObserver:self forKeyPath:@"operations" options:NSKeyValueObservingOptionNew context:nil];
+    [queue addOperation:self.downloadOperation];
+}
 
 #pragma mark - Getter  &  Setter
 

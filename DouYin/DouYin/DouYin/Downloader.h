@@ -36,8 +36,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) NSURLSessionTask         *dataTask;
 @property (strong, nonatomic, readonly) NSURLRequest   *request;
 //初始化
-- (instancetype)initWithRequest:(NSURLRequest *)request responseBlock:(WebDownloaderResponseBlock)responseBlock progressBlock:(WebDownloaderProgressBlock)progressBlock completedBlock:(WebDownloaderCompletedBlock)completedBlock cancelBlock:(WebDownloaderCancelBlock)cancelBlock;
-
+- (instancetype)initWithRequest:(NSURLRequest *)request
+                  responseBlock:(WebDownloaderResponseBlock)responseBlock
+                  progressBlock:(WebDownloaderProgressBlock)progressBlock
+                 completedBlock:(WebDownloaderCompletedBlock)completedBlock
+                    cancelBlock:(WebDownloaderCancelBlock)cancelBlock;
 @end
 
 

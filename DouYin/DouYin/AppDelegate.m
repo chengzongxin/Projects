@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import <CocoaLumberjack/CocoaLumberjack.h>
 
 @interface AppDelegate ()
 
@@ -17,6 +18,27 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [DDLog addLogger:[DDOSLogger sharedInstance]]; // Uses os_log
+    
+    DDFileLogger *fileLogger = [[DDFileLogger alloc] init]; // File Logger
+    fileLogger.rollingFrequency = 60 * 60 * 24; // 24 hour rolling
+    fileLogger.logFileManager.maximumNumberOfLogFiles = 7;
+    [DDLog addLogger:fileLogger];
+    
+    
+#if DEBUG
+    static const DDLogLevel ddLogLevel = DDLogLevelVerbose;
+#else
+    static const DDLogLevel ddLogLevel = DDLogLevelWarning;
+#endif
+    
+    DDLogVerbose(@"Verbose");
+    DDLogDebug(@"Debug");
+    DDLogInfo(@"Info");
+    DDLogWarn(@"Warn");
+    DDLogError(@"Error");
+    
+    
     return YES;
 }
 

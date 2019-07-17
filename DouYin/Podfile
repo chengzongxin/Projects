@@ -15,6 +15,7 @@ target 'DouYin' do
   pod 'MJRefresh'
   pod 'AFNetworking'
   pod 'MJExtension'
+  pod 'CocoaLumberjack'
 
   target 'DouYinTests' do
     inherit! :search_paths
