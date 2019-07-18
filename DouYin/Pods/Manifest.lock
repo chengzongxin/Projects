@@ -18,6 +18,7 @@ PODS:
     - CocoaLumberjack/Core (= 3.5.3)
   - CocoaLumberjack/Core (3.5.3)
   - FDFullscreenPopGesture (1.1)
+  - Masonry (1.1.0)
   - MJExtension (3.0.17)
   - MJRefresh (3.2.0)
   - ZFPlayer (3.2.11):
@@ -32,6 +33,7 @@ DEPENDENCIES:
   - AFNetworking
   - CocoaLumberjack
   - FDFullscreenPopGesture
+  - Masonry
   - MJExtension
   - MJRefresh
   - ZFPlayer
@@ -43,6 +45,7 @@ SPEC REPOS:
     - AFNetworking
     - CocoaLumberjack
     - FDFullscreenPopGesture
+    - Masonry
     - MJExtension
     - MJRefresh
     - ZFPlayer
@@ -51,10 +54,11 @@ SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   CocoaLumberjack: 2f44e60eb91c176d471fdba43b9e3eae6a721947
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJExtension: 74ec83124a68891619fb7ba9c5c811bbf1691076
   MJRefresh: ed450d6eb9d3346a2cb033ab7eb6de090aeef437
   ZFPlayer: 4260b232df83cc7d571ffaa81e9317b3a74eb57c
 
-PODFILE CHECKSUM: 730e033e7d81472cbc71b1f7736fcaba3322f7d8
+PODFILE CHECKSUM: 20ad85ad828226f96cc0d97bec02d5db23227ca7
 
 COCOAPODS: 1.7.3

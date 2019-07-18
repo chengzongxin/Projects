@@ -11,6 +11,8 @@
 #import "DouYinCell.h"
 #import "NetworkRequest.h"
 #import "Downloader.h"
+#import "LoadMoreControl.h"
+#import "Macro.h"
 
 @interface DouYinViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -19,6 +21,10 @@
 @property (copy, nonatomic) NSArray <DynamicListModelDataList *>*datas;
 
 @property (assign, nonatomic) int currentIndex;
+
+@property (assign, nonatomic) int currentPage;
+
+@property (nonatomic, strong) LoadMoreControl                   *loadMore;
 
 @end
 
@@ -38,6 +44,7 @@
     [super viewDidLoad];
     
     self.currentIndex = 0;
+    self.currentPage = 1;
     
     [self.view addSubview:self.tableView];
     
@@ -142,8 +149,16 @@
 
 #pragma mark - Private
 - (void)loadDatas {
+    [self _loadData:1];
+}
+
+- (void)loadDatas:(int)page {
+    [self _loadData:page];
+}
+
+- (void)_loadData:(int)page {
     NSString *url = @"http://service.matafy.com/community/dynamic/recommend/list";
-    NSDictionary *para = @{@"dynamicType":@"VIDEO",@"page":@1,@"size":@30};
+    NSDictionary *para = @{@"dynamicType":@"VIDEO",@"page":@(page),@"size":@5};
     [NetworkRequest postWithUrl:url para:para dataHandle:^(NSArray <DynamicListModelDataList *> *data) {
         self.datas = data;
         [self.tableView reloadData];
@@ -161,6 +176,14 @@
         _tableView.dataSource = self;
         _tableView.delegate = self;
         [_tableView registerClass:DouYinCell.class forCellReuseIdentifier:NSStringFromClass([DouYinCell class])];
+        
+        _loadMore = [[LoadMoreControl alloc] initWithFrame:CGRectMake(0, 100, SCREEN_WIDTH, 50) surplusCount:1];
+        __weak __typeof(self) wself = self;
+        
+        [_loadMore setOnLoad:^{
+            [wself loadDatas:wself.currentPage++];
+        }];
+        [_tableView addSubview:_loadMore];
     }
     return _tableView;
 }
