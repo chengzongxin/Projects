@@ -43,6 +43,8 @@ NS_ASSUME_NONNULL_BEGIN
                              cancelBlock:(WebDownloaderCancelBlock)cancelBlock
                             isBackground:(BOOL)isBackground;
 
+- (void)cancelAllOperation;
+
 @end
 
 

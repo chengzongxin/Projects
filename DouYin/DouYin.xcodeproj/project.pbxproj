@@ -27,6 +27,8 @@
 		59BCC64522CEF3CD00888AB4 /* DouYinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59BCC64422CEF3CD00888AB4 /* DouYinViewController.m */; };
 		59BCC68622CF3DE300888AB4 /* AVPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 59BCC68522CF3DE300888AB4 /* AVPlayerView.m */; };
 		59BCC68C22CF481000888AB4 /* Downloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 59BCC68B22CF481000888AB4 /* Downloader.m */; };
+		59D7E0DA22E06F120075DB0F /* FeatureTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59D7E0D922E06F120075DB0F /* FeatureTableViewController.m */; };
+		59D7E0DD22E06FF70075DB0F /* PlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59D7E0DC22E06FF70075DB0F /* PlayerViewController.m */; };
 		E74D0C2C7D62C81435E3A91A /* Pods_DouYin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF7139BCB32AF57EE67E0313 /* Pods_DouYin.framework */; };
 		FBBBC71494FEB1F1AFB7DFD0 /* Pods_DouYinTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AF71E7B9115CA1C47204931 /* Pods_DouYinTests.framework */; };
 /* End PBXBuildFile section */
@@ -89,6 +91,10 @@
 		59BCC68522CF3DE300888AB4 /* AVPlayerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AVPlayerView.m; sourceTree = "<group>"; };
 		59BCC68A22CF481000888AB4 /* Downloader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Downloader.h; sourceTree = "<group>"; };
 		59BCC68B22CF481000888AB4 /* Downloader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Downloader.m; sourceTree = "<group>"; };
+		59D7E0D822E06F120075DB0F /* FeatureTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeatureTableViewController.h; sourceTree = "<group>"; };
+		59D7E0D922E06F120075DB0F /* FeatureTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeatureTableViewController.m; sourceTree = "<group>"; };
+		59D7E0DB22E06FF70075DB0F /* PlayerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayerViewController.h; sourceTree = "<group>"; };
+		59D7E0DC22E06FF70075DB0F /* PlayerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayerViewController.m; sourceTree = "<group>"; };
 		5AF71E7B9115CA1C47204931 /* Pods_DouYinTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DouYinTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F544A7762877036A098887E /* Pods_DouYinUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DouYinUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7419261608662C64AE9D65AB /* Pods-DouYin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DouYin.debug.xcconfig"; path = "Target Support Files/Pods-DouYin/Pods-DouYin.debug.xcconfig"; sourceTree = "<group>"; };
@@ -175,8 +181,9 @@
 			children = (
 				598C7F8C22C21D74007DB428 /* AppDelegate.h */,
 				598C7F8D22C21D74007DB428 /* AppDelegate.m */,
-				59BCC64122CEF39F00888AB4 /* ZFPlayer */,
 				59BCC64222CEF3B800888AB4 /* DouYin */,
+				59BCC64122CEF39F00888AB4 /* ZFPlayer */,
+				59D7E0D722E06EF70075DB0F /* Features */,
 				598C7FC922C2246F007DB428 /* NetworkRequest.h */,
 				598C7FCA22C2246F007DB428 /* NetworkRequest.m */,
 				598C7FD022C236DA007DB428 /* DynamicRecommendListModel.h */,
@@ -239,6 +246,17 @@
 				59BCC68B22CF481000888AB4 /* Downloader.m */,
 			);
 			path = DouYin;
+			sourceTree = "<group>";
+		};
+		59D7E0D722E06EF70075DB0F /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				59D7E0D822E06F120075DB0F /* FeatureTableViewController.h */,
+				59D7E0D922E06F120075DB0F /* FeatureTableViewController.m */,
+				59D7E0DB22E06FF70075DB0F /* PlayerViewController.h */,
+				59D7E0DC22E06FF70075DB0F /* PlayerViewController.m */,
+			);
+			path = Features;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -462,6 +480,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59D7E0DA22E06F120075DB0F /* FeatureTableViewController.m in Sources */,
 				598C7F9122C21D74007DB428 /* ViewController.m in Sources */,
 				598C7FC022C220EE007DB428 /* ZFDouYinCell.m in Sources */,
 				59BCC68C22CF481000888AB4 /* Downloader.m in Sources */,
@@ -475,6 +494,7 @@
 				598C7FCE22C2362C007DB428 /* DynamicListModel.m in Sources */,
 				59BCC68622CF3DE300888AB4 /* AVPlayerView.m in Sources */,
 				594791F122DF251700CBB35E /* DouYinCell.m in Sources */,
+				59D7E0DD22E06FF70075DB0F /* PlayerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

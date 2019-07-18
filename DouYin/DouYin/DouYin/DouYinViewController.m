@@ -10,12 +10,13 @@
 #import "AVPlayerView.h"
 #import "DouYinCell.h"
 #import "NetworkRequest.h"
+#import "Downloader.h"
 
 @interface DouYinViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (strong, nonatomic) UITableView *tableView;
 
-@property (copy, nonatomic) NSArray *datas;
+@property (copy, nonatomic) NSArray <DynamicListModelDataList *>*datas;
 
 @property (assign, nonatomic) int currentIndex;
 
@@ -24,6 +25,15 @@
 @implementation DouYinViewController
 
 #pragma mark - Lifecycle (dealloc init viewDidLoad memoryWarning...)
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    // 停止下载
+    [[Downloader sharedDownloader] cancelAllOperation];
+    // 停止正在播放的cell
+    DouYinCell *oldCell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:self.currentIndex inSection:0]];
+    [oldCell.playerView pause];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     

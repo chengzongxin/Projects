@@ -113,6 +113,13 @@ dispatch_semaphore_signal(semaphore);
     return downloadOperation;
 }
 
+- (void)cancelAllOperation{
+    [_downloadConcurrentQueue cancelAllOperations];
+    [_downloadSerialQueue cancelAllOperations];
+    [_downloadBackgroundQueue cancelAllOperations];
+    [_downloadPriorityHighQueue cancelAllOperations];
+}
+
 //更新当前正在执行的队列,保证downloadPriorityHighQueue执行任务时downloadBackgroundQueue暂停
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
     if ([keyPath isEqualToString:@"operations"]) {
