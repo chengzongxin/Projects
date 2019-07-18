@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import <CocoaLumberjack/CocoaLumberjack.h>
+#import "MyCustomFormatter.h"
 
 @interface AppDelegate ()
 
@@ -24,13 +25,8 @@
     fileLogger.rollingFrequency = 60 * 60 * 24; // 24 hour rolling
     fileLogger.logFileManager.maximumNumberOfLogFiles = 7;
     [DDLog addLogger:fileLogger];
-    
-    
-#if DEBUG
-    static const DDLogLevel ddLogLevel = DDLogLevelVerbose;
-#else
-    static const DDLogLevel ddLogLevel = DDLogLevelWarning;
-#endif
+
+    [DDOSLogger sharedInstance].logFormatter = [[MyCustomFormatter alloc] init];
     
     DDLogVerbose(@"Verbose");
 //    DDLogDebug(@"Debug");

@@ -177,7 +177,10 @@
 
 //  该函数表示代理类是否可以处理该请求，这里需要返回True表示可以处理该请求，然后在这里保存所有发出的请求，然后发出我们自己构造的NSUrlRequest。
 - (BOOL)resourceLoader:(AVAssetResourceLoader *)resourceLoader shouldWaitForLoadingOfRequestedResource:(AVAssetResourceLoadingRequest *)loadingRequest{
-    NSLog(@"loadingRequest = %@",loadingRequest);
+//    DDLogVerbose(@"loadingRequest = %@",loadingRequest);
+//    DDLogVerbose(loadingRequest);
+    DDLogVerbose(@"loadingRequest:%@", loadingRequest);
+//    NSLog(@"loadingRequest = %@",loadingRequest);
     
     //创建用于下载视频源的NSURLSessionDataTask，当前方法会多次调用，所以需判断self.task == nil
     if (!self.downloadOperation) {
@@ -212,7 +215,7 @@
         [self processPendingRequests];
     } completedBlock:^(NSData *data, NSError *error, BOOL finished) {
         if(!error && finished) {
-            NSLog(@"download finish");
+            DDLogVerbose(@"download finish");
             //            [loadingRequest.dataRequest respondWithData:data];
             //下载完毕，将缓存数据保存到本地
             NSString *file = [NSString stringWithFormat:@"/Users/Joe/Desktop/download/douyin_%.0f.mp4",[NSDate date].timeIntervalSince1970];
@@ -301,7 +304,7 @@
     if(extension) {
         cachePathForKey = [cachePathForKey stringByAppendingFormat:@".%@", extension];
     }
-    NSLog(@"%@",cachePathForKey);
+    DDLogVerbose(@"%@",cachePathForKey);
     return cachePathForKey;
 }
 

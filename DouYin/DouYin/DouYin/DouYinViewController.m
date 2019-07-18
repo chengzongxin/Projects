@@ -45,8 +45,15 @@
     
     self.currentIndex = 0;
     self.currentPage = 1;
-    
     [self.view addSubview:self.tableView];
+    if (@available(iOS 11.0, *)) {
+        self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    } else {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+        self.automaticallyAdjustsScrollViewInsets = NO;
+#pragma clang diagnostic pop
+    }
     
     [self loadDatas];
     
@@ -79,7 +86,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSLog(@"%@",indexPath.description);
+    DDLogVerbose(@"%@",indexPath.description);
     DouYinCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([DouYinCell class])];
     cell.backgroundColor = [UIColor colorWithRed:arc4random()%255/255.0 green:arc4random()%255/255.0 blue:arc4random()%255/255.0 alpha:1];
     cell.model = self.datas[indexPath.row];
@@ -176,7 +183,7 @@
         _tableView.dataSource = self;
         _tableView.delegate = self;
         [_tableView registerClass:DouYinCell.class forCellReuseIdentifier:NSStringFromClass([DouYinCell class])];
-        
+//        _tableView.contentInset = UIEdgeInsetsZero;
         _loadMore = [[LoadMoreControl alloc] initWithFrame:CGRectMake(0, 100, SCREEN_WIDTH, 50) surplusCount:1];
         __weak __typeof(self) wself = self;
         

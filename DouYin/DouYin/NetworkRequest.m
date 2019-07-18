@@ -26,7 +26,7 @@
 
     } success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary *responseObject) {
 
-        NSLog(@"Success: 参数是 %@,接口url是 %@ 请求成功,结果是 %@",para,url,[responseObject mj_JSONString]);
+        DDLogDebug(@"Success: 参数是 %@,接口url是 %@ 请求成功,结果是 %@",para,url,[responseObject mj_JSONString]);
 
         [DynamicRecommendListModel mj_setupObjectClassInArray:^NSDictionary *{
             return @{@"data" : [DynamicListModelDataList class]};
