@@ -40,6 +40,49 @@
     
 //    [self communication];
     
+//    [self customOperation];
+    
+    [self queueSuspend];
+}
+
+- (void)queueSuspend{
+    NSOperationQueue *queue1 = [[NSOperationQueue alloc] init];
+    NSOperationQueue *queue2 = [[NSOperationQueue alloc] init];
+    
+    NSBlockOperation *op1 = [NSBlockOperation blockOperationWithBlock:^{
+        for (int i = 0; i < 10; i++) {
+            [NSThread sleepForTimeInterval:2]; // 模拟耗时操作
+            NSLog(@"q1-time:%d--%@",i, [NSThread currentThread]); // 打印当前线程
+        }
+    }];
+    NSBlockOperation *op2 = [NSBlockOperation blockOperationWithBlock:^{
+        for (int i = 0; i < 10; i++) {
+            [NSThread sleepForTimeInterval:2]; // 模拟耗时操作
+            NSLog(@"q2-time:%d--%@",i, [NSThread currentThread]); // 打印当前线程
+        }
+    }];
+    
+    
+    op1.queuePriority = NSOperationQueuePriorityVeryLow;
+    op2.queuePriority = NSOperationQueuePriorityVeryHigh;
+    
+    queue1.qualityOfService = NSQualityOfServiceDefault;
+    queue2.qualityOfService = NSQualityOfServiceUserInteractive;
+    
+    queue1.suspended = YES;
+    [queue1 addOperation:op1];
+    [queue2 addOperation:op2];
+    
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        queue1.suspended = NO;
+    });
+}
+
+/**
+ 自定义线程
+ */
+- (void)customOperation {
     NSString *imgUrl = @"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1562612860471&di=c9732b1711ca76dd8ee9155e230ebf10&imgtype=0&src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fimages%2F20190615%2Fce0b3c83f12a4a119ca9a63d3a2c0ae5.jpeg";
     
     DownloadOperation *op = [DownloadOperation downloadImageWithURLString:imgUrl andFinishBlock:^(UIImage * _Nonnull img) {
@@ -54,7 +97,7 @@
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [op cancel];
         
-//        [queue cancelAllOperations];
+        //        [queue cancelAllOperations];
     });
 }
 
