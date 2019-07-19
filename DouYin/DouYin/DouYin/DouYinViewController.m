@@ -86,9 +86,13 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    DDLogVerbose(@"%@",indexPath.description);
+    
     DouYinCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([DouYinCell class])];
-    cell.backgroundColor = [UIColor colorWithRed:arc4random()%255/255.0 green:arc4random()%255/255.0 blue:arc4random()%255/255.0 alpha:1];
+    if (cell.tag == 888) {
+        
+        cell.tag = indexPath.row;
+    }
+    DDLogInfo(@"cellForRowAtIndexPath %zd,%@",cell.tag,indexPath.description);
     cell.model = self.datas[indexPath.row];
     [cell startDownloadBackgroundTask];
     return cell;

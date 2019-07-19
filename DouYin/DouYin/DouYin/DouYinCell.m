@@ -47,6 +47,7 @@
     [_playerStatusBar setHidden:YES];
     [self addSubview:_playerStatusBar];
     
+    self.tag = 888;
 }
 
 //更新AVPlayer状态，当前播放则暂停，当前暂停则播放
@@ -57,7 +58,7 @@
 - (void)setModel:(DynamicListModelDataList *)model{
     _model = model;
     
-    _titleLabel.text = model.mediaContentList.lastObject.url;
+    _titleLabel.text = [NSString stringWithFormat:@"%zd-%@",self.tag,model.mediaContentList.lastObject.url];
 }
 
 - (void)autoPlay{
