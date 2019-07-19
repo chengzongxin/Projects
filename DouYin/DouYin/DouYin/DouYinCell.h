@@ -27,6 +27,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)startDownloadBackgroundTask;
 
+- (void)autoPlay;
+
 @end
 
 NS_ASSUME_NONNULL_END

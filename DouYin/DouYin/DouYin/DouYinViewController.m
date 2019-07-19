@@ -137,17 +137,7 @@
         //获取当前显示的cell
         DouYinCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:newIndex inSection:0]];
         [cell startDownloadForegroundTask];
-        __weak typeof (cell) wcell = cell;
-        //判断当前cell的视频源是否已经准备播放
-        if(cell.isPlayerReady) {
-            //播放视频
-            [wcell.playerView play];
-        }else {
-            //当前cell的视频源还未准备好播放，则实现cell的OnPlayerReady Block 用于等待视频准备好后通知播放
-            cell.onPlayerReady = ^{
-                [wcell.playerView play];
-            };
-        }
+        [cell autoPlay];
     } else {
         return [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
     }
@@ -169,9 +159,12 @@
     [NetworkRequest postWithUrl:url para:para dataHandle:^(NSArray <DynamicListModelDataList *> *data) {
         self.datas = data;
         [self.tableView reloadData];
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            self.currentIndex = 0;
-        });
+        [self.loadMore endLoading];
+        if (page == 1) {
+            DouYinCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+            [cell startDownloadForegroundTask];
+            [cell autoPlay];
+        }
     }];
 }
 

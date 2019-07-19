@@ -46,7 +46,6 @@
     
 }
 
-
 //更新AVPlayer状态，当前播放则暂停，当前暂停则播放
 - (void)tap:(UITapGestureRecognizer *)tap{
     [_playerView updatePlayerState];
@@ -54,6 +53,20 @@
 
 - (void)setModel:(DynamicListModelDataList *)model{
     _model = model;
+}
+
+- (void)autoPlay{
+    //判断当前cell的视频源是否已经准备播放
+    if(self.isPlayerReady) {
+        //播放视频
+        [self.playerView play];
+    }else {
+        //当前cell的视频源还未准备好播放，则实现cell的OnPlayerReady Block 用于等待视频准备好后通知播放
+        __weak typeof(self) ws = self;
+        self.onPlayerReady = ^{
+            [ws.playerView play];
+        };
+    }
 }
 
 - (void)onPlayItemStatusUpdate:(AVPlayerItemStatus)status{
