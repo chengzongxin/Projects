@@ -43,6 +43,14 @@ NS_ASSUME_NONNULL_BEGIN
                              cancelBlock:(WebDownloaderCancelBlock)cancelBlock
                             isBackground:(BOOL)isBackground;
 
+- (WebDownloadOperation *)downloadWithURL:(NSURL *)url
+                                   header:(NSDictionary *)header
+                            responseBlock:(WebDownloaderResponseBlock)responseBlock
+                            progressBlock:(WebDownloaderProgressBlock)progressBlock
+                           completedBlock:(WebDownloaderCompletedBlock)completedBlock
+                              cancelBlock:(WebDownloaderCancelBlock)cancelBlock
+                             isBackground:(BOOL)isBackground;
+
 - (void)cancelAllOperation;
 
 @end

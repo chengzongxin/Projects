@@ -133,6 +133,7 @@
         int newIndex = [change[NSKeyValueChangeNewKey] intValue];
         // 停止旧的播放
         DouYinCell *oldCell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:oldIndex inSection:0]];
+        [oldCell.playerView seekToBegin];
         [oldCell.playerView pause];
         //获取当前显示的cell
         DouYinCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:newIndex inSection:0]];

@@ -113,6 +113,56 @@ dispatch_semaphore_signal(semaphore);
     return downloadOperation;
 }
 
+- (WebDownloadOperation *)downloadWithURL:(NSURL *)url
+                                   header:(NSDictionary *)header
+                            responseBlock:(WebDownloaderResponseBlock)responseBlock
+                            progressBlock:(WebDownloaderProgressBlock)progressBlock
+                           completedBlock:(WebDownloaderCompletedBlock)completedBlock
+                              cancelBlock:(WebDownloaderCancelBlock)cancelBlock
+                             isBackground:(BOOL)isBackground{
+    
+    //未查找到则创建下载网络资源的WebDownloadOperation任务，并赋值组合任务WebCombineOperation
+    //初始化网络资源下载请求
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:15];
+    request.HTTPShouldUsePipelining = YES;
+    for (NSString *str in header.allKeys) {
+        [request setValue:header[str] forHTTPHeaderField:str];
+    }
+    
+    WebDownloadOperation *downloadOperation = [[WebDownloadOperation alloc] initWithRequest:request responseBlock:^(NSHTTPURLResponse *response) {
+        if(responseBlock) {
+            responseBlock(response);
+        }
+    } progressBlock:progressBlock completedBlock:^(NSData *data, NSError *error, BOOL finished) {
+        //网络资源下载完毕，处理返回数据
+        if(completedBlock) {
+            if(finished && !error) {
+                //任务完成回调
+                completedBlock(data, nil, YES);
+            }else {
+                //任务失败回调
+                completedBlock(data, error, NO);
+            }
+        }
+    } cancelBlock:^{
+        //任务取消回调
+        if(cancelBlock) {
+            cancelBlock();
+        }
+    }];
+    
+    //将下载任务添加进队列
+    if (isBackground) {
+        //添加后台下载任务
+        [self.downloadBackgroundQueue addOperation:downloadOperation];
+    } else {
+        //添加高优先级下载任务，队列中每次只执行1个任务
+        [self.downloadPriorityHighQueue cancelAllOperations];
+        [self.downloadPriorityHighQueue addOperation:downloadOperation];
+    }
+    return downloadOperation;
+}
+
 - (void)cancelAllOperation{
     [_downloadConcurrentQueue cancelAllOperations];
     [_downloadSerialQueue cancelAllOperations];

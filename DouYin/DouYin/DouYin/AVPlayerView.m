@@ -77,6 +77,10 @@
     }
 }
 
+- (void)seekToBegin {
+    [_player seekToTime:kCMTimeZero];
+}
+
 - (void)replay{
     [_player seekToTime:kCMTimeZero];
     [_player play];
@@ -177,18 +181,13 @@
 
 //  该函数表示代理类是否可以处理该请求，这里需要返回True表示可以处理该请求，然后在这里保存所有发出的请求，然后发出我们自己构造的NSUrlRequest。
 - (BOOL)resourceLoader:(AVAssetResourceLoader *)resourceLoader shouldWaitForLoadingOfRequestedResource:(AVAssetResourceLoadingRequest *)loadingRequest{
-//    DDLogVerbose(@"loadingRequest = %@",loadingRequest);
-//    DDLogVerbose(loadingRequest);
     DDLogVerbose(@"loadingRequest:%@", loadingRequest);
-//    NSLog(@"loadingRequest = %@",loadingRequest);
-    
     //创建用于下载视频源的NSURLSessionDataTask，当前方法会多次调用，所以需判断self.task == nil
     if (!self.downloadOperation) {
         //将当前的请求路径的scheme换成https，进行普通的网络请求
         NSURL *url = [self urlScheme:self.sourceScheme url:[loadingRequest.request URL].absoluteString];
         [self startDownloadTask:url isBackground:YES];
     }
-    
     //将视频加载请求依此存储到pendingRequests中，因为当前方法会多次调用，所以需用数组缓存
     [_pendingRequests addObject:loadingRequest];
     
@@ -208,15 +207,51 @@
 //    DDLogInfo(@"url:%@,data:%lu",URL.absoluteString,(unsigned long)self.data.length);
 //    if (self.data.length > 1024*1024) {
 //        DDLogInfo(@"data > 1M");
-//        if (!isBackground) {
-//            [self play];
-//            self.downloadOperation
+//
+//        NSString *rangeHeaderStr = [NSString stringWithFormat:@"byes=%lu-%llu",(unsigned long)self.data.length,self.expectedContentLength-self.data.length];
+//        NSDictionary *header = @{@"Range":rangeHeaderStr};
+//
+//        if(self.downloadOperation) {
+//            // 取消正在下载的任务
+//            [self.downloadOperation cancel];
+//            self.downloadOperation = nil;
 //        }
+//        // 加载后续数据
+//        DDLogInfo(@"URL:%@,header:%@",URL,header);
+//        self.downloadOperation = [[Downloader sharedDownloader] downloadWithURL:URL header:header responseBlock:^(NSHTTPURLResponse *response) {
+////            self.data = [NSMutableData data];
+////            self.mimeType = response.MIMEType;
+////            self.expectedContentLength = response.expectedContentLength;
+////            [self processPendingRequests];
+//        } progressBlock:^(NSInteger receivedSize, NSInteger expectedSize, NSData *data) {
+//            [self.data appendData:data];
+//            //处理视频数据加载请求
+//            [self processPendingRequests];
+//        } completedBlock:^(NSData *data, NSError *error, BOOL finished) {
+//            if(!error && finished) {
+//                DDLogVerbose(@"download finish");
+//                //            [loadingRequest.dataRequest respondWithData:data];
+//                //下载完毕，将缓存数据保存到本地
+//                //            NSString *file = [NSString stringWithFormat:@"/Users/Joe/Desktop/download/douyin_%.0f.mp4",[NSDate date].timeIntervalSince1970];
+//                //            [self.data writeToFile:file atomically:YES];
+//                //            [self.data writeToFile:@"/Users/Joe/Desktop/download/douyin.mp4" atomically:YES];
+//                //            [[WebCacheHelpler sharedWebCache] storeDataToDiskCache:wself.data key:wself.cacheFileKey extension:@"mp4"];
+//                //            [self storeDataToDiskCache:self.data key:url.absoluteString extension:@"mp4"];
+//            }
+//        } cancelBlock:^{
+//
+//        } isBackground:isBackground];
+//
+////        if (!isBackground) {
+////            [self play];
+////
+////        }
 //        return;
 //    }else{
 //        DDLogInfo(@"data < 1M");
 //
 //    }
+    
     if(self.downloadOperation) {
         DDLogInfo(@"cancel op");
         // 取消正在下载的任务

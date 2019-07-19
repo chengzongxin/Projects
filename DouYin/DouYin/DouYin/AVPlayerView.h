@@ -44,6 +44,9 @@ NS_ASSUME_NONNULL_BEGIN
 //重新播放
 - (void)replay;
 
+//设置播放进度到最开始
+- (void)seekToBegin;
+
 @end
 
 NS_ASSUME_NONNULL_END
