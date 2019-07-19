@@ -80,14 +80,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1TG-59-fBf">
-                                <rect key="frame" x="69" y="572" width="96" height="21"/>
+                                <rect key="frame" x="16" y="601" width="96" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="OTu-fu-hrG">
+                                <rect key="frame" x="88" y="597" width="189" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="sliderChange:" destination="psd-Vq-Ieu" eventType="valueChanged" id="gC5-qK-vUr"/>
+                                </connections>
+                            </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sHi-uj-lTm">
-                                <rect key="frame" x="221" y="572" width="92" height="21"/>
+                                <rect key="frame" x="292" y="600" width="92" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -99,6 +106,7 @@
                     </view>
                     <connections>
                         <outlet property="currentLabel" destination="1TG-59-fBf" id="MvT-Mf-7nF"/>
+                        <outlet property="slider" destination="OTu-fu-hrG" id="vOv-TW-nRa"/>
                         <outlet property="totalLabel" destination="sHi-uj-lTm" id="qLl-bU-2RT"/>
                     </connections>
                 </viewController>
