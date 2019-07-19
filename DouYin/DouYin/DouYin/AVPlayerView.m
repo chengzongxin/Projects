@@ -86,6 +86,56 @@
     [_player play];
 }
 
+- (void)seekToProgress:(long)progress{
+//        DDLogInfo(@"url:%@,data:%lu",URL.absoluteString,(unsigned long)self.data.length);
+        if (self.data.length > 1024*1024) {
+            DDLogInfo(@"data > 1M");
+    
+            NSString *rangeHeaderStr = [NSString stringWithFormat:@"byes=%lu-%llu",progress,self.expectedContentLength-self.data.length];
+            NSDictionary *header = @{@"Range":rangeHeaderStr};
+    
+            if(self.downloadOperation) {
+                // 取消正在下载的任务
+                [self.downloadOperation cancel];
+                self.downloadOperation = nil;
+            }
+            // 加载后续数据
+            DDLogInfo(@"URL:%@,header:%@",self.sourceURL,header);
+            self.downloadOperation = [[Downloader sharedDownloader] downloadWithURL:self.sourceURL header:header responseBlock:^(NSHTTPURLResponse *response) {
+    //            self.data = [NSMutableData data];
+    //            self.mimeType = response.MIMEType;
+    //            self.expectedContentLength = response.expectedContentLength;
+    //            [self processPendingRequests];
+            } progressBlock:^(NSInteger receivedSize, NSInteger expectedSize, NSData *data) {
+                [self.data appendData:data];
+                //处理视频数据加载请求
+                [self processPendingRequests];
+            } completedBlock:^(NSData *data, NSError *error, BOOL finished) {
+                if(!error && finished) {
+                    DDLogVerbose(@"download finish");
+                    //            [loadingRequest.dataRequest respondWithData:data];
+                    //下载完毕，将缓存数据保存到本地
+                    //            NSString *file = [NSString stringWithFormat:@"/Users/Joe/Desktop/download/douyin_%.0f.mp4",[NSDate date].timeIntervalSince1970];
+                    //            [self.data writeToFile:file atomically:YES];
+                    //            [self.data writeToFile:@"/Users/Joe/Desktop/download/douyin.mp4" atomically:YES];
+                    //            [[WebCacheHelpler sharedWebCache] storeDataToDiskCache:wself.data key:wself.cacheFileKey extension:@"mp4"];
+                    //            [self storeDataToDiskCache:self.data key:url.absoluteString extension:@"mp4"];
+                }
+            } cancelBlock:^{
+    
+            } isBackground:NO];
+    
+    //        if (!isBackground) {
+    //            [self play];
+    //
+    //        }
+            return;
+        }else{
+            DDLogInfo(@"data < 1M");
+    
+        }
+}
+
 - (void)setPlayerUrl:(NSString *)url {
     //播放路径
     self.sourceURL = [NSURL URLWithString:url];

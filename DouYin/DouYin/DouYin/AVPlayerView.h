@@ -47,6 +47,8 @@ NS_ASSUME_NONNULL_BEGIN
 //设置播放进度到最开始
 - (void)seekToBegin;
 
+- (void)seekToProgress:(long)progress;
+
 @end
 
 NS_ASSUME_NONNULL_END
