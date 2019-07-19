@@ -146,27 +146,31 @@
 
 #pragma mark - Private
 - (void)loadDatas {
-    [self _loadData:1];
-}
-
-- (void)loadDatas:(int)page {
-    [self _loadData:page];
-}
-
-- (void)_loadData:(int)page {
     NSString *url = @"http://service.matafy.com/community/dynamic/recommend/list";
-    NSDictionary *para = @{@"dynamicType":@"VIDEO",@"page":@(page),@"size":@5};
+    NSDictionary *para = @{@"dynamicType":@"VIDEO",@"page":@(1),@"size":@5};
     [NetworkRequest postWithUrl:url para:para dataHandle:^(NSArray <DynamicListModelDataList *> *data) {
         self.datas = data;
         [self.tableView reloadData];
         [self.loadMore endLoading];
-        if (page == 1) {
-            DouYinCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
-            [cell startDownloadForegroundTask];
-            [cell autoPlay];
-        }
+        
+        DouYinCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+        [cell startDownloadForegroundTask];
+        [cell autoPlay];
+        
     }];
 }
+
+- (void)loadDatas:(int)page {
+    NSString *url = @"http://service.matafy.com/community/dynamic/recommend/list";
+    NSDictionary *para = @{@"dynamicType":@"VIDEO",@"page":@(page),@"size":@5};
+    [NetworkRequest postWithUrl:url para:para dataHandle:^(NSArray <DynamicListModelDataList *> *data) {
+        self.datas = [self.datas arrayByAddingObjectsFromArray:data];
+        [self.tableView reloadData];
+        [self.loadMore endLoading];
+        
+    }];
+}
+
 
 #pragma mark - Getters and Setters
 - (UITableView *)tableView{

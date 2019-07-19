@@ -204,6 +204,26 @@
 #pragma mark - Private
 //开始视频资源下载任务
 - (void)startDownloadTask:(NSURL *)URL isBackground:(BOOL)isBackground {
+    // 已请求1M数据
+//    DDLogInfo(@"url:%@,data:%lu",URL.absoluteString,(unsigned long)self.data.length);
+//    if (self.data.length > 1024*1024) {
+//        DDLogInfo(@"data > 1M");
+//        if (!isBackground) {
+//            [self play];
+//            self.downloadOperation
+//        }
+//        return;
+//    }else{
+//        DDLogInfo(@"data < 1M");
+//
+//    }
+    if(self.downloadOperation) {
+        DDLogInfo(@"cancel op");
+        // 取消正在下载的任务
+        [self.downloadOperation cancel];
+        self.downloadOperation = nil;
+    }
+    
     self.downloadOperation = [[Downloader sharedDownloader] downloadWithURL:URL responseBlock:^(NSHTTPURLResponse *response) {
         self.data = [NSMutableData data];
         self.mimeType = response.MIMEType;
@@ -218,8 +238,8 @@
             DDLogVerbose(@"download finish");
             //            [loadingRequest.dataRequest respondWithData:data];
             //下载完毕，将缓存数据保存到本地
-            NSString *file = [NSString stringWithFormat:@"/Users/Joe/Desktop/download/douyin_%.0f.mp4",[NSDate date].timeIntervalSince1970];
-            [self.data writeToFile:file atomically:YES];
+//            NSString *file = [NSString stringWithFormat:@"/Users/Joe/Desktop/download/douyin_%.0f.mp4",[NSDate date].timeIntervalSince1970];
+//            [self.data writeToFile:file atomically:YES];
             //            [self.data writeToFile:@"/Users/Joe/Desktop/download/douyin.mp4" atomically:YES];
             //            [[WebCacheHelpler sharedWebCache] storeDataToDiskCache:wself.data key:wself.cacheFileKey extension:@"mp4"];
             //            [self storeDataToDiskCache:self.data key:url.absoluteString extension:@"mp4"];

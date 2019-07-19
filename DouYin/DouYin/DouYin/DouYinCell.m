@@ -36,10 +36,13 @@
     _playerView.delegate = self;
     [self addSubview:_playerView];
     
+    _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, SCREEN_HEIGHT - 150, SCREEN_WIDTH, 50)];
+    _titleLabel.numberOfLines = 0;
+    _titleLabel.textColor = UIColor.whiteColor;
+    [self addSubview:_titleLabel];
+    
     //init player status bar
-    CGFloat screenW = UIScreen.mainScreen.bounds.size.width;
-    CGFloat screenH = UIScreen.mainScreen.bounds.size.height;
-    _playerStatusBar = [[UIView alloc] initWithFrame:CGRectMake(screenW - 0.5, screenH - 83 , 1, 0.5)];
+    _playerStatusBar = [[UIView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH - 0.5, SCREEN_HEIGHT - 83 , 1, 0.5)];
     _playerStatusBar.backgroundColor = UIColor.whiteColor;
     [_playerStatusBar setHidden:YES];
     [self addSubview:_playerStatusBar];
@@ -53,6 +56,8 @@
 
 - (void)setModel:(DynamicListModelDataList *)model{
     _model = model;
+    
+    _titleLabel.text = model.mediaContentList.lastObject.url;
 }
 
 - (void)autoPlay{

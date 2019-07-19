@@ -12,7 +12,7 @@
 
 #import <CocoaLumberjack/CocoaLumberjack.h>
 #if DEBUG
-static const DDLogLevel ddLogLevel = DDLogLevelVerbose;
+static const DDLogLevel ddLogLevel = DDLogLevelInfo;
 #else
 static const DDLogLevel ddLogLevel = DDLogLevelWarning;
 #endif

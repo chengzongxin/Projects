@@ -16,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (strong, nonatomic) AVPlayerView *playerView;
 
+@property (strong, nonatomic) UILabel *titleLabel;
+
 @property (strong, nonatomic) UIView *playerStatusBar;
 
 @property (strong, nonatomic) DynamicListModelDataList *model;
