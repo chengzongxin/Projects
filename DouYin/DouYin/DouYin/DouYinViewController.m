@@ -161,8 +161,6 @@
         DouYinCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
         [cell startDownloadForegroundTask];
         [cell autoPlay];
-        
-        
     }];
 }
 

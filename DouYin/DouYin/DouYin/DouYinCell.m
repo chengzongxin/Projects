@@ -44,7 +44,7 @@
     [self addSubview:_titleLabel];
     
     //init player status bar
-    _playerStatusBar = [[UIView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH - 0.5, SCREEN_HEIGHT - 83 , 1, 0.5)];
+    _playerStatusBar = [[UIView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH * 0.5, SCREEN_HEIGHT - 83 , 1, 0.5)];
     _playerStatusBar.backgroundColor = UIColor.whiteColor;
     [_playerStatusBar setHidden:YES];
     [self addSubview:_playerStatusBar];
