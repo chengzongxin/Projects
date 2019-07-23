@@ -10,7 +10,7 @@
 #import "Downloader.h"
 #import <MobileCoreServices/MobileCoreServices.h>
 #import <CommonCrypto/CommonCrypto.h>
-
+#import "StorageManager.h"
 
 @interface AVPlayerView ()<AVAssetResourceLoaderDelegate>
 
@@ -110,10 +110,10 @@
     NSURLComponents *components = [[NSURLComponents alloc] initWithURL:self.sourceURL resolvingAgainstBaseURL:NO];
     self.sourceScheme = components.scheme;
     // 查找缓存
-    NSString *path = [self diskCachePathForKey:url extension:@"mp4"];
-    BOOL hasCache = [[NSFileManager defaultManager] fileExistsAtPath:path];
-    if (hasCache) {
-        self.sourceURL = [NSURL fileURLWithPath:path];
+    NSString *filePath = [[StorageManager manager] queryDataForKey:url extension:@"mp4"];
+    if (filePath) {
+        self.sourceURL = [NSURL fileURLWithPath:filePath];
+        DDLogInfo(@"%@ file has download",filePath);
     }else{
         // 替换streaming
         self.sourceURL = [self urlScheme:@"streaming" url:url];
@@ -216,6 +216,7 @@
     //AVPlayerItem.status
     if([keyPath isEqualToString:@"status"]) {
         if(_playerItem.status == AVPlayerItemStatusFailed) {
+            DDLogWarn(@"Video status failed");
 //            if(!_retried) {
 //                [self retry];
 //            }
@@ -317,6 +318,12 @@
         self.downloadOperation = nil;
     }
     
+    NSData *data = [[StorageManager manager] retrieveDataForKey:URL.absoluteString extension:@"mp4"];
+    if (data) {
+        DDLogInfo(@"%@ url is download!",URL.absoluteString);
+        return;
+    }
+    
     self.downloadOperation = [[Downloader sharedDownloader] downloadWithURL:URL responseBlock:^(NSHTTPURLResponse *response) {
         self.data = [NSMutableData data];
         self.mimeType = response.MIMEType;
@@ -328,15 +335,10 @@
         [self processPendingRequests];
     } completedBlock:^(NSData *data, NSError *error, BOOL finished) {
         if(!error && finished) {
+            //下载完毕，将缓存数据保存到本地
+            [[StorageManager manager] storeData:data key:URL.absoluteString extension:@"mp4"];
             DDLogInfo(@"download finish");
             DDLogInfo(@"%@",[Downloader sharedDownloader].downloadBackgroundQueue.operations);
-            //            [loadingRequest.dataRequest respondWithData:data];
-            //下载完毕，将缓存数据保存到本地
-//            NSString *file = [NSString stringWithFormat:@"/Users/Joe/Desktop/download/douyin_%.0f.mp4",[NSDate date].timeIntervalSince1970];
-//            [self.data writeToFile:file atomically:YES];
-            //            [self.data writeToFile:@"/Users/Joe/Desktop/download/douyin.mp4" atomically:YES];
-            //            [[WebCacheHelpler sharedWebCache] storeDataToDiskCache:wself.data key:wself.cacheFileKey extension:@"mp4"];
-            //            [self storeDataToDiskCache:self.data key:url.absoluteString extension:@"mp4"];
         }
     } cancelBlock:^{
         
@@ -396,44 +398,6 @@
     NSURLComponents *components = [[NSURLComponents alloc] initWithURL:[NSURL URLWithString:url] resolvingAgainstBaseURL:NO];
     components.scheme = scheme;
     return [components URL];
-}
-
-
-//根据key值从本地磁盘中查询缓存数据，缓存数据返回路径包含文件类型
-- (void)storeDataToDiskCache:(NSData *)data key:(NSString *)key extension:(NSString *)extension {
-    if(data && key) {
-        [[NSFileManager defaultManager] createFileAtPath:[self diskCachePathForKey:key extension:extension] contents:data attributes:nil];
-    }
-}
-
-//获取key值对应的磁盘缓存文件路径，文件路径包含指定扩展名
-- (NSString *)diskCachePathForKey:(NSString *)key extension:(NSString *)extension {
-    NSString *fileName = [self md5:key];
-    
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES);
-    NSString *path = [paths lastObject];
-    NSString *diskCachePath = [NSString stringWithFormat:@"%@%@",path,@"/"];
-    NSURL *diskCacheDirectoryURL = [NSURL fileURLWithPath:diskCachePath];
-    NSString *cachePathForKey = [diskCacheDirectoryURL URLByAppendingPathComponent:fileName].path;
-    if(extension) {
-        cachePathForKey = [cachePathForKey stringByAppendingFormat:@".%@", extension];
-    }
-    DDLogVerbose(@"%@",cachePathForKey);
-    return cachePathForKey;
-}
-
-- (nullable NSString *)md5:(nullable NSString *)str {
-    if (!str) return nil;
-    
-    const char *cStr = str.UTF8String;
-    unsigned char result[CC_MD5_DIGEST_LENGTH];
-    CC_MD5(cStr, (CC_LONG)strlen(cStr), result);
-    
-    NSMutableString *md5Str = [NSMutableString string];
-    for (int i = 0; i < CC_MD5_DIGEST_LENGTH; ++i) {
-        [md5Str appendFormat:@"%02x", result[i]];
-    }
-    return md5Str;
 }
 
 

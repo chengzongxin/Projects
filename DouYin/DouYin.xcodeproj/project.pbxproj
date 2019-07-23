@@ -24,6 +24,7 @@
 		598C7FCB22C2246F007DB428 /* NetworkRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 598C7FCA22C2246F007DB428 /* NetworkRequest.m */; };
 		598C7FCE22C2362C007DB428 /* DynamicListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 598C7FCD22C2362C007DB428 /* DynamicListModel.m */; };
 		598C7FD122C236DA007DB428 /* DynamicRecommendListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 598C7FCF22C236DA007DB428 /* DynamicRecommendListModel.m */; };
+		59A8506C22E6F25500FF5BC6 /* StorageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 59A8506B22E6F25500FF5BC6 /* StorageManager.m */; };
 		59BCC64522CEF3CD00888AB4 /* DouYinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59BCC64422CEF3CD00888AB4 /* DouYinViewController.m */; };
 		59BCC68622CF3DE300888AB4 /* AVPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 59BCC68522CF3DE300888AB4 /* AVPlayerView.m */; };
 		59BCC68C22CF481000888AB4 /* Downloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 59BCC68B22CF481000888AB4 /* Downloader.m */; };
@@ -88,6 +89,8 @@
 		598C7FCD22C2362C007DB428 /* DynamicListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DynamicListModel.m; sourceTree = "<group>"; };
 		598C7FCF22C236DA007DB428 /* DynamicRecommendListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DynamicRecommendListModel.m; sourceTree = "<group>"; };
 		598C7FD022C236DA007DB428 /* DynamicRecommendListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DynamicRecommendListModel.h; sourceTree = "<group>"; };
+		59A8506A22E6F25500FF5BC6 /* StorageManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StorageManager.h; sourceTree = "<group>"; };
+		59A8506B22E6F25500FF5BC6 /* StorageManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StorageManager.m; sourceTree = "<group>"; };
 		59BCC64322CEF3CD00888AB4 /* DouYinViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DouYinViewController.h; sourceTree = "<group>"; };
 		59BCC64422CEF3CD00888AB4 /* DouYinViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DouYinViewController.m; sourceTree = "<group>"; };
 		59BCC68422CF3DE300888AB4 /* AVPlayerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AVPlayerView.h; sourceTree = "<group>"; };
@@ -260,6 +263,8 @@
 				59BCC68522CF3DE300888AB4 /* AVPlayerView.m */,
 				59BCC68A22CF481000888AB4 /* Downloader.h */,
 				59BCC68B22CF481000888AB4 /* Downloader.m */,
+				59A8506A22E6F25500FF5BC6 /* StorageManager.h */,
+				59A8506B22E6F25500FF5BC6 /* StorageManager.m */,
 			);
 			path = DouYin;
 			sourceTree = "<group>";
@@ -526,6 +531,7 @@
 				598C7FCE22C2362C007DB428 /* DynamicListModel.m in Sources */,
 				59BCC68622CF3DE300888AB4 /* AVPlayerView.m in Sources */,
 				594791F122DF251700CBB35E /* DouYinCell.m in Sources */,
+				59A8506C22E6F25500FF5BC6 /* StorageManager.m in Sources */,
 				59D7E0DD22E06FF70075DB0F /* PlayerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
