@@ -53,6 +53,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)cancelAllOperation;
 
+- (void)suspendedAllOperation;
+
+- (void)resumeAllOperation;
+
 @end
 
 

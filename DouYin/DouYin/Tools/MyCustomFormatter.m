@@ -53,11 +53,12 @@
         default                : logLevel = @"V"; break;
     }
     
-    NSString *dateAndTime = [self stringFromDate:(logMessage.timestamp)];
+//    NSString *dateAndTime = [self stringFromDate:(logMessage.timestamp)];
     NSString *logMsg = logMessage->_message;
+    NSString *function = logMessage.function;
+    NSInteger line = logMessage.line;
     
-//    return [NSString stringWithFormat:@"%@ %@ | %@", logLevel, dateAndTime, logMsg];
-    return [NSString stringWithFormat:@"%@ | %@", logLevel, logMsg];
+    return [NSString stringWithFormat:@"%@ | %@ | %zd | %@", logLevel,function,line,logMsg];
 }
 
 - (void)didAddToLogger:(id <DDLogger>)logger {

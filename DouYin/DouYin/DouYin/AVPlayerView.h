@@ -31,7 +31,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)setPlayerUrl:(NSString *)url;
 //开始视频资源下载任务
 - (void)startDownloadTask:(NSURL *)URL isBackground:(BOOL)isBackground;
-
+// 取消加载,释放播放器
+- (void)destroyPlayer;
 //更新AVPlayer状态，当前播放则暂停，当前暂停则播放
 - (void)updatePlayerState;
 

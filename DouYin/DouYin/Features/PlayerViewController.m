@@ -12,6 +12,7 @@
 @interface PlayerViewController ()<AVPlayerViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UISlider *slider;
+@property (strong, nonatomic) UIView *cacheView;
 @property (weak, nonatomic) IBOutlet UILabel *currentLabel;
 @property (weak, nonatomic) IBOutlet UILabel *totalLabel;
 @property (strong, nonatomic) AVPlayerView *playerView;
@@ -31,6 +32,11 @@
     [playerView setPlayerUrl:@"https://gss3.baidu.com/6LZ0ej3k1Qd3ote6lo7D0j9wehsv/tieba-smallvideo/607272_373beb1043e8dae94026e937085934d0.mp4"];
     
     self.playerView = playerView;
+    
+    UIView *cache = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.slider.frame.size.width, 1)];
+    cache.backgroundColor = UIColor.orangeColor;
+    [self.slider addSubview:cache];
+    self.cacheView = cache;
 }
 
 - (void)onPlayItemStatusUpdate:(AVPlayerItemStatus)status{
@@ -43,6 +49,10 @@
     self.currentLabel.text = [self unitTrans:current];
     self.totalLabel.text = [self unitTrans:total];
     self.slider.maximumValue = total;
+    
+    CGRect frame = self.cacheView.frame;
+    frame.size.width = current / total * self.slider.frame.size.width;
+    self.cacheView.frame = frame;
 }
 - (IBAction)sliderChange:(UISlider *)slider {
     [self.playerView seekToProgress:slider.value];

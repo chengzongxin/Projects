@@ -17,6 +17,8 @@
 -(void)prepareForReuse {
     [super prepareForReuse];
     
+    [_playerView destroyPlayer];
+    
     _isPlayerReady = NO;
 }
 

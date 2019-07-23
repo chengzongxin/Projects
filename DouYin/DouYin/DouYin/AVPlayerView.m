@@ -20,6 +20,7 @@
 @property (nonatomic ,strong) AVPlayerItem         *playerItem;             //视频资源载体
 @property (nonatomic ,strong) AVPlayer             *player;                 //视频播放器
 @property (nonatomic ,strong) AVPlayerLayer        *playerLayer;            //视频播放器图形化载体
+@property (nonatomic ,strong) id                   timeObserver;            //视频播放器周期性调用的观察者
 @property (nonatomic, strong) NSMutableArray       *pendingRequests;        //存储AVAssetResourceLoadingRequest的数组
 
 @property (strong, nonatomic) WebDownloadOperation *downloadOperation;      //下载操作
@@ -133,13 +134,55 @@
 }
 
 
+//取消播放
+-(void)destroyPlayer {
+    //暂停视频播放
+    [self.player pause];
+    
+    //隐藏playerLayer
+//    [_playerLayer setHidden:YES];
+    
+    //取消下载任务
+    if(_downloadOperation) {
+        [_downloadOperation cancel];
+        _downloadOperation = nil;
+    }
+    
+    //取消查找本地视频缓存数据的NSOperation任务
+//    [_queryCacheOperation cancel];
+    
+    [_playerItem removeObserver:self forKeyPath:@"status"];
+    [_player removeTimeObserver:_timeObserver];
+    
+    _player = nil;
+    _playerItem = nil;
+    _playerLayer.player = nil;
+    
+    __weak __typeof(self) wself = self;
+//    dispatch_async(self.cancelLoadingQueue, ^{
+        //取消AVURLAsset加载，这一步很重要，及时取消到AVAssetResourceLoaderDelegate视频源的加载，避免AVPlayer视频源切换时发生的错位现象
+        [wself.urlAsset cancelLoading];
+        wself.data = nil;
+        //结束所有视频数据加载请求
+        [wself.pendingRequests enumerateObjectsUsingBlock:^(id loadingRequest, NSUInteger idx, BOOL * stop) {
+            if(![loadingRequest isFinished]) {
+                [loadingRequest finishLoading];
+            }
+        }];
+        [wself.pendingRequests removeAllObjects];
+//    });
+    
+//    _retried = NO;
+    
+}
+
 #pragma kvo
 
 // 给AVPlayerLayer添加周期性调用的观察者，用于更新视频播放进度
 -(void)addProgressObserver{
     __weak __typeof(self) weakSelf = self;
     //AVPlayer添加周期性回调观察者，一秒调用一次block，用于更新视频播放进度
-    [_player addPeriodicTimeObserverForInterval:CMTimeMake(1, 1) queue:dispatch_get_main_queue() usingBlock:^(CMTime time) {
+    _timeObserver = [_player addPeriodicTimeObserverForInterval:CMTimeMake(1, 1) queue:dispatch_get_main_queue() usingBlock:^(CMTime time) {
         if(weakSelf.playerItem.status == AVPlayerItemStatusReadyToPlay) {
             //获取当前播放时间
             float current = CMTimeGetSeconds(time);
@@ -269,7 +312,6 @@
 //    }
     
     if(self.downloadOperation) {
-        DDLogInfo(@"cancel op");
         // 取消正在下载的任务
         [self.downloadOperation cancel];
         self.downloadOperation = nil;
@@ -286,7 +328,8 @@
         [self processPendingRequests];
     } completedBlock:^(NSData *data, NSError *error, BOOL finished) {
         if(!error && finished) {
-            DDLogVerbose(@"download finish");
+            DDLogInfo(@"download finish");
+            DDLogInfo(@"%@",[Downloader sharedDownloader].downloadBackgroundQueue.operations);
             //            [loadingRequest.dataRequest respondWithData:data];
             //下载完毕，将缓存数据保存到本地
 //            NSString *file = [NSString stringWithFormat:@"/Users/Joe/Desktop/download/douyin_%.0f.mp4",[NSDate date].timeIntervalSince1970];

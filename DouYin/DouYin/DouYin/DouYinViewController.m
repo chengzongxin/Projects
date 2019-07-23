@@ -152,7 +152,7 @@
 #pragma mark - Private
 - (void)loadDatas {
     NSString *url = @"http://service.matafy.com/community/dynamic/recommend/list";
-    NSDictionary *para = @{@"dynamicType":@"VIDEO",@"page":@(1),@"size":@5};
+    NSDictionary *para = @{@"dynamicType":@"VIDEO",@"page":@(1),@"size":@10};
     [NetworkRequest postWithUrl:url para:para dataHandle:^(NSArray <DynamicListModelDataList *> *data) {
         self.datas = data;
         [self.tableView reloadData];
@@ -162,12 +162,13 @@
         [cell startDownloadForegroundTask];
         [cell autoPlay];
         
+        
     }];
 }
 
 - (void)loadDatas:(int)page {
     NSString *url = @"http://service.matafy.com/community/dynamic/recommend/list";
-    NSDictionary *para = @{@"dynamicType":@"VIDEO",@"page":@(page),@"size":@5};
+    NSDictionary *para = @{@"dynamicType":@"VIDEO",@"page":@(page),@"size":@10};
     [NetworkRequest postWithUrl:url para:para dataHandle:^(NSArray <DynamicListModelDataList *> *data) {
         self.datas = [self.datas arrayByAddingObjectsFromArray:data];
         [self.tableView reloadData];

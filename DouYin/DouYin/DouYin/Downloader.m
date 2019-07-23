@@ -105,6 +105,7 @@ dispatch_semaphore_signal(semaphore);
     if (isBackground) {
         //添加后台下载任务
         [self.downloadBackgroundQueue addOperation:downloadOperation];
+        DDLogInfo(@"%@",self.downloadBackgroundQueue.operations);
     } else {
         //添加高优先级下载任务，队列中每次只执行1个任务
         [self.downloadPriorityHighQueue cancelAllOperations];
@@ -168,6 +169,20 @@ dispatch_semaphore_signal(semaphore);
     [_downloadSerialQueue cancelAllOperations];
     [_downloadBackgroundQueue cancelAllOperations];
     [_downloadPriorityHighQueue cancelAllOperations];
+}
+
+- (void)suspendedAllOperation{
+    [_downloadConcurrentQueue setSuspended:YES];
+    [_downloadSerialQueue setSuspended:YES];
+    [_downloadBackgroundQueue setSuspended:YES];
+    [_downloadPriorityHighQueue setSuspended:YES];
+}
+
+- (void)resumeAllOperation{
+    [_downloadConcurrentQueue setSuspended:NO];
+    [_downloadSerialQueue setSuspended:NO];
+    [_downloadBackgroundQueue setSuspended:NO];
+    [_downloadPriorityHighQueue setSuspended:NO];
 }
 
 //更新当前正在执行的队列,保证downloadPriorityHighQueue执行任务时downloadBackgroundQueue暂停
