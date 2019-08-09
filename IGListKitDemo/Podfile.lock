@@ -4,17 +4,21 @@ PODS:
   - IGListKit/Default (3.4.0):
     - IGListKit/Diffing
   - IGListKit/Diffing (3.4.0)
+  - Masonry (1.1.0)
 
 DEPENDENCIES:
   - IGListKit (~> 3.0)
+  - Masonry
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - IGListKit
+    - Masonry
 
 SPEC CHECKSUMS:
   IGListKit: 7a5d788e9fb746bcd402baa8e8b24bc3bd2a5a07
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
 
-PODFILE CHECKSUM: 032b881954679f640c0e2edcf48cd0dcfa6e71ef
+PODFILE CHECKSUM: 1ca57f24e189044000fd27f671d1663368586eee
 
 COCOAPODS: 1.7.3

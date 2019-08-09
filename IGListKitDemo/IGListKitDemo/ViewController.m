@@ -10,6 +10,8 @@
 #import <IGListKit/IGListKit.h>
 #import "FirstController.h"
 #import "SecondController.h"
+#import "ThirdController.h"
+//#import "UIScrollView+RefreshController.h"
 
 @interface ViewController ()<IGListAdapterDataSource>
 
@@ -17,6 +19,8 @@
 @property (strong, nonatomic) IGListAdapter *adater;
 @property (strong, nonatomic) IGListAdapterUpdater *updater;
 @property (strong, nonatomic) UICollectionView *collectionView;
+
+@property (strong, nonatomic) NSMutableArray *datas;
 
 @end
 
@@ -26,6 +30,8 @@
     [super viewDidLoad];
     
     NSLog(@"%s",__FUNCTION__);
+    
+    self.datas = [@[ @"Foo", @"Bar", @42, @"Biz" , [ViewController new]] mutableCopy];
     
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:self.view.frame collectionViewLayout:layout];
@@ -41,6 +47,16 @@
     self.adater = adater;
     self.collectionView = collectionView;
     self.collectionView.backgroundColor = UIColor.whiteColor;
+//    [self.collectionView addRefreshWithHeaderBlock:^{
+////        [self.datas addObject:[ViewController new]];
+//        ViewController *vc = self.datas.lastObject;
+//        vc.view.tag++;
+//        [self.adater reloadDataWithCompletion:nil];
+//    } footerBlock:^{
+//        ViewController *vc = self.datas.lastObject;
+//        vc.view.tag++;
+//        [self.adater reloadDataWithCompletion:nil];
+//    }];
 }
 
 - (void)viewDidLayoutSubviews{
@@ -50,14 +66,16 @@
 }
 
 - (NSArray<id<IGListDiffable>> *)objectsForListAdapter:(IGListAdapter *)listAdapter {
-    return @[ @"Foo", @"Bar", @42, @"Biz" ];
+    return self.datas;
 }
 
 - (IGListSectionController *)listAdapter:(IGListAdapter *)listAdapter sectionControllerForObject:(id)object {
     if ([object isKindOfClass:[NSString class]]) {
         return [FirstController new];
-    } else {
+    } else if([object isKindOfClass:[NSNumber class]]) {
         return [SecondController new];
+    } else {
+        return [ThirdController new];
     }
 }
 

@@ -21,6 +21,8 @@
 		5973CF8422FD8033001D7220 /* BaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5973CF8322FD8033001D7220 /* BaseCell.m */; };
 		5973CF8722FD829D001D7220 /* FirstCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5973CF8622FD829D001D7220 /* FirstCell.m */; };
 		5973CF8A22FD82AE001D7220 /* SecondCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5973CF8922FD82AE001D7220 /* SecondCell.m */; };
+		5973CF8D22FD85B2001D7220 /* ThirdController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5973CF8C22FD85B2001D7220 /* ThirdController.m */; };
+		5973CF9022FD85CE001D7220 /* ThirdCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5973CF8F22FD85CE001D7220 /* ThirdCell.m */; };
 		80175F5465B8D359EB43B8CC /* Pods_IGListKitDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49757428DBE61B2C44344280 /* Pods_IGListKitDemoTests.framework */; };
 		9352F78E133F760FA4EC7AC9 /* Pods_IGListKitDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA9BE6E839B6C6C5A7BBF572 /* Pods_IGListKitDemo.framework */; };
 /* End PBXBuildFile section */
@@ -73,6 +75,10 @@
 		5973CF8622FD829D001D7220 /* FirstCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstCell.m; sourceTree = "<group>"; };
 		5973CF8822FD82AE001D7220 /* SecondCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondCell.h; sourceTree = "<group>"; };
 		5973CF8922FD82AE001D7220 /* SecondCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondCell.m; sourceTree = "<group>"; };
+		5973CF8B22FD85B2001D7220 /* ThirdController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThirdController.h; sourceTree = "<group>"; };
+		5973CF8C22FD85B2001D7220 /* ThirdController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThirdController.m; sourceTree = "<group>"; };
+		5973CF8E22FD85CE001D7220 /* ThirdCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThirdCell.h; sourceTree = "<group>"; };
+		5973CF8F22FD85CE001D7220 /* ThirdCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThirdCell.m; sourceTree = "<group>"; };
 		6E42737192C715BF1BEFFAC3 /* Pods-IGListKitDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IGListKitDemoTests.debug.xcconfig"; path = "Target Support Files/Pods-IGListKitDemoTests/Pods-IGListKitDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		849F592B850896D6CDC533F7 /* Pods-IGListKitDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IGListKitDemo.debug.xcconfig"; path = "Target Support Files/Pods-IGListKitDemo/Pods-IGListKitDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		A0B61DD84D783FBCC7B1BED3 /* Pods-IGListKitDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IGListKitDemoUITests.release.xcconfig"; path = "Target Support Files/Pods-IGListKitDemoUITests/Pods-IGListKitDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -141,12 +147,16 @@
 				5973CF7D22FD7A58001D7220 /* FirstController.m */,
 				5973CF7F22FD7A63001D7220 /* SecondController.h */,
 				5973CF8022FD7A63001D7220 /* SecondController.m */,
+				5973CF8B22FD85B2001D7220 /* ThirdController.h */,
+				5973CF8C22FD85B2001D7220 /* ThirdController.m */,
 				5973CF8222FD8033001D7220 /* BaseCell.h */,
 				5973CF8322FD8033001D7220 /* BaseCell.m */,
 				5973CF8522FD829D001D7220 /* FirstCell.h */,
 				5973CF8622FD829D001D7220 /* FirstCell.m */,
 				5973CF8822FD82AE001D7220 /* SecondCell.h */,
 				5973CF8922FD82AE001D7220 /* SecondCell.m */,
+				5973CF8E22FD85CE001D7220 /* ThirdCell.h */,
+				5973CF8F22FD85CE001D7220 /* ThirdCell.m */,
 				5973CF5022FD76F9001D7220 /* Main.storyboard */,
 				5973CF5322FD76FB001D7220 /* Assets.xcassets */,
 				5973CF5522FD76FB001D7220 /* LaunchScreen.storyboard */,
@@ -418,11 +428,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				5973CF7E22FD7A58001D7220 /* FirstController.m in Sources */,
+				5973CF8D22FD85B2001D7220 /* ThirdController.m in Sources */,
 				5973CF4F22FD76F9001D7220 /* ViewController.m in Sources */,
 				5973CF8422FD8033001D7220 /* BaseCell.m in Sources */,
 				5973CF8A22FD82AE001D7220 /* SecondCell.m in Sources */,
 				5973CF8122FD7A63001D7220 /* SecondController.m in Sources */,
 				5973CF5A22FD76FB001D7220 /* main.m in Sources */,
+				5973CF9022FD85CE001D7220 /* ThirdCell.m in Sources */,
 				5973CF8722FD829D001D7220 /* FirstCell.m in Sources */,
 				5973CF4C22FD76F9001D7220 /* AppDelegate.m in Sources */,
 			);
