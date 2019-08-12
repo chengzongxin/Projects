@@ -5,20 +5,24 @@ PODS:
     - IGListKit/Diffing
   - IGListKit/Diffing (3.4.0)
   - Masonry (1.1.0)
+  - MJRefresh (3.2.0)
 
 DEPENDENCIES:
   - IGListKit (~> 3.0)
   - Masonry
+  - MJRefresh
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - IGListKit
     - Masonry
+    - MJRefresh
 
 SPEC CHECKSUMS:
   IGListKit: 7a5d788e9fb746bcd402baa8e8b24bc3bd2a5a07
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MJRefresh: ed450d6eb9d3346a2cb033ab7eb6de090aeef437
 
-PODFILE CHECKSUM: 1ca57f24e189044000fd27f671d1663368586eee
+PODFILE CHECKSUM: a4956b171bcd9a0371f5bf1d2eb6160d53babbb9
 
 COCOAPODS: 1.7.3

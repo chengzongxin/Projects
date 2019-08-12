@@ -8,6 +8,7 @@ target 'IGListKitDemo' do
   # Pods for IGListKitDemo
   pod 'IGListKit', '~> 3.0'
   pod 'Masonry'
+  pod 'MJRefresh'
 
   target 'IGListKitDemoTests' do
     inherit! :search_paths

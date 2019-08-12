@@ -11,9 +11,10 @@
 #import "FirstController.h"
 #import "SecondController.h"
 #import "ThirdController.h"
+#import <MJRefresh/MJRefresh.h>
 //#import "UIScrollView+RefreshController.h"
 
-@interface ViewController ()<IGListAdapterDataSource>
+@interface ViewController ()<IGListAdapterDataSource,IGListDiffable>
 
 
 @property (strong, nonatomic) IGListAdapter *adater;
@@ -57,6 +58,22 @@
 //        vc.view.tag++;
 //        [self.adater reloadDataWithCompletion:nil];
 //    }];
+    
+    self.collectionView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+                [self.datas addObject:[ViewController new]];
+                ViewController *vc = self.datas.lastObject;
+                vc.view.tag++;
+                [self.adater reloadDataWithCompletion:nil];
+        [self.collectionView.mj_header endRefreshing];
+    }];
+    
+    self.collectionView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+        [self.datas addObject:[ViewController new]];
+                ViewController *vc = self.datas.lastObject;
+                vc.view.tag++;
+                [self.adater reloadDataWithCompletion:nil];
+        [self.collectionView.mj_footer endRefreshing];
+    }];
 }
 
 - (void)viewDidLayoutSubviews{
@@ -83,4 +100,12 @@
     return nil;
 }
 
+- (id<NSObject>)diffIdentifier{
+    return self;
+}
+
+
+- (BOOL)isEqualToDiffableObject:(id<IGListDiffable>)object{
+    return YES;
+}
 @end

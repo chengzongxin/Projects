@@ -8,6 +8,7 @@
 
 #import "ThirdController.h"
 #import "ThirdCell.h"
+#import "ViewController.h"
 
 @interface ThirdController ()
 
