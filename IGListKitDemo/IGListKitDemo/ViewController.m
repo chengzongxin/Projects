@@ -32,7 +32,12 @@
     
     NSLog(@"%s",__FUNCTION__);
     
-    self.datas = [@[ @"Foo", @"Bar", @42, @"Biz" , [ViewController new]] mutableCopy];
+    self.datas = [@[ @"Foo",
+                     @"Bar",
+                     @42,
+                     @"Biz" ,
+                     [@[@"1"] mutableCopy]]
+                  mutableCopy];
     
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:self.view.frame collectionViewLayout:layout];
