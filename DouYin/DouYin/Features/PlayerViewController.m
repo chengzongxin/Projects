@@ -30,7 +30,7 @@
     
     // 10
     [playerView setPlayerUrl:@"https://gss3.baidu.com/6LZ0ej3k1Qd3ote6lo7D0j9wehsv/tieba-smallvideo/607272_373beb1043e8dae94026e937085934d0.mp4"];
-    
+//    [playerView setPlayerUrl:@"ftp://ygdy8:ygdy8@yg45.dydytt.net:4207/阳光电影www.ygdy8.com.复仇者联盟4：终局之战.HD.720p.中英双字幕.mkv"];
     self.playerView = playerView;
     
     UIView *cache = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.slider.frame.size.width, 1)];
