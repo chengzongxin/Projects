@@ -101,7 +101,15 @@
     _gifName = gifName;
     
     self.animateImageView.animationImages = [self imagesWithGif:gifName];
+    NSAssert(self.animateImageView.animationImages.count, @"没有图片");
     [self setImage:self.animateImageView.animationImages.lastObject forState:UIControlStateSelected];
+}
+
+- (void)setAnimateImages:(NSArray<UIImage *> *)animateImages{
+    _animateImages = animateImages;
+    NSAssert(animateImages.count, @"没有图片");
+    self.animateImageView.animationImages = animateImages;
+    [self setImage:animateImages.lastObject forState:UIControlStateSelected];
 }
 
 - (void)setAnimateDuration:(int)animateDuration{
@@ -133,7 +141,7 @@
 - (UILabel *)textLabel{
     if (!_textLabel) {
         _textLabel = [[UILabel alloc] init];
-        _textLabel.frame = CGRectMake(self.bounds.size.width, -10, 20, 20);
+        _textLabel.frame = CGRectMake(self.bounds.size.width, -10, 40, 20);
         _textLabel.textColor = [UIColor colorWithRed:130/255.0 green:128/255.0 blue:128/255.0 alpha:1.0];
         _textLabel.font = [UIFont systemFontOfSize:10];
         _textLabel.textAlignment = NSTextAlignmentLeft;
@@ -141,5 +149,16 @@
     return _textLabel;
 }
 
+- (void)setFrame:(CGRect)frame{
+    [super setFrame:frame];
+    
+    self.animateImageView.frame = self.bounds;
+    self.textLabel.frame = CGRectMake(self.bounds.size.width, -10, 40, 20);
+}
+
+
+//- (CGSize)singleLineSizeWithLabel:(UILabel *)label Text:(UIFont *)font{
+//    return [label sizeWithAttributes:@{NSFontAttributeName:label.font}];
+//}
 
 @end

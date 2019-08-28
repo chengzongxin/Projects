@@ -9,10 +9,30 @@
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
-
+/**
+ 创建一个gifbutton
+ _commentBtn = [GifButton buttonWithType:UIButtonTypeCustom];
+ _commentBtn.gifName = @"点赞";
+ _commentBtn.normalImage = [UIImage imageNamed:@"点赞"];
+ _commentBtn.frame = CGRectMake(100, 200, 29, 29);
+ _commentBtn.text = @"333333";
+ 
+ // 点击事件
+ - (IBAction)clickButton:(GifButton *)sender {
+    sender.selected = !sender.isSelected;
+    int num = [sender.text intValue];
+    if (sender.selected) {
+        sender.text = [NSString stringWithFormat:@"%d",num + 1];
+    }else{
+        sender.text = [NSString stringWithFormat:@"%d",num - 1];
+    }
+ }
+ */
 @interface GifButton : UIButton
 /* gif图片名字 */
 @property (copy, nonatomic) IBInspectable NSString *gifName;
+/* 一组动画图片 */
+@property (copy, nonatomic) NSArray <UIImage *>* animateImages;
 /* 默认图片 */
 @property (strong, nonatomic) UIImage *normalImage;
 /* 如不传,默认取最后一帧 */

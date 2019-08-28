@@ -12,6 +12,7 @@
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet GifButton *thumupBtn;
 @property (weak, nonatomic) IBOutlet GifButton *collectBtn;
+@property (strong, nonatomic) GifButton *commentBtn;
 
 @end
 
@@ -20,8 +21,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.thumupBtn.text = @"100";
-    self.collectBtn.text = @"300";
+    self.thumupBtn.text = @"1000000";
+    self.collectBtn.text = @"30000";
+    
+    _commentBtn = [GifButton buttonWithType:UIButtonTypeCustom];
+    _commentBtn.gifName = @"点赞";
+    _commentBtn.normalImage = [UIImage imageNamed:@"点赞"];
+    _commentBtn.frame = CGRectMake(100, 200, 29, 29);
+    _commentBtn.text = @"333333";
+    [self.view addSubview:_commentBtn];
+    
+    [_commentBtn addTarget:self action:@selector(clickButton:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (IBAction)clickButton:(GifButton *)sender {
