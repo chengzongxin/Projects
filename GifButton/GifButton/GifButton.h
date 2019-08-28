@@ -21,6 +21,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (assign, nonatomic) int animateRepeatCount;
 /* 重复时间 */
 @property (assign, nonatomic) int animateDuration;
+/* 按钮文字 */
+@property (strong, nonatomic) UILabel *textLabel;
+/* 当前文字 & 设置当前文字 */
+@property (copy, nonatomic) NSString *text;
 
 @end
 

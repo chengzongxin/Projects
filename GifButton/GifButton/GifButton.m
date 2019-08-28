@@ -21,7 +21,7 @@
 //    [self.animateImageView removeObserver:self forKeyPath:@"isAnimating"];
 //    [self.animateImageView removeObserver:self forKeyPath:@"animating"];
 //}
-
+#pragma mark - Life Cycle
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -42,6 +42,8 @@
     [self addSubview:self.animateImageView];
     _normalImage = self.currentImage;
     
+    [self addSubview:self.textLabel];
+    
 //    [self.animateImageView addObserver:self forKeyPath:@"isAnimating" options:NSKeyValueObservingOptionNew context:nil];
 //    [self.animateImageView addObserver:self forKeyPath:@"animating" options:NSKeyValueObservingOptionNew context:nil];
     
@@ -51,8 +53,9 @@
 //    NSLog(@"%@",change);
 //}
 
-
+#pragma mark - Event response
 - (void)setSelected:(BOOL)selected {
+    [super setSelected:selected];
     if (selected) {
         UIImage *normalImage = self.currentImage;
         [self setImage:[UIImage new] forState:UIControlStateNormal];
@@ -60,14 +63,13 @@
         self.enabled = NO;
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.9 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [self setImage:normalImage forState:UIControlStateNormal];
-            [super setSelected:selected];
             self.enabled = YES;
         });
-    }else{
-        [super setSelected:selected];
     }
 }
 
+#pragma mark - Private Method
+#pragma mark 根据gif返回一组frame图片
 - (NSArray *)imagesWithGif:(NSString *)gifNameInBoundle {
     NSURL *fileUrl = [[NSBundle mainBundle] URLForResource:gifNameInBoundle withExtension:@"gif"];
     CGImageSourceRef gifSource = CGImageSourceCreateWithURL((CFURLRef)fileUrl, NULL);
@@ -102,6 +104,22 @@
     [self setImage:self.animateImageView.animationImages.lastObject forState:UIControlStateSelected];
 }
 
+- (void)setAnimateDuration:(int)animateDuration{
+    self.animateImageView.animationDuration = animateDuration;
+}
+
+- (void)setAnimateRepeatCount:(int)animateRepeatCount{
+    self.animateImageView.animationRepeatCount = animateRepeatCount;
+}
+
+- (void)setText:(NSString *)text{
+    self.textLabel.text = text;
+}
+
+- (NSString *)text{
+    return self.textLabel.text;
+}
+
 - (UIImageView *)animateImageView{
     if (!_animateImageView) {
         _animateImageView = [[UIImageView alloc] initWithFrame:self.bounds];
@@ -112,12 +130,16 @@
     return _animateImageView;
 }
 
-- (void)setAnimateDuration:(int)animateDuration{
-    self.animateImageView.animationDuration = animateDuration;
+- (UILabel *)textLabel{
+    if (!_textLabel) {
+        _textLabel = [[UILabel alloc] init];
+        _textLabel.frame = CGRectMake(self.bounds.size.width, -10, 20, 20);
+        _textLabel.textColor = [UIColor colorWithRed:130/255.0 green:128/255.0 blue:128/255.0 alpha:1.0];
+        _textLabel.font = [UIFont systemFontOfSize:10];
+        _textLabel.textAlignment = NSTextAlignmentLeft;
+    }
+    return _textLabel;
 }
 
-- (void)setAnimateRepeatCount:(int)animateRepeatCount{
-    self.animateImageView.animationRepeatCount = animateRepeatCount;
-}
 
 @end

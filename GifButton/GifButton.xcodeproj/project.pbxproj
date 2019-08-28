@@ -16,10 +16,10 @@
 		592B8A47230F7C2F0079F438 /* GifButtonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 592B8A46230F7C2F0079F438 /* GifButtonTests.m */; };
 		592B8A52230F7C2F0079F438 /* GifButtonUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 592B8A51230F7C2F0079F438 /* GifButtonUITests.m */; };
 		592B8A64230F7DB10079F438 /* GifButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 592B8A63230F7DB10079F438 /* GifButton.m */; };
-		592B8A70230F7E940079F438 /* 点赞.gif in Resources */ = {isa = PBXBuildFile; fileRef = 592B8A6C230F7E940079F438 /* 点赞.gif */; };
-		592B8A71230F7E940079F438 /* 收藏.gif in Resources */ = {isa = PBXBuildFile; fileRef = 592B8A6D230F7E940079F438 /* 收藏.gif */; };
-		592B8A72230F7E940079F438 /* 收藏@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 592B8A6E230F7E940079F438 /* 收藏@3x.png */; };
-		592B8A73230F7E940079F438 /* 点赞@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 592B8A6F230F7E940079F438 /* 点赞@3x.png */; };
+		59F2C90923162D4100B36866 /* 点赞.gif in Resources */ = {isa = PBXBuildFile; fileRef = 59F2C90523162D4100B36866 /* 点赞.gif */; };
+		59F2C90A23162D4100B36866 /* 收藏.gif in Resources */ = {isa = PBXBuildFile; fileRef = 59F2C90623162D4100B36866 /* 收藏.gif */; };
+		59F2C90B23162D4100B36866 /* 收藏@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 59F2C90723162D4100B36866 /* 收藏@3x.png */; };
+		59F2C90C23162D4100B36866 /* 点赞@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 59F2C90823162D4100B36866 /* 点赞@3x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,10 +58,10 @@
 		592B8A53230F7C2F0079F438 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		592B8A62230F7DB10079F438 /* GifButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GifButton.h; sourceTree = "<group>"; };
 		592B8A63230F7DB10079F438 /* GifButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GifButton.m; sourceTree = "<group>"; };
-		592B8A6C230F7E940079F438 /* 点赞.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "点赞.gif"; sourceTree = "<group>"; };
-		592B8A6D230F7E940079F438 /* 收藏.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "收藏.gif"; sourceTree = "<group>"; };
-		592B8A6E230F7E940079F438 /* 收藏@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "收藏@3x.png"; sourceTree = "<group>"; };
-		592B8A6F230F7E940079F438 /* 点赞@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "点赞@3x.png"; sourceTree = "<group>"; };
+		59F2C90523162D4100B36866 /* 点赞.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "点赞.gif"; sourceTree = "<group>"; };
+		59F2C90623162D4100B36866 /* 收藏.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "收藏.gif"; sourceTree = "<group>"; };
+		59F2C90723162D4100B36866 /* 收藏@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "收藏@3x.png"; sourceTree = "<group>"; };
+		59F2C90823162D4100B36866 /* 点赞@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "点赞@3x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +112,7 @@
 		592B8A2C230F7C2E0079F438 /* GifButton */ = {
 			isa = PBXGroup;
 			children = (
+				59F2C90423162D4100B36866 /* GIF */,
 				592B8A2D230F7C2E0079F438 /* AppDelegate.h */,
 				592B8A2E230F7C2E0079F438 /* AppDelegate.m */,
 				592B8A30230F7C2E0079F438 /* ViewController.h */,
@@ -123,7 +124,6 @@
 				592B8A38230F7C2E0079F438 /* LaunchScreen.storyboard */,
 				592B8A3B230F7C2E0079F438 /* Info.plist */,
 				592B8A3C230F7C2E0079F438 /* main.m */,
-				592B8A6B230F7E940079F438 /* GIF */,
 			);
 			path = GifButton;
 			sourceTree = "<group>";
@@ -146,16 +146,15 @@
 			path = GifButtonUITests;
 			sourceTree = "<group>";
 		};
-		592B8A6B230F7E940079F438 /* GIF */ = {
+		59F2C90423162D4100B36866 /* GIF */ = {
 			isa = PBXGroup;
 			children = (
-				592B8A6C230F7E940079F438 /* 点赞.gif */,
-				592B8A6D230F7E940079F438 /* 收藏.gif */,
-				592B8A6E230F7E940079F438 /* 收藏@3x.png */,
-				592B8A6F230F7E940079F438 /* 点赞@3x.png */,
+				59F2C90523162D4100B36866 /* 点赞.gif */,
+				59F2C90623162D4100B36866 /* 收藏.gif */,
+				59F2C90723162D4100B36866 /* 收藏@3x.png */,
+				59F2C90823162D4100B36866 /* 点赞@3x.png */,
 			);
-			name = GIF;
-			path = ../../GIF;
+			path = GIF;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,13 +260,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				592B8A71230F7E940079F438 /* 收藏.gif in Resources */,
+				59F2C90A23162D4100B36866 /* 收藏.gif in Resources */,
 				592B8A3A230F7C2E0079F438 /* LaunchScreen.storyboard in Resources */,
-				592B8A70230F7E940079F438 /* 点赞.gif in Resources */,
+				59F2C90923162D4100B36866 /* 点赞.gif in Resources */,
 				592B8A37230F7C2E0079F438 /* Assets.xcassets in Resources */,
-				592B8A72230F7E940079F438 /* 收藏@3x.png in Resources */,
+				59F2C90B23162D4100B36866 /* 收藏@3x.png in Resources */,
 				592B8A35230F7C2E0079F438 /* Main.storyboard in Resources */,
-				592B8A73230F7E940079F438 /* 点赞@3x.png in Resources */,
+				59F2C90C23162D4100B36866 /* 点赞@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
