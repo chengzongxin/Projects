@@ -8,6 +8,8 @@
 
 #import "SwizzleExampleClass.h"
 #import <objc/runtime.h>
+//https://blog.newrelic.com/engineering/right-way-to-swizzle/
+// https://blog.csdn.net/qq_30932479/article/details/82051106  --CN
 
 struct objc_method_des {
     char * method_name;
