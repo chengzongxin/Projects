@@ -12,6 +12,12 @@
 //#import <SDWebImage/SDImageCache.h>
 #import <SDImageCache.h>
 
+#import <CommonCrypto/CommonDigest.h>
+#import <CoreText/CTFramesetter.h>
+#import <CoreText/CTFont.h>
+#import <CoreText/CTStringAttributes.h>
+
+
 NSString *const customscheme = @"customscheme";
 
 #define kLocalDirectory @"/Users/Joe/Desktop/Cache"
@@ -40,7 +46,7 @@ NSString *const customscheme = @"customscheme";
     if ([fullPath hasSuffix:@"Choose"] || [fullPath hasSuffix:@"choose"] || [fullPath hasSuffix:@"www.taobao.com"] ||  [fullPath hasSuffix:@"www.baidu.com"] ) {
         fullPath = [fullPath stringByAppendingString:@".html"];
     }
-
+    
     //文件不存在
     if (![[NSFileManager defaultManager] fileExistsAtPath:fullPath]) {
         NSLog(@"文件不存在,开始下载");
@@ -49,7 +55,7 @@ NSString *const customscheme = @"customscheme";
         if ([schemeUrl hasPrefix:customscheme]) {
             replacedStr = [schemeUrl stringByReplacingOccurrencesOfString:customscheme withString:@"http"];
         }
-
+        
         NSMutableURLRequest * request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:replacedStr]];
         NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
         NSURLSession *session = [NSURLSession sessionWithConfiguration:config];
@@ -218,6 +224,20 @@ NSString *const customscheme = @"customscheme";
         CFRelease(type);
     
     return mimeType;
+}
+
+@end
+
+@implementation NSString (md5)
+
+- (NSString *) md5 {
+    const char *str = [self UTF8String];
+    unsigned char digest[CC_MD5_DIGEST_LENGTH];
+    CC_MD5( str, (CC_LONG)strlen(str), digest );
+    NSMutableString *output = [NSMutableString stringWithCapacity:CC_MD5_DIGEST_LENGTH * 2];
+    for(int i = 0; i < CC_MD5_DIGEST_LENGTH; i++)
+        [output appendFormat:@"%02x", digest[i]];
+    return output;
 }
 
 @end

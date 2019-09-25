@@ -17,4 +17,8 @@ FOUNDATION_EXTERN NSString *const customscheme;
 
 @end
 
+@interface NSString (md5)
+
+- (NSString *) md5;
+@end
 NS_ASSUME_NONNULL_END
