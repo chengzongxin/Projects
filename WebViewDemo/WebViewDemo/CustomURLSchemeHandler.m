@@ -14,8 +14,6 @@
 
 NSString *const customscheme = @"customscheme";
 
-#define kPathCache @"PathCache"
-#define kCssFiles @"CssFiles"
 #define kLocalDirectory @"/Users/Joe/Desktop/Cache"
 
 @interface CustomURLSchemeHandler ()

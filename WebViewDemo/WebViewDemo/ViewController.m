@@ -25,6 +25,7 @@
     self.url = @"://m.matafy.com/hotel_test/index.html#/Choose";
 //    self.url = @"://m.matafy.com/medicalBeauty_test/index.html#/choose";
 //    self.url = @"://www.taobao.com";
+    [WKWebView new];
 }
 
 - (IBAction)buttonClick:(id)sender {
