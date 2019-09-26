@@ -20,15 +20,35 @@
 
 NSString *const customscheme = @"customscheme";
 
-#define kLocalDirectory @"/Users/Joe/Desktop/Cache"
+//#define kLocalDirectory @"/Users/Joe/Desktop/Cache"
 
 @interface CustomURLSchemeHandler ()
 
 @property (strong, nonatomic) id<WKURLSchemeTask> urlSchemeTask;
 
+@property (copy, nonatomic) NSString *localDirectory;
+
 @end
 
 @implementation CustomURLSchemeHandler
+
+// MARK: 本地目录
+- (NSString *)localDirectory{
+    if (!_localDirectory) {
+        _localDirectory = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"Cache"];
+        BOOL exist = [[NSFileManager defaultManager] fileExistsAtPath:_localDirectory];
+        if (!exist) {
+            NSError *error = nil;
+            [[NSFileManager defaultManager] createDirectoryAtPath:_localDirectory withIntermediateDirectories:YES attributes:nil error:&error];
+            if (error) {
+                NSLog(@"%@",error);
+            }
+        }
+//        _localDirectory = @"/Users/Joe/Desktop/Cache";
+        NSLog(@"%@",_localDirectory);
+    }
+    return _localDirectory;
+}
 
 - (void)webView:(WKWebView *)webView startURLSchemeTask:(id<WKURLSchemeTask>)urlSchemeTask{
     //加载本地资源
@@ -39,16 +59,23 @@ NSString *const customscheme = @"customscheme";
 
     NSLog(@"%@",urlSchemeTask.request.URL.absoluteString);
 
-    //当前的requestUrl的scheme都是customScheme
-    NSString *requestUrl = urlSchemeTask.request.URL.absoluteString;
-    NSString *fileName = [[requestUrl componentsSeparatedByString:@"?"].firstObject componentsSeparatedByString:@"/"].lastObject;
-    NSString *fullPath = [kLocalDirectory stringByAppendingPathComponent:fileName];
-    if ([fullPath hasSuffix:@"Choose"] || [fullPath hasSuffix:@"choose"] || [fullPath hasSuffix:@"www.taobao.com"] ||  [fullPath hasSuffix:@"www.baidu.com"] ) {
-        fullPath = [fullPath stringByAppendingString:@".html"];
+    NSString *urlString = urlSchemeTask.request.URL.absoluteString;
+    NSString *fileName = [[urlString md5] stringByAppendingFormat:@".%@",[urlString pathExtension]];
+    if ([urlString containsString:@"html"]) {
+        fileName = [[urlString md5] stringByAppendingString:@".html"];
     }
+    NSString *filePath = [self.localDirectory stringByAppendingPathComponent:fileName];
+    
+    //当前的requestUrl的scheme都是customScheme
+//    NSString *requestUrl = urlSchemeTask.request.URL.absoluteString;
+//    NSString *fileName = [[requestUrl componentsSeparatedByString:@"?"].firstObject componentsSeparatedByString:@"/"].lastObject;
+//    NSString *fullPath = [self.localDirectory stringByAppendingPathComponent:fileName];
+//    if ([fullPath hasSuffix:@"Choose"] || [fullPath hasSuffix:@"choose"] || [fullPath hasSuffix:@"www.taobao.com"] ||  [fullPath hasSuffix:@"www.baidu.com"] ) {
+//        fullPath = [fullPath stringByAppendingString:@".html"];
+//    }
     
     //文件不存在
-    if (![[NSFileManager defaultManager] fileExistsAtPath:fullPath]) {
+    if (![[NSFileManager defaultManager] fileExistsAtPath:filePath]) {
         NSLog(@"文件不存在,开始下载");
         NSString *replacedStr = @"";
         NSString *schemeUrl = urlSchemeTask.request.URL.absoluteString;
@@ -69,21 +96,17 @@ NSString *const customscheme = @"customscheme";
             } else {
 //                NSLog(@"下载完成");
                 [urlSchemeTask didFinish];
-                NSString *fileName = [[requestUrl componentsSeparatedByString:@"?"].firstObject componentsSeparatedByString:@"/"].lastObject;
-                NSString *fullPath = [kLocalDirectory stringByAppendingPathComponent:fileName];
-                if ([fullPath hasSuffix:@"Choose"] || [fullPath hasSuffix:@"choose"] ||[fullPath hasSuffix:@"www.taobao.com"] ||  [fullPath hasSuffix:@"www.baidu.com"] ) {
-                    fullPath = [fullPath stringByAppendingString:@".html"];
-                }
-                [data writeToFile:fullPath atomically:YES];
+                
+                [data writeToFile:filePath atomically:YES];
             }
         }];
         [dataTask resume];
     } else {
         NSLog(@"文件存在,读取缓存");
-        NSData *data = [NSData dataWithContentsOfFile:fullPath];
+        NSData *data = [NSData dataWithContentsOfFile:filePath];
 
         NSURLResponse *response = [[NSURLResponse alloc] initWithURL:urlSchemeTask.request.URL
-                                                            MIMEType:[self getMimeTypeWithFilePath:fullPath]
+                                                            MIMEType:[self getMimeTypeWithFilePath:filePath]
                                                expectedContentLength:data.length
                                                     textEncodingName:nil];
         [urlSchemeTask didReceiveResponse:response];
