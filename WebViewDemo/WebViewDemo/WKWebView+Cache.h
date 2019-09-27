@@ -14,7 +14,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (copy, nonatomic, readonly) NSString *originScheme;
 
-- (void)cacheEnable;
+//- (void)cacheEnable;
+
+@property (assign, nonatomic) BOOL cacheEnable;
 
 @end
 

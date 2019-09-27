@@ -21,7 +21,6 @@
 #pragma mark - SWIZZ ORIGIN METHOD
 static IMP _originalMethodImp = nil;
 static NSString *_originScheme = nil;
-static BOOL _enable = false;
 
 + (void)load{
     Class aClass = [self class];
@@ -46,7 +45,6 @@ static BOOL _enable = false;
 // 替换原有方法-initWithFrame:configuration:
 - (instancetype)cacheWithFrame:(CGRect)frame configuration:(WKWebViewConfiguration *)configuration{
     NSLog(@"%s",__FUNCTION__);
-    _enable = false;
     //设置URLSchemeHandler来处理特定URLScheme的请求，URLSchemeHandler需要实现WKURLSchemeHandler协议
     //本例中WKWebView将把URLScheme为customScheme的请求交由CustomURLSchemeHandler类的实例处理
     [configuration setURLSchemeHandler:[CustomURLSchemeHandler new] forURLScheme:customscheme];  // 这句代码必须在创建webview之前设置
@@ -57,7 +55,7 @@ id _swizzleLoadRequestMethod(id self,SEL _cmd,NSURLRequest *request)
 {
     assert([NSStringFromSelector(_cmd) isEqualToString:NSStringFromSelector(@selector(loadRequest:))]);
     
-    if (_enable) {
+    if ([self cacheEnable]) {
         _originScheme = request.URL.scheme;
         NSString *customUrlString = [request.URL.absoluteString stringByReplacingOccurrencesOfString:_originScheme withString:customscheme];
         request = [NSURLRequest requestWithURL:[NSURL URLWithString:customUrlString]];
@@ -67,8 +65,7 @@ id _swizzleLoadRequestMethod(id self,SEL _cmd,NSURLRequest *request)
     return returnValue;
 }
 
-- (void)cacheEnable{
-    _enable = true;
+- (void)swizzLoadRequest{
     
     if (_originalMethodImp) {
         // 已经替换了方法
@@ -96,13 +93,23 @@ id _swizzleLoadRequestMethod(id self,SEL _cmd,NSURLRequest *request)
 //    NSLog(@"----------------------------");
 }
 
-//- (WKNavigation *)loadRequest:(NSURLRequest *)request{
-//    return [self loadRequest:request];
-//}
-
-
+#pragma mark - Setter & Getter
 - (NSString *)originScheme{
     return _originScheme;
+}
+
+- (BOOL)cacheEnable{
+    return [objc_getAssociatedObject(self, _cmd) boolValue];
+}
+
+- (void)setCacheEnable:(BOOL)cacheEnable{
+    objc_setAssociatedObject(self, @selector(cacheEnable), @(cacheEnable), OBJC_ASSOCIATION_ASSIGN);
+    // 替换loadrequest方法
+    
+    if (cacheEnable) {
+        [self swizzLoadRequest];
+    }
+    
 }
 
 @end

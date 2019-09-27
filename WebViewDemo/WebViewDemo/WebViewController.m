@@ -39,11 +39,7 @@
     
     webView.navigationDelegate = self;
     
-    if (self.cacheEnable) {
-        
-        [webView cacheEnable];
-    }
-    
+    webView.cacheEnable = self.cacheEnable;
     
     [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.url]]];
     
