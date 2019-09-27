@@ -66,7 +66,7 @@ NSString *const customscheme = @"customscheme";
 
     NSString *urlString = urlSchemeTask.request.URL.absoluteString;
     NSString *fileName = [[urlString md5] stringByAppendingFormat:@".%@",[urlString pathExtension]];
-    if ([urlString containsString:@"html"]) {
+    if ([urlString containsString:@"index"]) {
         fileName = [[urlString md5] stringByAppendingString:@".html"];
     }
     NSString *filePath = [self.localDirectory stringByAppendingPathComponent:fileName];

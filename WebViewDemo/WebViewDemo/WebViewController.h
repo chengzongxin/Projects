@@ -11,7 +11,11 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface WebViewController : UIViewController
+
+@property (assign, nonatomic) BOOL cacheEnable;
+
 - (instancetype)initWithUrl:(NSString *)aUrl;
+
 @end
 
 NS_ASSUME_NONNULL_END

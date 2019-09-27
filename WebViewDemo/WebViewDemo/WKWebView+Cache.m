@@ -46,7 +46,7 @@ static BOOL _enable = false;
 // 替换原有方法-initWithFrame:configuration:
 - (instancetype)cacheWithFrame:(CGRect)frame configuration:(WKWebViewConfiguration *)configuration{
     NSLog(@"%s",__FUNCTION__);
-    
+    _enable = false;
     //设置URLSchemeHandler来处理特定URLScheme的请求，URLSchemeHandler需要实现WKURLSchemeHandler协议
     //本例中WKWebView将把URLScheme为customScheme的请求交由CustomURLSchemeHandler类的实例处理
     [configuration setURLSchemeHandler:[CustomURLSchemeHandler new] forURLScheme:customscheme];  // 这句代码必须在创建webview之前设置
