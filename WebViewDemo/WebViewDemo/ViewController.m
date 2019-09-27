@@ -14,6 +14,12 @@
 
 @property (copy, nonatomic) NSString *url;
 
+@property (copy, nonatomic) NSArray *urls;
+
+@property (weak, nonatomic) IBOutlet UILabel *urlLabel;
+
+@property (assign, nonatomic) int currentIndex;
+
 @end
 
 @implementation ViewController
@@ -21,13 +27,12 @@
 
 - (void)viewDidLoad{
     [super viewDidLoad];
-    //https://m.matafy.com/hotel_test/index.html#/Choose
-//    self.url = @"://m.matafy.com/medicalBeauty_test/index.html#/choose";
-//    self.url = @"://m.matafy.com/hotel_test/index.html#/Choose";
-//    self.url = @"http://m.matafy.com/medicalBeauty_test/index.html#/choose";
-//    self.url = @"://www.taobao.com";
-    self.url = @"http://mc.vip.qq.com/demo/indexv3";
+    
     [WKWebView new];
+    
+    _currentIndex = 0;
+    self.urlLabel.text = self.urls[_currentIndex];
+    self.url = self.urls[_currentIndex];
 }
 
 - (IBAction)buttonClick:(id)sender {
@@ -48,6 +53,29 @@
     [WKWebView clearCache];
 }
 
+- (IBAction)nextClick:(id)sender {
+    _currentIndex++;
+    if (_currentIndex == self.urls.count) {
+        _currentIndex = 0;
+    }
+    self.urlLabel.text = self.urls[_currentIndex];
+    self.url = self.urls[_currentIndex];
+}
 
+- (NSArray *)urls{
+    if (!_urls) {
+        _urls = @[
+                  @"http://mc.vip.qq.com/demo/indexv3",
+                  @"https://m.matafy.com/tickets/index.html#/Choose",
+                  @"https://m.matafy.com/hotel_test/index.html#/Choose",
+                  @"https://m.matafy.com/train_test/index.html",
+                  @"https://m.matafy.com/scenic_test/index.html#/Choose",
+                  @"https://m.matafy.com/movie_test/index.html#/",
+                  @"https://m.matafy.com/rentCarTest/index.html#/",
+                  @"https://m.matafy.com/medicalBeauty_test/index.html#/choose"
+                  ];
+    }
+    return _urls;
+}
 
 @end
