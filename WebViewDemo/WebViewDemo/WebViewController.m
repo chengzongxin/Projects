@@ -9,6 +9,7 @@
 #import "WebViewController.h"
 #import <WebKit/WebKit.h>
 #import "WKWebView+Cache.h"
+#import "CustomURLSchemeHandler.h"
 
 @interface WebViewController () <WKNavigationDelegate>
 
@@ -33,12 +34,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    WKWebView *webView = [[WKWebView alloc] initWithFrame:self.view.bounds configuration:[WKWebViewConfiguration new]];
+    WKWebViewConfiguration *configuration = [WKWebViewConfiguration new];
+    //设置URLSchemeHandler来处理特定URLScheme的请求，URLSchemeHandler需要实现WKURLSchemeHandler协议
+    //本例中WKWebView将把URLScheme为customScheme的请求交由CustomURLSchemeHandler类的实例处理
+    WKWebView *webView = [[WKWebView alloc] initWithFrame:self.view.bounds configuration:configuration];
+//        [configuration setURLSchemeHandler:[CustomURLSchemeHandler new] forURLScheme:customscheme];
+    [webView cacheEnable];
     webView.navigationDelegate = self;
     [self.view addSubview:webView];
     
-    [webView cacheEnable];
     [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.url]]];
     
     

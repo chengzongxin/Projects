@@ -22,8 +22,8 @@
 - (void)viewDidLoad{
     [super viewDidLoad];
     //https://m.matafy.com/hotel_test/index.html#/Choose
-    self.url = @"://m.matafy.com/medicalBeauty_test/index.html#/choose";
-//    self.url = @"://m.matafy.com/hotel_test/index.html#/Choose";
+//    self.url = @"://m.matafy.com/medicalBeauty_test/index.html#/choose";
+    self.url = @"://m.matafy.com/hotel_test/index.html#/Choose";
 //    self.url = @"://m.matafy.com/medicalBeauty_test/index.html#/choose";
 //    self.url = @"://www.taobao.com";
     [WKWebView new];
@@ -37,8 +37,8 @@
 }
 
 - (IBAction)customClick:(id)sender {
-//    NSString *url = [customscheme stringByAppendingString:self.url];
-    NSString *url = [@"http" stringByAppendingString:self.url];
+    NSString *url = [customscheme stringByAppendingString:self.url];
+//    NSString *url = [@"http" stringByAppendingString:self.url];
     WebViewController *web = [[WebViewController alloc] initWithUrl:url];
     [self.navigationController pushViewController:web animated:YES];
     

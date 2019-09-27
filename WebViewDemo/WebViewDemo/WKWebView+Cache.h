@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface WKWebView (Cache)
 
+
++ (void)customScheme;
 /* 必须在loadrequest 之前启用缓存 */
 - (void)cacheEnable;
 

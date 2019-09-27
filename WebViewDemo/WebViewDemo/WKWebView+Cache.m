@@ -17,9 +17,38 @@
 
 @implementation WKWebView (Cache)
 
-
 #pragma mark - SWIZZ ORIGIN METHOD
 static IMP _originalMethodImp = nil;
+static NSString *_originScheme = nil;
+
+- (instancetype)cacheWithFrame:(CGRect)frame configuration:(WKWebViewConfiguration *)configuration{
+    NSLog(@"%s",__FUNCTION__);
+    
+    //设置URLSchemeHandler来处理特定URLScheme的请求，URLSchemeHandler需要实现WKURLSchemeHandler协议
+    //本例中WKWebView将把URLScheme为customScheme的请求交由CustomURLSchemeHandler类的实例处理
+    [configuration setURLSchemeHandler:[CustomURLSchemeHandler new] forURLScheme:customscheme];
+    return [self cacheWithFrame:frame configuration:configuration];
+}
+
++ (void)load{
+    Class aClass = [self class];
+    
+    SEL originalSelector = @selector(initWithFrame:configuration:);
+    
+    SEL swizzledSelector = @selector(cacheWithFrame:configuration:);
+    
+    Method originalMethod = class_getInstanceMethod(aClass, originalSelector);
+    
+    Method swizzledMethod = class_getInstanceMethod(aClass, swizzledSelector);
+    
+    BOOL didAddMethod = class_addMethod(aClass,originalSelector,method_getImplementation(swizzledMethod),method_getTypeEncoding(swizzledMethod));
+    
+    if(didAddMethod) {
+        class_replaceMethod(aClass,swizzledSelector,method_getImplementation(originalMethod),method_getTypeEncoding(originalMethod));
+    } else {
+        method_exchangeImplementations(originalMethod, swizzledMethod);
+    }
+}
 
 id _swizzleMethod(id self,SEL _cmd,NSURLRequest *request)
 {
@@ -29,10 +58,20 @@ id _swizzleMethod(id self,SEL _cmd,NSURLRequest *request)
     return returnValue;
 }
 
+
+id _swizzleLoadRequestMethod(id self,SEL _cmd,NSURLRequest *request)
+{
+    assert([NSStringFromSelector(_cmd) isEqualToString:NSStringFromSelector(@selector(loadRequest:))]);
+    //code
+//    NSString *originUrlString = request.URL.absoluteString;
+    _originScheme = request.URL.scheme;
+    NSString *customUrlString = [request.URL.absoluteString stringByReplacingOccurrencesOfString:_originScheme withString:customscheme];
+    request = [NSURLRequest requestWithURL:[NSURL URLWithString:customUrlString]];
+    id returnValue = ((id(*)(id,SEL,NSURLRequest*))_originalMethodImp)(self, _cmd,request);
+    return returnValue;
+}
+
 - (void)cacheEnable{
-    //设置URLSchemeHandler来处理特定URLScheme的请求，URLSchemeHandler需要实现WKURLSchemeHandler协议
-    //本例中WKWebView将把URLScheme为customScheme的请求交由CustomURLSchemeHandler类的实例处理
-    [self.configuration setURLSchemeHandler:[CustomURLSchemeHandler new] forURLScheme:customscheme];
     
     if (_originalMethodImp) {
         return;
