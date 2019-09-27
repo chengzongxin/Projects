@@ -93,6 +93,23 @@ id _swizzleLoadRequestMethod(id self,SEL _cmd,NSURLRequest *request)
 //    NSLog(@"----------------------------");
 }
 
+
+#pragma mark - Public Method
+
++ (void)clearCache{
+    //allWebsiteDataTypes清除所有缓存
+    NSSet *websiteDataTypes = [WKWebsiteDataStore allWebsiteDataTypes];
+    
+    NSDate *dateFrom = [NSDate dateWithTimeIntervalSince1970:0];
+    
+    [[WKWebsiteDataStore defaultDataStore] removeDataOfTypes:websiteDataTypes modifiedSince:dateFrom completionHandler:^{
+        
+    }];
+    // 清除缓存数据
+    [[CustomURLSchemeHandler new] clearCache];
+}
+
+
 #pragma mark - Setter & Getter
 - (NSString *)originScheme{
     return _originScheme;

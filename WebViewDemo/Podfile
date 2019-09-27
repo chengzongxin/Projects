@@ -6,8 +6,8 @@ target 'WebViewDemo' do
   use_frameworks!
 
   # Pods for WebViewDemo
-  pod 'VasSonic', '3.0.0'
-  pod 'SDWebImage'
+#  pod 'VasSonic', '3.0.0'
+#  pod 'SDWebImage'
 
   target 'WebViewDemoTests' do
     inherit! :search_paths

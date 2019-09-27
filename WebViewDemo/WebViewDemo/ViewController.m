@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "WebViewController.h"
-#import "CustomURLSchemeHandler.h"
+#import "WKWebView+Cache.h"
 
 @interface ViewController ()
 
@@ -45,17 +45,7 @@
 
 
 - (IBAction)clear:(id)sender {
-    
-    //allWebsiteDataTypes清除所有缓存
-    NSSet *websiteDataTypes = [WKWebsiteDataStore allWebsiteDataTypes];
-    
-    NSDate *dateFrom = [NSDate dateWithTimeIntervalSince1970:0];
-    
-    [[WKWebsiteDataStore defaultDataStore] removeDataOfTypes:websiteDataTypes modifiedSince:dateFrom completionHandler:^{
-        
-    }];
-    
-    [[CustomURLSchemeHandler new] clearCache];
+    [WKWebView clearCache];
 }
 
 

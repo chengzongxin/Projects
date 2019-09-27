@@ -8,9 +8,9 @@
 
 #import "CustomURLSchemeHandler.h"
 #import <MobileCoreServices/MobileCoreServices.h>
-#import <SDWebImage.h>
+//#import <SDWebImage.h>
 //#import <SDWebImage/SDImageCache.h>
-#import <SDImageCache.h>
+//#import <SDImageCache.h>
 
 #import <CommonCrypto/CommonDigest.h>
 #import <CoreText/CTFramesetter.h>

@@ -17,9 +17,9 @@
 		596B6321233B10A300A58B25 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 596B6320233B10A300A58B25 /* main.m */; };
 		596B632B233B10A300A58B25 /* WebViewDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 596B632A233B10A300A58B25 /* WebViewDemoTests.m */; };
 		596B6336233B10A300A58B25 /* WebViewDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 596B6335233B10A300A58B25 /* WebViewDemoUITests.m */; };
-		5983B022233DB46F00E01083 /* WKWebView+Cache.m in Sources */ = {isa = PBXBuildFile; fileRef = 5983B021233DB46F00E01083 /* WKWebView+Cache.m */; };
+		5983B028233DFB3B00E01083 /* CustomURLSchemeHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5983B024233DFB3B00E01083 /* CustomURLSchemeHandler.m */; };
+		5983B029233DFB3B00E01083 /* WKWebView+Cache.m in Sources */ = {isa = PBXBuildFile; fileRef = 5983B026233DFB3B00E01083 /* WKWebView+Cache.m */; };
 		59E14E58233B1A84004D8D19 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59E14E57233B1A84004D8D19 /* WebViewController.m */; };
-		59E14E5B233B3E5C004D8D19 /* CustomURLSchemeHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 59E14E5A233B3E5C004D8D19 /* CustomURLSchemeHandler.m */; };
 		FE677AF7D42E234DCF41F8A1 /* Pods_WebViewDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE2516641DA2053007A798EB /* Pods_WebViewDemoUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,12 +60,12 @@
 		596B6331233B10A300A58B25 /* WebViewDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WebViewDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		596B6335233B10A300A58B25 /* WebViewDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebViewDemoUITests.m; sourceTree = "<group>"; };
 		596B6337233B10A300A58B25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5983B020233DB46F00E01083 /* WKWebView+Cache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WKWebView+Cache.h"; sourceTree = "<group>"; };
-		5983B021233DB46F00E01083 /* WKWebView+Cache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "WKWebView+Cache.m"; sourceTree = "<group>"; };
+		5983B024233DFB3B00E01083 /* CustomURLSchemeHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomURLSchemeHandler.m; sourceTree = "<group>"; };
+		5983B025233DFB3B00E01083 /* WKWebView+Cache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WKWebView+Cache.h"; sourceTree = "<group>"; };
+		5983B026233DFB3B00E01083 /* WKWebView+Cache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WKWebView+Cache.m"; sourceTree = "<group>"; };
+		5983B027233DFB3B00E01083 /* CustomURLSchemeHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomURLSchemeHandler.h; sourceTree = "<group>"; };
 		59E14E56233B1A84004D8D19 /* WebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		59E14E57233B1A84004D8D19 /* WebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
-		59E14E59233B3E5C004D8D19 /* CustomURLSchemeHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomURLSchemeHandler.h; sourceTree = "<group>"; };
-		59E14E5A233B3E5C004D8D19 /* CustomURLSchemeHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomURLSchemeHandler.m; sourceTree = "<group>"; };
 		5CE410E13E7D0A95796F337D /* Pods-WebViewDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebViewDemo.release.xcconfig"; path = "Target Support Files/Pods-WebViewDemo/Pods-WebViewDemo.release.xcconfig"; sourceTree = "<group>"; };
 		8449CB243E5A482227C95DEE /* Pods-WebViewDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebViewDemoTests.debug.xcconfig"; path = "Target Support Files/Pods-WebViewDemoTests/Pods-WebViewDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9AB0958DD6B44F1A6F6A983F /* Pods-WebViewDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebViewDemoUITests.debug.xcconfig"; path = "Target Support Files/Pods-WebViewDemoUITests/Pods-WebViewDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -127,16 +127,13 @@
 		596B6310233B10A100A58B25 /* WebViewDemo */ = {
 			isa = PBXGroup;
 			children = (
+				5983B023233DFB3B00E01083 /* WebViewCache */,
 				596B6311233B10A100A58B25 /* AppDelegate.h */,
 				596B6312233B10A100A58B25 /* AppDelegate.m */,
 				596B6314233B10A100A58B25 /* ViewController.h */,
 				596B6315233B10A100A58B25 /* ViewController.m */,
 				59E14E56233B1A84004D8D19 /* WebViewController.h */,
 				59E14E57233B1A84004D8D19 /* WebViewController.m */,
-				5983B020233DB46F00E01083 /* WKWebView+Cache.h */,
-				5983B021233DB46F00E01083 /* WKWebView+Cache.m */,
-				59E14E59233B3E5C004D8D19 /* CustomURLSchemeHandler.h */,
-				59E14E5A233B3E5C004D8D19 /* CustomURLSchemeHandler.m */,
 				596B6317233B10A100A58B25 /* Main.storyboard */,
 				596B631A233B10A300A58B25 /* Assets.xcassets */,
 				596B631C233B10A300A58B25 /* LaunchScreen.storyboard */,
@@ -162,6 +159,17 @@
 				596B6337233B10A300A58B25 /* Info.plist */,
 			);
 			path = WebViewDemoUITests;
+			sourceTree = "<group>";
+		};
+		5983B023233DFB3B00E01083 /* WebViewCache */ = {
+			isa = PBXGroup;
+			children = (
+				5983B025233DFB3B00E01083 /* WKWebView+Cache.h */,
+				5983B026233DFB3B00E01083 /* WKWebView+Cache.m */,
+				5983B027233DFB3B00E01083 /* CustomURLSchemeHandler.h */,
+				5983B024233DFB3B00E01083 /* CustomURLSchemeHandler.m */,
+			);
+			path = WebViewCache;
 			sourceTree = "<group>";
 		};
 		AFDAA200D39030782DB516F3 /* Pods */ = {
@@ -198,7 +206,6 @@
 				596B630A233B10A100A58B25 /* Sources */,
 				596B630B233B10A100A58B25 /* Frameworks */,
 				596B630C233B10A100A58B25 /* Resources */,
-				17CFD8AD66C2B9C3C79A0701 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -339,23 +346,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		17CFD8AD66C2B9C3C79A0701 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-WebViewDemo/Pods-WebViewDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-WebViewDemo/Pods-WebViewDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WebViewDemo/Pods-WebViewDemo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		1F09F1F13E022A6A2DE1FCE7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -410,8 +400,8 @@
 				596B6316233B10A100A58B25 /* ViewController.m in Sources */,
 				596B6321233B10A300A58B25 /* main.m in Sources */,
 				596B6313233B10A100A58B25 /* AppDelegate.m in Sources */,
-				59E14E5B233B3E5C004D8D19 /* CustomURLSchemeHandler.m in Sources */,
-				5983B022233DB46F00E01083 /* WKWebView+Cache.m in Sources */,
+				5983B028233DFB3B00E01083 /* CustomURLSchemeHandler.m in Sources */,
+				5983B029233DFB3B00E01083 /* WKWebView+Cache.m in Sources */,
 				59E14E58233B1A84004D8D19 /* WebViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
