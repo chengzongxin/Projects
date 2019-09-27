@@ -53,15 +53,6 @@ static BOOL _enable = false;
     return [self cacheWithFrame:frame configuration:configuration];
 }
 
-id _swizzleMethod(id self,SEL _cmd,NSURLRequest *request)
-{
-    assert([NSStringFromSelector(_cmd) isEqualToString:NSStringFromSelector(@selector(loadRequest:))]);
-    //code
-    id returnValue = ((id(*)(id,SEL,NSURLRequest*))_originalMethodImp)(self, _cmd,request);
-    return returnValue;
-}
-
-
 id _swizzleLoadRequestMethod(id self,SEL _cmd,NSURLRequest *request)
 {
     assert([NSStringFromSelector(_cmd) isEqualToString:NSStringFromSelector(@selector(loadRequest:))]);
@@ -80,6 +71,7 @@ id _swizzleLoadRequestMethod(id self,SEL _cmd,NSURLRequest *request)
     _enable = true;
     
     if (_originalMethodImp) {
+        // 已经替换了方法
         return;
     }
     
@@ -92,7 +84,7 @@ id _swizzleLoadRequestMethod(id self,SEL _cmd,NSURLRequest *request)
 //    NSLog(@"%p",method_struct->method_imp);
 //    NSLog(@"----------------------------");
     
-    IMP swizzleImp = (IMP)_swizzleMethod;
+    IMP swizzleImp = (IMP)_swizzleLoadRequestMethod;
     
     
     _originalMethodImp = method_setImplementation(method,swizzleImp);
@@ -107,5 +99,10 @@ id _swizzleLoadRequestMethod(id self,SEL _cmd,NSURLRequest *request)
 //- (WKNavigation *)loadRequest:(NSURLRequest *)request{
 //    return [self loadRequest:request];
 //}
+
+
+- (NSString *)originScheme{
+    return _originScheme;
+}
 
 @end

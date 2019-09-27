@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface WKWebView (Cache)
 
+@property (copy, nonatomic, readonly) NSString *originScheme;
+
 - (void)cacheEnable;
 
 @end

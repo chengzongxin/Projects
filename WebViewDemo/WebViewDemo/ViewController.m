@@ -23,9 +23,10 @@
     [super viewDidLoad];
     //https://m.matafy.com/hotel_test/index.html#/Choose
 //    self.url = @"://m.matafy.com/medicalBeauty_test/index.html#/choose";
-    self.url = @"://m.matafy.com/hotel_test/index.html#/Choose";
-//    self.url = @"://m.matafy.com/medicalBeauty_test/index.html#/choose";
+//    self.url = @"://m.matafy.com/hotel_test/index.html#/Choose";
+    self.url = @"http://m.matafy.com/medicalBeauty_test/index.html#/choose";
 //    self.url = @"://www.taobao.com";
+//    self.url = @"http://mc.vip.qq.com/demo/indexv3";
     [WKWebView new];
 }
 
@@ -37,9 +38,9 @@
 }
 
 - (IBAction)customClick:(id)sender {
-    NSString *url = [customscheme stringByAppendingString:self.url];
+//    NSString *url = [customscheme stringByAppendingString:self.url];
 //    NSString *url = [@"http" stringByAppendingString:self.url];
-    WebViewController *web = [[WebViewController alloc] initWithUrl:url];
+    WebViewController *web = [[WebViewController alloc] initWithUrl:self.url];
     [self.navigationController pushViewController:web animated:YES];
     
 }
@@ -55,6 +56,8 @@
     [[WKWebsiteDataStore defaultDataStore] removeDataOfTypes:websiteDataTypes modifiedSince:dateFrom completionHandler:^{
         
     }];
+    
+    [[CustomURLSchemeHandler new] clearCache];
 }
 
 

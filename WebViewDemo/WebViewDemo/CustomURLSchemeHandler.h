@@ -15,10 +15,14 @@ FOUNDATION_EXTERN NSString *const customscheme;
 
 @interface CustomURLSchemeHandler : NSObject<WKURLSchemeHandler>
 
+
+- (void)clearCache;
+
 @end
 
 @interface NSString (md5)
 
 - (NSString *) md5;
+
 @end
 NS_ASSUME_NONNULL_END

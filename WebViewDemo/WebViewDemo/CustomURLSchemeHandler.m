@@ -16,6 +16,7 @@
 #import <CoreText/CTFramesetter.h>
 #import <CoreText/CTFont.h>
 #import <CoreText/CTStringAttributes.h>
+#import "WKWebView+Cache.h"
 
 
 NSString *const customscheme = @"customscheme";
@@ -50,6 +51,10 @@ NSString *const customscheme = @"customscheme";
     return _localDirectory;
 }
 
+- (void)clearCache{
+    [[NSFileManager defaultManager] removeItemAtPath:self.localDirectory error:nil];
+}
+
 - (void)webView:(WKWebView *)webView startURLSchemeTask:(id<WKURLSchemeTask>)urlSchemeTask{
     //加载本地资源
 //    NSString *fileName = [urlSchemeTask.request.URL.absoluteString componentsSeparatedByString:@"/"].lastObject;
@@ -80,9 +85,9 @@ NSString *const customscheme = @"customscheme";
         NSString *replacedStr = @"";
         NSString *schemeUrl = urlSchemeTask.request.URL.absoluteString;
         if ([schemeUrl hasPrefix:customscheme]) {
-            replacedStr = [schemeUrl stringByReplacingOccurrencesOfString:customscheme withString:@"http"];
+            replacedStr = [schemeUrl stringByReplacingOccurrencesOfString:customscheme withString:webView.originScheme];
         }
-        
+        NSLog(@"%@",replacedStr);
         NSMutableURLRequest * request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:replacedStr]];
         NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
         NSURLSession *session = [NSURLSession sessionWithConfiguration:config];
