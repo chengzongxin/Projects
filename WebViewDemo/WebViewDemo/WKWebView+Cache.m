@@ -17,18 +17,11 @@
 
 @implementation WKWebView (Cache)
 
+
 #pragma mark - SWIZZ ORIGIN METHOD
 static IMP _originalMethodImp = nil;
 static NSString *_originScheme = nil;
 
-- (instancetype)cacheWithFrame:(CGRect)frame configuration:(WKWebViewConfiguration *)configuration{
-    NSLog(@"%s",__FUNCTION__);
-    
-    //设置URLSchemeHandler来处理特定URLScheme的请求，URLSchemeHandler需要实现WKURLSchemeHandler协议
-    //本例中WKWebView将把URLScheme为customScheme的请求交由CustomURLSchemeHandler类的实例处理
-    [configuration setURLSchemeHandler:[CustomURLSchemeHandler new] forURLScheme:customscheme];
-    return [self cacheWithFrame:frame configuration:configuration];
-}
 
 + (void)load{
     Class aClass = [self class];
@@ -48,6 +41,16 @@ static NSString *_originScheme = nil;
     } else {
         method_exchangeImplementations(originalMethod, swizzledMethod);
     }
+}
+
+
+- (instancetype)cacheWithFrame:(CGRect)frame configuration:(WKWebViewConfiguration *)configuration{
+    NSLog(@"%s",__FUNCTION__);
+    
+    //设置URLSchemeHandler来处理特定URLScheme的请求，URLSchemeHandler需要实现WKURLSchemeHandler协议
+    //本例中WKWebView将把URLScheme为customScheme的请求交由CustomURLSchemeHandler类的实例处理
+    [configuration setURLSchemeHandler:[CustomURLSchemeHandler new] forURLScheme:customscheme];  // 这句代码必须在创建webview之前设置
+    return [self cacheWithFrame:frame configuration:configuration];
 }
 
 id _swizzleMethod(id self,SEL _cmd,NSURLRequest *request)
