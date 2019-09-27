@@ -17,6 +17,7 @@
 		596B6321233B10A300A58B25 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 596B6320233B10A300A58B25 /* main.m */; };
 		596B632B233B10A300A58B25 /* WebViewDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 596B632A233B10A300A58B25 /* WebViewDemoTests.m */; };
 		596B6336233B10A300A58B25 /* WebViewDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 596B6335233B10A300A58B25 /* WebViewDemoUITests.m */; };
+		5983B022233DB46F00E01083 /* WKWebView+Cache.m in Sources */ = {isa = PBXBuildFile; fileRef = 5983B021233DB46F00E01083 /* WKWebView+Cache.m */; };
 		59E14E58233B1A84004D8D19 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59E14E57233B1A84004D8D19 /* WebViewController.m */; };
 		59E14E5B233B3E5C004D8D19 /* CustomURLSchemeHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 59E14E5A233B3E5C004D8D19 /* CustomURLSchemeHandler.m */; };
 		FE677AF7D42E234DCF41F8A1 /* Pods_WebViewDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE2516641DA2053007A798EB /* Pods_WebViewDemoUITests.framework */; };
@@ -59,6 +60,8 @@
 		596B6331233B10A300A58B25 /* WebViewDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WebViewDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		596B6335233B10A300A58B25 /* WebViewDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebViewDemoUITests.m; sourceTree = "<group>"; };
 		596B6337233B10A300A58B25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5983B020233DB46F00E01083 /* WKWebView+Cache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WKWebView+Cache.h"; sourceTree = "<group>"; };
+		5983B021233DB46F00E01083 /* WKWebView+Cache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "WKWebView+Cache.m"; sourceTree = "<group>"; };
 		59E14E56233B1A84004D8D19 /* WebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		59E14E57233B1A84004D8D19 /* WebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		59E14E59233B3E5C004D8D19 /* CustomURLSchemeHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomURLSchemeHandler.h; sourceTree = "<group>"; };
@@ -130,6 +133,8 @@
 				596B6315233B10A100A58B25 /* ViewController.m */,
 				59E14E56233B1A84004D8D19 /* WebViewController.h */,
 				59E14E57233B1A84004D8D19 /* WebViewController.m */,
+				5983B020233DB46F00E01083 /* WKWebView+Cache.h */,
+				5983B021233DB46F00E01083 /* WKWebView+Cache.m */,
 				59E14E59233B3E5C004D8D19 /* CustomURLSchemeHandler.h */,
 				59E14E5A233B3E5C004D8D19 /* CustomURLSchemeHandler.m */,
 				596B6317233B10A100A58B25 /* Main.storyboard */,
@@ -406,6 +411,7 @@
 				596B6321233B10A300A58B25 /* main.m in Sources */,
 				596B6313233B10A100A58B25 /* AppDelegate.m in Sources */,
 				59E14E5B233B3E5C004D8D19 /* CustomURLSchemeHandler.m in Sources */,
+				5983B022233DB46F00E01083 /* WKWebView+Cache.m in Sources */,
 				59E14E58233B1A84004D8D19 /* WebViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
