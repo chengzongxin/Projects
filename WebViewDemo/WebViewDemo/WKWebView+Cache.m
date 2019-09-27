@@ -21,29 +21,29 @@
 #pragma mark - SWIZZ ORIGIN METHOD
 static IMP _originalMethodImp = nil;
 static NSString *_originScheme = nil;
-
+static BOOL _enable = false;
 
 + (void)load{
     Class aClass = [self class];
     
-    SEL originalSelector = @selector(initWithFrame:configuration:);
+    SEL initCfg = @selector(initWithFrame:configuration:);
     
-    SEL swizzledSelector = @selector(cacheWithFrame:configuration:);
+    SEL cacheCfg = @selector(cacheWithFrame:configuration:);
     
-    Method originalMethod = class_getInstanceMethod(aClass, originalSelector);
+    Method originalMethod = class_getInstanceMethod(aClass, initCfg);
     
-    Method swizzledMethod = class_getInstanceMethod(aClass, swizzledSelector);
+    Method swizzledMethod = class_getInstanceMethod(aClass, cacheCfg);
     
-    BOOL didAddMethod = class_addMethod(aClass,originalSelector,method_getImplementation(swizzledMethod),method_getTypeEncoding(swizzledMethod));
+    BOOL didAddMethod = class_addMethod(aClass,initCfg,method_getImplementation(swizzledMethod),method_getTypeEncoding(swizzledMethod));
     
     if(didAddMethod) {
-        class_replaceMethod(aClass,swizzledSelector,method_getImplementation(originalMethod),method_getTypeEncoding(originalMethod));
+        class_replaceMethod(aClass,cacheCfg,method_getImplementation(originalMethod),method_getTypeEncoding(originalMethod));
     } else {
         method_exchangeImplementations(originalMethod, swizzledMethod);
     }
 }
 
-
+// 替换原有方法-initWithFrame:configuration:
 - (instancetype)cacheWithFrame:(CGRect)frame configuration:(WKWebViewConfiguration *)configuration{
     NSLog(@"%s",__FUNCTION__);
     
@@ -65,16 +65,19 @@ id _swizzleMethod(id self,SEL _cmd,NSURLRequest *request)
 id _swizzleLoadRequestMethod(id self,SEL _cmd,NSURLRequest *request)
 {
     assert([NSStringFromSelector(_cmd) isEqualToString:NSStringFromSelector(@selector(loadRequest:))]);
-    //code
-//    NSString *originUrlString = request.URL.absoluteString;
-    _originScheme = request.URL.scheme;
-    NSString *customUrlString = [request.URL.absoluteString stringByReplacingOccurrencesOfString:_originScheme withString:customscheme];
-    request = [NSURLRequest requestWithURL:[NSURL URLWithString:customUrlString]];
+    
+    if (_enable) {
+        _originScheme = request.URL.scheme;
+        NSString *customUrlString = [request.URL.absoluteString stringByReplacingOccurrencesOfString:_originScheme withString:customscheme];
+        request = [NSURLRequest requestWithURL:[NSURL URLWithString:customUrlString]];
+    }
+    
     id returnValue = ((id(*)(id,SEL,NSURLRequest*))_originalMethodImp)(self, _cmd,request);
     return returnValue;
 }
 
 - (void)cacheEnable{
+    _enable = true;
     
     if (_originalMethodImp) {
         return;
