@@ -26,18 +26,18 @@ static BOOL _enable = false;
 + (void)load{
     Class aClass = [self class];
     
-    SEL initCfg = @selector(initWithFrame:configuration:);
+    SEL originalSelector = @selector(initWithFrame:configuration:);
     
-    SEL cacheCfg = @selector(cacheWithFrame:configuration:);
+    SEL swizzledSelector = @selector(cacheWithFrame:configuration:);
     
-    Method originalMethod = class_getInstanceMethod(aClass, initCfg);
+    Method originalMethod = class_getInstanceMethod(aClass, originalSelector);
     
-    Method swizzledMethod = class_getInstanceMethod(aClass, cacheCfg);
+    Method swizzledMethod = class_getInstanceMethod(aClass, swizzledSelector);
     
-    BOOL didAddMethod = class_addMethod(aClass,initCfg,method_getImplementation(swizzledMethod),method_getTypeEncoding(swizzledMethod));
+    BOOL didAddMethod = class_addMethod(aClass,originalSelector,method_getImplementation(swizzledMethod),method_getTypeEncoding(swizzledMethod));
     
     if(didAddMethod) {
-        class_replaceMethod(aClass,cacheCfg,method_getImplementation(originalMethod),method_getTypeEncoding(originalMethod));
+        class_replaceMethod(aClass,swizzledSelector,method_getImplementation(originalMethod),method_getTypeEncoding(originalMethod));
     } else {
         method_exchangeImplementations(originalMethod, swizzledMethod);
     }
