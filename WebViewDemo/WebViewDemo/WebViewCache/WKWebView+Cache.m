@@ -126,7 +126,18 @@ id _swizzleLoadRequestMethod(id self,SEL _cmd,NSURLRequest *request)
     if (cacheEnable) {
         [self swizzLoadRequest];
     }
-    
+}
+
+- (float)maxDiskCache{
+    float maxCache = [objc_getAssociatedObject(self, _cmd) floatValue];
+    if (maxCache == 0) {
+        maxCache = 1024;
+    }
+    return maxCache;
+}
+
+- (void)setMaxDiskCache:(float)maxDiskCache{
+    objc_setAssociatedObject(self, @selector(maxDiskCache), @(maxDiskCache), OBJC_ASSOCIATION_ASSIGN);
 }
 
 @end

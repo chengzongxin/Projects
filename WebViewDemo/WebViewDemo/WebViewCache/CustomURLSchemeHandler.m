@@ -57,11 +57,6 @@ NSString *const customscheme = @"customscheme";
 
 - (void)webView:(WKWebView *)webView startURLSchemeTask:(id<WKURLSchemeTask>)urlSchemeTask{
     //加载本地资源
-//    NSString *fileName = [urlSchemeTask.request.URL.absoluteString componentsSeparatedByString:@"/"].lastObject;
-//    fileName = [fileName componentsSeparatedByString:@"?"].firstObject;
-//    NSString *dirPath = [kPathCache stringByAppendingPathComponent:kCssFiles];
-//    NSString *filePath = [dirPath stringByAppendingPathComponent:fileName];
-
     NSLog(@"%@",urlSchemeTask.request.URL.absoluteString);
 
     NSString *urlString = urlSchemeTask.request.URL.absoluteString;
@@ -72,13 +67,12 @@ NSString *const customscheme = @"customscheme";
     NSString *filePath = [self.localDirectory stringByAppendingPathComponent:fileName];
     
     //当前的requestUrl的scheme都是customScheme
-//    NSString *requestUrl = urlSchemeTask.request.URL.absoluteString;
-//    NSString *fileName = [[requestUrl componentsSeparatedByString:@"?"].firstObject componentsSeparatedByString:@"/"].lastObject;
-//    NSString *fullPath = [self.localDirectory stringByAppendingPathComponent:fileName];
-//    if ([fullPath hasSuffix:@"Choose"] || [fullPath hasSuffix:@"choose"] || [fullPath hasSuffix:@"www.taobao.com"] ||  [fullPath hasSuffix:@"www.baidu.com"] ) {
-//        fullPath = [fullPath stringByAppendingString:@".html"];
-//    }
+    double fileSize = [NSFileManager fileSizeAtPath:self.localDirectory];
+    NSLog(@"fileSize = %f",fileSize);
     
+    if (fileSize > 1024*1024*1024) {
+        [NSFileManager clearFileAtPath:self.localDirectory];
+    }
     //文件不存在
     if (![[NSFileManager defaultManager] fileExistsAtPath:filePath]) {
         NSLog(@"文件不存在,开始下载");
@@ -266,6 +260,48 @@ NSString *const customscheme = @"customscheme";
     for(int i = 0; i < CC_MD5_DIGEST_LENGTH; i++)
         [output appendFormat:@"%02x", digest[i]];
     return output;
+}
+
+@end
+
+
+@implementation NSFileManager (Tool)
+
++ (double)fileSizeAtPath:(NSString *)path{
+    
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSArray *contents = [fileManager contentsOfDirectoryAtPath:path error:nil];
+    NSEnumerator *enumerator = [contents objectEnumerator];
+    NSString *fileName;
+    CGFloat folderSize = 0.0f;
+    
+    while((fileName = [enumerator nextObject])) {
+        NSString *filePath = [path stringByAppendingPathComponent:fileName];
+        folderSize += [fileManager attributesOfItemAtPath:filePath error:nil].fileSize;
+        [fileManager removeItemAtPath:filePath error:NULL];
+    }
+//    return [NSString stringWithFormat:@"%.2f",folderSize/1024.0f/1024.0f];
+    return folderSize;
+}
+
++ (BOOL)clearFileAtPath:(NSString *)path{
+    
+    BOOL allSeccess = NO;
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    if ([fileManager fileExistsAtPath:path]) {
+        NSArray *childerFiles = [fileManager subpathsAtPath:path];
+        for (NSString *fileName in childerFiles) {
+            //如有需要，加入条件，过滤掉不想删除的文件
+            NSString *absolutePath=[path stringByAppendingPathComponent:fileName];
+            NSError *error;
+            BOOL success = [fileManager removeItemAtPath:absolutePath error:&error];
+            if (!success) {
+                NSLog(@"%@",error);
+                allSeccess = NO;  // 删除某个文件失败
+            }
+        }
+    }
+    return allSeccess;
 }
 
 @end

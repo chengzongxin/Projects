@@ -25,4 +25,14 @@ FOUNDATION_EXTERN NSString *const customscheme;
 - (NSString *) md5;
 
 @end
+
+
+@interface NSFileManager (Tool)
+
++ (double)fileSizeAtPath:(NSString *)path;
+
++ (BOOL)clearFileAtPath:(NSString *)path;
+
+@end
+
 NS_ASSUME_NONNULL_END

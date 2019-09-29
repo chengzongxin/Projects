@@ -15,6 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (copy, nonatomic, readonly) NSString *originScheme;
 
 @property (assign, nonatomic) BOOL cacheEnable;
+/* 最大沙盒缓存,默认1024MB,单位MB */
+@property (assign, nonatomic) float maxDiskCache;
 
 + (void)clearCache;
 
