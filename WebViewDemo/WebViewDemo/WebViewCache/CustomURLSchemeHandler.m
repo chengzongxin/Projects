@@ -58,6 +58,10 @@ NSString *const customscheme = @"customscheme";
 - (void)webView:(WKWebView *)webView startURLSchemeTask:(id<WKURLSchemeTask>)urlSchemeTask{
     //加载本地资源
     NSLog(@"%@",urlSchemeTask.request.URL.absoluteString);
+    
+    NSDictionary *headers = urlSchemeTask.request.allHTTPHeaderFields;
+    NSString *accept = headers[@"Accept"];
+    NSLog(@"accept = %@",accept);
 
     NSString *urlString = urlSchemeTask.request.URL.absoluteString;
     NSString *fileName = [[urlString md5] stringByAppendingFormat:@".%@",[urlString pathExtension]];
@@ -273,12 +277,11 @@ NSString *const customscheme = @"customscheme";
     NSArray *contents = [fileManager contentsOfDirectoryAtPath:path error:nil];
     NSEnumerator *enumerator = [contents objectEnumerator];
     NSString *fileName;
-    CGFloat folderSize = 0.0f;
+    double folderSize = 0.0f;
     
     while((fileName = [enumerator nextObject])) {
         NSString *filePath = [path stringByAppendingPathComponent:fileName];
         folderSize += [fileManager attributesOfItemAtPath:filePath error:nil].fileSize;
-        [fileManager removeItemAtPath:filePath error:NULL];
     }
 //    return [NSString stringWithFormat:@"%.2f",folderSize/1024.0f/1024.0f];
     return folderSize;
