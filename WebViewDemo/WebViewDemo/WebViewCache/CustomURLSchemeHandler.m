@@ -70,13 +70,10 @@ NSString *const customscheme = @"customscheme";
     }
     NSString *filePath = [self.localDirectory stringByAppendingPathComponent:fileName];
     
-    //当前的requestUrl的scheme都是customScheme
-    double fileSize = [NSFileManager fileSizeAtPath:self.localDirectory];
-    NSLog(@"fileSize = %f",fileSize);
     
-    if (fileSize > 1024*1024*1024) {
-        [NSFileManager clearFileAtPath:self.localDirectory];
-    }
+    [self queryCacheSize];
+    
+    //当前的requestUrl的scheme都是customScheme
     //文件不存在
     if (![[NSFileManager defaultManager] fileExistsAtPath:filePath]) {
         NSLog(@"文件不存在,开始下载");
@@ -237,6 +234,29 @@ NSString *const customscheme = @"customscheme";
 //        return NO;
 //    }
 //}
+
+- (void)queryCacheSize{
+    
+    static int _queryTimes = 0;//查询100次,查一次,避免IO操作过于频繁
+    
+    if(_queryTimes >= 100) {
+        _queryTimes = 0;
+        return;
+    }else if (_queryTimes == 0){
+        // query
+        _queryTimes ++;
+    } else {
+        _queryTimes ++;
+        return;
+    }
+    
+    double fileSize = [NSFileManager fileSizeAtPath:self.localDirectory];
+    NSLog(@"fileSize = %f",fileSize);
+    
+    if (fileSize > 1024*1024*1024) {
+        [NSFileManager clearFileAtPath:self.localDirectory];
+    }
+}
 
 //根据路径获取MIMEType
 - (NSString *)getMimeTypeWithFilePath:(NSString *)filePath{
