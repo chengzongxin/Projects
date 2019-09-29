@@ -57,17 +57,28 @@ NSString *const customscheme = @"customscheme";
 
 - (void)webView:(WKWebView *)webView startURLSchemeTask:(id<WKURLSchemeTask>)urlSchemeTask{
     //加载本地资源
-    NSLog(@"%@",urlSchemeTask.request.URL.absoluteString);
+    NSLog(@"----------\n%@",urlSchemeTask.request.URL.absoluteString);
     
     NSDictionary *headers = urlSchemeTask.request.allHTTPHeaderFields;
+    NSLog(@"%@",headers);
     NSString *accept = headers[@"Accept"];
     NSLog(@"accept = %@",accept);
 
     NSString *urlString = urlSchemeTask.request.URL.absoluteString;
-    NSString *fileName = [[urlString md5] stringByAppendingFormat:@".%@",[urlString pathExtension]];
-    if ([urlString containsString:@"index"]) {
+    
+    NSString *fileName;
+    
+    if ((accept.length >= @"text".length && [accept rangeOfString:@"text/html"].location != NSNotFound)) {
+        //html 拦截
         fileName = [[urlString md5] stringByAppendingString:@".html"];
+    }else{
+        //其他文件
+        fileName = [[urlString md5] stringByAppendingFormat:@".%@",[urlString pathExtension]];
     }
+    
+//    // delete
+//    fileName = [urlString md5];
+    
     NSString *filePath = [self.localDirectory stringByAppendingPathComponent:fileName];
     
     
@@ -268,6 +279,9 @@ NSString *const customscheme = @"customscheme";
     NSString *mimeType = (__bridge_transfer NSString *)UTTypeCopyPreferredTagWithClass(type, kUTTagClassMIMEType);
     if (type != NULL)
         CFRelease(type);
+    if (!mimeType) {
+        return @"application/octet-stream";
+    }
     
     return mimeType;
 }
