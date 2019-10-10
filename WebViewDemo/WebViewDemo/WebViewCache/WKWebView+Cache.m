@@ -131,7 +131,7 @@ id _swizzleLoadRequestMethod(id self,SEL _cmd,NSURLRequest *request)
 - (float)maxDiskCache{
     float maxCache = [objc_getAssociatedObject(self, _cmd) floatValue];
     if (maxCache == 0) {
-        maxCache = 1024;
+        maxCache = 1024*1024*1024;
     }
     return maxCache;
 }

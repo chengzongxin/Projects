@@ -29,6 +29,8 @@ NSString *const customscheme = @"customscheme";
 
 @property (copy, nonatomic) NSString *localDirectory;
 
+@property (weak, nonatomic) WKWebView *webView;
+
 @end
 
 @implementation CustomURLSchemeHandler
@@ -56,6 +58,7 @@ NSString *const customscheme = @"customscheme";
 }
 
 - (void)webView:(WKWebView *)webView startURLSchemeTask:(id<WKURLSchemeTask>)urlSchemeTask{
+    self.webView = webView;
     //加载本地资源
     NSLog(@"----------\n%@",urlSchemeTask.request.URL.absoluteString);
     
@@ -262,9 +265,10 @@ NSString *const customscheme = @"customscheme";
     }
     
     double fileSize = [NSFileManager fileSizeAtPath:self.localDirectory];
-    NSLog(@"fileSize = %f",fileSize);
     
-    if (fileSize > 1024*1024*1024) {
+    
+    if (fileSize > self.webView.maxDiskCache) {
+        NSLog(@"清理缓存文件大小 %f, 当前最大缓存文件大小 = %f",fileSize,self.webView.maxDiskCache);
         [NSFileManager clearFileAtPath:self.localDirectory];
     }
 }

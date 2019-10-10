@@ -41,6 +41,8 @@
     
     webView.cacheEnable = self.cacheEnable;
     
+    webView.maxDiskCache = 1024*1024*1024;
+    
     [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.url]]];
     
     [self.view addSubview:webView];
