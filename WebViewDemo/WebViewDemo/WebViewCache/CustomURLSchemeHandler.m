@@ -63,9 +63,9 @@ NSString *const customscheme = @"customscheme";
     NSLog(@"----------\n%@",urlSchemeTask.request.URL.absoluteString);
     
     NSDictionary *headers = urlSchemeTask.request.allHTTPHeaderFields;
-    NSLog(@"%@",headers);
+//    NSLog(@"%@",headers);
     NSString *accept = headers[@"Accept"];
-    NSLog(@"accept = %@",accept);
+//    NSLog(@"accept = %@",accept);
 
     NSString *urlString = urlSchemeTask.request.URL.absoluteString;
     

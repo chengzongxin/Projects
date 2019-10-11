@@ -8,6 +8,7 @@ target 'WebViewDemo' do
   # Pods for WebViewDemo
 #  pod 'VasSonic', '3.0.0'
 #  pod 'SDWebImage'
+  pod 'WebViewCache'
 
   target 'WebViewDemoTests' do
     inherit! :search_paths
