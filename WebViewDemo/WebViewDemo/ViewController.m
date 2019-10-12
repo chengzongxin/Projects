@@ -55,6 +55,12 @@
         [[[WebDownLoadManager alloc] init] downLoadWithUrl:path];
     }
     
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://112.90.89.15/mtfyan/version/configurer/2"]];
+    NSURLSession *sesson = [NSURLSession sharedSession];
+    [[sesson dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        NSLog(@"%@",response);
+        NSLog(@"%@",[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
+    }] resume];
 }
 
 - (IBAction)buttonClick:(id)sender {
