@@ -17,6 +17,7 @@
 #import <CoreText/CTFont.h>
 #import <CoreText/CTStringAttributes.h>
 #import "WKWebView+Cache.h"
+#import "WebCacheConst.h"
 
 
 NSString *const customscheme = @"customscheme";
@@ -66,23 +67,13 @@ NSString *const customscheme = @"customscheme";
 //    NSLog(@"%@",headers);
     NSString *accept = headers[@"Accept"];
 //    NSLog(@"accept = %@",accept);
-
-    NSString *urlString = urlSchemeTask.request.URL.absoluteString;
     
-    NSString *fileName;
-    
+    NSString *filePath = [self getFileFullPathWithUrl:urlSchemeTask.request.URL];
+    // 识别不出html
     if ((accept.length >= @"text".length && [accept rangeOfString:@"text/html"].location != NSNotFound)) {
-        //html 拦截
-        fileName = [[urlString md5] stringByAppendingString:@".html"];
-    }else{
-        //其他文件
-        fileName = [[urlString md5] stringByAppendingFormat:@".%@",[urlString pathExtension]];
+        //html 拦截拼接后缀
+        filePath = [filePath stringByAppendingString:@".html"];
     }
-    
-//    // delete
-//    fileName = [urlString md5];
-    
-    NSString *filePath = [self.localDirectory stringByAppendingPathComponent:fileName];
     
     
     [self queryCacheSize];
@@ -110,8 +101,8 @@ NSString *const customscheme = @"customscheme";
             } else {
 //                NSLog(@"下载完成");
                 [urlSchemeTask didFinish];
-                
-                [data writeToFile:filePath atomically:YES];
+                // 缓存文件
+                [self writeData:data atPath:filePath];
             }
         }];
         [dataTask resume];
@@ -289,6 +280,42 @@ NSString *const customscheme = @"customscheme";
     
     return mimeType;
 }
+
+- (NSString *)getFileFullPathWithUrl:(NSURL *)url{
+    
+    NSString *fullPath = nil;
+    NSString *directory = nil;
+    NSString *fileName = url.lastPathComponent;
+    
+    if ([url.path containsString:@"ticket"] || [url.path containsString:@"flynow"]) {
+        directory = WebCacheConst.sharedInstance.ticketDirectory;
+    }else if ([url.path containsString:hotelStr]) {
+        directory = WebCacheConst.sharedInstance.hotelDirectory;
+    }else if ([url.path containsString:trainStr]) {
+        directory = WebCacheConst.sharedInstance.trainDirectory;
+    }else if ([url.path containsString:scenicStr]) {
+        directory = WebCacheConst.sharedInstance.scenicDirectory;
+    }else if ([url.path containsString:movieStr]) {
+        directory = WebCacheConst.sharedInstance.movieDirectory;
+    }else if ([url.path containsString:medicalBeautyStr]) {
+        directory = WebCacheConst.sharedInstance.medicalBeautyDirectory;
+    }else if ([url.path containsString:rentCarStr]) {
+        directory = WebCacheConst.sharedInstance.rentCarDirectory;
+    }else{
+        directory = WebCacheConst.sharedInstance.commonDirectory;
+        fullPath = [[directory stringByAppendingPathComponent:[url.absoluteString md5]] stringByAppendingPathExtension:url.pathExtension];
+        return fullPath;
+    }
+    
+    fullPath = [directory stringByAppendingPathComponent:fileName];
+    
+    return fullPath;
+}
+
+- (void)writeData:(NSData *)data atPath:(NSString *)path{
+    [data writeToFile:path atomically:YES];
+}
+
 
 @end
 
