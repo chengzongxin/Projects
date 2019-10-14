@@ -174,10 +174,14 @@
 		5983B023233DFB3B00E01083 /* WebViewCache */ = {
 			isa = PBXGroup;
 			children = (
+				59C9B10C2351880F00599299 /* WebDownLoadManager.h */,
+				59C9B10D2351880F00599299 /* WebDownLoadManager.m */,
 				5983B025233DFB3B00E01083 /* WKWebView+Cache.h */,
 				5983B026233DFB3B00E01083 /* WKWebView+Cache.m */,
 				5983B027233DFB3B00E01083 /* CustomURLSchemeHandler.h */,
 				5983B024233DFB3B00E01083 /* CustomURLSchemeHandler.m */,
+				59C9B10F2351BED200599299 /* WebCacheConst.h */,
+				59C9B1102351BED200599299 /* WebCacheConst.m */,
 			);
 			path = WebViewCache;
 			sourceTree = "<group>";
@@ -185,12 +189,8 @@
 		59C9B1052351813000599299 /* WebDownLoader */ = {
 			isa = PBXGroup;
 			children = (
-				59C9B10C2351880F00599299 /* WebDownLoadManager.h */,
-				59C9B10D2351880F00599299 /* WebDownLoadManager.m */,
 				59C9B1092351866E00599299 /* WebCacheHelpler.h */,
 				59C9B10A2351866E00599299 /* WebCacheHelpler.m */,
-				59C9B10F2351BED200599299 /* WebCacheConst.h */,
-				59C9B1102351BED200599299 /* WebCacheConst.m */,
 			);
 			path = WebDownLoader;
 			sourceTree = "<group>";

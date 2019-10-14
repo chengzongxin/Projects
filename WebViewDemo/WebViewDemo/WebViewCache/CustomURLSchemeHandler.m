@@ -28,34 +28,14 @@ NSString *const customscheme = @"customscheme";
 
 @property (strong, nonatomic) id<WKURLSchemeTask> urlSchemeTask;
 
-@property (copy, nonatomic) NSString *localDirectory;
-
 @property (weak, nonatomic) WKWebView *webView;
 
 @end
 
 @implementation CustomURLSchemeHandler
 
-// MARK: 本地目录
-- (NSString *)localDirectory{
-    if (!_localDirectory) {
-        _localDirectory = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"Cache"];
-        BOOL exist = [[NSFileManager defaultManager] fileExistsAtPath:_localDirectory];
-        if (!exist) {
-            NSError *error = nil;
-            [[NSFileManager defaultManager] createDirectoryAtPath:_localDirectory withIntermediateDirectories:YES attributes:nil error:&error];
-            if (error) {
-                NSLog(@"%@",error);
-            }
-        }
-//        _localDirectory = @"/Users/Joe/Desktop/Cache";
-        NSLog(@"%@",_localDirectory);
-    }
-    return _localDirectory;
-}
-
 - (void)clearCache{
-    [[NSFileManager defaultManager] removeItemAtPath:self.localDirectory error:nil];
+    [[NSFileManager defaultManager] removeItemAtPath:WebCacheConst.sharedInstance.cacheDirectory error:nil];
 }
 
 - (void)webView:(WKWebView *)webView startURLSchemeTask:(id<WKURLSchemeTask>)urlSchemeTask{
@@ -255,12 +235,12 @@ NSString *const customscheme = @"customscheme";
         return;
     }
     
-    double fileSize = [NSFileManager fileSizeAtPath:self.localDirectory];
+    double fileSize = [NSFileManager fileSizeAtPath:WebCacheConst.sharedInstance.cacheDirectory];
     
     
     if (fileSize > self.webView.maxDiskCache) {
         NSLog(@"清理缓存文件大小 %f, 当前最大缓存文件大小 = %f",fileSize,self.webView.maxDiskCache);
-        [NSFileManager clearFileAtPath:self.localDirectory];
+        [NSFileManager clearFileAtPath:WebCacheConst.sharedInstance.cacheDirectory];
     }
 }
 

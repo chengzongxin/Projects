@@ -52,12 +52,12 @@
         //        wself.expectedContentLength = response.expectedContentLength;
         //        [wself processPendingRequests];
         self.fileName = response.suggestedFilename;
-        NSLog(@"%@--%lld",response.MIMEType,response.expectedContentLength);
+//        NSLog(@"%@--%lld",response.MIMEType,response.expectedContentLength);
     } progressBlock:^(NSInteger receivedSize, NSInteger expectedSize, NSData *data) {
         //        [wself.data appendData:data];
         //        //处理视频数据加载请求
         //        [wself processPendingRequests];
-        NSLog(@"%zd--%zd",receivedSize,expectedSize);
+//        NSLog(@"%zd--%zd",receivedSize,expectedSize);
     } completedBlock:^(NSData *data, NSError *error, BOOL finished) {
         if(!error && finished) {
             [self cacheFile:data];
