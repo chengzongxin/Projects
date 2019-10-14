@@ -44,6 +44,17 @@ NS_ASSUME_NONNULL_BEGIN
 @property (copy, nonatomic) NSString *commonDirectory;
 //+ (NSString *)cacheDirectory;
 
+
+@property (copy, nonatomic) NSString *serverUrl;
+
+@property (copy, nonatomic) NSString *ticketUrl;// [server stringByAppendingPathComponent:ticketStr];
+@property (copy, nonatomic) NSString *hotelUrl;// [server stringByAppendingPathComponent:hotelStr];
+@property (copy, nonatomic) NSString *trainUrl;// [server stringByAppendingPathComponent:trainStr];
+@property (copy, nonatomic) NSString *scenicUrl;// [server stringByAppendingPathComponent:scenicStr];
+@property (copy, nonatomic) NSString *movieUrl;// [server stringByAppendingPathComponent:movieStr];
+@property (copy, nonatomic) NSString *medicalBeautyUrl;// [server stringByAppendingPathComponent:medicalBeautyStr];
+@property (copy, nonatomic) NSString *rentCarUrl;// [server stringByAppendingPathComponent:rentCarStr];
+
 @end
 
 NS_ASSUME_NONNULL_END

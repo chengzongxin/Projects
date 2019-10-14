@@ -20,6 +20,30 @@
 
 @implementation WebDownLoadManager
 
++ (void)downLoadH5Cache{
+    [[[self alloc] init] downLoadH5Cache];
+}
+
+- (void)downLoadH5Cache{
+    WebCacheConst *instance = WebCacheConst.sharedInstance;
+//    NSString *server = instance.serverUrl;
+//
+//    NSString *ticketUrl = [server stringByAppendingPathComponent:instance.ticketUrl];
+//    NSString *hotelUrl = [server stringByAppendingPathComponent:instance.hotelUrl];
+//    NSString *trainUrl = [server stringByAppendingPathComponent:instance.trainUrl];
+//    NSString *scenicUrl = [server stringByAppendingPathComponent:instance.scenicUrl];
+//    NSString *movieUrl = [server stringByAppendingPathComponent:instance.movieUrl];
+//    NSString *medicalBeautyUrl = [server stringByAppendingPathComponent:instance.medicalBeautyUrl];
+//    NSString *rentCarUrl = [server stringByAppendingPathComponent:instance.rentCarUrl];
+    
+    NSArray *urls = @[instance.ticketUrl,instance.hotelUrl,instance.trainUrl,instance.scenicUrl,instance.movieUrl,instance.medicalBeautyUrl,instance.rentCarUrl];
+    
+    for (NSString *url in urls) {
+        NSString *path = [url stringByAppendingPathExtension:@"zip"];
+        [self downLoadWithUrl:path];
+    }
+}
+
 - (void)downLoadWithUrl:(NSString *)urlString{
     NSURL *URL = [NSURL URLWithString:urlString];
     [[WebDownloader sharedDownloader] downloadWithURL:URL responseBlock:^(NSHTTPURLResponse *response) {

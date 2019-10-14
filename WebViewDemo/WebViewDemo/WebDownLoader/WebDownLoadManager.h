@@ -11,7 +11,14 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface WebDownLoadManager : NSObject
+
+/* 下载H5离线文件 */
++ (void)downLoadH5Cache;
+
+- (void)downLoadH5Cache;
+/* 下载资源 */
 - (void)downLoadWithUrl:(NSString *)urlString;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -121,6 +121,40 @@ static WebCacheConst *_instance = nil;
     return _commonDirectory;
 }
 
+
+#pragma mark URLS
+- (NSString *)serverUrl{
+    return releaseServer;
+}
+
+- (NSString *)ticketUrl{
+    return [self.serverUrl stringByAppendingPathComponent:ticketStr];
+}
+
+- (NSString *)hotelUrl{
+    return [self.serverUrl stringByAppendingPathComponent:hotelStr];
+}
+
+- (NSString *)trainUrl{
+    return [self.serverUrl stringByAppendingPathComponent:trainStr];
+}
+
+- (NSString *)scenicUrl{
+    return [self.serverUrl stringByAppendingPathComponent:scenicStr];
+}
+
+- (NSString *)movieUrl{
+    return [self.serverUrl stringByAppendingPathComponent:movieStr];
+}
+
+- (NSString *)medicalBeautyUrl{
+    return [self.serverUrl stringByAppendingPathComponent:medicalBeautyStr];
+}
+
+- (NSString *)rentCarUrl{
+    return [self.serverUrl stringByAppendingPathComponent:rentCarStr];
+}
+
 #pragma mark - Supperclass
 
 #pragma mark - NSObject

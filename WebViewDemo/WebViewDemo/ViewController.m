@@ -37,30 +37,14 @@
     self.urlLabel.text = self.urls[_currentIndex];
     self.url = self.urls[_currentIndex];
     
+    [WebDownLoadManager downLoadH5Cache];
     
-    NSString *server = releaseServer;
-    
-    NSString *ticketUrl = [server stringByAppendingPathComponent:ticketStr];
-    NSString *hotelUrl = [server stringByAppendingPathComponent:hotelStr];
-    NSString *trainUrl = [server stringByAppendingPathComponent:trainStr];
-    NSString *scenicUrl = [server stringByAppendingPathComponent:scenicStr];
-    NSString *movieUrl = [server stringByAppendingPathComponent:movieStr];
-    NSString *medicalBeautyUrl = [server stringByAppendingPathComponent:medicalBeautyStr];
-    NSString *rentCarUrl = [server stringByAppendingPathComponent:rentCarStr];
-    
-    NSArray *urls = @[ticketUrl,hotelUrl,trainUrl,scenicUrl,movieUrl,medicalBeautyUrl,rentCarUrl];
-    
-    for (NSString *url in urls) {
-        NSString *path = [url stringByAppendingPathExtension:@"zip"];
-        [[[WebDownLoadManager alloc] init] downLoadWithUrl:path];
-    }
-    
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://112.90.89.15/mtfyan/version/configurer/2"]];
-    NSURLSession *sesson = [NSURLSession sharedSession];
-    [[sesson dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        NSLog(@"%@",response);
-        NSLog(@"%@",[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
-    }] resume];
+//    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://112.90.89.15/mtfyan/version/configurer/2"]];
+//    NSURLSession *sesson = [NSURLSession sharedSession];
+//    [[sesson dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+//        NSLog(@"%@",response);
+//        NSLog(@"%@",[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
+//    }] resume];
 }
 
 - (IBAction)buttonClick:(id)sender {
