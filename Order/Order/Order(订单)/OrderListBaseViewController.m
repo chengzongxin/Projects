@@ -61,7 +61,7 @@
         _tableView.sectionFooterHeight = 4;
         _tableView.estimatedRowHeight = 157;
         // UITableViewStyleGrouped headerView占据35高度
-        _tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, CGFLOAT_MIN)];
+        _tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 10)];
         // 隐藏下面多出来的cell
         _tableView.tableFooterView = [UIView new];
         [_tableView registerNib:[UINib nibWithNibName:NSStringFromClass([OrderBaseCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([OrderBaseCell class])];

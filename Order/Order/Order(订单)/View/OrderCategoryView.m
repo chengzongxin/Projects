@@ -123,7 +123,8 @@
     if (!_blurView) {
         // 毛玻璃效果
         UIBlurEffect *effect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
-        _blurView = [[UIVisualEffectView alloc]initWithEffect:effect];
+        _blurView = [[UIVisualEffectView alloc] initWithEffect:effect];
+        _blurView.alpha = 0.9;
     }
     return _blurView;
 }
