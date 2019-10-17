@@ -1,0 +1,21 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'Order' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Order
+  pod 'SPPageMenu', '~> 3.5.0'
+
+  target 'OrderTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'OrderUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
