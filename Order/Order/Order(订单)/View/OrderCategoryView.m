@@ -88,7 +88,7 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     if (self.tapItem) {
-        self.tapItem(indexPath);
+        self.tapItem(self.datas[indexPath.item]);
     }
 }
 

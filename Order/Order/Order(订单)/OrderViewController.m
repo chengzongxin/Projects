@@ -19,7 +19,7 @@
 
 @interface OrderViewController ()<SPPageMenuDelegate,UIScrollViewDelegate>
 
-
+@property (strong, nonatomic) UIButton *titleButton;
 @property (strong, nonatomic) UIView *menuBgView;
 
 @property (nonatomic, strong) NSArray *dataArr;
@@ -59,6 +59,7 @@
     [titleButton addTarget:self action:@selector(titleButtonClick:) forControlEvents:UIControlEventTouchUpInside];
     
     self.navigationItem.titleView = titleButton;
+    self.titleButton = titleButton;
 }
 
 //MARK: 初始化subviews
@@ -111,10 +112,10 @@
     // pageMenu.selectedItemIndex就是选中的item下标
     if (self.pageMenu.selectedItemIndex < self.myChildViewControllers.count) {
         UIViewController *baseVc = self.myChildViewControllers[self.pageMenu.selectedItemIndex];
-        [scrollView addSubview:baseVc.view];
         baseVc.view.frame = CGRectMake(SCREEN_WIDTH*self.pageMenu.selectedItemIndex, 0, SCREEN_WIDTH, scrollViewHeight);
         scrollView.contentOffset = CGPointMake(SCREEN_WIDTH*self.pageMenu.selectedItemIndex, 0);
         scrollView.contentSize = CGSizeMake(self.dataArr.count*SCREEN_WIDTH, 0);
+        [scrollView addSubview:baseVc.view];
     }
 }
 
@@ -183,8 +184,10 @@
     }
 }
 
-- (void)didTapItem{
+- (void)didTapItem:(NSString *)text{
+    [self.titleButton setTitle:text forState:UIControlStateNormal];
     
+    [self titleButtonClick:self.titleButton];
 }
 
 
@@ -201,9 +204,9 @@
     if (!_orderCategoryView) {
         _orderCategoryView = [[OrderCategoryView alloc] initWithFrame:CGRectMake(0, NAVBAR_HEIGHT, SCREEN_WIDTH, SCREEN_HEIGHT - NAVBAR_HEIGHT)];
         __weak typeof(self) weakSelf = self;
-        _orderCategoryView.tapItem = ^(NSIndexPath * _Nonnull indexPath) {
-            NSLog(@"%@",indexPath);
-            [weakSelf didTapItem];
+        _orderCategoryView.tapItem = ^(NSString * _Nonnull text) {
+            NSLog(@"%@",text);
+            [weakSelf didTapItem:text];
         };
         [self.view addSubview:_orderCategoryView];
     }

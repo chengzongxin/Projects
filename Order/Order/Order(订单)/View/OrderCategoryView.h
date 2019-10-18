@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface OrderCategoryView : UIView
 
-@property (nonatomic,copy) void (^tapItem)(NSIndexPath *indexPath);
+@property (nonatomic,copy) void (^tapItem)(NSString *text);
 
 - (void)show;
 

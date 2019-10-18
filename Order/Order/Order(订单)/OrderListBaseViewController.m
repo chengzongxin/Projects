@@ -23,7 +23,6 @@
     self.datas = @[@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9"];
     
     [self.view addSubview:self.tableView];
-    
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -65,8 +64,15 @@
         // 隐藏下面多出来的cell
         _tableView.tableFooterView = [UIView new];
         [_tableView registerNib:[UINib nibWithNibName:NSStringFromClass([OrderBaseCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([OrderBaseCell class])];
+        _tableView.contentInset = UIEdgeInsetsMake(0, 0, [UIApplication sharedApplication].statusBarFrame.size.height + 44, 0);
     }
     return _tableView;
+}
+
+- (void)viewDidLayoutSubviews{
+    [super viewDidLayoutSubviews];
+    
+    self.tableView.frame = self.view.bounds;
 }
 
 @end
