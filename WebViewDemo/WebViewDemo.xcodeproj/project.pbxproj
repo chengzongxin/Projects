@@ -23,6 +23,7 @@
 		59C9B10E2351880F00599299 /* WebDownLoadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 59C9B10D2351880F00599299 /* WebDownLoadManager.m */; };
 		59C9B1112351BED200599299 /* WebCacheConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 59C9B1102351BED200599299 /* WebCacheConst.m */; };
 		59E14E58233B1A84004D8D19 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59E14E57233B1A84004D8D19 /* WebViewController.m */; };
+		59F90816235EECF80009EFF3 /* SliknetsKeychainTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F90814235EECF80009EFF3 /* SliknetsKeychainTool.m */; };
 		FE677AF7D42E234DCF41F8A1 /* Pods_WebViewDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE2516641DA2053007A798EB /* Pods_WebViewDemoUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +76,8 @@
 		59C9B1102351BED200599299 /* WebCacheConst.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebCacheConst.m; sourceTree = "<group>"; };
 		59E14E56233B1A84004D8D19 /* WebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		59E14E57233B1A84004D8D19 /* WebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		59F90814235EECF80009EFF3 /* SliknetsKeychainTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SliknetsKeychainTool.m; sourceTree = "<group>"; };
+		59F90815235EECF80009EFF3 /* SliknetsKeychainTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SliknetsKeychainTool.h; sourceTree = "<group>"; };
 		5CE410E13E7D0A95796F337D /* Pods-WebViewDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebViewDemo.release.xcconfig"; path = "Target Support Files/Pods-WebViewDemo/Pods-WebViewDemo.release.xcconfig"; sourceTree = "<group>"; };
 		8449CB243E5A482227C95DEE /* Pods-WebViewDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebViewDemoTests.debug.xcconfig"; path = "Target Support Files/Pods-WebViewDemoTests/Pods-WebViewDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9AB0958DD6B44F1A6F6A983F /* Pods-WebViewDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebViewDemoUITests.debug.xcconfig"; path = "Target Support Files/Pods-WebViewDemoUITests/Pods-WebViewDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -142,6 +145,7 @@
 				596B6312233B10A100A58B25 /* AppDelegate.m */,
 				596B6314233B10A100A58B25 /* ViewController.h */,
 				596B6315233B10A100A58B25 /* ViewController.m */,
+				59F90813235EECF80009EFF3 /* UDID */,
 				59E14E56233B1A84004D8D19 /* WebViewController.h */,
 				59E14E57233B1A84004D8D19 /* WebViewController.m */,
 				596B6317233B10A100A58B25 /* Main.storyboard */,
@@ -193,6 +197,15 @@
 				59C9B10A2351866E00599299 /* WebCacheHelpler.m */,
 			);
 			path = WebDownLoader;
+			sourceTree = "<group>";
+		};
+		59F90813235EECF80009EFF3 /* UDID */ = {
+			isa = PBXGroup;
+			children = (
+				59F90814235EECF80009EFF3 /* SliknetsKeychainTool.m */,
+				59F90815235EECF80009EFF3 /* SliknetsKeychainTool.h */,
+			);
+			path = UDID;
 			sourceTree = "<group>";
 		};
 		AFDAA200D39030782DB516F3 /* Pods */ = {
@@ -446,6 +459,7 @@
 				5983B028233DFB3B00E01083 /* CustomURLSchemeHandler.m in Sources */,
 				5983B029233DFB3B00E01083 /* WKWebView+Cache.m in Sources */,
 				59E14E58233B1A84004D8D19 /* WebViewController.m in Sources */,
+				59F90816235EECF80009EFF3 /* SliknetsKeychainTool.m in Sources */,
 				59C9B1112351BED200599299 /* WebCacheConst.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -24,6 +24,8 @@
 		59163A1523570BBF009979AA /* OrderCategoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 59163A1423570BBF009979AA /* OrderCategoryView.m */; };
 		59163A1923571E97009979AA /* OrderCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 59163A1723571E97009979AA /* OrderCategoryCell.m */; };
 		59163A1A23571E97009979AA /* OrderCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59163A1823571E97009979AA /* OrderCategoryCell.xib */; };
+		599D53E52362A5FA0056359D /* OrderViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 599D53E42362A5FA0056359D /* OrderViewModel.m */; };
+		599D53E92362D0760056359D /* OrderBusinessModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 599D53E82362D0760056359D /* OrderBusinessModel.m */; };
 		59FFEB1B2358203400039939 /* OrderBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 59FFEB192358203400039939 /* OrderBaseCell.m */; };
 		59FFEB1C2358203400039939 /* OrderBaseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59FFEB1A2358203400039939 /* OrderBaseCell.xib */; };
 		79B2086F1C60CB20AB6C8862 /* Pods_OrderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F163C95757D570F446B2A2C /* Pods_OrderTests.framework */; };
@@ -84,6 +86,10 @@
 		59163A1623571E97009979AA /* OrderCategoryCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderCategoryCell.h; sourceTree = "<group>"; };
 		59163A1723571E97009979AA /* OrderCategoryCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderCategoryCell.m; sourceTree = "<group>"; };
 		59163A1823571E97009979AA /* OrderCategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderCategoryCell.xib; sourceTree = "<group>"; };
+		599D53E32362A5FA0056359D /* OrderViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderViewModel.h; sourceTree = "<group>"; };
+		599D53E42362A5FA0056359D /* OrderViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderViewModel.m; sourceTree = "<group>"; };
+		599D53E72362D0760056359D /* OrderBusinessModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderBusinessModel.h; sourceTree = "<group>"; };
+		599D53E82362D0760056359D /* OrderBusinessModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderBusinessModel.m; sourceTree = "<group>"; };
 		59FFEB182358203400039939 /* OrderBaseCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderBaseCell.h; sourceTree = "<group>"; };
 		59FFEB192358203400039939 /* OrderBaseCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderBaseCell.m; sourceTree = "<group>"; };
 		59FFEB1A2358203400039939 /* OrderBaseCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderBaseCell.xib; sourceTree = "<group>"; };
@@ -220,6 +226,8 @@
 				59163A0F235706CE009979AA /* OrderServiceViewController.h */,
 				59163A10235706CE009979AA /* OrderServiceViewController.m */,
 				59163A1223570BA2009979AA /* View */,
+				599D53E22362A5DB0056359D /* ViewModel */,
+				599D53E62362D0540056359D /* Model */,
 			);
 			path = "Order(订单)";
 			sourceTree = "<group>";
@@ -237,6 +245,24 @@
 				59163A1823571E97009979AA /* OrderCategoryCell.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		599D53E22362A5DB0056359D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				599D53E32362A5FA0056359D /* OrderViewModel.h */,
+				599D53E42362A5FA0056359D /* OrderViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		599D53E62362D0540056359D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				599D53E72362D0760056359D /* OrderBusinessModel.h */,
+				599D53E82362D0760056359D /* OrderBusinessModel.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -465,12 +491,14 @@
 				59163A1923571E97009979AA /* OrderCategoryCell.m in Sources */,
 				59163A1523570BBF009979AA /* OrderCategoryView.m in Sources */,
 				59163A082357067A009979AA /* OrderWaitPayViewController.m in Sources */,
+				599D53E92362D0760056359D /* OrderBusinessModel.m in Sources */,
 				591639CC2356F5B1009979AA /* AppDelegate.m in Sources */,
 				59163A052357066A009979AA /* OrderAllViewController.m in Sources */,
 				59163A0E235706B2009979AA /* OrderWaitUseViewController.m in Sources */,
 				59163A022357064D009979AA /* OrderListBaseViewController.m in Sources */,
 				59163A0B2357069D009979AA /* OrderProcessingViewController.m in Sources */,
 				59FFEB1B2358203400039939 /* OrderBaseCell.m in Sources */,
+				599D53E52362A5FA0056359D /* OrderViewModel.m in Sources */,
 				591639FF23570619009979AA /* OrderViewController.m in Sources */,
 				59163A11235706CE009979AA /* OrderServiceViewController.m in Sources */,
 			);

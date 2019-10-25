@@ -7,18 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "OrderBusinessModel.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface OrderCategoryView : UIView
 
-@property (nonatomic,copy) void (^tapItem)(NSString *text);
+@property (nonatomic,copy) void (^tapItem)(OrderBusinessModelData *model);
+
+@property (strong, nonatomic) NSArray<OrderBusinessModelData *> *datas;
 
 - (void)show;
 
 - (void)dismiss;
 
-- (void)loadDatas;
+//- (void)loadDatas;
 
 @end
 

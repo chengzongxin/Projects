@@ -11,7 +11,7 @@
 
 @interface OrderCategoryView ()<UICollectionViewDelegate,UICollectionViewDataSource>
 
-@property (strong, nonatomic) NSArray *datas;
+//@property (strong, nonatomic) NSArray *datas;
 @property (strong, nonatomic) UIVisualEffectView *blurView;
 @property (strong, nonatomic) UICollectionView *collectionView;
 
@@ -41,8 +41,23 @@
 }
 
 #pragma mark - Public
-- (void)loadDatas{
-    self.datas = @[@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9"];
+//- (void)loadDatas{
+//    self.datas = @[@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9"];
+//
+//    [self.collectionView reloadData];
+//
+//    if (self.datas.count == 0) {
+//        return;
+//    }
+//
+//    [self selectFirstCell];
+//
+//    CGFloat height = [self caculateCollectionViewHeight];
+//    self.collectionView.frame = CGRectMake(0, 0, self.bounds.size.width, height);
+//}
+
+- (void)setDatas:(NSArray<OrderBusinessModelData *> *)datas{
+    _datas = datas;
     
     [self.collectionView reloadData];
     
@@ -81,7 +96,7 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     OrderCategoryCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([OrderCategoryCell class]) forIndexPath:indexPath];
-    cell.titleLabel.text = self.datas[indexPath.item];
+    cell.titleLabel.text = self.datas[indexPath.item].name;
     
     return cell;
 }

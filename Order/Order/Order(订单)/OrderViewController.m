@@ -9,6 +9,7 @@
 #import "OrderViewController.h"
 #import <SPPageMenu.h>
 #import "OrderCategoryView.h"
+#import "OrderViewModel.h"
 
 #define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
 #define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
@@ -43,7 +44,23 @@
     
     [self addChildVC];
     
-    [self.orderCategoryView loadDatas];
+//    [self.orderCategoryView loadDatas];
+    
+    [OrderViewModel orderBusinessSystemQuery:^(NSArray<OrderBusinessModelData *> * _Nonnull datas) {
+        
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            
+            self.orderCategoryView.datas = datas;
+        });
+    } fail:^(NSString * _Nonnull message) {
+        
+    }];
+    
+    [OrderViewModel orderSearchPageQueryWithOrderType:@"MIX" catalog:@"" page:1 size:10 success:^(id  _Nonnull data) {
+        
+    } fail:^(NSString * _Nonnull message) {
+        
+    }];
 }
 
 - (void)initSelf{
@@ -184,8 +201,8 @@
     }
 }
 
-- (void)didTapItem:(NSString *)text{
-    [self.titleButton setTitle:text forState:UIControlStateNormal];
+- (void)didTapItem:(OrderBusinessModelData *)model{
+    [self.titleButton setTitle:model.name forState:UIControlStateNormal];
     
     [self titleButtonClick:self.titleButton];
 }
@@ -204,9 +221,9 @@
     if (!_orderCategoryView) {
         _orderCategoryView = [[OrderCategoryView alloc] initWithFrame:CGRectMake(0, NAVBAR_HEIGHT, SCREEN_WIDTH, SCREEN_HEIGHT - NAVBAR_HEIGHT)];
         __weak typeof(self) weakSelf = self;
-        _orderCategoryView.tapItem = ^(NSString * _Nonnull text) {
-            NSLog(@"%@",text);
-            [weakSelf didTapItem:text];
+        
+        _orderCategoryView.tapItem = ^(OrderBusinessModelData * _Nonnull model) {
+            [weakSelf didTapItem:model];
         };
         [self.view addSubview:_orderCategoryView];
     }
