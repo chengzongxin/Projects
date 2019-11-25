@@ -14,10 +14,15 @@
 #import "ScienceViewController.h"
 #import "VideoViewController.h"
 
+#import "OrderTableView.h"
 
+static CGFloat headerH = 400;
 #define ScreenW [UIScreen mainScreen].bounds.size.width
 #define ScreenH [UIScreen mainScreen].bounds.size.height
 @interface ViewController ()<UIScrollViewDelegate>
+
+
+@property (strong, nonatomic) UIScrollView *bgScrollView;
 
 @property (nonatomic, strong) NSMutableArray *titleButtons;
 @property (nonatomic, weak) UIButton *selectButton;
@@ -36,10 +41,24 @@
     return _titleButtons;
 }
 
+- (UIScrollView *)bgScrollView{
+    if (!_bgScrollView) {
+        _bgScrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
+        _bgScrollView.contentSize = CGSizeMake(ScreenW, ScreenH+headerH);
+    }
+    return _bgScrollView;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.navigationItem.title = @"网易新闻";
+    // iOS7以后,导航控制器中scollView顶部会添加64的额外滚动区域
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    
+    [self.view addSubview:self.bgScrollView];
+    
+    [self setupHeaderView];
     
     // 0.添加所有子控制器
     [self setupAllChildViewController];
@@ -54,8 +73,6 @@
     [self setupAllTitle];
    
     
-    // iOS7以后,导航控制器中scollView顶部会添加64的额外滚动区域
-    self.automaticallyAdjustsScrollViewInsets = NO;
     
     // 5.处理标题点击
     
@@ -63,6 +80,14 @@
     
     // 7.选中标题居中 => 选中标题
     
+}
+
+- (void)setupHeaderView{
+//    CGFloat y = self.navigationController.navigationBarHidden? 20 : 64;
+    OrderTableView *table = [[OrderTableView alloc] initWithFrame:CGRectMake(0, 0, ScreenW, headerH) style:UITableViewStylePlain];
+//    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, ScreenW, headerH)];
+//    view.backgroundColor = UIColor.orangeColor;
+    [self.bgScrollView addSubview:table];
 }
 
 
@@ -279,9 +304,9 @@
 {
     // 创建titleScrollView
     UIScrollView *titleScrollView = [[UIScrollView alloc] init];
-    CGFloat y = self.navigationController.navigationBarHidden? 20 : 64;
-    titleScrollView.frame = CGRectMake(0, y, self.view.bounds.size.width, 44);
-    [self.view addSubview:titleScrollView];
+//    CGFloat y = self.navigationController.navigationBarHidden? 20 : 64;
+    titleScrollView.frame = CGRectMake(0, headerH, self.view.bounds.size.width, 44);
+    [self.bgScrollView addSubview:titleScrollView];
     _titleScrollView = titleScrollView;
     
 }
@@ -292,8 +317,8 @@
     // 创建contentScrollView
     UIScrollView *contentScrollView = [[UIScrollView alloc] init];
     CGFloat y = CGRectGetMaxY(self.titleScrollView.frame);
-    contentScrollView.frame = CGRectMake(0, y, self.view.bounds.size.width, self.view.bounds.size.height - y);
-    [self.view addSubview:contentScrollView];
+    contentScrollView.frame = CGRectMake(0, y, self.view.bounds.size.width, self.view.bounds.size.height - y + headerH);
+    [self.bgScrollView addSubview:contentScrollView];
     _contentScrollView = contentScrollView;
     
     // 设置contentScrollView的属性
