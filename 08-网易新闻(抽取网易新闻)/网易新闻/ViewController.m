@@ -45,6 +45,7 @@ static CGFloat headerH = 400;
     if (!_bgScrollView) {
         _bgScrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
         _bgScrollView.contentSize = CGSizeMake(ScreenW, ScreenH+headerH);
+        _bgScrollView.delegate = self;
     }
     return _bgScrollView;
 }
@@ -145,38 +146,55 @@ static CGFloat headerH = 400;
 // 只要一滚动就需要字体渐变
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    // 字体缩放 1.缩放比例 2.缩放哪两个按钮
-    NSInteger leftI = scrollView.contentOffset.x / ScreenW;
-    NSInteger rightI = leftI + 1;
     
-    // 获取左边的按钮
-    UIButton *leftBtn = self.titleButtons[leftI];
-    NSInteger count = self.titleButtons.count;
-    
-    // 获取右边的按钮
-    UIButton *rightBtn;
-    if (rightI < count) {
-        rightBtn = self.titleButtons[rightI];
+    if (scrollView == self.bgScrollView) {
+        
+        NSLog(@"%f",scrollView.contentOffset.y);
+        
+        if (scrollView.contentOffset.y + 64 > 400) {
+            CGRect frame = self.titleScrollView.frame;
+            frame.origin.y = scrollView.contentOffset.y + 64;
+            self.titleScrollView.frame = frame;
+            self.titleScrollView.layer.zPosition = 999;
+        }
+        
+        
+    }else{
+        
+        // 字体缩放 1.缩放比例 2.缩放哪两个按钮
+        NSInteger leftI = scrollView.contentOffset.x / ScreenW;
+        NSInteger rightI = leftI + 1;
+        
+        // 获取左边的按钮
+        UIButton *leftBtn = self.titleButtons[leftI];
+        NSInteger count = self.titleButtons.count;
+        
+        // 获取右边的按钮
+        UIButton *rightBtn;
+        if (rightI < count) {
+            rightBtn = self.titleButtons[rightI];
+        }
+        
+        // 0 ~ 1 =>  1 ~ 1.3
+        // 计算缩放比例
+        CGFloat scaleR = scrollView.contentOffset.x / ScreenW;
+        
+        scaleR -= leftI;
+        
+        // 左边缩放比例
+        CGFloat scaleL = 1 - scaleR;
+        
+        // 缩放按钮
+        leftBtn.transform = CGAffineTransformMakeScale(scaleL * 0.3 + 1, scaleL * 0.3 + 1);
+        rightBtn.transform = CGAffineTransformMakeScale(scaleR * 0.3 + 1, scaleR * 0.3 + 1);
+        
+        // 颜色渐变
+        UIColor *rightColor = [UIColor colorWithRed:scaleR green:0 blue:0 alpha:1];
+        UIColor *leftColor = [UIColor colorWithRed:scaleL green:0 blue:0 alpha:1];
+        [rightBtn setTitleColor:rightColor forState:UIControlStateNormal];
+        [leftBtn setTitleColor:leftColor forState:UIControlStateNormal];
     }
     
-    // 0 ~ 1 =>  1 ~ 1.3
-    // 计算缩放比例
-    CGFloat scaleR = scrollView.contentOffset.x / ScreenW;
-    
-    scaleR -= leftI;
-    
-    // 左边缩放比例
-    CGFloat scaleL = 1 - scaleR;
-    
-    // 缩放按钮
-    leftBtn.transform = CGAffineTransformMakeScale(scaleL * 0.3 + 1, scaleL * 0.3 + 1);
-    rightBtn.transform = CGAffineTransformMakeScale(scaleR * 0.3 + 1, scaleR * 0.3 + 1);
-    
-    // 颜色渐变
-    UIColor *rightColor = [UIColor colorWithRed:scaleR green:0 blue:0 alpha:1];
-    UIColor *leftColor = [UIColor colorWithRed:scaleL green:0 blue:0 alpha:1];
-    [rightBtn setTitleColor:rightColor forState:UIControlStateNormal];
-    [leftBtn setTitleColor:leftColor forState:UIControlStateNormal];
 }
 
 /*
@@ -306,6 +324,7 @@ static CGFloat headerH = 400;
     UIScrollView *titleScrollView = [[UIScrollView alloc] init];
 //    CGFloat y = self.navigationController.navigationBarHidden? 20 : 64;
     titleScrollView.frame = CGRectMake(0, headerH, self.view.bounds.size.width, 44);
+    titleScrollView.backgroundColor = UIColor.orangeColor;
     [self.bgScrollView addSubview:titleScrollView];
     _titleScrollView = titleScrollView;
     

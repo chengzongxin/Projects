@@ -7,7 +7,7 @@
 //
 
 #import "TopLineViewController.h"
-#import "OrderTableView.h"
+#import "RecommendTableView.h"
 
 @interface TopLineViewController ()
 
@@ -20,7 +20,7 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor redColor];
 
-    OrderTableView *table = [[OrderTableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+    RecommendTableView *table = [[RecommendTableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     
     [self.view addSubview:table];
 }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		591E463E238BD06500EA4E9B /* OrderTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 591E463D238BD06500EA4E9B /* OrderTableView.m */; };
+		591E4641238BD53F00EA4E9B /* RecommendTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 591E4640238BD53F00EA4E9B /* RecommendTableView.m */; };
 		70B052301C8E5D6800D20189 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B0522F1C8E5D6800D20189 /* main.m */; };
 		70B052331C8E5D6800D20189 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B052321C8E5D6800D20189 /* AppDelegate.m */; };
 		70B052361C8E5D6800D20189 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B052351C8E5D6800D20189 /* ViewController.m */; };
@@ -26,6 +27,8 @@
 /* Begin PBXFileReference section */
 		591E463C238BD06500EA4E9B /* OrderTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderTableView.h; sourceTree = "<group>"; };
 		591E463D238BD06500EA4E9B /* OrderTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderTableView.m; sourceTree = "<group>"; };
+		591E463F238BD53F00EA4E9B /* RecommendTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecommendTableView.h; sourceTree = "<group>"; };
+		591E4640238BD53F00EA4E9B /* RecommendTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecommendTableView.m; sourceTree = "<group>"; };
 		70B0522B1C8E5D6800D20189 /* 网易新闻.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "网易新闻.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		70B0522F1C8E5D6800D20189 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		70B052311C8E5D6800D20189 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -89,6 +92,8 @@
 				70B052351C8E5D6800D20189 /* ViewController.m */,
 				591E463C238BD06500EA4E9B /* OrderTableView.h */,
 				591E463D238BD06500EA4E9B /* OrderTableView.m */,
+				591E463F238BD53F00EA4E9B /* RecommendTableView.h */,
+				591E4640238BD53F00EA4E9B /* RecommendTableView.m */,
 				70B052371C8E5D6800D20189 /* Main.storyboard */,
 				70B0523A1C8E5D6800D20189 /* Assets.xcassets */,
 				70B0523C1C8E5D6800D20189 /* LaunchScreen.storyboard */,
@@ -202,6 +207,7 @@
 				70B052361C8E5D6800D20189 /* ViewController.m in Sources */,
 				70B0524E1C8E61E500D20189 /* VideoViewController.m in Sources */,
 				70B052541C8E61F200D20189 /* ReaderViewController.m in Sources */,
+				591E4641238BD53F00EA4E9B /* RecommendTableView.m in Sources */,
 				70B0525A1C8E852800D20189 /* WYViewController.m in Sources */,
 				70B052571C8E61FE00D20189 /* ScienceViewController.m in Sources */,
 				70B0524B1C8E61DA00D20189 /* HotViewController.m in Sources */,
