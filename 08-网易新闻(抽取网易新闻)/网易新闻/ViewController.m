@@ -19,7 +19,7 @@
 static CGFloat headerH = 400;
 #define ScreenW [UIScreen mainScreen].bounds.size.width
 #define ScreenH [UIScreen mainScreen].bounds.size.height
-@interface ViewController ()<UIScrollViewDelegate>
+@interface ViewController ()<UIScrollViewDelegate,UITableViewDelegate>
 
 
 @property (strong, nonatomic) UIScrollView *bgScrollView;
@@ -151,13 +151,26 @@ static CGFloat headerH = 400;
         
         NSLog(@"%f",scrollView.contentOffset.y);
         
-        if (scrollView.contentOffset.y + 64 > 400) {
+        if (scrollView.contentOffset.y <= -64) {
+            
+            [NSNotificationCenter.defaultCenter postNotificationName:@"canscroll" object:@1];
+        }
+        
+        
+        if (scrollView.contentOffset.y + 64 >= 400) {
             CGRect frame = self.titleScrollView.frame;
             frame.origin.y = scrollView.contentOffset.y + 64;
             self.titleScrollView.frame = frame;
             self.titleScrollView.layer.zPosition = 999;
+        }else{
+            CGRect frame = self.titleScrollView.frame;
+            frame.origin.y = 400;
+            self.titleScrollView.frame = frame;
+            self.titleScrollView.layer.zPosition = 999;
         }
         
+        
+    }else if ([scrollView isKindOfClass:OrderTableView.class]) {
         
     }else{
         

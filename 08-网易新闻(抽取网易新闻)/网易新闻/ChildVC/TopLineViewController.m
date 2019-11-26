@@ -19,6 +19,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor redColor];
+    // iOS7以后,导航控制器中scollView顶部会添加64的额外滚动区域
+    self.automaticallyAdjustsScrollViewInsets = NO;
 
     RecommendTableView *table = [[RecommendTableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     

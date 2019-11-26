@@ -11,7 +11,9 @@
 
 
 @interface OrderTableView () <UITableViewDelegate,UITableViewDataSource,UIGestureRecognizerDelegate>
-
+{
+    BOOL _canScroll;
+}
 @end
 
 @implementation OrderTableView
@@ -23,6 +25,12 @@
         [self registerClass:UITableViewCell.class forCellReuseIdentifier:NSStringFromClass(UITableViewCell.class)];
         self.delegate = self;
         self.dataSource = self;
+        self.showsVerticalScrollIndicator = NO;
+        self.showsHorizontalScrollIndicator = NO;
+        
+        [NSNotificationCenter.defaultCenter addObserverForName:@"canscroll" object:nil queue:NSOperationQueue.mainQueue usingBlock:^(NSNotification * _Nonnull note) {
+            _canScroll = [note.object boolValue];
+        }];
     }
     return self;
     
@@ -48,5 +56,24 @@
 //    return YES;
 //}
 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    if (self.contentOffset.y + 400 >= self.contentSize.height) {
+        _canScroll = NO;
+    }
+}
+
+
+- (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event{
+    if (self.contentOffset.y + 400 >= self.contentSize.height && _canScroll == NO) {
+        return NO;
+    }
+    return [super pointInside:point withEvent:event];
+}
+
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event{
+    
+    
+    return [super hitTest:point withEvent:event];
+}
 
 @end
