@@ -16,10 +16,14 @@
 
 -(void)prepareForReuse {
     [super prepareForReuse];
+    //TODO: FIX: 正在播放的不销毁,,如果没开始播放也也会销毁,需要优化
+    if (!_playerView.isPlaying) {
     
-    [_playerView destroyPlayer];
+        [_playerView destroyPlayer];
+        
+        _isPlayerReady = NO;
+    }
     
-    _isPlayerReady = NO;
 }
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
@@ -60,7 +64,7 @@
 - (void)setModel:(DynamicListModelDataList *)model{
     _model = model;
     
-    _titleLabel.text = [NSString stringWithFormat:@"%zd-%@",self.tag,model.mediaContentList.lastObject.url];
+    _titleLabel.text = [NSString stringWithFormat:@"%p :%zd-%@",self,self.tag,model.mediaContentList.lastObject.url];
 }
 
 - (void)autoPlay{
@@ -142,7 +146,9 @@
 }
 
 - (void)startDownloadBackgroundTask{
-    [_playerView setPlayerUrl:_model.mediaContentList.lastObject.url];
+    if (!_playerView.isPlaying) {
+        [_playerView setPlayerUrl:_model.mediaContentList.lastObject.url];
+    }
 }
 
 @end

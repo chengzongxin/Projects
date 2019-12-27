@@ -64,10 +64,12 @@
 
 - (void)play{
     [_player play];
+    _isPlaying = YES;
 }
 
 - (void)pause{
     [_player pause];
+    _isPlaying = NO;
 }
 
 - (void)updatePlayerState{
@@ -318,11 +320,11 @@
         self.downloadOperation = nil;
     }
     
-    NSData *data = [[StorageManager manager] retrieveDataForKey:URL.absoluteString extension:@"mp4"];
-    if (data) {
-        DDLogInfo(@"%@ url is download!",URL.absoluteString);
-        return;
-    }
+//    NSData *data = [[StorageManager manager] retrieveDataForKey:URL.absoluteString extension:@"mp4"];
+//    if (data) {
+//        DDLogInfo(@"%@ url is download!",URL.absoluteString);
+//        return;
+//    }
     
     self.downloadOperation = [[Downloader sharedDownloader] downloadWithURL:URL responseBlock:^(NSHTTPURLResponse *response) {
         self.data = [NSMutableData data];
@@ -337,8 +339,8 @@
         if(!error && finished) {
             //下载完毕，将缓存数据保存到本地
             [[StorageManager manager] storeData:data key:URL.absoluteString extension:@"mp4"];
-            DDLogInfo(@"download finish");
-            DDLogInfo(@"%@",[Downloader sharedDownloader].downloadBackgroundQueue.operations);
+//            DDLogInfo(@"download finish");
+//            DDLogInfo(@"%@",[Downloader sharedDownloader].downloadBackgroundQueue.operations);
         }
     } cancelBlock:^{
         

@@ -14,6 +14,9 @@
 #import "LoadMoreControl.h"
 #import "Macro.h"
 
+static NSString *const PlayingCellID = @"PlayingCellID";
+static NSString *const ReuseCellID = @"ReuseCellID";
+
 @interface DouYinViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (strong, nonatomic) UITableView *tableView;
@@ -26,10 +29,17 @@
 
 @property (nonatomic, strong) LoadMoreControl                   *loadMore;
 
+@property (strong, nonatomic) UIButton *btn;
+
+@property (copy, nonatomic) NSString *currentCellID;
+
 @end
 
 @implementation DouYinViewController
 
+/**
+  reloadData时获取正在播放的Cell
+ */
 #pragma mark - Lifecycle (dealloc init viewDidLoad memoryWarning...)
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
@@ -45,6 +55,7 @@
     
     self.currentIndex = 0;
     self.currentPage = 1;
+    self.currentCellID = PlayingCellID;
     [self.view addSubview:self.tableView];
     if (@available(iOS 11.0, *)) {
         self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
@@ -58,6 +69,25 @@
     [self loadDatas];
     
     [self addObserver];
+
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn.frame = CGRectMake(100, 100, 100, 100);
+    btn.backgroundColor = UIColor.orangeColor;
+    [self.view addSubview:btn];
+    [btn addTarget:self action:@selector(reloadClick) forControlEvents:UIControlEventTouchUpInside];
+    _btn = btn;
+//    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"reload" style:UIBarButtonItemStyleDone target:self action:@selector(reloadClick)];
+}
+
+- (void)reloadClick{
+    // 记录正在播放cell
+    [self changeCurrentCellID];
+    [self.tableView reloadData];
+}
+
+- (void)changeCurrentCellID{
+    DouYinCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:self.currentIndex inSection:0]];
+    self.currentCellID = cell.reuseIdentifier;
 }
 
 - (void)addObserver{
@@ -86,8 +116,31 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    // 正在播放时,刷新了cell
     
-    DouYinCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([DouYinCell class])];
+    static BOOL firstIn = YES;
+    if (indexPath.row == self.currentIndex) {
+        DouYinCell *cell = [tableView dequeueReusableCellWithIdentifier:self.currentCellID];
+        cell.model = self.datas[indexPath.row];
+        if (firstIn) {
+            firstIn = NO;
+            [cell startDownloadBackgroundTask];
+            [cell startDownloadForegroundTask];
+            [cell autoPlay];
+        }
+        return cell;
+    }
+    
+    
+    DouYinCell *cell;
+    
+    if (indexPath.row % 2) {
+        cell = [tableView dequeueReusableCellWithIdentifier:PlayingCellID];
+    }else{
+        cell = [tableView dequeueReusableCellWithIdentifier:ReuseCellID];
+    }
+    
+    
     if (cell.tag == 888) {
         
         cell.tag = indexPath.row;
@@ -126,6 +179,8 @@
                                 //UITableView可以响应其他滑动手势
                                 scrollView.panGestureRecognizer.enabled = YES;
                             }];
+        
+        [self.btn setTitle:@(self.currentIndex).stringValue forState:UIControlStateNormal];
     });
 }
 
@@ -142,6 +197,7 @@
         //获取当前显示的cell
         DouYinCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:newIndex inSection:0]];
         [cell startDownloadForegroundTask];
+        //TODO: FIX: 如果没有播放,,就不会变成正在播放CELL,,可以在autoplay里设置标记
         [cell autoPlay];
     } else {
         return [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
@@ -158,9 +214,9 @@
         [self.tableView reloadData];
         [self.loadMore endLoading];
         
-        DouYinCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
-        [cell startDownloadForegroundTask];
-        [cell autoPlay];
+//        DouYinCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+//        [cell startDownloadForegroundTask];
+//        [cell autoPlay];
     }];
 }
 
@@ -168,6 +224,7 @@
     NSString *url = @"http://service.matafy.com/community/dynamic/recommend/list";
     NSDictionary *para = @{@"dynamicType":@"VIDEO",@"page":@(page),@"size":@10};
     [NetworkRequest postWithUrl:url para:para dataHandle:^(NSArray <DynamicListModelDataList *> *data) {
+        [self changeCurrentCellID];
         self.datas = [self.datas arrayByAddingObjectsFromArray:data];
         [self.tableView reloadData];
         [self.loadMore endLoading];
@@ -183,13 +240,23 @@
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _tableView.dataSource = self;
         _tableView.delegate = self;
-        [_tableView registerClass:DouYinCell.class forCellReuseIdentifier:NSStringFromClass([DouYinCell class])];
+        // Self-Sizing 关闭
+        _tableView.estimatedRowHeight = 0;
+        _tableView.estimatedSectionHeaderHeight = 0;
+        _tableView.estimatedSectionFooterHeight = 0;
+        [_tableView registerClass:DouYinCell.class forCellReuseIdentifier:PlayingCellID];
+        [_tableView registerClass:DouYinCell.class forCellReuseIdentifier:ReuseCellID];
+//        [_tableView registerClass:DouYinCell.class forCellReuseIdentifier:NSStringFromClass([DouYinCell class])];
 //        _tableView.contentInset = UIEdgeInsetsZero;
         _loadMore = [[LoadMoreControl alloc] initWithFrame:CGRectMake(0, 100, SCREEN_WIDTH, 50) surplusCount:1];
         __weak __typeof(self) wself = self;
         
         [_loadMore setOnLoad:^{
-            [wself loadDatas:wself.currentPage++];
+            
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                
+                [wself loadDatas:wself.currentPage++];
+            });
         }];
         [_tableView addSubview:_loadMore];
     }
