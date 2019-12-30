@@ -29,8 +29,6 @@ static NSString *const ReuseCellID = @"ReuseCellID";
 
 @property (nonatomic, strong) LoadMoreControl                   *loadMore;
 
-@property (strong, nonatomic) UIButton *btn;
-
 @property (copy, nonatomic) NSString *currentCellID;
 
 @end
@@ -52,7 +50,9 @@ static NSString *const ReuseCellID = @"ReuseCellID";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"reload" style:UIBarButtonItemStyleDone target:self action:@selector(reloadClick)];
     self.currentIndex = 0;
     self.currentPage = 1;
     self.currentCellID = PlayingCellID;
@@ -69,17 +69,10 @@ static NSString *const ReuseCellID = @"ReuseCellID";
     [self loadDatas];
     
     [self addObserver];
-
-    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    btn.frame = CGRectMake(100, 100, 100, 100);
-    btn.backgroundColor = UIColor.orangeColor;
-    [self.view addSubview:btn];
-    [btn addTarget:self action:@selector(reloadClick) forControlEvents:UIControlEventTouchUpInside];
-    _btn = btn;
-//    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"reload" style:UIBarButtonItemStyleDone target:self action:@selector(reloadClick)];
 }
 
 - (void)reloadClick{
+    NSLog(@"%s",__FUNCTION__);
     // 记录正在播放cell
     [self changeCurrentCellID];
     [self.tableView reloadData];
@@ -173,7 +166,7 @@ static NSString *const ReuseCellID = @"ReuseCellID";
                                 scrollView.panGestureRecognizer.enabled = YES;
                             }];
         
-        [self.btn setTitle:@(self.currentIndex).stringValue forState:UIControlStateNormal];
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@(self.currentIndex).stringValue style:UIBarButtonItemStyleDone target:self action:@selector(reloadClick)];
     });
 }
 

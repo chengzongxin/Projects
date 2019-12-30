@@ -114,7 +114,7 @@
             </objects>
             <point key="canvasLocation" x="621.60000000000002" y="1217.5412293853074"/>
         </scene>
-        <!--DouYin-->
+        <!--Dou Yin View Controller-->
         <scene sceneID="1lR-ZT-FaZ">
             <objects>
                 <viewController id="XEP-FC-vzj" customClass="DouYinViewController" sceneMemberID="viewController">
@@ -124,11 +124,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Pom-tR-GUG"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="DouYin" id="vVz-WR-uBH"/>
+                    <navigationItem key="navigationItem" id="tbE-b9-0SV"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7RJ-M5-7rJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1001" y="622"/>
+            <point key="canvasLocation" x="1940" y="621.13943028485767"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="qLh-j4-gdT">
@@ -142,7 +142,7 @@
                         <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="XEP-FC-vzj" kind="relationship" relationship="viewControllers" id="Fl3-fs-8rB"/>
+                        <segue destination="qP5-ZF-Ieh" kind="relationship" relationship="viewControllers" id="Fl3-fs-8rB"/>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="loD-dF-phI"/>
                         <segue destination="uP4-wP-PRA" kind="relationship" relationship="viewControllers" id="gf2-PK-SVy"/>
                     </connections>
@@ -150,6 +150,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LQ0-Lh-UDR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="140" y="123.68815592203899"/>
+        </scene>
+        <!--DouYin-->
+        <scene sceneID="7GB-p2-75z">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qP5-ZF-Ieh" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="DouYin" id="vVz-WR-uBH"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="aLv-2x-kOW">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="XEP-FC-vzj" kind="relationship" relationship="rootViewController" id="wkb-Qw-ACO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A4w-jC-co4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1000.8" y="621.13943028485767"/>
         </scene>
     </scenes>
 </document>
