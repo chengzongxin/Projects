@@ -18,6 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (strong, nonatomic) UILabel *titleLabel;
 
+@property (strong, nonatomic) UISlider *slider;
+
 @property (strong, nonatomic) UIView *playerStatusBar;
 
 @property (strong, nonatomic) DynamicListModelDataList *model;

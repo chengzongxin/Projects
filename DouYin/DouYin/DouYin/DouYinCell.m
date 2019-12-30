@@ -52,20 +52,35 @@
     _playerStatusBar.backgroundColor = UIColor.whiteColor;
     [_playerStatusBar setHidden:YES];
     [self addSubview:_playerStatusBar];
+    
+    // slider
+    _slider = [[UISlider alloc] initWithFrame:CGRectMake(0, SCREEN_HEIGHT - 88, SCREEN_WIDTH, 50)];
+    [self addSubview:_slider];
+    // 添加触发事件
+    [_slider addTarget:self action:@selector(slider:) forControlEvents:UIControlEventTouchUpInside];
 }
 
+#pragma mark - Event Response
 //更新AVPlayer状态，当前播放则暂停，当前暂停则播放
 - (void)tap:(UITapGestureRecognizer *)tap{
     [_playerView updatePlayerState];
+    
 }
 
+- (void)slider:(UISlider *)slider{
+    NSLog(@"%f",slider.value);
+    [_playerView seekToProgress:slider.value];
+}
+
+
+#pragma mark - Public
 - (void)setModel:(DynamicListModelDataList *)model{
     _model = model;
     
     _titleLabel.text = [NSString stringWithFormat:@"%p :%zd-%@",self,self.tag,model.mediaContentList.lastObject.url];
 }
 
-#pragma mark - Public
+
 - (void)autoPlay{
     //判断当前cell的视频源是否已经准备播放
     if(self.isPlayerReady) {
@@ -143,7 +158,11 @@
 }
 
 - (void)onProgressUpdate:(CGFloat)current total:(CGFloat)total{
+    NSLog(@"%f--%f",current,total);
+    _slider.minimumValue = 0;
+    _slider.maximumValue = total;
     
+    _slider.value = current;
 }
 
 - (void)startDownloadForegroundTask{
