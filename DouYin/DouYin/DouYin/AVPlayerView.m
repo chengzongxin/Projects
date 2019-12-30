@@ -126,6 +126,8 @@
     self.playerItem = [AVPlayerItem playerItemWithAsset:self.urlAsset];
     //观察playerItem.status属性
     [self.playerItem addObserver:self forKeyPath:@"status" options:NSKeyValueObservingOptionInitial|NSKeyValueObservingOptionNew context:nil];
+    //观察playerItem.loa缓冲属性
+    [self.playerItem addObserver:self forKeyPath:@"loadedTimeRanges" options:NSKeyValueObservingOptionInitial|NSKeyValueObservingOptionNew context:nil];
     //切换当前AVPlayer播放器的视频源
     self.player = [[AVPlayer alloc] initWithPlayerItem:self.playerItem];
     self.playerLayer.player = self.player;
@@ -152,6 +154,7 @@
 //    [_queryCacheOperation cancel];
     
     [_playerItem removeObserver:self forKeyPath:@"status"];
+    [_playerItem removeObserver:self forKeyPath:@"loadedTimeRanges"];
     [_player removeTimeObserver:_timeObserver];
     
     _player = nil;
@@ -230,6 +233,18 @@
         //视频播放状体更新方法回调
         if(_delegate) {
             [_delegate onPlayItemStatusUpdate:_playerItem.status];
+        }
+    } else if ([keyPath isEqualToString:@"loadedTimeRanges"]) {
+//        NSLog(@"缓冲进度:%@",_playerItem.loadedTimeRanges);
+        if (_delegate) {
+            CMTimeRange timeRange = _playerItem.loadedTimeRanges.firstObject.CMTimeRangeValue;
+            NSTimeInterval loadedTime = CMTimeGetSeconds(timeRange.duration); // 缓冲时间
+            NSTimeInterval totalDuration = CMTimeGetSeconds(_playerItem.duration);// 总时间
+            if (!isnan(loadedTime) && !isnan(totalDuration)) {
+                [_delegate onPlayItemLoadedUpdate:loadedTime total:totalDuration];
+            }else{
+                DDLogInfo(@"loadedTimeRanges error %f,%f",loadedTime,totalDuration);
+            }
         }
     }else {
         return [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];

@@ -102,6 +102,7 @@
     _isPlaying = NO;
 }
 
+#pragma mark - Delegate
 - (void)onPlayItemStatusUpdate:(AVPlayerItemStatus)status{
     switch (status) {
         case AVPlayerItemStatusUnknown:
@@ -125,7 +126,20 @@
     }
 }
 
+- (void)onProgressUpdate:(CGFloat)current total:(CGFloat)total{
+//    DDLogInfo(@"%f--%f",current,total);
+    _slider.minimumValue = 0;
+    _slider.maximumValue = total;
+    
+    _slider.value = current;
+}
 
+- (void)onPlayItemLoadedUpdate:(NSTimeInterval)loaded total:(NSTimeInterval)total{
+    DDLogInfo(@"onPlayItemLoadedUpdate %f--%f",loaded,total);
+}
+
+
+#pragma mark - Private
 //加载动画
 -(void)startLoadingPlayItemAnim:(BOOL)isStart {
     if (isStart) {
@@ -155,14 +169,6 @@
         [self.playerStatusBar setHidden:YES];
     }
     
-}
-
-- (void)onProgressUpdate:(CGFloat)current total:(CGFloat)total{
-    NSLog(@"%f--%f",current,total);
-    _slider.minimumValue = 0;
-    _slider.maximumValue = total;
-    
-    _slider.value = current;
 }
 
 - (void)startDownloadForegroundTask{

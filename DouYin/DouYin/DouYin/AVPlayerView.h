@@ -21,6 +21,9 @@ NS_ASSUME_NONNULL_BEGIN
 //播放状态更新回调方法
 -(void)onPlayItemStatusUpdate:(AVPlayerItemStatus)status;
 
+//缓冲进度更新回调方法
+-(void)onPlayItemLoadedUpdate:(NSTimeInterval)loaded total:(NSTimeInterval)total;
+
 @end
 
 
