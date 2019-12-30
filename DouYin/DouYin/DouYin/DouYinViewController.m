@@ -117,12 +117,11 @@ static NSString *const ReuseCellID = @"ReuseCellID";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     // 正在播放时,刷新了cell
-    
     static BOOL firstIn = YES;
     if (indexPath.row == self.currentIndex) {
         DouYinCell *cell = [tableView dequeueReusableCellWithIdentifier:self.currentCellID];
         cell.model = self.datas[indexPath.row];
-        if (firstIn) {
+        if (firstIn) { // 第一次进入视频列表
             firstIn = NO;
             [cell startDownloadBackgroundTask];
             [cell startDownloadForegroundTask];
@@ -140,11 +139,6 @@ static NSString *const ReuseCellID = @"ReuseCellID";
         cell = [tableView dequeueReusableCellWithIdentifier:ReuseCellID];
     }
     
-    
-    if (cell.tag == 888) {
-        
-        cell.tag = indexPath.row;
-    }
     DDLogInfo(@"cellForRowAtIndexPath %zd,%@",cell.tag,indexPath.description);
     cell.model = self.datas[indexPath.row];
     [cell startDownloadBackgroundTask];
@@ -172,7 +166,6 @@ static NSString *const ReuseCellID = @"ReuseCellID";
         [UIView animateWithDuration:0.15
                               delay:0.0
                             options:UIViewAnimationOptionCurveEaseOut animations:^{
-                                //                                [originCell pause];
                                 //UITableView滑动到指定cell
                                 [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:self.currentIndex inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
                             } completion:^(BOOL finished) {
@@ -192,8 +185,7 @@ static NSString *const ReuseCellID = @"ReuseCellID";
         int newIndex = [change[NSKeyValueChangeNewKey] intValue];
         // 停止旧的播放
         DouYinCell *oldCell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:oldIndex inSection:0]];
-        [oldCell.playerView seekToBegin];
-        [oldCell.playerView pause];
+        [oldCell pause];
         //获取当前显示的cell
         DouYinCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:newIndex inSection:0]];
         [cell startDownloadForegroundTask];
@@ -213,10 +205,6 @@ static NSString *const ReuseCellID = @"ReuseCellID";
         self.datas = data;
         [self.tableView reloadData];
         [self.loadMore endLoading];
-        
-//        DouYinCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
-//        [cell startDownloadForegroundTask];
-//        [cell autoPlay];
     }];
 }
 

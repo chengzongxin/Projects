@@ -31,6 +31,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)autoPlay;
 
+- (void)pause;
+
 @end
 
 NS_ASSUME_NONNULL_END

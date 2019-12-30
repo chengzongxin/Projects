@@ -257,14 +257,14 @@
 				59BCC64422CEF3CD00888AB4 /* DouYinViewController.m */,
 				594791EE22DF251700CBB35E /* DouYinCell.h */,
 				594791EF22DF251700CBB35E /* DouYinCell.m */,
-				59FA9F7022E1B68100E9EEA7 /* AVPlayerManager.h */,
-				59FA9F7122E1B68100E9EEA7 /* AVPlayerManager.m */,
 				59BCC68422CF3DE300888AB4 /* AVPlayerView.h */,
 				59BCC68522CF3DE300888AB4 /* AVPlayerView.m */,
 				59BCC68A22CF481000888AB4 /* Downloader.h */,
 				59BCC68B22CF481000888AB4 /* Downloader.m */,
 				59A8506A22E6F25500FF5BC6 /* StorageManager.h */,
 				59A8506B22E6F25500FF5BC6 /* StorageManager.m */,
+				59FA9F7022E1B68100E9EEA7 /* AVPlayerManager.h */,
+				59FA9F7122E1B68100E9EEA7 /* AVPlayerManager.m */,
 			);
 			path = DouYin;
 			sourceTree = "<group>";

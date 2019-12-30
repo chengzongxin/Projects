@@ -9,7 +9,7 @@
 #import "DouYinCell.h"
 
 @interface DouYinCell () <AVPlayerViewDelegate>
-
+@property (assign, nonatomic) BOOL isPlaying;
 @end
 
 @implementation DouYinCell
@@ -17,7 +17,7 @@
 -(void)prepareForReuse {
     [super prepareForReuse];
     //TODO: FIX: 正在播放的不销毁,,如果没开始播放也也会销毁,需要优化
-    if (!_playerView.isPlaying) {
+    if (!_isPlaying) {
     
         [_playerView destroyPlayer];
         
@@ -52,8 +52,6 @@
     _playerStatusBar.backgroundColor = UIColor.whiteColor;
     [_playerStatusBar setHidden:YES];
     [self addSubview:_playerStatusBar];
-    
-    self.tag = 888;
 }
 
 //更新AVPlayer状态，当前播放则暂停，当前暂停则播放
@@ -67,6 +65,7 @@
     _titleLabel.text = [NSString stringWithFormat:@"%p :%zd-%@",self,self.tag,model.mediaContentList.lastObject.url];
 }
 
+#pragma mark - Public
 - (void)autoPlay{
     //判断当前cell的视频源是否已经准备播放
     if(self.isPlayerReady) {
@@ -79,6 +78,13 @@
             [ws.playerView play];
         };
     }
+    _isPlaying = YES;
+}
+
+- (void)pause{
+    [self.playerView seekToBegin];
+    [self.playerView pause];
+    _isPlaying = NO;
 }
 
 - (void)onPlayItemStatusUpdate:(AVPlayerItemStatus)status{
@@ -146,7 +152,7 @@
 }
 
 - (void)startDownloadBackgroundTask{
-    if (!_playerView.isPlaying) {
+    if (!_isPlaying) {
         [_playerView setPlayerUrl:_model.mediaContentList.lastObject.url];
     }
 }

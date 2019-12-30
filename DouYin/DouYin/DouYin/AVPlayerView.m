@@ -64,12 +64,10 @@
 
 - (void)play{
     [_player play];
-    _isPlaying = YES;
 }
 
 - (void)pause{
     [_player pause];
-    _isPlaying = NO;
 }
 
 - (void)updatePlayerState{

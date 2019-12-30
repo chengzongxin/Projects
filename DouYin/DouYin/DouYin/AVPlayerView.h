@@ -50,8 +50,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)seekToProgress:(long)progress;
 
-@property (assign, nonatomic) BOOL isPlaying;
-
 @end
 
 NS_ASSUME_NONNULL_END
