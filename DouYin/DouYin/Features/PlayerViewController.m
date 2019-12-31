@@ -54,6 +54,11 @@
     frame.size.width = current / total * self.slider.frame.size.width;
     self.cacheView.frame = frame;
 }
+
+- (void)onPlayItemLoadedUpdate:(NSTimeInterval)loaded total:(NSTimeInterval)total{
+    
+}
+
 - (IBAction)sliderChange:(UISlider *)slider {
     [self.playerView seekToProgress:slider.value];
 }
