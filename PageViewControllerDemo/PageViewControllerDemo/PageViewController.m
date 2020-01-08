@@ -348,13 +348,16 @@ CGFloat const underLineAdditionW = 6;
 }
 
 - (void)setHeader:(UIView *)header{
-    _header = header;
-    
     if (header) {
+        if (_header) {// 避免重复添加
+            [_header removeFromSuperview];
+        }
         [self.view addSubview:self.bgScrollView];
         [self.bgScrollView addSubview:header];
         self.containerView = self.bgScrollView;
     }
+    _header = header;
+    
 }
 
 @end
