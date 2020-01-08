@@ -10,6 +10,9 @@
 
 #define ScreenW [UIScreen mainScreen].bounds.size.width
 #define ScreenH [UIScreen mainScreen].bounds.size.height
+// 下划线额外宽度
+CGFloat const underLineAdditionW = 6;
+
 @interface PageViewController ()<UIScrollViewDelegate>
 
 @property (nonatomic, strong) NSMutableArray *titleButtons;
@@ -117,10 +120,27 @@
     [rightBtn setTitleColor:rightColor forState:UIControlStateNormal];
     [leftBtn setTitleColor:leftColor forState:UIControlStateNormal];
     
-    // 滑动下划线
-    CGFloat interval = rightBtn.center.x - leftBtn.center.x;
-    CGFloat offset = interval * scaleR;
-    _underLine.center = CGPointMake(leftBtn.center.x + offset, _underLine.center.y);
+    CGFloat xDistance = rightBtn.center.x - leftBtn.center.x;
+    
+    // 普通样式滑动下划线
+//    CGFloat offset = xDistance * scaleR;
+//    _underLine.center = CGPointMake(leftBtn.center.x + offset, _underLine.center.y);
+    
+    // 依恋样式
+    // 这种样式的计算比较复杂,有个很关键的技巧，就是参考progress分别为0、0.5、1时的临界值
+    // 原先的x值
+    CGRect newFrame = _underLine.frame;
+    // 原先的宽度
+    CGFloat originW = leftBtn.titleLabel.frame.size.width / 2 + underLineAdditionW;
+    CGFloat originX = leftBtn.center.x - originW / 2;
+    if (scaleR < 0.5) {
+        newFrame.origin.x = originX; // x值保持不变
+        newFrame.size.width = originW + xDistance * scaleR * 2;
+    } else {
+        newFrame.origin.x = originX + xDistance * (scaleR-0.5) * 2;
+        newFrame.size.width = originW + xDistance - xDistance * (scaleR-0.5) * 2;
+    }
+    _underLine.frame = newFrame;
 }
 
 /*
@@ -149,7 +169,7 @@
     // 改变下划线位置
     [button.titleLabel sizeToFit];
     CGRect frame = _underLine.frame;
-    frame.size.width = button.titleLabel.frame.size.width + 6;
+    frame.size.width = button.titleLabel.frame.size.width + underLineAdditionW;
     [UIView animateWithDuration:0.25 animations:^{
         self.underLine.frame = frame;
         self.underLine.center = CGPointMake(button.center.x, self.underLine.center.y);
