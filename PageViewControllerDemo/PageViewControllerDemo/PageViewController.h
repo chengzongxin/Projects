@@ -11,6 +11,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface PageViewController : UIViewController
+
+#pragma mark - Public 交给子类实现
 /** 子类必须实现 */
 - (void)setupAllChildViewController;
 /** 头部视图,可以不实现 */

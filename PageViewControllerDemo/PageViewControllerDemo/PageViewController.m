@@ -16,14 +16,15 @@ CGFloat const underLineAdditionW = 6;
 @interface PageViewController ()<UIScrollViewDelegate>
 
 @property (nonatomic, strong) NSMutableArray *titleButtons;
-@property (nonatomic, weak) UIButton *selectButton;
-@property (nonatomic, weak) UIScrollView *titleScrollView;
-@property (nonatomic, weak) UIView *underLine;
-@property (nonatomic, weak) UIScrollView *contentScrollView;
+@property (nonatomic, strong) UIButton *selectButton;
+@property (nonatomic, strong) UIScrollView *titleScrollView;
+@property (nonatomic, strong) UIView *underLine;
+@property (nonatomic, strong) UIScrollView *contentScrollView;
 
-@property (nonatomic, assign) BOOL isInitialize;
 
-@property (nonatomic, weak) UIView *header;
+@property (nonatomic, strong) UIView *header;
+@property (nonatomic, strong) UIScrollView *bgScrollView;
+@property (nonatomic, strong) UIView *containerView;
 
 @end
 
@@ -41,6 +42,7 @@ CGFloat const underLineAdditionW = 6;
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.title = @"网易新闻";
+    self.containerView = self.view;
     
     self.header = [self setupHeaderView];
     
@@ -66,6 +68,17 @@ CGFloat const underLineAdditionW = 6;
     // 7.选中标题居中 => 选中标题
     
 }
+
+#pragma mark - Public 交给子类实现
+- (void)setupAllChildViewController{
+    NSAssert(0, [NSString stringWithFormat:@"必须实现setupAllChildViewController方法"]);
+}
+
+
+- (UIView *)setupHeaderView{
+    return nil;
+}
+
 
 #pragma mark - UIScrollViewDelegate
 // 滚动完成的时候调用
@@ -283,9 +296,9 @@ CGFloat const underLineAdditionW = 6;
     CGFloat stautsH = UIApplication.sharedApplication.statusBarFrame.size.height;
     CGFloat navH = (self.navigationController.navigationBar && !self.navigationController.navigationBarHidden)? 44 : 0;
     CGFloat headerH = self.header.frame.size.height;
-    CGFloat y = stautsH + navH + headerH;
+    CGFloat y = headerH ?:(stautsH + navH);
     titleScrollView.frame = CGRectMake(0, y, self.view.bounds.size.width, 44);
-    [self.view addSubview:titleScrollView];
+    [self.containerView addSubview:titleScrollView];
     _titleScrollView = titleScrollView;
     
     // 设置下划线
@@ -307,7 +320,7 @@ CGFloat const underLineAdditionW = 6;
     UIScrollView *contentScrollView = [[UIScrollView alloc] init];
     CGFloat y = CGRectGetMaxY(self.titleScrollView.frame);
     contentScrollView.frame = CGRectMake(0, y, self.view.bounds.size.width, self.view.bounds.size.height - y);
-    [self.view addSubview:contentScrollView];
+    [self.containerView addSubview:contentScrollView];
     _contentScrollView = contentScrollView;
     
     // 设置contentScrollView的属性
@@ -323,13 +336,25 @@ CGFloat const underLineAdditionW = 6;
     
 }
 
-- (void)setupAllChildViewController{
-    NSAssert(0, [NSString stringWithFormat:@"必须实现setupAllChildViewController方法"]);
+
+#pragma mark - Setter & Getter
+#pragma mark 添加背景ScrollView
+- (UIScrollView *)bgScrollView{
+    if (!_bgScrollView) {
+        _bgScrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
+//        _bgScrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentAlways;
+    }
+    return _bgScrollView;
 }
 
-
-- (UIView *)setupHeaderView{
-    return nil;
+- (void)setHeader:(UIView *)header{
+    _header = header;
+    
+    if (header) {
+        [self.view addSubview:self.bgScrollView];
+        [self.bgScrollView addSubview:header];
+        self.containerView = self.bgScrollView;
+    }
 }
 
 @end

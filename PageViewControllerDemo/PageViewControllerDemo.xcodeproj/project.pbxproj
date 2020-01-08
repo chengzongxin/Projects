@@ -16,6 +16,7 @@
 		59DBB65D23C348680031F608 /* PageViewControllerDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 59DBB65C23C348680031F608 /* PageViewControllerDemoTests.m */; };
 		59DBB66823C348680031F608 /* PageViewControllerDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 59DBB66723C348680031F608 /* PageViewControllerDemoUITests.m */; };
 		59DBB67723C3487C0031F608 /* PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59DBB67623C3487C0031F608 /* PageViewController.m */; };
+		59EAD51223C58AFB009B69FF /* ChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59EAD51123C58AFB009B69FF /* ChildViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,8 @@
 		59DBB66923C348680031F608 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		59DBB67523C3487C0031F608 /* PageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PageViewController.h; sourceTree = "<group>"; };
 		59DBB67623C3487C0031F608 /* PageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PageViewController.m; sourceTree = "<group>"; };
+		59EAD51023C58AFB009B69FF /* ChildViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChildViewController.h; sourceTree = "<group>"; };
+		59EAD51123C58AFB009B69FF /* ChildViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChildViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +113,8 @@
 				59DBB64423C348670031F608 /* AppDelegate.m */,
 				59DBB64623C348670031F608 /* ViewController.h */,
 				59DBB64723C348670031F608 /* ViewController.m */,
+				59EAD51023C58AFB009B69FF /* ChildViewController.h */,
+				59EAD51123C58AFB009B69FF /* ChildViewController.m */,
 				59DBB64923C348670031F608 /* Main.storyboard */,
 				59DBB64C23C348680031F608 /* Assets.xcassets */,
 				59DBB64E23C348680031F608 /* LaunchScreen.storyboard */,
@@ -269,6 +274,7 @@
 			files = (
 				59DBB64823C348670031F608 /* ViewController.m in Sources */,
 				59DBB65323C348680031F608 /* main.m in Sources */,
+				59EAD51223C58AFB009B69FF /* ChildViewController.m in Sources */,
 				59DBB64523C348670031F608 /* AppDelegate.m in Sources */,
 				59DBB67723C3487C0031F608 /* PageViewController.m in Sources */,
 			);
