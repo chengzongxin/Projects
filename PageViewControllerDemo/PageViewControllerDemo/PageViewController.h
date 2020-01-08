@@ -13,6 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface PageViewController : UIViewController
 /** 子类必须实现 */
 - (void)setupAllChildViewController;
+/** 头部视图,可以不实现 */
+- (UIView *)setupHeaderView;
 
 @end
 

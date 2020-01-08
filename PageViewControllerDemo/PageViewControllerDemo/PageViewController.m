@@ -15,9 +15,12 @@
 @property (nonatomic, strong) NSMutableArray *titleButtons;
 @property (nonatomic, weak) UIButton *selectButton;
 @property (nonatomic, weak) UIScrollView *titleScrollView;
+@property (nonatomic, weak) UIView *underLine;
 @property (nonatomic, weak) UIScrollView *contentScrollView;
 
 @property (nonatomic, assign) BOOL isInitialize;
+
+@property (nonatomic, weak) UIView *header;
 
 @end
 
@@ -36,13 +39,16 @@
     // Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.title = @"网易新闻";
     
+    self.header = [self setupHeaderView];
+    
+    [self setupAllChildViewController];
+    
     // 1.添加标题滚动视图
     [self setupTitleScrollView];
     
     // 2.添加内容滚动视图
     [self setupContentScrollView];
     
-    [self setupAllChildViewController];
     
     [self setupAllTitle];
     
@@ -110,6 +116,11 @@
     UIColor *leftColor = [UIColor colorWithRed:scaleL green:0 blue:0 alpha:1];
     [rightBtn setTitleColor:rightColor forState:UIControlStateNormal];
     [leftBtn setTitleColor:leftColor forState:UIControlStateNormal];
+    
+    // 滑动下划线
+    CGFloat interval = rightBtn.center.x - leftBtn.center.x;
+    CGFloat offset = interval * scaleR;
+    _underLine.center = CGPointMake(leftBtn.center.x + offset, _underLine.center.y);
 }
 
 /*
@@ -134,6 +145,16 @@
     button.transform = CGAffineTransformMakeScale(1.3, 1.3);
     
     _selectButton = button;
+    
+    // 改变下划线位置
+    [button.titleLabel sizeToFit];
+    CGRect frame = _underLine.frame;
+    frame.size.width = button.titleLabel.frame.size.width + 6;
+    [UIView animateWithDuration:0.25 animations:^{
+        self.underLine.frame = frame;
+        self.underLine.center = CGPointMake(button.center.x, self.underLine.center.y);
+    }];
+    
 }
 
 #pragma mark - 标题居中
@@ -212,11 +233,11 @@
         // 把标题按钮保存到对应的数组
         [self.titleButtons addObject:titleButton];
         
-        if (i == 0) {
-            [self titleClick:titleButton];
-        }
-        
         [self.titleScrollView addSubview:titleButton];
+        
+//        if (i == 0) {
+//            [self titleClick:titleButton];
+//        }
     }
     
     
@@ -226,6 +247,8 @@
     
     // 设置内容的滚动范围
     self.contentScrollView.contentSize = CGSizeMake(count * ScreenW, 0);
+    
+    [self titleClick:self.titleButtons.firstObject];
     
     // bug:代码跟我的一模一样,但是标题就是显示不出来
     // 内容往下移动,莫名其妙
@@ -239,10 +262,22 @@
     UIScrollView *titleScrollView = [[UIScrollView alloc] init];
     CGFloat stautsH = UIApplication.sharedApplication.statusBarFrame.size.height;
     CGFloat navH = (self.navigationController.navigationBar && !self.navigationController.navigationBarHidden)? 44 : 0;
-    titleScrollView.frame = CGRectMake(0, stautsH + navH, self.view.bounds.size.width, 44);
+    CGFloat headerH = self.header.frame.size.height;
+    CGFloat y = stautsH + navH + headerH;
+    titleScrollView.frame = CGRectMake(0, y, self.view.bounds.size.width, 44);
     [self.view addSubview:titleScrollView];
     _titleScrollView = titleScrollView;
     
+    // 设置下划线
+    [self setupTitleUnderline];
+}
+// 设置下划线
+- (void)setupTitleUnderline{
+    UIView *underLine = [[UIView alloc] init];
+    underLine.frame = CGRectMake(0, _titleScrollView.frame.size.height - 3, 0, 3);
+    underLine.backgroundColor = UIColor.redColor;
+    [_titleScrollView addSubview:underLine];
+    _underLine = underLine;
 }
 
 #pragma mark - 添加内容滚动视图
@@ -272,8 +307,9 @@
     NSAssert(0, [NSString stringWithFormat:@"必须实现setupAllChildViewController方法"]);
 }
 
-- (void)addChildViewController:(UIViewController *)childController{
-    [super addChildViewController:childController];
+
+- (UIView *)setupHeaderView{
+    return nil;
 }
 
 @end

@@ -31,5 +31,11 @@
     
 }
 
+- (UIView *)setupHeaderView{
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 375, 200)];
+    view.backgroundColor = UIColor.orangeColor;
+    [view addSubview:[UISwitch new]];
+    return view;
+}
 
 @end
