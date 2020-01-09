@@ -8,7 +8,7 @@
 
 #import "PageViewController.h"
 
-@interface ViewController : PageViewController
+@interface ViewController : UIViewController
 
 
 @end

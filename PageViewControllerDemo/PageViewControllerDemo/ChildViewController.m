@@ -7,6 +7,7 @@
 //
 
 #import "ChildViewController.h"
+#import "PageTableView.h"
 
 @interface ChildViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -17,8 +18,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
-    tableView.delegate = self;
+    PageTableView *tableView = [[PageTableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+    tableView.delegate = tableView;
     tableView.dataSource = self;
     [tableView registerClass:UITableViewCell.class forCellReuseIdentifier:NSStringFromClass(UITableViewCell.class)];
     [self.view addSubview:tableView];

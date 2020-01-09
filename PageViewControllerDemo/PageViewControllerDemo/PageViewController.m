@@ -7,9 +7,8 @@
 //
 
 #import "PageViewController.h"
-
-#define ScreenW [UIScreen mainScreen].bounds.size.width
-#define ScreenH [UIScreen mainScreen].bounds.size.height
+#import "PageScrollView.h"
+#import "UIView+Frame.h"
 // 下划线额外宽度
 CGFloat const underLineAdditionW = 6;
 
@@ -23,7 +22,7 @@ CGFloat const underLineAdditionW = 6;
 
 
 @property (nonatomic, strong) UIView *header;
-@property (nonatomic, strong) UIScrollView *bgScrollView;
+@property (nonatomic, strong) PageScrollView *bgScrollView;
 @property (nonatomic, strong) UIView *containerView;
 
 @end
@@ -100,60 +99,71 @@ CGFloat const underLineAdditionW = 6;
 // 只要一滚动就需要字体渐变
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    // 字体缩放 1.缩放比例 2.缩放哪两个按钮
-    NSInteger leftI = scrollView.contentOffset.x / ScreenW;
-    NSInteger rightI = leftI + 1;
-    
-    // 获取左边的按钮
-    UIButton *leftBtn = self.titleButtons[leftI];
-    NSInteger count = self.titleButtons.count;
-    
-    // 获取右边的按钮
-    UIButton *rightBtn;
-    if (rightI < count) {
-        rightBtn = self.titleButtons[rightI];
+    if (scrollView == self.bgScrollView) {
+//        NSLog(@"%@",NSStringFromCGPoint(scrollView.contentOffset));
+        CGFloat top = self.header.height - scrollView.contentInset.top;
+        if (scrollView.contentOffset.y >= top || scrollView.tag == 0) { // 固定不动
+            scrollView.contentOffset = CGPointMake(0, top);
+        }
+        
+    }else if (scrollView == self.contentScrollView) {
+        
+        // 字体缩放 1.缩放比例 2.缩放哪两个按钮
+        NSInteger leftI = scrollView.contentOffset.x / ScreenW;
+        NSInteger rightI = leftI + 1;
+        
+        // 获取左边的按钮
+        UIButton *leftBtn = self.titleButtons[leftI];
+        NSInteger count = self.titleButtons.count;
+        
+        // 获取右边的按钮
+        UIButton *rightBtn;
+        if (rightI < count) {
+            rightBtn = self.titleButtons[rightI];
+        }
+        
+        // 0 ~ 1 =>  1 ~ 1.3
+        // 计算缩放比例
+        CGFloat scaleR = scrollView.contentOffset.x / ScreenW;
+        
+        scaleR -= leftI;
+        
+        // 左边缩放比例
+        CGFloat scaleL = 1 - scaleR;
+        
+        // 缩放按钮
+        leftBtn.transform = CGAffineTransformMakeScale(scaleL * 0.3 + 1, scaleL * 0.3 + 1);
+        rightBtn.transform = CGAffineTransformMakeScale(scaleR * 0.3 + 1, scaleR * 0.3 + 1);
+        
+        // 颜色渐变
+        UIColor *rightColor = [UIColor colorWithRed:scaleR green:0 blue:0 alpha:1];
+        UIColor *leftColor = [UIColor colorWithRed:scaleL green:0 blue:0 alpha:1];
+        [rightBtn setTitleColor:rightColor forState:UIControlStateNormal];
+        [leftBtn setTitleColor:leftColor forState:UIControlStateNormal];
+        
+        CGFloat xDistance = rightBtn.center.x - leftBtn.center.x;
+        
+        // 普通样式滑动下划线
+        //    CGFloat offset = xDistance * scaleR;
+        //    _underLine.center = CGPointMake(leftBtn.center.x + offset, _underLine.center.y);
+        
+        // 依恋样式
+        // 这种样式的计算比较复杂,有个很关键的技巧，就是参考progress分别为0、0.5、1时的临界值
+        // 原先的x值
+        CGRect newFrame = _underLine.frame;
+        // 原先的宽度
+        CGFloat originW = leftBtn.titleLabel.frame.size.width / 2 + underLineAdditionW;
+        CGFloat originX = leftBtn.center.x - originW / 2;
+        if (scaleR < 0.5) {
+            newFrame.origin.x = originX; // x值保持不变
+            newFrame.size.width = originW + xDistance * scaleR * 2;
+        } else {
+            newFrame.origin.x = originX + xDistance * (scaleR-0.5) * 2;
+            newFrame.size.width = originW + xDistance - xDistance * (scaleR-0.5) * 2;
+        }
+        _underLine.frame = newFrame;
     }
     
-    // 0 ~ 1 =>  1 ~ 1.3
-    // 计算缩放比例
-    CGFloat scaleR = scrollView.contentOffset.x / ScreenW;
-    
-    scaleR -= leftI;
-    
-    // 左边缩放比例
-    CGFloat scaleL = 1 - scaleR;
-    
-    // 缩放按钮
-    leftBtn.transform = CGAffineTransformMakeScale(scaleL * 0.3 + 1, scaleL * 0.3 + 1);
-    rightBtn.transform = CGAffineTransformMakeScale(scaleR * 0.3 + 1, scaleR * 0.3 + 1);
-    
-    // 颜色渐变
-    UIColor *rightColor = [UIColor colorWithRed:scaleR green:0 blue:0 alpha:1];
-    UIColor *leftColor = [UIColor colorWithRed:scaleL green:0 blue:0 alpha:1];
-    [rightBtn setTitleColor:rightColor forState:UIControlStateNormal];
-    [leftBtn setTitleColor:leftColor forState:UIControlStateNormal];
-    
-    CGFloat xDistance = rightBtn.center.x - leftBtn.center.x;
-    
-    // 普通样式滑动下划线
-//    CGFloat offset = xDistance * scaleR;
-//    _underLine.center = CGPointMake(leftBtn.center.x + offset, _underLine.center.y);
-    
-    // 依恋样式
-    // 这种样式的计算比较复杂,有个很关键的技巧，就是参考progress分别为0、0.5、1时的临界值
-    // 原先的x值
-    CGRect newFrame = _underLine.frame;
-    // 原先的宽度
-    CGFloat originW = leftBtn.titleLabel.frame.size.width / 2 + underLineAdditionW;
-    CGFloat originX = leftBtn.center.x - originW / 2;
-    if (scaleR < 0.5) {
-        newFrame.origin.x = originX; // x值保持不变
-        newFrame.size.width = originW + xDistance * scaleR * 2;
-    } else {
-        newFrame.origin.x = originX + xDistance * (scaleR-0.5) * 2;
-        newFrame.size.width = originW + xDistance - xDistance * (scaleR-0.5) * 2;
-    }
-    _underLine.frame = newFrame;
 }
 
 /*
@@ -319,7 +329,11 @@ CGFloat const underLineAdditionW = 6;
     // 创建contentScrollView
     UIScrollView *contentScrollView = [[UIScrollView alloc] init];
     CGFloat y = CGRectGetMaxY(self.titleScrollView.frame);
-    contentScrollView.frame = CGRectMake(0, y, self.view.bounds.size.width, self.view.bounds.size.height - y);
+    CGFloat height = self.view.bounds.size.height - y;
+    if (self.header) {
+        height = ScreenH - (kStatusH + kNavbarH + _titleScrollView.height);
+    }
+    contentScrollView.frame = CGRectMake(0, y, self.view.bounds.size.width, height);
     [self.containerView addSubview:contentScrollView];
     _contentScrollView = contentScrollView;
     
@@ -333,15 +347,19 @@ CGFloat const underLineAdditionW = 6;
     
     // 设置代理.目的:监听内容滚动视图 什么时候滚动完成
     self.contentScrollView.delegate = self;
-    
+    self.contentScrollView.tag = 888;
 }
 
 
 #pragma mark - Setter & Getter
 #pragma mark 添加背景ScrollView
-- (UIScrollView *)bgScrollView{
+- (PageScrollView *)bgScrollView{
     if (!_bgScrollView) {
-        _bgScrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
+        _bgScrollView = [[PageScrollView alloc] initWithFrame:self.view.bounds];
+        _bgScrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+        _bgScrollView.contentInset = UIEdgeInsetsMake(kStatusH + kNavbarH, 0, 0, 0);
+        _bgScrollView.delegate = self;
+        _bgScrollView.tag = 1;
 //        _bgScrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentAlways;
     }
     return _bgScrollView;
@@ -355,6 +373,7 @@ CGFloat const underLineAdditionW = 6;
         [self.view addSubview:self.bgScrollView];
         [self.bgScrollView addSubview:header];
         self.containerView = self.bgScrollView;
+        self.bgScrollView.contentSize = CGSizeMake(0, self.view.bounds.size.height + header.frame.size.height);
     }
     _header = header;
     
