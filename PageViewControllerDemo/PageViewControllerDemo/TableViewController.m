@@ -1,19 +1,19 @@
 //
-//  ChildViewController.m
+//  TableViewController.m
 //  PageViewControllerDemo
 //
-//  Created by Joe on 2020/1/8.
+//  Created by Joe on 2020/1/9.
 //  Copyright © 2020 Joe. All rights reserved.
 //
 
-#import "ChildViewController.h"
+#import "TableViewController.h"
 #import "PageTableView.h"
 
-@interface ChildViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface TableViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @end
 
-@implementation ChildViewController
+@implementation TableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -38,5 +38,6 @@
 - (void)scrollViewDidScroll:(PageTableView *)scrollView{
     [scrollView scrollViewDidScroll:scrollView];
 }
+
 
 @end

@@ -19,17 +19,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LkZ-Ph-rsN">
-                                <rect key="frame" x="152" y="208" width="46" height="30"/>
+                                <rect key="frame" x="120" y="208" width="111" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="PageVC-Header"/>
                                 <connections>
                                     <segue destination="xM3-Vb-cN6" kind="show" id="K5s-gi-J9q"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D6d-lg-Vmz">
-                                <rect key="frame" x="152" y="265" width="46" height="30"/>
+                                <rect key="frame" x="148" y="265" width="54" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="PageVC"/>
                                 <connections>
                                     <segue destination="QFD-ak-9LU" kind="show" id="8ub-Se-ASu"/>
                                 </connections>
@@ -62,10 +62,10 @@
             </objects>
             <point key="canvasLocation" x="448.80000000000001" y="-564.46776611694156"/>
         </scene>
-        <!--One View Controller-->
+        <!--PageVC Header View Controller-->
         <scene sceneID="vyq-C8-Rm7">
             <objects>
-                <viewController id="xM3-Vb-cN6" customClass="OneViewController" sceneMemberID="viewController">
+                <viewController id="xM3-Vb-cN6" customClass="PageVCHeaderViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ig0-jk-tuZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -77,10 +77,10 @@
             </objects>
             <point key="canvasLocation" x="1876" y="-876"/>
         </scene>
-        <!--Two View Controller-->
+        <!--PageVC View Controller-->
         <scene sceneID="2Q8-vH-qsT">
             <objects>
-                <viewController id="QFD-ak-9LU" customClass="TwoViewController" sceneMemberID="viewController">
+                <viewController id="QFD-ak-9LU" customClass="PageVCViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1YO-dY-Jvf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

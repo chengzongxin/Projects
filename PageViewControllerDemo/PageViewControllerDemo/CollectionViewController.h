@@ -1,8 +1,8 @@
 //
-//  ChildViewController.h
+//  CollectionViewController.h
 //  PageViewControllerDemo
 //
-//  Created by Joe on 2020/1/8.
+//  Created by Joe on 2020/1/9.
 //  Copyright © 2020 Joe. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ChildViewController : UIViewController
+@interface CollectionViewController : UIViewController
 
 @end
 

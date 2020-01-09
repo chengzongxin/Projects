@@ -1,5 +1,5 @@
 //
-//  TwoViewController.h
+//  OneViewController.h
 //  PageViewControllerDemo
 //
 //  Created by Joe on 2020/1/9.
@@ -10,7 +10,7 @@
 #import "PageViewController.h"
 NS_ASSUME_NONNULL_BEGIN
 
-@interface PageVCViewController : PageViewController
+@interface PageVCHeaderViewController : PageViewController
 
 @end
 
