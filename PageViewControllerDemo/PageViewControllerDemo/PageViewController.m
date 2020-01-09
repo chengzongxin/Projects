@@ -83,17 +83,19 @@ CGFloat const underLineAdditionW = 6;
 // 滚动完成的时候调用
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
-    // 获取当前角标
-    NSInteger i = scrollView.contentOffset.x / ScreenW;
-    
-    // 获取标题按钮
-    UIButton *titleButton = self.titleButtons[i];
-    
-    // 1.选中标题
-    [self selButton:titleButton];
-    
-    // 2.把对应子控制器的view添加上去
-    [self setupOneViewController:i];
+    if (scrollView == self.contentScrollView) {
+        // 获取当前角标
+        NSInteger i = scrollView.contentOffset.x / ScreenW;
+        
+        // 获取标题按钮
+        UIButton *titleButton = self.titleButtons[i];
+        
+        // 1.选中标题
+        [self selButton:titleButton];
+        
+        // 2.把对应子控制器的view添加上去
+        [self setupOneViewController:i];
+    }
 }
 
 // 只要一滚动就需要字体渐变

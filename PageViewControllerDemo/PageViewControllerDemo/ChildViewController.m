@@ -19,7 +19,7 @@
     [super viewDidLoad];
     
     PageTableView *tableView = [[PageTableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
-    tableView.delegate = tableView;
+    tableView.delegate = self;
     tableView.dataSource = self;
     [tableView registerClass:UITableViewCell.class forCellReuseIdentifier:NSStringFromClass(UITableViewCell.class)];
     [self.view addSubview:tableView];
@@ -33,6 +33,10 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(UITableViewCell.class) forIndexPath:indexPath];
     cell.textLabel.text = @(indexPath.row).stringValue;
     return cell;
+}
+
+- (void)scrollViewDidScroll:(PageTableView *)scrollView{
+    [scrollView scrollViewDidScroll:scrollView];
 }
 
 @end
