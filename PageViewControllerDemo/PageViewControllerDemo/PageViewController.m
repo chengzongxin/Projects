@@ -372,6 +372,7 @@ CGFloat const underLineAdditionW = 6;
         }
         [self.view addSubview:self.bgScrollView];
         [self.bgScrollView addSubview:header];
+        self.bgScrollView.headerView = header;
         self.containerView = self.bgScrollView;
         self.bgScrollView.contentSize = CGSizeMake(0, self.view.bounds.size.height + header.frame.size.height);
     }

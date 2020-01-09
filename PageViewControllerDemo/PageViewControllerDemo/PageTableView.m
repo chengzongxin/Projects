@@ -16,8 +16,9 @@
 //    NSLog(@"%@",NSStringFromCGPoint(scrollView.contentOffset));
     PageScrollView *bgScrollView = (PageScrollView *)scrollView.superview.superview.superview;
     if ([bgScrollView isKindOfClass:UIScrollView.class]) {
-        
-        if (bgScrollView.contentOffset.y < (200 - 88)) {
+        UIViewController *currentVC = [self currentViewController];
+        CGFloat navH = ((currentVC.navigationController.navigationBar && !currentVC.navigationController.navigationBarHidden)? 44 : 0);
+        if (bgScrollView.contentOffset.y < (bgScrollView.headerView.height - navH - kStatusH)) {
             scrollView.contentOffset = CGPointZero;
         }
         
@@ -44,6 +45,28 @@
     
 //    NSLog(@"%@",otherGestureRecognizer.view);
     return NO;
+}
+
+
+/**
+ 获取当前显示的控制区
+ */
+- (UIViewController*)currentViewController; {
+    UIWindow *window = [[UIApplication sharedApplication].delegate window];
+    UIViewController *topViewController = [window rootViewController];
+    while (true) {
+        if (topViewController.presentedViewController) {
+            topViewController = topViewController.presentedViewController;
+        } else if ([topViewController isKindOfClass:[UINavigationController class]] && [(UINavigationController*)topViewController topViewController]) {
+            topViewController = [(UINavigationController *)topViewController topViewController];
+        } else if ([topViewController isKindOfClass:[UITabBarController class]]) {
+            UITabBarController *tab = (UITabBarController *)topViewController;
+            topViewController = tab.selectedViewController;
+        } else {
+            break;
+        }
+    }
+    return topViewController;
 }
 
 @end
