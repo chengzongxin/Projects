@@ -104,9 +104,12 @@ CGFloat const underLineAdditionW = 6;
     if (scrollView == self.bgScrollView) {
 //        NSLog(@"%@",NSStringFromCGPoint(scrollView.contentOffset));
         CGFloat top = self.header.height - scrollView.contentInset.top;
-        if (scrollView.contentOffset.y >= top || scrollView.tag == 0) { // 固定不动
+        // 如果offset 滑动大于top ,或者 tag = 0 ,bgScroll头部固定不动
+        // 如果子视图tableview滑动到顶部时(即tableview.offset <= 0),tag = 1, 头部允许往下滑动
+        if (scrollView.contentOffset.y >= top || scrollView.tag == 0) {
             scrollView.contentOffset = CGPointMake(0, top);
         }
+        // tag == 1
         
     }else if (scrollView == self.contentScrollView) {
         
