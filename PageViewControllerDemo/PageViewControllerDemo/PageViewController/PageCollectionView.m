@@ -25,12 +25,10 @@
         
         if (scrollView.contentOffset.y <= 0) {
             scrollView.contentOffset = CGPointZero;
-            // tag = 1不滑动
-            bgScrollView.tag = 1;
+            bgScrollView.fixed = NO;
             
         }else{
-            // tag = 0 默认滑动
-            bgScrollView.tag = 0;
+            bgScrollView.fixed = YES;
         }
     }
 }

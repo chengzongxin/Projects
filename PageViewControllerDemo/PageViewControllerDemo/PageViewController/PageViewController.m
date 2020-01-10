@@ -103,13 +103,16 @@ CGFloat const underLineAdditionW = 6;
 {
     if (scrollView == self.bgScrollView) {
 //        NSLog(@"%@",NSStringFromCGPoint(scrollView.contentOffset));
-        CGFloat top = self.header.height - scrollView.contentInset.top;
-        // 如果offset 滑动大于top ,或者 tag = 0 ,bgScroll头部固定不动
-        // 如果子视图tableview滑动到顶部时(即tableview.offset <= 0),tag = 1, 头部允许往下滑动
-        if (scrollView.contentOffset.y > top || scrollView.tag == 0) {
-            scrollView.contentOffset = CGPointMake(0, top);
+        CGFloat top = self.bgScrollView.headerView.height - self.bgScrollView.contentInset.top;
+        // 如果offset 滑动大于top ,或者 fixed = yes ,bgScroll头部固定不动
+        // 如果子视图tableview滑动到顶部时(即tableview.offset <= 0),fixed = no, 头部允许往下滑动
+        if (self.bgScrollView.neverFixed == false && (self.bgScrollView.contentOffset.y > top || self.bgScrollView.fixed == YES)) {
+            self.bgScrollView.contentOffset = CGPointMake(0, top);
+        }else if (self.bgScrollView.contentOffset.y > top) {
+            self.bgScrollView.contentOffset = CGPointMake(0, top);
+        }else{
+            // fixed == NO,offset < top, neverFix = ture 允许向下滑动
         }
-        // tag == 1
         
     }else if (scrollView == self.contentScrollView) {
         
@@ -230,6 +233,7 @@ CGFloat const underLineAdditionW = 6;
     // 显示VC
     UIViewController *vc = self.childViewControllers[i];
     if (vc.view.superview) {
+        self.bgScrollView.neverFixed = false;
         [vc viewWillAppear:YES];
         return;
     }
@@ -365,7 +369,6 @@ CGFloat const underLineAdditionW = 6;
         _bgScrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
         _bgScrollView.contentInset = UIEdgeInsetsMake(kStatusH + kNavbarH, 0, 0, 0);
         _bgScrollView.delegate = self;
-        _bgScrollView.tag = 1;
 //        _bgScrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentAlways;
     }
     return _bgScrollView;

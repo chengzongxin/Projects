@@ -14,6 +14,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (weak, nonatomic) UIView *headerView;
 
+@property (assign, nonatomic) BOOL fixed;
+
+@property (assign, nonatomic) BOOL neverFixed;
+
 @end
 
 NS_ASSUME_NONNULL_END
