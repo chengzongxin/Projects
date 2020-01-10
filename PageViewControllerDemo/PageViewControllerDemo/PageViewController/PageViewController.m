@@ -106,7 +106,7 @@ CGFloat const underLineAdditionW = 6;
         CGFloat top = self.header.height - scrollView.contentInset.top;
         // 如果offset 滑动大于top ,或者 tag = 0 ,bgScroll头部固定不动
         // 如果子视图tableview滑动到顶部时(即tableview.offset <= 0),tag = 1, 头部允许往下滑动
-        if (scrollView.contentOffset.y >= top || scrollView.tag == 0) {
+        if (scrollView.contentOffset.y > top || scrollView.tag == 0) {
             scrollView.contentOffset = CGPointMake(0, top);
         }
         // tag == 1
@@ -227,9 +227,10 @@ CGFloat const underLineAdditionW = 6;
 #pragma mark - 添加一个子控制器的View
 - (void)setupOneViewController:(NSInteger)i
 {
-    
+    // 显示VC
     UIViewController *vc = self.childViewControllers[i];
     if (vc.view.superview) {
+        [vc viewWillAppear:YES];
         return;
     }
     CGFloat x = i * [UIScreen mainScreen].bounds.size.width;
