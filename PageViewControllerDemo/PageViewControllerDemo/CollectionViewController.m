@@ -23,6 +23,7 @@
     layout.scrollDirection = UICollectionViewScrollDirectionVertical;
     layout.itemSize = CGSizeMake(50, 50);
     PageCollectionView *collectionView = [[PageCollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:layout];
+    collectionView.backgroundColor = UIColor.whiteColor;
     collectionView.delegate = self;
     collectionView.dataSource = self;
     [collectionView registerClass:UICollectionViewCell.class forCellWithReuseIdentifier:NSStringFromClass(UICollectionViewCell.class)];
@@ -38,6 +39,7 @@
     UILabel *label;
     if (cell.contentView.subviews.count == 0) {
         label = [[UILabel alloc] initWithFrame:cell.bounds];
+        label.textAlignment = NSTextAlignmentCenter;
         [cell.contentView addSubview:label];
     }else{
         label = cell.contentView.subviews.firstObject;

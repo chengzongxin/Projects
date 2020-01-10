@@ -17,6 +17,7 @@
 		5907273B23C7260A007ADF5A /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5907273A23C7260A007ADF5A /* TableViewController.m */; };
 		5907273E23C728E1007ADF5A /* PageVCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5907273D23C728E1007ADF5A /* PageVCViewController.m */; };
 		59C4422F23C853E9003F069F /* NormalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59C4422E23C853E9003F069F /* NormalViewController.m */; };
+		59C4423523C86F17003F069F /* UIViewController+Page.m in Sources */ = {isa = PBXBuildFile; fileRef = 59C4423423C86F17003F069F /* UIViewController+Page.m */; };
 		59DBB64523C348670031F608 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 59DBB64423C348670031F608 /* AppDelegate.m */; };
 		59DBB64823C348670031F608 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59DBB64723C348670031F608 /* ViewController.m */; };
 		59DBB64B23C348670031F608 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59DBB64923C348670031F608 /* Main.storyboard */; };
@@ -65,6 +66,8 @@
 		5907273D23C728E1007ADF5A /* PageVCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PageVCViewController.m; sourceTree = "<group>"; };
 		59C4422D23C853E9003F069F /* NormalViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NormalViewController.h; sourceTree = "<group>"; };
 		59C4422E23C853E9003F069F /* NormalViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NormalViewController.m; sourceTree = "<group>"; };
+		59C4423323C86F17003F069F /* UIViewController+Page.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Page.h"; sourceTree = "<group>"; };
+		59C4423423C86F17003F069F /* UIViewController+Page.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Page.m"; sourceTree = "<group>"; };
 		59DBB64023C348670031F608 /* PageViewControllerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PageViewControllerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59DBB64323C348670031F608 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		59DBB64423C348670031F608 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -128,6 +131,8 @@
 				5907272D23C712EB007ADF5A /* PageTableView.m */,
 				5907273323C713C6007ADF5A /* PageCollectionView.h */,
 				5907273423C713C6007ADF5A /* PageCollectionView.m */,
+				59C4423323C86F17003F069F /* UIViewController+Page.h */,
+				59C4423423C86F17003F069F /* UIViewController+Page.m */,
 			);
 			path = PageViewController;
 			sourceTree = "<group>";
@@ -335,6 +340,7 @@
 				5907273523C713C6007ADF5A /* PageCollectionView.m in Sources */,
 				59DBB64523C348670031F608 /* AppDelegate.m in Sources */,
 				5907273E23C728E1007ADF5A /* PageVCViewController.m in Sources */,
+				59C4423523C86F17003F069F /* UIViewController+Page.m in Sources */,
 				59C4422F23C853E9003F069F /* NormalViewController.m in Sources */,
 				5907273B23C7260A007ADF5A /* TableViewController.m in Sources */,
 				5907273823C72335007ADF5A /* CollectionViewController.m in Sources */,

@@ -9,6 +9,7 @@
 #import "PageViewController.h"
 #import "PageScrollView.h"
 #import "UIView+Frame.h"
+#import "UIViewController+Page.h"
 // 下划线额外宽度
 CGFloat const underLineAdditionW = 6;
 
@@ -232,8 +233,9 @@ CGFloat const underLineAdditionW = 6;
 {
     // 显示VC
     UIViewController *vc = self.childViewControllers[i];
+    // 是否scrollView
+    self.bgScrollView.neverFixed = vc.notScrollView;
     if (vc.view.superview) {
-        self.bgScrollView.neverFixed = false;
         [vc viewWillAppear:YES];
         return;
     }
