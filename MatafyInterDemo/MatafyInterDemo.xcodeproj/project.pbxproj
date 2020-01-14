@@ -1,0 +1,642 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5971D18F23CDBE91009AAA4E /* ChargeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5971D18E23CDBE91009AAA4E /* ChargeDetailViewController.m */; };
+		59F12FB323CD9EF60062371F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F12FB223CD9EF60062371F /* AppDelegate.m */; };
+		59F12FB623CD9EF60062371F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F12FB523CD9EF60062371F /* ViewController.m */; };
+		59F12FB923CD9EF60062371F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59F12FB723CD9EF60062371F /* Main.storyboard */; };
+		59F12FBB23CD9EF80062371F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59F12FBA23CD9EF80062371F /* Assets.xcassets */; };
+		59F12FBE23CD9EF80062371F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59F12FBC23CD9EF80062371F /* LaunchScreen.storyboard */; };
+		59F12FC123CD9EF80062371F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F12FC023CD9EF80062371F /* main.m */; };
+		59F12FCB23CD9EF80062371F /* MatafyInterDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F12FCA23CD9EF80062371F /* MatafyInterDemoTests.m */; };
+		59F12FD623CD9EF80062371F /* MatafyInterDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F12FD523CD9EF80062371F /* MatafyInterDemoUITests.m */; };
+		59F12FE523CDA5DA0062371F /* ChargeCoinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F12FE423CDA5DA0062371F /* ChargeCoinViewController.m */; };
+		59F12FE823CDA8D60062371F /* ChoiceCoinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F12FE723CDA8D60062371F /* ChoiceCoinViewController.m */; };
+		59F12FEB23CDAA4A0062371F /* SearchTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F12FEA23CDAA490062371F /* SearchTextField.m */; };
+		59F12FEF23CDAE420062371F /* CoinChoiceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F12FED23CDAE420062371F /* CoinChoiceCell.m */; };
+		59F12FF023CDAE420062371F /* CoinChoiceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59F12FEE23CDAE420062371F /* CoinChoiceCell.xib */; };
+		59F12FF423CDB2CF0062371F /* ChargeHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F12FF323CDB2CF0062371F /* ChargeHistoryViewController.m */; };
+		59F12FF823CDB8130062371F /* ChargeHistoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F12FF623CDB8130062371F /* ChargeHistoryCell.m */; };
+		59F12FF923CDB8130062371F /* ChargeHistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59F12FF723CDB8130062371F /* ChargeHistoryCell.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		59F12FC723CD9EF80062371F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 59F12FA623CD9EF60062371F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 59F12FAD23CD9EF60062371F;
+			remoteInfo = MatafyInterDemo;
+		};
+		59F12FD223CD9EF80062371F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 59F12FA623CD9EF60062371F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 59F12FAD23CD9EF60062371F;
+			remoteInfo = MatafyInterDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5971D18D23CDBE91009AAA4E /* ChargeDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChargeDetailViewController.h; sourceTree = "<group>"; };
+		5971D18E23CDBE91009AAA4E /* ChargeDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChargeDetailViewController.m; sourceTree = "<group>"; };
+		59F12FAE23CD9EF60062371F /* MatafyInterDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MatafyInterDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		59F12FB123CD9EF60062371F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		59F12FB223CD9EF60062371F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		59F12FB423CD9EF60062371F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		59F12FB523CD9EF60062371F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		59F12FB823CD9EF60062371F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		59F12FBA23CD9EF80062371F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		59F12FBD23CD9EF80062371F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		59F12FBF23CD9EF80062371F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		59F12FC023CD9EF80062371F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		59F12FC623CD9EF80062371F /* MatafyInterDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MatafyInterDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		59F12FCA23CD9EF80062371F /* MatafyInterDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MatafyInterDemoTests.m; sourceTree = "<group>"; };
+		59F12FCC23CD9EF80062371F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		59F12FD123CD9EF80062371F /* MatafyInterDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MatafyInterDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		59F12FD523CD9EF80062371F /* MatafyInterDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MatafyInterDemoUITests.m; sourceTree = "<group>"; };
+		59F12FD723CD9EF80062371F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		59F12FE323CDA5DA0062371F /* ChargeCoinViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChargeCoinViewController.h; sourceTree = "<group>"; };
+		59F12FE423CDA5DA0062371F /* ChargeCoinViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChargeCoinViewController.m; sourceTree = "<group>"; };
+		59F12FE623CDA8D60062371F /* ChoiceCoinViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChoiceCoinViewController.h; sourceTree = "<group>"; };
+		59F12FE723CDA8D60062371F /* ChoiceCoinViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChoiceCoinViewController.m; sourceTree = "<group>"; };
+		59F12FE923CDAA490062371F /* SearchTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchTextField.h; sourceTree = "<group>"; };
+		59F12FEA23CDAA490062371F /* SearchTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchTextField.m; sourceTree = "<group>"; };
+		59F12FEC23CDAE420062371F /* CoinChoiceCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoinChoiceCell.h; sourceTree = "<group>"; };
+		59F12FED23CDAE420062371F /* CoinChoiceCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoinChoiceCell.m; sourceTree = "<group>"; };
+		59F12FEE23CDAE420062371F /* CoinChoiceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoinChoiceCell.xib; sourceTree = "<group>"; };
+		59F12FF223CDB2CF0062371F /* ChargeHistoryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChargeHistoryViewController.h; sourceTree = "<group>"; };
+		59F12FF323CDB2CF0062371F /* ChargeHistoryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChargeHistoryViewController.m; sourceTree = "<group>"; };
+		59F12FF523CDB8130062371F /* ChargeHistoryCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChargeHistoryCell.h; sourceTree = "<group>"; };
+		59F12FF623CDB8130062371F /* ChargeHistoryCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChargeHistoryCell.m; sourceTree = "<group>"; };
+		59F12FF723CDB8130062371F /* ChargeHistoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChargeHistoryCell.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		59F12FAB23CD9EF60062371F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		59F12FC323CD9EF80062371F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		59F12FCE23CD9EF80062371F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		59F12FA523CD9EF60062371F = {
+			isa = PBXGroup;
+			children = (
+				59F12FB023CD9EF60062371F /* MatafyInterDemo */,
+				59F12FC923CD9EF80062371F /* MatafyInterDemoTests */,
+				59F12FD423CD9EF80062371F /* MatafyInterDemoUITests */,
+				59F12FAF23CD9EF60062371F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		59F12FAF23CD9EF60062371F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				59F12FAE23CD9EF60062371F /* MatafyInterDemo.app */,
+				59F12FC623CD9EF80062371F /* MatafyInterDemoTests.xctest */,
+				59F12FD123CD9EF80062371F /* MatafyInterDemoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		59F12FB023CD9EF60062371F /* MatafyInterDemo */ = {
+			isa = PBXGroup;
+			children = (
+				59F12FB123CD9EF60062371F /* AppDelegate.h */,
+				59F12FB223CD9EF60062371F /* AppDelegate.m */,
+				59F12FB423CD9EF60062371F /* ViewController.h */,
+				59F12FB523CD9EF60062371F /* ViewController.m */,
+				59F12FE323CDA5DA0062371F /* ChargeCoinViewController.h */,
+				59F12FE423CDA5DA0062371F /* ChargeCoinViewController.m */,
+				59F12FE623CDA8D60062371F /* ChoiceCoinViewController.h */,
+				59F12FE723CDA8D60062371F /* ChoiceCoinViewController.m */,
+				59F12FF223CDB2CF0062371F /* ChargeHistoryViewController.h */,
+				59F12FF323CDB2CF0062371F /* ChargeHistoryViewController.m */,
+				5971D18D23CDBE91009AAA4E /* ChargeDetailViewController.h */,
+				5971D18E23CDBE91009AAA4E /* ChargeDetailViewController.m */,
+				59F12FF523CDB8130062371F /* ChargeHistoryCell.h */,
+				59F12FF623CDB8130062371F /* ChargeHistoryCell.m */,
+				59F12FF723CDB8130062371F /* ChargeHistoryCell.xib */,
+				59F12FF123CDAE7C0062371F /* ChoiceCoin(币种选择) */,
+				59F12FB723CD9EF60062371F /* Main.storyboard */,
+				59F12FBA23CD9EF80062371F /* Assets.xcassets */,
+				59F12FBC23CD9EF80062371F /* LaunchScreen.storyboard */,
+				59F12FBF23CD9EF80062371F /* Info.plist */,
+				59F12FC023CD9EF80062371F /* main.m */,
+			);
+			path = MatafyInterDemo;
+			sourceTree = "<group>";
+		};
+		59F12FC923CD9EF80062371F /* MatafyInterDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				59F12FCA23CD9EF80062371F /* MatafyInterDemoTests.m */,
+				59F12FCC23CD9EF80062371F /* Info.plist */,
+			);
+			path = MatafyInterDemoTests;
+			sourceTree = "<group>";
+		};
+		59F12FD423CD9EF80062371F /* MatafyInterDemoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				59F12FD523CD9EF80062371F /* MatafyInterDemoUITests.m */,
+				59F12FD723CD9EF80062371F /* Info.plist */,
+			);
+			path = MatafyInterDemoUITests;
+			sourceTree = "<group>";
+		};
+		59F12FF123CDAE7C0062371F /* ChoiceCoin(币种选择) */ = {
+			isa = PBXGroup;
+			children = (
+				59F12FE923CDAA490062371F /* SearchTextField.h */,
+				59F12FEA23CDAA490062371F /* SearchTextField.m */,
+				59F12FEC23CDAE420062371F /* CoinChoiceCell.h */,
+				59F12FED23CDAE420062371F /* CoinChoiceCell.m */,
+				59F12FEE23CDAE420062371F /* CoinChoiceCell.xib */,
+			);
+			path = "ChoiceCoin(币种选择)";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		59F12FAD23CD9EF60062371F /* MatafyInterDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 59F12FDA23CD9EF80062371F /* Build configuration list for PBXNativeTarget "MatafyInterDemo" */;
+			buildPhases = (
+				59F12FAA23CD9EF60062371F /* Sources */,
+				59F12FAB23CD9EF60062371F /* Frameworks */,
+				59F12FAC23CD9EF60062371F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MatafyInterDemo;
+			productName = MatafyInterDemo;
+			productReference = 59F12FAE23CD9EF60062371F /* MatafyInterDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		59F12FC523CD9EF80062371F /* MatafyInterDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 59F12FDD23CD9EF80062371F /* Build configuration list for PBXNativeTarget "MatafyInterDemoTests" */;
+			buildPhases = (
+				59F12FC223CD9EF80062371F /* Sources */,
+				59F12FC323CD9EF80062371F /* Frameworks */,
+				59F12FC423CD9EF80062371F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				59F12FC823CD9EF80062371F /* PBXTargetDependency */,
+			);
+			name = MatafyInterDemoTests;
+			productName = MatafyInterDemoTests;
+			productReference = 59F12FC623CD9EF80062371F /* MatafyInterDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		59F12FD023CD9EF80062371F /* MatafyInterDemoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 59F12FE023CD9EF80062371F /* Build configuration list for PBXNativeTarget "MatafyInterDemoUITests" */;
+			buildPhases = (
+				59F12FCD23CD9EF80062371F /* Sources */,
+				59F12FCE23CD9EF80062371F /* Frameworks */,
+				59F12FCF23CD9EF80062371F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				59F12FD323CD9EF80062371F /* PBXTargetDependency */,
+			);
+			name = MatafyInterDemoUITests;
+			productName = MatafyInterDemoUITests;
+			productReference = 59F12FD123CD9EF80062371F /* MatafyInterDemoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		59F12FA623CD9EF60062371F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = Joe;
+				TargetAttributes = {
+					59F12FAD23CD9EF60062371F = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					59F12FC523CD9EF80062371F = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 59F12FAD23CD9EF60062371F;
+					};
+					59F12FD023CD9EF80062371F = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 59F12FAD23CD9EF60062371F;
+					};
+				};
+			};
+			buildConfigurationList = 59F12FA923CD9EF60062371F /* Build configuration list for PBXProject "MatafyInterDemo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 59F12FA523CD9EF60062371F;
+			productRefGroup = 59F12FAF23CD9EF60062371F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				59F12FAD23CD9EF60062371F /* MatafyInterDemo */,
+				59F12FC523CD9EF80062371F /* MatafyInterDemoTests */,
+				59F12FD023CD9EF80062371F /* MatafyInterDemoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		59F12FAC23CD9EF60062371F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				59F12FF923CDB8130062371F /* ChargeHistoryCell.xib in Resources */,
+				59F12FBE23CD9EF80062371F /* LaunchScreen.storyboard in Resources */,
+				59F12FBB23CD9EF80062371F /* Assets.xcassets in Resources */,
+				59F12FB923CD9EF60062371F /* Main.storyboard in Resources */,
+				59F12FF023CDAE420062371F /* CoinChoiceCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		59F12FC423CD9EF80062371F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		59F12FCF23CD9EF80062371F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		59F12FAA23CD9EF60062371F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				59F12FF823CDB8130062371F /* ChargeHistoryCell.m in Sources */,
+				59F12FE823CDA8D60062371F /* ChoiceCoinViewController.m in Sources */,
+				59F12FEB23CDAA4A0062371F /* SearchTextField.m in Sources */,
+				59F12FB623CD9EF60062371F /* ViewController.m in Sources */,
+				59F12FF423CDB2CF0062371F /* ChargeHistoryViewController.m in Sources */,
+				5971D18F23CDBE91009AAA4E /* ChargeDetailViewController.m in Sources */,
+				59F12FC123CD9EF80062371F /* main.m in Sources */,
+				59F12FB323CD9EF60062371F /* AppDelegate.m in Sources */,
+				59F12FE523CDA5DA0062371F /* ChargeCoinViewController.m in Sources */,
+				59F12FEF23CDAE420062371F /* CoinChoiceCell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		59F12FC223CD9EF80062371F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				59F12FCB23CD9EF80062371F /* MatafyInterDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		59F12FCD23CD9EF80062371F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				59F12FD623CD9EF80062371F /* MatafyInterDemoUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		59F12FC823CD9EF80062371F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 59F12FAD23CD9EF60062371F /* MatafyInterDemo */;
+			targetProxy = 59F12FC723CD9EF80062371F /* PBXContainerItemProxy */;
+		};
+		59F12FD323CD9EF80062371F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 59F12FAD23CD9EF60062371F /* MatafyInterDemo */;
+			targetProxy = 59F12FD223CD9EF80062371F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		59F12FB723CD9EF60062371F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				59F12FB823CD9EF60062371F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		59F12FBC23CD9EF80062371F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				59F12FBD23CD9EF80062371F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		59F12FD823CD9EF80062371F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		59F12FD923CD9EF80062371F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		59F12FDB23CD9EF80062371F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ARGK844GXV;
+				INFOPLIST_FILE = MatafyInterDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.silknets.test.MatafyInterDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		59F12FDC23CD9EF80062371F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ARGK844GXV;
+				INFOPLIST_FILE = MatafyInterDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.silknets.test.MatafyInterDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		59F12FDE23CD9EF80062371F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ARGK844GXV;
+				INFOPLIST_FILE = MatafyInterDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.silknets.test.MatafyInterDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MatafyInterDemo.app/MatafyInterDemo";
+			};
+			name = Debug;
+		};
+		59F12FDF23CD9EF80062371F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ARGK844GXV;
+				INFOPLIST_FILE = MatafyInterDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.silknets.test.MatafyInterDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MatafyInterDemo.app/MatafyInterDemo";
+			};
+			name = Release;
+		};
+		59F12FE123CD9EF80062371F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ARGK844GXV;
+				INFOPLIST_FILE = MatafyInterDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.silknets.test.MatafyInterDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MatafyInterDemo;
+			};
+			name = Debug;
+		};
+		59F12FE223CD9EF80062371F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ARGK844GXV;
+				INFOPLIST_FILE = MatafyInterDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.silknets.test.MatafyInterDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MatafyInterDemo;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		59F12FA923CD9EF60062371F /* Build configuration list for PBXProject "MatafyInterDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				59F12FD823CD9EF80062371F /* Debug */,
+				59F12FD923CD9EF80062371F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		59F12FDA23CD9EF80062371F /* Build configuration list for PBXNativeTarget "MatafyInterDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				59F12FDB23CD9EF80062371F /* Debug */,
+				59F12FDC23CD9EF80062371F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		59F12FDD23CD9EF80062371F /* Build configuration list for PBXNativeTarget "MatafyInterDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				59F12FDE23CD9EF80062371F /* Debug */,
+				59F12FDF23CD9EF80062371F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		59F12FE023CD9EF80062371F /* Build configuration list for PBXNativeTarget "MatafyInterDemoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				59F12FE123CD9EF80062371F /* Debug */,
+				59F12FE223CD9EF80062371F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 59F12FA623CD9EF60062371F /* Project object */;
+}
