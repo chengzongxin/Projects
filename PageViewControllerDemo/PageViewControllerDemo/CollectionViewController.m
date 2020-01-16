@@ -49,8 +49,8 @@
     return cell;
 }
 
-- (void)scrollViewDidScroll:(PageCollectionView *)scrollView{
-    [scrollView scrollViewDidScroll:scrollView];
-}
+//- (void)scrollViewDidScroll:(PageCollectionView *)scrollView{
+//    [scrollView scrollViewDidScroll:scrollView];
+//}
 
 @end

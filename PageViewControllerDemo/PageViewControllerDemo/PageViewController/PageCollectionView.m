@@ -9,28 +9,64 @@
 #import "PageCollectionView.h"
 #import "PageScrollView.h"
 #import "UIView+Frame.h"
+#import "PageConst.h"
+#import "UIScrollView+PageContent.h"
 
 @implementation PageCollectionView
 
+- (void)willMoveToSuperview:(UIView *)newSuperview{
+    [super willMoveToSuperview:newSuperview];
+    
+    NSLog(@"%s",__FUNCTION__);
+    // 旧的父控件移除监听
+    if (self.observationInfo) {
+        [self removeObservers];
+    }
+    
+    if (newSuperview) { // 新的父控件
+        // 添加监听
+        [self addObservers];
+    }
+}
+
+#pragma mark - KVO监听
+- (void)addObservers
+{
+    NSKeyValueObservingOptions options = NSKeyValueObservingOptionNew;// | NSKeyValueObservingOptionOld;
+    [self addObserver:self forKeyPath:PageKeyPathContentOffset options:options context:nil];
+    [self addObserver:self forKeyPath:PageKeyPathContentSize options:options context:nil];
+}
+
+- (void)removeObservers
+{
+    [self removeObserver:self forKeyPath:PageKeyPathContentOffset];
+    [self removeObserver:self forKeyPath:PageKeyPathContentSize];
+}
+
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
+    // 遇到这些情况就直接返回
+    if (!self.userInteractionEnabled) return;
+    
+    // 这个就算看不见也需要处理
+    if ([keyPath isEqualToString:PageKeyPathContentSize]) {
+        [self scrollViewContentSizeDidChange:change];
+    }
+    
+    // 看不见
+    if (self.hidden) return;
+    if ([keyPath isEqualToString:PageKeyPathContentOffset]) {
+        [self scrollViewContentOffsetDidChange:change];
+    }
+}
+
+- (void)scrollViewContentOffsetDidChange:(NSDictionary *)change{
+    [self didScroll];
+}
+- (void)scrollViewContentSizeDidChange:(NSDictionary *)change{}
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    //    NSLog(@"%@",NSStringFromCGPoint(scrollView.contentOffset));
-    PageScrollView *bgScrollView = (PageScrollView *)scrollView.superview.superview.superview;
-    if ([bgScrollView isKindOfClass:UIScrollView.class]) {
-        UIViewController *currentVC = [self currentViewController];
-        CGFloat navH = ((currentVC.navigationController.navigationBar && !currentVC.navigationController.navigationBarHidden)? 44 : 0);
-        if (bgScrollView.contentOffset.y < (bgScrollView.headerView.height - navH - kStatusH)) {
-            scrollView.contentOffset = CGPointZero;
-        }
-        
-        if (scrollView.contentOffset.y <= 0) {
-            scrollView.contentOffset = CGPointZero;
-            bgScrollView.fixed = NO;
-            
-        }else{
-            bgScrollView.fixed = YES;
-        }
-    }
+    [self didScroll];
 }
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer{
@@ -46,25 +82,4 @@
     return NO;
 }
 
-
-/**
- 获取当前显示的控制区
- */
-- (UIViewController*)currentViewController; {
-    UIWindow *window = [[UIApplication sharedApplication].delegate window];
-    UIViewController *topViewController = [window rootViewController];
-    while (true) {
-        if (topViewController.presentedViewController) {
-            topViewController = topViewController.presentedViewController;
-        } else if ([topViewController isKindOfClass:[UINavigationController class]] && [(UINavigationController*)topViewController topViewController]) {
-            topViewController = [(UINavigationController *)topViewController topViewController];
-        } else if ([topViewController isKindOfClass:[UITabBarController class]]) {
-            UITabBarController *tab = (UITabBarController *)topViewController;
-            topViewController = tab.selectedViewController;
-        } else {
-            break;
-        }
-    }
-    return topViewController;
-}
 @end
