@@ -9,15 +9,72 @@
 #import "UIScrollView+PageContent.h"
 #import "PageScrollView.h"
 #import "UIView+Frame.h"
+#import "PageConst.h"
 
 @implementation UIScrollView (PageContent)
 
+
+- (void)bindNotificationWithSuperview:(UIView *)newSuperview{
+    // 如果没有header,常规PageVC,不添加通知
+    // todo  优化
+    NSLog(@"%s",__FUNCTION__);
+    // 旧的父控件移除监听-重新添加或者视图消失会移除
+    if (self.observationInfo) {
+        [self removeObservers];
+    }
+    
+    if (newSuperview) { // 新的父控件
+        // 添加监听
+        [self addObservers];
+    }
+}
+
+
+#pragma mark - KVO监听
+- (void)addObservers
+{
+    NSKeyValueObservingOptions options = NSKeyValueObservingOptionNew;// | NSKeyValueObservingOptionOld;
+    [self addObserver:self forKeyPath:PageKeyPathContentOffset options:options context:nil];
+    [self addObserver:self forKeyPath:PageKeyPathContentSize options:options context:nil];
+}
+
+- (void)removeObservers
+{
+    [self removeObserver:self forKeyPath:PageKeyPathContentOffset];
+    [self removeObserver:self forKeyPath:PageKeyPathContentSize];
+}
+
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
+    // 遇到这些情况就直接返回
+    if (!self.userInteractionEnabled) return;
+    
+    // 这个就算看不见也需要处理
+    if ([keyPath isEqualToString:PageKeyPathContentSize]) {
+        [self scrollViewContentSizeDidChange:change];
+    }
+    
+    // 看不见
+    if (self.hidden) return;
+    if ([keyPath isEqualToString:PageKeyPathContentOffset]) {
+        [self scrollViewContentOffsetDidChange:change];
+    }
+}
+
+- (void)scrollViewContentOffsetDidChange:(NSDictionary *)change{
+    [self didScroll];
+}
+- (void)scrollViewContentSizeDidChange:(NSDictionary *)change{}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    [self didScroll];
+}
 
 #pragma mark - Private
 // 通知监听滚动
 - (void)didScroll{
     //    NSLog(@"%@",NSStringFromCGPoint(scrollView.contentOffset));
-    PageScrollView *bgScrollView = (PageScrollView *)self.superview.superview.superview;
+    PageScrollView *bgScrollView = [self getPageScrollView];
     if ([bgScrollView isKindOfClass:UIScrollView.class]) {
         UIViewController *currentVC = [self currentViewController];
         CGFloat navH = ((currentVC.navigationController.navigationBar && !currentVC.navigationController.navigationBarHidden)? 44 : 0);
@@ -41,27 +98,25 @@
     }
 }
 
-//
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    //    NSLog(@"%@",NSStringFromCGPoint(scrollView.contentOffset));
-    PageScrollView *bgScrollView = (PageScrollView *)scrollView.superview.superview.superview;
-    if ([bgScrollView isKindOfClass:UIScrollView.class]) {
-        UIViewController *currentVC = [self currentViewController];
-        CGFloat navH = ((currentVC.navigationController.navigationBar && !currentVC.navigationController.navigationBarHidden)? 44 : 0);
-        if (bgScrollView.contentOffset.y < (bgScrollView.headerView.height - navH - kStatusH)) {
-            scrollView.contentOffset = CGPointZero;
-        }
-        
-        if (scrollView.contentOffset.y <= 0) {
-            scrollView.contentOffset = CGPointZero;
-            bgScrollView.fixed = NO;
+/**
+ 遍历superview 获取PageScrollView
+ */
+- (PageScrollView *)getPageScrollView{
+    UIView *superview = self.superview;
+    while (superview) {
+        if ([superview isKindOfClass:PageScrollView.class]) {
+            break;
         }else{
-            bgScrollView.fixed = YES;
+            superview = superview.superview;
+            
+            if (superview == nil) {
+                return nil;
+            }
         }
     }
+    
+    return (PageScrollView *)superview;
 }
-
-
 
 /**
  获取当前显示的控制区
