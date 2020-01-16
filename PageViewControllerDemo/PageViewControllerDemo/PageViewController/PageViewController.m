@@ -7,7 +7,7 @@
 //
 
 #import "PageViewController.h"
-#import "PageScrollView.h"
+#import "PageBGScrollView.h"
 #import "UIView+Frame.h"
 #import "UIViewController+Page.h"
 // 下划线额外宽度
@@ -23,7 +23,7 @@ CGFloat const underLineAdditionW = 6;
 
 
 @property (nonatomic, strong) UIView *header;
-@property (nonatomic, strong) PageScrollView *bgScrollView;
+@property (nonatomic, strong) PageBGScrollView *bgScrollView;
 @property (nonatomic, strong) UIView *containerView;
 
 @end
@@ -365,9 +365,9 @@ CGFloat const underLineAdditionW = 6;
 
 #pragma mark - Setter & Getter
 #pragma mark 添加背景ScrollView
-- (PageScrollView *)bgScrollView{
+- (PageBGScrollView *)bgScrollView{
     if (!_bgScrollView) {
-        _bgScrollView = [[PageScrollView alloc] initWithFrame:self.view.bounds];
+        _bgScrollView = [[PageBGScrollView alloc] initWithFrame:self.view.bounds];
         _bgScrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
         _bgScrollView.contentInset = UIEdgeInsetsMake(kStatusH + kNavbarH, 0, 0, 0);
         _bgScrollView.delegate = self;

@@ -6,12 +6,12 @@
 //  Copyright © 2020 Joe. All rights reserved.
 //
 
-#import "UIScrollView+PageContent.h"
-#import "PageScrollView.h"
+#import "UIScrollView+PageContentScrollView.h"
+#import "PageBGScrollView.h"
 #import "UIView+Frame.h"
 #import "PageConst.h"
 
-@implementation UIScrollView (PageContent)
+@implementation UIScrollView (PageContentScrollView)
 
 
 - (void)bindNotificationWithSuperview:(UIView *)newSuperview{
@@ -74,7 +74,7 @@
 // 通知监听滚动
 - (void)didScroll{
     //    NSLog(@"%@",NSStringFromCGPoint(scrollView.contentOffset));
-    PageScrollView *bgScrollView = [self getPageScrollView];
+    PageBGScrollView *bgScrollView = [self getPageScrollView];
     if ([bgScrollView isKindOfClass:UIScrollView.class]) {
         UIViewController *currentVC = [self currentViewController];
         CGFloat navH = ((currentVC.navigationController.navigationBar && !currentVC.navigationController.navigationBarHidden)? 44 : 0);
@@ -101,10 +101,10 @@
 /**
  遍历superview 获取PageScrollView
  */
-- (PageScrollView *)getPageScrollView{
+- (PageBGScrollView *)getPageScrollView{
     UIView *superview = self.superview;
     while (superview) {
-        if ([superview isKindOfClass:PageScrollView.class]) {
+        if ([superview isKindOfClass:PageBGScrollView.class]) {
             break;
         }else{
             superview = superview.superview;
@@ -115,7 +115,7 @@
         }
     }
     
-    return (PageScrollView *)superview;
+    return (PageBGScrollView *)superview;
 }
 
 /**

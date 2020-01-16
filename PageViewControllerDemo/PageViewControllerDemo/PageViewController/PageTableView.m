@@ -7,10 +7,10 @@
 //
 
 #import "PageTableView.h"
-#import "PageScrollView.h"
+#import "PageBGScrollView.h"
 #import "UIView+Frame.h"
 #import "PageConst.h"
-#import "UIScrollView+PageContent.h"
+#import "UIScrollView+PageContentScrollView.h"
 
 @implementation PageTableView
 
@@ -25,7 +25,7 @@
 }
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer{
-    if ([otherGestureRecognizer.view isKindOfClass:PageScrollView.class]) {
+    if ([otherGestureRecognizer.view isKindOfClass:PageBGScrollView.class]) {
         return YES;
     }
     return NO;

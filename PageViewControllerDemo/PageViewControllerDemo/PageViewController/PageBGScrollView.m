@@ -6,9 +6,9 @@
 //  Copyright © 2020 Joe. All rights reserved.
 //
 
-#import "PageScrollView.h"
+#import "PageBGScrollView.h"
 
-@implementation PageScrollView
+@implementation PageBGScrollView
 
 //- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer{
 ////    NSLog(@"%s",__FUNCTION__);

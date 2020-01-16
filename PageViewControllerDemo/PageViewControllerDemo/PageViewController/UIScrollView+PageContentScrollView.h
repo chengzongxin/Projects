@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PageScrollView.h"
+#import "PageBGScrollView.h"
 NS_ASSUME_NONNULL_BEGIN
 
-@interface UIScrollView (PageContent)
+@interface UIScrollView (PageContentScrollView)
 
 - (void)didScroll;
 
@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  遍历superview 获取PageScrollView
  */
-- (PageScrollView *)getPageScrollView;
+- (PageBGScrollView *)getPageScrollView;
 
 @end
 

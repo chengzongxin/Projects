@@ -10,14 +10,14 @@
 		5907272023C6BE51007ADF5A /* PageVCHeaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5907271F23C6BE51007ADF5A /* PageVCHeaderViewController.m */; };
 		5907272723C6C138007ADF5A /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 5907272623C6C138007ADF5A /* UIView+Frame.m */; };
 		5907273023C712EC007ADF5A /* PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5907272A23C712EB007ADF5A /* PageViewController.m */; };
-		5907273123C712EC007ADF5A /* PageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5907272C23C712EB007ADF5A /* PageScrollView.m */; };
+		5907273123C712EC007ADF5A /* PageBGScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5907272C23C712EB007ADF5A /* PageBGScrollView.m */; };
 		5907273223C712EC007ADF5A /* PageTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5907272D23C712EB007ADF5A /* PageTableView.m */; };
 		5907273523C713C6007ADF5A /* PageCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5907273423C713C6007ADF5A /* PageCollectionView.m */; };
 		5907273823C72335007ADF5A /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5907273723C72335007ADF5A /* CollectionViewController.m */; };
 		5907273B23C7260A007ADF5A /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5907273A23C7260A007ADF5A /* TableViewController.m */; };
 		5907273E23C728E1007ADF5A /* PageVCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5907273D23C728E1007ADF5A /* PageVCViewController.m */; };
 		59637AA723CFF7DA001B02C0 /* PageConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 59637AA623CFF7DA001B02C0 /* PageConst.m */; };
-		59637AAA23D00450001B02C0 /* UIScrollView+PageContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 59637AA923D00450001B02C0 /* UIScrollView+PageContent.m */; };
+		59637AAA23D00450001B02C0 /* UIScrollView+PageContentScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 59637AA923D00450001B02C0 /* UIScrollView+PageContentScrollView.m */; };
 		59C4422F23C853E9003F069F /* NormalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59C4422E23C853E9003F069F /* NormalViewController.m */; };
 		59C4423523C86F17003F069F /* UIViewController+Page.m in Sources */ = {isa = PBXBuildFile; fileRef = 59C4423423C86F17003F069F /* UIViewController+Page.m */; };
 		59DBB64523C348670031F608 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 59DBB64423C348670031F608 /* AppDelegate.m */; };
@@ -54,10 +54,10 @@
 		5907272623C6C138007ADF5A /* UIView+Frame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
 		5907272A23C712EB007ADF5A /* PageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageViewController.m; sourceTree = "<group>"; };
 		5907272B23C712EB007ADF5A /* PageTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageTableView.h; sourceTree = "<group>"; };
-		5907272C23C712EB007ADF5A /* PageScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageScrollView.m; sourceTree = "<group>"; };
+		5907272C23C712EB007ADF5A /* PageBGScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageBGScrollView.m; sourceTree = "<group>"; };
 		5907272D23C712EB007ADF5A /* PageTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageTableView.m; sourceTree = "<group>"; };
 		5907272E23C712EB007ADF5A /* PageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageViewController.h; sourceTree = "<group>"; };
-		5907272F23C712EB007ADF5A /* PageScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageScrollView.h; sourceTree = "<group>"; };
+		5907272F23C712EB007ADF5A /* PageBGScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageBGScrollView.h; sourceTree = "<group>"; };
 		5907273323C713C6007ADF5A /* PageCollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PageCollectionView.h; sourceTree = "<group>"; };
 		5907273423C713C6007ADF5A /* PageCollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PageCollectionView.m; sourceTree = "<group>"; };
 		5907273623C72335007ADF5A /* CollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionViewController.h; sourceTree = "<group>"; };
@@ -68,8 +68,8 @@
 		5907273D23C728E1007ADF5A /* PageVCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PageVCViewController.m; sourceTree = "<group>"; };
 		59637AA523CFF7DA001B02C0 /* PageConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PageConst.h; sourceTree = "<group>"; };
 		59637AA623CFF7DA001B02C0 /* PageConst.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PageConst.m; sourceTree = "<group>"; };
-		59637AA823D00450001B02C0 /* UIScrollView+PageContent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+PageContent.h"; sourceTree = "<group>"; };
-		59637AA923D00450001B02C0 /* UIScrollView+PageContent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+PageContent.m"; sourceTree = "<group>"; };
+		59637AA823D00450001B02C0 /* UIScrollView+PageContentScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+PageContentScrollView.h"; sourceTree = "<group>"; };
+		59637AA923D00450001B02C0 /* UIScrollView+PageContentScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+PageContentScrollView.m"; sourceTree = "<group>"; };
 		59C4422D23C853E9003F069F /* NormalViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NormalViewController.h; sourceTree = "<group>"; };
 		59C4422E23C853E9003F069F /* NormalViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NormalViewController.m; sourceTree = "<group>"; };
 		59C4423323C86F17003F069F /* UIViewController+Page.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Page.h"; sourceTree = "<group>"; };
@@ -131,16 +131,16 @@
 			children = (
 				5907272E23C712EB007ADF5A /* PageViewController.h */,
 				5907272A23C712EB007ADF5A /* PageViewController.m */,
-				5907272F23C712EB007ADF5A /* PageScrollView.h */,
-				5907272C23C712EB007ADF5A /* PageScrollView.m */,
+				5907272F23C712EB007ADF5A /* PageBGScrollView.h */,
+				5907272C23C712EB007ADF5A /* PageBGScrollView.m */,
 				59C4423323C86F17003F069F /* UIViewController+Page.h */,
 				59C4423423C86F17003F069F /* UIViewController+Page.m */,
 				5907272B23C712EB007ADF5A /* PageTableView.h */,
 				5907272D23C712EB007ADF5A /* PageTableView.m */,
 				5907273323C713C6007ADF5A /* PageCollectionView.h */,
 				5907273423C713C6007ADF5A /* PageCollectionView.m */,
-				59637AA823D00450001B02C0 /* UIScrollView+PageContent.h */,
-				59637AA923D00450001B02C0 /* UIScrollView+PageContent.m */,
+				59637AA823D00450001B02C0 /* UIScrollView+PageContentScrollView.h */,
+				59637AA923D00450001B02C0 /* UIScrollView+PageContentScrollView.m */,
 				59637AA523CFF7DA001B02C0 /* PageConst.h */,
 				59637AA623CFF7DA001B02C0 /* PageConst.m */,
 			);
@@ -343,7 +343,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				59637AAA23D00450001B02C0 /* UIScrollView+PageContent.m in Sources */,
+				59637AAA23D00450001B02C0 /* UIScrollView+PageContentScrollView.m in Sources */,
 				5907273223C712EC007ADF5A /* PageTableView.m in Sources */,
 				59DBB64823C348670031F608 /* ViewController.m in Sources */,
 				59DBB65323C348680031F608 /* main.m in Sources */,
@@ -358,7 +358,7 @@
 				5907273823C72335007ADF5A /* CollectionViewController.m in Sources */,
 				5907272723C6C138007ADF5A /* UIView+Frame.m in Sources */,
 				5907272023C6BE51007ADF5A /* PageVCHeaderViewController.m in Sources */,
-				5907273123C712EC007ADF5A /* PageScrollView.m in Sources */,
+				5907273123C712EC007ADF5A /* PageBGScrollView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

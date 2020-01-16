@@ -7,7 +7,7 @@
 //
 
 #import "NormalViewController.h"
-#import "PageScrollView.h"
+#import "PageBGScrollView.h"
 #import "UIView+Frame.h"
 #import "UIViewController+Page.h"
 
