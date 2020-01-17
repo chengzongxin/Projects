@@ -47,8 +47,8 @@
     return vcArr;
 }
 
-- (PageTitleConfig *)pageTitleConfig{
-    PageTitleConfig *config = PageTitleConfig.config;
+- (PageConfig *)pageConfig{
+    PageConfig *config = PageConfig.config;
     config.itemNormalFont = [UIFont systemFontOfSize:18];
     config.itemSelectedFont = [UIFont systemFontOfSize:20];
     config.itemNormalColor = UIColor.greenColor;

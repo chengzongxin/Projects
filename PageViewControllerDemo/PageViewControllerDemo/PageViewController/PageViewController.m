@@ -24,7 +24,7 @@ CGFloat const underLineAdditionW = 6;
 @property (nonatomic, strong) PageBGScrollView *bgScrollView;
 @property (nonatomic, strong) UIView *containerView;
 @property (nonatomic, strong) NSArray<NSString *> *pageTitles;
-@property (strong, nonatomic) PageTitleConfig *titleConfig;
+@property (strong, nonatomic) PageConfig *titleConfig;
 
 @end
 
@@ -86,7 +86,7 @@ CGFloat const underLineAdditionW = 6;
     self.header = [self.dataSource pageHeaderView];
     
     // 设置titles属性
-    self.titleConfig = [self.dataSource pageTitleConfig];
+    self.titleConfig = [self.dataSource pageConfig];
 }
 
 #pragma mark - Public 交给子类实现
@@ -99,8 +99,8 @@ CGFloat const underLineAdditionW = 6;
 
 - (UIView *)pageHeaderView{return nil;}
 
-- (PageTitleConfig *)pageTitleConfig{
-    return PageTitleConfig.config;
+- (PageConfig *)pageConfig{
+    return PageConfig.config;
 }
 
 - (void)pageViewController:(PageViewController *)pageViewController didScroll:(UIScrollView *)scrollView{}
@@ -367,7 +367,7 @@ CGFloat const underLineAdditionW = 6;
     CGFloat navH = (self.navigationController.navigationBar && !self.navigationController.navigationBarHidden)? 44 : 0;
     CGFloat headerH = self.header.frame.size.height;
     CGFloat y = headerH ?:(stautsH + navH);
-    titleScrollView.frame = CGRectMake(0, y, self.pageTitleConfig.pageMenuSize.width, self.pageTitleConfig.pageMenuSize.height);
+    titleScrollView.frame = CGRectMake(0, y, self.pageConfig.pageMenuSize.width, self.pageConfig.pageMenuSize.height);
     [self.containerView addSubview:titleScrollView];
     _titleScrollView = titleScrollView;
     
@@ -467,9 +467,9 @@ CGFloat const underLineAdditionW = 6;
 @end
 
 
-@implementation PageTitleConfig
+@implementation PageConfig
 + (instancetype)config{
-    PageTitleConfig *config = PageTitleConfig.new;
+    PageConfig *config = PageConfig.new;
     config.pageMenuSize = CGSizeMake(ScreenW, 44);
     config.itemNormalFont = [UIFont systemFontOfSize:14];
     config.itemSelectedFont = [UIFont systemFontOfSize:15];

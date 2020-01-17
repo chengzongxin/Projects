@@ -13,7 +13,7 @@
 #import "PageCollectionView.h"
 
 NS_ASSUME_NONNULL_BEGIN
-@class PageTitleConfig;
+@class PageConfig;
 @protocol PageViewControllerDataSource,PageViewControllerDelegate;
 #pragma clang diagnostic push
 // To get rid of 'No protocol definition found' warnings which are not accurate
@@ -41,7 +41,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @optional
 /* title属性 */
-- (PageTitleConfig *)pageTitleConfig;
+- (PageConfig *)pageConfig;
 // 所有子控制器对应的title,默认使用VC.title
 - (NSArray <NSString *>*)pageTitles;
 // 有头部header时需要实现
@@ -57,7 +57,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@interface PageTitleConfig : NSObject
+@interface PageConfig : NSObject
 /* 默认方法 */
 + (instancetype)config;
 /* 分类菜单尺寸 */
