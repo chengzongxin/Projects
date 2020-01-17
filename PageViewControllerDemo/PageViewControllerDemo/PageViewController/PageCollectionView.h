@@ -11,8 +11,6 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface PageCollectionView : UICollectionView<UIGestureRecognizerDelegate>
-/* 滑动联动,有头部视图时候必须实现 */
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView;
 
 @end
 

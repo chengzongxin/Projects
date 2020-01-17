@@ -25,6 +25,7 @@ CGFloat const underLineAdditionW = 6;
 @property (nonatomic, strong) UIView *header;
 @property (nonatomic, strong) PageBGScrollView *bgScrollView;
 @property (nonatomic, strong) UIView *containerView;
+@property (nonatomic, strong) NSArray<NSString *> *pageTitles;
 
 @end
 
@@ -42,11 +43,16 @@ CGFloat const underLineAdditionW = 6;
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.title = @"网易新闻";
+    // 默认根view是容器view,(没有header)
     self.containerView = self.view;
+    self.dataSource = self;
+    self.delegate = self;
     
-    self.header = [self setupHeaderView];
+//    self.header = [self setupHeaderView];
+//
+//    [self setupAllChildViewController];
     
-    [self setupAllChildViewController];
+    [self prepareData];
     
     // 1.添加标题滚动视图
     [self setupTitleScrollView];
@@ -69,16 +75,30 @@ CGFloat const underLineAdditionW = 6;
     
 }
 
-#pragma mark - Public 交给子类实现
-- (void)setupAllChildViewController{
-    NSAssert(0, [NSString stringWithFormat:@"必须实现setupAllChildViewController方法"]);
+- (void)prepareData{
+    // 添加子控制器
+    NSArray *vcArr = [self.dataSource pageChildViewControllers];
+    for (UIViewController *vc in vcArr) {
+        [self addChildViewController:vc];
+    }
+    
+    // 设置标题
+    self.pageTitles = [self.dataSource pageTitles];
+    NSAssert(!self.pageTitles || self.pageTitles.count == self.childViewControllers.count, [NSStringFromClass(self.class) stringByAppendingString:@"pageTitles和pageChildViewControllers数目不匹配"]);
+    
+    // 设置头部
+    self.header = [self.dataSource pageHeaderView];
 }
 
-
-- (UIView *)setupHeaderView{
+#pragma mark - Public 交给子类实现
+- (NSArray<UIViewController *> *)pageChildViewControllers{
+    NSAssert(0, [NSStringFromClass(self.class) stringByAppendingString:@"必须实现pageChildViewControllers方法"]);
     return nil;
 }
 
+- (NSArray<NSString *> *)pageTitles{return nil;}
+
+- (UIView *)pageHeaderView{return nil;}
 
 #pragma mark - UIScrollViewDelegate
 // 滚动完成的时候调用
@@ -277,7 +297,7 @@ CGFloat const underLineAdditionW = 6;
         UIButton *titleButton = [UIButton buttonWithType:UIButtonTypeCustom];
         titleButton.tag = i;
         UIViewController *vc = self.childViewControllers[i];
-        [titleButton setTitle:vc.title forState:UIControlStateNormal];
+        [titleButton setTitle:self.pageTitles?self.pageTitles[i]:vc.title forState:UIControlStateNormal];
         btnX = i * btnW;
         titleButton.frame = CGRectMake(btnX, 0, btnW, btnH);
         [titleButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
@@ -353,9 +373,10 @@ CGFloat const underLineAdditionW = 6;
     // 分页
     self.contentScrollView.pagingEnabled = YES;
     // 弹簧
-    self.contentScrollView.bounces = NO;
+    self.contentScrollView.bounces = YES;
     // 指示器
     self.contentScrollView.showsHorizontalScrollIndicator = NO;
+    self.contentScrollView.showsVerticalScrollIndicator = NO;
     
     // 设置代理.目的:监听内容滚动视图 什么时候滚动完成
     self.contentScrollView.delegate = self;
@@ -370,6 +391,8 @@ CGFloat const underLineAdditionW = 6;
         _bgScrollView = [[PageBGScrollView alloc] initWithFrame:self.view.bounds];
         _bgScrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
         _bgScrollView.contentInset = UIEdgeInsetsMake(kStatusH + kNavbarH, 0, 0, 0);
+        _bgScrollView.showsHorizontalScrollIndicator = NO;
+        _bgScrollView.showsVerticalScrollIndicator = NO;
         _bgScrollView.delegate = self;
 //        _bgScrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentAlways;
     }
@@ -388,7 +411,10 @@ CGFloat const underLineAdditionW = 6;
         self.bgScrollView.contentSize = CGSizeMake(0, self.view.bounds.size.height + header.frame.size.height);
     }
     _header = header;
-    
+}
+
+- (NSArray<UIViewController *> *)viewControllers{
+    return self.childViewControllers;
 }
 
 @end

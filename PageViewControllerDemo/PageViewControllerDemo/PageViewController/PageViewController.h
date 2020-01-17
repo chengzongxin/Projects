@@ -10,13 +10,33 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface PageViewController : UIViewController
-
 #pragma mark - Public 交给子类实现
-/** 子类必须实现 */
-- (void)setupAllChildViewController;
-/** 头部视图,可以不实现 */
-- (UIView *)setupHeaderView;
+@protocol PageViewControllerDelegate <NSObject>
+
+
+@end
+
+@protocol PageViewControllerDataSource <NSObject>
+
+@required
+/* 所有子控制器 */
+- (NSArray <UIViewController *>*)pageChildViewControllers;
+
+@optional
+// 所有子控制器对应的title,默认使用VC.title
+- (NSArray <NSString *>*)pageTitles;
+// 有头部header时需要实现
+- (UIView *)pageHeaderView;
+
+@end
+
+@interface PageViewController : UIViewController<PageViewControllerDataSource,PageViewControllerDelegate,UIPageViewControllerDelegate>
+/* 代理方法 */
+@property (nullable, nonatomic, weak) id <PageViewControllerDelegate> delegate;
+/* 数据源,必须实现 */
+@property (nullable, nonatomic, weak) id <PageViewControllerDataSource> dataSource;
+
+@property (nullable, nonatomic, readonly) NSArray<__kindof UIViewController *> *viewControllers;
 
 @end
 

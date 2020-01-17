@@ -21,9 +21,9 @@
     self.title = @"PageVC-Header";
 }
 
-
-- (void)setupAllChildViewController{
-    NSArray *arr = @[@"1232",@"13",@"12333",@"1233333",@"123",@"1233333",@"2",@"5",@"232323232",@"123",@"123",@"123",@"123",@"123",@"123"];
+- (NSArray<UIViewController *> *)pageChildViewControllers{
+    NSMutableArray *vcArr = [NSMutableArray array];
+    NSArray *titleArr = @[@"1232",@"13",@"12333",@"1233333",@"123",@"1233333",@"2",@"5",@"232323232",@"123",@"123",@"123",@"123",@"123",@"123"];
     for (int i = 0; i < 10; i ++) {
         int num = i % 3;
         UIViewController *vc;
@@ -35,17 +35,22 @@
             vc = NormalViewController.new;
         }
         //        vc.title = @(i).stringValue;
-        vc.title = arr[i];
+        vc.title = titleArr[i];
         vc.view.backgroundColor = [UIColor colorWithRed:arc4random()%255/255.0 green:arc4random()%255/255.0 blue:arc4random()%255/255.0 alpha:1];
-        [self addChildViewController:vc];
+        [vcArr addObject:vc];
     }
-    
+    return vcArr;
 }
 
-- (UIView *)setupHeaderView{
+- (UIView *)pageHeaderView{
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 375, 200)];
-    view.backgroundColor = UIColor.orangeColor;
+    view.backgroundColor = UIColor.greenColor;
     [view addSubview:[[UISwitch alloc] initWithFrame:CGRectMake(100, 100, 0, 0)]];
     return view;
 }
+
+//- (NSArray<NSString *> *)pageTitles{
+//    return @[@"1",@"12",@"123",@"1234",@"12345",@"123456",@"1234567",@"12345678",@"123456789",@"12345678910"];
+//}
+
 @end
