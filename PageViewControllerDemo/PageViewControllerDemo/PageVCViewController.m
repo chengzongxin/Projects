@@ -16,6 +16,10 @@
 
 @implementation PageVCViewController
 
+- (void)dealloc{
+    NSLog(@"%s",__FUNCTION__);
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"PageVC-Header";

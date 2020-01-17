@@ -21,7 +21,7 @@ CGFloat const underLineAdditionW = 6;
 @property (nonatomic, strong) UIScrollView *contentScrollView;
 
 
-@property (nonatomic, strong) UIView *header;
+@property (nonatomic, weak) UIView *header;
 @property (nonatomic, strong) PageBGScrollView *bgScrollView;
 @property (nonatomic, strong) UIView *containerView;
 @property (nonatomic, strong) NSArray<NSString *> *pageTitles;
@@ -111,7 +111,7 @@ CGFloat const underLineAdditionW = 6;
 }
 
 - (void)pageViewController:(PageViewController *)pageViewController didScroll:(UIScrollView *)scrollView{}
-- (void)pageViewController:(PageViewController *)pageViewController didScrollFrom:(NSInteger)from to:(NSInteger)to{}
+- (void)pageViewController:(PageViewController *)pageViewController didSelectWithIndex:(NSInteger)index{}
 
 #pragma mark - UIScrollViewDelegate
 // 滚动完成的时候调用
@@ -153,6 +153,10 @@ CGFloat const underLineAdditionW = 6;
             // fixed == NO,offset < top, neverFix = ture 允许向下滑动
         }
         
+        // 通知代理
+        if (self.delegate && [self.delegate respondsToSelector:@selector(pageViewController:didScroll:)]) {
+            [self.delegate pageViewController:self didScroll:scrollView];
+        }
     }else if (scrollView == self.contentScrollView) {
         
         // 字体缩放 1.缩放比例 2.缩放哪两个按钮
@@ -222,10 +226,6 @@ CGFloat const underLineAdditionW = 6;
         _underLine.frame = newFrame;
     }
     
-    // 通知代理
-    if (self.delegate && [self.delegate respondsToSelector:@selector(pageViewController:didScroll:)]) {
-        [self.delegate pageViewController:self didScroll:scrollView];
-    }
 }
 
 #pragma mark - 选中标题
