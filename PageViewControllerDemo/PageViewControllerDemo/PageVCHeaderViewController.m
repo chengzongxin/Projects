@@ -55,17 +55,6 @@
     return view;
 }
 
-- (PageTitleConfig *)pageTitleConfig{
-    PageTitleConfig *config = PageTitleConfig.config;
-    config.itemNormalFont = [UIFont systemFontOfSize:18];
-    config.itemSelectedFont = [UIFont systemFontOfSize:20];
-    config.itemNormalColor = UIColor.greenColor;
-    config.itemSelectedColor = UIColor.purpleColor;
-    config.itemGradientsAnimate = NO;
-//    config.notAttachmentStyle = YES;
-//    config.trackerHidden = YES;
-    return config;
-}
 
 //- (NSArray<NSString *> *)pageTitles{
 //    return @[@"1",@"12",@"123",@"1234",@"12345",@"123456",@"1234567",@"12345678",@"123456789",@"12345678910"];

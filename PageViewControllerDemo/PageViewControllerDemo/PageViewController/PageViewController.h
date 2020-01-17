@@ -60,6 +60,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface PageTitleConfig : NSObject
 /* 默认方法 */
 + (instancetype)config;
+/* 分类菜单尺寸 */
+@property (assign, nonatomic) CGSize pageMenuSize;
 /* 常规字体 */
 @property (strong, nonatomic) UIFont *itemNormalFont;
 /* 选中字体 */

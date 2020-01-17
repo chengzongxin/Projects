@@ -367,7 +367,7 @@ CGFloat const underLineAdditionW = 6;
     CGFloat navH = (self.navigationController.navigationBar && !self.navigationController.navigationBarHidden)? 44 : 0;
     CGFloat headerH = self.header.frame.size.height;
     CGFloat y = headerH ?:(stautsH + navH);
-    titleScrollView.frame = CGRectMake(0, y, self.view.bounds.size.width, 44);
+    titleScrollView.frame = CGRectMake(0, y, self.pageTitleConfig.pageMenuSize.width, self.pageTitleConfig.pageMenuSize.height);
     [self.containerView addSubview:titleScrollView];
     _titleScrollView = titleScrollView;
     
@@ -470,6 +470,7 @@ CGFloat const underLineAdditionW = 6;
 @implementation PageTitleConfig
 + (instancetype)config{
     PageTitleConfig *config = PageTitleConfig.new;
+    config.pageMenuSize = CGSizeMake(ScreenW, 44);
     config.itemNormalFont = [UIFont systemFontOfSize:14];
     config.itemSelectedFont = [UIFont systemFontOfSize:15];
     config.itemNormalColor = UIColor.lightGrayColor;
