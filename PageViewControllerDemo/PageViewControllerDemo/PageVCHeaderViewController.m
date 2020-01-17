@@ -49,6 +49,16 @@
     return view;
 }
 
+- (PageTitleConfig *)pageTitleConfig{
+    PageTitleConfig *config = PageTitleConfig.new;
+    config.normalFont = [UIFont systemFontOfSize:18];
+    config.selectedFont = [UIFont systemFontOfSize:20];
+    config.normalColor = UIColor.greenColor;
+    config.selectedColor = UIColor.purpleColor;
+    config.gradientsAnimate = NO;
+    return config;
+}
+
 //- (NSArray<NSString *> *)pageTitles{
 //    return @[@"1",@"12",@"123",@"1234",@"12345",@"123456",@"1234567",@"12345678",@"123456789",@"12345678910"];
 //}

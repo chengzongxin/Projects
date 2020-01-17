@@ -16,7 +16,6 @@ CGFloat const underLineAdditionW = 6;
 @interface PageViewController ()<UIScrollViewDelegate>
 
 @property (nonatomic, strong) NSMutableArray *titleButtons;
-@property (nonatomic, strong) UIButton *selectButton;
 @property (nonatomic, strong) UIScrollView *titleScrollView;
 @property (nonatomic, strong) UIView *underLine;
 @property (nonatomic, strong) UIScrollView *contentScrollView;
@@ -26,6 +25,7 @@ CGFloat const underLineAdditionW = 6;
 @property (nonatomic, strong) PageBGScrollView *bgScrollView;
 @property (nonatomic, strong) UIView *containerView;
 @property (nonatomic, strong) NSArray<NSString *> *pageTitles;
+@property (strong, nonatomic) PageTitleConfig *titleConfig;
 
 @end
 
@@ -48,10 +48,7 @@ CGFloat const underLineAdditionW = 6;
     self.dataSource = self;
     self.delegate = self;
     
-//    self.header = [self setupHeaderView];
-//
-//    [self setupAllChildViewController];
-    
+    /* 准备数据源数据 */
     [self prepareData];
     
     // 1.添加标题滚动视图
@@ -88,6 +85,9 @@ CGFloat const underLineAdditionW = 6;
     
     // 设置头部
     self.header = [self.dataSource pageHeaderView];
+    
+    // 设置titles属性
+    self.titleConfig = [self.dataSource pageTitleConfig];
 }
 
 #pragma mark - Public 交给子类实现
@@ -99,6 +99,16 @@ CGFloat const underLineAdditionW = 6;
 - (NSArray<NSString *> *)pageTitles{return nil;}
 
 - (UIView *)pageHeaderView{return nil;}
+
+- (PageTitleConfig *)pageTitleConfig{
+    PageTitleConfig *config = PageTitleConfig.new;
+    config.normalFont = [UIFont systemFontOfSize:14];
+    config.selectedFont = [UIFont systemFontOfSize:15];
+    config.normalColor = UIColor.lightGrayColor;
+    config.selectedColor = UIColor.cyanColor;
+    config.gradientsAnimate = YES;
+    return config;
+}
 
 #pragma mark - UIScrollViewDelegate
 // 滚动完成的时候调用
@@ -164,11 +174,22 @@ CGFloat const underLineAdditionW = 6;
         leftBtn.transform = CGAffineTransformMakeScale(scaleL * 0.3 + 1, scaleL * 0.3 + 1);
         rightBtn.transform = CGAffineTransformMakeScale(scaleR * 0.3 + 1, scaleR * 0.3 + 1);
         
-        // 颜色渐变
-        UIColor *rightColor = [UIColor colorWithRed:scaleR green:0 blue:0 alpha:1];
-        UIColor *leftColor = [UIColor colorWithRed:scaleL green:0 blue:0 alpha:1];
-        [rightBtn setTitleColor:rightColor forState:UIControlStateNormal];
-        [leftBtn setTitleColor:leftColor forState:UIControlStateNormal];
+        int offset = (int)scrollView.contentOffset.x;
+        int screenW = (int)ScreenW;
+        if (offset % screenW == 0) {
+            // 直接点击导致滑动
+            [self selButton:leftBtn];
+            
+        }else if (self.titleConfig.gradientsAnimate){
+            // 滑动scrollview导致滑动
+            // 颜色渐变
+            //        UIColor *rightColor = [UIColor colorWithRed:scaleR green:0 blue:0 alpha:1];
+            //        UIColor *leftColor = [UIColor colorWithRed:scaleL green:0 blue:0 alpha:1];
+            UIColor *leftColor = [self blendColor1:self.titleConfig.normalColor color2:self.titleConfig.selectedColor ratio:scaleL];
+            UIColor *rightColor = [self blendColor1:self.titleConfig.normalColor color2:self.titleConfig.selectedColor ratio:scaleL];
+            [rightBtn setTitleColor:rightColor forState:UIControlStateNormal];
+            [leftBtn setTitleColor:leftColor forState:UIControlStateNormal];
+        }
         
         CGFloat xDistance = rightBtn.center.x - leftBtn.center.x;
         
@@ -192,31 +213,26 @@ CGFloat const underLineAdditionW = 6;
         }
         _underLine.frame = newFrame;
     }
-    
 }
-
-/*
- 颜色:3种颜色通道组成 R:红 G:绿 B:蓝
- 
- 白色: 1 1 1
- 黑色: 0 0 0
- 红色: 1 0 0
- */
 
 #pragma mark - 选中标题
 - (void)selButton:(UIButton *)button
 {
-    _selectButton.transform = CGAffineTransformIdentity;
-    [_selectButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [button setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+//    _selectButton.transform = CGAffineTransformIdentity;
+//    [_selectButton setTitleColor:self.titleConfig.normalColor forState:UIControlStateNormal];
+    
+    [self.titleButtons enumerateObjectsUsingBlock:^(UIButton *obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        obj.transform = CGAffineTransformIdentity;
+        [obj setTitleColor:self.titleConfig.normalColor forState:UIControlStateNormal];
+    }];
+    [button setTitleColor:self.titleConfig.selectedColor forState:UIControlStateNormal];
     
     // 标题居中
     [self setupTitleCenter:button];
-    
     // 字体缩放:形变
     button.transform = CGAffineTransformMakeScale(1.3, 1.3);
     
-    _selectButton = button;
+//    _selectButton = button;
     
     // 改变下划线位置
     [button.titleLabel sizeToFit];
@@ -300,8 +316,8 @@ CGFloat const underLineAdditionW = 6;
         [titleButton setTitle:self.pageTitles?self.pageTitles[i]:vc.title forState:UIControlStateNormal];
         btnX = i * btnW;
         titleButton.frame = CGRectMake(btnX, 0, btnW, btnH);
-        [titleButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        
+        [titleButton setTitleColor:self.titleConfig.normalColor forState:UIControlStateNormal];
+        titleButton.titleLabel.font = self.titleConfig.normalFont;
         // 监听按钮点击
         [titleButton addTarget:self action:@selector(titleClick:) forControlEvents:UIControlEventTouchUpInside];
         
@@ -350,7 +366,7 @@ CGFloat const underLineAdditionW = 6;
 - (void)setupTitleUnderline{
     UIView *underLine = [[UIView alloc] init];
     underLine.frame = CGRectMake(0, _titleScrollView.frame.size.height - 3, 0, 3);
-    underLine.backgroundColor = UIColor.redColor;
+    underLine.backgroundColor = self.titleConfig.selectedColor;
     [_titleScrollView addSubview:underLine];
     _underLine = underLine;
 }
@@ -417,4 +433,25 @@ CGFloat const underLineAdditionW = 6;
     return self.childViewControllers;
 }
 
+
+#pragma mark - NSObject
+/*
+ 颜色:3种颜色通道组成 R:红 G:绿 B:蓝
+ 混合颜色,ratio 0~1
+ */
+- (UIColor *)blendColor1:(UIColor*)color1 color2:(UIColor *)color2 ratio:(CGFloat)ratio{
+    if(ratio > 1) ratio = 1;
+    const CGFloat * components1 = CGColorGetComponents(color1.CGColor);
+    const CGFloat * components2 = CGColorGetComponents(color2.CGColor);
+    NSLog(@"ratio = %f",ratio);
+    CGFloat r = components1[0]*ratio + components2[0]*(1-ratio);
+    CGFloat g = components1[1]*ratio + components2[1]*(1-ratio);
+    CGFloat b = components1[2]*ratio + components2[2]*(1-ratio);
+    return [UIColor colorWithRed:r green:g blue:b alpha:1];
+}
+
+@end
+
+
+@implementation PageTitleConfig
 @end
