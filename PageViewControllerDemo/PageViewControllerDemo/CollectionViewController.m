@@ -30,6 +30,12 @@
     [self.view addSubview:collectionView];
 }
 
+- (void)viewWillLayoutSubviews{
+    [super viewWillLayoutSubviews];
+    
+    self.view.subviews.firstObject.frame = self.view.bounds;
+}
+
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     return 200;
 }

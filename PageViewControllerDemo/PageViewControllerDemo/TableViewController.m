@@ -25,6 +25,12 @@
     [self.view addSubview:tableView];
 }
 
+- (void)viewWillLayoutSubviews{
+    [super viewWillLayoutSubviews];
+    
+    self.view.subviews.firstObject.frame = self.view.bounds;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return 50;
 }
