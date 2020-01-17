@@ -15,9 +15,6 @@
 
 
 - (void)bindNotificationWithSuperview:(UIView *)newSuperview{
-    // 如果没有header,常规PageVC,不添加通知
-    // todo  优化
-    NSLog(@"%s",__FUNCTION__);
     // 旧的父控件移除监听-重新添加或者视图消失会移除
     if (self.observationInfo) {
         [self removeObservers];

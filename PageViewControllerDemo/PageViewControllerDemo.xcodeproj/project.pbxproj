@@ -133,8 +133,6 @@
 				5907272A23C712EB007ADF5A /* PageViewController.m */,
 				5907272F23C712EB007ADF5A /* PageBGScrollView.h */,
 				5907272C23C712EB007ADF5A /* PageBGScrollView.m */,
-				59C4423323C86F17003F069F /* UIViewController+Page.h */,
-				59C4423423C86F17003F069F /* UIViewController+Page.m */,
 				5907272B23C712EB007ADF5A /* PageTableView.h */,
 				5907272D23C712EB007ADF5A /* PageTableView.m */,
 				5907273323C713C6007ADF5A /* PageCollectionView.h */,
@@ -143,6 +141,8 @@
 				59637AA923D00450001B02C0 /* UIScrollView+PageContentScrollView.m */,
 				59637AA523CFF7DA001B02C0 /* PageConst.h */,
 				59637AA623CFF7DA001B02C0 /* PageConst.m */,
+				59C4423323C86F17003F069F /* UIViewController+Page.h */,
+				59C4423423C86F17003F069F /* UIViewController+Page.m */,
 			);
 			path = PageViewController;
 			sourceTree = "<group>";
