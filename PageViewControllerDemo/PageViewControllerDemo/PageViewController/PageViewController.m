@@ -110,6 +110,9 @@ CGFloat const underLineAdditionW = 6;
     return config;
 }
 
+- (void)pageViewController:(PageViewController *)pageViewController didScroll:(UIScrollView *)scrollView{}
+- (void)pageViewController:(PageViewController *)pageViewController didScrollFrom:(NSInteger)from to:(NSInteger)to{}
+
 #pragma mark - UIScrollViewDelegate
 // 滚动完成的时候调用
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
@@ -126,6 +129,11 @@ CGFloat const underLineAdditionW = 6;
         
         // 2.把对应子控制器的view添加上去
         [self setupOneViewController:i];
+        
+        // 通知代理
+        if (self.delegate && [self.delegate respondsToSelector:@selector(pageViewController:didSelectWithIndex:)]) {
+            [self.delegate pageViewController:self didSelectWithIndex:i];
+        }
     }
 }
 
@@ -213,6 +221,11 @@ CGFloat const underLineAdditionW = 6;
         }
         _underLine.frame = newFrame;
     }
+    
+    // 通知代理
+    if (self.delegate && [self.delegate respondsToSelector:@selector(pageViewController:didScroll:)]) {
+        [self.delegate pageViewController:self didScroll:scrollView];
+    }
 }
 
 #pragma mark - 选中标题
@@ -242,7 +255,6 @@ CGFloat const underLineAdditionW = 6;
         self.underLine.frame = frame;
         self.underLine.center = CGPointMake(button.center.x, self.underLine.center.y);
     }];
-    
 }
 
 #pragma mark - 标题居中
@@ -294,6 +306,10 @@ CGFloat const underLineAdditionW = 6;
     // 3.内容滚动视图滚动到对应的位置
     CGFloat x = i * [UIScreen mainScreen].bounds.size.width;
     self.contentScrollView.contentOffset = CGPointMake(x, 0);
+    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(pageViewController:didSelectWithIndex:)]) {
+        [self.delegate pageViewController:self didSelectWithIndex:i];
+    }
 }
 
 #pragma mark - 设置所有标题
@@ -443,7 +459,7 @@ CGFloat const underLineAdditionW = 6;
     if(ratio > 1) ratio = 1;
     const CGFloat * components1 = CGColorGetComponents(color1.CGColor);
     const CGFloat * components2 = CGColorGetComponents(color2.CGColor);
-    NSLog(@"ratio = %f",ratio);
+//    NSLog(@"ratio = %f",ratio);
     CGFloat r = components1[0]*ratio + components2[0]*(1-ratio);
     CGFloat g = components1[1]*ratio + components2[1]*(1-ratio);
     CGFloat b = components1[2]*ratio + components2[2]*(1-ratio);

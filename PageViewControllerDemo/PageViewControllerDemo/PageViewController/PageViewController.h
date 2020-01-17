@@ -17,9 +17,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 /* 父类分页控制器 */
 @interface PageViewController : UIViewController<PageViewControllerDataSource,PageViewControllerDelegate>
-/* 代理方法 */
+/* 代理方法,代理默认为自己(当前VC) */
 @property (nullable, nonatomic, weak) id <PageViewControllerDelegate> delegate;
-/* 数据源,必须实现 */
+/* 数据源,必须实现,数据源默认为自己(当前VC) */
 @property (nullable, nonatomic, weak) id <PageViewControllerDataSource> dataSource;
 /* 子控制器 */
 @property (nullable, nonatomic, readonly) NSArray<__kindof UIViewController *> *viewControllers;
@@ -47,6 +47,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol PageViewControllerDelegate <NSObject>
 
+- (void)pageViewController:(PageViewController *)pageViewController didScroll:(UIScrollView *)scrollView;
+
+- (void)pageViewController:(PageViewController *)pageViewController didSelectWithIndex:(NSInteger)index;
 
 @end
 

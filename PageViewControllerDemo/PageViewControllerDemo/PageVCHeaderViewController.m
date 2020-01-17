@@ -21,6 +21,7 @@
     self.title = @"PageVC-Header";
 }
 
+#pragma mark - Delegate
 - (NSArray<UIViewController *> *)pageChildViewControllers{
     NSMutableArray *vcArr = [NSMutableArray array];
     NSArray *titleArr = @[@"1232",@"13",@"12333",@"1233333",@"123",@"1233333",@"2",@"5",@"232323232",@"123",@"123",@"123",@"123",@"123",@"123"];
@@ -62,5 +63,13 @@
 //- (NSArray<NSString *> *)pageTitles{
 //    return @[@"1",@"12",@"123",@"1234",@"12345",@"123456",@"1234567",@"12345678",@"123456789",@"12345678910"];
 //}
+
+- (void)pageViewController:(PageViewController *)pageViewController didScroll:(UIScrollView *)scrollView{
+//    NSLog(@"%@",NSStringFromCGPoint(scrollView.contentOffset));
+}
+
+- (void)pageViewController:(PageViewController *)pageViewController didSelectWithIndex:(NSInteger)index{
+    NSLog(@"%zd",index);
+}
 
 @end
