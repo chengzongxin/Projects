@@ -54,16 +54,28 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 @interface PageTitleConfig : NSObject
+/* 默认方法 */
++ (instancetype)config;
 /* 常规字体 */
-@property (strong, nonatomic) UIFont *normalFont;
+@property (strong, nonatomic) UIFont *itemNormalFont;
 /* 选中字体 */
-@property (strong, nonatomic) UIFont *selectedFont;
+@property (strong, nonatomic) UIFont *itemSelectedFont;
 /* 常规颜色 */
-@property (strong, nonatomic) UIColor *normalColor;
+@property (strong, nonatomic) UIColor *itemNormalColor;
 /* 选中颜色 */
-@property (strong, nonatomic) UIColor *selectedColor;
-/* 是否开启渐变动画 */
-@property (assign, nonatomic) BOOL gradientsAnimate;
+@property (strong, nonatomic) UIColor *itemSelectedColor;
+/* 是否开启item颜色混合渐变动画 */
+@property (assign, nonatomic) BOOL itemGradientsAnimate;
+/* 跟踪器是否隐藏 */
+@property (nonatomic, assign)  CGFloat trackerHidden;
+/* 跟踪器宽度,默认和字体等宽 */
+@property (nonatomic, assign)  CGFloat trackerWidth;
+/* 跟踪器宽度,默认3 */
+@property (nonatomic, assign)  CGFloat trackerHeight;
+/* 跟踪器额外宽度,默认多6个宽度 */
+@property (nonatomic, assign)  CGFloat trackerWidthAdditional;
+/* 下划线滑动样式,依恋样式 */
+@property (assign, nonatomic) BOOL trackerNotAttachmentStyle;
 
 @end
 

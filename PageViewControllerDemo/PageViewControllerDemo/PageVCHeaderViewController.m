@@ -55,12 +55,14 @@
 }
 
 - (PageTitleConfig *)pageTitleConfig{
-    PageTitleConfig *config = PageTitleConfig.new;
-    config.normalFont = [UIFont systemFontOfSize:18];
-    config.selectedFont = [UIFont systemFontOfSize:20];
-    config.normalColor = UIColor.greenColor;
-    config.selectedColor = UIColor.purpleColor;
-    config.gradientsAnimate = NO;
+    PageTitleConfig *config = PageTitleConfig.config;
+    config.itemNormalFont = [UIFont systemFontOfSize:18];
+    config.itemSelectedFont = [UIFont systemFontOfSize:20];
+    config.itemNormalColor = UIColor.greenColor;
+    config.itemSelectedColor = UIColor.purpleColor;
+    config.itemGradientsAnimate = NO;
+//    config.notAttachmentStyle = YES;
+//    config.trackerHidden = YES;
     return config;
 }
 

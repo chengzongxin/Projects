@@ -35,9 +35,4 @@
     return cell;
 }
 
-//- (void)scrollViewDidScroll:(PageTableView *)scrollView{
-//    [scrollView scrollViewDidScroll:scrollView];
-//}
-
-
 @end

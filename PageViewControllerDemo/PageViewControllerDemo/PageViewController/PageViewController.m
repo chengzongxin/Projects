@@ -101,13 +101,7 @@ CGFloat const underLineAdditionW = 6;
 - (UIView *)pageHeaderView{return nil;}
 
 - (PageTitleConfig *)pageTitleConfig{
-    PageTitleConfig *config = PageTitleConfig.new;
-    config.normalFont = [UIFont systemFontOfSize:14];
-    config.selectedFont = [UIFont systemFontOfSize:15];
-    config.normalColor = UIColor.lightGrayColor;
-    config.selectedColor = UIColor.cyanColor;
-    config.gradientsAnimate = YES;
-    return config;
+    return PageTitleConfig.config;
 }
 
 - (void)pageViewController:(PageViewController *)pageViewController didScroll:(UIScrollView *)scrollView{}
@@ -192,38 +186,41 @@ CGFloat const underLineAdditionW = 6;
             // 直接点击导致滑动
             [self selButton:leftBtn];
             
-        }else if (self.titleConfig.gradientsAnimate){
+        }else if (self.titleConfig.itemGradientsAnimate){
             // 滑动scrollview导致滑动
             // 颜色渐变
             //        UIColor *rightColor = [UIColor colorWithRed:scaleR green:0 blue:0 alpha:1];
             //        UIColor *leftColor = [UIColor colorWithRed:scaleL green:0 blue:0 alpha:1];
-            UIColor *leftColor = [self blendColor1:self.titleConfig.normalColor color2:self.titleConfig.selectedColor ratio:scaleL];
-            UIColor *rightColor = [self blendColor1:self.titleConfig.normalColor color2:self.titleConfig.selectedColor ratio:scaleL];
+            UIColor *leftColor = [self blendColor1:self.titleConfig.itemNormalColor color2:self.titleConfig.itemSelectedColor ratio:scaleL];
+            UIColor *rightColor = [self blendColor1:self.titleConfig.itemNormalColor color2:self.titleConfig.itemSelectedColor ratio:scaleL];
             [rightBtn setTitleColor:rightColor forState:UIControlStateNormal];
             [leftBtn setTitleColor:leftColor forState:UIControlStateNormal];
         }
         
         CGFloat xDistance = rightBtn.center.x - leftBtn.center.x;
         
+        // 设置下划线样式
         // 普通样式滑动下划线
-        //    CGFloat offset = xDistance * scaleR;
-        //    _underLine.center = CGPointMake(leftBtn.center.x + offset, _underLine.center.y);
-        
-        // 依恋样式
-        // 这种样式的计算比较复杂,有个很关键的技巧，就是参考progress分别为0、0.5、1时的临界值
-        // 原先的x值
-        CGRect newFrame = _underLine.frame;
-        // 原先的宽度
-        CGFloat originW = leftBtn.titleLabel.frame.size.width / 2 + underLineAdditionW;
-        CGFloat originX = leftBtn.center.x - originW / 2;
-        if (scaleR < 0.5) {
-            newFrame.origin.x = originX; // x值保持不变
-            newFrame.size.width = originW + xDistance * scaleR * 2;
-        } else {
-            newFrame.origin.x = originX + xDistance * (scaleR-0.5) * 2;
-            newFrame.size.width = originW + xDistance - xDistance * (scaleR-0.5) * 2;
+        if (self.titleConfig.trackerNotAttachmentStyle) {
+            CGFloat offset = xDistance * scaleR;
+            _underLine.center = CGPointMake(leftBtn.center.x + offset, _underLine.center.y);
+        }else{
+            // 依恋样式
+            // 这种样式的计算比较复杂,有个很关键的技巧，就是参考progress分别为0、0.5、1时的临界值
+            // 原先的x值
+            CGRect newFrame = _underLine.frame;
+            // 原先的宽度
+            CGFloat originW = leftBtn.titleLabel.frame.size.width / 2 + self.titleConfig.trackerWidthAdditional;
+            CGFloat originX = leftBtn.center.x - originW / 2;
+            if (scaleR < 0.5) {
+                newFrame.origin.x = originX; // x值保持不变
+                newFrame.size.width = originW + xDistance * scaleR * 2;
+            } else {
+                newFrame.origin.x = originX + xDistance * (scaleR-0.5) * 2;
+                newFrame.size.width = originW + xDistance - xDistance * (scaleR-0.5) * 2;
+            }
+            _underLine.frame = newFrame;
         }
-        _underLine.frame = newFrame;
     }
     
 }
@@ -236,9 +233,9 @@ CGFloat const underLineAdditionW = 6;
     
     [self.titleButtons enumerateObjectsUsingBlock:^(UIButton *obj, NSUInteger idx, BOOL * _Nonnull stop) {
         obj.transform = CGAffineTransformIdentity;
-        [obj setTitleColor:self.titleConfig.normalColor forState:UIControlStateNormal];
+        [obj setTitleColor:self.titleConfig.itemNormalColor forState:UIControlStateNormal];
     }];
-    [button setTitleColor:self.titleConfig.selectedColor forState:UIControlStateNormal];
+    [button setTitleColor:self.titleConfig.itemSelectedColor forState:UIControlStateNormal];
     
     // 标题居中
     [self setupTitleCenter:button];
@@ -250,7 +247,7 @@ CGFloat const underLineAdditionW = 6;
     // 改变下划线位置
     [button.titleLabel sizeToFit];
     CGRect frame = _underLine.frame;
-    frame.size.width = button.titleLabel.frame.size.width + underLineAdditionW;
+    frame.size.width = self.titleConfig.trackerWidth ?: button.titleLabel.frame.size.width + underLineAdditionW;
     [UIView animateWithDuration:0.25 animations:^{
         self.underLine.frame = frame;
         self.underLine.center = CGPointMake(button.center.x, self.underLine.center.y);
@@ -332,8 +329,8 @@ CGFloat const underLineAdditionW = 6;
         [titleButton setTitle:self.pageTitles?self.pageTitles[i]:vc.title forState:UIControlStateNormal];
         btnX = i * btnW;
         titleButton.frame = CGRectMake(btnX, 0, btnW, btnH);
-        [titleButton setTitleColor:self.titleConfig.normalColor forState:UIControlStateNormal];
-        titleButton.titleLabel.font = self.titleConfig.normalFont;
+        [titleButton setTitleColor:self.titleConfig.itemNormalColor forState:UIControlStateNormal];
+        titleButton.titleLabel.font = self.titleConfig.itemNormalFont;
         // 监听按钮点击
         [titleButton addTarget:self action:@selector(titleClick:) forControlEvents:UIControlEventTouchUpInside];
         
@@ -376,13 +373,15 @@ CGFloat const underLineAdditionW = 6;
     _titleScrollView = titleScrollView;
     
     // 设置下划线
-    [self setupTitleUnderline];
+    if (!self.titleConfig.trackerHidden) {
+        [self setupTitleUnderline];
+    }
 }
 // 设置下划线
 - (void)setupTitleUnderline{
     UIView *underLine = [[UIView alloc] init];
-    underLine.frame = CGRectMake(0, _titleScrollView.frame.size.height - 3, 0, 3);
-    underLine.backgroundColor = self.titleConfig.selectedColor;
+    underLine.frame = CGRectMake(0, _titleScrollView.frame.size.height - self.titleConfig.trackerHeight, 0, self.titleConfig.trackerHeight);
+    underLine.backgroundColor = self.titleConfig.itemSelectedColor;
     [_titleScrollView addSubview:underLine];
     _underLine = underLine;
 }
@@ -470,4 +469,16 @@ CGFloat const underLineAdditionW = 6;
 
 
 @implementation PageTitleConfig
++ (instancetype)config{
+    PageTitleConfig *config = PageTitleConfig.new;
+    config.itemNormalFont = [UIFont systemFontOfSize:14];
+    config.itemSelectedFont = [UIFont systemFontOfSize:15];
+    config.itemNormalColor = UIColor.lightGrayColor;
+    config.itemSelectedColor = UIColor.cyanColor;
+    config.itemGradientsAnimate = YES;
+    config.trackerWidthAdditional = 6;
+    config.trackerWidth = 0;
+    config.trackerHeight = 3;
+    return config;
+}
 @end
