@@ -9,7 +9,6 @@
 #import "PageViewController.h"
 #import "PageBGScrollView.h"
 #import "UIView+Frame.h"
-#import "UIViewController+Page.h"
 // 下划线额外宽度
 CGFloat const underLineAdditionW = 6;
 

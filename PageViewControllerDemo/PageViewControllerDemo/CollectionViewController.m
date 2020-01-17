@@ -7,7 +7,7 @@
 //
 
 #import "CollectionViewController.h"
-#import "PageCollectionView.h"
+#import "PageViewController.h"
 
 @interface CollectionViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 

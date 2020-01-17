@@ -7,7 +7,7 @@
 //
 
 #import "TableViewController.h"
-#import "PageTableView.h"
+#import "PageViewController.h"
 
 @interface TableViewController ()<UITableViewDelegate,UITableViewDataSource>
 
