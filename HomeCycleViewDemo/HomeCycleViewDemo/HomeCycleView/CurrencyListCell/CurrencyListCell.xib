@@ -20,7 +20,10 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="index_cell_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="Tws-7p-U48">
-                        <rect key="frame" x="14" y="0.0" width="150" height="180"/>
+                        <rect key="frame" x="14" y="125" width="150" height="55"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="55" id="z3c-HO-dok"/>
+                        </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="比特币 BTC" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zyX-Mm-eOc">
                         <rect key="frame" x="14" y="38" width="69" height="17"/>
@@ -60,19 +63,18 @@
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="Tws-7p-U48" firstAttribute="leading" secondItem="zyX-Mm-eOc" secondAttribute="leading" id="GZr-es-BrX"/>
-                <constraint firstItem="Tws-7p-U48" firstAttribute="trailing" secondItem="vLT-Xh-vYP" secondAttribute="trailing" id="KUP-eX-oVS"/>
                 <constraint firstItem="5Mv-aW-rUY" firstAttribute="top" secondItem="zyX-Mm-eOc" secondAttribute="bottom" constant="5" id="Oqk-cv-nOs"/>
+                <constraint firstAttribute="trailing" secondItem="Tws-7p-U48" secondAttribute="trailing" constant="6" id="TeG-Tz-gdq"/>
                 <constraint firstItem="zyX-Mm-eOc" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="14" id="WNT-R0-PFQ"/>
                 <constraint firstItem="uwc-Mf-Nvk" firstAttribute="top" secondItem="5Mv-aW-rUY" secondAttribute="bottom" constant="12" id="Zyd-nz-aiW"/>
                 <constraint firstItem="vLT-Xh-vYP" firstAttribute="centerY" secondItem="5Mv-aW-rUY" secondAttribute="centerY" id="fRw-dW-JYe"/>
                 <constraint firstAttribute="trailing" secondItem="vLT-Xh-vYP" secondAttribute="trailing" constant="6" id="fdR-Wu-1X4"/>
                 <constraint firstItem="uwc-Mf-Nvk" firstAttribute="trailing" secondItem="vLT-Xh-vYP" secondAttribute="trailing" id="j7F-hk-qji"/>
-                <constraint firstAttribute="bottom" secondItem="Tws-7p-U48" secondAttribute="bottom" id="jjE-jB-ZnW"/>
-                <constraint firstItem="Tws-7p-U48" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="mNP-Hr-ZE2"/>
                 <constraint firstItem="uwc-Mf-Nvk" firstAttribute="leading" secondItem="zyX-Mm-eOc" secondAttribute="leading" id="oRC-g1-Kuy"/>
                 <constraint firstItem="zyX-Mm-eOc" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="38" id="oX8-zX-YdU"/>
                 <constraint firstItem="5Mv-aW-rUY" firstAttribute="leading" secondItem="zyX-Mm-eOc" secondAttribute="leading" id="rBK-if-DlR"/>
+                <constraint firstItem="Tws-7p-U48" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="14" id="yD5-eg-wVO"/>
+                <constraint firstAttribute="bottom" secondItem="Tws-7p-U48" secondAttribute="bottom" id="yKT-GK-sDt"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
             <point key="canvasLocation" x="41.600000000000001" y="46.776611694152926"/>
