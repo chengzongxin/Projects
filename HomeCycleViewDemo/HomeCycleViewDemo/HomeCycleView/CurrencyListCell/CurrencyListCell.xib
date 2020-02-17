@@ -19,6 +19,9 @@
                 <rect key="frame" x="0.0" y="0.0" width="170" height="180"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="index_cell_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="Tws-7p-U48">
+                        <rect key="frame" x="14" y="0.0" width="150" height="180"/>
+                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="比特币 BTC" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zyX-Mm-eOc">
                         <rect key="frame" x="14" y="38" width="69" height="17"/>
                         <color key="backgroundColor" red="0.86274509803921573" green="0.92549019607843142" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -42,32 +45,40 @@
                         <color key="textColor" red="0.15294117647058825" green="0.27058823529411763" blue="0.36470588235294116" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123.45%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vLT-Xh-vYP">
-                        <rect key="frame" x="112" y="60" width="52" height="16"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                        <color key="textColor" red="0.1529411765" green="0.27058823529999998" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="短时跳水带崩市场，主流币风向标效用回归" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uwc-Mf-Nvk">
                         <rect key="frame" x="14" y="88" width="150" height="29"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" red="0.63529411764705879" green="0.69019607843137254" blue="0.72941176470588232" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123.45%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vLT-Xh-vYP">
+                        <rect key="frame" x="112" y="60" width="52" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.1529411765" green="0.27058823529999998" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </view>
             <constraints>
+                <constraint firstItem="Tws-7p-U48" firstAttribute="leading" secondItem="zyX-Mm-eOc" secondAttribute="leading" id="GZr-es-BrX"/>
+                <constraint firstItem="Tws-7p-U48" firstAttribute="trailing" secondItem="vLT-Xh-vYP" secondAttribute="trailing" id="KUP-eX-oVS"/>
                 <constraint firstItem="5Mv-aW-rUY" firstAttribute="top" secondItem="zyX-Mm-eOc" secondAttribute="bottom" constant="5" id="Oqk-cv-nOs"/>
                 <constraint firstItem="zyX-Mm-eOc" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="14" id="WNT-R0-PFQ"/>
                 <constraint firstItem="uwc-Mf-Nvk" firstAttribute="top" secondItem="5Mv-aW-rUY" secondAttribute="bottom" constant="12" id="Zyd-nz-aiW"/>
                 <constraint firstItem="vLT-Xh-vYP" firstAttribute="centerY" secondItem="5Mv-aW-rUY" secondAttribute="centerY" id="fRw-dW-JYe"/>
                 <constraint firstAttribute="trailing" secondItem="vLT-Xh-vYP" secondAttribute="trailing" constant="6" id="fdR-Wu-1X4"/>
                 <constraint firstItem="uwc-Mf-Nvk" firstAttribute="trailing" secondItem="vLT-Xh-vYP" secondAttribute="trailing" id="j7F-hk-qji"/>
+                <constraint firstAttribute="bottom" secondItem="Tws-7p-U48" secondAttribute="bottom" id="jjE-jB-ZnW"/>
+                <constraint firstItem="Tws-7p-U48" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="mNP-Hr-ZE2"/>
                 <constraint firstItem="uwc-Mf-Nvk" firstAttribute="leading" secondItem="zyX-Mm-eOc" secondAttribute="leading" id="oRC-g1-Kuy"/>
                 <constraint firstItem="zyX-Mm-eOc" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="38" id="oX8-zX-YdU"/>
                 <constraint firstItem="5Mv-aW-rUY" firstAttribute="leading" secondItem="zyX-Mm-eOc" secondAttribute="leading" id="rBK-if-DlR"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
+            <point key="canvasLocation" x="41.600000000000001" y="46.776611694152926"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="index_cell_bg.png" width="108" height="84"/>
+    </resources>
 </document>

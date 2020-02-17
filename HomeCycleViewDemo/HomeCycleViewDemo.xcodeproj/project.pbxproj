@@ -36,6 +36,7 @@
 		D80F7AB523FA470C00BE5967 /* UIView+Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = D80F7AB423FA470C00BE5967 /* UIView+Layout.m */; };
 		D80F7AB823FA486400BE5967 /* 圆点@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D80F7AB623FA486400BE5967 /* 圆点@3x.png */; };
 		D80F7AB923FA486400BE5967 /* 圆2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D80F7AB723FA486400BE5967 /* 圆2@3x.png */; };
+		D80F7AC923FA960800BE5967 /* index_cell_bg@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D80F7AC823FA960800BE5967 /* index_cell_bg@3x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +107,7 @@
 		D80F7AB423FA470C00BE5967 /* UIView+Layout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Layout.m"; sourceTree = "<group>"; };
 		D80F7AB623FA486400BE5967 /* 圆点@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "圆点@3x.png"; sourceTree = "<group>"; };
 		D80F7AB723FA486400BE5967 /* 圆2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "圆2@3x.png"; sourceTree = "<group>"; };
+		D80F7AC823FA960800BE5967 /* index_cell_bg@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "index_cell_bg@3x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,6 +220,7 @@
 				D80F7A9923FA25F300BE5967 /* IndexListCell.h */,
 				D80F7A9A23FA25F300BE5967 /* IndexListCell.m */,
 				D80F7A9B23FA25F300BE5967 /* IndexListCell.xib */,
+				D80F7AC823FA960800BE5967 /* index_cell_bg@3x.png */,
 			);
 			path = IndexListCell;
 			sourceTree = "<group>";
@@ -369,6 +372,7 @@
 				D80F7AB823FA486400BE5967 /* 圆点@3x.png in Resources */,
 				D80EE88D23F6A40D00DDDA44 /* LaunchScreen.storyboard in Resources */,
 				D80F7A9323FA25D700BE5967 /* SpreadListCell.xib in Resources */,
+				D80F7AC923FA960800BE5967 /* index_cell_bg@3x.png in Resources */,
 				D80EE8BF23F6A71100DDDA44 /* HomeCycleCurrencyCell.xib in Resources */,
 				D80EE88A23F6A40D00DDDA44 /* Assets.xcassets in Resources */,
 				D80F7AB923FA486400BE5967 /* 圆2@3x.png in Resources */,
