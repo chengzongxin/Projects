@@ -22,6 +22,20 @@
 		D80EE8BF23F6A71100DDDA44 /* HomeCycleCurrencyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D80EE8BD23F6A71100DDDA44 /* HomeCycleCurrencyCell.xib */; };
 		D80EE8C323F6A75D00DDDA44 /* HomeCycleIndexCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D80EE8C123F6A75D00DDDA44 /* HomeCycleIndexCell.m */; };
 		D80EE8C423F6A75D00DDDA44 /* HomeCycleIndexCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D80EE8C223F6A75D00DDDA44 /* HomeCycleIndexCell.xib */; };
+		D80F7A9223FA25D700BE5967 /* SpreadListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D80F7A9023FA25D700BE5967 /* SpreadListCell.m */; };
+		D80F7A9323FA25D700BE5967 /* SpreadListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D80F7A9123FA25D700BE5967 /* SpreadListCell.xib */; };
+		D80F7A9C23FA25F300BE5967 /* IndexListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D80F7A9A23FA25F300BE5967 /* IndexListCell.m */; };
+		D80F7A9D23FA25F300BE5967 /* IndexListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D80F7A9B23FA25F300BE5967 /* IndexListCell.xib */; };
+		D80F7AA123FA287B00BE5967 /* CurrencyListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D80F7A9F23FA287B00BE5967 /* CurrencyListCell.m */; };
+		D80F7AA223FA287B00BE5967 /* CurrencyListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D80F7AA023FA287B00BE5967 /* CurrencyListCell.xib */; };
+		D80F7AA523FA2C8F00BE5967 /* HomeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D80F7AA423FA2C8F00BE5967 /* HomeViewModel.m */; };
+		D80F7AAF23FA435700BE5967 /* DVLineChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = D80F7AA823FA435700BE5967 /* DVLineChartView.m */; };
+		D80F7AB023FA435700BE5967 /* DVPlot.m in Sources */ = {isa = PBXBuildFile; fileRef = D80F7AAA23FA435700BE5967 /* DVPlot.m */; };
+		D80F7AB123FA435700BE5967 /* DVXAxisView.m in Sources */ = {isa = PBXBuildFile; fileRef = D80F7AAC23FA435700BE5967 /* DVXAxisView.m */; };
+		D80F7AB223FA435700BE5967 /* DVYAxisView.m in Sources */ = {isa = PBXBuildFile; fileRef = D80F7AAE23FA435700BE5967 /* DVYAxisView.m */; };
+		D80F7AB523FA470C00BE5967 /* UIView+Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = D80F7AB423FA470C00BE5967 /* UIView+Layout.m */; };
+		D80F7AB823FA486400BE5967 /* 圆点@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D80F7AB623FA486400BE5967 /* 圆点@3x.png */; };
+		D80F7AB923FA486400BE5967 /* 圆2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D80F7AB723FA486400BE5967 /* 圆2@3x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +83,29 @@
 		D80EE8C023F6A75D00DDDA44 /* HomeCycleIndexCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeCycleIndexCell.h; sourceTree = "<group>"; };
 		D80EE8C123F6A75D00DDDA44 /* HomeCycleIndexCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeCycleIndexCell.m; sourceTree = "<group>"; };
 		D80EE8C223F6A75D00DDDA44 /* HomeCycleIndexCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCycleIndexCell.xib; sourceTree = "<group>"; };
+		D80F7A8F23FA25D700BE5967 /* SpreadListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpreadListCell.h; sourceTree = "<group>"; };
+		D80F7A9023FA25D700BE5967 /* SpreadListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpreadListCell.m; sourceTree = "<group>"; };
+		D80F7A9123FA25D700BE5967 /* SpreadListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpreadListCell.xib; sourceTree = "<group>"; };
+		D80F7A9923FA25F300BE5967 /* IndexListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IndexListCell.h; sourceTree = "<group>"; };
+		D80F7A9A23FA25F300BE5967 /* IndexListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IndexListCell.m; sourceTree = "<group>"; };
+		D80F7A9B23FA25F300BE5967 /* IndexListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IndexListCell.xib; sourceTree = "<group>"; };
+		D80F7A9E23FA287B00BE5967 /* CurrencyListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CurrencyListCell.h; sourceTree = "<group>"; };
+		D80F7A9F23FA287B00BE5967 /* CurrencyListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CurrencyListCell.m; sourceTree = "<group>"; };
+		D80F7AA023FA287B00BE5967 /* CurrencyListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrencyListCell.xib; sourceTree = "<group>"; };
+		D80F7AA323FA2C8F00BE5967 /* HomeViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewModel.h; sourceTree = "<group>"; };
+		D80F7AA423FA2C8F00BE5967 /* HomeViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewModel.m; sourceTree = "<group>"; };
+		D80F7AA723FA435700BE5967 /* DVLineChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVLineChartView.h; sourceTree = "<group>"; };
+		D80F7AA823FA435700BE5967 /* DVLineChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DVLineChartView.m; sourceTree = "<group>"; };
+		D80F7AA923FA435700BE5967 /* DVPlot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVPlot.h; sourceTree = "<group>"; };
+		D80F7AAA23FA435700BE5967 /* DVPlot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DVPlot.m; sourceTree = "<group>"; };
+		D80F7AAB23FA435700BE5967 /* DVXAxisView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVXAxisView.h; sourceTree = "<group>"; };
+		D80F7AAC23FA435700BE5967 /* DVXAxisView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DVXAxisView.m; sourceTree = "<group>"; };
+		D80F7AAD23FA435700BE5967 /* DVYAxisView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVYAxisView.h; sourceTree = "<group>"; };
+		D80F7AAE23FA435700BE5967 /* DVYAxisView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DVYAxisView.m; sourceTree = "<group>"; };
+		D80F7AB323FA470C00BE5967 /* UIView+Layout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Layout.h"; sourceTree = "<group>"; };
+		D80F7AB423FA470C00BE5967 /* UIView+Layout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Layout.m"; sourceTree = "<group>"; };
+		D80F7AB623FA486400BE5967 /* 圆点@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "圆点@3x.png"; sourceTree = "<group>"; };
+		D80F7AB723FA486400BE5967 /* 圆2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "圆2@3x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,10 +156,13 @@
 		D80EE87F23F6A40B00DDDA44 /* HomeCycleViewDemo */ = {
 			isa = PBXGroup;
 			children = (
+				D80F7AA623FA435700BE5967 /* DVLineChartView */,
 				D80EE88023F6A40B00DDDA44 /* AppDelegate.h */,
 				D80EE88123F6A40B00DDDA44 /* AppDelegate.m */,
 				D80EE88323F6A40B00DDDA44 /* ViewController.h */,
 				D80EE88423F6A40B00DDDA44 /* ViewController.m */,
+				D80F7AA323FA2C8F00BE5967 /* HomeViewModel.h */,
+				D80F7AA423FA2C8F00BE5967 /* HomeViewModel.m */,
 				D80EE8B223F6A43B00DDDA44 /* HomeCycleView */,
 				D80EE88623F6A40B00DDDA44 /* Main.storyboard */,
 				D80EE88923F6A40D00DDDA44 /* Assets.xcassets */,
@@ -165,8 +205,60 @@
 				D80EE8C023F6A75D00DDDA44 /* HomeCycleIndexCell.h */,
 				D80EE8C123F6A75D00DDDA44 /* HomeCycleIndexCell.m */,
 				D80EE8C223F6A75D00DDDA44 /* HomeCycleIndexCell.xib */,
+				D80F7A8E23FA25B800BE5967 /* SpreadListCell */,
+				D80F7A8D23FA25B800BE5967 /* CurrencyListCell */,
+				D80F7A8C23FA25B800BE5967 /* IndexListCell */,
 			);
 			path = HomeCycleView;
+			sourceTree = "<group>";
+		};
+		D80F7A8C23FA25B800BE5967 /* IndexListCell */ = {
+			isa = PBXGroup;
+			children = (
+				D80F7A9923FA25F300BE5967 /* IndexListCell.h */,
+				D80F7A9A23FA25F300BE5967 /* IndexListCell.m */,
+				D80F7A9B23FA25F300BE5967 /* IndexListCell.xib */,
+			);
+			path = IndexListCell;
+			sourceTree = "<group>";
+		};
+		D80F7A8D23FA25B800BE5967 /* CurrencyListCell */ = {
+			isa = PBXGroup;
+			children = (
+				D80F7A9E23FA287B00BE5967 /* CurrencyListCell.h */,
+				D80F7A9F23FA287B00BE5967 /* CurrencyListCell.m */,
+				D80F7AA023FA287B00BE5967 /* CurrencyListCell.xib */,
+			);
+			path = CurrencyListCell;
+			sourceTree = "<group>";
+		};
+		D80F7A8E23FA25B800BE5967 /* SpreadListCell */ = {
+			isa = PBXGroup;
+			children = (
+				D80F7A8F23FA25D700BE5967 /* SpreadListCell.h */,
+				D80F7A9023FA25D700BE5967 /* SpreadListCell.m */,
+				D80F7A9123FA25D700BE5967 /* SpreadListCell.xib */,
+			);
+			path = SpreadListCell;
+			sourceTree = "<group>";
+		};
+		D80F7AA623FA435700BE5967 /* DVLineChartView */ = {
+			isa = PBXGroup;
+			children = (
+				D80F7AA723FA435700BE5967 /* DVLineChartView.h */,
+				D80F7AA823FA435700BE5967 /* DVLineChartView.m */,
+				D80F7AA923FA435700BE5967 /* DVPlot.h */,
+				D80F7AAA23FA435700BE5967 /* DVPlot.m */,
+				D80F7AAB23FA435700BE5967 /* DVXAxisView.h */,
+				D80F7AAC23FA435700BE5967 /* DVXAxisView.m */,
+				D80F7AAD23FA435700BE5967 /* DVYAxisView.h */,
+				D80F7AAE23FA435700BE5967 /* DVYAxisView.m */,
+				D80F7AB323FA470C00BE5967 /* UIView+Layout.h */,
+				D80F7AB423FA470C00BE5967 /* UIView+Layout.m */,
+				D80F7AB723FA486400BE5967 /* 圆2@3x.png */,
+				D80F7AB623FA486400BE5967 /* 圆点@3x.png */,
+			);
+			path = DVLineChartView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,9 +366,14 @@
 			files = (
 				D80EE8C423F6A75D00DDDA44 /* HomeCycleIndexCell.xib in Resources */,
 				D80EE8BA23F6A69F00DDDA44 /* HomeCycleSpreadCell.xib in Resources */,
+				D80F7AB823FA486400BE5967 /* 圆点@3x.png in Resources */,
 				D80EE88D23F6A40D00DDDA44 /* LaunchScreen.storyboard in Resources */,
+				D80F7A9323FA25D700BE5967 /* SpreadListCell.xib in Resources */,
 				D80EE8BF23F6A71100DDDA44 /* HomeCycleCurrencyCell.xib in Resources */,
 				D80EE88A23F6A40D00DDDA44 /* Assets.xcassets in Resources */,
+				D80F7AB923FA486400BE5967 /* 圆2@3x.png in Resources */,
+				D80F7AA223FA287B00BE5967 /* CurrencyListCell.xib in Resources */,
+				D80F7A9D23FA25F300BE5967 /* IndexListCell.xib in Resources */,
 				D80EE88823F6A40B00DDDA44 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -304,10 +401,19 @@
 			files = (
 				D80EE88523F6A40B00DDDA44 /* ViewController.m in Sources */,
 				D80EE8B923F6A69F00DDDA44 /* HomeCycleSpreadCell.m in Sources */,
+				D80F7AA523FA2C8F00BE5967 /* HomeViewModel.m in Sources */,
+				D80F7AAF23FA435700BE5967 /* DVLineChartView.m in Sources */,
 				D80EE8C323F6A75D00DDDA44 /* HomeCycleIndexCell.m in Sources */,
 				D80EE89023F6A40D00DDDA44 /* main.m in Sources */,
+				D80F7AB023FA435700BE5967 /* DVPlot.m in Sources */,
 				D80EE8B523F6A44900DDDA44 /* HomeCycleView.m in Sources */,
+				D80F7AB123FA435700BE5967 /* DVXAxisView.m in Sources */,
 				D80EE8BE23F6A71100DDDA44 /* HomeCycleCurrencyCell.m in Sources */,
+				D80F7AB223FA435700BE5967 /* DVYAxisView.m in Sources */,
+				D80F7A9223FA25D700BE5967 /* SpreadListCell.m in Sources */,
+				D80F7AB523FA470C00BE5967 /* UIView+Layout.m in Sources */,
+				D80F7A9C23FA25F300BE5967 /* IndexListCell.m in Sources */,
+				D80F7AA123FA287B00BE5967 /* CurrencyListCell.m in Sources */,
 				D80EE88223F6A40B00DDDA44 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

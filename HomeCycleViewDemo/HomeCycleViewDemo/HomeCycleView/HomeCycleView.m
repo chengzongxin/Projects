@@ -10,6 +10,7 @@
 #import "HomeCycleSpreadCell.h"
 #import "HomeCycleCurrencyCell.h"
 #import "HomeCycleIndexCell.h"
+#import "HomeViewModel.h"
 
 #define kCellMargin 18
 #define kCellWidth self.bounds.size.width - (kCellMargin*2)

@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "HomeCycleView/HomeCycleView.h"
+#import "HomeViewModel.h"
 
 @interface ViewController ()
 
@@ -21,6 +22,12 @@
     HomeCycleView *cycle = [[HomeCycleView alloc] initWithFrame:CGRectMake(0, 100, 375, 200)];
     cycle.backgroundColor = UIColor.orangeColor;
     [self.view addSubview:cycle];
+    
+    [HomeViewModel request:^(__autoreleasing id * _Nonnull data) {
+        
+    } fail:^(NSString * _Nonnull data) {
+        
+    }];
     
 }
 
