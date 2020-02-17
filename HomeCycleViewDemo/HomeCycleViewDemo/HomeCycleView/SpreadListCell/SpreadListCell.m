@@ -28,7 +28,7 @@
     // Initialization code
     
     // 柱状图
-    _lineChartView = [[DVLineChartView alloc] initWithFrame:CGRectMake(10, 90, UIScreen.mainScreen.bounds.size.width - 34, 70)];
+    _lineChartView = [[DVLineChartView alloc] initWithFrame:CGRectMake(10, 70, UIScreen.mainScreen.bounds.size.width - 34, 110)];
     [self.contentView addSubview:_lineChartView];
     _lineChartView.yAxisViewWidth = 5;
     _lineChartView.numberOfYAxisElements = 1;

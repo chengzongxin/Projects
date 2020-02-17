@@ -44,27 +44,24 @@
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    UICollectionViewCell *cell;
+    
     if (indexPath.item == 0) {
-        HomeCycleIndexCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass(HomeCycleIndexCell.class) forIndexPath:indexPath];
-        cell.titleLabel.text = @(indexPath.item).stringValue;
-        return cell;
+        cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass(HomeCycleIndexCell.class) forIndexPath:indexPath];
     }else if (indexPath.item == 1) {
-        HomeCycleSpreadCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass(HomeCycleSpreadCell.class) forIndexPath:indexPath];
-        cell.titleLabel.text = @(indexPath.item).stringValue;
-        return cell;
+        cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass(HomeCycleSpreadCell.class) forIndexPath:indexPath];
     }else  if (indexPath.item == 2) {
-        HomeCycleCurrencyCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass(HomeCycleCurrencyCell.class) forIndexPath:indexPath];
-        cell.titleLabel.text = @(indexPath.item).stringValue;
-        return cell;
+        cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass(HomeCycleCurrencyCell.class) forIndexPath:indexPath];
     }else if (indexPath.item == 3) {
-        HomeCycleIndexCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass(HomeCycleIndexCell.class) forIndexPath:indexPath];
-        cell.titleLabel.text = @(indexPath.item).stringValue;
-        return cell;
+        cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass(HomeCycleIndexCell.class) forIndexPath:indexPath];
     }else {
-        HomeCycleSpreadCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass(HomeCycleSpreadCell.class) forIndexPath:indexPath];
-        cell.titleLabel.text = @(indexPath.item).stringValue;
-        return cell;
+        cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass(HomeCycleSpreadCell.class) forIndexPath:indexPath];
     }
+    
+    [self layer:cell.layer applyShadow:UIColor.blackColor alpha:0.1 x:0 y:5 blue:5 spread:10];
+    cell.layer.cornerRadius = 12;
+    return cell;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
@@ -128,7 +125,7 @@
         
         //2.初始化collectionView
         _collectionView = [[UICollectionView alloc] initWithFrame:self.bounds collectionViewLayout:layout];
-        _collectionView.backgroundColor = UIColor.whiteColor;
+        _collectionView.backgroundColor = UIColor.clearColor;
 //        _collectionView.pagingEnabled = YES;
         _collectionView.contentInset = UIEdgeInsetsMake(0, kCellMargin, 0, kCellMargin);
         //3.注册collectionViewCell
@@ -144,4 +141,19 @@
     return _collectionView;
 }
 
+
+
+- (void)layer:(CALayer *)layer applyShadow:(UIColor *)color alpha:(float)alpha x:(CGFloat)x y:(CGFloat)y blue:(CGFloat)blur spread:(CGFloat)spread{
+    layer.shadowColor = color.CGColor;
+    layer.shadowOpacity = alpha;
+    layer.shadowOffset = CGSizeMake(x, y);
+    layer.shadowRadius = blur / 2.0;
+    if (spread == 0){
+        layer.shadowPath = nil;
+    } else {
+        CGFloat dx = -spread;
+        CGRect rect = CGRectInset(layer.bounds, dx, dx);
+        layer.shadowPath = [UIBezierPath bezierPathWithRect:rect].CGPath;
+    }
+}
 @end

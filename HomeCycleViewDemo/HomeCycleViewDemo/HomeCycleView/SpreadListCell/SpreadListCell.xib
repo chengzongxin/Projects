@@ -21,15 +21,29 @@
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dpW-ed-I7F">
                         <rect key="frame" x="0.0" y="0.0" width="339" height="180"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="最优价差" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jOh-id-ERj">
+                                <rect key="frame" x="18" y="17" width="65.5" height="19.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                <color key="textColor" red="0.15294117647058825" green="0.27058823529411763" blue="0.36470588235294116" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="币对：BTC/USDT  最优价差：4 USDT 预计套利：1.1%" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FIS-PG-vDZ">
+                                <rect key="frame" x="18" y="42.5" width="303" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.63529411764705879" green="0.69019607843137254" blue="0.72941176470588232" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="FIS-PG-vDZ" secondAttribute="trailing" constant="18" id="7ab-XV-jeA"/>
+                            <constraint firstItem="FIS-PG-vDZ" firstAttribute="leading" secondItem="dpW-ed-I7F" secondAttribute="leading" constant="18" id="C03-UC-G2v"/>
+                            <constraint firstItem="FIS-PG-vDZ" firstAttribute="top" secondItem="jOh-id-ERj" secondAttribute="bottom" constant="6" id="UEj-YD-gzb"/>
+                            <constraint firstItem="jOh-id-ERj" firstAttribute="leading" secondItem="dpW-ed-I7F" secondAttribute="leading" constant="18" id="cC8-xw-lPC"/>
+                            <constraint firstItem="jOh-id-ERj" firstAttribute="top" secondItem="dpW-ed-I7F" secondAttribute="top" constant="17" id="iLt-WH-H4K"/>
+                        </constraints>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="最优价差" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jOh-id-ERj">
-                        <rect key="frame" x="10" y="10" width="70" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                 </subviews>
             </view>
             <constraints>
