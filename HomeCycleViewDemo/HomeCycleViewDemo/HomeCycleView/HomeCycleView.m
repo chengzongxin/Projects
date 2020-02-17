@@ -30,31 +30,38 @@
     if (self) {
         // 列表
         [self addSubview:self.collectionView];
+        
+        [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:1 inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:NO];
     }
     return self;
 }
 
-//- (void)layoutSubviews{
-//    [super layoutSubviews];
-//    
-//    self.collectionView.frame = self.bounds;
-//}
-
 #pragma mark UICollectionView Delegate
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return 3;
+    return 7;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.item == 0) {
-        HomeCycleSpreadCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass(HomeCycleSpreadCell.class) forIndexPath:indexPath];
+        HomeCycleIndexCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass(HomeCycleIndexCell.class) forIndexPath:indexPath];
+        cell.titleLabel.text = @(indexPath.item).stringValue;
         return cell;
     }else if (indexPath.item == 1) {
+        HomeCycleSpreadCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass(HomeCycleSpreadCell.class) forIndexPath:indexPath];
+        cell.titleLabel.text = @(indexPath.item).stringValue;
+        return cell;
+    }else  if (indexPath.item == 2) {
         HomeCycleCurrencyCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass(HomeCycleCurrencyCell.class) forIndexPath:indexPath];
+        cell.titleLabel.text = @(indexPath.item).stringValue;
+        return cell;
+    }else if (indexPath.item == 3) {
+        HomeCycleIndexCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass(HomeCycleIndexCell.class) forIndexPath:indexPath];
+        cell.titleLabel.text = @(indexPath.item).stringValue;
         return cell;
     }else {
-        HomeCycleIndexCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass(HomeCycleIndexCell.class) forIndexPath:indexPath];
+        HomeCycleSpreadCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass(HomeCycleSpreadCell.class) forIndexPath:indexPath];
+        cell.titleLabel.text = @(indexPath.item).stringValue;
         return cell;
     }
 }
@@ -65,8 +72,9 @@
 //    }
 }
 
+#pragma mark - 自定义滑动位置
 - (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset{
-    CGFloat kMaxIndex = 3;
+    CGFloat kMaxIndex = [self.collectionView numberOfItemsInSection:0];;
     CGFloat targetX = scrollView.contentOffset.x + velocity.x * 10.0;
     NSLog(@"%f,%f",velocity.x,scrollView.contentOffset.x);
     
@@ -88,6 +96,17 @@
     targetContentOffset->x = targetIndex * (kCellWidth + kCellSpacing) - kCellMargin;
 }
 
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+    CGFloat offset = scrollView.contentOffset.x;
+    if (offset == -kCellMargin) {
+        [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:3 inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:NO];
+    }
+}
 
 #pragma mark - Getter
 - (UICollectionView *)collectionView{

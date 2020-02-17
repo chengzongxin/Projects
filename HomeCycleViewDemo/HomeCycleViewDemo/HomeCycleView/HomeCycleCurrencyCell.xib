@@ -18,9 +18,24 @@
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QCQ-Kv-kzo">
+                        <rect key="frame" x="4" y="14.5" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
             </view>
             <color key="backgroundColor" red="0.47083778120000003" green="0.49822153190000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="QCQ-Kv-kzo" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="8jF-id-9OE"/>
+                <constraint firstItem="QCQ-Kv-kzo" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="MXw-kD-7UK"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
+            <connections>
+                <outlet property="titleLabel" destination="QCQ-Kv-kzo" id="LFR-29-1qF"/>
+            </connections>
         </collectionViewCell>
     </objects>
 </document>

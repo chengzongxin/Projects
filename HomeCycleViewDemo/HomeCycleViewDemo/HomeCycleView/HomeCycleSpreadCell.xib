@@ -18,9 +18,24 @@
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UWa-Yc-4Fg">
+                        <rect key="frame" x="4" y="14.5" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
             </view>
             <color key="backgroundColor" red="1" green="0.44136683110000002" blue="0.23055075119999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="UWa-Yc-4Fg" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="1EW-yg-XvZ"/>
+                <constraint firstItem="UWa-Yc-4Fg" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="2C0-hm-ql6"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
+            <connections>
+                <outlet property="titleLabel" destination="UWa-Yc-4Fg" id="3C2-T7-7bf"/>
+            </connections>
             <point key="canvasLocation" x="132.80000000000001" y="132.23388305847078"/>
         </collectionViewCell>
     </objects>
