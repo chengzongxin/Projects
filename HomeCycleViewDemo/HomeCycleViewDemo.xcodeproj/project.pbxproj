@@ -37,6 +37,7 @@
 		D80F7AB823FA486400BE5967 /* 圆点@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D80F7AB623FA486400BE5967 /* 圆点@3x.png */; };
 		D80F7AB923FA486400BE5967 /* 圆2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D80F7AB723FA486400BE5967 /* 圆2@3x.png */; };
 		D80F7AC923FA960800BE5967 /* index_cell_bg@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D80F7AC823FA960800BE5967 /* index_cell_bg@3x.png */; };
+		D80F7ACF23FAA4AB00BE5967 /* HomePageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = D80F7ACE23FAA4AB00BE5967 /* HomePageControl.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +109,8 @@
 		D80F7AB623FA486400BE5967 /* 圆点@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "圆点@3x.png"; sourceTree = "<group>"; };
 		D80F7AB723FA486400BE5967 /* 圆2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "圆2@3x.png"; sourceTree = "<group>"; };
 		D80F7AC823FA960800BE5967 /* index_cell_bg@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "index_cell_bg@3x.png"; sourceTree = "<group>"; };
+		D80F7ACD23FAA4AB00BE5967 /* HomePageControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomePageControl.h; sourceTree = "<group>"; };
+		D80F7ACE23FAA4AB00BE5967 /* HomePageControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomePageControl.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +201,8 @@
 			children = (
 				D80EE8B323F6A44900DDDA44 /* HomeCycleView.h */,
 				D80EE8B423F6A44900DDDA44 /* HomeCycleView.m */,
+				D80F7ACD23FAA4AB00BE5967 /* HomePageControl.h */,
+				D80F7ACE23FAA4AB00BE5967 /* HomePageControl.m */,
 				D80EE8B623F6A69F00DDDA44 /* HomeCycleSpreadCell.h */,
 				D80EE8B723F6A69F00DDDA44 /* HomeCycleSpreadCell.m */,
 				D80EE8B823F6A69F00DDDA44 /* HomeCycleSpreadCell.xib */,
@@ -407,6 +412,7 @@
 				D80EE8B923F6A69F00DDDA44 /* HomeCycleSpreadCell.m in Sources */,
 				D80F7AA523FA2C8F00BE5967 /* HomeViewModel.m in Sources */,
 				D80F7AAF23FA435700BE5967 /* DVLineChartView.m in Sources */,
+				D80F7ACF23FAA4AB00BE5967 /* HomePageControl.m in Sources */,
 				D80EE8C323F6A75D00DDDA44 /* HomeCycleIndexCell.m in Sources */,
 				D80EE89023F6A40D00DDDA44 /* main.m in Sources */,
 				D80F7AB023FA435700BE5967 /* DVPlot.m in Sources */,

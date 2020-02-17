@@ -11,6 +11,7 @@
 #import "HomeCycleCurrencyCell.h"
 #import "HomeCycleIndexCell.h"
 #import "HomeViewModel.h"
+#import "HomePageControl.h"
 
 #define kCellMargin 18
 #define kCellWidth self.bounds.size.width - (kCellMargin*2)
@@ -19,6 +20,8 @@
 @interface HomeCycleView () <UICollectionViewDelegate,UICollectionViewDataSource>
 
 @property (nonatomic,strong) UICollectionView *collectionView;
+
+@property (nonatomic,strong) HomePageControl *pageControl;
 
 @end
 
@@ -31,6 +34,8 @@
     if (self) {
         // 列表
         [self addSubview:self.collectionView];
+        
+        [self addSubview:self.pageControl];
         
         [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:999 inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:NO];
     }
@@ -93,6 +98,8 @@
         targetIndex = kMaxIndex;
     NSLog(@"%f",targetIndex * (kCellWidth + kCellSpacing) - kCellMargin);
     targetContentOffset->x = targetIndex * (kCellWidth + kCellSpacing) - kCellMargin;
+    
+    self.pageControl.currentPage = (int)targetIndex % 3;
 }
 
 #pragma mark - Getter
@@ -107,13 +114,13 @@
         //    layout.headerReferenceSize = CGSizeMake(self.view.frame.size.width, 242);
         //    layout.footerReferenceSize = CGSizeMake(self.view.bounds.size.width, 1000);
         //该方法也可以设置itemSize
-        layout.itemSize = CGSizeMake(self.bounds.size.width - kCellMargin*2, self.bounds.size.height);
+        layout.itemSize = CGSizeMake(self.bounds.size.width - kCellMargin*2, self.bounds.size.height - 30);
         layout.minimumInteritemSpacing = 0;
         layout.minimumLineSpacing = 8;
 //        layout.sectionInset = UIEdgeInsetsMake(0, kCellMargin, 0, kCellMargin);
         
         //2.初始化collectionView
-        _collectionView = [[UICollectionView alloc] initWithFrame:self.bounds collectionViewLayout:layout];
+        _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height - 30) collectionViewLayout:layout];
         _collectionView.backgroundColor = UIColor.clearColor;
 //        _collectionView.pagingEnabled = YES;
         _collectionView.contentInset = UIEdgeInsetsMake(0, kCellMargin, 0, kCellMargin);
@@ -130,8 +137,16 @@
     return _collectionView;
 }
 
+- (HomePageControl *)pageControl{
+    if (!_pageControl) {
+        _pageControl = [[HomePageControl alloc] initWithFrame:CGRectMake(0, self.frame.size.height - 30, self.frame.size.width, 30)];
+        _pageControl.numberOfPages = 3;
+    }
+    return _pageControl;
+}
 
 
+#pragma mark - NSObject
 - (void)layer:(CALayer *)layer applyShadow:(UIColor *)color alpha:(float)alpha x:(CGFloat)x y:(CGFloat)y blue:(CGFloat)blur spread:(CGFloat)spread{
     layer.shadowColor = color.CGColor;
     layer.shadowOpacity = alpha;
