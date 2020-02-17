@@ -91,7 +91,7 @@
         
         //2.初始化collectionView
         _collectionView = [[UICollectionView alloc] initWithFrame:self.bounds collectionViewLayout:layout];
-        _collectionView.backgroundColor = UIColor.whiteColor;
+        _collectionView.backgroundColor = UIColor.clearColor;
         _collectionView.pagingEnabled = YES;
 //        _collectionView.contentInset = UIEdgeInsetsMake(0, kCellMargin, 0, kCellMargin);
         //3.注册collectionViewCell
