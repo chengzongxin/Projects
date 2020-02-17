@@ -32,7 +32,7 @@
         // 列表
         [self addSubview:self.collectionView];
         
-        [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:1 inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:NO];
+        [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:999 inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:NO];
     }
     return self;
 }
@@ -40,27 +40,28 @@
 #pragma mark UICollectionView Delegate
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return 7;
+    return 3000;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
     UICollectionViewCell *cell;
     
-    if (indexPath.item == 0) {
-        cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass(HomeCycleIndexCell.class) forIndexPath:indexPath];
-    }else if (indexPath.item == 1) {
-        cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass(HomeCycleSpreadCell.class) forIndexPath:indexPath];
-    }else  if (indexPath.item == 2) {
-        cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass(HomeCycleCurrencyCell.class) forIndexPath:indexPath];
-    }else if (indexPath.item == 3) {
-        cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass(HomeCycleIndexCell.class) forIndexPath:indexPath];
-    }else {
-        cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass(HomeCycleSpreadCell.class) forIndexPath:indexPath];
+    switch (indexPath.item % 3) {
+        case 0:
+            cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass(HomeCycleSpreadCell.class) forIndexPath:indexPath];
+            break;
+        case 1:
+            cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass(HomeCycleCurrencyCell.class) forIndexPath:indexPath];
+            break;
+        case 2:
+            cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass(HomeCycleIndexCell.class) forIndexPath:indexPath];
+            break;
     }
     
-    [self layer:cell.layer applyShadow:UIColor.blackColor alpha:0.1 x:0 y:5 blue:5 spread:10];
+//    [self layer:cell.layer applyShadow:UIColor.blackColor alpha:0.1 x:0 y:5 blue:5 spread:10];
     cell.layer.cornerRadius = 12;
+    cell.layer.masksToBounds = YES;
     return cell;
 }
 
@@ -92,18 +93,6 @@
         targetIndex = kMaxIndex;
     NSLog(@"%f",targetIndex * (kCellWidth + kCellSpacing) - kCellMargin);
     targetContentOffset->x = targetIndex * (kCellWidth + kCellSpacing) - kCellMargin;
-}
-
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    
-}
-
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
-    CGFloat offset = scrollView.contentOffset.x;
-    if (offset == -kCellMargin) {
-        [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:3 inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:NO];
-    }
 }
 
 #pragma mark - Getter
