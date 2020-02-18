@@ -33,6 +33,11 @@
     _layout.itemSize = CGSizeMake((self.collectionView.frame.size.width - _layout.minimumInteritemSpacing*3) / 3, (self.collectionView.frame.size.height - _layout.minimumInteritemSpacing*2) / 2);
 }
 
+#pragma mark CycleCell Delegate
+- (void)autoScroll{
+    [self.collectionView scrollToNextItem];
+}
+
 #pragma mark UICollectionView Delegate
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{

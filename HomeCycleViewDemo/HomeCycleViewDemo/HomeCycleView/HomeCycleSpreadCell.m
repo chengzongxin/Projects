@@ -33,6 +33,11 @@
     _layout.itemSize = self.bounds.size;
 }
 
+#pragma mark CycleCell Delegate
+- (void)autoScroll{
+    [self.collectionView scrollToNextItem];
+}
+
 #pragma mark UICollectionView Delegate
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{

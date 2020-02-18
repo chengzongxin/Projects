@@ -7,11 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "CycleCellProtocol.h"
 NS_ASSUME_NONNULL_BEGIN
 
-@interface HomeCycleSpreadCell : UICollectionViewCell
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@interface HomeCycleSpreadCell : UICollectionViewCell<CycleCellProtocol>
 
 @end
 

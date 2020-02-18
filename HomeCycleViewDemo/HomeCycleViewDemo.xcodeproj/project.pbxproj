@@ -58,6 +58,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D80B714723FB78CE00610C3F /* CycleCellProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CycleCellProtocol.h; sourceTree = "<group>"; };
 		D80EE87D23F6A40B00DDDA44 /* HomeCycleViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeCycleViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D80EE88023F6A40B00DDDA44 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D80EE88123F6A40B00DDDA44 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -203,6 +204,7 @@
 				D80EE8B423F6A44900DDDA44 /* HomeCycleView.m */,
 				D80F7ACD23FAA4AB00BE5967 /* HomePageControl.h */,
 				D80F7ACE23FAA4AB00BE5967 /* HomePageControl.m */,
+				D80B714723FB78CE00610C3F /* CycleCellProtocol.h */,
 				D80EE8B623F6A69F00DDDA44 /* HomeCycleSpreadCell.h */,
 				D80EE8B723F6A69F00DDDA44 /* HomeCycleSpreadCell.m */,
 				D80EE8B823F6A69F00DDDA44 /* HomeCycleSpreadCell.xib */,

@@ -12,6 +12,7 @@
 #import "HomeCycleIndexCell.h"
 #import "HomeViewModel.h"
 #import "HomePageControl.h"
+#import "CycleCellProtocol.h"
 
 #define kCellMargin 18
 #define kCellWidth self.bounds.size.width - (kCellMargin*2)
@@ -21,7 +22,11 @@
 
 @property (nonatomic,strong) UICollectionView *collectionView;
 
+@property (nonatomic,strong) UICollectionViewFlowLayout *layout;
+
 @property (nonatomic,strong) HomePageControl *pageControl;
+
+@property (nonatomic, weak) NSTimer *timer;
 
 @end
 
@@ -38,8 +43,52 @@
         [self addSubview:self.pageControl];
         
         [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:999 inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:NO];
+        
+        [self setupTimer];
     }
     return self;
+}
+
+#pragma mark - timer
+
+- (void)setupTimer
+{
+    [self invalidateTimer]; // 创建定时器前先停止定时器，不然会出现僵尸定时器，导致轮播频率错误
+    
+    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(automaticScroll) userInfo:nil repeats:YES];
+    _timer = timer;
+    [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
+}
+
+- (void)invalidateTimer
+{
+    [_timer invalidate];
+    _timer = nil;
+}
+
+- (void)automaticScroll
+{
+//    if (0 == _totalItemsCount) return;
+    int currentIndex = [self currentIndex];
+    UICollectionView <CycleCellProtocol> *cell = (UICollectionView <CycleCellProtocol> *)[_collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:currentIndex inSection:0]];
+//    [cell scrollToNextItem];
+    [cell autoScroll];
+//    int targetIndex = currentIndex + 1;
+//    [self scrollToIndex:targetIndex];
+}
+
+- (int)currentIndex
+{
+    CGFloat kMaxIndex = [self.collectionView numberOfItemsInSection:0];;
+    CGFloat offset = _collectionView.contentOffset.x;
+    
+    int index = ceil(offset / (kCellWidth + kCellSpacing));
+    
+    if (index < 0)
+        index = 0;
+    if (index > kMaxIndex)
+        index = kMaxIndex;
+    return index;
 }
 
 #pragma mark UICollectionView Delegate
@@ -117,6 +166,7 @@
         layout.itemSize = CGSizeMake(self.bounds.size.width - kCellMargin*2, self.bounds.size.height - 30);
         layout.minimumInteritemSpacing = 0;
         layout.minimumLineSpacing = 8;
+        _layout = layout;
 //        layout.sectionInset = UIEdgeInsetsMake(0, kCellMargin, 0, kCellMargin);
         
         //2.初始化collectionView

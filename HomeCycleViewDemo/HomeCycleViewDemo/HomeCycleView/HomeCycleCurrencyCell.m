@@ -33,6 +33,10 @@
     _layout.itemSize = CGSizeMake(self.bounds.size.width / 2, self.bounds.size.height);
 }
 
+#pragma mark CycleCell Delegate
+- (void)autoScroll{
+    [self.collectionView scrollToNextItem];
+}
 #pragma mark UICollectionView Delegate
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
@@ -41,33 +45,6 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     CurrencyListCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass(CurrencyListCell.class) forIndexPath:indexPath];
-//    switch (indexPath.item) {
-//        case 0:
-//            cell.data = @[@[@"12",@"12",@"23",@"2222",@"111"],@[@1,@2,@3,@4,@5]];
-//            break;
-//        case 1:
-//            cell.data = @[@[@"443",@"2332",@"1233",@"5454",@"23232"],@[@111,@222,@333,@444,@555]];
-//            break;
-//        case 2:
-//            cell.data = @[@[@"144322",@"1222",@"2322",@"21222",@"111"],@[@12,@222,@3,@411,@225]];
-//            break;
-//        case 3:
-//            cell.data = @[@[@"12",@"12",@"23",@"2222",@"111"],@[@1,@2,@3,@4,@5]];
-//            break;
-//        case 4:
-//            cell.data = @[@[@"12",@"12",@"23",@"2222",@"111"],@[@1,@2,@3,@4,@5]];
-//            break;
-//        case 5:
-//            cell.data = @[@[@"12",@"12",@"23",@"2222",@"111"],@[@1,@2,@3,@4,@5]];
-//            break;
-//        case 6:
-//            cell.data = @[@[@"12",@"12",@"23",@"2222",@"111"],@[@1,@2,@3,@4,@5]];
-//            break;
-//
-//        default:
-//            cell.data = @[@[@"12",@"12",@"23",@"2222",@"111"],@[@1,@2,@3,@4,@5]];
-//            break;
-//    }
     return cell;
 }
 
