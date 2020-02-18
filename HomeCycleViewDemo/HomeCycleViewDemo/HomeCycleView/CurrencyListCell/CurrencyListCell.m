@@ -15,4 +15,19 @@
     // Initialization code
 }
 
+- (void)setModel:(HotSymbolModelData *)model{
+    _model = model;
+    
+    _symbolLabel.text = [NSString stringWithFormat:@"%@ %@",model.symbolName,model.symbol];
+    
+    CGFloat width = [_symbolLabel.text sizeWithAttributes:@{NSFontAttributeName:_symbolLabel.font}].width + 16;
+    _symbolWidth.constant = width;
+    
+    _priceLabel.text = model.price;
+    
+    _increaseLabel.text = [NSString stringWithFormat:@"%zd%%",model.increase];
+    
+    _infoLabel.text = model.info;
+}
+
 @end

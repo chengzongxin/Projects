@@ -7,10 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "HotSymbolModel.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CurrencyListCell : UICollectionViewCell
+
+@property (weak, nonatomic) IBOutlet UILabel *symbolLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *priceLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *increaseLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *infoLabel;
+
+@property (nonatomic,strong) HotSymbolModelData *model;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *symbolWidth;
 
 @end
 

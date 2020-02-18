@@ -77,6 +77,13 @@
                 <constraint firstAttribute="bottom" secondItem="Tws-7p-U48" secondAttribute="bottom" id="yKT-GK-sDt"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
+            <connections>
+                <outlet property="increaseLabel" destination="vLT-Xh-vYP" id="7Ch-3z-cGh"/>
+                <outlet property="infoLabel" destination="uwc-Mf-Nvk" id="QWv-s3-u1j"/>
+                <outlet property="priceLabel" destination="5Mv-aW-rUY" id="xri-tf-rnU"/>
+                <outlet property="symbolLabel" destination="zyX-Mm-eOc" id="1lT-qH-gX3"/>
+                <outlet property="symbolWidth" destination="odh-qd-cLe" id="wap-N0-ZBV"/>
+            </connections>
             <point key="canvasLocation" x="41.600000000000001" y="46.776611694152926"/>
         </collectionViewCell>
     </objects>

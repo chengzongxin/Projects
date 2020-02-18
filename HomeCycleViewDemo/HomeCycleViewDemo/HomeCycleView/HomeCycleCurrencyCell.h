@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface HomeCycleCurrencyCell : CycleCell
 
-//@property (nonatomic,copy) NSArray <HotSymbolModelData *>*datas;
+@property (nonatomic,copy) NSArray <HotSymbolModelData *>*datas;
 
 @end
 

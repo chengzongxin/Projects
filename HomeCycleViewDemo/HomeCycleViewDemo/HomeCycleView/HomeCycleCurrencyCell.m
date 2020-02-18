@@ -40,11 +40,12 @@
 #pragma mark UICollectionView Delegate
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return 6;
+    return self.datas.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     CurrencyListCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass(CurrencyListCell.class) forIndexPath:indexPath];
+    cell.model = self.datas[indexPath.item];
     return cell;
 }
 
