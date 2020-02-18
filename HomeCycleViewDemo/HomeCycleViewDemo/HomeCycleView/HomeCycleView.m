@@ -53,7 +53,7 @@
 {
     [self invalidateTimer]; // 创建定时器前先停止定时器，不然会出现僵尸定时器，导致轮播频率错误
     
-    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(automaticScroll) userInfo:nil repeats:YES];
+    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(automaticScroll) userInfo:nil repeats:YES];
     _timer = timer;
     [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
 }
@@ -232,7 +232,7 @@
 - (void)appendData{
     if (_diffPriceData && _hotSymbolData && _exponentData) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            self.datas = @[_diffPriceData,_hotSymbolData,_exponentData];
+            self.datas = @[self.diffPriceData,self.hotSymbolData,self.exponentData];
             
             [self.collectionView reloadData];
             

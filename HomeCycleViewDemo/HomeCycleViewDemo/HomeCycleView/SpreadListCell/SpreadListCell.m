@@ -56,6 +56,8 @@
 - (void)setModel:(DiffPriceModelData *)model{
     _model = model;
     
+    _contentlabel.text = [NSString stringWithFormat:@"币对：%@ \n最优价差：%@ 预计套利：%zd%%",model.symbolAndReference,model.diffPrice,model.interest];
+    
     NSMutableArray *titles = [NSMutableArray array];
     NSMutableArray *prices = [NSMutableArray array];
     
@@ -71,23 +73,5 @@
     [_lineChartView addPlot:_polt];
     [_lineChartView draw];
 }
-
-//- (void)setData:(id)data{
-//    _data = data;
-//    
-//    NSArray *data1 = data[0];
-//    
-//    NSArray *data2 = data[1];
-//    
-//    // filldata
-////    _lineChartView.xAxisTitleArray = @[@"12",@"12",@"23",@"2222",@"111"];
-////    _polt.pointArray = @[@1,@2,@3,@4,@5];
-//    _lineChartView.pointGap = (_lineChartView.frame.size.width - 20)/ data2.count;
-//    _lineChartView.xAxisTitleArray = data1;
-//    _polt.pointArray = data2;
-//    [_lineChartView.plots removeAllObjects];
-//    [_lineChartView addPlot:_polt];
-//    [_lineChartView draw];
-//}
 
 @end

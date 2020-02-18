@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface SpreadListCell : UICollectionViewCell
 
 @property (nonatomic,strong) DiffPriceModelData *model;
+@property (weak, nonatomic) IBOutlet UILabel *contentlabel;
 
 @end
 
