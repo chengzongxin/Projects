@@ -22,9 +22,21 @@
     HomeCycleView *cycle = [[HomeCycleView alloc] initWithFrame:CGRectMake(0, 100, UIScreen.mainScreen.bounds.size.width, 210)];
     [self.view addSubview:cycle];
     
-    [HomeViewModel request:^(__autoreleasing id * _Nonnull data) {
+    [HomeViewModel request1:^(id _Nonnull data) {
         
-    } fail:^(NSString * _Nonnull data) {
+    } fail:^(NSString * _Nonnull msg) {
+        
+    }];
+    
+    [HomeViewModel request2:^(id _Nonnull data) {
+        
+    } fail:^(NSString * _Nonnull msg) {
+        
+    }];
+    
+    [HomeViewModel request3:^(id _Nonnull data) {
+        
+    } fail:^(NSString * _Nonnull msg) {
         
     }];
     

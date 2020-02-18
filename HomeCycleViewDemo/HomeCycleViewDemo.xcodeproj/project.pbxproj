@@ -8,6 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		D80B714923FB99CC00610C3F /* CycleCellProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = D80B714823FB99CC00610C3F /* CycleCellProtocol.m */; };
+		D80B714D23FBC27000610C3F /* DiffPriceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D80B714C23FBC27000610C3F /* DiffPriceModel.m */; };
+		D80B716423FBC3CB00610C3F /* MJExtensionConst.m in Sources */ = {isa = PBXBuildFile; fileRef = D80B715123FBC3CB00610C3F /* MJExtensionConst.m */; };
+		D80B716523FBC3CB00610C3F /* MJFoundation.m in Sources */ = {isa = PBXBuildFile; fileRef = D80B715323FBC3CB00610C3F /* MJFoundation.m */; };
+		D80B716623FBC3CB00610C3F /* MJProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = D80B715523FBC3CB00610C3F /* MJProperty.m */; };
+		D80B716723FBC3CB00610C3F /* MJPropertyKey.m in Sources */ = {isa = PBXBuildFile; fileRef = D80B715723FBC3CB00610C3F /* MJPropertyKey.m */; };
+		D80B716823FBC3CB00610C3F /* MJPropertyType.m in Sources */ = {isa = PBXBuildFile; fileRef = D80B715923FBC3CB00610C3F /* MJPropertyType.m */; };
+		D80B716923FBC3CB00610C3F /* NSObject+MJClass.m in Sources */ = {isa = PBXBuildFile; fileRef = D80B715B23FBC3CB00610C3F /* NSObject+MJClass.m */; };
+		D80B716A23FBC3CB00610C3F /* NSObject+MJCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = D80B715D23FBC3CB00610C3F /* NSObject+MJCoding.m */; };
+		D80B716B23FBC3CB00610C3F /* NSObject+MJKeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = D80B715F23FBC3CB00610C3F /* NSObject+MJKeyValue.m */; };
+		D80B716C23FBC3CB00610C3F /* NSObject+MJProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = D80B716123FBC3CB00610C3F /* NSObject+MJProperty.m */; };
+		D80B716D23FBC3CB00610C3F /* NSString+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = D80B716323FBC3CB00610C3F /* NSString+MJExtension.m */; };
+		D80B717323FBC9C100610C3F /* ExponentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D80B717223FBC9C100610C3F /* ExponentModel.m */; };
+		D80B717623FBC9CC00610C3F /* HotSymbolModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D80B717523FBC9CC00610C3F /* HotSymbolModel.m */; };
 		D80EE88223F6A40B00DDDA44 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D80EE88123F6A40B00DDDA44 /* AppDelegate.m */; };
 		D80EE88523F6A40B00DDDA44 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D80EE88423F6A40B00DDDA44 /* ViewController.m */; };
 		D80EE88823F6A40B00DDDA44 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D80EE88623F6A40B00DDDA44 /* Main.storyboard */; };
@@ -61,6 +74,33 @@
 /* Begin PBXFileReference section */
 		D80B714723FB78CE00610C3F /* CycleCellProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CycleCellProtocol.h; sourceTree = "<group>"; };
 		D80B714823FB99CC00610C3F /* CycleCellProtocol.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CycleCellProtocol.m; sourceTree = "<group>"; };
+		D80B714B23FBC27000610C3F /* DiffPriceModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DiffPriceModel.h; sourceTree = "<group>"; };
+		D80B714C23FBC27000610C3F /* DiffPriceModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DiffPriceModel.m; sourceTree = "<group>"; };
+		D80B714F23FBC3CB00610C3F /* MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJExtension.h; sourceTree = "<group>"; };
+		D80B715023FBC3CB00610C3F /* MJExtensionConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJExtensionConst.h; sourceTree = "<group>"; };
+		D80B715123FBC3CB00610C3F /* MJExtensionConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJExtensionConst.m; sourceTree = "<group>"; };
+		D80B715223FBC3CB00610C3F /* MJFoundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJFoundation.h; sourceTree = "<group>"; };
+		D80B715323FBC3CB00610C3F /* MJFoundation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJFoundation.m; sourceTree = "<group>"; };
+		D80B715423FBC3CB00610C3F /* MJProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJProperty.h; sourceTree = "<group>"; };
+		D80B715523FBC3CB00610C3F /* MJProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJProperty.m; sourceTree = "<group>"; };
+		D80B715623FBC3CB00610C3F /* MJPropertyKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPropertyKey.h; sourceTree = "<group>"; };
+		D80B715723FBC3CB00610C3F /* MJPropertyKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPropertyKey.m; sourceTree = "<group>"; };
+		D80B715823FBC3CB00610C3F /* MJPropertyType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPropertyType.h; sourceTree = "<group>"; };
+		D80B715923FBC3CB00610C3F /* MJPropertyType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPropertyType.m; sourceTree = "<group>"; };
+		D80B715A23FBC3CB00610C3F /* NSObject+MJClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJClass.h"; sourceTree = "<group>"; };
+		D80B715B23FBC3CB00610C3F /* NSObject+MJClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJClass.m"; sourceTree = "<group>"; };
+		D80B715C23FBC3CB00610C3F /* NSObject+MJCoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJCoding.h"; sourceTree = "<group>"; };
+		D80B715D23FBC3CB00610C3F /* NSObject+MJCoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJCoding.m"; sourceTree = "<group>"; };
+		D80B715E23FBC3CB00610C3F /* NSObject+MJKeyValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJKeyValue.h"; sourceTree = "<group>"; };
+		D80B715F23FBC3CB00610C3F /* NSObject+MJKeyValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJKeyValue.m"; sourceTree = "<group>"; };
+		D80B716023FBC3CB00610C3F /* NSObject+MJProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJProperty.h"; sourceTree = "<group>"; };
+		D80B716123FBC3CB00610C3F /* NSObject+MJProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJProperty.m"; sourceTree = "<group>"; };
+		D80B716223FBC3CB00610C3F /* NSString+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MJExtension.h"; sourceTree = "<group>"; };
+		D80B716323FBC3CB00610C3F /* NSString+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MJExtension.m"; sourceTree = "<group>"; };
+		D80B717123FBC9C100610C3F /* ExponentModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExponentModel.h; sourceTree = "<group>"; };
+		D80B717223FBC9C100610C3F /* ExponentModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExponentModel.m; sourceTree = "<group>"; };
+		D80B717423FBC9CC00610C3F /* HotSymbolModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotSymbolModel.h; sourceTree = "<group>"; };
+		D80B717523FBC9CC00610C3F /* HotSymbolModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotSymbolModel.m; sourceTree = "<group>"; };
 		D80EE87D23F6A40B00DDDA44 /* HomeCycleViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeCycleViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D80EE88023F6A40B00DDDA44 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D80EE88123F6A40B00DDDA44 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -141,6 +181,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D80B714A23FBC10400610C3F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D80B714B23FBC27000610C3F /* DiffPriceModel.h */,
+				D80B714C23FBC27000610C3F /* DiffPriceModel.m */,
+				D80B717423FBC9CC00610C3F /* HotSymbolModel.h */,
+				D80B717523FBC9CC00610C3F /* HotSymbolModel.m */,
+				D80B717123FBC9C100610C3F /* ExponentModel.h */,
+				D80B717223FBC9C100610C3F /* ExponentModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D80B714E23FBC3CB00610C3F /* MJExtension */ = {
+			isa = PBXGroup;
+			children = (
+				D80B714F23FBC3CB00610C3F /* MJExtension.h */,
+				D80B715023FBC3CB00610C3F /* MJExtensionConst.h */,
+				D80B715123FBC3CB00610C3F /* MJExtensionConst.m */,
+				D80B715223FBC3CB00610C3F /* MJFoundation.h */,
+				D80B715323FBC3CB00610C3F /* MJFoundation.m */,
+				D80B715423FBC3CB00610C3F /* MJProperty.h */,
+				D80B715523FBC3CB00610C3F /* MJProperty.m */,
+				D80B715623FBC3CB00610C3F /* MJPropertyKey.h */,
+				D80B715723FBC3CB00610C3F /* MJPropertyKey.m */,
+				D80B715823FBC3CB00610C3F /* MJPropertyType.h */,
+				D80B715923FBC3CB00610C3F /* MJPropertyType.m */,
+				D80B715A23FBC3CB00610C3F /* NSObject+MJClass.h */,
+				D80B715B23FBC3CB00610C3F /* NSObject+MJClass.m */,
+				D80B715C23FBC3CB00610C3F /* NSObject+MJCoding.h */,
+				D80B715D23FBC3CB00610C3F /* NSObject+MJCoding.m */,
+				D80B715E23FBC3CB00610C3F /* NSObject+MJKeyValue.h */,
+				D80B715F23FBC3CB00610C3F /* NSObject+MJKeyValue.m */,
+				D80B716023FBC3CB00610C3F /* NSObject+MJProperty.h */,
+				D80B716123FBC3CB00610C3F /* NSObject+MJProperty.m */,
+				D80B716223FBC3CB00610C3F /* NSString+MJExtension.h */,
+				D80B716323FBC3CB00610C3F /* NSString+MJExtension.m */,
+			);
+			path = MJExtension;
+			sourceTree = "<group>";
+		};
 		D80EE87423F6A40B00DDDA44 = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +245,7 @@
 		D80EE87F23F6A40B00DDDA44 /* HomeCycleViewDemo */ = {
 			isa = PBXGroup;
 			children = (
+				D80B714E23FBC3CB00610C3F /* MJExtension */,
 				D80F7AA623FA435700BE5967 /* DVLineChartView */,
 				D80EE88023F6A40B00DDDA44 /* AppDelegate.h */,
 				D80EE88123F6A40B00DDDA44 /* AppDelegate.m */,
@@ -220,6 +302,7 @@
 				D80F7A8E23FA25B800BE5967 /* SpreadListCell */,
 				D80F7A8D23FA25B800BE5967 /* CurrencyListCell */,
 				D80F7A8C23FA25B800BE5967 /* IndexListCell */,
+				D80B714A23FBC10400610C3F /* Model */,
 			);
 			path = HomeCycleView;
 			sourceTree = "<group>";
@@ -413,6 +496,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D80B717323FBC9C100610C3F /* ExponentModel.m in Sources */,
 				D80EE88523F6A40B00DDDA44 /* ViewController.m in Sources */,
 				D80EE8B923F6A69F00DDDA44 /* HomeCycleSpreadCell.m in Sources */,
 				D80F7AA523FA2C8F00BE5967 /* HomeViewModel.m in Sources */,
@@ -420,17 +504,29 @@
 				D80F7ACF23FAA4AB00BE5967 /* HomePageControl.m in Sources */,
 				D80EE8C323F6A75D00DDDA44 /* HomeCycleIndexCell.m in Sources */,
 				D80EE89023F6A40D00DDDA44 /* main.m in Sources */,
+				D80B716723FBC3CB00610C3F /* MJPropertyKey.m in Sources */,
 				D80F7AB023FA435700BE5967 /* DVPlot.m in Sources */,
+				D80B716823FBC3CB00610C3F /* MJPropertyType.m in Sources */,
 				D80EE8B523F6A44900DDDA44 /* HomeCycleView.m in Sources */,
 				D80F7AB123FA435700BE5967 /* DVXAxisView.m in Sources */,
 				D80EE8BE23F6A71100DDDA44 /* HomeCycleCurrencyCell.m in Sources */,
+				D80B716B23FBC3CB00610C3F /* NSObject+MJKeyValue.m in Sources */,
 				D80F7AB223FA435700BE5967 /* DVYAxisView.m in Sources */,
 				D80B714923FB99CC00610C3F /* CycleCellProtocol.m in Sources */,
+				D80B716D23FBC3CB00610C3F /* NSString+MJExtension.m in Sources */,
 				D80F7A9223FA25D700BE5967 /* SpreadListCell.m in Sources */,
 				D80F7AB523FA470C00BE5967 /* UIView+Layout.m in Sources */,
+				D80B716523FBC3CB00610C3F /* MJFoundation.m in Sources */,
+				D80B714D23FBC27000610C3F /* DiffPriceModel.m in Sources */,
+				D80B716423FBC3CB00610C3F /* MJExtensionConst.m in Sources */,
+				D80B716A23FBC3CB00610C3F /* NSObject+MJCoding.m in Sources */,
 				D80F7A9C23FA25F300BE5967 /* IndexListCell.m in Sources */,
+				D80B716C23FBC3CB00610C3F /* NSObject+MJProperty.m in Sources */,
 				D80F7AA123FA287B00BE5967 /* CurrencyListCell.m in Sources */,
 				D80EE88223F6A40B00DDDA44 /* AppDelegate.m in Sources */,
+				D80B717623FBC9CC00610C3F /* HotSymbolModel.m in Sources */,
+				D80B716923FBC3CB00610C3F /* NSObject+MJClass.m in Sources */,
+				D80B716623FBC3CB00610C3F /* MJProperty.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
