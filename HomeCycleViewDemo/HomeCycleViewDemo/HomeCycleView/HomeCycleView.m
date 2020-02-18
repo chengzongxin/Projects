@@ -18,7 +18,7 @@
 #define kCellWidth self.bounds.size.width - (kCellMargin*2)
 #define kCellSpacing 8
 
-@interface HomeCycleView () <UICollectionViewDelegate,UICollectionViewDataSource>
+@interface HomeCycleView () <UICollectionViewDelegate,UICollectionViewDataSource,CycleCellProtocol>
 
 @property (nonatomic,strong) UICollectionView *collectionView;
 
@@ -70,11 +70,8 @@
 {
 //    if (0 == _totalItemsCount) return;
     int currentIndex = [self currentIndex];
-    UICollectionView <CycleCellProtocol> *cell = (UICollectionView <CycleCellProtocol> *)[_collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:currentIndex inSection:0]];
-//    [cell scrollToNextItem];
+    CycleCell *cell = (CycleCell *)[_collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:currentIndex inSection:0]];
     [cell autoScroll];
-//    int targetIndex = currentIndex + 1;
-//    [self scrollToIndex:targetIndex];
 }
 
 - (int)currentIndex
@@ -99,7 +96,7 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
-    UICollectionViewCell *cell;
+    CycleCell *cell;
     
     switch (indexPath.item % 3) {
         case 0:
@@ -116,6 +113,7 @@
 //    [self layer:cell.layer applyShadow:UIColor.blackColor alpha:0.1 x:0 y:5 blue:5 spread:10];
     cell.layer.cornerRadius = 12;
     cell.layer.masksToBounds = YES;
+    cell.delegate = self;
     return cell;
 }
 
@@ -149,6 +147,23 @@
     targetContentOffset->x = targetIndex * (kCellWidth + kCellSpacing) - kCellMargin;
     
     self.pageControl.currentPage = (int)targetIndex % 3;
+}
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
+    [self invalidateTimer];
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
+    [self setupTimer];
+}
+
+#pragma mark 子控件滚动
+- (void)willBeginDragging{
+    [self invalidateTimer];
+}
+
+- (void)didEndDragging{
+    [self setupTimer];
 }
 
 #pragma mark - Getter

@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -14,6 +15,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)autoScroll;
 
+- (void)willBeginDragging;
+
+- (void)didEndDragging;
+
+@end
+
+#pragma mark - 基类方法
+@interface CycleCell : UICollectionViewCell <CycleCellProtocol,UIScrollViewDelegate>
+@property (nonatomic,weak) id<CycleCellProtocol> delegate;
 @end
 
 #pragma mark - 分类方法

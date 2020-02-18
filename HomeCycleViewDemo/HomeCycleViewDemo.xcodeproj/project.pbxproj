@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D80B714923FB99CC00610C3F /* CycleCellProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = D80B714823FB99CC00610C3F /* CycleCellProtocol.m */; };
 		D80EE88223F6A40B00DDDA44 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D80EE88123F6A40B00DDDA44 /* AppDelegate.m */; };
 		D80EE88523F6A40B00DDDA44 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D80EE88423F6A40B00DDDA44 /* ViewController.m */; };
 		D80EE88823F6A40B00DDDA44 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D80EE88623F6A40B00DDDA44 /* Main.storyboard */; };
@@ -59,6 +60,7 @@
 
 /* Begin PBXFileReference section */
 		D80B714723FB78CE00610C3F /* CycleCellProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CycleCellProtocol.h; sourceTree = "<group>"; };
+		D80B714823FB99CC00610C3F /* CycleCellProtocol.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CycleCellProtocol.m; sourceTree = "<group>"; };
 		D80EE87D23F6A40B00DDDA44 /* HomeCycleViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeCycleViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D80EE88023F6A40B00DDDA44 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D80EE88123F6A40B00DDDA44 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 				D80F7ACD23FAA4AB00BE5967 /* HomePageControl.h */,
 				D80F7ACE23FAA4AB00BE5967 /* HomePageControl.m */,
 				D80B714723FB78CE00610C3F /* CycleCellProtocol.h */,
+				D80B714823FB99CC00610C3F /* CycleCellProtocol.m */,
 				D80EE8B623F6A69F00DDDA44 /* HomeCycleSpreadCell.h */,
 				D80EE8B723F6A69F00DDDA44 /* HomeCycleSpreadCell.m */,
 				D80EE8B823F6A69F00DDDA44 /* HomeCycleSpreadCell.xib */,
@@ -422,6 +425,7 @@
 				D80F7AB123FA435700BE5967 /* DVXAxisView.m in Sources */,
 				D80EE8BE23F6A71100DDDA44 /* HomeCycleCurrencyCell.m in Sources */,
 				D80F7AB223FA435700BE5967 /* DVYAxisView.m in Sources */,
+				D80B714923FB99CC00610C3F /* CycleCellProtocol.m in Sources */,
 				D80F7A9223FA25D700BE5967 /* SpreadListCell.m in Sources */,
 				D80F7AB523FA470C00BE5967 /* UIView+Layout.m in Sources */,
 				D80F7A9C23FA25F300BE5967 /* IndexListCell.m in Sources */,

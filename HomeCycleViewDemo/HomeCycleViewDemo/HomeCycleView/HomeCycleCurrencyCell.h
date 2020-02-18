@@ -10,7 +10,7 @@
 #import "CycleCellProtocol.h"
 NS_ASSUME_NONNULL_BEGIN
 
-@interface HomeCycleCurrencyCell : UICollectionViewCell<CycleCellProtocol>
+@interface HomeCycleCurrencyCell : CycleCell
 
 @end
 
