@@ -43,6 +43,7 @@
     _lineChartView.axisColor = [UIColor clearColor];
     _lineChartView.yAxisMaxValue = 100;
     _lineChartView.isScal = NO;
+    _lineChartView.backColor = UIColor.clearColor;
     _polt = [[DVPlot alloc] init];
     _polt.lineColor = HEXCOLOR(0x2AD181);
     _polt.chartViewFill = NO;

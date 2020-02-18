@@ -233,14 +233,21 @@
 
 - (void)drawLineInRect:(CGRect)rect withPlot:(DVPlot *)plot isPoint:(BOOL)isPoint {
     
-    
+    // 精度问题,先放大10000倍
+    int scale = 10000;
+    NSMutableArray *scaleValues = [NSMutableArray array];
+    for (NSNumber *value in plot.pointArray) {
+        NSNumber *scaleValue = @(value.doubleValue * scale);
+        [scaleValues addObject:scaleValue];
+    }
     
     if (isPoint) {  // 画点
         
         for (int i = 0; i < plot.pointArray.count; i++) {
             
-            NSNumber *value = plot.pointArray[i];
-            NSString *title = [self decimalwithFormat:@"0.00" floatV:ceil (value.floatValue)];
+            NSNumber *value = scaleValues[i];
+//            NSString *title = [self decimalwithFormat:@"0.00" floatV:value.floatValue];
+            NSString *title = [NSString stringWithFormat:@"%g",value.doubleValue / scale];
 
 			
 			// 判断title的值，整数或者小数
@@ -255,10 +262,10 @@
 			
             
             // 最大
-            NSNumber *max =   plot.pointArray.lastObject;
+            NSNumber *max =   scaleValues.lastObject;
             NSInteger maxPrice =ceil (max.doubleValue) ;
             // 最小
-            NSNumber *min =   plot.pointArray.firstObject;
+            NSNumber *min =   scaleValues.firstObject;
             NSInteger minPrice = ceil (min.doubleValue) ;
             //大小差价
             NSInteger amplitudePrice = maxPrice - minPrice;
@@ -319,10 +326,10 @@
         
         if (plot.isChartViewFill) { // 画线，空白处填充
             // 最大
-            NSNumber *max =   plot.pointArray.lastObject;
+            NSNumber *max =   scaleValues.lastObject;
             NSInteger maxPrice =ceil(max.doubleValue);
             // 最小
-            NSNumber *min =   plot.pointArray.firstObject;
+            NSNumber *min =   scaleValues.firstObject;
             NSInteger minPrice = ceil(min.doubleValue) ;
             //大小差价
             NSInteger amplitudePrice = maxPrice - minPrice;
@@ -346,7 +353,7 @@
             
             for (int i = 0; i < plot.pointArray.count; i++) {
                 
-                NSNumber *value = plot.pointArray[i];
+                NSNumber *value = scaleValues[i];
 				
 				if (value.floatValue < 0) {
 					value = @(0);
@@ -380,10 +387,10 @@
             NSMutableArray *pointArray = [NSMutableArray array];
             
             // 最大
-            NSNumber *max =   plot.pointArray.lastObject;
+            NSNumber *max =   scaleValues.lastObject;
             NSInteger maxPrice = ceil(max.doubleValue) ;
             // 最小
-            NSNumber *min =   plot.pointArray.firstObject;
+            NSNumber *min =   scaleValues.firstObject;
             NSInteger minPrice = ceil(min.doubleValue);
             //大小差价
             NSInteger amplitudePrice = maxPrice - minPrice;
@@ -406,12 +413,12 @@
             for (int i = 0; i < plot.pointArray.count; i++) {
                 
                 if (i < plot.pointArray.count - 1) {
-                    NSNumber *value = plot.pointArray[i+1];
+                    NSNumber *value = scaleValues[i+1];
                     // 最大
-                    NSNumber *max =   plot.pointArray.lastObject;
+                    NSNumber *max =   scaleValues.lastObject;
                     NSInteger maxPrice =ceil (max.doubleValue);
                     // 最小
-                    NSNumber *min =   plot.pointArray.firstObject;
+                    NSNumber *min =   scaleValues.firstObject;
                     NSInteger minPrice = ceil (min.doubleValue);
                     //大小差价
                     NSInteger amplitudePrice = maxPrice - minPrice;
@@ -513,9 +520,9 @@
     
     
     if (self.isPercent) {
-        [button setTitle:[NSString stringWithFormat:@"¥%@%%", title] forState:UIControlStateNormal];
+        [button setTitle:[NSString stringWithFormat:@"%@%%", title] forState:UIControlStateNormal];
     }else{
-        [button setTitle:[NSString stringWithFormat:@"¥%@",title] forState:UIControlStateNormal];
+        [button setTitle:[NSString stringWithFormat:@"%@",title] forState:UIControlStateNormal];
     }
     
     
@@ -541,10 +548,10 @@
         }
         button.width = buttonSize.width  +10;
         button.height = buttonSize.height + 3;
-        button.layer.cornerRadius = 8;
-        button.backgroundColor = [UIColor colorWithRed:39/255.0 green:69/255.0 blue:93/255.0 alpha:1.0];
+//        button.layer.cornerRadius = 8;
+//        button.backgroundColor = [UIColor colorWithRed:39/255.0 green:69/255.0 blue:93/255.0 alpha:1.0];
         button.y = location.y - button.height - 5;
-        [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [button setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
     }
     [self addSubview:button];
 }
