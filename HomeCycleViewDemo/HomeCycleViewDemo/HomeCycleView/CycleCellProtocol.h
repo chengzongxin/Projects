@@ -24,6 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark - 基类方法
 @interface CycleCell : UICollectionViewCell <CycleCellProtocol,UIScrollViewDelegate>
 @property (nonatomic,weak) id<CycleCellProtocol> delegate;
+@property (nonatomic,copy) NSArray *datas;
 @end
 
 #pragma mark - 分类方法

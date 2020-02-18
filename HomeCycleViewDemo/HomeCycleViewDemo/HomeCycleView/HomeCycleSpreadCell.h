@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DiffPriceModel.h"
 #import "CycleCellProtocol.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface HomeCycleSpreadCell : CycleCell
+
+@property (nonatomic,copy) NSArray <DiffPriceModelData *>* items;
 
 @end
 

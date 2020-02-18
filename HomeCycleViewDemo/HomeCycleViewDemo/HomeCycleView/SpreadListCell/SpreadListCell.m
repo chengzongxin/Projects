@@ -52,22 +52,41 @@
     
 }
 
-- (void)setData:(id)data{
-    _data = data;
+- (void)setModel:(DiffPriceModelData *)model{
+    _model = model;
     
-    NSArray *data1 = data[0];
+    NSMutableArray *titles = [NSMutableArray array];
+    NSMutableArray *prices = [NSMutableArray array];
     
-    NSArray *data2 = data[1];
+    for (DiffPriceModelDataSymbolCurrentPriceVOS *price in model.symbolCurrentPriceVOS) {
+        [titles addObject:price.exchange];
+        [prices addObject:@(price.price.doubleValue)];
+    }
     
-    // filldata
-//    _lineChartView.xAxisTitleArray = @[@"12",@"12",@"23",@"2222",@"111"];
-//    _polt.pointArray = @[@1,@2,@3,@4,@5];
-    _lineChartView.pointGap = (_lineChartView.frame.size.width - 20)/ data2.count;
-    _lineChartView.xAxisTitleArray = data1;
-    _polt.pointArray = data2;
+    _lineChartView.pointGap = (_lineChartView.frame.size.width - 20)/ titles.count;
+    _lineChartView.xAxisTitleArray = titles;
+    _polt.pointArray = prices;
     [_lineChartView.plots removeAllObjects];
     [_lineChartView addPlot:_polt];
     [_lineChartView draw];
 }
+
+//- (void)setData:(id)data{
+//    _data = data;
+//    
+//    NSArray *data1 = data[0];
+//    
+//    NSArray *data2 = data[1];
+//    
+//    // filldata
+////    _lineChartView.xAxisTitleArray = @[@"12",@"12",@"23",@"2222",@"111"];
+////    _polt.pointArray = @[@1,@2,@3,@4,@5];
+//    _lineChartView.pointGap = (_lineChartView.frame.size.width - 20)/ data2.count;
+//    _lineChartView.xAxisTitleArray = data1;
+//    _polt.pointArray = data2;
+//    [_lineChartView.plots removeAllObjects];
+//    [_lineChartView addPlot:_polt];
+//    [_lineChartView draw];
+//}
 
 @end

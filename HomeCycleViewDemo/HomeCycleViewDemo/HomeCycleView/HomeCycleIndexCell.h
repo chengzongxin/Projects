@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "CycleCellProtocol.h"
+#import "ExponentModel.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface HomeCycleIndexCell : CycleCell
+
+//@property (nonatomic,copy) NSArray <ExponentModelData *>*datas;
 
 @end
 

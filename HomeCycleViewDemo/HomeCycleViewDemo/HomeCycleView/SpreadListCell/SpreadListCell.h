@@ -7,12 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "DiffPriceModel.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SpreadListCell : UICollectionViewCell
 
-@property (nonatomic,strong) id data;
+@property (nonatomic,strong) DiffPriceModelData *model;
 
 @end
 

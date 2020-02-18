@@ -28,6 +28,8 @@
 
 @property (nonatomic, weak) NSTimer *timer;
 
+@property (nonatomic,copy) NSArray *datas;
+
 @end
 
 @implementation HomeCycleView
@@ -41,10 +43,6 @@
         [self addSubview:self.collectionView];
         
         [self addSubview:self.pageControl];
-        
-        [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:999 inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:NO];
-        
-        [self setupTimer];
     }
     return self;
 }
@@ -91,14 +89,14 @@
 #pragma mark UICollectionView Delegate
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return 3000;
+    return _datas.count * 1000;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
     CycleCell *cell;
-    
-    switch (indexPath.item % 3) {
+    int index = indexPath.item % 3;
+    switch (index) {
         case 0:
             cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass(HomeCycleSpreadCell.class) forIndexPath:indexPath];
             break;
@@ -114,6 +112,7 @@
     cell.layer.cornerRadius = 12;
     cell.layer.masksToBounds = YES;
     cell.delegate = self;
+    cell.datas = _datas[index];
     return cell;
 }
 
@@ -166,6 +165,11 @@
     [self setupTimer];
 }
 
+- (void)autoScroll {
+    
+}
+
+
 #pragma mark - Getter
 - (UICollectionView *)collectionView{
     if (!_collectionView) {
@@ -182,12 +186,12 @@
         layout.minimumInteritemSpacing = 0;
         layout.minimumLineSpacing = 8;
         _layout = layout;
-//        layout.sectionInset = UIEdgeInsetsMake(0, kCellMargin, 0, kCellMargin);
+        //        layout.sectionInset = UIEdgeInsetsMake(0, kCellMargin, 0, kCellMargin);
         
         //2.初始化collectionView
         _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height - 30) collectionViewLayout:layout];
         _collectionView.backgroundColor = UIColor.clearColor;
-//        _collectionView.pagingEnabled = YES;
+        //        _collectionView.pagingEnabled = YES;
         _collectionView.contentInset = UIEdgeInsetsMake(0, kCellMargin, 0, kCellMargin);
         //3.注册collectionViewCell
         //注意，此处的ReuseIdentifier 必须和 cellForItemAtIndexPath 方法中 一致 均为 cellId
@@ -210,6 +214,36 @@
     return _pageControl;
 }
 
+- (void)setDiffPriceData:(DiffPriceModelData *)diffPriceData{
+    _diffPriceData = diffPriceData;
+    [self appendData];
+}
+
+- (void)setHotSymbolData:(HotSymbolModelData *)hotSymbolData{
+    _hotSymbolData = hotSymbolData;
+    [self appendData];
+}
+
+- (void)setExponentData:(ExponentModelData *)exponentData{
+    _exponentData = exponentData;
+    [self appendData];
+}
+
+- (void)appendData{
+    if (_diffPriceData && _hotSymbolData && _exponentData) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.datas = @[_diffPriceData,_hotSymbolData,_exponentData];
+            
+            [self.collectionView reloadData];
+            
+            [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:999 inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:NO];
+            
+            [self setupTimer];
+        });
+        
+        
+    }
+}
 
 #pragma mark - NSObject
 - (void)layer:(CALayer *)layer applyShadow:(UIColor *)color alpha:(float)alpha x:(CGFloat)x y:(CGFloat)y blue:(CGFloat)blur spread:(CGFloat)spread{

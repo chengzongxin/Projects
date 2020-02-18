@@ -7,10 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "DiffPriceModel.h"
+#import "HotSymbolModel.h"
+#import "ExponentModel.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface HomeCycleView : UIView
+
+@property (nonatomic,strong) DiffPriceModelData *diffPriceData;
+
+@property (nonatomic,strong) HotSymbolModelData *hotSymbolData;
+
+@property (nonatomic,strong) ExponentModelData *exponentData;
 
 @end
 
