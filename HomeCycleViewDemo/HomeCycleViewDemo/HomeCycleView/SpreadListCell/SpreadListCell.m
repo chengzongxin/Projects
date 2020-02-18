@@ -62,6 +62,7 @@
     // filldata
 //    _lineChartView.xAxisTitleArray = @[@"12",@"12",@"23",@"2222",@"111"];
 //    _polt.pointArray = @[@1,@2,@3,@4,@5];
+    _lineChartView.pointGap = (_lineChartView.frame.size.width - 20)/ data2.count;
     _lineChartView.xAxisTitleArray = data1;
     _polt.pointArray = data2;
     [_lineChartView.plots removeAllObjects];
