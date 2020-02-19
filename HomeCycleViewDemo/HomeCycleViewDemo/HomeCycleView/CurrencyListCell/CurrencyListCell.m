@@ -25,7 +25,7 @@
     
     _priceLabel.text = model.price;
     
-    _increaseLabel.text = [NSString stringWithFormat:@"%zd%%",model.increase];
+    _increaseLabel.text = [NSString stringWithFormat:@"%0.2f%%",model.increase/100.0];
     
     _infoLabel.text = model.info;
 }

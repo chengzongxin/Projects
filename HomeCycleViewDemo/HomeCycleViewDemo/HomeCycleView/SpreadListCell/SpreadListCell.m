@@ -56,7 +56,7 @@
 - (void)setModel:(DiffPriceModelData *)model{
     _model = model;
     
-    _contentlabel.text = [NSString stringWithFormat:@"币对：%@ \n最优价差：%@ 预计套利：%zd%%",model.symbolAndReference,model.diffPrice,model.interest];
+    _contentlabel.text = [NSString stringWithFormat:@"币对：%@ \n最优价差：%@ 预计套利：%0.2f%%",model.symbolAndReference,model.diffPrice,model.interest/100.0];
     
     NSMutableArray *titles = [NSMutableArray array];
     NSMutableArray *prices = [NSMutableArray array];
