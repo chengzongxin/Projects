@@ -81,8 +81,5 @@
     return _collectionView;
 }
 
-- (void)setDatas:(NSArray *)datas{
-    [super setDatas:datas];
-}
 
 @end

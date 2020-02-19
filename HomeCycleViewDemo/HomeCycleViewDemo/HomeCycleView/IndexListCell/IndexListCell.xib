@@ -34,8 +34,8 @@
                         <color key="textColor" red="0.011764705882352941" green="0.75294117647058822" blue="0.52941176470588236" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+8.9%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="anL-7W-ttW">
-                        <rect key="frame" x="10" y="52" width="37" height="15"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+8.9%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="anL-7W-ttW">
+                        <rect key="frame" x="10" y="52" width="37" height="14.5"/>
                         <color key="backgroundColor" red="0.011764705882352941" green="0.75294117647058822" blue="0.52941176470588236" alpha="1" colorSpace="calibratedRGB"/>
                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -56,6 +56,11 @@
                 <constraint firstItem="XQi-zH-lnC" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="xbX-jb-oWa"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
+            <connections>
+                <outlet property="increaseLabel" destination="anL-7W-ttW" id="cji-PA-8xe"/>
+                <outlet property="indexLabel" destination="XQi-zH-lnC" id="sOJ-hx-O9w"/>
+                <outlet property="priceLabel" destination="D7a-08-5SY" id="GwN-m9-bcs"/>
+            </connections>
             <point key="canvasLocation" x="-118" y="138"/>
         </collectionViewCell>
     </objects>

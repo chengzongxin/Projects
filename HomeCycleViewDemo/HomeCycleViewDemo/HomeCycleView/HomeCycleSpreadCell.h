@@ -13,8 +13,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface HomeCycleSpreadCell : CycleCell
 
-@property (nonatomic,copy) NSArray <DiffPriceModelData *>* items;
-
 @end
 
 NS_ASSUME_NONNULL_END

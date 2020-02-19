@@ -41,11 +41,12 @@
 #pragma mark UICollectionView Delegate
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return 12;
+    return self.datas.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     IndexListCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass(IndexListCell.class) forIndexPath:indexPath];
+    cell.model = self.datas[indexPath.item];
     return cell;
 }
 
@@ -79,10 +80,6 @@
         _collectionView.dataSource = self;
     }
     return _collectionView;
-}
-
-- (void)setDatas:(NSArray *)datas{
-    [super setDatas:datas];
 }
 
 @end

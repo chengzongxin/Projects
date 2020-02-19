@@ -13,8 +13,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface HomeCycleIndexCell : CycleCell
 
-//@property (nonatomic,copy) NSArray <ExponentModelData *>*datas;
-
 @end
 
 NS_ASSUME_NONNULL_END

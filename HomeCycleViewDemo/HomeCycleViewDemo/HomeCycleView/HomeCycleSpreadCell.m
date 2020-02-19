@@ -41,41 +41,14 @@
 #pragma mark UICollectionView Delegate
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return _items.count;
+    return self.datas.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     SpreadListCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass(SpreadListCell.class) forIndexPath:indexPath];
     
-    cell.model = _items[indexPath.item];
+    cell.model = self.datas[indexPath.item];
     
-//    switch (indexPath.item) {
-//        case 0:
-//            cell.data = @[@[@"12",@"12",@"23",@"2222",@"111"],@[@1,@2,@3,@4,@5]];
-//            break;
-//        case 1:
-//            cell.data = @[@[@"443",@"2332",@"1233",@"5454",@"23232"],@[@111,@2222,@33333,@444,@55566]];
-//            break;
-//        case 2:
-//            cell.data = @[@[@"144322",@"1222",@"2322",@"21222",@"111"],@[@12,@222,@3,@411,@1000]];
-//            break;
-//        case 3:
-//            cell.data = @[@[@"12",@"12",@"23",@"2222",@"111"],@[@1,@2,@3,@4,@5]];
-//            break;
-//        case 4:
-//            cell.data = @[@[@"12",@"12",@"23",@"2222",@"111"],@[@1,@2,@3,@4,@5]];
-//            break;
-//        case 5:
-//            cell.data = @[@[@"12",@"12",@"23",@"2222",@"111"],@[@1,@2,@3,@4,@5]];
-//            break;
-//        case 6:
-//            cell.data = @[@[@"12",@"12",@"23",@"2222",@"111"],@[@1,@2,@3,@4,@5]];
-//            break;
-//
-//        default:
-//            cell.data = @[@[@"12",@"12",@"23",@"2222",@"111"],@[@1,@2,@3,@4,@5]];
-//            break;
-//    }
     return cell;
 }
 
@@ -111,12 +84,6 @@
         _collectionView.dataSource = self;
     }
     return _collectionView;
-}
-
-- (void)setDatas:(NSArray *)datas{
-    [super setDatas:datas];
-    
-    _items = datas;
 }
 
 @end

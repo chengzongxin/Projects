@@ -209,7 +209,6 @@
 - (HomePageControl *)pageControl{
     if (!_pageControl) {
         _pageControl = [[HomePageControl alloc] initWithFrame:CGRectMake(0, self.frame.size.height - 30, self.frame.size.width, 30)];
-        _pageControl.numberOfPages = 3;
     }
     return _pageControl;
 }
@@ -233,6 +232,8 @@
     if (_diffPriceData && _hotSymbolData && _exponentData) {
         dispatch_async(dispatch_get_main_queue(), ^{
             self.datas = @[self.diffPriceData,self.hotSymbolData,self.exponentData];
+            
+            self.pageControl.numberOfPages = self.datas.count;
             
             [self.collectionView reloadData];
             
