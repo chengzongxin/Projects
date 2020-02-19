@@ -30,6 +30,10 @@
 
 @property (nonatomic,copy) NSArray *datas;
 
+@property (nonatomic,copy) void (^diffPriceBlock)(DiffPriceModelData *model);
+@property (nonatomic,copy) void (^hotSymbolBlock)(HotSymbolModelData *model);
+@property (nonatomic,copy) void (^exponentBlock)(ExponentModelData *model);
+
 @end
 
 @implementation HomeCycleView
@@ -108,7 +112,7 @@
 //    }
 }
 
-#pragma mark - 自定义滑动位置
+#pragma mark - UIScroll Delegate 自定义滑动位置
 - (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset{
     CGFloat kMaxIndex = [self.collectionView numberOfItemsInSection:0];;
     CGFloat targetX = scrollView.contentOffset.x + velocity.x * 10.0;
@@ -152,6 +156,19 @@
 }
 
 #pragma mark 子控件滚动
+
+- (void)didSelectDiffPrice:(DiffPriceModelData *)model{
+    self.diffPriceBlock(model);
+}
+
+- (void)didSelectHotSymbolModel:(HotSymbolModelData *)model{
+    self.hotSymbolBlock(model);
+}
+
+- (void)didSelectExponentModel:(ExponentModelData *)model{
+    self.exponentBlock(model);
+}
+
 - (void)willBeginDragging{
     [self invalidateTimer];
 }
@@ -223,6 +240,12 @@
 - (void)setExponentData:(ExponentModelData *)exponentData{
     _exponentData = exponentData;
     [self appendData];
+}
+
+- (void)didSelectModel:(void (^)(DiffPriceModelData * _Nonnull))diffPriceBlock hotSymbolBlock:(void (^)(HotSymbolModelData * _Nonnull))hotSymbolBlock exponentBlock:(void (^)(ExponentModelData * _Nonnull))exponentBlock{
+    self.diffPriceBlock = diffPriceBlock;
+    self.hotSymbolBlock = hotSymbolBlock;
+    self.exponentBlock = exponentBlock;
 }
 
 - (void)appendData{

@@ -25,31 +25,30 @@
 //    NSMutableArray *dataArray = [NSMutableArray arrayWithObjects:@1,@2,@3, nil];
     
     [HomeViewModel request1:^(id _Nonnull data) {
-//        [dataArray replaceObjectAtIndex:0 withObject:data];
         cycle.diffPriceData = data;
     } fail:^(NSString * _Nonnull msg) {
         
     }];
     
     [HomeViewModel request2:^(id _Nonnull data) {
-//        [dataArray replaceObjectAtIndex:0 withObject:data];
         cycle.hotSymbolData = data;
     } fail:^(NSString * _Nonnull msg) {
         
     }];
     
     [HomeViewModel request3:^(id _Nonnull data) {
-//        [dataArray replaceObjectAtIndex:0 withObject:data];
         cycle.exponentData = data;
     } fail:^(NSString * _Nonnull msg) {
         
     }];
     
-    
-//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(8 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//
-//        cycle.datas = dataArray;
-//    });
+    [cycle didSelectModel:^(DiffPriceModelData * _Nonnull model) {
+        NSLog(@"%@",model.symbolAndReference);
+    } hotSymbolBlock:^(HotSymbolModelData * _Nonnull model) {
+        NSLog(@"%@",model.symbol);
+    } exponentBlock:^(ExponentModelData * _Nonnull model) {
+        NSLog(@"%@",model.symbolName);
+    }];
     
     
 }

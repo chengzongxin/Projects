@@ -20,6 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic,strong) ExponentModelData *exponentData;
 
+- (void)didSelectModel:(void (^)(DiffPriceModelData *model))diffPriceBlock hotSymbolBlock:(void (^)(HotSymbolModelData *model))hotSymbolBlock exponentBlock:(void (^)(ExponentModelData *model))exponentBlock;
+
 @end
 
 NS_ASSUME_NONNULL_END

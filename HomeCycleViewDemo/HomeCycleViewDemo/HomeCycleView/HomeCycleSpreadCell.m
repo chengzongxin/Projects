@@ -60,6 +60,12 @@
     return cell;
 }
 
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    if ([self.delegate respondsToSelector:@selector(didSelectDiffPrice:)]) {
+        [self.delegate didSelectDiffPrice:self.datas[indexPath.item]];
+    }
+}
+
 #pragma mark - Getter
 - (UICollectionView *)collectionView{
     if (!_collectionView) {

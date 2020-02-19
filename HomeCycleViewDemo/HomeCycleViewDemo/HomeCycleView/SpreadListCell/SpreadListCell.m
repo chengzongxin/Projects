@@ -29,6 +29,7 @@
     
     // 柱状图
     _lineChartView = [[DVLineChartView alloc] initWithFrame:CGRectMake(10, 70, UIScreen.mainScreen.bounds.size.width - 34, 110)];
+    _lineChartView.userInteractionEnabled = NO;
     [self.contentView addSubview:_lineChartView];
     _lineChartView.yAxisViewWidth = 5;
     _lineChartView.numberOfYAxisElements = 1;

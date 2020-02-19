@@ -57,6 +57,12 @@
     return cell;
 }
 
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    if ([self.delegate respondsToSelector:@selector(didSelectHotSymbolModel:)]) {
+        [self.delegate didSelectHotSymbolModel:self.datas[indexPath.item]];
+    }
+}
+
 #pragma mark - Getter
 - (UICollectionView *)collectionView{
     if (!_collectionView) {

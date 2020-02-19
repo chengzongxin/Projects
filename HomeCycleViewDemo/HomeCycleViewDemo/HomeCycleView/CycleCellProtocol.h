@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "HomeViewModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -21,6 +22,12 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)didEndDragging;
 
 - (void)scrollOver;
+
+- (void)didSelectDiffPrice:(DiffPriceModelDataSymbolCurrentPriceVOS *)model;
+
+- (void)didSelectHotSymbolModel:(HotSymbolModelData *)model;
+
+- (void)didSelectExponentModel:(ExponentModelData *)model;
 
 @end
 
