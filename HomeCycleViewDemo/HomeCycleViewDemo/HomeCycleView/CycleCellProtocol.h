@@ -13,18 +13,27 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol CycleCellProtocol <NSObject>
 
+@optional
 - (void)autoScroll;
 
 - (void)willBeginDragging;
 
 - (void)didEndDragging;
 
+- (void)scrollOver;
+
 @end
 
 #pragma mark - 基类方法
 @interface CycleCell : UICollectionViewCell <CycleCellProtocol,UIScrollViewDelegate>
+
 @property (nonatomic,weak) id<CycleCellProtocol> delegate;
+
+@property (nonatomic,assign) int scrollCount;
+
 @property (nonatomic,copy) NSArray *datas;
+
+
 @end
 
 #pragma mark - 分类方法
@@ -59,6 +68,20 @@ NS_ASSUME_NONNULL_BEGIN
     
 //    int index = ceil(offset / (kCellWidth + kCellSpacing));
     int index = ceil(offset / self.bounds.size.width);
+    
+    if (index < 0)
+        index = 0;
+    if (index > kMaxIndex)
+        index = kMaxIndex;
+    return index;
+}
+
+- (int)currentIndexWithCellWidth:(CGFloat)cellWidth cellSpace:(CGFloat)cellSpace
+{
+    CGFloat kMaxIndex = [self numberOfItemsInSection:0];;
+    CGFloat offset = self.contentOffset.x;
+    
+    int index = ceil(offset / (cellWidth + cellSpace));
     
     if (index < 0)
         index = 0;

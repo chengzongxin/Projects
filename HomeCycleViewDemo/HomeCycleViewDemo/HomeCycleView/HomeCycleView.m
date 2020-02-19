@@ -53,7 +53,7 @@
 {
     [self invalidateTimer]; // 创建定时器前先停止定时器，不然会出现僵尸定时器，导致轮播频率错误
     
-    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(automaticScroll) userInfo:nil repeats:YES];
+    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(automaticScroll) userInfo:nil repeats:YES];
     _timer = timer;
     [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
 }
@@ -67,23 +67,9 @@
 - (void)automaticScroll
 {
 //    if (0 == _totalItemsCount) return;
-    int currentIndex = [self currentIndex];
+    int currentIndex = [self.collectionView currentIndexWithCellWidth:kCellWidth cellSpace:kCellSpacing];
     CycleCell *cell = (CycleCell *)[_collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:currentIndex inSection:0]];
     [cell autoScroll];
-}
-
-- (int)currentIndex
-{
-    CGFloat kMaxIndex = [self.collectionView numberOfItemsInSection:0];;
-    CGFloat offset = _collectionView.contentOffset.x;
-    
-    int index = ceil(offset / (kCellWidth + kCellSpacing));
-    
-    if (index < 0)
-        index = 0;
-    if (index > kMaxIndex)
-        index = kMaxIndex;
-    return index;
 }
 
 #pragma mark UICollectionView Delegate
@@ -165,10 +151,12 @@
     [self setupTimer];
 }
 
-- (void)autoScroll {
-    
+- (void)scrollOver{
+    // 滑到下一个位置
+    int targetIndex = [self.collectionView currentIndexWithCellWidth:kCellWidth cellSpace:kCellSpacing] + 1;
+    [self.collectionView scrollToIndex:targetIndex];
+    self.pageControl.currentPage = (int)targetIndex % 3;
 }
-
 
 #pragma mark - Getter
 - (UICollectionView *)collectionView{

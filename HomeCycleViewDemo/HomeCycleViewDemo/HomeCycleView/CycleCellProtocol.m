@@ -23,6 +23,9 @@
     
 }
 
+- (void)scrollOver{
+    
+}
 
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{

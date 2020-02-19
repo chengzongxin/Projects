@@ -35,7 +35,15 @@
 
 #pragma mark CycleCell Delegate
 - (void)autoScroll{
+    if (self.scrollCount >= (self.datas.count / 2) * 2) {
+        self.scrollCount = 0;
+        if ([self.delegate respondsToSelector:@selector(scrollOver)]) {
+            [self.delegate scrollOver];
+            return;
+        }
+    }
     [self.collectionView scrollToNextItem];
+    self.scrollCount++;
 }
 #pragma mark UICollectionView Delegate
 
