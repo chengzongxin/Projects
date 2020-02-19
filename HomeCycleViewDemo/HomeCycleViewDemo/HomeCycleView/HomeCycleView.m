@@ -114,6 +114,15 @@
     CGFloat targetX = scrollView.contentOffset.x + velocity.x * 10.0;
     NSLog(@"%f,%f",velocity.x,scrollView.contentOffset.x);
     
+    // 滑动一点点的时候
+//    BOOL scroll = (int)targetX % (int)scrollView.frame.size.width > scrollView.frame.size.width/2;
+//    if (!scroll) {
+//        int index = [self.collectionView currentIndexWithCellWidth:kCellWidth cellSpace:kCellSpacing];
+//        targetContentOffset->x = index * (kCellWidth + kCellSpacing) - kCellMargin;
+//        self.pageControl.currentPage = index % 3;
+//        return;
+//    }
+    
     CGFloat targetIndex;
     
     if (velocity.x > 0) {
