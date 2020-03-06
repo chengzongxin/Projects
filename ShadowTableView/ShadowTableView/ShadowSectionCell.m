@@ -8,6 +8,8 @@
 
 #import "ShadowSectionCell.h"
 
+static CGFloat const inset = 5;
+
 @implementation ShadowSectionCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
@@ -40,7 +42,7 @@
     
     shadow.shadowOffset=CGSizeMake(0,0);
     
-    shadow.shadowOpacity=0.20;
+    shadow.shadowOpacity=0.10;
     
     [bgView.layer addSublayer:shadow];
     
@@ -66,37 +68,37 @@
     
     
     
-    if(self.indexPath.row==0 && self.indexPath.section==1) {//单组单行
+    if([self getNumberOfRowInCurrentCell] == 1) {//单组单行
         
         self.bgView.clipsToBounds=NO;
         
         self.bgView.frame=self.bounds;
         
-        CGRect rect = UIEdgeInsetsInsetRect(self.bgView.bounds, UIEdgeInsetsMake(0, 20, 0, 20));
+        CGRect rect = UIEdgeInsetsInsetRect(self.bgView.bounds, UIEdgeInsetsMake(0, inset, 0, inset));
         
         bgBezierPath = [UIBezierPath bezierPathWithRoundedRect:rect byRoundingCorners:UIRectCornerAllCorners cornerRadii:CGSizeMake(cornerRaduis, cornerRaduis)];
         
         
         
-    }else if(self.indexPath.row==0) {// 第一行
+    }else if(self.indexPath.row == 0) {// 第一行
         
         self.bgView.clipsToBounds=YES;
         
         self.bgView.frame = UIEdgeInsetsInsetRect(self.bounds, UIEdgeInsetsMake(-5, 0, 0, 0));
         
-        CGRect rect = UIEdgeInsetsInsetRect(self.bgView.bounds, UIEdgeInsetsMake(5, 20, 0, 20));
+        CGRect rect = UIEdgeInsetsInsetRect(self.bgView.bounds, UIEdgeInsetsMake(5, inset, 0, inset));
         
         bgBezierPath = [UIBezierPath bezierPathWithRoundedRect:rect byRoundingCorners:(UIRectCornerTopLeft|UIRectCornerTopRight) cornerRadii:CGSizeMake(cornerRaduis, cornerRaduis)];
         
         
         
-    }else if(self.indexPath.row==self.indexPath.section-1) {// 最后一行
+    }else if(self.indexPath.row == [self getNumberOfRowInCurrentCell]-1) {// 最后一行
         
         self.bgView.clipsToBounds=YES;
         
         self.bgView.frame = UIEdgeInsetsInsetRect(self.bounds, UIEdgeInsetsMake(0, 0, -5, 0));
         
-        CGRect rect = UIEdgeInsetsInsetRect(self.bgView.bounds, UIEdgeInsetsMake(0, 20, 5, 20));
+        CGRect rect = UIEdgeInsetsInsetRect(self.bgView.bounds, UIEdgeInsetsMake(0, inset, 5, inset));
         
         bgBezierPath = [UIBezierPath bezierPathWithRoundedRect:rect byRoundingCorners:(UIRectCornerBottomLeft|UIRectCornerBottomRight)  cornerRadii:CGSizeMake(cornerRaduis, cornerRaduis)];
         
@@ -108,7 +110,7 @@
         
         self.bgView.frame = UIEdgeInsetsInsetRect(self.bounds, UIEdgeInsetsMake(0, 0, 0, 0));
         
-        CGRect rect = UIEdgeInsetsInsetRect(self.bgView.bounds, UIEdgeInsetsMake(0, 20, 0, 20));
+        CGRect rect = UIEdgeInsetsInsetRect(self.bgView.bounds, UIEdgeInsetsMake(0, inset, 0, inset));
         
         bgBezierPath = [UIBezierPath bezierPathWithRect:rect];
         
@@ -137,6 +139,23 @@
     }
     
 }
+
+
+- (UITableView *)getTableView{
+    UIView *view = [self superview];
+    
+    while (view && [view isKindOfClass:[UITableView class]] == NO) {
+        view = [view superview];
+    }
+    
+    UITableView *tableView = (UITableView *)view;
+    return tableView;
+}
+
+- (NSInteger)getNumberOfRowInCurrentCell{
+    return [[self getTableView] numberOfRowsInSection:self.indexPath.section];
+}
+
 @end
 
 
