@@ -26,6 +26,11 @@
 		D82E47712415FCAD00D2D23D /* ChoiceCoinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D82E47672415FCAD00D2D23D /* ChoiceCoinViewController.m */; };
 		D82E47742415FCC700D2D23D /* FlashExchangeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D82E47732415FCC700D2D23D /* FlashExchangeViewController.m */; };
 		D82E47772416095F00D2D23D /* ExchangeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D82E47762416095F00D2D23D /* ExchangeButton.m */; };
+		D82E477A2416266B00D2D23D /* ChooseSymbolView.m in Sources */ = {isa = PBXBuildFile; fileRef = D82E47792416266B00D2D23D /* ChooseSymbolView.m */; };
+		D82E477E24162AD300D2D23D /* ChooseSymbolCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D82E477C24162AD300D2D23D /* ChooseSymbolCell.m */; };
+		D82E477F24162AD300D2D23D /* ChooseSymbolCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D82E477D24162AD300D2D23D /* ChooseSymbolCell.xib */; };
+		D82E47822416397700D2D23D /* ExchangePromptView.m in Sources */ = {isa = PBXBuildFile; fileRef = D82E47812416397700D2D23D /* ExchangePromptView.m */; };
+		D82E47842416398E00D2D23D /* ExchangePromptView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D82E47832416398E00D2D23D /* ExchangePromptView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +87,14 @@
 		D82E47732415FCC700D2D23D /* FlashExchangeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlashExchangeViewController.m; sourceTree = "<group>"; };
 		D82E47752416095F00D2D23D /* ExchangeButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExchangeButton.h; sourceTree = "<group>"; };
 		D82E47762416095F00D2D23D /* ExchangeButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExchangeButton.m; sourceTree = "<group>"; };
+		D82E47782416266B00D2D23D /* ChooseSymbolView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChooseSymbolView.h; sourceTree = "<group>"; };
+		D82E47792416266B00D2D23D /* ChooseSymbolView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChooseSymbolView.m; sourceTree = "<group>"; };
+		D82E477B24162AD300D2D23D /* ChooseSymbolCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChooseSymbolCell.h; sourceTree = "<group>"; };
+		D82E477C24162AD300D2D23D /* ChooseSymbolCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChooseSymbolCell.m; sourceTree = "<group>"; };
+		D82E477D24162AD300D2D23D /* ChooseSymbolCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseSymbolCell.xib; sourceTree = "<group>"; };
+		D82E47802416397700D2D23D /* ExchangePromptView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExchangePromptView.h; sourceTree = "<group>"; };
+		D82E47812416397700D2D23D /* ExchangePromptView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExchangePromptView.m; sourceTree = "<group>"; };
+		D82E47832416398E00D2D23D /* ExchangePromptView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExchangePromptView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,8 +214,16 @@
 			children = (
 				D82E47722415FCC700D2D23D /* FlashExchangeViewController.h */,
 				D82E47732415FCC700D2D23D /* FlashExchangeViewController.m */,
+				D82E47782416266B00D2D23D /* ChooseSymbolView.h */,
+				D82E47792416266B00D2D23D /* ChooseSymbolView.m */,
+				D82E477B24162AD300D2D23D /* ChooseSymbolCell.h */,
+				D82E477C24162AD300D2D23D /* ChooseSymbolCell.m */,
+				D82E477D24162AD300D2D23D /* ChooseSymbolCell.xib */,
 				D82E47752416095F00D2D23D /* ExchangeButton.h */,
 				D82E47762416095F00D2D23D /* ExchangeButton.m */,
+				D82E47802416397700D2D23D /* ExchangePromptView.h */,
+				D82E47812416397700D2D23D /* ExchangePromptView.m */,
+				D82E47832416398E00D2D23D /* ExchangePromptView.xib */,
 			);
 			path = "FlashExchange(闪兑)";
 			sourceTree = "<group>";
@@ -312,6 +333,8 @@
 			files = (
 				59F12FBE23CD9EF80062371F /* LaunchScreen.storyboard in Resources */,
 				59F12FBB23CD9EF80062371F /* Assets.xcassets in Resources */,
+				D82E47842416398E00D2D23D /* ExchangePromptView.xib in Resources */,
+				D82E477F24162AD300D2D23D /* ChooseSymbolCell.xib in Resources */,
 				D82E476F2415FCAD00D2D23D /* CoinChoiceCell.xib in Resources */,
 				D82E476C2415FCAD00D2D23D /* ChargeHistoryCell.xib in Resources */,
 				59F12FB923CD9EF60062371F /* Main.storyboard in Resources */,
@@ -340,16 +363,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				D82E47712415FCAD00D2D23D /* ChoiceCoinViewController.m in Sources */,
+				D82E47822416397700D2D23D /* ExchangePromptView.m in Sources */,
 				D82E476B2415FCAD00D2D23D /* ChargeHistoryCell.m in Sources */,
 				D82E47742415FCC700D2D23D /* FlashExchangeViewController.m in Sources */,
 				D82E476D2415FCAD00D2D23D /* ChargeHistoryViewController.m in Sources */,
 				D82E476A2415FCAD00D2D23D /* ChargeDetailViewController.m in Sources */,
 				59F12FB623CD9EF60062371F /* ViewController.m in Sources */,
 				D82E47772416095F00D2D23D /* ExchangeButton.m in Sources */,
+				D82E477A2416266B00D2D23D /* ChooseSymbolView.m in Sources */,
 				D82E47702415FCAD00D2D23D /* SearchTextField.m in Sources */,
 				59F12FC123CD9EF80062371F /* main.m in Sources */,
 				59F12FB323CD9EF60062371F /* AppDelegate.m in Sources */,
 				D82E47692415FCAD00D2D23D /* ChargeCoinViewController.m in Sources */,
+				D82E477E24162AD300D2D23D /* ChooseSymbolCell.m in Sources */,
 				D82E476E2415FCAD00D2D23D /* CoinChoiceCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

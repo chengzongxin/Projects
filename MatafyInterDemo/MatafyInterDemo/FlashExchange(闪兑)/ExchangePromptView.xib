@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ExchangePromptView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yEA-sY-NQu">
+                    <rect key="frame" x="42" y="218.5" width="291" height="230"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="提示" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nHZ-nQ-Maf">
+                            <rect key="frame" x="129" y="18" width="33" height="20"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                            <color key="textColor" red="0.0" green="0.76470588240000004" blue="0.80784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wMF-1k-SBZ">
+                            <rect key="frame" x="25" y="45" width="249" height="143"/>
+                            <attributedString key="attributedText">
+                                <fragment content="实时兑换汇率取决于国内外各大交易所的相对格，兑换所得币数量会根据实时的价格而有所波动，且交易上链后还需支付矿工费，请以最终收到的数量为准，兑换预计耗时">
+                                    <attributes>
+                                        <color key="NSColor" red="0.68235294117647061" green="0.70980392156862748" blue="0.77647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <font key="NSFont" size="15" name=".PingFangSC-Regular"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="10" minimumLineHeight="3" tighteningFactorForTruncation="0.0"/>
+                                    </attributes>
+                                </fragment>
+                                <fragment content="5~30">
+                                    <attributes>
+                                        <color key="NSColor" red="0.68235294117647061" green="0.70980392156862748" blue="0.77647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <font key="NSFont" metaFont="system" size="15"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="10" minimumLineHeight="3" tighteningFactorForTruncation="0.0"/>
+                                    </attributes>
+                                </fragment>
+                                <fragment content="分钟。">
+                                    <attributes>
+                                        <color key="NSColor" red="0.68235294117647061" green="0.70980392156862748" blue="0.77647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <font key="NSFont" size="15" name=".PingFangSC-Regular"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="10" minimumLineHeight="3" tighteningFactorForTruncation="0.0"/>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="nHZ-nQ-Maf" firstAttribute="centerX" secondItem="yEA-sY-NQu" secondAttribute="centerX" id="ShK-9K-bzH"/>
+                        <constraint firstItem="nHZ-nQ-Maf" firstAttribute="top" secondItem="yEA-sY-NQu" secondAttribute="top" constant="18" id="e99-ZP-hLh"/>
+                        <constraint firstAttribute="height" constant="230" id="klq-7A-IVH"/>
+                        <constraint firstItem="wMF-1k-SBZ" firstAttribute="leading" secondItem="yEA-sY-NQu" secondAttribute="leading" constant="25" id="oMv-Pm-glL"/>
+                        <constraint firstItem="wMF-1k-SBZ" firstAttribute="top" secondItem="nHZ-nQ-Maf" secondAttribute="bottom" constant="7" id="tLn-39-EJs"/>
+                        <constraint firstAttribute="trailing" secondItem="wMF-1k-SBZ" secondAttribute="trailing" constant="17" id="xgH-vD-xh4"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="14"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.035294117647058823" green="0.039215686274509803" blue="0.082352941176470587" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="yEA-sY-NQu" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="42" id="L8J-mT-P7F"/>
+                <constraint firstItem="yEA-sY-NQu" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Trr-kV-Lxq"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="yEA-sY-NQu" secondAttribute="trailing" constant="42" id="pnf-yh-pPl"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+        </view>
+    </objects>
+</document>

@@ -71,6 +71,9 @@
                                             <constraint firstAttribute="height" constant="22" id="dfy-ZO-qyk"/>
                                         </constraints>
                                         <state key="normal" image="exchange_sd_btn_01"/>
+                                        <connections>
+                                            <action selector="symbolChooseButtonClick:" destination="jBs-eC-h2W" eventType="touchUpInside" id="jEd-KB-tGN"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="卖出" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BLJ-CO-RoM">
                                         <rect key="frame" x="106" y="23" width="25" height="14.5"/>
@@ -106,6 +109,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LEb-QR-Xv8">
                                         <rect key="frame" x="75" y="130" width="10" height="22"/>
                                         <state key="normal" image="exchange_sd_btn_01"/>
+                                        <connections>
+                                            <action selector="referenceChooseButtonClick:" destination="jBs-eC-h2W" eventType="touchUpInside" id="iA0-EX-cup"/>
+                                        </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="exchange_ICON_ETH2备份" translatesAutoresizingMaskIntoConstraints="NO" id="VHs-Ze-dnD">
                                         <rect key="frame" x="24" y="126" width="30" height="30"/>
@@ -163,6 +169,9 @@
                                                     <constraint firstAttribute="width" constant="22" id="Xfu-Ct-iE9"/>
                                                 </constraints>
                                                 <state key="normal" image="exchange_sd_icon_02"/>
+                                                <connections>
+                                                    <action selector="exchangeRateButtonClick:" destination="jBs-eC-h2W" eventType="touchUpInside" id="sxb-Xe-ued"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 BTC ≈ 56.46465889 ETH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Hg-QQ-cWx">
                                                 <rect key="frame" x="86" y="20.5" width="209" height="17"/>
@@ -271,8 +280,10 @@
                     </view>
                     <connections>
                         <outlet property="bottonReferenceCons" destination="Zi2-fR-N3k" id="Z23-co-Mgu"/>
+                        <outlet property="referenceChooseButton" destination="LEb-QR-Xv8" id="VYO-Y2-jnl"/>
                         <outlet property="referenceImageView" destination="VHs-Ze-dnD" id="cvc-rd-hxy"/>
                         <outlet property="referenceLabel" destination="BzF-oQ-ZYp" id="hZE-Yu-h69"/>
+                        <outlet property="symbolChooseButton" destination="qZ5-TX-P6V" id="YK3-DR-x0p"/>
                         <outlet property="symbolImageView" destination="ifK-IO-0mL" id="rW0-Um-jv7"/>
                         <outlet property="symbolLabel" destination="51H-15-Fyt" id="N7Q-t2-OW9"/>
                         <outlet property="topSymbolCons" destination="Qve-5d-4Ku" id="LZa-Yt-qg4"/>

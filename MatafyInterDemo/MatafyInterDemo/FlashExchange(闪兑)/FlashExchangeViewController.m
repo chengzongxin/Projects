@@ -7,6 +7,8 @@
 //
 
 #import "FlashExchangeViewController.h"
+#import "ChooseSymbolView.h"
+#import "ExchangePromptView.h"
 
 @interface FlashExchangeViewController ()
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topSymbolCons;
@@ -17,6 +19,9 @@
 @property (weak, nonatomic) IBOutlet UIImageView *referenceImageView;
 @property (weak, nonatomic) IBOutlet UILabel *referenceLabel;
 
+@property (weak, nonatomic) IBOutlet UIButton *symbolChooseButton;
+@property (weak, nonatomic) IBOutlet UIButton *referenceChooseButton;
+
 @end
 
 @implementation FlashExchangeViewController
@@ -26,6 +31,8 @@
     // Do any additional setup after loading the view.
 }
 
+
+#pragma mark - Actions
 - (IBAction)exchangeParityButtonClick:(UIButton *)sender {
     NSLog(@"%s",__func__);
     sender.selected = !sender.selected;
@@ -38,6 +45,20 @@
     } completion:^(BOOL finished) {
         
     }];
+}
+
+- (IBAction)symbolChooseButtonClick:(id)sender {
+    ChooseSymbolView *choose = ChooseSymbolView.new;
+    [choose show];
+}
+
+- (IBAction)referenceChooseButtonClick:(id)sender {
+    ChooseSymbolView *choose = ChooseSymbolView.new;
+    [choose show];
+}
+
+- (IBAction)exchangeRateButtonClick:(id)sender {
+    [ExchangePromptView show];
 }
 
 
