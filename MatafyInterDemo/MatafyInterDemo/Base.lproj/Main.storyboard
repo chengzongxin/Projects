@@ -84,9 +84,12 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r7k-ql-LcA">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r7k-ql-LcA" customClass="ExchangeButton">
                                         <rect key="frame" x="19.5" y="84.5" width="306" height="37"/>
                                         <state key="normal" image="exchange_sd_btn_02"/>
+                                        <connections>
+                                            <action selector="exchangeParityButtonClick:" destination="jBs-eC-h2W" eventType="touchUpInside" id="djo-8V-F3M"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="卖出" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebH-8R-a3h">
                                         <rect key="frame" x="106" y="129" width="25" height="14.5"/>
@@ -266,6 +269,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4r5-Ey-Jxf"/>
                     </view>
+                    <connections>
+                        <outlet property="bottonReferenceCons" destination="Zi2-fR-N3k" id="Z23-co-Mgu"/>
+                        <outlet property="referenceImageView" destination="VHs-Ze-dnD" id="cvc-rd-hxy"/>
+                        <outlet property="referenceLabel" destination="BzF-oQ-ZYp" id="hZE-Yu-h69"/>
+                        <outlet property="symbolImageView" destination="ifK-IO-0mL" id="rW0-Um-jv7"/>
+                        <outlet property="symbolLabel" destination="51H-15-Fyt" id="N7Q-t2-OW9"/>
+                        <outlet property="topSymbolCons" destination="Qve-5d-4Ku" id="LZa-Yt-qg4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TR5-Du-PcA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
