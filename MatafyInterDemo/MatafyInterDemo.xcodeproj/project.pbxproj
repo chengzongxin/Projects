@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5971D18F23CDBE91009AAA4E /* ChargeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5971D18E23CDBE91009AAA4E /* ChargeDetailViewController.m */; };
 		59F12FB323CD9EF60062371F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F12FB223CD9EF60062371F /* AppDelegate.m */; };
 		59F12FB623CD9EF60062371F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F12FB523CD9EF60062371F /* ViewController.m */; };
 		59F12FB923CD9EF60062371F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59F12FB723CD9EF60062371F /* Main.storyboard */; };
@@ -16,14 +15,16 @@
 		59F12FC123CD9EF80062371F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F12FC023CD9EF80062371F /* main.m */; };
 		59F12FCB23CD9EF80062371F /* MatafyInterDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F12FCA23CD9EF80062371F /* MatafyInterDemoTests.m */; };
 		59F12FD623CD9EF80062371F /* MatafyInterDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F12FD523CD9EF80062371F /* MatafyInterDemoUITests.m */; };
-		59F12FE523CDA5DA0062371F /* ChargeCoinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F12FE423CDA5DA0062371F /* ChargeCoinViewController.m */; };
-		59F12FE823CDA8D60062371F /* ChoiceCoinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F12FE723CDA8D60062371F /* ChoiceCoinViewController.m */; };
-		59F12FEB23CDAA4A0062371F /* SearchTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F12FEA23CDAA490062371F /* SearchTextField.m */; };
-		59F12FEF23CDAE420062371F /* CoinChoiceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F12FED23CDAE420062371F /* CoinChoiceCell.m */; };
-		59F12FF023CDAE420062371F /* CoinChoiceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59F12FEE23CDAE420062371F /* CoinChoiceCell.xib */; };
-		59F12FF423CDB2CF0062371F /* ChargeHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F12FF323CDB2CF0062371F /* ChargeHistoryViewController.m */; };
-		59F12FF823CDB8130062371F /* ChargeHistoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F12FF623CDB8130062371F /* ChargeHistoryCell.m */; };
-		59F12FF923CDB8130062371F /* ChargeHistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59F12FF723CDB8130062371F /* ChargeHistoryCell.xib */; };
+		D82E47692415FCAD00D2D23D /* ChargeCoinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D82E47582415FCAD00D2D23D /* ChargeCoinViewController.m */; };
+		D82E476A2415FCAD00D2D23D /* ChargeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D82E475A2415FCAD00D2D23D /* ChargeDetailViewController.m */; };
+		D82E476B2415FCAD00D2D23D /* ChargeHistoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D82E475C2415FCAD00D2D23D /* ChargeHistoryCell.m */; };
+		D82E476C2415FCAD00D2D23D /* ChargeHistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D82E475D2415FCAD00D2D23D /* ChargeHistoryCell.xib */; };
+		D82E476D2415FCAD00D2D23D /* ChargeHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D82E475F2415FCAD00D2D23D /* ChargeHistoryViewController.m */; };
+		D82E476E2415FCAD00D2D23D /* CoinChoiceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D82E47622415FCAD00D2D23D /* CoinChoiceCell.m */; };
+		D82E476F2415FCAD00D2D23D /* CoinChoiceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D82E47632415FCAD00D2D23D /* CoinChoiceCell.xib */; };
+		D82E47702415FCAD00D2D23D /* SearchTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = D82E47652415FCAD00D2D23D /* SearchTextField.m */; };
+		D82E47712415FCAD00D2D23D /* ChoiceCoinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D82E47672415FCAD00D2D23D /* ChoiceCoinViewController.m */; };
+		D82E47742415FCC700D2D23D /* FlashExchangeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D82E47732415FCC700D2D23D /* FlashExchangeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,8 +45,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5971D18D23CDBE91009AAA4E /* ChargeDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChargeDetailViewController.h; sourceTree = "<group>"; };
-		5971D18E23CDBE91009AAA4E /* ChargeDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChargeDetailViewController.m; sourceTree = "<group>"; };
 		59F12FAE23CD9EF60062371F /* MatafyInterDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MatafyInterDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59F12FB123CD9EF60062371F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		59F12FB223CD9EF60062371F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -62,20 +61,24 @@
 		59F12FD123CD9EF80062371F /* MatafyInterDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MatafyInterDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		59F12FD523CD9EF80062371F /* MatafyInterDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MatafyInterDemoUITests.m; sourceTree = "<group>"; };
 		59F12FD723CD9EF80062371F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		59F12FE323CDA5DA0062371F /* ChargeCoinViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChargeCoinViewController.h; sourceTree = "<group>"; };
-		59F12FE423CDA5DA0062371F /* ChargeCoinViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChargeCoinViewController.m; sourceTree = "<group>"; };
-		59F12FE623CDA8D60062371F /* ChoiceCoinViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChoiceCoinViewController.h; sourceTree = "<group>"; };
-		59F12FE723CDA8D60062371F /* ChoiceCoinViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChoiceCoinViewController.m; sourceTree = "<group>"; };
-		59F12FE923CDAA490062371F /* SearchTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchTextField.h; sourceTree = "<group>"; };
-		59F12FEA23CDAA490062371F /* SearchTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchTextField.m; sourceTree = "<group>"; };
-		59F12FEC23CDAE420062371F /* CoinChoiceCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoinChoiceCell.h; sourceTree = "<group>"; };
-		59F12FED23CDAE420062371F /* CoinChoiceCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoinChoiceCell.m; sourceTree = "<group>"; };
-		59F12FEE23CDAE420062371F /* CoinChoiceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoinChoiceCell.xib; sourceTree = "<group>"; };
-		59F12FF223CDB2CF0062371F /* ChargeHistoryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChargeHistoryViewController.h; sourceTree = "<group>"; };
-		59F12FF323CDB2CF0062371F /* ChargeHistoryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChargeHistoryViewController.m; sourceTree = "<group>"; };
-		59F12FF523CDB8130062371F /* ChargeHistoryCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChargeHistoryCell.h; sourceTree = "<group>"; };
-		59F12FF623CDB8130062371F /* ChargeHistoryCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChargeHistoryCell.m; sourceTree = "<group>"; };
-		59F12FF723CDB8130062371F /* ChargeHistoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChargeHistoryCell.xib; sourceTree = "<group>"; };
+		D82E47572415FCAD00D2D23D /* ChargeCoinViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChargeCoinViewController.h; sourceTree = "<group>"; };
+		D82E47582415FCAD00D2D23D /* ChargeCoinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChargeCoinViewController.m; sourceTree = "<group>"; };
+		D82E47592415FCAD00D2D23D /* ChargeDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChargeDetailViewController.h; sourceTree = "<group>"; };
+		D82E475A2415FCAD00D2D23D /* ChargeDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChargeDetailViewController.m; sourceTree = "<group>"; };
+		D82E475B2415FCAD00D2D23D /* ChargeHistoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChargeHistoryCell.h; sourceTree = "<group>"; };
+		D82E475C2415FCAD00D2D23D /* ChargeHistoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChargeHistoryCell.m; sourceTree = "<group>"; };
+		D82E475D2415FCAD00D2D23D /* ChargeHistoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChargeHistoryCell.xib; sourceTree = "<group>"; };
+		D82E475E2415FCAD00D2D23D /* ChargeHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChargeHistoryViewController.h; sourceTree = "<group>"; };
+		D82E475F2415FCAD00D2D23D /* ChargeHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChargeHistoryViewController.m; sourceTree = "<group>"; };
+		D82E47612415FCAD00D2D23D /* CoinChoiceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoinChoiceCell.h; sourceTree = "<group>"; };
+		D82E47622415FCAD00D2D23D /* CoinChoiceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoinChoiceCell.m; sourceTree = "<group>"; };
+		D82E47632415FCAD00D2D23D /* CoinChoiceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CoinChoiceCell.xib; sourceTree = "<group>"; };
+		D82E47642415FCAD00D2D23D /* SearchTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchTextField.h; sourceTree = "<group>"; };
+		D82E47652415FCAD00D2D23D /* SearchTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchTextField.m; sourceTree = "<group>"; };
+		D82E47662415FCAD00D2D23D /* ChoiceCoinViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChoiceCoinViewController.h; sourceTree = "<group>"; };
+		D82E47672415FCAD00D2D23D /* ChoiceCoinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChoiceCoinViewController.m; sourceTree = "<group>"; };
+		D82E47722415FCC700D2D23D /* FlashExchangeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlashExchangeViewController.h; sourceTree = "<group>"; };
+		D82E47732415FCC700D2D23D /* FlashExchangeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlashExchangeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,18 +133,8 @@
 				59F12FB223CD9EF60062371F /* AppDelegate.m */,
 				59F12FB423CD9EF60062371F /* ViewController.h */,
 				59F12FB523CD9EF60062371F /* ViewController.m */,
-				59F12FE323CDA5DA0062371F /* ChargeCoinViewController.h */,
-				59F12FE423CDA5DA0062371F /* ChargeCoinViewController.m */,
-				59F12FE623CDA8D60062371F /* ChoiceCoinViewController.h */,
-				59F12FE723CDA8D60062371F /* ChoiceCoinViewController.m */,
-				59F12FF223CDB2CF0062371F /* ChargeHistoryViewController.h */,
-				59F12FF323CDB2CF0062371F /* ChargeHistoryViewController.m */,
-				5971D18D23CDBE91009AAA4E /* ChargeDetailViewController.h */,
-				5971D18E23CDBE91009AAA4E /* ChargeDetailViewController.m */,
-				59F12FF523CDB8130062371F /* ChargeHistoryCell.h */,
-				59F12FF623CDB8130062371F /* ChargeHistoryCell.m */,
-				59F12FF723CDB8130062371F /* ChargeHistoryCell.xib */,
-				59F12FF123CDAE7C0062371F /* ChoiceCoin(币种选择) */,
+				D82E47562415FCAD00D2D23D /* ChargeCoin(充币) */,
+				D82E47682415FCAD00D2D23D /* FlashExchange(闪兑) */,
 				59F12FB723CD9EF60062371F /* Main.storyboard */,
 				59F12FBA23CD9EF80062371F /* Assets.xcassets */,
 				59F12FBC23CD9EF80062371F /* LaunchScreen.storyboard */,
@@ -169,16 +162,44 @@
 			path = MatafyInterDemoUITests;
 			sourceTree = "<group>";
 		};
-		59F12FF123CDAE7C0062371F /* ChoiceCoin(币种选择) */ = {
+		D82E47562415FCAD00D2D23D /* ChargeCoin(充币) */ = {
 			isa = PBXGroup;
 			children = (
-				59F12FE923CDAA490062371F /* SearchTextField.h */,
-				59F12FEA23CDAA490062371F /* SearchTextField.m */,
-				59F12FEC23CDAE420062371F /* CoinChoiceCell.h */,
-				59F12FED23CDAE420062371F /* CoinChoiceCell.m */,
-				59F12FEE23CDAE420062371F /* CoinChoiceCell.xib */,
+				D82E47572415FCAD00D2D23D /* ChargeCoinViewController.h */,
+				D82E47582415FCAD00D2D23D /* ChargeCoinViewController.m */,
+				D82E47592415FCAD00D2D23D /* ChargeDetailViewController.h */,
+				D82E475A2415FCAD00D2D23D /* ChargeDetailViewController.m */,
+				D82E475B2415FCAD00D2D23D /* ChargeHistoryCell.h */,
+				D82E475C2415FCAD00D2D23D /* ChargeHistoryCell.m */,
+				D82E475D2415FCAD00D2D23D /* ChargeHistoryCell.xib */,
+				D82E475E2415FCAD00D2D23D /* ChargeHistoryViewController.h */,
+				D82E475F2415FCAD00D2D23D /* ChargeHistoryViewController.m */,
+				D82E47602415FCAD00D2D23D /* ChoiceCoin(币种选择) */,
+				D82E47662415FCAD00D2D23D /* ChoiceCoinViewController.h */,
+				D82E47672415FCAD00D2D23D /* ChoiceCoinViewController.m */,
+			);
+			path = "ChargeCoin(充币)";
+			sourceTree = "<group>";
+		};
+		D82E47602415FCAD00D2D23D /* ChoiceCoin(币种选择) */ = {
+			isa = PBXGroup;
+			children = (
+				D82E47612415FCAD00D2D23D /* CoinChoiceCell.h */,
+				D82E47622415FCAD00D2D23D /* CoinChoiceCell.m */,
+				D82E47632415FCAD00D2D23D /* CoinChoiceCell.xib */,
+				D82E47642415FCAD00D2D23D /* SearchTextField.h */,
+				D82E47652415FCAD00D2D23D /* SearchTextField.m */,
 			);
 			path = "ChoiceCoin(币种选择)";
+			sourceTree = "<group>";
+		};
+		D82E47682415FCAD00D2D23D /* FlashExchange(闪兑) */ = {
+			isa = PBXGroup;
+			children = (
+				D82E47722415FCC700D2D23D /* FlashExchangeViewController.h */,
+				D82E47732415FCC700D2D23D /* FlashExchangeViewController.m */,
+			);
+			path = "FlashExchange(闪兑)";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,11 +305,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				59F12FF923CDB8130062371F /* ChargeHistoryCell.xib in Resources */,
 				59F12FBE23CD9EF80062371F /* LaunchScreen.storyboard in Resources */,
 				59F12FBB23CD9EF80062371F /* Assets.xcassets in Resources */,
+				D82E476F2415FCAD00D2D23D /* CoinChoiceCell.xib in Resources */,
+				D82E476C2415FCAD00D2D23D /* ChargeHistoryCell.xib in Resources */,
 				59F12FB923CD9EF60062371F /* Main.storyboard in Resources */,
-				59F12FF023CDAE420062371F /* CoinChoiceCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,16 +334,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				59F12FF823CDB8130062371F /* ChargeHistoryCell.m in Sources */,
-				59F12FE823CDA8D60062371F /* ChoiceCoinViewController.m in Sources */,
-				59F12FEB23CDAA4A0062371F /* SearchTextField.m in Sources */,
+				D82E47712415FCAD00D2D23D /* ChoiceCoinViewController.m in Sources */,
+				D82E476B2415FCAD00D2D23D /* ChargeHistoryCell.m in Sources */,
+				D82E47742415FCC700D2D23D /* FlashExchangeViewController.m in Sources */,
+				D82E476D2415FCAD00D2D23D /* ChargeHistoryViewController.m in Sources */,
+				D82E476A2415FCAD00D2D23D /* ChargeDetailViewController.m in Sources */,
 				59F12FB623CD9EF60062371F /* ViewController.m in Sources */,
-				59F12FF423CDB2CF0062371F /* ChargeHistoryViewController.m in Sources */,
-				5971D18F23CDBE91009AAA4E /* ChargeDetailViewController.m in Sources */,
+				D82E47702415FCAD00D2D23D /* SearchTextField.m in Sources */,
 				59F12FC123CD9EF80062371F /* main.m in Sources */,
 				59F12FB323CD9EF60062371F /* AppDelegate.m in Sources */,
-				59F12FE523CDA5DA0062371F /* ChargeCoinViewController.m in Sources */,
-				59F12FEF23CDAE420062371F /* CoinChoiceCell.m in Sources */,
+				D82E47692415FCAD00D2D23D /* ChargeCoinViewController.m in Sources */,
+				D82E476E2415FCAD00D2D23D /* CoinChoiceCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
