@@ -31,6 +31,17 @@
 		D82E477F24162AD300D2D23D /* ChooseSymbolCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D82E477D24162AD300D2D23D /* ChooseSymbolCell.xib */; };
 		D82E47822416397700D2D23D /* ExchangePromptView.m in Sources */ = {isa = PBXBuildFile; fileRef = D82E47812416397700D2D23D /* ExchangePromptView.m */; };
 		D82E47842416398E00D2D23D /* ExchangePromptView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D82E47832416398E00D2D23D /* ExchangePromptView.xib */; };
+		D82E47872416518800D2D23D /* WalletViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D82E47862416518800D2D23D /* WalletViewModel.m */; };
+		D82E479E241651E900D2D23D /* MJExtensionConst.m in Sources */ = {isa = PBXBuildFile; fileRef = D82E478B241651E900D2D23D /* MJExtensionConst.m */; };
+		D82E479F241651E900D2D23D /* MJFoundation.m in Sources */ = {isa = PBXBuildFile; fileRef = D82E478D241651E900D2D23D /* MJFoundation.m */; };
+		D82E47A0241651E900D2D23D /* MJProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = D82E478F241651E900D2D23D /* MJProperty.m */; };
+		D82E47A1241651E900D2D23D /* MJPropertyKey.m in Sources */ = {isa = PBXBuildFile; fileRef = D82E4791241651E900D2D23D /* MJPropertyKey.m */; };
+		D82E47A2241651E900D2D23D /* MJPropertyType.m in Sources */ = {isa = PBXBuildFile; fileRef = D82E4793241651E900D2D23D /* MJPropertyType.m */; };
+		D82E47A3241651E900D2D23D /* NSObject+MJClass.m in Sources */ = {isa = PBXBuildFile; fileRef = D82E4795241651E900D2D23D /* NSObject+MJClass.m */; };
+		D82E47A4241651E900D2D23D /* NSObject+MJCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = D82E4797241651E900D2D23D /* NSObject+MJCoding.m */; };
+		D82E47A5241651E900D2D23D /* NSObject+MJKeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = D82E4799241651E900D2D23D /* NSObject+MJKeyValue.m */; };
+		D82E47A6241651E900D2D23D /* NSObject+MJProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = D82E479B241651E900D2D23D /* NSObject+MJProperty.m */; };
+		D82E47A7241651E900D2D23D /* NSString+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = D82E479D241651E900D2D23D /* NSString+MJExtension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +106,29 @@
 		D82E47802416397700D2D23D /* ExchangePromptView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExchangePromptView.h; sourceTree = "<group>"; };
 		D82E47812416397700D2D23D /* ExchangePromptView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExchangePromptView.m; sourceTree = "<group>"; };
 		D82E47832416398E00D2D23D /* ExchangePromptView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExchangePromptView.xib; sourceTree = "<group>"; };
+		D82E47852416518800D2D23D /* WalletViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WalletViewModel.h; sourceTree = "<group>"; };
+		D82E47862416518800D2D23D /* WalletViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WalletViewModel.m; sourceTree = "<group>"; };
+		D82E4789241651E900D2D23D /* MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJExtension.h; sourceTree = "<group>"; };
+		D82E478A241651E900D2D23D /* MJExtensionConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJExtensionConst.h; sourceTree = "<group>"; };
+		D82E478B241651E900D2D23D /* MJExtensionConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJExtensionConst.m; sourceTree = "<group>"; };
+		D82E478C241651E900D2D23D /* MJFoundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJFoundation.h; sourceTree = "<group>"; };
+		D82E478D241651E900D2D23D /* MJFoundation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJFoundation.m; sourceTree = "<group>"; };
+		D82E478E241651E900D2D23D /* MJProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJProperty.h; sourceTree = "<group>"; };
+		D82E478F241651E900D2D23D /* MJProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJProperty.m; sourceTree = "<group>"; };
+		D82E4790241651E900D2D23D /* MJPropertyKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPropertyKey.h; sourceTree = "<group>"; };
+		D82E4791241651E900D2D23D /* MJPropertyKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPropertyKey.m; sourceTree = "<group>"; };
+		D82E4792241651E900D2D23D /* MJPropertyType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPropertyType.h; sourceTree = "<group>"; };
+		D82E4793241651E900D2D23D /* MJPropertyType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPropertyType.m; sourceTree = "<group>"; };
+		D82E4794241651E900D2D23D /* NSObject+MJClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJClass.h"; sourceTree = "<group>"; };
+		D82E4795241651E900D2D23D /* NSObject+MJClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJClass.m"; sourceTree = "<group>"; };
+		D82E4796241651E900D2D23D /* NSObject+MJCoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJCoding.h"; sourceTree = "<group>"; };
+		D82E4797241651E900D2D23D /* NSObject+MJCoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJCoding.m"; sourceTree = "<group>"; };
+		D82E4798241651E900D2D23D /* NSObject+MJKeyValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJKeyValue.h"; sourceTree = "<group>"; };
+		D82E4799241651E900D2D23D /* NSObject+MJKeyValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJKeyValue.m"; sourceTree = "<group>"; };
+		D82E479A241651E900D2D23D /* NSObject+MJProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJProperty.h"; sourceTree = "<group>"; };
+		D82E479B241651E900D2D23D /* NSObject+MJProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJProperty.m"; sourceTree = "<group>"; };
+		D82E479C241651E900D2D23D /* NSString+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MJExtension.h"; sourceTree = "<group>"; };
+		D82E479D241651E900D2D23D /* NSString+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MJExtension.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,10 +179,13 @@
 		59F12FB023CD9EF60062371F /* MatafyInterDemo */ = {
 			isa = PBXGroup;
 			children = (
+				D82E4788241651E900D2D23D /* MJExtension */,
 				59F12FB123CD9EF60062371F /* AppDelegate.h */,
 				59F12FB223CD9EF60062371F /* AppDelegate.m */,
 				59F12FB423CD9EF60062371F /* ViewController.h */,
 				59F12FB523CD9EF60062371F /* ViewController.m */,
+				D82E47852416518800D2D23D /* WalletViewModel.h */,
+				D82E47862416518800D2D23D /* WalletViewModel.m */,
 				D82E47562415FCAD00D2D23D /* ChargeCoin(充币) */,
 				D82E47682415FCAD00D2D23D /* FlashExchange(闪兑) */,
 				59F12FB723CD9EF60062371F /* Main.storyboard */,
@@ -190,9 +227,9 @@
 				D82E475D2415FCAD00D2D23D /* ChargeHistoryCell.xib */,
 				D82E475E2415FCAD00D2D23D /* ChargeHistoryViewController.h */,
 				D82E475F2415FCAD00D2D23D /* ChargeHistoryViewController.m */,
-				D82E47602415FCAD00D2D23D /* ChoiceCoin(币种选择) */,
 				D82E47662415FCAD00D2D23D /* ChoiceCoinViewController.h */,
 				D82E47672415FCAD00D2D23D /* ChoiceCoinViewController.m */,
+				D82E47602415FCAD00D2D23D /* ChoiceCoin(币种选择) */,
 			);
 			path = "ChargeCoin(充币)";
 			sourceTree = "<group>";
@@ -226,6 +263,35 @@
 				D82E47832416398E00D2D23D /* ExchangePromptView.xib */,
 			);
 			path = "FlashExchange(闪兑)";
+			sourceTree = "<group>";
+		};
+		D82E4788241651E900D2D23D /* MJExtension */ = {
+			isa = PBXGroup;
+			children = (
+				D82E4789241651E900D2D23D /* MJExtension.h */,
+				D82E478A241651E900D2D23D /* MJExtensionConst.h */,
+				D82E478B241651E900D2D23D /* MJExtensionConst.m */,
+				D82E478C241651E900D2D23D /* MJFoundation.h */,
+				D82E478D241651E900D2D23D /* MJFoundation.m */,
+				D82E478E241651E900D2D23D /* MJProperty.h */,
+				D82E478F241651E900D2D23D /* MJProperty.m */,
+				D82E4790241651E900D2D23D /* MJPropertyKey.h */,
+				D82E4791241651E900D2D23D /* MJPropertyKey.m */,
+				D82E4792241651E900D2D23D /* MJPropertyType.h */,
+				D82E4793241651E900D2D23D /* MJPropertyType.m */,
+				D82E4794241651E900D2D23D /* NSObject+MJClass.h */,
+				D82E4795241651E900D2D23D /* NSObject+MJClass.m */,
+				D82E4796241651E900D2D23D /* NSObject+MJCoding.h */,
+				D82E4797241651E900D2D23D /* NSObject+MJCoding.m */,
+				D82E4798241651E900D2D23D /* NSObject+MJKeyValue.h */,
+				D82E4799241651E900D2D23D /* NSObject+MJKeyValue.m */,
+				D82E479A241651E900D2D23D /* NSObject+MJProperty.h */,
+				D82E479B241651E900D2D23D /* NSObject+MJProperty.m */,
+				D82E479C241651E900D2D23D /* NSString+MJExtension.h */,
+				D82E479D241651E900D2D23D /* NSString+MJExtension.m */,
+			);
+			name = MJExtension;
+			path = ../../HomeCycleViewDemo/HomeCycleViewDemo/MJExtension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -363,16 +429,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				D82E47712415FCAD00D2D23D /* ChoiceCoinViewController.m in Sources */,
+				D82E47A0241651E900D2D23D /* MJProperty.m in Sources */,
+				D82E47872416518800D2D23D /* WalletViewModel.m in Sources */,
+				D82E479E241651E900D2D23D /* MJExtensionConst.m in Sources */,
+				D82E479F241651E900D2D23D /* MJFoundation.m in Sources */,
 				D82E47822416397700D2D23D /* ExchangePromptView.m in Sources */,
+				D82E47A7241651E900D2D23D /* NSString+MJExtension.m in Sources */,
 				D82E476B2415FCAD00D2D23D /* ChargeHistoryCell.m in Sources */,
+				D82E47A1241651E900D2D23D /* MJPropertyKey.m in Sources */,
 				D82E47742415FCC700D2D23D /* FlashExchangeViewController.m in Sources */,
 				D82E476D2415FCAD00D2D23D /* ChargeHistoryViewController.m in Sources */,
 				D82E476A2415FCAD00D2D23D /* ChargeDetailViewController.m in Sources */,
 				59F12FB623CD9EF60062371F /* ViewController.m in Sources */,
+				D82E47A6241651E900D2D23D /* NSObject+MJProperty.m in Sources */,
+				D82E47A2241651E900D2D23D /* MJPropertyType.m in Sources */,
 				D82E47772416095F00D2D23D /* ExchangeButton.m in Sources */,
 				D82E477A2416266B00D2D23D /* ChooseSymbolView.m in Sources */,
 				D82E47702415FCAD00D2D23D /* SearchTextField.m in Sources */,
+				D82E47A5241651E900D2D23D /* NSObject+MJKeyValue.m in Sources */,
 				59F12FC123CD9EF80062371F /* main.m in Sources */,
+				D82E47A3241651E900D2D23D /* NSObject+MJClass.m in Sources */,
+				D82E47A4241651E900D2D23D /* NSObject+MJCoding.m in Sources */,
 				59F12FB323CD9EF60062371F /* AppDelegate.m in Sources */,
 				D82E47692415FCAD00D2D23D /* ChargeCoinViewController.m in Sources */,
 				D82E477E24162AD300D2D23D /* ChooseSymbolCell.m in Sources */,

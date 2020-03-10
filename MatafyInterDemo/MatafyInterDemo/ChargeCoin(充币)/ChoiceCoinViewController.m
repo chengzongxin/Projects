@@ -9,6 +9,7 @@
 #import "ChoiceCoinViewController.h"
 #import "SearchTextField.h"
 #import "CoinChoiceCell.h"
+#import "WalletViewModel.h"
 
 @interface ChoiceCoinViewController ()<UITextFieldDelegate,UITableViewDelegate,UITableViewDataSource>
 
@@ -28,6 +29,12 @@
     [self.view addSubview:self.textField];
     
     [self.view addSubview:self.tableView];
+    
+    [WalletViewModel symbolListQuery:^(id _Nonnull data) {
+        
+    } fail:^(NSString * _Nonnull msg) {
+        
+    }];
 }
 
 #pragma mark - Delegate
