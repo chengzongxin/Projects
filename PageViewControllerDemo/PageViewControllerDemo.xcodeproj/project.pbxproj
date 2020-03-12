@@ -30,6 +30,7 @@
 		59DBB66823C348680031F608 /* PageViewControllerDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 59DBB66723C348680031F608 /* PageViewControllerDemoUITests.m */; };
 		D8B7EDA92419D6A5007723FE /* coin_ls_btn_02@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8B7EDA72419D6A4007723FE /* coin_ls_btn_02@3x.png */; };
 		D8B7EDAA2419D6A5007723FE /* coin_ls_btn_01@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8B7EDA82419D6A4007723FE /* coin_ls_btn_01@3x.png */; };
+		D8B7EDAD2419E39B007723FE /* CustomMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8B7EDAC2419E39B007723FE /* CustomMenuViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +95,8 @@
 		59DBB66923C348680031F608 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8B7EDA72419D6A4007723FE /* coin_ls_btn_02@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coin_ls_btn_02@3x.png"; sourceTree = "<group>"; };
 		D8B7EDA82419D6A4007723FE /* coin_ls_btn_01@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coin_ls_btn_01@3x.png"; sourceTree = "<group>"; };
+		D8B7EDAB2419E39B007723FE /* CustomMenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomMenuViewController.h; sourceTree = "<group>"; };
+		D8B7EDAC2419E39B007723FE /* CustomMenuViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomMenuViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +189,8 @@
 				5907271F23C6BE51007ADF5A /* PageVCHeaderViewController.m */,
 				5907273C23C728E1007ADF5A /* PageVCViewController.h */,
 				5907273D23C728E1007ADF5A /* PageVCViewController.m */,
+				D8B7EDAB2419E39B007723FE /* CustomMenuViewController.h */,
+				D8B7EDAC2419E39B007723FE /* CustomMenuViewController.m */,
 				5907273923C7260A007ADF5A /* TableViewController.h */,
 				5907273A23C7260A007ADF5A /* TableViewController.m */,
 				5907273623C72335007ADF5A /* CollectionViewController.h */,
@@ -367,6 +372,7 @@
 				5907272723C6C138007ADF5A /* UIView+Frame.m in Sources */,
 				5907272023C6BE51007ADF5A /* PageVCHeaderViewController.m in Sources */,
 				5907273123C712EC007ADF5A /* PageBGScrollView.m in Sources */,
+				D8B7EDAD2419E39B007723FE /* CustomMenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
