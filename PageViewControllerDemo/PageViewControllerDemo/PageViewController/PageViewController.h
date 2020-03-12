@@ -27,6 +27,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, weak) id <PageViewControllerDataSource> dataSource;
 /* 子控制器 */
 @property (nullable, nonatomic, readonly) NSArray<__kindof UIViewController *> *viewControllers;
+// 滑动到某个ViewController
+- (void)scrollToIndex:(NSInteger)index animate:(BOOL)animate;
 
 @end
 

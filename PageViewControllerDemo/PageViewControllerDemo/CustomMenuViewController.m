@@ -23,8 +23,6 @@
     self.title = @"PageVC-CustomMenu";
     
     [self.view addSubview:self.menuView];
-    
-    self.
 }
 
 - (void)tabClick:(UIButton *)btn{

@@ -103,6 +103,12 @@ CGFloat const underLineAdditionW = 6;
     return PageConfig.config;
 }
 
+// 滑动到某个ViewController
+- (void)scrollToIndex:(NSInteger)index animate:(BOOL)animate{
+    [self setupOneViewController:index];
+    [self.contentScrollView setContentOffset:CGPointMake(index * self.contentScrollView.width, 0) animated:YES];
+}
+
 - (void)pageViewController:(PageViewController *)pageViewController didScroll:(UIScrollView *)scrollView{}
 - (void)pageViewController:(PageViewController *)pageViewController didSelectWithIndex:(NSInteger)index{}
 
