@@ -28,6 +28,8 @@
 		59DBB65323C348680031F608 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 59DBB65223C348680031F608 /* main.m */; };
 		59DBB65D23C348680031F608 /* PageViewControllerDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 59DBB65C23C348680031F608 /* PageViewControllerDemoTests.m */; };
 		59DBB66823C348680031F608 /* PageViewControllerDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 59DBB66723C348680031F608 /* PageViewControllerDemoUITests.m */; };
+		D8B7EDA92419D6A5007723FE /* coin_ls_btn_02@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8B7EDA72419D6A4007723FE /* coin_ls_btn_02@3x.png */; };
+		D8B7EDAA2419D6A5007723FE /* coin_ls_btn_01@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8B7EDA82419D6A4007723FE /* coin_ls_btn_01@3x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +92,8 @@
 		59DBB66323C348680031F608 /* PageViewControllerDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PageViewControllerDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		59DBB66723C348680031F608 /* PageViewControllerDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PageViewControllerDemoUITests.m; sourceTree = "<group>"; };
 		59DBB66923C348680031F608 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8B7EDA72419D6A4007723FE /* coin_ls_btn_02@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coin_ls_btn_02@3x.png"; sourceTree = "<group>"; };
+		D8B7EDA82419D6A4007723FE /* coin_ls_btn_01@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coin_ls_btn_01@3x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +147,8 @@
 				59637AA623CFF7DA001B02C0 /* PageConst.m */,
 				59C4423323C86F17003F069F /* UIViewController+Page.h */,
 				59C4423423C86F17003F069F /* UIViewController+Page.m */,
+				D8B7EDA82419D6A4007723FE /* coin_ls_btn_01@3x.png */,
+				D8B7EDA72419D6A4007723FE /* coin_ls_btn_02@3x.png */,
 			);
 			path = PageViewController;
 			sourceTree = "<group>";
@@ -316,8 +322,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8B7EDAA2419D6A5007723FE /* coin_ls_btn_01@3x.png in Resources */,
 				59DBB65023C348680031F608 /* LaunchScreen.storyboard in Resources */,
 				59DBB64D23C348680031F608 /* Assets.xcassets in Resources */,
+				D8B7EDA92419D6A5007723FE /* coin_ls_btn_02@3x.png in Resources */,
 				59DBB64B23C348670031F608 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

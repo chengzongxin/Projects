@@ -70,6 +70,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) UIColor *itemNormalColor;
 /* 选中颜色 */
 @property (strong, nonatomic) UIColor *itemSelectedColor;
+/* 常规 */
+@property (strong, nonatomic) UIImage *itemNormalImage;
+/* 选中 */
+@property (strong, nonatomic) UIImage *itemSelectedImage;
 /* 是否开启item颜色混合渐变动画 */
 @property (assign, nonatomic) BOOL itemGradientsAnimate;
 /* 跟踪器是否隐藏 */

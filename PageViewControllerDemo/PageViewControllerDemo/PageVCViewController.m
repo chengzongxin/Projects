@@ -56,6 +56,10 @@
     config.itemGradientsAnimate = NO;
     //    config.notAttachmentStyle = YES;
     //    config.trackerHidden = YES;
+    
+    
+    config.itemNormalImage = [UIImage imageNamed:@"coin_ls_btn_01"];
+    config.itemSelectedImage = [UIImage imageNamed:@"coin_ls_btn_02"];
     return config;
 }
 

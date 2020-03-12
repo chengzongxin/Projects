@@ -227,14 +227,13 @@ CGFloat const underLineAdditionW = 6;
 #pragma mark - 选中标题
 - (void)selButton:(UIButton *)button
 {
-//    _selectButton.transform = CGAffineTransformIdentity;
-//    [_selectButton setTitleColor:self.titleConfig.normalColor forState:UIControlStateNormal];
-    
     [self.titleButtons enumerateObjectsUsingBlock:^(UIButton *obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        obj.transform = CGAffineTransformIdentity;
         [obj setTitleColor:self.titleConfig.itemNormalColor forState:UIControlStateNormal];
+        obj.transform = CGAffineTransformIdentity;
+        obj.selected = NO;
     }];
-    [button setTitleColor:self.titleConfig.itemSelectedColor forState:UIControlStateNormal];
+    
+    button.selected = YES;
     
     // 标题居中
     [self setupTitleCenter:button];
@@ -329,6 +328,11 @@ CGFloat const underLineAdditionW = 6;
         btnX = i * btnW;
         titleButton.frame = CGRectMake(btnX, 0, btnW, btnH);
         [titleButton setTitleColor:self.titleConfig.itemNormalColor forState:UIControlStateNormal];
+        [titleButton setTitleColor:self.titleConfig.itemSelectedColor forState:UIControlStateSelected];
+        
+        [titleButton setBackgroundImage:self.titleConfig.itemNormalImage forState:UIControlStateNormal];
+        [titleButton setBackgroundImage:self.titleConfig.itemSelectedImage forState:UIControlStateSelected];
+        
         titleButton.titleLabel.font = self.titleConfig.itemNormalFont;
         // 监听按钮点击
         [titleButton addTarget:self action:@selector(titleClick:) forControlEvents:UIControlEventTouchUpInside];
@@ -479,6 +483,8 @@ CGFloat const underLineAdditionW = 6;
     config.trackerWidthAdditional = 6;
     config.trackerWidth = 0;
     config.trackerHeight = 3;
+    config.itemNormalImage = UIImage.new;
+    config.itemSelectedImage = UIImage.new;
     return config;
 }
 @end
