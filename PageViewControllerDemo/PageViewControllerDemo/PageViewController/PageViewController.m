@@ -322,7 +322,7 @@ CGFloat const underLineAdditionW = 6;
     
     // 添加所有标题按钮
     NSInteger count = self.childViewControllers.count;
-    CGFloat btnW = 100;
+    CGFloat btnW = MAX(self.titleScrollView.width / count, 100);
     CGFloat btnH = self.titleScrollView.bounds.size.height;
     CGFloat btnX = 0;
     for (NSInteger i = 0; i < count; i++) {

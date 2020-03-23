@@ -28,8 +28,8 @@
 
 - (NSArray<UIViewController *> *)pageChildViewControllers{
     NSMutableArray *vcArr = [NSMutableArray array];
-    NSArray *titleArr = @[@"1232",@"13",@"12333",@"1233333",@"123",@"1233333",@"2",@"5",@"232323232",@"123",@"123",@"123",@"123",@"123",@"123"];
-    for (int i = 0; i < 10; i ++) {
+    NSArray *titleArr = @[@"1232",@"13"];
+    for (int i = 0; i < titleArr.count; i ++) {
         int num = i % 3;
         UIViewController *vc;
         if (num == 0) {
@@ -58,8 +58,8 @@
     //    config.trackerHidden = YES;
     
     
-    config.itemNormalImage = [UIImage imageNamed:@"coin_ls_btn_01"];
-    config.itemSelectedImage = [UIImage imageNamed:@"coin_ls_btn_02"];
+//    config.itemNormalImage = [UIImage imageNamed:@"coin_ls_btn_01"];
+//    config.itemSelectedImage = [UIImage imageNamed:@"coin_ls_btn_02"];
     return config;
 }
 
