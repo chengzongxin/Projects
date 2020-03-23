@@ -136,6 +136,7 @@
 		5907272923C712EB007ADF5A /* PageViewController */ = {
 			isa = PBXGroup;
 			children = (
+				5907272423C6C106007ADF5A /* Category */,
 				5907272E23C712EB007ADF5A /* PageViewController.h */,
 				5907272A23C712EB007ADF5A /* PageViewController.m */,
 				5907272F23C712EB007ADF5A /* PageBGScrollView.h */,
@@ -179,7 +180,6 @@
 		59DBB64223C348670031F608 /* PageViewControllerDemo */ = {
 			isa = PBXGroup;
 			children = (
-				5907272423C6C106007ADF5A /* Category */,
 				5907272923C712EB007ADF5A /* PageViewController */,
 				59DBB64323C348670031F608 /* AppDelegate.h */,
 				59DBB64423C348670031F608 /* AppDelegate.m */,
