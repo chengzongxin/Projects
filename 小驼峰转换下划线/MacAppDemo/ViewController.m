@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
+@interface ViewController ()<NSTextFieldDelegate>
 @property (weak) IBOutlet NSTextField *inputTextField;
 
 @property (weak) IBOutlet NSTextField *outputTextField;
@@ -21,7 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    // Do any additional setup after loading the view.
+    
 }
 
 
@@ -40,10 +40,20 @@
 //    NSArray *arr = [self calculateSubStringCount:queryStr str:@"_"];
     
 //    NSLog(@"%@",arr);
-    [self transString:queryStr];
+//    [self transString:queryStr];
+
+    //    http://112.90.89.15:18807/token-wallet-app/withdraw/query/withdrawOrderPageQuery
+        // HOST -- eg: HOST(@"/token-wallet-app/recharge/query/rechargeOrderDetailQuery")
+        // /token-wallet-app/withdraw/query/withdrawOrderPageQuery
     
+    NSString *macro = [self transString:queryStr];
+    NSString *macroDefine = [NSString stringWithFormat:@"HOST(@\"%@\")",url.path];
+    NSMutableString *content = [NSMutableString string];
+    [content appendString:macro];
+    [content appendString:@"    "];
+    [content appendString:macroDefine];
     
-    self.outputTextField.stringValue = [self transString:queryStr];
+    self.outputTextField.stringValue = content;
 }
 
 
@@ -83,4 +93,22 @@
     
     return [string uppercaseString];
 }
+
+- (BOOL)control:(NSControl *)control textView:(NSTextView *)textView doCommandBySelector:(SEL)commandSelector{
+    NSLog(@"Selector method is (%@)", NSStringFromSelector( commandSelector ) );
+    if (commandSelector == @selector(insertNewline:)) {
+            //Do something against ENTER key
+        [self buttonClick:nil];
+    } else if (commandSelector == @selector(deleteForward:)) {
+            //Do something against DELETE key
+    } else if (commandSelector == @selector(deleteBackward:)) {
+            //Do something against BACKSPACE key
+    } else if (commandSelector == @selector(insertTab:)) {
+            //Do something against TAB key
+    }
+    // return YES if the action was handled; otherwise NO
+    return NO;
+}
+
+
 @end
