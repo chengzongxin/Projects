@@ -707,14 +707,11 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="551" height="472"/>
+                        <rect key="frame" x="0.0" y="0.0" width="551" height="263"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Se2-oO-rnP">
-                                <rect key="frame" x="80" y="94" width="391" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="gz2-1g-hMl"/>
-                                </constraints>
+                                <rect key="frame" x="50" y="50" width="451" height="21"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="bxk-wA-Th2">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -722,10 +719,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wnJ-3K-Pi2">
-                                <rect key="frame" x="80" y="322" width="391" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="3EN-Gf-Mkn"/>
-                                </constraints>
+                                <rect key="frame" x="50" y="192" width="451" height="21"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="L6O-uk-1dj">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -736,10 +730,7 @@
                                 </connections>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wCB-b2-17E">
-                                <rect key="frame" x="74" y="207" width="403" height="99"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="88" id="GaC-2M-hnK"/>
-                                </constraints>
+                                <rect key="frame" x="209" y="114" width="133" height="32"/>
                                 <buttonCell key="cell" type="push" title="小驼峰转下划线" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="IJK-64-LT0">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -750,15 +741,17 @@
                             </button>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="wCB-b2-17E" firstAttribute="top" secondItem="wnJ-3K-Pi2" secondAttribute="bottom" constant="20" id="46G-9X-F1A"/>
-                            <constraint firstItem="wnJ-3K-Pi2" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="80" id="5te-uq-gVz"/>
-                            <constraint firstAttribute="trailing" secondItem="wnJ-3K-Pi2" secondAttribute="trailing" constant="80" id="Flb-jT-OlL"/>
-                            <constraint firstItem="wnJ-3K-Pi2" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="50" id="Nx9-3x-aYI"/>
-                            <constraint firstAttribute="trailing" secondItem="Se2-oO-rnP" secondAttribute="trailing" constant="80" id="Q14-Fh-5ax"/>
-                            <constraint firstAttribute="trailing" secondItem="wCB-b2-17E" secondAttribute="trailing" constant="80" id="UFJ-v8-Bdw"/>
-                            <constraint firstItem="Se2-oO-rnP" firstAttribute="top" secondItem="wCB-b2-17E" secondAttribute="bottom" constant="20" id="Ulq-os-8JZ"/>
-                            <constraint firstItem="wCB-b2-17E" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="80" id="aMO-Tu-a5E"/>
-                            <constraint firstItem="Se2-oO-rnP" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="80" id="m9s-TK-GiW"/>
+                            <constraint firstItem="Se2-oO-rnP" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="50" id="4Pg-Bj-ULE"/>
+                            <constraint firstItem="wCB-b2-17E" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="CiE-ek-rhV"/>
+                            <constraint firstItem="wnJ-3K-Pi2" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="50" id="Jne-iD-C4y"/>
+                            <constraint firstAttribute="trailing" secondItem="wnJ-3K-Pi2" secondAttribute="trailing" constant="50" id="O1g-nJ-xJF"/>
+                            <constraint firstItem="Se2-oO-rnP" firstAttribute="top" secondItem="wCB-b2-17E" secondAttribute="bottom" constant="50" id="Re9-AR-ljQ"/>
+                            <constraint firstItem="Se2-oO-rnP" firstAttribute="height" secondItem="wnJ-3K-Pi2" secondAttribute="height" id="WvO-EH-TmR"/>
+                            <constraint firstAttribute="bottom" secondItem="Se2-oO-rnP" secondAttribute="bottom" constant="50" id="ZTP-fX-RhN"/>
+                            <constraint firstAttribute="trailing" secondItem="Se2-oO-rnP" secondAttribute="trailing" constant="50" id="lig-31-ki0"/>
+                            <constraint firstItem="wnJ-3K-Pi2" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="50" id="p0E-Ge-RDF"/>
+                            <constraint firstItem="wCB-b2-17E" firstAttribute="top" secondItem="wnJ-3K-Pi2" secondAttribute="bottom" constant="50" id="sS5-2f-FyN"/>
+                            <constraint firstItem="wCB-b2-17E" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="v7n-Xh-42G"/>
                         </constraints>
                     </view>
                     <connections>
@@ -768,7 +761,7 @@
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="64.5" y="740"/>
+            <point key="canvasLocation" x="64.5" y="865.5"/>
         </scene>
     </scenes>
 </document>

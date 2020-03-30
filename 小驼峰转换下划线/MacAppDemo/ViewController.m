@@ -18,41 +18,62 @@
 
 @implementation ViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-
+- (NSString *)noEnterString:(NSString *)rawString{
+    //去掉字符串中的空格和回车,改为空格
+    NSMutableString *noEnterStr = [NSMutableString stringWithString:rawString];
     
+//    NSRange range = {0,rawStr.length};
+//    [mutStr replaceOccurrencesOfString:@" " withString:@"" options:NSLiteralSearch range:range];
+    NSRange range2 = {0,rawString.length};
+    
+    [noEnterStr replaceOccurrencesOfString:@"\n" withString:@" " options:NSLiteralSearch range:range2];
+    NSLog(@"去掉字符串中的空格和回车%@",noEnterStr);
+    
+    
+    NSString *temptext = [noEnterStr stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]]; // 去除2端的空格
+    NSString *text = [temptext stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]; // 去除回车
+    
+    return text;
 }
 
-
-- (void)setRepresentedObject:(id)representedObject {
-    [super setRepresentedObject:representedObject];
-
-    // Update the view, if already loaded.
+- (NSString *)machUrl:(NSString *)rawStr{
+    NSError *error;
+    // 匹配所有网址
+    NSString *regulaStr = @"\\bhttps?://[a-zA-Z0-9\\-.]+(?::(\\d+))?(?:(?:/[a-zA-Z0-9\\-._?,'+\\&%$=~*!():@\\\\]*)+)?";
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:regulaStr
+                                                                           options:NSRegularExpressionCaseInsensitive
+                                                                             error:&error];
+    NSArray *arrayOfAllMatches = [regex matchesInString:rawStr options:0 range:NSMakeRange(0, [rawStr length])];
+    NSMutableString *urlString = [NSMutableString string];
+    for (NSTextCheckingResult *match in arrayOfAllMatches)
+    {
+        NSString* substringForMatch = [rawStr substringWithRange:match.range];
+        [urlString appendString:substringForMatch];
+        NSLog(@"substringForMatch %@",substringForMatch);
+    }
+    return urlString;
 }
+
 
 - (IBAction)buttonClick:(id)sender {
-    NSString *rawStr =  self.inputTextField.stringValue?:@"";
-    NSString *temptext = [rawStr stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]]; // 去除2端的空格
-    NSString *text = [temptext stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]; // 去除回车
-    NSURL *url = [NSURL URLWithString:text];
+    NSString *rawStr = [self noEnterString:self.inputTextField.stringValue?:@""];
+    
+    NSString *urlString = [self machUrl:rawStr];
+    
+    NSURL *url = [NSURL URLWithString:urlString];
+    
     NSString *queryStr = url.lastPathComponent;
-//    NSArray *arr = [self calculateSubStringCount:queryStr str:@"_"];
     
-//    NSLog(@"%@",arr);
-//    [self transString:queryStr];
-
-    //    http://112.90.89.15:18807/token-wallet-app/withdraw/query/withdrawOrderPageQuery
-        // HOST -- eg: HOST(@"/token-wallet-app/recharge/query/rechargeOrderDetailQuery")
-        // /token-wallet-app/withdraw/query/withdrawOrderPageQuery
-    
+    NSString *comment = [rawStr substringToIndex:[rawStr rangeOfString:urlString].location];
     NSString *macro = [self transString:queryStr];
     NSString *macroDefine = [NSString stringWithFormat:@"HOST(@\"%@\")",url.path];
     NSMutableString *content = [NSMutableString string];
-    [content appendString:macro];
+    
+    [content appendFormat:@"/* %@ */\n",comment];
+    [content appendFormat:@"#define %@",macro];
     [content appendString:@"    "];
     [content appendString:macroDefine];
-    
+
     self.outputTextField.stringValue = content;
 }
 
