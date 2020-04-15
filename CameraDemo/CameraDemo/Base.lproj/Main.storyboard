@@ -41,10 +41,23 @@
                                             <action selector="switchCamere:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Gs2-iZ-2Tf"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9dx-UG-H8U">
+                                        <rect key="frame" x="334" y="738" width="60" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="AOB-eh-2fg"/>
+                                            <constraint firstAttribute="width" constant="60" id="FjD-uo-f1q"/>
+                                        </constraints>
+                                        <state key="normal" title="相册"/>
+                                        <connections>
+                                            <action selector="photoAlbum:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jtw-jK-PgY"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstItem="Ake-Hi-bnh" firstAttribute="top" secondItem="CsQ-kT-Vk4" secondAttribute="top" constant="20" id="HrC-17-DRo"/>
+                                    <constraint firstAttribute="bottom" secondItem="9dx-UG-H8U" secondAttribute="bottom" constant="50" id="I7s-mq-JMH"/>
+                                    <constraint firstAttribute="trailing" secondItem="9dx-UG-H8U" secondAttribute="trailing" constant="20" id="Sz4-yc-Emv"/>
                                     <constraint firstAttribute="bottom" secondItem="vFY-2l-vB3" secondAttribute="bottom" constant="49" id="bBm-Nd-8Zs"/>
                                     <constraint firstItem="vFY-2l-vB3" firstAttribute="centerX" secondItem="CsQ-kT-Vk4" secondAttribute="centerX" id="dWl-dc-Bf7"/>
                                     <constraint firstAttribute="trailing" secondItem="Ake-Hi-bnh" secondAttribute="trailing" constant="20" id="oQI-cg-UGE"/>

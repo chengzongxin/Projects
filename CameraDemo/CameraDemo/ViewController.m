@@ -10,7 +10,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import "PreviewView.h"
 
-@interface ViewController () <AVCapturePhotoCaptureDelegate>
+@interface ViewController () <AVCapturePhotoCaptureDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 
 @property (strong, nonatomic) AVCaptureSession *captureSession;
 @property (strong, nonatomic) AVCaptureDevice *videoDevice;
@@ -31,9 +31,9 @@
     [self grantAccess];
 }
 
+
+#pragma mark - Actions
 - (IBAction)switchCamere:(id)sender {
-    
-    
     AVCaptureDevice* currentVideoDevice = self.videoDeviceInput.device;
     AVCaptureDevicePosition currentPosition = currentVideoDevice.position;
     
@@ -98,6 +98,47 @@
     [_photoOutput capturePhotoWithSettings:AVCapturePhotoSettings.new delegate:self];
 }
 
+- (IBAction)photoAlbum:(id)sender {
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+    imagePicker.delegate = self;
+    [self presentViewController:imagePicker animated:YES completion:nil];
+}
+
+// 成功获得相片或视频后的回调
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<UIImagePickerControllerInfoKey,id> *)info{
+    //通过UIImagePickerControllerMediaType判断返回的是照片还是视频
+//    NSString* type = [info objectForKey:UIImagePickerControllerMediaType];
+    //如果返回的type等于kUTTypeImage，代表返回的是照片,并且需要判断当前相机使用的sourcetype是拍照还是相册
+//    if ([type isEqualToString:@"kUTTypeImage"] && picker.sourceType == UIImagePickerControllerSourceTypeCamera) {
+        //获取照片的原图
+        UIImage* original = [info objectForKey:UIImagePickerControllerOriginalImage];
+        //获取图片裁剪的图
+        UIImage* edit = [info objectForKey:UIImagePickerControllerEditedImage];
+        //获取图片裁剪后，剩下的图
+        UIImage* crop = [info objectForKey:UIImagePickerControllerCropRect];
+        //获取图片的url
+        NSURL* url = [info objectForKey:UIImagePickerControllerMediaURL];
+        //获取图片的metaData数据信息
+        NSDictionary* metaData = [info objectForKey:UIImagePickerControllerMediaMetadata];
+        //如果是拍照的照片，则需要手动保存到本地，系统不会自动保存拍照成功后的照片
+//        UIImageWriteToSavedPhotosAlbum(edit, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
+        UIImageView *imageV = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 300, 300)];
+        [self.view addSubview:imageV];
+        imageV.contentMode = UIViewContentModeScaleAspectFit;
+        imageV.image = original;
+//    }else{
+//
+//    }
+    [picker dismissViewControllerAnimated:YES completion:nil];
+}
+// 取消照相机的回调
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
+    [picker dismissViewControllerAnimated:YES completion:nil];
+}
+
+
+#pragma mark - Private Method
 - (void)grantAccess{
     AVAuthorizationStatus status = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
     NSLog(@"%zd",status);
