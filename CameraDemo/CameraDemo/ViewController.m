@@ -113,14 +113,14 @@
 //    if ([type isEqualToString:@"kUTTypeImage"] && picker.sourceType == UIImagePickerControllerSourceTypeCamera) {
         //获取照片的原图
         UIImage* original = [info objectForKey:UIImagePickerControllerOriginalImage];
-        //获取图片裁剪的图
-        UIImage* edit = [info objectForKey:UIImagePickerControllerEditedImage];
-        //获取图片裁剪后，剩下的图
-        UIImage* crop = [info objectForKey:UIImagePickerControllerCropRect];
-        //获取图片的url
-        NSURL* url = [info objectForKey:UIImagePickerControllerMediaURL];
-        //获取图片的metaData数据信息
-        NSDictionary* metaData = [info objectForKey:UIImagePickerControllerMediaMetadata];
+//        //获取图片裁剪的图
+//        UIImage* edit = [info objectForKey:UIImagePickerControllerEditedImage];
+//        //获取图片裁剪后，剩下的图
+//        UIImage* crop = [info objectForKey:UIImagePickerControllerCropRect];
+//        //获取图片的url
+//        NSURL* url = [info objectForKey:UIImagePickerControllerMediaURL];
+//        //获取图片的metaData数据信息
+//        NSDictionary* metaData = [info objectForKey:UIImagePickerControllerMediaMetadata];
         //如果是拍照的照片，则需要手动保存到本地，系统不会自动保存拍照成功后的照片
 //        UIImageWriteToSavedPhotosAlbum(edit, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
         UIImageView *imageV = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 300, 300)];
