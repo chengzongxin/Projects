@@ -16,12 +16,6 @@
 		59873AF12451981600518496 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 59873AF02451981600518496 /* main.m */; };
 		59873AFB2451981600518496 /* RefreshControlTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 59873AFA2451981600518496 /* RefreshControlTests.m */; };
 		59873B062451981600518496 /* RefreshControlUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 59873B052451981600518496 /* RefreshControlUITests.m */; };
-		59873B20245198A800518496 /* RefreshConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = 59873B15245198A800518496 /* RefreshConstant.m */; };
-		59873B21245198A800518496 /* LoadMoreControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 59873B16245198A800518496 /* LoadMoreControl.m */; };
-		59873B22245198A800518496 /* UIScrollView+RefreshController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59873B18245198A800518496 /* UIScrollView+RefreshController.m */; };
-		59873B23245198A800518496 /* RefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 59873B1A245198A800518496 /* RefreshHeader.m */; };
-		59873B24245198A800518496 /* RefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 59873B1D245198A800518496 /* RefreshFooter.m */; };
-		59873B25245198A800518496 /* RefreshBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 59873B1F245198A800518496 /* RefreshBaseView.m */; };
 		5995D44024519FB800E89EE5 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5995D42824519FB800E89EE5 /* NSLayoutConstraint+MASDebugAdditions.m */; };
 		5995D44124519FB800E89EE5 /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5995D43124519FB800E89EE5 /* ViewController+MASAdditions.m */; };
 		5995D44224519FB800E89EE5 /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 5995D43524519FB800E89EE5 /* MASCompositeConstraint.m */; };
@@ -32,6 +26,12 @@
 		5995D44724519FB800E89EE5 /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 5995D43C24519FB800E89EE5 /* MASConstraint.m */; };
 		5995D44824519FB800E89EE5 /* MASViewConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 5995D43E24519FB800E89EE5 /* MASViewConstraint.m */; };
 		5995D44924519FB800E89EE5 /* MASViewAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 5995D43F24519FB800E89EE5 /* MASViewAttribute.m */; };
+		59AC06FD24569169004DC5C0 /* RefreshConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = 59AC06F224569169004DC5C0 /* RefreshConstant.m */; };
+		59AC06FE24569169004DC5C0 /* LoadMoreControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 59AC06F324569169004DC5C0 /* LoadMoreControl.m */; };
+		59AC06FF24569169004DC5C0 /* UIScrollView+RefreshController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59AC06F524569169004DC5C0 /* UIScrollView+RefreshController.m */; };
+		59AC070024569169004DC5C0 /* RefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 59AC06F724569169004DC5C0 /* RefreshHeader.m */; };
+		59AC070124569169004DC5C0 /* RefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 59AC06FA24569169004DC5C0 /* RefreshFooter.m */; };
+		59AC070224569169004DC5C0 /* RefreshBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 59AC06FC24569169004DC5C0 /* RefreshBaseView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,18 +70,6 @@
 		59873B012451981600518496 /* RefreshControlUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RefreshControlUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		59873B052451981600518496 /* RefreshControlUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RefreshControlUITests.m; sourceTree = "<group>"; };
 		59873B072451981600518496 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		59873B14245198A800518496 /* RefreshFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefreshFooter.h; sourceTree = "<group>"; };
-		59873B15245198A800518496 /* RefreshConstant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefreshConstant.m; sourceTree = "<group>"; };
-		59873B16245198A800518496 /* LoadMoreControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadMoreControl.m; sourceTree = "<group>"; };
-		59873B17245198A800518496 /* RefreshHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefreshHeader.h; sourceTree = "<group>"; };
-		59873B18245198A800518496 /* UIScrollView+RefreshController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+RefreshController.m"; sourceTree = "<group>"; };
-		59873B19245198A800518496 /* RefreshBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefreshBaseView.h; sourceTree = "<group>"; };
-		59873B1A245198A800518496 /* RefreshHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefreshHeader.m; sourceTree = "<group>"; };
-		59873B1B245198A800518496 /* LoadMoreControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadMoreControl.h; sourceTree = "<group>"; };
-		59873B1C245198A800518496 /* RefreshConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefreshConstant.h; sourceTree = "<group>"; };
-		59873B1D245198A800518496 /* RefreshFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefreshFooter.m; sourceTree = "<group>"; };
-		59873B1E245198A800518496 /* UIScrollView+RefreshController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+RefreshController.h"; sourceTree = "<group>"; };
-		59873B1F245198A800518496 /* RefreshBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefreshBaseView.m; sourceTree = "<group>"; };
 		5995D42724519FB800E89EE5 /* MASCompositeConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASCompositeConstraint.h; sourceTree = "<group>"; };
 		5995D42824519FB800E89EE5 /* NSLayoutConstraint+MASDebugAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+MASDebugAdditions.m"; sourceTree = "<group>"; };
 		5995D42924519FB800E89EE5 /* MASConstraint+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MASConstraint+Private.h"; sourceTree = "<group>"; };
@@ -107,6 +95,18 @@
 		5995D43D24519FB800E89EE5 /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+MASAdditions.h"; sourceTree = "<group>"; };
 		5995D43E24519FB800E89EE5 /* MASViewConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewConstraint.m; sourceTree = "<group>"; };
 		5995D43F24519FB800E89EE5 /* MASViewAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewAttribute.m; sourceTree = "<group>"; };
+		59AC06F124569169004DC5C0 /* RefreshFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefreshFooter.h; sourceTree = "<group>"; };
+		59AC06F224569169004DC5C0 /* RefreshConstant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefreshConstant.m; sourceTree = "<group>"; };
+		59AC06F324569169004DC5C0 /* LoadMoreControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadMoreControl.m; sourceTree = "<group>"; };
+		59AC06F424569169004DC5C0 /* RefreshHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefreshHeader.h; sourceTree = "<group>"; };
+		59AC06F524569169004DC5C0 /* UIScrollView+RefreshController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+RefreshController.m"; sourceTree = "<group>"; };
+		59AC06F624569169004DC5C0 /* RefreshBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefreshBaseView.h; sourceTree = "<group>"; };
+		59AC06F724569169004DC5C0 /* RefreshHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefreshHeader.m; sourceTree = "<group>"; };
+		59AC06F824569169004DC5C0 /* LoadMoreControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadMoreControl.h; sourceTree = "<group>"; };
+		59AC06F924569169004DC5C0 /* RefreshConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefreshConstant.h; sourceTree = "<group>"; };
+		59AC06FA24569169004DC5C0 /* RefreshFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefreshFooter.m; sourceTree = "<group>"; };
+		59AC06FB24569169004DC5C0 /* UIScrollView+RefreshController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+RefreshController.h"; sourceTree = "<group>"; };
+		59AC06FC24569169004DC5C0 /* RefreshBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefreshBaseView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,7 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				5995D42624519FB800E89EE5 /* Masonry */,
-				59873B13245198A800518496 /* Refresh */,
+				59AC06F024569169004DC5C0 /* Refresh */,
 				59873ADE2451981500518496 /* AppDelegate.h */,
 				59873ADF2451981500518496 /* AppDelegate.m */,
 				59873AE12451981500518496 /* SceneDelegate.h */,
@@ -192,26 +192,6 @@
 			path = RefreshControlUITests;
 			sourceTree = "<group>";
 		};
-		59873B13245198A800518496 /* Refresh */ = {
-			isa = PBXGroup;
-			children = (
-				59873B1B245198A800518496 /* LoadMoreControl.h */,
-				59873B16245198A800518496 /* LoadMoreControl.m */,
-				59873B19245198A800518496 /* RefreshBaseView.h */,
-				59873B1F245198A800518496 /* RefreshBaseView.m */,
-				59873B1C245198A800518496 /* RefreshConstant.h */,
-				59873B15245198A800518496 /* RefreshConstant.m */,
-				59873B14245198A800518496 /* RefreshFooter.h */,
-				59873B1D245198A800518496 /* RefreshFooter.m */,
-				59873B17245198A800518496 /* RefreshHeader.h */,
-				59873B1A245198A800518496 /* RefreshHeader.m */,
-				59873B1E245198A800518496 /* UIScrollView+RefreshController.h */,
-				59873B18245198A800518496 /* UIScrollView+RefreshController.m */,
-			);
-			name = Refresh;
-			path = "../../../Downloads/ObjcProjects-master/ObjcProjects/Untils/Refresh";
-			sourceTree = "<group>";
-		};
 		5995D42624519FB800E89EE5 /* Masonry */ = {
 			isa = PBXGroup;
 			children = (
@@ -242,6 +222,25 @@
 				5995D43F24519FB800E89EE5 /* MASViewAttribute.m */,
 			);
 			path = Masonry;
+			sourceTree = "<group>";
+		};
+		59AC06F024569169004DC5C0 /* Refresh */ = {
+			isa = PBXGroup;
+			children = (
+				59AC06F824569169004DC5C0 /* LoadMoreControl.h */,
+				59AC06F324569169004DC5C0 /* LoadMoreControl.m */,
+				59AC06F624569169004DC5C0 /* RefreshBaseView.h */,
+				59AC06FC24569169004DC5C0 /* RefreshBaseView.m */,
+				59AC06F924569169004DC5C0 /* RefreshConstant.h */,
+				59AC06F224569169004DC5C0 /* RefreshConstant.m */,
+				59AC06F124569169004DC5C0 /* RefreshFooter.h */,
+				59AC06FA24569169004DC5C0 /* RefreshFooter.m */,
+				59AC06F424569169004DC5C0 /* RefreshHeader.h */,
+				59AC06F724569169004DC5C0 /* RefreshHeader.m */,
+				59AC06FB24569169004DC5C0 /* UIScrollView+RefreshController.h */,
+				59AC06F524569169004DC5C0 /* UIScrollView+RefreshController.m */,
+			);
+			path = Refresh;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -375,25 +374,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				5995D44024519FB800E89EE5 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
-				59873B21245198A800518496 /* LoadMoreControl.m in Sources */,
+				59AC06FF24569169004DC5C0 /* UIScrollView+RefreshController.m in Sources */,
 				5995D44724519FB800E89EE5 /* MASConstraint.m in Sources */,
 				5995D44824519FB800E89EE5 /* MASViewConstraint.m in Sources */,
 				5995D44124519FB800E89EE5 /* ViewController+MASAdditions.m in Sources */,
 				5995D44924519FB800E89EE5 /* MASViewAttribute.m in Sources */,
 				59873AE62451981500518496 /* ViewController.m in Sources */,
+				59AC070124569169004DC5C0 /* RefreshFooter.m in Sources */,
 				5995D44224519FB800E89EE5 /* MASCompositeConstraint.m in Sources */,
 				5995D44624519FB800E89EE5 /* View+MASAdditions.m in Sources */,
-				59873B23245198A800518496 /* RefreshHeader.m in Sources */,
-				59873B20245198A800518496 /* RefreshConstant.m in Sources */,
+				59AC070224569169004DC5C0 /* RefreshBaseView.m in Sources */,
 				5995D44424519FB800E89EE5 /* MASLayoutConstraint.m in Sources */,
+				59AC06FE24569169004DC5C0 /* LoadMoreControl.m in Sources */,
 				5995D44324519FB800E89EE5 /* MASConstraintMaker.m in Sources */,
 				59873AE02451981500518496 /* AppDelegate.m in Sources */,
-				59873B25245198A800518496 /* RefreshBaseView.m in Sources */,
-				59873B24245198A800518496 /* RefreshFooter.m in Sources */,
+				59AC06FD24569169004DC5C0 /* RefreshConstant.m in Sources */,
+				59AC070024569169004DC5C0 /* RefreshHeader.m in Sources */,
 				5995D44524519FB800E89EE5 /* NSArray+MASAdditions.m in Sources */,
 				59873AF12451981600518496 /* main.m in Sources */,
 				59873AE32451981500518496 /* SceneDelegate.m in Sources */,
-				59873B22245198A800518496 /* UIScrollView+RefreshController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
