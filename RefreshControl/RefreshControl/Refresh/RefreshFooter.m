@@ -260,6 +260,9 @@
         case RefreshStatusLoadAll:
         {
             _label.text = @"- 已经到底了 -";
+            UIEdgeInsets inset = self.orginScrollViewContentInset;
+            inset.bottom += K_FOOTER_HEIGHT;
+            self.superScrollView.contentInset = inset;
         }
             break;
             
@@ -303,6 +306,10 @@
 
 - (void)noticeNoMoreData{
     self.status = RefreshStatusLoadAll;
+}
+
+- (void)resetNoMoreData{
+    self.status = RefreshStatusNormal;
 }
 
 @end

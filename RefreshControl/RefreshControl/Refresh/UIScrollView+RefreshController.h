@@ -31,6 +31,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)footerStopRefresh;
 
 - (void)noticeNoreMoreData;
+
+- (void)resetNoMoreData;
 @end
 
 NS_ASSUME_NONNULL_END

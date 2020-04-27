@@ -84,6 +84,10 @@
     [self.footer noticeNoMoreData];
 }
 
+- (void)resetNoMoreData{
+    [self.footer resetNoMoreData];
+}
+
 #pragma mark - Setter & Getter
 - (void)setHeader:(RefreshHeader *)header{
     objc_setAssociatedObject(self,@selector(header),header,OBJC_ASSOCIATION_RETAIN);

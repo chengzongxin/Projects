@@ -35,6 +35,8 @@ typedef void (^RefreshingBlock)(void);
 
 @property (nonatomic,strong) UIScrollView   *superScrollView;   //父视图（表格scrollView）
 
+@property (readonly,assign, nonatomic) UIEdgeInsets  orginScrollViewContentInset;   // 原始内容缩进
+
 @property (nonatomic,assign) CGFloat        superScrollViewContentOffY;        //父视图的偏移量
 
 @property (nonatomic,assign) CGSize         superScrollViewContentSize;        //父视图的大小

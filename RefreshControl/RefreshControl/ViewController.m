@@ -29,22 +29,17 @@
     
     [self.tableView addRefreshWithHeaderBlock:^{
         NSLog(@"%s",__FUNCTION__);
-//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            
-            [self.tableView headerStopRefresh];
-//        });
+        [self.tableView headerStopRefresh];
+        [self.tableView resetNoMoreData];
     } footerBlock:^{
-//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            self.count += 20;
-            NSLog(@"%d",self.count);
+        self.count += 20;
+        NSLog(@"%d",self.count);
         [self.tableView footerStopRefresh];
             [self.tableView reloadData];
         
-        if (self.count > 500) {
+        if (self.count > 200) {
             [self.tableView noticeNoreMoreData];
         }
-            
-//        });
     }];
 }
 
