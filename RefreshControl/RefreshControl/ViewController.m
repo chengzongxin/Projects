@@ -25,6 +25,19 @@
     
     self.view.backgroundColor = UIColor.orangeColor;
     
+    
+    
+    _tableView.contentInset = UIEdgeInsetsMake(100, 0, 50, 0);
+    UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, -100, self.view.bounds.size.width, 100)];
+    header.backgroundColor = UIColor.redColor;
+    [header addSubview:UISwitch.new];
+    [_tableView addSubview:header];
+    
+    UIView *footer = [[UIView alloc] initWithFrame:CGRectMake(0, self.tableView.bounds.size.width, self.view.bounds.size.width, 50)];
+    footer.backgroundColor = UIColor.blueColor;
+    [_tableView addSubview:footer];
+    
+    
     [_tableView registerClass:UITableViewCell.class forCellReuseIdentifier:@"cell"];
     
     [self.tableView addRefreshWithHeaderBlock:^{
