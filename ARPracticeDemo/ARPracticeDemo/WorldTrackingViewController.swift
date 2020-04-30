@@ -20,7 +20,7 @@ class WorldTrackingViewController: UIViewController, ARSCNViewDelegate {
         sceneView.delegate = self
         view.addSubview(sceneView)
         // 允许模型交互转动,模型会不再依附到实体世界上
-        sceneView.allowsCameraControl = true
+//        sceneView.allowsCameraControl = true
     }
     
     override func viewWillAppear(_ animated: Bool) {

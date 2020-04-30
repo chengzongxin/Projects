@@ -26,6 +26,7 @@
 		59C1A1BE24595F600053A621 /* mona-lisa.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59C1A1BB24595F600053A621 /* mona-lisa.jpg */; };
 		59C1A1BF24595F600053A621 /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C1A1BC24595F600053A621 /* Grid.swift */; };
 		59C1A1C024595F600053A621 /* overlay_grid.png in Resources */ = {isa = PBXBuildFile; fileRef = 59C1A1BD24595F600053A621 /* overlay_grid.png */; };
+		59D4D5D0245A78E600F35A28 /* paint.png in Resources */ = {isa = PBXBuildFile; fileRef = 59D4D5CF245A78E600F35A28 /* paint.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		59C1A1BB24595F600053A621 /* mona-lisa.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "mona-lisa.jpg"; sourceTree = "<group>"; };
 		59C1A1BC24595F600053A621 /* Grid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
 		59C1A1BD24595F600053A621 /* overlay_grid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = overlay_grid.png; sourceTree = "<group>"; };
+		59D4D5CF245A78E600F35A28 /* paint.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = paint.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +172,7 @@
 		59C1A1BA24595F600053A621 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				59D4D5CF245A78E600F35A28 /* paint.png */,
 				59C1A1BB24595F600053A621 /* mona-lisa.jpg */,
 				59C1A1BC24595F600053A621 /* Grid.swift */,
 				59C1A1BD24595F600053A621 /* overlay_grid.png */,
@@ -291,6 +294,7 @@
 				59B45EA02458048900B57B1B /* v1_0_IronManRigged.max in Resources */,
 				59B45E6D2457E1B500B57B1B /* Assets.xcassets in Resources */,
 				59B45E6B2457E1B400B57B1B /* Main.storyboard in Resources */,
+				59D4D5D0245A78E600F35A28 /* paint.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
