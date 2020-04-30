@@ -9,6 +9,7 @@
 import UIKit
 import SceneKit
 import ARKit
+import CoreGraphics
 
 class MonaLisa2DViewController: UIViewController , ARSCNViewDelegate{
     
@@ -95,13 +96,13 @@ class MonaLisa2DViewController: UIViewController , ARSCNViewDelegate{
     func addImage(drawImage:UIImage, boardImage:UIImage) -> UIImage {
         //将底部的一张的大小作为所截取的合成图的尺寸
         let size = drawImage.size;
-        
+        let drawShaowImage = imageWithShadow(image: drawImage)
         let stretchBoardImage = scaleToSize(image: boardImage, newSize: CGSize(width: size.width * 2, height: size.height * 3))
         
         UIGraphicsBeginImageContext(stretchBoardImage.size)
         
         stretchBoardImage.draw(in: CGRect(origin: CGPoint.zero, size: stretchBoardImage.size))
-        drawImage.draw(at: CGPoint(x: size.width * 0.5, y: size.height * 0.1))
+        drawShaowImage.draw(at: CGPoint(x: size.width * 0.5, y: size.height * 0.1))
         
         let resultImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
@@ -130,6 +131,37 @@ class MonaLisa2DViewController: UIViewController , ARSCNViewDelegate{
         
         return newImage
         
+    }
+    
+    func imageWithShadow(image:UIImage) -> UIImage {
+//        CGColorSpaceRef colourSpace = CGColorSpaceCreateDeviceRGB();
+//        CGContextRef shadowContext = CGBitmapContextCreate(NULL, self.size.width, self.size.height + 1, CGImageGetBitsPerComponent(self.CGImage), 0,
+//                                                     colourSpace, kCGImageAlphaPremultipliedLast);
+//        CGColorSpaceRelease(colourSpace);
+//
+//        CGContextSetShadow(shadowContext, CGSizeMake(0, -1), 1);
+//        CGContextDrawImage(shadowContext, CGRectMake(0, 0, self.size.width, self.size.height), self.CGImage);
+//
+//        CGImageRef shadowedCGImage = CGBitmapContextCreateImage(shadowContext);
+//        CGContextRelease(shadowContext);
+//
+//        UIImage * shadowedImage = [UIImage imageWithCGImage:shadowedCGImage];
+//        CGImageRelease(shadowedCGImage);
+//
+//        return shadowedImage;
+        
+        let colourSpace: CGColorSpace = CGColorSpaceCreateDeviceRGB()
+        let shadowContext = CGContext.init(data: nil, width: Int(image.size.width), height: Int(image.size.height + 1), bitsPerComponent: image.cgImage!.bitsPerComponent, bytesPerRow: 0, space: colourSpace, bitmapInfo: 1)!
+        shadowContext.setShadow(offset: CGSize(width: 0, height: -1), blur: 1)
+        shadowContext.draw(image.cgImage!, in: CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height))
+        
+        let shadowedCGImage: CGImage = shadowContext.makeImage()!
+        
+        let shadowedImage: UIImage = UIImage(cgImage: shadowedCGImage)
+        
+        return shadowedImage
+
+    
     }
     
     //内缩放，一条变等于最长边，另外一条小于等于最长边
