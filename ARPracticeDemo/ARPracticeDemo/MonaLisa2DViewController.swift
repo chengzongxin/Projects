@@ -96,15 +96,15 @@ class MonaLisa2DViewController: UIViewController , ARSCNViewDelegate{
         //将底部的一张的大小作为所截取的合成图的尺寸
         let size = drawImage.size;
         
-        let stretchBoardImage = scaleToSize(image: boardImage, newSize: CGSize(width: size.width * 1.2, height: size.height * 2))
+        let stretchBoardImage = scaleToSize(image: boardImage, newSize: CGSize(width: size.width * 2, height: size.height * 3))
         
         UIGraphicsBeginImageContext(stretchBoardImage.size)
         
         stretchBoardImage.draw(in: CGRect(origin: CGPoint.zero, size: stretchBoardImage.size))
-        
-        drawImage.draw(at: CGPoint(x: size.width * 0.1, y: 10))
+        drawImage.draw(at: CGPoint(x: size.width * 0.5, y: size.height * 0.1))
         
         let resultImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
         
         return resultImage
     }
