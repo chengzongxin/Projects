@@ -66,7 +66,8 @@ class MonaLisa2DViewController: UIViewController , ARSCNViewDelegate{
         let paintingNode = SCNNode(geometry: planeGeometry)
         paintingNode.transform = SCNMatrix4(hitResult.anchor!.transform)
         paintingNode.eulerAngles = SCNVector3(paintingNode.eulerAngles.x, paintingNode.eulerAngles.y, paintingNode.eulerAngles.z)
-        paintingNode.position = SCNVector3(hitResult.worldTransform.columns.3.x, hitResult.worldTransform.columns.3.y, hitResult.worldTransform.columns.3.z)
+        // y = 0 ,位置不飘动
+        paintingNode.position = SCNVector3(hitResult.worldTransform.columns.3.x,0, hitResult.worldTransform.columns.3.z)
 
         sceneView.scene.rootNode.addChildNode(paintingNode)
         grid.removeFromParentNode()
