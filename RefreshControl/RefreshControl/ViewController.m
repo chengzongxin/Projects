@@ -28,6 +28,7 @@
     
     
     _tableView.contentInset = UIEdgeInsetsMake(100, 0, 50, 0);
+    
     UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, -100, self.view.bounds.size.width, 100)];
     header.backgroundColor = UIColor.redColor;
     [header addSubview:UISwitch.new];
@@ -45,14 +46,19 @@
         [self.tableView headerStopRefresh];
         [self.tableView resetNoMoreData];
     } footerBlock:^{
-        self.count += 20;
-        NSLog(@"%d",self.count);
-        [self.tableView footerStopRefresh];
-            [self.tableView reloadData];
         
-        if (self.count > 200) {
-            [self.tableView noticeNoreMoreData];
-        }
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            
+            self.count += 20;
+            NSLog(@"%d",self.count);
+            [self.tableView footerStopRefresh];
+            [self.tableView reloadData];
+            
+            if (self.count > 200) {
+                [self.tableView noticeNoreMoreData];
+            }
+        });
+        
     }];
 }
 

@@ -48,6 +48,14 @@
                                     <segue destination="dro-Xf-hjv" kind="show" id="2XY-Jf-aNE"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6vI-zl-CBi">
+                                <rect key="frame" x="147" y="459" width="105" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Demo5:3D模型"/>
+                                <connections>
+                                    <segue destination="nqk-5Q-wgA" kind="show" id="1hM-Ww-aJL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="fQZ-KI-GVf"/>
@@ -104,7 +112,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wVo-Tl-oHx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="648" y="808"/>
+            <point key="canvasLocation" x="817" y="870"/>
         </scene>
         <!--Image Recognize View Controller-->
         <scene sceneID="3sN-O5-W6a">
@@ -139,6 +147,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SIU-jN-vFy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-152.17391304347828" y="127.90178571428571"/>
+        </scene>
+        <!--Three Dimentional Model View Controller-->
+        <scene sceneID="spg-l8-fMt">
+            <objects>
+                <viewController id="nqk-5Q-wgA" customClass="ThreeDimentionalModelViewController" customModule="ARPracticeDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ruw-2Q-jcV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="dj2-cZ-JPQ"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="x1V-UR-XDu"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ukh-XD-F2w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-48" y="816"/>
         </scene>
     </scenes>
 </document>

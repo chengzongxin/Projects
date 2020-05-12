@@ -26,6 +26,7 @@
 		59C1A1BE24595F600053A621 /* mona-lisa.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59C1A1BB24595F600053A621 /* mona-lisa.jpg */; };
 		59C1A1BF24595F600053A621 /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C1A1BC24595F600053A621 /* Grid.swift */; };
 		59C1A1C024595F600053A621 /* overlay_grid.png in Resources */ = {isa = PBXBuildFile; fileRef = 59C1A1BD24595F600053A621 /* overlay_grid.png */; };
+		59CFF55D2463E7CC00F88881 /* ThreeDimentionalModelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CFF55C2463E7CC00F88881 /* ThreeDimentionalModelViewController.swift */; };
 		59D4D5D0245A78E600F35A28 /* paint.png in Resources */ = {isa = PBXBuildFile; fileRef = 59D4D5CF245A78E600F35A28 /* paint.png */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +73,7 @@
 		59C1A1BB24595F600053A621 /* mona-lisa.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "mona-lisa.jpg"; sourceTree = "<group>"; };
 		59C1A1BC24595F600053A621 /* Grid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
 		59C1A1BD24595F600053A621 /* overlay_grid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = overlay_grid.png; sourceTree = "<group>"; };
+		59CFF55C2463E7CC00F88881 /* ThreeDimentionalModelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeDimentionalModelViewController.swift; sourceTree = "<group>"; };
 		59D4D5CF245A78E600F35A28 /* paint.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = paint.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -131,6 +133,7 @@
 				59B45E952457E2EA00B57B1B /* FaceTrackingViewController.swift */,
 				59B45E972457E2F800B57B1B /* ImageRecognizeViewController.swift */,
 				59C1A1B8245955390053A621 /* MonaLisa2DViewController.swift */,
+				59CFF55C2463E7CC00F88881 /* ThreeDimentionalModelViewController.swift */,
 				59B45E692457E1B400B57B1B /* Main.storyboard */,
 				59C1A1BA24595F600053A621 /* Assets */,
 				59B45E6C2457E1B500B57B1B /* Assets.xcassets */,
@@ -319,6 +322,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59CFF55D2463E7CC00F88881 /* ThreeDimentionalModelViewController.swift in Sources */,
 				59B45E962457E2EA00B57B1B /* FaceTrackingViewController.swift in Sources */,
 				59B45E682457E1B400B57B1B /* ViewController.swift in Sources */,
 				59C1A1B9245955390053A621 /* MonaLisa2DViewController.swift in Sources */,
