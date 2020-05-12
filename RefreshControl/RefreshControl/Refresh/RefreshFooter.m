@@ -31,7 +31,7 @@
 }
 
 - (void)setupSubviews{
-    _label = [[UILabel alloc] initWithFrame:CGRectMake(0, 80, self.bounds.size.width, 20)];
+    _label = [[UILabel alloc] init];
     
     _label.backgroundColor = [UIColor clearColor];
     
@@ -45,7 +45,7 @@
     
     [self addSubview:_label];
     
-    _timeLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 100, self.bounds.size.width, 20)];
+    _timeLabel = [[UILabel alloc] init];
     
     _timeLabel.backgroundColor = [UIColor clearColor];
     
@@ -61,11 +61,7 @@
     
     [self addSubview:_timeLabel];
     
-    CGSize size = [K_HEAD_NORMAL_TITLE boundingRectWithSize:CGSizeMake(1000,20) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:16]} context:nil].size;
-    
-    CGFloat oriX = self.bounds.size.width /2 - size.width /2 - 20 *1.2;
-    
-    _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(oriX,_label.frame.origin.y -2.5, 20 *1.2,20 *1.2)];
+    _imageView = [[UIImageView alloc] init];
     
     _imageView.image = [UIImage imageNamed:@"arrowdown"];
     
@@ -75,7 +71,13 @@
 }
 
 - (void)placeSubviews{
-    self.frame = CGRectMake(0, self.superScrollView.contentSize.height, self.superScrollView.bounds.size.width, K_FOOTER_HEIGHT);
+    self.frame = CGRectMake(0, self.superScrollView.bounds.size.height, self.superScrollView.bounds.size.width, K_FOOTER_HEIGHT);
+    self.label.frame = CGRectMake(0, 40, self.bounds.size.width, 20);
+    self.timeLabel.frame = CGRectMake(0, 60, self.bounds.size.width, 20);
+    CGSize size = [K_HEAD_NORMAL_TITLE boundingRectWithSize:CGSizeMake(CGFLOAT_MAX,20) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:16]} context:nil].size;
+    
+    CGFloat oriX = self.bounds.size.width /2 - size.width /2 - 20 *1.2;
+    self.imageView.frame = CGRectMake(oriX,_label.frame.origin.y -2.5, 20 *1.2,20 *1.2);
 }
 
 //-----------------------更新头部刷新状态-------------------------
@@ -188,7 +190,8 @@
             _label.text = K_HEAD_NORMAL_TITLE;
             
             [_activityView stopAnimating];
-            _imageView.hidden =NO;
+            _imageView.hidden = NO;
+            _timeLabel.hidden = NO;
             
             //旋转箭头图标为正常
             [UIView animateWithDuration:0.2 animations:^{
@@ -202,7 +205,8 @@
             _label.text =K_HEAD_PREPARE_TITLE;
             
             [_activityView stopAnimating];
-            _imageView.hidden =NO;
+            _imageView.hidden = NO;
+            _timeLabel.hidden = NO;
             
             //旋转箭头图标朝上
             [UIView animateWithDuration:0.2 animations:^{
@@ -216,6 +220,7 @@
             //开始刷新状态
             _label.text = K_HEAD_START_TITLE;
             _imageView.hidden = YES;
+            _timeLabel.hidden = NO;
             
             //向之前绑定的对象传递开始刷新消息
             //            objc_msgSend(self.target, self.selector);
@@ -241,14 +246,12 @@
             //当头部开始刷新时，为头部增加一部分高度，不过此时要先获取底部是否有增加的高度（因为此时尾部可能也在刷新）
             //            UIEdgeInsets  insert = self.superScrollView.contentInset;
             
-            
-            
             if (!_activityView)
             {
                 //添加活动指示器
                 _activityView = [[UIActivityIndicatorView alloc] initWithFrame:_imageView.frame];
                 _activityView.activityIndicatorViewStyle =UIActivityIndicatorViewStyleGray;
-                _activityView.hidesWhenStopped =YES;
+                _activityView.hidesWhenStopped = YES;
                 [self addSubview:_activityView];
                 
             }
@@ -264,9 +267,9 @@
         case RefreshStatusLoadAll:
         {
             _label.text = @"- 已经到底了 -";
-            UIEdgeInsets inset = self.orginScrollViewContentInset;
-            inset.bottom += K_FOOTER_HEIGHT;
-            self.superScrollView.contentInset = inset;
+            _timeLabel.hidden = YES;
+            _imageView.hidden = YES;
+            
         }
             break;
             
@@ -278,34 +281,22 @@
 
 #pragma mark - Public Method
 //开始刷新
--(void)startRefresh
-{
-//    [self.superScrollView setContentOffset:CGPointMake(0, -K_HEADER_MAXOFFY) animated:YES];
-//    UIEdgeInsets inset = self.superScrollView.contentInset;
-//    inset.bottom += K_FOOTER_HEIGHT;
-//    [self.superScrollView setContentInset:inset];
-    [self.superScrollView setContentInset:UIEdgeInsetsMake(0 ,0, 0,0)];
+-(void)startRefresh{
+    [self setFooterInset];
+    
     self.status = RefreshStatusRefreshing;
 }
 
-
 //结束刷新
--(void)stopRefresh
-{
-    //此时要记录上拉加载时底部是否有增加的高度
-//    [UIView animateWithDuration:0.3 animations:^{
-//        UIEdgeInsets inset = self.superScrollView.contentInset;
-//        inset.bottom -= K_FOOTER_HEIGHT;
-//        [self.superScrollView setContentInset:inset];
-//    }];
-    [UIView animateWithDuration:0.2 animations:^{
-        
-        //                [self.superScrollView setContentInset:UIEdgeInsetsMake(K_HEADER_MAXOFFY + self.superScrollView.adjustedContentInset.top + insert.top ,0, 0,0)];
-        [self.superScrollView setContentInset:UIEdgeInsetsMake(0 ,0, K_FOOTER_HEIGHT,0)];
-        
-    }];
+-(void)stopRefresh{
     self.status = RefreshStatusNormal;
-    
+}
+
+// Footer 在scrollview的inset下部分多加一部分出来作为显示区域
+- (void)setFooterInset{
+    UIEdgeInsets inset = self.orginScrollViewContentInset;
+    inset.bottom += K_FOOTER_HEIGHT;
+    [self.superScrollView setContentInset:inset];
 }
 
 - (void)noticeNoMoreData{

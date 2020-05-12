@@ -71,7 +71,7 @@
     self.frame = CGRectMake(0, -K_HEADER_HEIGHT-self.orginScrollViewContentInset.top, self.superScrollView.bounds.size.width, K_HEADER_HEIGHT);
     self.label.frame = CGRectMake(0, 80, self.bounds.size.width, 20);
     self.timeLabel.frame = CGRectMake(0, 100, self.bounds.size.width, 20);
-    CGSize size = [K_HEAD_NORMAL_TITLE boundingRectWithSize:CGSizeMake(1000,20) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:16]} context:nil].size;
+    CGSize size = [K_HEAD_NORMAL_TITLE boundingRectWithSize:CGSizeMake(CGFLOAT_MAX,20) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:16]} context:nil].size;
     
     CGFloat oriX = self.bounds.size.width /2 - size.width /2 - 20 *1.2;
     self.imageView.frame = CGRectMake(oriX,_label.frame.origin.y -2.5, 20 *1.2,20 *1.2);
