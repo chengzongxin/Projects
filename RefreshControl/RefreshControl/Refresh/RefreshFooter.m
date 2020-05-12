@@ -74,6 +74,10 @@
     [self addSubview:_imageView];
 }
 
+- (void)placeSubviews{
+    self.frame = CGRectMake(0, self.superScrollView.contentSize.height, self.superScrollView.bounds.size.width, K_FOOTER_HEIGHT);
+}
+
 //-----------------------更新头部刷新状态-------------------------
 - (void)scrollViewContentOffsetDidChange:(NSDictionary *)change{
     [super scrollViewContentOffsetDidChange:change];

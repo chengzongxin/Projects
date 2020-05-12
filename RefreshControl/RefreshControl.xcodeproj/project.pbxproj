@@ -16,6 +16,10 @@
 		59873AF12451981600518496 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 59873AF02451981600518496 /* main.m */; };
 		59873AFB2451981600518496 /* RefreshControlTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 59873AFA2451981600518496 /* RefreshControlTests.m */; };
 		59873B062451981600518496 /* RefreshControlUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 59873B052451981600518496 /* RefreshControlUITests.m */; };
+		59908C00246A98E500BDAC72 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59908BFF246A98E500BDAC72 /* TestViewController.m */; };
+		59908C03246A991A00BDAC72 /* RedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 59908C02246A991A00BDAC72 /* RedView.m */; };
+		59908C06246A992600BDAC72 /* YellowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 59908C05246A992600BDAC72 /* YellowView.m */; };
+		59908C08246AA79C00BDAC72 /* arrowdown@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 59908C07246AA79C00BDAC72 /* arrowdown@3x.png */; };
 		5995D44024519FB800E89EE5 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5995D42824519FB800E89EE5 /* NSLayoutConstraint+MASDebugAdditions.m */; };
 		5995D44124519FB800E89EE5 /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5995D43124519FB800E89EE5 /* ViewController+MASAdditions.m */; };
 		5995D44224519FB800E89EE5 /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 5995D43524519FB800E89EE5 /* MASCompositeConstraint.m */; };
@@ -70,6 +74,13 @@
 		59873B012451981600518496 /* RefreshControlUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RefreshControlUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		59873B052451981600518496 /* RefreshControlUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RefreshControlUITests.m; sourceTree = "<group>"; };
 		59873B072451981600518496 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		59908BFE246A98E500BDAC72 /* TestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		59908BFF246A98E500BDAC72 /* TestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		59908C01246A991A00BDAC72 /* RedView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RedView.h; sourceTree = "<group>"; };
+		59908C02246A991A00BDAC72 /* RedView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RedView.m; sourceTree = "<group>"; };
+		59908C04246A992600BDAC72 /* YellowView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YellowView.h; sourceTree = "<group>"; };
+		59908C05246A992600BDAC72 /* YellowView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YellowView.m; sourceTree = "<group>"; };
+		59908C07246AA79C00BDAC72 /* arrowdown@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrowdown@3x.png"; sourceTree = "<group>"; };
 		5995D42724519FB800E89EE5 /* MASCompositeConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASCompositeConstraint.h; sourceTree = "<group>"; };
 		5995D42824519FB800E89EE5 /* NSLayoutConstraint+MASDebugAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+MASDebugAdditions.m"; sourceTree = "<group>"; };
 		5995D42924519FB800E89EE5 /* MASConstraint+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MASConstraint+Private.h"; sourceTree = "<group>"; };
@@ -165,6 +176,12 @@
 				59873AE22451981500518496 /* SceneDelegate.m */,
 				59873AE42451981500518496 /* ViewController.h */,
 				59873AE52451981500518496 /* ViewController.m */,
+				59908BFE246A98E500BDAC72 /* TestViewController.h */,
+				59908BFF246A98E500BDAC72 /* TestViewController.m */,
+				59908C01246A991A00BDAC72 /* RedView.h */,
+				59908C02246A991A00BDAC72 /* RedView.m */,
+				59908C04246A992600BDAC72 /* YellowView.h */,
+				59908C05246A992600BDAC72 /* YellowView.m */,
 				59873AE72451981500518496 /* Main.storyboard */,
 				59873AEA2451981600518496 /* Assets.xcassets */,
 				59873AEC2451981600518496 /* LaunchScreen.storyboard */,
@@ -239,6 +256,7 @@
 				59AC06F724569169004DC5C0 /* RefreshHeader.m */,
 				59AC06FB24569169004DC5C0 /* UIScrollView+RefreshController.h */,
 				59AC06F524569169004DC5C0 /* UIScrollView+RefreshController.m */,
+				59908C07246AA79C00BDAC72 /* arrowdown@3x.png */,
 			);
 			path = Refresh;
 			sourceTree = "<group>";
@@ -349,6 +367,7 @@
 				59873AEE2451981600518496 /* LaunchScreen.storyboard in Resources */,
 				59873AEB2451981600518496 /* Assets.xcassets in Resources */,
 				59873AE92451981500518496 /* Main.storyboard in Resources */,
+				59908C08246AA79C00BDAC72 /* arrowdown@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,10 +401,13 @@
 				59873AE62451981500518496 /* ViewController.m in Sources */,
 				59AC070124569169004DC5C0 /* RefreshFooter.m in Sources */,
 				5995D44224519FB800E89EE5 /* MASCompositeConstraint.m in Sources */,
+				59908C00246A98E500BDAC72 /* TestViewController.m in Sources */,
 				5995D44624519FB800E89EE5 /* View+MASAdditions.m in Sources */,
 				59AC070224569169004DC5C0 /* RefreshBaseView.m in Sources */,
+				59908C06246A992600BDAC72 /* YellowView.m in Sources */,
 				5995D44424519FB800E89EE5 /* MASLayoutConstraint.m in Sources */,
 				59AC06FE24569169004DC5C0 /* LoadMoreControl.m in Sources */,
+				59908C03246A991A00BDAC72 /* RedView.m in Sources */,
 				5995D44324519FB800E89EE5 /* MASConstraintMaker.m in Sources */,
 				59873AE02451981500518496 /* AppDelegate.m in Sources */,
 				59AC06FD24569169004DC5C0 /* RefreshConstant.m in Sources */,

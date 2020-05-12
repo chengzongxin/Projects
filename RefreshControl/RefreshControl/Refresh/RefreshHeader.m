@@ -28,7 +28,7 @@
 }
 
 - (void)setupSubviews{
-    _label = [[UILabel alloc] initWithFrame:CGRectMake(0, 80, self.bounds.size.width, 20)];
+    _label = [[UILabel alloc] init];
     
     _label.backgroundColor = [UIColor clearColor];
     
@@ -42,7 +42,7 @@
     
     [self addSubview:_label];
     
-    _timeLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 100, self.bounds.size.width, 20)];
+    _timeLabel = [[UILabel alloc] init];
     
     _timeLabel.backgroundColor = [UIColor clearColor];
     
@@ -58,17 +58,23 @@
     
     [self addSubview:_timeLabel];
     
-    CGSize size = [K_HEAD_NORMAL_TITLE boundingRectWithSize:CGSizeMake(1000,20) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:16]} context:nil].size;
-    
-    CGFloat oriX = self.bounds.size.width /2 - size.width /2 - 20 *1.2;
-    
-    _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(oriX,_label.frame.origin.y -2.5, 20 *1.2,20 *1.2)];
+    _imageView = [[UIImageView alloc] init];
     
     _imageView.image = [UIImage imageNamed:@"arrowdown"];
     
     _imageView.contentMode =UIViewContentModeScaleAspectFit;
     
     [self addSubview:_imageView];
+}
+
+- (void)placeSubviews{
+    self.frame = CGRectMake(0, -K_HEADER_HEIGHT-self.orginScrollViewContentInset.top, self.superScrollView.bounds.size.width, K_HEADER_HEIGHT);
+    self.label.frame = CGRectMake(0, 80, self.bounds.size.width, 20);
+    self.timeLabel.frame = CGRectMake(0, 100, self.bounds.size.width, 20);
+    CGSize size = [K_HEAD_NORMAL_TITLE boundingRectWithSize:CGSizeMake(1000,20) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:16]} context:nil].size;
+    
+    CGFloat oriX = self.bounds.size.width /2 - size.width /2 - 20 *1.2;
+    self.imageView.frame = CGRectMake(oriX,_label.frame.origin.y -2.5, 20 *1.2,20 *1.2);
 }
 
 //-----------------------更新头部刷新状态-------------------------
@@ -161,10 +167,7 @@
 //            UIEdgeInsets  insert = self.superScrollView.contentInset;
             
             [UIView animateWithDuration:0.2 animations:^{
-                
-//                [self.superScrollView setContentInset:UIEdgeInsetsMake(K_HEADER_MAXOFFY + self.superScrollView.adjustedContentInset.top + insert.top ,0, 0,0)];
-                [self.superScrollView setContentInset:UIEdgeInsetsMake(K_HEADER_MAXOFFY ,0, 0,0)];
-                
+                [self.superScrollView setContentInset:UIEdgeInsetsMake(K_HEADER_MAXOFFY + self.orginScrollViewContentInset.top,0, self.orginScrollViewContentInset.bottom,0)];
             }];
             
             if (!_activityView)
@@ -205,7 +208,7 @@
 //开始刷新
 -(void)startRefresh
 {
-    [self.superScrollView setContentOffset:CGPointMake(0, -K_HEADER_MAXOFFY) animated:YES];
+    [self.superScrollView setContentOffset:CGPointMake(0, -K_HEADER_MAXOFFY-self.orginScrollViewContentInset.top) animated:YES];
     
     self.status = RefreshStatusRefreshing;
 }
@@ -216,11 +219,11 @@
 {
     //此时要记录上拉加载时底部是否有增加的高度
     
-    UIEdgeInsets insert = self.superScrollView.contentInset;
+    UIEdgeInsets inset = self.orginScrollViewContentInset;
     
     [UIView animateWithDuration:0.3 animations:^{
-//        [self.superScrollView setContentInset:UIEdgeInsetsMake(insert.top - self.superScrollView.adjustedContentInset.top,0, insert.bottom,0)];
-        [self.superScrollView setContentInset:UIEdgeInsetsMake(0,0, insert.bottom,0)];
+//        [self.superScrollView setContentInset:UIEdgeInsetsMake(inset.top - self.superScrollView.adjustedContentInset.top,0, inset.bottom,0)];
+        [self.superScrollView setContentInset:inset];
     }];
     
     self.status = RefreshStatusNormal;

@@ -25,13 +25,26 @@
     // 旧的父控件移除监听
     [self removeObservers];
     //记录父视图
-    self.superScrollView = (UIScrollView *)newSuperview;
-    
-    [self addObservers];
+    if (newSuperview) {
+        
+        _superScrollView = (UIScrollView *)newSuperview;
+
+        _orginScrollViewContentInset = _superScrollView.contentInset;
+        
+        [self addObservers];
+    }
 }
 
+
+- (void)layoutSubviews{
+    [self placeSubviews];
+    
+    [super layoutSubviews];
+}
+
+- (void)placeSubviews{}
+
 - (void)addObservers{
-    _orginScrollViewContentInset = self.superScrollView.contentInset;
     //添加KVO监听父视图的偏移量
     [self.superScrollView addObserver:self forKeyPath:RefreshKeyPathContentOffset options:NSKeyValueObservingOptionNew context:nil];
     [self.superScrollView addObserver:self forKeyPath:RefreshKeyPathContentSize options:NSKeyValueObservingOptionNew context:nil];

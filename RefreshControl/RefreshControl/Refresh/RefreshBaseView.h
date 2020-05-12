@@ -47,6 +47,7 @@ typedef void (^RefreshingBlock)(void);
 @property (copy, nonatomic) RefreshingBlock refreshingBlock;
 
 #pragma mark - 交给子类们去实现
+- (void)placeSubviews;
 /** 当scrollView的contentOffset发生改变的时候调用 */
 - (void)scrollViewContentOffsetDidChange:(NSDictionary *)change NS_REQUIRES_SUPER;
 /** 当scrollView的contentSize发生改变的时候调用 */
