@@ -44,7 +44,10 @@ typedef void (^RefreshingBlock)(void);
 @property (weak, nonatomic) id target;
 
 @property (assign, nonatomic) SEL selector;
+
 @property (copy, nonatomic) RefreshingBlock refreshingBlock;
+/** 触发回调（交给子类去调用） */
+- (void)executeRefreshingCallback;
 
 #pragma mark - 交给子类们去实现
 - (void)placeSubviews;

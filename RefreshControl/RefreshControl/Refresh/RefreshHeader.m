@@ -183,13 +183,7 @@
             [_activityView startAnimating];
             
             //向之前绑定的对象传递开始刷新消息
-            //            objc_msgSend(self.target, self.selector);
-            if (self.refreshingBlock) {
-                self.refreshingBlock();
-            }else{
-                int (*action)(id,SEL,int) = (int(*)(id,SEL,int)) objc_msgSend;
-                action(self.target,self.selector,0);
-            }
+            [self executeRefreshingCallback];
         }
             break;
         case RefreshStatusFinish:

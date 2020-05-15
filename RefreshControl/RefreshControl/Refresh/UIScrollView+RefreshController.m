@@ -90,6 +90,7 @@
         // 删除旧的，添加新的
         [self.footer removeFromSuperview];
         [self insertSubview:footer atIndex:0];
+        footer.layer.zPosition = -1;
         
         // 存储新的
         objc_setAssociatedObject(self,@selector(footer),footer,OBJC_ASSOCIATION_RETAIN);

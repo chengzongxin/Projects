@@ -7,8 +7,6 @@
 //
 
 #import "RefreshFooter.h"
-#import <objc/runtime.h>
-#import <objc/message.h>
 
 @interface RefreshFooter ()
 @property (strong, nonatomic) UILabel *label;                            //提示标题
@@ -222,14 +220,7 @@
             _imageView.hidden = YES;
             _timeLabel.hidden = NO;
             
-            //向之前绑定的对象传递开始刷新消息
-            //            objc_msgSend(self.target, self.selector);
-            if (self.refreshingBlock) {
-                self.refreshingBlock();
-            }else{
-                int (*action)(id,SEL,int) = (int(*)(id,SEL,int)) objc_msgSend;
-                action(self.target,self.selector,0);
-            }
+            [self executeRefreshingCallback];
             
             //保存刷新的时间
             //实例化一个NSDateFormatter对象
