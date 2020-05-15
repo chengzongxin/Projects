@@ -13,6 +13,7 @@
 #import <objc/runtime.h>
 #import <objc/message.h>
 #import "RefreshGifHeader.h"
+#import "RefreshGifFooter.h"
 @implementation UIScrollView (RefreshController)
 
 - (void)addRefreshWithHeaderBlock:(RefreshingBlock)headerBlock footerBlock:(RefreshingBlock)footerBlock{
@@ -54,7 +55,7 @@
     }
     
     if (footerBlock) {
-        RefreshFooter *footer = [[RefreshFooter alloc] init];
+        RefreshGifFooter *footer = [[RefreshGifFooter alloc] init];
         footer.refreshingBlock = footerBlock;
         self.footer = footer;
     }

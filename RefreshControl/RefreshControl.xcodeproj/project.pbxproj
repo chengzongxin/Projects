@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		594A8385246E3CB600AC8EC2 /* UIView+Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = 594A8383246E3CB600AC8EC2 /* UIView+Layout.m */; };
+		594A8388246E439900AC8EC2 /* RefreshGifFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 594A8387246E439900AC8EC2 /* RefreshGifFooter.m */; };
 		596503AC246D24C50034D652 /* RefreshGifHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 596503AB246D24C50034D652 /* RefreshGifHeader.m */; };
 		59873AE02451981500518496 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 59873ADF2451981500518496 /* AppDelegate.m */; };
 		59873AE32451981500518496 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 59873AE22451981500518496 /* SceneDelegate.m */; };
@@ -60,6 +61,8 @@
 /* Begin PBXFileReference section */
 		594A8383246E3CB600AC8EC2 /* UIView+Layout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Layout.m"; sourceTree = "<group>"; };
 		594A8384246E3CB600AC8EC2 /* UIView+Layout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Layout.h"; sourceTree = "<group>"; };
+		594A8386246E439900AC8EC2 /* RefreshGifFooter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RefreshGifFooter.h; sourceTree = "<group>"; };
+		594A8387246E439900AC8EC2 /* RefreshGifFooter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RefreshGifFooter.m; sourceTree = "<group>"; };
 		596503AA246D24C50034D652 /* RefreshGifHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RefreshGifHeader.h; sourceTree = "<group>"; };
 		596503AB246D24C50034D652 /* RefreshGifHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RefreshGifHeader.m; sourceTree = "<group>"; };
 		59873ADB2451981500518496 /* RefreshControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RefreshControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -265,6 +268,8 @@
 				59908C07246AA79C00BDAC72 /* arrowdown@3x.png */,
 				596503AA246D24C50034D652 /* RefreshGifHeader.h */,
 				596503AB246D24C50034D652 /* RefreshGifHeader.m */,
+				594A8386246E439900AC8EC2 /* RefreshGifFooter.h */,
+				594A8387246E439900AC8EC2 /* RefreshGifFooter.m */,
 				594A8384246E3CB600AC8EC2 /* UIView+Layout.h */,
 				594A8383246E3CB600AC8EC2 /* UIView+Layout.m */,
 			);
@@ -405,6 +410,7 @@
 				5995D44024519FB800E89EE5 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				59AC06FF24569169004DC5C0 /* UIScrollView+RefreshController.m in Sources */,
 				5995D44724519FB800E89EE5 /* MASConstraint.m in Sources */,
+				594A8388246E439900AC8EC2 /* RefreshGifFooter.m in Sources */,
 				594A8385246E3CB600AC8EC2 /* UIView+Layout.m in Sources */,
 				5995D44824519FB800E89EE5 /* MASViewConstraint.m in Sources */,
 				5995D44124519FB800E89EE5 /* ViewController+MASAdditions.m in Sources */,
