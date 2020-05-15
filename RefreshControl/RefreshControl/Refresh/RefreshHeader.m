@@ -18,16 +18,7 @@
 
 @implementation RefreshHeader
 
-- (instancetype)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        [self setupSubviews];
-    }
-    return self;
-}
-
-- (void)setupSubviews{
+- (void)prepare{
     _label = [[UILabel alloc] init];
     
     _label.backgroundColor = [UIColor clearColor];

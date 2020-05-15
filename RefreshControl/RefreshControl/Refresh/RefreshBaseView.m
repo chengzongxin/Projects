@@ -17,6 +17,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.status = RefreshStatusNormal;
+        [self prepare];
     }
     return self;
 }
@@ -44,6 +45,7 @@
     [super layoutSubviews];
 }
 
+- (void)prepare{}
 - (void)placeSubviews{}
 
 - (void)addObservers{

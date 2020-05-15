@@ -17,18 +17,7 @@
 
 @implementation RefreshFooter
 
-
-- (instancetype)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        [self setupSubviews];
-        self.surplusCount = 10;
-    }
-    return self;
-}
-
-- (void)setupSubviews{
+- (void)prepare{
     _label = [[UILabel alloc] init];
     
     _label.backgroundColor = [UIColor clearColor];

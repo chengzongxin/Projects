@@ -10,18 +10,9 @@
 
 @implementation RefreshGifHeader
 
-- (instancetype)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        
-    }
-    return self;
-}
-
 - (void)prepare
 {
-//    [super prepare];
+    [super prepare];
     
     // 设置普通状态的动画图片
     NSMutableArray *idleImages = [NSMutableArray array];

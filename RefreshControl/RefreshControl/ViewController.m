@@ -41,14 +41,14 @@
     
     [_tableView registerClass:UITableViewCell.class forCellReuseIdentifier:@"cell"];
     
-    [self.tableView addRefreshWithHeaderBlock:^{
+    [self.tableView addRefreshWithGifHeaderBlock:^{
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             NSLog(@"%s",__FUNCTION__);
             [self.tableView headerStopRefresh];
             [self.tableView resetNoMoreData];
             
         });
-    } footerBlock:^{
+    } gifFooterBlock:^{
         
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             

@@ -33,6 +33,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)noticeNoreMoreData;
 
 - (void)resetNoMoreData;
+
+- (void)addRefreshWithGifHeaderBlock:(RefreshingBlock)headerBlock gifFooterBlock:(RefreshingBlock)footerBlock;
+
 @end
 
 NS_ASSUME_NONNULL_END

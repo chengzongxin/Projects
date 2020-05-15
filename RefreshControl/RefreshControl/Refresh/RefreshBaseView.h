@@ -50,6 +50,9 @@ typedef void (^RefreshingBlock)(void);
 - (void)executeRefreshingCallback;
 
 #pragma mark - 交给子类们去实现
+// 初始化工作
+- (void)prepare;
+// 布局子控件
 - (void)placeSubviews;
 /** 当scrollView的contentOffset发生改变的时候调用 */
 - (void)scrollViewContentOffsetDidChange:(NSDictionary *)change NS_REQUIRES_SUPER;
