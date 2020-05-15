@@ -117,7 +117,20 @@
 //    }
 }
 
-
+- (void)setSuperScrollViewContentOffY:(CGFloat)superScrollViewContentOffY{
+    [super setSuperScrollViewContentOffY:superScrollViewContentOffY];
+    
+    NSArray *images = self.stateImages[@(RefreshStatusNormal)];
+    if (self.status != RefreshStatusNormal || images.count == 0) return;
+    // 停止动画
+    [self.gifView stopAnimating];
+    
+    int pullingPercent = (int)(superScrollViewContentOffY / (float)self.height);
+    // 设置当前需要显示的图片
+    NSUInteger index =  images.count * pullingPercent;
+    if (index >= images.count) index = images.count - 1;
+    self.gifView.image = images[index];
+}
 
 #pragma mark - 懒加载
 - (UIImageView *)gifView
