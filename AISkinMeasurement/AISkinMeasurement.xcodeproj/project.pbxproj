@@ -23,6 +23,11 @@
 		599EC16124728F6100C35EA0 /* SkinOverviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 599EC15F24728F6100C35EA0 /* SkinOverviewCell.xib */; };
 		599EC16A247297CC00C35EA0 /* IGListBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 599EC168247297CC00C35EA0 /* IGListBaseCell.m */; };
 		599EC16B247297CC00C35EA0 /* IGListBaseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 599EC169247297CC00C35EA0 /* IGListBaseCell.xib */; };
+		599EC1712472A20D00C35EA0 /* SkinEightDimentionSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 599EC1702472A20D00C35EA0 /* SkinEightDimentionSection.m */; };
+		599EC1752472A25200C35EA0 /* SkinEightDimentionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 599EC1732472A25200C35EA0 /* SkinEightDimentionCell.m */; };
+		599EC1762472A25200C35EA0 /* SkinEightDimentionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 599EC1742472A25200C35EA0 /* SkinEightDimentionCell.xib */; };
+		599EC1882472A2D200C35EA0 /* GBRadarChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 599EC1782472A2D200C35EA0 /* GBRadarChart.m */; };
+		599EC18D2472A2D200C35EA0 /* GBRadarChartDataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 599EC1852472A2D200C35EA0 /* GBRadarChartDataItem.m */; };
 		9BF5FDED857D46BE4962D418 /* Pods_AISkinMeasurementTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27FACE9F6D2AD2196B10AF30 /* Pods_AISkinMeasurementTests.framework */; };
 		BC419DEAF81CC13EE70377CB /* Pods_AISkinMeasurement_AISkinMeasurementUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B13BAE8D8DE34D6EEF055D5 /* Pods_AISkinMeasurement_AISkinMeasurementUITests.framework */; };
 		D093A8D562BCBBCB2E4186E7 /* Pods_AISkinMeasurement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43B582F785BFE227341F7585 /* Pods_AISkinMeasurement.framework */; };
@@ -79,6 +84,15 @@
 		599EC167247297CC00C35EA0 /* IGListBaseCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IGListBaseCell.h; sourceTree = "<group>"; };
 		599EC168247297CC00C35EA0 /* IGListBaseCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IGListBaseCell.m; sourceTree = "<group>"; };
 		599EC169247297CC00C35EA0 /* IGListBaseCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IGListBaseCell.xib; sourceTree = "<group>"; };
+		599EC16F2472A20D00C35EA0 /* SkinEightDimentionSection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SkinEightDimentionSection.h; sourceTree = "<group>"; };
+		599EC1702472A20D00C35EA0 /* SkinEightDimentionSection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SkinEightDimentionSection.m; sourceTree = "<group>"; };
+		599EC1722472A25200C35EA0 /* SkinEightDimentionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SkinEightDimentionCell.h; sourceTree = "<group>"; };
+		599EC1732472A25200C35EA0 /* SkinEightDimentionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SkinEightDimentionCell.m; sourceTree = "<group>"; };
+		599EC1742472A25200C35EA0 /* SkinEightDimentionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SkinEightDimentionCell.xib; sourceTree = "<group>"; };
+		599EC1782472A2D200C35EA0 /* GBRadarChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBRadarChart.m; sourceTree = "<group>"; };
+		599EC17C2472A2D200C35EA0 /* GBRadarChartDataItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBRadarChartDataItem.h; sourceTree = "<group>"; };
+		599EC17E2472A2D200C35EA0 /* GBRadarChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBRadarChart.h; sourceTree = "<group>"; };
+		599EC1852472A2D200C35EA0 /* GBRadarChartDataItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBRadarChartDataItem.m; sourceTree = "<group>"; };
 		689BA346BD4CD923EBE4D8F1 /* Pods-AISkinMeasurement.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AISkinMeasurement.debug.xcconfig"; path = "Target Support Files/Pods-AISkinMeasurement/Pods-AISkinMeasurement.debug.xcconfig"; sourceTree = "<group>"; };
 		8B635EA5CF4073DF207BDD9A /* Pods-AISkinMeasurement.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AISkinMeasurement.release.xcconfig"; path = "Target Support Files/Pods-AISkinMeasurement/Pods-AISkinMeasurement.release.xcconfig"; sourceTree = "<group>"; };
 		AAC7DA5A40B3826FF71B0CA7 /* Pods-AISkinMeasurement-AISkinMeasurementUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AISkinMeasurement-AISkinMeasurementUITests.release.xcconfig"; path = "Target Support Files/Pods-AISkinMeasurement-AISkinMeasurementUITests/Pods-AISkinMeasurement-AISkinMeasurementUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -197,8 +211,26 @@
 				599EC15D24728F6100C35EA0 /* SkinOverviewCell.h */,
 				599EC15E24728F6100C35EA0 /* SkinOverviewCell.m */,
 				599EC15F24728F6100C35EA0 /* SkinOverviewCell.xib */,
+				599EC16F2472A20D00C35EA0 /* SkinEightDimentionSection.h */,
+				599EC1702472A20D00C35EA0 /* SkinEightDimentionSection.m */,
+				599EC1722472A25200C35EA0 /* SkinEightDimentionCell.h */,
+				599EC1732472A25200C35EA0 /* SkinEightDimentionCell.m */,
+				599EC1742472A25200C35EA0 /* SkinEightDimentionCell.xib */,
+				599EC1772472A2D200C35EA0 /* GBChart */,
 			);
 			path = Modules;
+			sourceTree = "<group>";
+		};
+		599EC1772472A2D200C35EA0 /* GBChart */ = {
+			isa = PBXGroup;
+			children = (
+				599EC17E2472A2D200C35EA0 /* GBRadarChart.h */,
+				599EC1782472A2D200C35EA0 /* GBRadarChart.m */,
+				599EC17C2472A2D200C35EA0 /* GBRadarChartDataItem.h */,
+				599EC1852472A2D200C35EA0 /* GBRadarChartDataItem.m */,
+			);
+			name = GBChart;
+			path = "../../../GBChart-master/GBChartDemo/GBChart";
 			sourceTree = "<group>";
 		};
 		E48FE8BF0778E1CF883692D2 /* Pods */ = {
@@ -332,6 +364,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				599EC1762472A25200C35EA0 /* SkinEightDimentionCell.xib in Resources */,
 				599EC16B247297CC00C35EA0 /* IGListBaseCell.xib in Resources */,
 				599EC0922472859800C35EA0 /* LaunchScreen.storyboard in Resources */,
 				599EC16124728F6100C35EA0 /* SkinOverviewCell.xib in Resources */,
@@ -464,13 +497,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				599EC18D2472A2D200C35EA0 /* GBRadarChartDataItem.m in Sources */,
+				599EC1712472A20D00C35EA0 /* SkinEightDimentionSection.m in Sources */,
 				599EC0842472859800C35EA0 /* AppDelegate.m in Sources */,
+				599EC1882472A2D200C35EA0 /* GBRadarChart.m in Sources */,
 				599EC16024728F6100C35EA0 /* SkinOverviewCell.m in Sources */,
 				599EC0952472859800C35EA0 /* main.m in Sources */,
 				599EC0872472859800C35EA0 /* SceneDelegate.m in Sources */,
 				599EC15124728B4200C35EA0 /* IGListBaseViewController.m in Sources */,
 				599EC15724728DAF00C35EA0 /* IGListBaseSection.m in Sources */,
 				599EC16A247297CC00C35EA0 /* IGListBaseCell.m in Sources */,
+				599EC1752472A25200C35EA0 /* SkinEightDimentionCell.m in Sources */,
 				599EC15424728BA300C35EA0 /* ViewController.m in Sources */,
 				599EC15C24728F0400C35EA0 /* SkinOverviewSection.m in Sources */,
 			);

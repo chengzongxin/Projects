@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "SkinOverviewSection.h"
+#import "SkinEightDimentionSection.h"
 @interface ViewController ()
 
 @end
@@ -17,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.datas = @[@"123",@"222"];
+    self.datas = @[@"123",@1,@"123123",@"534324",@54];
     
     [self.adater reloadDataWithCompletion:nil];
 }
@@ -26,7 +27,9 @@
 //    id element = object.firstObject;
     if ([object isKindOfClass:[NSString class]]) {
         return SkinOverviewSection.new;
-    }else{
+    }else if ([object isKindOfClass:[NSNumber class]]) {
+        return SkinEightDimentionSection.new;
+    }else {
         return nil;
     }
 }
