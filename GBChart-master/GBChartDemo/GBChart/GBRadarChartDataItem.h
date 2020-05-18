@@ -13,8 +13,12 @@
 
 + (instancetype)dataItemWithValue:(CGFloat)value description:(NSString *)description;
 
++ (instancetype)dataItemWithValue:(CGFloat)value text:(NSAttributedString *)text;
+
 @property (nonatomic, assign) CGFloat value;
 
-@property (nonatomic, strong) NSString *textDescription;
+//@property (nonatomic, strong) NSString *textDescription;
+
+@property (strong, nonatomic) NSAttributedString *text;
 
 @end

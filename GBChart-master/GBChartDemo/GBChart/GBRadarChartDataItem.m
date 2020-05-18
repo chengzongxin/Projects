@@ -14,7 +14,14 @@
     
     GBRadarChartDataItem *item = [[GBRadarChartDataItem alloc] init];
     item.value = value;
-    item.textDescription = description;
+//    item.textDescription = description;
+    return item;
+}
+
++ (instancetype)dataItemWithValue:(CGFloat)value text:(NSAttributedString *)text{
+    GBRadarChartDataItem *item = [[GBRadarChartDataItem alloc] init];
+    item.value = value;
+    item.text = text;
     return item;
 }
 

@@ -86,7 +86,7 @@
         
         GBRadarChartDataItem *item = _chartDataItems[i];
         [values addObject:@(item.value)];
-        [descriptions addObject:item.textDescription];
+        [descriptions addObject:item.text];
         // !!!: 调整起始角度在这里
         CGFloat angleValue = _clockwise? (M_PI - i * M_PI*2/_chartDataItems.count) : (-M_PI + i * M_PI*2/_chartDataItems.count);
         [angles addObject:@(angleValue)];
@@ -139,9 +139,10 @@
     
     CGSize maxSize = CGSizeZero;
     for (int i = 0; i < descriptions.count; i++) {
-        NSString *desc = descriptions[i];
+        NSAttributedString *desc = descriptions[i];
         
-        CGSize tempSize = [desc sizeWithAttributes:@{NSFontAttributeName : [UIFont systemFontOfSize:_titleFontSize]}];
+//        CGSize tempSize = [desc boundingRectWithSize:CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX) options:0 context:nil].size;
+        CGSize tempSize = [self sizeLabelToFit:desc width:CGFLOAT_MAX height:CGFLOAT_MAX];
         CGFloat w = MAX(maxSize.width, tempSize.width);
         CGFloat h = MAX(maxSize.height, tempSize.height);
         maxSize = CGSizeMake(w, h);
@@ -194,12 +195,13 @@
 - (void)createLabelWithMaxLength:(CGFloat)maxLength descriptions:(NSArray *)descriptions angleArray:(NSArray *)angleArray {
     
     NSInteger section = 0;
-    for (NSString *desc in descriptions) {
+    for (NSAttributedString *text in descriptions) {
         UILabel *label = [UILabel new];
         label.textColor = _fontColor;
         label.font = [UIFont systemFontOfSize:_titleFontSize];
         label.numberOfLines = 0;
-        label.backgroundColor = [UIColor cyanColor];
+        label.textAlignment = NSTextAlignmentCenter;
+//        label.backgroundColor = [UIColor cyanColor];
         [self addSubview:label];
         [self.titleLabels addObject:label];
         if (_canLabelTouchable) {
@@ -208,8 +210,11 @@
             UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapLabel:)];
             [label addGestureRecognizer:tap];
         }
-        label.text = desc;
-        CGSize size = [desc sizeWithAttributes:@{NSFontAttributeName : [UIFont systemFontOfSize:_titleFontSize]}];
+//        label.text = desc;
+        label.attributedText = text;
+//        CGSize size = [text boundingRectWithSize:CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX) options:0 context:nil].size;
+//        CGSize size = [desc sizeWithAttributes:@{NSFontAttributeName : [UIFont systemFontOfSize:_titleFontSize]}];
+        CGSize size = [self sizeLabelToFit:text width:CGFLOAT_MAX height:CGFLOAT_MAX];
         CGFloat angle = [angleArray[section] floatValue];
         CGFloat x = _centerX + maxLength*sinf(angle);
         CGFloat y = _centerY + maxLength*cosf(angle);
@@ -247,6 +252,25 @@
         }
         section++;
     }
+}
+
+/**
+ *  返回UILabel自适应后的size
+ *
+ *  @param aString 字符串
+ *  @param width   指定宽度
+ *  @param height  指定高度
+ *
+ *  @return CGSize
+ */
+- (CGSize)sizeLabelToFit:(NSAttributedString *)aString width:(CGFloat)width height:(CGFloat)height {
+   UILabel *tempLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, width, height)];
+   tempLabel.attributedText = aString;
+   tempLabel.numberOfLines = 0;
+   [tempLabel sizeToFit];
+   CGSize size = tempLabel.frame.size;
+//   size = CGSizeMake(CGFloat_ceil(size.width), CGFloat_ceil(size.height));
+   return size;
 }
 
 #pragma mark - 获取最大的值
