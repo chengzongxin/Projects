@@ -28,6 +28,10 @@
 		599EC1762472A25200C35EA0 /* SkinEightDimentionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 599EC1742472A25200C35EA0 /* SkinEightDimentionCell.xib */; };
 		599EC1882472A2D200C35EA0 /* GBRadarChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 599EC1782472A2D200C35EA0 /* GBRadarChart.m */; };
 		599EC18D2472A2D200C35EA0 /* GBRadarChartDataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 599EC1852472A2D200C35EA0 /* GBRadarChartDataItem.m */; };
+		599EC1982472A8D200C35EA0 /* SkinSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 599EC1962472A8D200C35EA0 /* SkinSectionHeaderView.m */; };
+		599EC1992472A8D200C35EA0 /* SkinSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 599EC1972472A8D200C35EA0 /* SkinSectionHeaderView.xib */; };
+		599EC19D2472A92700C35EA0 /* IGListBaseReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 599EC19B2472A92700C35EA0 /* IGListBaseReusableView.m */; };
+		599EC19E2472A92700C35EA0 /* IGListBaseReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 599EC19C2472A92700C35EA0 /* IGListBaseReusableView.xib */; };
 		9BF5FDED857D46BE4962D418 /* Pods_AISkinMeasurementTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27FACE9F6D2AD2196B10AF30 /* Pods_AISkinMeasurementTests.framework */; };
 		BC419DEAF81CC13EE70377CB /* Pods_AISkinMeasurement_AISkinMeasurementUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B13BAE8D8DE34D6EEF055D5 /* Pods_AISkinMeasurement_AISkinMeasurementUITests.framework */; };
 		D093A8D562BCBBCB2E4186E7 /* Pods_AISkinMeasurement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43B582F785BFE227341F7585 /* Pods_AISkinMeasurement.framework */; };
@@ -93,6 +97,12 @@
 		599EC17C2472A2D200C35EA0 /* GBRadarChartDataItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBRadarChartDataItem.h; sourceTree = "<group>"; };
 		599EC17E2472A2D200C35EA0 /* GBRadarChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBRadarChart.h; sourceTree = "<group>"; };
 		599EC1852472A2D200C35EA0 /* GBRadarChartDataItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBRadarChartDataItem.m; sourceTree = "<group>"; };
+		599EC1952472A8D200C35EA0 /* SkinSectionHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SkinSectionHeaderView.h; sourceTree = "<group>"; };
+		599EC1962472A8D200C35EA0 /* SkinSectionHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SkinSectionHeaderView.m; sourceTree = "<group>"; };
+		599EC1972472A8D200C35EA0 /* SkinSectionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SkinSectionHeaderView.xib; sourceTree = "<group>"; };
+		599EC19A2472A92700C35EA0 /* IGListBaseReusableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IGListBaseReusableView.h; sourceTree = "<group>"; };
+		599EC19B2472A92700C35EA0 /* IGListBaseReusableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IGListBaseReusableView.m; sourceTree = "<group>"; };
+		599EC19C2472A92700C35EA0 /* IGListBaseReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IGListBaseReusableView.xib; sourceTree = "<group>"; };
 		689BA346BD4CD923EBE4D8F1 /* Pods-AISkinMeasurement.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AISkinMeasurement.debug.xcconfig"; path = "Target Support Files/Pods-AISkinMeasurement/Pods-AISkinMeasurement.debug.xcconfig"; sourceTree = "<group>"; };
 		8B635EA5CF4073DF207BDD9A /* Pods-AISkinMeasurement.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AISkinMeasurement.release.xcconfig"; path = "Target Support Files/Pods-AISkinMeasurement/Pods-AISkinMeasurement.release.xcconfig"; sourceTree = "<group>"; };
 		AAC7DA5A40B3826FF71B0CA7 /* Pods-AISkinMeasurement-AISkinMeasurementUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AISkinMeasurement-AISkinMeasurementUITests.release.xcconfig"; path = "Target Support Files/Pods-AISkinMeasurement-AISkinMeasurementUITests/Pods-AISkinMeasurement-AISkinMeasurementUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -197,6 +207,9 @@
 				599EC167247297CC00C35EA0 /* IGListBaseCell.h */,
 				599EC168247297CC00C35EA0 /* IGListBaseCell.m */,
 				599EC169247297CC00C35EA0 /* IGListBaseCell.xib */,
+				599EC19A2472A92700C35EA0 /* IGListBaseReusableView.h */,
+				599EC19B2472A92700C35EA0 /* IGListBaseReusableView.m */,
+				599EC19C2472A92700C35EA0 /* IGListBaseReusableView.xib */,
 			);
 			path = IGListBaseViewController;
 			sourceTree = "<group>";
@@ -213,6 +226,9 @@
 				599EC15F24728F6100C35EA0 /* SkinOverviewCell.xib */,
 				599EC16F2472A20D00C35EA0 /* SkinEightDimentionSection.h */,
 				599EC1702472A20D00C35EA0 /* SkinEightDimentionSection.m */,
+				599EC1952472A8D200C35EA0 /* SkinSectionHeaderView.h */,
+				599EC1962472A8D200C35EA0 /* SkinSectionHeaderView.m */,
+				599EC1972472A8D200C35EA0 /* SkinSectionHeaderView.xib */,
 				599EC1722472A25200C35EA0 /* SkinEightDimentionCell.h */,
 				599EC1732472A25200C35EA0 /* SkinEightDimentionCell.m */,
 				599EC1742472A25200C35EA0 /* SkinEightDimentionCell.xib */,
@@ -364,11 +380,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				599EC19E2472A92700C35EA0 /* IGListBaseReusableView.xib in Resources */,
 				599EC1762472A25200C35EA0 /* SkinEightDimentionCell.xib in Resources */,
 				599EC16B247297CC00C35EA0 /* IGListBaseCell.xib in Resources */,
 				599EC0922472859800C35EA0 /* LaunchScreen.storyboard in Resources */,
 				599EC16124728F6100C35EA0 /* SkinOverviewCell.xib in Resources */,
 				599EC08F2472859800C35EA0 /* Assets.xcassets in Resources */,
+				599EC1992472A8D200C35EA0 /* SkinSectionHeaderView.xib in Resources */,
 				599EC08D2472859800C35EA0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -503,6 +521,7 @@
 				599EC1882472A2D200C35EA0 /* GBRadarChart.m in Sources */,
 				599EC16024728F6100C35EA0 /* SkinOverviewCell.m in Sources */,
 				599EC0952472859800C35EA0 /* main.m in Sources */,
+				599EC1982472A8D200C35EA0 /* SkinSectionHeaderView.m in Sources */,
 				599EC0872472859800C35EA0 /* SceneDelegate.m in Sources */,
 				599EC15124728B4200C35EA0 /* IGListBaseViewController.m in Sources */,
 				599EC15724728DAF00C35EA0 /* IGListBaseSection.m in Sources */,
@@ -510,6 +529,7 @@
 				599EC1752472A25200C35EA0 /* SkinEightDimentionCell.m in Sources */,
 				599EC15424728BA300C35EA0 /* ViewController.m in Sources */,
 				599EC15C24728F0400C35EA0 /* SkinOverviewSection.m in Sources */,
+				599EC19D2472A92700C35EA0 /* IGListBaseReusableView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

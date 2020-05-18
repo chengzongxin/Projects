@@ -7,6 +7,7 @@
 //
 
 #import "IGListBaseSection.h"
+#import "IGListBaseReusableView.h"
 #import "IGListBaseCell.h"
 
 @interface IGListBaseSection ()
@@ -28,6 +29,7 @@
 
 #pragma mark - Public Method
 - (Class)registerCellClass{return IGListBaseCell.class;}
+- (Class)registerReusableViewClass{return IGListBaseReusableView.class;}
 
 #pragma mark - IGList Datasouce
 - (NSInteger)numberOfItems{
@@ -58,7 +60,10 @@
 }
 
 - (UICollectionReusableView *)viewForSupplementaryElementOfKind:(NSString *)elementKind atIndex:(NSInteger)index {
-    UICollectionReusableView *header = [self.collectionContext dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader forSectionController:self class:[UICollectionReusableView class] atIndex:index];
+    IGListBaseReusableView *header = [self.collectionContext dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader forSectionController:self nibName:NSStringFromClass(self.registerReusableViewClass) bundle:nil atIndex:index];
+    if ([header respondsToSelector:@selector(setModel:)]) {
+        header.model = self.datas;
+    }
     return header;
 }
 @end

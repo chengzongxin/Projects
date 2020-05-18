@@ -21,6 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (copy, nonatomic) id datas;
 
 - (Class)registerCellClass;
+- (Class)registerReusableViewClass;
 
 @end
 
