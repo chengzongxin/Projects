@@ -6,45 +6,18 @@
 //  Copyright © 2020 Joe. All rights reserved.
 //
 
-#import "ViewController.h"
-#import <IGListKit/IGListKit.h>
+#import "IGListBaseViewController.h"
 
-@interface ViewController ()<IGListAdapterDataSource>
-
-
-@property (strong, nonatomic) IGListAdapter *adater;
-@property (strong, nonatomic) IGListAdapterUpdater *updater;
-@property (strong, nonatomic) UICollectionView *collectionView;
-@property (strong, nonatomic) NSMutableArray  *datas;
+@interface IGListBaseViewController ()
 
 @end
 
-@implementation ViewController
+@implementation IGListBaseViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = UIColor.orangeColor;
-    
     [self.view addSubview:self.collectionView];
-}
-
-- (void)setupColletionView {
-    IGListCollectionViewLayout *layout = [[IGListCollectionViewLayout alloc] initWithStickyHeaders:NO topContentInset:0 stretchToEdge:NO];
-    layout.showHeaderWhenEmpty = NO;
-    UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:self.view.frame collectionViewLayout:layout];
-    
-    IGListAdapterUpdater *updater = [[IGListAdapterUpdater alloc] init];
-    //    updater.delegate = self;
-    IGListAdapter *adater = [[IGListAdapter alloc] initWithUpdater:updater viewController:self];
-    //    adater.delegate = self;
-    adater.dataSource = self;
-    adater.collectionView = collectionView;
-    [self.view addSubview:collectionView];
-    self.updater = updater;
-    self.adater = adater;
-    self.collectionView = collectionView;
-    self.collectionView.backgroundColor = UIColor.whiteColor;
 }
 
 - (void)viewDidLayoutSubviews{
@@ -52,8 +25,6 @@
     
     self.collectionView.frame = self.view.frame;
 }
-
-
 
 
 #pragma mark IGList DataSource

@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "IGListBaseViewController.h"
 
-@interface ViewController : UIViewController
+NS_ASSUME_NONNULL_BEGIN
 
+@interface ViewController : IGListBaseViewController
 
 @end
 
+NS_ASSUME_NONNULL_END
