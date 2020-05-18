@@ -52,7 +52,7 @@
         
         NSDictionary *attr = @{NSFontAttributeName:[UIFont systemFontOfSize:10],NSForegroundColorAttributeName:[UIColor colorWithRed:78/255.0 green:86/255.0 blue:109/255.0 alpha:1.0]};
         NSMutableAttributedString *string = [[NSMutableAttributedString alloc] initWithString:str attributes:attr];
-        [string addAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:18]} range:range];
+        [string addAttributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:18]} range:range];
         GBRadarChartDataItem *item = [GBRadarChartDataItem dataItemWithValue:[values[i] floatValue] text:string];
         [items addObject:item];
     }
