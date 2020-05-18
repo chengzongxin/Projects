@@ -11,8 +11,6 @@
 
 @interface IGListBaseSection ()
 
-@property (strong, nonatomic) Class cellClass;
-
 @end
 
 @implementation IGListBaseSection
@@ -24,14 +22,11 @@
         self.inset = UIEdgeInsetsMake(0, 0, 0, 0);
         self.minimumLineSpacing = 10;
         self.minimumInteritemSpacing = 10;
-        [self prepare];
-        self.cellClass = [self registerCellClass];
     }
     return self;
 }
 
 #pragma mark - Public Method
-- (void)prepare{}
 - (Class)registerCellClass{return IGListBaseCell.class;}
 
 #pragma mark - IGList Datasouce
@@ -44,7 +39,7 @@
 }
 
 - (UICollectionViewCell *)cellForItemAtIndex:(NSInteger)index {
-    IGListBaseCell *cell = [self.collectionContext dequeueReusableCellWithNibName:NSStringFromClass(self.cellClass.class) bundle:nil forSectionController:self atIndex:index];
+    IGListBaseCell *cell = [self.collectionContext dequeueReusableCellWithNibName:NSStringFromClass([self registerCellClass].class) bundle:nil forSectionController:self atIndex:index];
     cell.model = self.datas;
     return cell;
 }
