@@ -28,6 +28,7 @@
 
 @implementation SkinCameraViewController
 
+#pragma mark - LifeCycle Init
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -38,17 +39,6 @@
     }
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"snapshot" style:UIBarButtonItemStyleDone target:self action:@selector(snapshot)];
-}
-
-- (void)snapshot{
-//    [_photoOutput capturePhotoWithSettings:AVCapturePhotoSettings.new delegate:self];
-//    UIImageWriteToSavedPhotosAlbum(_lastImage, nil, nil, nil);
-    
-//    UIImageView *imageV = [[UIImageView alloc] initWithImage:_lastImage];
-//    [self.view addSubview:imageV];
-    
-    UIImageWriteToSavedPhotosAlbum(_lastImage, nil, nil, nil);
-//    [self switchCamere:nil];
 }
 
 - (void)setupCaptureSession{
@@ -111,6 +101,27 @@
 
 
 #pragma mark - Actions
+
+- (void)snapshot{
+//    [_photoOutput capturePhotoWithSettings:AVCapturePhotoSettings.new delegate:self];
+//    UIImageWriteToSavedPhotosAlbum(_lastImage, nil, nil, nil);
+    
+    
+//    UIImageWriteToSavedPhotosAlbum(_lastImage, nil, nil, nil);
+    
+    UIImageView *imageV = [[UIImageView alloc] initWithFrame:self.view.bounds];
+    imageV.contentMode = UIViewContentModeScaleAspectFill;
+    [self.view addSubview:imageV];
+    
+    AVCaptureDevicePosition currentPosition = self.videoDeviceInput.device.position;
+    if (currentPosition == AVCaptureDevicePositionFront) {
+       _lastImage = [UIImage imageWithCGImage:_lastImage.CGImage scale:_lastImage.scale orientation:UIImageOrientationLeftMirrored];
+    }
+    imageV.image = _lastImage;
+    
+    [_captureSession stopRunning];
+}
+
 - (void)switchCamere:(id)sender {
     AVCaptureDevice* currentVideoDevice = self.videoDeviceInput.device;
     AVCaptureDevicePosition currentPosition = currentVideoDevice.position;
