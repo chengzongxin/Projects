@@ -9,6 +9,7 @@
 #import "SkinMeasurementViewController.h"
 #import "SkinOverviewSection.h"
 #import "SkinEightDimentionSection.h"
+#import "SkinViewModel.h"
 @interface SkinMeasurementViewController ()
 
 @end
@@ -21,6 +22,12 @@
     self.datas = @[@"123",@1,@"123123",@"534324",@54];
     
     [self.adater reloadDataWithCompletion:nil];
+    
+    [SkinViewModel analysisInfoQuery:@"123" recordNo:@"123" success:^(id  _Nonnull data) {
+        NSLog(@"%@",data);
+    } fail:^(NSString * _Nonnull message) {
+        NSLog(@"%@",message);
+    }];
 }
 
 - (IGListSectionController *)listAdapter:(IGListAdapter *)listAdapter sectionControllerForObject:(NSArray *)object {

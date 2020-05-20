@@ -9,9 +9,6 @@
 /* Begin PBXBuildFile section */
 		597A08AF2474CFC6002FE680 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 597A08AE2474CFC6002FE680 /* ViewController.m */; };
 		597A08B22474D002002FE680 /* SkinCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 597A08B12474D002002FE680 /* SkinCameraViewController.m */; };
-		597A08B52474D1B8002FE680 /* SCPermissionsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 597A08B42474D1B8002FE680 /* SCPermissionsView.m */; };
-		597A08B92474D8DD002FE680 /* FacePreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = 597A08B82474D8DD002FE680 /* FacePreviewView.m */; };
-		597A08BB2474DFC6002FE680 /* face_position@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 597A08BA2474DFC6002FE680 /* face_position@3x.png */; };
 		599EC0842472859800C35EA0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 599EC0832472859800C35EA0 /* AppDelegate.m */; };
 		599EC0872472859800C35EA0 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 599EC0862472859800C35EA0 /* SceneDelegate.m */; };
 		599EC08D2472859800C35EA0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 599EC08B2472859800C35EA0 /* Main.storyboard */; };
@@ -31,12 +28,16 @@
 		599EC1712472A20D00C35EA0 /* SkinEightDimentionSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 599EC1702472A20D00C35EA0 /* SkinEightDimentionSection.m */; };
 		599EC1752472A25200C35EA0 /* SkinEightDimentionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 599EC1732472A25200C35EA0 /* SkinEightDimentionCell.m */; };
 		599EC1762472A25200C35EA0 /* SkinEightDimentionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 599EC1742472A25200C35EA0 /* SkinEightDimentionCell.xib */; };
-		599EC1882472A2D200C35EA0 /* GBRadarChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 599EC1782472A2D200C35EA0 /* GBRadarChart.m */; };
-		599EC18D2472A2D200C35EA0 /* GBRadarChartDataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 599EC1852472A2D200C35EA0 /* GBRadarChartDataItem.m */; };
 		599EC1982472A8D200C35EA0 /* SkinSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 599EC1962472A8D200C35EA0 /* SkinSectionHeaderView.m */; };
 		599EC1992472A8D200C35EA0 /* SkinSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 599EC1972472A8D200C35EA0 /* SkinSectionHeaderView.xib */; };
 		599EC19D2472A92700C35EA0 /* IGListBaseReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 599EC19B2472A92700C35EA0 /* IGListBaseReusableView.m */; };
 		599EC19E2472A92700C35EA0 /* IGListBaseReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 599EC19C2472A92700C35EA0 /* IGListBaseReusableView.xib */; };
+		59FBEE4D247537A00073A947 /* SkinViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 59FBEE4C247537A00073A947 /* SkinViewModel.m */; };
+		59FBEE61247538690073A947 /* GBRadarChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 59FBEE56247538680073A947 /* GBRadarChart.m */; };
+		59FBEE62247538690073A947 /* GBRadarChartDataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 59FBEE59247538680073A947 /* GBRadarChartDataItem.m */; };
+		59FBEE63247538690073A947 /* SCPermissionsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 59FBEE5C247538680073A947 /* SCPermissionsView.m */; };
+		59FBEE64247538690073A947 /* FacePreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = 59FBEE5F247538680073A947 /* FacePreviewView.m */; };
+		59FBEE65247538690073A947 /* face_position@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 59FBEE60247538680073A947 /* face_position@3x.png */; };
 		9BF5FDED857D46BE4962D418 /* Pods_AISkinMeasurementTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27FACE9F6D2AD2196B10AF30 /* Pods_AISkinMeasurementTests.framework */; };
 		BC419DEAF81CC13EE70377CB /* Pods_AISkinMeasurement_AISkinMeasurementUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B13BAE8D8DE34D6EEF055D5 /* Pods_AISkinMeasurement_AISkinMeasurementUITests.framework */; };
 		D093A8D562BCBBCB2E4186E7 /* Pods_AISkinMeasurement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43B582F785BFE227341F7585 /* Pods_AISkinMeasurement.framework */; };
@@ -67,11 +68,6 @@
 		597A08AE2474CFC6002FE680 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		597A08B02474D002002FE680 /* SkinCameraViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SkinCameraViewController.h; sourceTree = "<group>"; };
 		597A08B12474D002002FE680 /* SkinCameraViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SkinCameraViewController.m; sourceTree = "<group>"; };
-		597A08B32474D1B8002FE680 /* SCPermissionsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCPermissionsView.h; sourceTree = "<group>"; };
-		597A08B42474D1B8002FE680 /* SCPermissionsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCPermissionsView.m; sourceTree = "<group>"; };
-		597A08B72474D8DC002FE680 /* FacePreviewView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacePreviewView.h; sourceTree = "<group>"; };
-		597A08B82474D8DD002FE680 /* FacePreviewView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacePreviewView.m; sourceTree = "<group>"; };
-		597A08BA2474DFC6002FE680 /* face_position@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "face_position@3x.png"; sourceTree = "<group>"; };
 		599EC07F2472859800C35EA0 /* AISkinMeasurement.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AISkinMeasurement.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		599EC0822472859800C35EA0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		599EC0832472859800C35EA0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -107,16 +103,23 @@
 		599EC1722472A25200C35EA0 /* SkinEightDimentionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SkinEightDimentionCell.h; sourceTree = "<group>"; };
 		599EC1732472A25200C35EA0 /* SkinEightDimentionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SkinEightDimentionCell.m; sourceTree = "<group>"; };
 		599EC1742472A25200C35EA0 /* SkinEightDimentionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SkinEightDimentionCell.xib; sourceTree = "<group>"; };
-		599EC1782472A2D200C35EA0 /* GBRadarChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBRadarChart.m; sourceTree = "<group>"; };
-		599EC17C2472A2D200C35EA0 /* GBRadarChartDataItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBRadarChartDataItem.h; sourceTree = "<group>"; };
-		599EC17E2472A2D200C35EA0 /* GBRadarChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBRadarChart.h; sourceTree = "<group>"; };
-		599EC1852472A2D200C35EA0 /* GBRadarChartDataItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBRadarChartDataItem.m; sourceTree = "<group>"; };
 		599EC1952472A8D200C35EA0 /* SkinSectionHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SkinSectionHeaderView.h; sourceTree = "<group>"; };
 		599EC1962472A8D200C35EA0 /* SkinSectionHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SkinSectionHeaderView.m; sourceTree = "<group>"; };
 		599EC1972472A8D200C35EA0 /* SkinSectionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SkinSectionHeaderView.xib; sourceTree = "<group>"; };
 		599EC19A2472A92700C35EA0 /* IGListBaseReusableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IGListBaseReusableView.h; sourceTree = "<group>"; };
 		599EC19B2472A92700C35EA0 /* IGListBaseReusableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IGListBaseReusableView.m; sourceTree = "<group>"; };
 		599EC19C2472A92700C35EA0 /* IGListBaseReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IGListBaseReusableView.xib; sourceTree = "<group>"; };
+		59FBEE4B247537A00073A947 /* SkinViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkinViewModel.h; sourceTree = "<group>"; };
+		59FBEE4C247537A00073A947 /* SkinViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkinViewModel.m; sourceTree = "<group>"; };
+		59FBEE56247538680073A947 /* GBRadarChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBRadarChart.m; sourceTree = "<group>"; };
+		59FBEE57247538680073A947 /* GBRadarChartDataItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBRadarChartDataItem.h; sourceTree = "<group>"; };
+		59FBEE58247538680073A947 /* GBRadarChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBRadarChart.h; sourceTree = "<group>"; };
+		59FBEE59247538680073A947 /* GBRadarChartDataItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBRadarChartDataItem.m; sourceTree = "<group>"; };
+		59FBEE5B247538680073A947 /* SCPermissionsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCPermissionsView.h; sourceTree = "<group>"; };
+		59FBEE5C247538680073A947 /* SCPermissionsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCPermissionsView.m; sourceTree = "<group>"; };
+		59FBEE5E247538680073A947 /* FacePreviewView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacePreviewView.h; sourceTree = "<group>"; };
+		59FBEE5F247538680073A947 /* FacePreviewView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacePreviewView.m; sourceTree = "<group>"; };
+		59FBEE60247538680073A947 /* face_position@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "face_position@3x.png"; sourceTree = "<group>"; };
 		689BA346BD4CD923EBE4D8F1 /* Pods-AISkinMeasurement.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AISkinMeasurement.debug.xcconfig"; path = "Target Support Files/Pods-AISkinMeasurement/Pods-AISkinMeasurement.debug.xcconfig"; sourceTree = "<group>"; };
 		8B635EA5CF4073DF207BDD9A /* Pods-AISkinMeasurement.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AISkinMeasurement.release.xcconfig"; path = "Target Support Files/Pods-AISkinMeasurement/Pods-AISkinMeasurement.release.xcconfig"; sourceTree = "<group>"; };
 		AAC7DA5A40B3826FF71B0CA7 /* Pods-AISkinMeasurement-AISkinMeasurementUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AISkinMeasurement-AISkinMeasurementUITests.release.xcconfig"; path = "Target Support Files/Pods-AISkinMeasurement-AISkinMeasurementUITests/Pods-AISkinMeasurement-AISkinMeasurementUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -153,18 +156,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		597A08B62474D365002FE680 /* LibView */ = {
-			isa = PBXGroup;
-			children = (
-				597A08B32474D1B8002FE680 /* SCPermissionsView.h */,
-				597A08B42474D1B8002FE680 /* SCPermissionsView.m */,
-				597A08B72474D8DC002FE680 /* FacePreviewView.h */,
-				597A08B82474D8DD002FE680 /* FacePreviewView.m */,
-				597A08BA2474DFC6002FE680 /* face_position@3x.png */,
-			);
-			path = LibView;
-			sourceTree = "<group>";
-		};
 		599EC0762472859700C35EA0 = {
 			isa = PBXGroup;
 			children = (
@@ -262,22 +253,59 @@
 				599EC1722472A25200C35EA0 /* SkinEightDimentionCell.h */,
 				599EC1732472A25200C35EA0 /* SkinEightDimentionCell.m */,
 				599EC1742472A25200C35EA0 /* SkinEightDimentionCell.xib */,
-				597A08B62474D365002FE680 /* LibView */,
-				599EC1772472A2D200C35EA0 /* GBChart */,
+				59FBEE4A247537A00073A947 /* ViewModel */,
+				59FBEE54247538680073A947 /* LibView */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
 		};
-		599EC1772472A2D200C35EA0 /* GBChart */ = {
+		59FBEE4A247537A00073A947 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				599EC17E2472A2D200C35EA0 /* GBRadarChart.h */,
-				599EC1782472A2D200C35EA0 /* GBRadarChart.m */,
-				599EC17C2472A2D200C35EA0 /* GBRadarChartDataItem.h */,
-				599EC1852472A2D200C35EA0 /* GBRadarChartDataItem.m */,
+				59FBEE4B247537A00073A947 /* SkinViewModel.h */,
+				59FBEE4C247537A00073A947 /* SkinViewModel.m */,
 			);
-			name = GBChart;
-			path = "../../../GBChart-master/GBChartDemo/GBChart";
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		59FBEE54247538680073A947 /* LibView */ = {
+			isa = PBXGroup;
+			children = (
+				59FBEE55247538680073A947 /* RadarChart */,
+				59FBEE5A247538680073A947 /* PermissionsView */,
+				59FBEE5D247538680073A947 /* FacePreview */,
+			);
+			path = LibView;
+			sourceTree = "<group>";
+		};
+		59FBEE55247538680073A947 /* RadarChart */ = {
+			isa = PBXGroup;
+			children = (
+				59FBEE56247538680073A947 /* GBRadarChart.m */,
+				59FBEE57247538680073A947 /* GBRadarChartDataItem.h */,
+				59FBEE58247538680073A947 /* GBRadarChart.h */,
+				59FBEE59247538680073A947 /* GBRadarChartDataItem.m */,
+			);
+			path = RadarChart;
+			sourceTree = "<group>";
+		};
+		59FBEE5A247538680073A947 /* PermissionsView */ = {
+			isa = PBXGroup;
+			children = (
+				59FBEE5B247538680073A947 /* SCPermissionsView.h */,
+				59FBEE5C247538680073A947 /* SCPermissionsView.m */,
+			);
+			path = PermissionsView;
+			sourceTree = "<group>";
+		};
+		59FBEE5D247538680073A947 /* FacePreview */ = {
+			isa = PBXGroup;
+			children = (
+				59FBEE5E247538680073A947 /* FacePreviewView.h */,
+				59FBEE5F247538680073A947 /* FacePreviewView.m */,
+				59FBEE60247538680073A947 /* face_position@3x.png */,
+			);
+			path = FacePreview;
 			sourceTree = "<group>";
 		};
 		E48FE8BF0778E1CF883692D2 /* Pods */ = {
@@ -411,7 +439,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				597A08BB2474DFC6002FE680 /* face_position@3x.png in Resources */,
+				59FBEE65247538690073A947 /* face_position@3x.png in Resources */,
 				599EC19E2472A92700C35EA0 /* IGListBaseReusableView.xib in Resources */,
 				599EC1762472A25200C35EA0 /* SkinEightDimentionCell.xib in Resources */,
 				599EC16B247297CC00C35EA0 /* IGListBaseCell.xib in Resources */,
@@ -547,23 +575,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				599EC18D2472A2D200C35EA0 /* GBRadarChartDataItem.m in Sources */,
 				599EC1712472A20D00C35EA0 /* SkinEightDimentionSection.m in Sources */,
 				599EC0842472859800C35EA0 /* AppDelegate.m in Sources */,
-				597A08B52474D1B8002FE680 /* SCPermissionsView.m in Sources */,
-				599EC1882472A2D200C35EA0 /* GBRadarChart.m in Sources */,
+				59FBEE4D247537A00073A947 /* SkinViewModel.m in Sources */,
 				599EC16024728F6100C35EA0 /* SkinOverviewCell.m in Sources */,
 				599EC0952472859800C35EA0 /* main.m in Sources */,
 				599EC1982472A8D200C35EA0 /* SkinSectionHeaderView.m in Sources */,
 				599EC0872472859800C35EA0 /* SceneDelegate.m in Sources */,
-				597A08B92474D8DD002FE680 /* FacePreviewView.m in Sources */,
+				59FBEE62247538690073A947 /* GBRadarChartDataItem.m in Sources */,
+				59FBEE64247538690073A947 /* FacePreviewView.m in Sources */,
 				599EC15124728B4200C35EA0 /* IGListBaseViewController.m in Sources */,
+				59FBEE61247538690073A947 /* GBRadarChart.m in Sources */,
 				599EC15724728DAF00C35EA0 /* IGListBaseSection.m in Sources */,
 				597A08B22474D002002FE680 /* SkinCameraViewController.m in Sources */,
 				597A08AF2474CFC6002FE680 /* ViewController.m in Sources */,
 				599EC16A247297CC00C35EA0 /* IGListBaseCell.m in Sources */,
 				599EC1752472A25200C35EA0 /* SkinEightDimentionCell.m in Sources */,
 				599EC15424728BA300C35EA0 /* SkinMeasurementViewController.m in Sources */,
+				59FBEE63247538690073A947 /* SCPermissionsView.m in Sources */,
 				599EC15C24728F0400C35EA0 /* SkinOverviewSection.m in Sources */,
 				599EC19D2472A92700C35EA0 /* IGListBaseReusableView.m in Sources */,
 			);

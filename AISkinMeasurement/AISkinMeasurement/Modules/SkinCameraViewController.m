@@ -10,6 +10,8 @@
 #import <Photos/Photos.h>
 #import "SCPermissionsView.h"
 #import "FacePreviewView.h"
+#import "SkinViewModel.h"
+
 @interface SkinCameraViewController () <SCPermissionsViewDelegate,AVCaptureVideoDataOutputSampleBufferDelegate>
 
 @property (nonatomic, strong) SCPermissionsView *permissionsView;
@@ -115,6 +117,12 @@
     imageV.image = _lastImage;
     
     [_captureSession stopRunning];
+    
+    [SkinViewModel applyAnalysisCommand:_lastImage deviceNo:@"123" analysisPersonnelType:@"analysis_me" success:^(id  _Nonnull data) {
+        NSLog(@"%@",data);
+    } fail:^(NSString * _Nonnull message) {
+        NSLog(@"%@",message);
+    }];
 }
 
 - (void)switchCamere:(id)sender {

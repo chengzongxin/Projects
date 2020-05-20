@@ -56,7 +56,7 @@
 
 - (void)setFacePosition:(CGRect)facePosition{
     _facePosition = facePosition;
-    NSLog(@"%@,%@",NSStringFromCGRect(facePosition),NSStringFromCGRect(self.faceImageView.frame));
+//    NSLog(@"%@,%@",NSStringFromCGRect(facePosition),NSStringFromCGRect(self.faceImageView.frame));
     CGFloat scale = UIScreen.mainScreen.scale;
     _faceImageView.frame = CGRectMake(facePosition.origin.y/scale, facePosition.origin.x/scale, facePosition.size.width, facePosition.size.height);
 //    _faceImageView.center = facePosition.origin;

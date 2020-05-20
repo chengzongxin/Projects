@@ -24,6 +24,14 @@
                                     <segue destination="IYC-Hf-GQV" kind="show" id="Hhw-nF-04H"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k0s-6m-AQ9">
+                                <rect key="frame" x="160" y="422" width="92" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="打开测肤界面"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="lFL-Mg-M2O"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="PUg-AO-yqw"/>
@@ -64,7 +72,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1938" y="467"/>
+            <point key="canvasLocation" x="2012" y="465"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="qTd-Hb-tiP">
