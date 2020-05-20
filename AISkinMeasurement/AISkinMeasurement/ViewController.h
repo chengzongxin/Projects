@@ -2,16 +2,15 @@
 //  ViewController.h
 //  AISkinMeasurement
 //
-//  Created by Joe on 2020/5/18.
+//  Created by Joe on 2020/5/20.
 //  Copyright © 2020 Joe. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
-#import "IGListBaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ViewController : IGListBaseViewController
+@interface ViewController : UIViewController
 
 @end
 

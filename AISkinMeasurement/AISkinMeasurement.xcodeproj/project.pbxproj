@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		597A08AF2474CFC6002FE680 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 597A08AE2474CFC6002FE680 /* ViewController.m */; };
+		597A08B22474D002002FE680 /* SkinCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 597A08B12474D002002FE680 /* SkinCameraViewController.m */; };
+		597A08B52474D1B8002FE680 /* SCPermissionsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 597A08B42474D1B8002FE680 /* SCPermissionsView.m */; };
 		599EC0842472859800C35EA0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 599EC0832472859800C35EA0 /* AppDelegate.m */; };
 		599EC0872472859800C35EA0 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 599EC0862472859800C35EA0 /* SceneDelegate.m */; };
 		599EC08D2472859800C35EA0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 599EC08B2472859800C35EA0 /* Main.storyboard */; };
@@ -16,7 +19,7 @@
 		599EC09F2472859800C35EA0 /* AISkinMeasurementTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 599EC09E2472859800C35EA0 /* AISkinMeasurementTests.m */; };
 		599EC0AA2472859800C35EA0 /* AISkinMeasurementUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 599EC0A92472859800C35EA0 /* AISkinMeasurementUITests.m */; };
 		599EC15124728B4200C35EA0 /* IGListBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 599EC15024728B4200C35EA0 /* IGListBaseViewController.m */; };
-		599EC15424728BA300C35EA0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 599EC15324728BA300C35EA0 /* ViewController.m */; };
+		599EC15424728BA300C35EA0 /* SkinMeasurementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 599EC15324728BA300C35EA0 /* SkinMeasurementViewController.m */; };
 		599EC15724728DAF00C35EA0 /* IGListBaseSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 599EC15624728DAF00C35EA0 /* IGListBaseSection.m */; };
 		599EC15C24728F0400C35EA0 /* SkinOverviewSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 599EC15B24728F0400C35EA0 /* SkinOverviewSection.m */; };
 		599EC16024728F6100C35EA0 /* SkinOverviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 599EC15E24728F6100C35EA0 /* SkinOverviewCell.m */; };
@@ -58,6 +61,12 @@
 		27FACE9F6D2AD2196B10AF30 /* Pods_AISkinMeasurementTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AISkinMeasurementTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		43B582F785BFE227341F7585 /* Pods_AISkinMeasurement.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AISkinMeasurement.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B13BAE8D8DE34D6EEF055D5 /* Pods_AISkinMeasurement_AISkinMeasurementUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AISkinMeasurement_AISkinMeasurementUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		597A08AD2474CFC6002FE680 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		597A08AE2474CFC6002FE680 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		597A08B02474D002002FE680 /* SkinCameraViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SkinCameraViewController.h; sourceTree = "<group>"; };
+		597A08B12474D002002FE680 /* SkinCameraViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SkinCameraViewController.m; sourceTree = "<group>"; };
+		597A08B32474D1B8002FE680 /* SCPermissionsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCPermissionsView.h; sourceTree = "<group>"; };
+		597A08B42474D1B8002FE680 /* SCPermissionsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCPermissionsView.m; sourceTree = "<group>"; };
 		599EC07F2472859800C35EA0 /* AISkinMeasurement.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AISkinMeasurement.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		599EC0822472859800C35EA0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		599EC0832472859800C35EA0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -76,8 +85,8 @@
 		599EC0AB2472859800C35EA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		599EC14F24728B4200C35EA0 /* IGListBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IGListBaseViewController.h; sourceTree = "<group>"; };
 		599EC15024728B4200C35EA0 /* IGListBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IGListBaseViewController.m; sourceTree = "<group>"; };
-		599EC15224728BA300C35EA0 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		599EC15324728BA300C35EA0 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		599EC15224728BA300C35EA0 /* SkinMeasurementViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SkinMeasurementViewController.h; sourceTree = "<group>"; };
+		599EC15324728BA300C35EA0 /* SkinMeasurementViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SkinMeasurementViewController.m; sourceTree = "<group>"; };
 		599EC15524728DAF00C35EA0 /* IGListBaseSection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IGListBaseSection.h; sourceTree = "<group>"; };
 		599EC15624728DAF00C35EA0 /* IGListBaseSection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IGListBaseSection.m; sourceTree = "<group>"; };
 		599EC15A24728F0400C35EA0 /* SkinOverviewSection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SkinOverviewSection.h; sourceTree = "<group>"; };
@@ -139,6 +148,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		597A08B62474D365002FE680 /* LibView */ = {
+			isa = PBXGroup;
+			children = (
+				597A08B32474D1B8002FE680 /* SCPermissionsView.h */,
+				597A08B42474D1B8002FE680 /* SCPermissionsView.m */,
+			);
+			path = LibView;
+			sourceTree = "<group>";
+		};
 		599EC0762472859700C35EA0 = {
 			isa = PBXGroup;
 			children = (
@@ -168,6 +186,8 @@
 				599EC0832472859800C35EA0 /* AppDelegate.m */,
 				599EC0852472859800C35EA0 /* SceneDelegate.h */,
 				599EC0862472859800C35EA0 /* SceneDelegate.m */,
+				597A08AD2474CFC6002FE680 /* ViewController.h */,
+				597A08AE2474CFC6002FE680 /* ViewController.m */,
 				599EC15824728E7A00C35EA0 /* IGListBaseViewController */,
 				599EC15924728E9E00C35EA0 /* Modules */,
 				599EC08B2472859800C35EA0 /* Main.storyboard */,
@@ -217,8 +237,10 @@
 		599EC15924728E9E00C35EA0 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				599EC15224728BA300C35EA0 /* ViewController.h */,
-				599EC15324728BA300C35EA0 /* ViewController.m */,
+				597A08B02474D002002FE680 /* SkinCameraViewController.h */,
+				597A08B12474D002002FE680 /* SkinCameraViewController.m */,
+				599EC15224728BA300C35EA0 /* SkinMeasurementViewController.h */,
+				599EC15324728BA300C35EA0 /* SkinMeasurementViewController.m */,
 				599EC15A24728F0400C35EA0 /* SkinOverviewSection.h */,
 				599EC15B24728F0400C35EA0 /* SkinOverviewSection.m */,
 				599EC15D24728F6100C35EA0 /* SkinOverviewCell.h */,
@@ -232,6 +254,7 @@
 				599EC1722472A25200C35EA0 /* SkinEightDimentionCell.h */,
 				599EC1732472A25200C35EA0 /* SkinEightDimentionCell.m */,
 				599EC1742472A25200C35EA0 /* SkinEightDimentionCell.xib */,
+				597A08B62474D365002FE680 /* LibView */,
 				599EC1772472A2D200C35EA0 /* GBChart */,
 			);
 			path = Modules;
@@ -518,6 +541,7 @@
 				599EC18D2472A2D200C35EA0 /* GBRadarChartDataItem.m in Sources */,
 				599EC1712472A20D00C35EA0 /* SkinEightDimentionSection.m in Sources */,
 				599EC0842472859800C35EA0 /* AppDelegate.m in Sources */,
+				597A08B52474D1B8002FE680 /* SCPermissionsView.m in Sources */,
 				599EC1882472A2D200C35EA0 /* GBRadarChart.m in Sources */,
 				599EC16024728F6100C35EA0 /* SkinOverviewCell.m in Sources */,
 				599EC0952472859800C35EA0 /* main.m in Sources */,
@@ -525,9 +549,11 @@
 				599EC0872472859800C35EA0 /* SceneDelegate.m in Sources */,
 				599EC15124728B4200C35EA0 /* IGListBaseViewController.m in Sources */,
 				599EC15724728DAF00C35EA0 /* IGListBaseSection.m in Sources */,
+				597A08B22474D002002FE680 /* SkinCameraViewController.m in Sources */,
+				597A08AF2474CFC6002FE680 /* ViewController.m in Sources */,
 				599EC16A247297CC00C35EA0 /* IGListBaseCell.m in Sources */,
 				599EC1752472A25200C35EA0 /* SkinEightDimentionCell.m in Sources */,
-				599EC15424728BA300C35EA0 /* ViewController.m in Sources */,
+				599EC15424728BA300C35EA0 /* SkinMeasurementViewController.m in Sources */,
 				599EC15C24728F0400C35EA0 /* SkinOverviewSection.m in Sources */,
 				599EC19D2472A92700C35EA0 /* IGListBaseReusableView.m in Sources */,
 			);

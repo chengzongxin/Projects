@@ -6,14 +6,14 @@
 //  Copyright © 2020 Joe. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "SkinMeasurementViewController.h"
 #import "SkinOverviewSection.h"
 #import "SkinEightDimentionSection.h"
-@interface ViewController ()
+@interface SkinMeasurementViewController ()
 
 @end
 
-@implementation ViewController
+@implementation SkinMeasurementViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
