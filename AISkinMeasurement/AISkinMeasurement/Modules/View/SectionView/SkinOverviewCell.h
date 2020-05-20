@@ -7,11 +7,15 @@
 //
 
 #import "IGListBaseCell.h"
+#import "ZZCircleProgress.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SkinOverviewCell : IGListBaseCell
-@property (weak, nonatomic) IBOutlet UILabel *text;
+
+@property (strong, nonatomic) ZZCircleProgress *circleProgress;
+
+
 
 @end
 

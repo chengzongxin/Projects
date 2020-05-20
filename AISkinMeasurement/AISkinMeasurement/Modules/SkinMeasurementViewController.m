@@ -19,7 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.datas = @[@"123",@1,@"123123",@"534324",@54];
+    self.datas = @[@"22",@1,@"88",@"66",@54];
     
     [self.adater reloadDataWithCompletion:nil];
     

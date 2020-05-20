@@ -38,6 +38,9 @@
 		59FBEE63247538690073A947 /* SCPermissionsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 59FBEE5C247538680073A947 /* SCPermissionsView.m */; };
 		59FBEE64247538690073A947 /* FacePreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = 59FBEE5F247538680073A947 /* FacePreviewView.m */; };
 		59FBEE65247538690073A947 /* face_position@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 59FBEE60247538680073A947 /* face_position@3x.png */; };
+		59FBEE6D247544C90073A947 /* ZZCircleProgress.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 59FBEE68247544C80073A947 /* ZZCircleProgress.bundle */; };
+		59FBEE6E247544C90073A947 /* ZZCountingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 59FBEE6A247544C80073A947 /* ZZCountingLabel.m */; };
+		59FBEE6F247544C90073A947 /* ZZCircleProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 59FBEE6C247544C80073A947 /* ZZCircleProgress.m */; };
 		9BF5FDED857D46BE4962D418 /* Pods_AISkinMeasurementTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27FACE9F6D2AD2196B10AF30 /* Pods_AISkinMeasurementTests.framework */; };
 		BC419DEAF81CC13EE70377CB /* Pods_AISkinMeasurement_AISkinMeasurementUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B13BAE8D8DE34D6EEF055D5 /* Pods_AISkinMeasurement_AISkinMeasurementUITests.framework */; };
 		D093A8D562BCBBCB2E4186E7 /* Pods_AISkinMeasurement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43B582F785BFE227341F7585 /* Pods_AISkinMeasurement.framework */; };
@@ -120,6 +123,11 @@
 		59FBEE5E247538680073A947 /* FacePreviewView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacePreviewView.h; sourceTree = "<group>"; };
 		59FBEE5F247538680073A947 /* FacePreviewView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacePreviewView.m; sourceTree = "<group>"; };
 		59FBEE60247538680073A947 /* face_position@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "face_position@3x.png"; sourceTree = "<group>"; };
+		59FBEE68247544C80073A947 /* ZZCircleProgress.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ZZCircleProgress.bundle; sourceTree = "<group>"; };
+		59FBEE69247544C80073A947 /* ZZCircleProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZCircleProgress.h; sourceTree = "<group>"; };
+		59FBEE6A247544C80073A947 /* ZZCountingLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZCountingLabel.m; sourceTree = "<group>"; };
+		59FBEE6B247544C80073A947 /* ZZCountingLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZCountingLabel.h; sourceTree = "<group>"; };
+		59FBEE6C247544C80073A947 /* ZZCircleProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZCircleProgress.m; sourceTree = "<group>"; };
 		689BA346BD4CD923EBE4D8F1 /* Pods-AISkinMeasurement.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AISkinMeasurement.debug.xcconfig"; path = "Target Support Files/Pods-AISkinMeasurement/Pods-AISkinMeasurement.debug.xcconfig"; sourceTree = "<group>"; };
 		8B635EA5CF4073DF207BDD9A /* Pods-AISkinMeasurement.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AISkinMeasurement.release.xcconfig"; path = "Target Support Files/Pods-AISkinMeasurement/Pods-AISkinMeasurement.release.xcconfig"; sourceTree = "<group>"; };
 		AAC7DA5A40B3826FF71B0CA7 /* Pods-AISkinMeasurement-AISkinMeasurementUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AISkinMeasurement-AISkinMeasurementUITests.release.xcconfig"; path = "Target Support Files/Pods-AISkinMeasurement-AISkinMeasurementUITests/Pods-AISkinMeasurement-AISkinMeasurementUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -259,6 +267,7 @@
 			isa = PBXGroup;
 			children = (
 				59FBEE66247539EC0073A947 /* SectionView */,
+				59FBEE67247544C80073A947 /* ZZCircleProgress */,
 				59FBEE55247538680073A947 /* RadarChart */,
 				59FBEE5A247538680073A947 /* PermissionsView */,
 				59FBEE5D247538680073A947 /* FacePreview */,
@@ -314,6 +323,18 @@
 				599EC1742472A25200C35EA0 /* SkinEightDimentionCell.xib */,
 			);
 			path = SectionView;
+			sourceTree = "<group>";
+		};
+		59FBEE67247544C80073A947 /* ZZCircleProgress */ = {
+			isa = PBXGroup;
+			children = (
+				59FBEE68247544C80073A947 /* ZZCircleProgress.bundle */,
+				59FBEE69247544C80073A947 /* ZZCircleProgress.h */,
+				59FBEE6C247544C80073A947 /* ZZCircleProgress.m */,
+				59FBEE6B247544C80073A947 /* ZZCountingLabel.h */,
+				59FBEE6A247544C80073A947 /* ZZCountingLabel.m */,
+			);
+			path = ZZCircleProgress;
 			sourceTree = "<group>";
 		};
 		E48FE8BF0778E1CF883692D2 /* Pods */ = {
@@ -455,6 +476,7 @@
 				599EC16124728F6100C35EA0 /* SkinOverviewCell.xib in Resources */,
 				599EC08F2472859800C35EA0 /* Assets.xcassets in Resources */,
 				599EC1992472A8D200C35EA0 /* SkinSectionHeaderView.xib in Resources */,
+				59FBEE6D247544C90073A947 /* ZZCircleProgress.bundle in Resources */,
 				599EC08D2472859800C35EA0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -593,6 +615,7 @@
 				59FBEE62247538690073A947 /* GBRadarChartDataItem.m in Sources */,
 				59FBEE64247538690073A947 /* FacePreviewView.m in Sources */,
 				599EC15124728B4200C35EA0 /* IGListBaseViewController.m in Sources */,
+				59FBEE6E247544C90073A947 /* ZZCountingLabel.m in Sources */,
 				59FBEE61247538690073A947 /* GBRadarChart.m in Sources */,
 				599EC15724728DAF00C35EA0 /* IGListBaseSection.m in Sources */,
 				597A08B22474D002002FE680 /* SkinCameraViewController.m in Sources */,
@@ -602,6 +625,7 @@
 				599EC15424728BA300C35EA0 /* SkinMeasurementViewController.m in Sources */,
 				59FBEE63247538690073A947 /* SCPermissionsView.m in Sources */,
 				599EC15C24728F0400C35EA0 /* SkinOverviewSection.m in Sources */,
+				59FBEE6F247544C90073A947 /* ZZCircleProgress.m in Sources */,
 				599EC19D2472A92700C35EA0 /* IGListBaseReusableView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
