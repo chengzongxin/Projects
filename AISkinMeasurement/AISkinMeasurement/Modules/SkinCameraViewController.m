@@ -20,6 +20,8 @@
 @property (strong, nonatomic) AVCaptureVideoDataOutput *videoOutput;
 @property (strong, nonatomic) FacePreviewView *previewView;
 
+@property (strong, nonatomic) UIImage *lastImage;
+
 @end
 
 @implementation SkinCameraViewController
@@ -38,6 +40,12 @@
 
 - (void)snapshot{
 //    [_photoOutput capturePhotoWithSettings:AVCapturePhotoSettings.new delegate:self];
+//    UIImageWriteToSavedPhotosAlbum(_lastImage, nil, nil, nil);
+    
+//    UIImageView *imageV = [[UIImageView alloc] initWithImage:_lastImage];
+//    [self.view addSubview:imageV];
+    
+    UIImageWriteToSavedPhotosAlbum(_lastImage, nil, nil, nil);
 }
 
 - (void)setupCaptureSession{
@@ -100,6 +108,7 @@
 //    NSLog(@"%s",__FUNCTION__);
     UIImage *image = [self imageFromSampleBuffer:sampleBuffer];
     [self detectFaceWithImage:image];
+    _lastImage = image;
 }
 
 // 通过抽样缓存数据创建一个UIImage对象
@@ -110,7 +119,7 @@
     CIImage *ciImage = [CIImage imageWithCVPixelBuffer:imageBuffer];            //创建CIImage对象
     CIContext *temporaryContext = [CIContext contextWithOptions:nil];           //创建上下文
     CGImageRef cgImageRef = [temporaryContext createCGImage:ciImage fromRect:CGRectMake(0, 0, CVPixelBufferGetWidth(imageBuffer), CVPixelBufferGetHeight(imageBuffer))];
-    UIImage *result = [[UIImage alloc] initWithCGImage:cgImageRef scale:1.0 orientation:UIImageOrientationLeftMirrored];  //创建UIImage对象
+    UIImage *result = [[UIImage alloc] initWithCGImage:cgImageRef scale:UIScreen.mainScreen.scale orientation:UIImageOrientationRight];  //创建UIImage对象
     CGImageRelease(cgImageRef);  //释放上下文
     return result;
 }
