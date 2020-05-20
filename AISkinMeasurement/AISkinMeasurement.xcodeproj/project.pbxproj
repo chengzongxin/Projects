@@ -240,21 +240,8 @@
 				597A08B12474D002002FE680 /* SkinCameraViewController.m */,
 				599EC15224728BA300C35EA0 /* SkinMeasurementViewController.h */,
 				599EC15324728BA300C35EA0 /* SkinMeasurementViewController.m */,
-				599EC15A24728F0400C35EA0 /* SkinOverviewSection.h */,
-				599EC15B24728F0400C35EA0 /* SkinOverviewSection.m */,
-				599EC15D24728F6100C35EA0 /* SkinOverviewCell.h */,
-				599EC15E24728F6100C35EA0 /* SkinOverviewCell.m */,
-				599EC15F24728F6100C35EA0 /* SkinOverviewCell.xib */,
-				599EC16F2472A20D00C35EA0 /* SkinEightDimentionSection.h */,
-				599EC1702472A20D00C35EA0 /* SkinEightDimentionSection.m */,
-				599EC1952472A8D200C35EA0 /* SkinSectionHeaderView.h */,
-				599EC1962472A8D200C35EA0 /* SkinSectionHeaderView.m */,
-				599EC1972472A8D200C35EA0 /* SkinSectionHeaderView.xib */,
-				599EC1722472A25200C35EA0 /* SkinEightDimentionCell.h */,
-				599EC1732472A25200C35EA0 /* SkinEightDimentionCell.m */,
-				599EC1742472A25200C35EA0 /* SkinEightDimentionCell.xib */,
 				59FBEE4A247537A00073A947 /* ViewModel */,
-				59FBEE54247538680073A947 /* LibView */,
+				59FBEE54247538680073A947 /* View */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -268,14 +255,15 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		59FBEE54247538680073A947 /* LibView */ = {
+		59FBEE54247538680073A947 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				59FBEE66247539EC0073A947 /* SectionView */,
 				59FBEE55247538680073A947 /* RadarChart */,
 				59FBEE5A247538680073A947 /* PermissionsView */,
 				59FBEE5D247538680073A947 /* FacePreview */,
 			);
-			path = LibView;
+			path = View;
 			sourceTree = "<group>";
 		};
 		59FBEE55247538680073A947 /* RadarChart */ = {
@@ -306,6 +294,26 @@
 				59FBEE60247538680073A947 /* face_position@3x.png */,
 			);
 			path = FacePreview;
+			sourceTree = "<group>";
+		};
+		59FBEE66247539EC0073A947 /* SectionView */ = {
+			isa = PBXGroup;
+			children = (
+				599EC1952472A8D200C35EA0 /* SkinSectionHeaderView.h */,
+				599EC1962472A8D200C35EA0 /* SkinSectionHeaderView.m */,
+				599EC15A24728F0400C35EA0 /* SkinOverviewSection.h */,
+				599EC15B24728F0400C35EA0 /* SkinOverviewSection.m */,
+				599EC15D24728F6100C35EA0 /* SkinOverviewCell.h */,
+				599EC15E24728F6100C35EA0 /* SkinOverviewCell.m */,
+				599EC15F24728F6100C35EA0 /* SkinOverviewCell.xib */,
+				599EC16F2472A20D00C35EA0 /* SkinEightDimentionSection.h */,
+				599EC1702472A20D00C35EA0 /* SkinEightDimentionSection.m */,
+				599EC1972472A8D200C35EA0 /* SkinSectionHeaderView.xib */,
+				599EC1722472A25200C35EA0 /* SkinEightDimentionCell.h */,
+				599EC1732472A25200C35EA0 /* SkinEightDimentionCell.m */,
+				599EC1742472A25200C35EA0 /* SkinEightDimentionCell.xib */,
+			);
+			path = SectionView;
 			sourceTree = "<group>";
 		};
 		E48FE8BF0778E1CF883692D2 /* Pods */ = {
