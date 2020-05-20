@@ -20,6 +20,8 @@
 @property (strong, nonatomic) AVCaptureVideoDataOutput *videoOutput;
 @property (strong, nonatomic) FacePreviewView *previewView;
 
+@property (strong, nonatomic) UIButton *switchCameraButton;
+@property (strong, nonatomic) UISlider *scaleSlider;
 @property (strong, nonatomic) UIImage *lastImage;
 
 @end
@@ -46,6 +48,7 @@
 //    [self.view addSubview:imageV];
     
     UIImageWriteToSavedPhotosAlbum(_lastImage, nil, nil, nil);
+//    [self switchCamere:nil];
 }
 
 - (void)setupCaptureSession{
@@ -69,6 +72,11 @@
         // Note
         // If your app supports multiple interface orientations, use the preview layer’s connection to the capture session to set a videoOrientation matching that of your UI.
         [self.captureSession startRunning];
+        
+        // 放到preview 上层
+        [self.view addSubview:self.switchCameraButton];
+        
+        [self.view addSubview:self.scaleSlider];
     });
     
 }
@@ -101,6 +109,85 @@
     
 }
 
+
+#pragma mark - Actions
+- (void)switchCamere:(id)sender {
+    AVCaptureDevice* currentVideoDevice = self.videoDeviceInput.device;
+    AVCaptureDevicePosition currentPosition = currentVideoDevice.position;
+    
+    AVCaptureDevicePosition preferredPosition;
+    AVCaptureDeviceType preferredDeviceType;
+    
+    switch (currentPosition)
+    {
+        case AVCaptureDevicePositionUnspecified:
+        case AVCaptureDevicePositionFront:
+            preferredPosition = AVCaptureDevicePositionBack;
+            preferredDeviceType = AVCaptureDeviceTypeBuiltInDualCamera;
+            break;
+        case AVCaptureDevicePositionBack:
+            preferredPosition = AVCaptureDevicePositionFront;
+            preferredDeviceType = AVCaptureDeviceTypeBuiltInTrueDepthCamera;
+            break;
+    }
+    
+    // Create a device discovery session.
+    NSArray<AVCaptureDeviceType>* deviceTypes = @[AVCaptureDeviceTypeBuiltInWideAngleCamera, AVCaptureDeviceTypeBuiltInDualCamera, AVCaptureDeviceTypeBuiltInTrueDepthCamera];
+    AVCaptureDeviceDiscoverySession *videoDeviceDiscoverySession = [AVCaptureDeviceDiscoverySession discoverySessionWithDeviceTypes:deviceTypes mediaType:AVMediaTypeVideo position:AVCaptureDevicePositionUnspecified];
+    NSArray<AVCaptureDevice* >* devices = videoDeviceDiscoverySession.devices;
+    AVCaptureDevice* newVideoDevice = nil;
+    // First, look for a device with both the preferred position and device type.
+    for (AVCaptureDevice* device in devices) {
+        if (device.position == preferredPosition && [device.deviceType isEqualToString:preferredDeviceType]) {
+            newVideoDevice = device;
+            break;
+        }
+    }
+    
+    // Otherwise, look for a device with only the preferred position.
+    if (!newVideoDevice) {
+        for (AVCaptureDevice* device in devices) {
+            if (device.position == preferredPosition) {
+                newVideoDevice = device;
+                break;
+            }
+        }
+    }
+    
+    if (newVideoDevice) {
+        AVCaptureDeviceInput* videoDeviceInput = [AVCaptureDeviceInput deviceInputWithDevice:newVideoDevice error:NULL];
+
+        [self.captureSession beginConfiguration];
+
+        // Remove the existing device input first, since using the front and back camera simultaneously is not supported.
+        [self.captureSession removeInput:self.videoDeviceInput];
+
+        if ([self.captureSession canAddInput:videoDeviceInput]) {
+            [self.captureSession addInput:videoDeviceInput];
+            self.videoDeviceInput = videoDeviceInput;
+        } else {
+            [self.captureSession addInput:self.videoDeviceInput];
+        }
+        [self.captureSession commitConfiguration];
+    }
+}
+
+- (void)scaleCamera:(UISlider *)sender{
+    NSLog(@"%f",sender.value);
+    NSError *error;
+    float factor = sender.value;
+    if ([_videoDevice lockForConfiguration:&error]) {
+        
+        if (error) {
+            NSLog(@"%@",error);
+        }
+        
+        if (_videoDevice.activeFormat.videoMaxZoomFactor > factor && factor >= 1.0) {
+            [_videoDevice rampToVideoZoomFactor:factor withRate:4.0];
+        }
+        [_videoDevice unlockForConfiguration];
+    }
+}
 
 #pragma mark - Delegate
 #pragma mark AVCaptureVideoDataOutputSampleBufferDelegate
@@ -246,8 +333,28 @@
 - (FacePreviewView *)previewView{
     if (_previewView == nil) {
         _previewView = [[FacePreviewView alloc] initWithFrame:self.view.bounds];
+        _previewView.layer.zPosition = -1;
     }
     return _previewView;
+}
+
+- (UIButton *)switchCameraButton{
+    if (!_switchCameraButton) {
+        _switchCameraButton = [[UIButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width - 60,64 + 40, 60, 30)];
+        [_switchCameraButton setTitle:@"switch" forState:UIControlStateNormal];
+        [_switchCameraButton addTarget:self action:@selector(switchCamere:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _switchCameraButton;
+}
+
+- (UISlider *)scaleSlider{
+    if (!_scaleSlider) {
+        _scaleSlider = [[UISlider alloc] initWithFrame:CGRectMake(20, 64 + 40 + 30 + 30, 200, 20)];
+        _scaleSlider.minimumValue = 0;
+        _scaleSlider.maximumValue = 10;
+        [_scaleSlider addTarget:self action:@selector(scaleCamera:) forControlEvents:UIControlEventValueChanged];
+    }
+    return _scaleSlider;
 }
 
 @end
