@@ -176,16 +176,16 @@
     NSLog(@"%f",sender.value);
     NSError *error;
     float factor = sender.value;
-    if ([_videoDevice lockForConfiguration:&error]) {
+    if ([_videoDeviceInput.device lockForConfiguration:&error]) {
         
         if (error) {
             NSLog(@"%@",error);
         }
         
-        if (_videoDevice.activeFormat.videoMaxZoomFactor > factor && factor >= 1.0) {
-            [_videoDevice rampToVideoZoomFactor:factor withRate:4.0];
+        if (_videoDeviceInput.device.activeFormat.videoMaxZoomFactor > factor && factor >= 1.0) {
+            [_videoDeviceInput.device rampToVideoZoomFactor:factor withRate:4.0];
         }
-        [_videoDevice unlockForConfiguration];
+        [_videoDeviceInput.device unlockForConfiguration];
     }
 }
 
