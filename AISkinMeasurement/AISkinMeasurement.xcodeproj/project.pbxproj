@@ -10,6 +10,8 @@
 		597A08AF2474CFC6002FE680 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 597A08AE2474CFC6002FE680 /* ViewController.m */; };
 		597A08B22474D002002FE680 /* SkinCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 597A08B12474D002002FE680 /* SkinCameraViewController.m */; };
 		597A08B52474D1B8002FE680 /* SCPermissionsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 597A08B42474D1B8002FE680 /* SCPermissionsView.m */; };
+		597A08B92474D8DD002FE680 /* FacePreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = 597A08B82474D8DD002FE680 /* FacePreviewView.m */; };
+		597A08BB2474DFC6002FE680 /* face_position@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 597A08BA2474DFC6002FE680 /* face_position@3x.png */; };
 		599EC0842472859800C35EA0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 599EC0832472859800C35EA0 /* AppDelegate.m */; };
 		599EC0872472859800C35EA0 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 599EC0862472859800C35EA0 /* SceneDelegate.m */; };
 		599EC08D2472859800C35EA0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 599EC08B2472859800C35EA0 /* Main.storyboard */; };
@@ -67,6 +69,9 @@
 		597A08B12474D002002FE680 /* SkinCameraViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SkinCameraViewController.m; sourceTree = "<group>"; };
 		597A08B32474D1B8002FE680 /* SCPermissionsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCPermissionsView.h; sourceTree = "<group>"; };
 		597A08B42474D1B8002FE680 /* SCPermissionsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCPermissionsView.m; sourceTree = "<group>"; };
+		597A08B72474D8DC002FE680 /* FacePreviewView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacePreviewView.h; sourceTree = "<group>"; };
+		597A08B82474D8DD002FE680 /* FacePreviewView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacePreviewView.m; sourceTree = "<group>"; };
+		597A08BA2474DFC6002FE680 /* face_position@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "face_position@3x.png"; sourceTree = "<group>"; };
 		599EC07F2472859800C35EA0 /* AISkinMeasurement.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AISkinMeasurement.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		599EC0822472859800C35EA0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		599EC0832472859800C35EA0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -153,6 +158,9 @@
 			children = (
 				597A08B32474D1B8002FE680 /* SCPermissionsView.h */,
 				597A08B42474D1B8002FE680 /* SCPermissionsView.m */,
+				597A08B72474D8DC002FE680 /* FacePreviewView.h */,
+				597A08B82474D8DD002FE680 /* FacePreviewView.m */,
+				597A08BA2474DFC6002FE680 /* face_position@3x.png */,
 			);
 			path = LibView;
 			sourceTree = "<group>";
@@ -403,6 +411,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				597A08BB2474DFC6002FE680 /* face_position@3x.png in Resources */,
 				599EC19E2472A92700C35EA0 /* IGListBaseReusableView.xib in Resources */,
 				599EC1762472A25200C35EA0 /* SkinEightDimentionCell.xib in Resources */,
 				599EC16B247297CC00C35EA0 /* IGListBaseCell.xib in Resources */,
@@ -547,6 +556,7 @@
 				599EC0952472859800C35EA0 /* main.m in Sources */,
 				599EC1982472A8D200C35EA0 /* SkinSectionHeaderView.m in Sources */,
 				599EC0872472859800C35EA0 /* SceneDelegate.m in Sources */,
+				597A08B92474D8DD002FE680 /* FacePreviewView.m in Sources */,
 				599EC15124728B4200C35EA0 /* IGListBaseViewController.m in Sources */,
 				599EC15724728DAF00C35EA0 /* IGListBaseSection.m in Sources */,
 				597A08B22474D002002FE680 /* SkinCameraViewController.m in Sources */,
