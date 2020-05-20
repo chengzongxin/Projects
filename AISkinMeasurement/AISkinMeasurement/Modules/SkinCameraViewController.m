@@ -104,11 +104,6 @@
 
 - (void)snapshot{
 //    [_photoOutput capturePhotoWithSettings:AVCapturePhotoSettings.new delegate:self];
-//    UIImageWriteToSavedPhotosAlbum(_lastImage, nil, nil, nil);
-    
-    
-//    UIImageWriteToSavedPhotosAlbum(_lastImage, nil, nil, nil);
-    
     UIImageView *imageV = [[UIImageView alloc] initWithFrame:self.view.bounds];
     imageV.contentMode = UIViewContentModeScaleAspectFill;
     [self.view addSubview:imageV];
