@@ -76,9 +76,10 @@
     [super setModel:model];
     
     NSLog(@"%@",model);
-    _circleProgress.progress = [model intValue]/100.0;
+    int value = [model intValue];
+    _circleProgress.progress = value/100.0;
     
-    NSString *modelStr = (NSString *)model;
+    NSString *modelStr = @(value).stringValue;
     NSString *scoreStr = modelStr;
     NSString *percentStr = [modelStr stringByAppendingString:@"%"];
     NSString *allStr = [NSString stringWithFormat:@"本次测试得分%@分，打败了%@的测试用户",scoreStr,percentStr];

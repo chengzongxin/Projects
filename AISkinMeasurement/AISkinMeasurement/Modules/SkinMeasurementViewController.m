@@ -12,6 +12,7 @@
 #import "SkinEightDimentionSection.h"
 #import "SkinDoudouSection.h"
 #import "SkinBandianSection.h"
+#import "SkinHeitouSection.h"
 
 @interface SkinMeasurementViewController ()
 
@@ -24,7 +25,7 @@
     
     self.title = @"测肤报告";
     
-    self.datas = @[@"88",@1,@2,@3];
+    self.datas = @[@88,@"肌肤八维",@"痘痘",@"斑点",@"黑头"];
     
     UIBarButtonItem *cameraItem = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"skin_camera_switch"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:nil action:nil];
     UIBarButtonItem *shareItem = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"skin_share"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:nil action:nil];
@@ -42,15 +43,17 @@
 }
 
 - (IGListSectionController *)listAdapter:(IGListAdapter *)listAdapter sectionControllerForObject:(id)object {
-    if ([object isKindOfClass:[NSString class]]) {
+    if ([object isKindOfClass:[NSNumber class]]) {
         return SkinOverviewSection.new;
-    }else if ([object isKindOfClass:[NSNumber class]]) {
-        if ([object intValue] == 1) {
+    }else if ([object isKindOfClass:[NSString class]]) {
+        if ([object isEqualToString:self.datas[1]]) {
             return SkinEightDimentionSection.new;
-        }else if ([object intValue] == 2) {
+        }else if ([object isEqualToString:self.datas[2]]) {
             return SkinDoudouSection.new;
-        }else if ([object intValue] == 3) {
+        }else if ([object isEqualToString:self.datas[3]]) {
             return SkinBandianSection.new;
+        }else if ([object isEqualToString:self.datas[4]]) {
+            return SkinHeitouSection.new;
         }else{
             return [super listAdapter:listAdapter sectionControllerForObject:object];
         }

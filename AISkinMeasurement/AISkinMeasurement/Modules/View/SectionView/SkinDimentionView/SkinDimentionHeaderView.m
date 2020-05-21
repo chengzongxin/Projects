@@ -63,13 +63,10 @@
 - (void)setModel:(id)model{
     [super setModel:model];
     
-    NSLog(@"%@",model);
-    int value = [model intValue];
-    if (value == 2) {
-        _switchButton.hidden = NO;
-    }else{
-        _switchButton.hidden = YES;
-    }
+    _titleLabel.text = model;
+    
+    _switchButton.hidden = (![model isEqualToString:@"痘痘"]);
+    
 }
 
 @end

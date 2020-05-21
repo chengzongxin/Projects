@@ -70,6 +70,7 @@
             <viewLayoutGuide key="safeArea" id="eSF-in-U2a"/>
             <connections>
                 <outlet property="switchButton" destination="sWe-7H-iXf" id="OjX-ed-Kgt"/>
+                <outlet property="titleLabel" destination="Ki5-ew-7OQ" id="UAl-Dd-tll"/>
             </connections>
             <point key="canvasLocation" x="11.594202898550726" y="123.88392857142857"/>
         </collectionReusableView>

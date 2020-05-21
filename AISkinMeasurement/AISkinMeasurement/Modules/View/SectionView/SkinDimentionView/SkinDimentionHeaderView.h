@@ -11,7 +11,10 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SkinDimentionHeaderView : IGListBaseReusableView
+
 @property (weak, nonatomic) IBOutlet SPMultipleSwitch *switchButton;
+
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
 @end
 
