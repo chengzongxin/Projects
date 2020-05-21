@@ -7,10 +7,11 @@
 //
 
 #import "SkinMeasurementViewController.h"
+#import "SkinViewModel.h"
 #import "SkinOverviewSection.h"
 #import "SkinEightDimentionSection.h"
 #import "SkinDoudouSection.h"
-#import "SkinViewModel.h"
+#import "SkinBandianSection.h"
 
 @interface SkinMeasurementViewController ()
 
@@ -23,7 +24,7 @@
     
     self.title = @"测肤报告";
     
-    self.datas = @[@"88",@1,NSObject.new];
+    self.datas = @[@"88",@1,@2,@3];
     
     UIBarButtonItem *cameraItem = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"skin_camera_switch"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:nil action:nil];
     UIBarButtonItem *shareItem = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"skin_share"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:nil action:nil];
@@ -44,33 +45,20 @@
     if ([object isKindOfClass:[NSString class]]) {
         return SkinOverviewSection.new;
     }else if ([object isKindOfClass:[NSNumber class]]) {
-        return SkinEightDimentionSection.new;
-    }else if ([object isKindOfClass:[NSObject class]]) {
-        return SkinDoudouSection.new;
+        if ([object intValue] == 1) {
+            return SkinEightDimentionSection.new;
+        }else if ([object intValue] == 2) {
+            return SkinDoudouSection.new;
+        }else if ([object intValue] == 3) {
+            return SkinBandianSection.new;
+        }else{
+            return [super listAdapter:listAdapter sectionControllerForObject:object];
+        }
     }else {
         return [super listAdapter:listAdapter sectionControllerForObject:object];
     }
 }
 
-
-@end
-
-
-
-
-@interface NSObject (diff)
-@end
-@implementation NSObject (diff)
-- (id<NSObject>)diffIdentifier {
-    return self;
-}
-- (BOOL)isEqualToDiffableObject:(id<IGListDiffable>)object {
-    return [self isEqual:object];
-}
-
-- (instancetype)copyWithZone:(NSZone *)zone {
-    return self;
-}
 
 @end
 

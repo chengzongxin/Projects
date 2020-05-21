@@ -7,7 +7,17 @@
 //
 
 #import "SkinBandianSection.h"
+#import "SkinDimentionHeaderView.h"
+#import "SkinBandianCell.h"
 
 @implementation SkinBandianSection
+
+- (Class)registerCellClass{
+    return SkinBandianCell.class;
+}
+
+- (Class)registerReusableViewClass{
+    return SkinDimentionHeaderView.class;
+}
 
 @end

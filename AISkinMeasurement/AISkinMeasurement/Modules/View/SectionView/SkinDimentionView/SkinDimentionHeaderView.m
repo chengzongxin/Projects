@@ -64,6 +64,12 @@
     [super setModel:model];
     
     NSLog(@"%@",model);
+    int value = [model intValue];
+    if (value == 2) {
+        _switchButton.hidden = NO;
+    }else{
+        _switchButton.hidden = YES;
+    }
 }
 
 @end
