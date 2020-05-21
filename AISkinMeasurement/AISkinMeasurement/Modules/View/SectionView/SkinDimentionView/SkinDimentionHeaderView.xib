@@ -11,7 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="s8I-xQ-o3z" customClass="SkinDimentionHeaderView">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="48"/>
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="痘痘" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ki5-ew-7OQ">
@@ -62,16 +62,16 @@
                 <constraint firstItem="uHf-wq-9aR" firstAttribute="top" secondItem="s8I-xQ-o3z" secondAttribute="top" id="TFn-tx-bFK"/>
                 <constraint firstItem="YdU-w2-dhB" firstAttribute="centerY" secondItem="UOm-uo-kTj" secondAttribute="centerY" constant="2" id="Uda-qv-iNf"/>
                 <constraint firstAttribute="trailing" secondItem="uHf-wq-9aR" secondAttribute="trailing" constant="15" id="VkD-D6-yU7"/>
+                <constraint firstItem="sWe-7H-iXf" firstAttribute="centerY" secondItem="Ki5-ew-7OQ" secondAttribute="centerY" id="cCY-Yc-7Ch"/>
                 <constraint firstItem="uHf-wq-9aR" firstAttribute="leading" secondItem="s8I-xQ-o3z" secondAttribute="leading" constant="15" id="g9V-sf-Zp2"/>
-                <constraint firstItem="Ki5-ew-7OQ" firstAttribute="centerY" secondItem="s8I-xQ-o3z" secondAttribute="centerY" id="lgX-NF-21Z"/>
-                <constraint firstItem="sWe-7H-iXf" firstAttribute="centerY" secondItem="s8I-xQ-o3z" secondAttribute="centerY" id="sDX-PZ-ltZ"/>
+                <constraint firstItem="Ki5-ew-7OQ" firstAttribute="top" secondItem="uHf-wq-9aR" secondAttribute="bottom" constant="24" id="ry6-0u-l8E"/>
                 <constraint firstItem="eSF-in-U2a" firstAttribute="trailing" secondItem="sWe-7H-iXf" secondAttribute="trailing" constant="15" id="yJf-bO-j6F"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="eSF-in-U2a"/>
             <connections>
                 <outlet property="switchButton" destination="sWe-7H-iXf" id="OjX-ed-Kgt"/>
             </connections>
-            <point key="canvasLocation" x="12" y="124"/>
+            <point key="canvasLocation" x="11.594202898550726" y="123.88392857142857"/>
         </collectionReusableView>
     </objects>
     <resources>

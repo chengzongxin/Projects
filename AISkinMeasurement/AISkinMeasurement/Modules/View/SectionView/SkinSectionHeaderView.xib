@@ -11,7 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="U6b-Vx-4bR" customClass="SkinSectionHeaderView">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="48"/>
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="肌肤八维" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ljx-cg-mSV">
@@ -23,7 +23,7 @@
             </subviews>
             <constraints>
                 <constraint firstItem="ljx-cg-mSV" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" constant="34" id="Drt-34-lMy"/>
-                <constraint firstItem="ljx-cg-mSV" firstAttribute="centerY" secondItem="U6b-Vx-4bR" secondAttribute="centerY" id="y1X-dH-fjZ"/>
+                <constraint firstItem="ljx-cg-mSV" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" constant="25" id="Gca-La-gHw"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="9Gg-ye-v9C"/>
             <point key="canvasLocation" x="140.57971014492756" y="126.5625"/>

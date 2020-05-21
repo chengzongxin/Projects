@@ -25,31 +25,31 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="痘痘：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Wv-ae-IsQ">
-                        <rect key="frame" x="32" y="22" width="43" height="17"/>
+                        <rect key="frame" x="32" y="36" width="43" height="17"/>
                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                         <color key="textColor" red="0.074509803921568626" green="0.10588235294117647" blue="0.21176470588235294" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U8v-cO-xlA">
-                        <rect key="frame" x="76" y="19.5" width="11.5" height="22"/>
+                        <rect key="frame" x="76" y="33.5" width="11.5" height="22"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                         <color key="textColor" red="0.074509803920000006" green="0.1058823529" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="痘印：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QuC-dZ-uSs">
-                        <rect key="frame" x="32" y="49" width="43" height="17"/>
+                        <rect key="frame" x="32" y="63" width="43" height="17"/>
                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                         <color key="textColor" red="0.074509803920000006" green="0.1058823529" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="此处显示完成的显示总结报告的内容" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bxt-X1-TlR">
-                        <rect key="frame" x="32" y="88.5" width="132" height="29"/>
+                        <rect key="frame" x="32" y="102.5" width="132" height="29"/>
                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                         <color key="textColor" red="0.30588235294117649" green="0.33725490196078434" blue="0.42745098039215684" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Y0-bg-QhH">
-                        <rect key="frame" x="76" y="46.5" width="12" height="22"/>
+                        <rect key="frame" x="76" y="60.5" width="12" height="22"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                         <color key="textColor" red="0.074509803920000006" green="0.1058823529" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -65,7 +65,7 @@
                 <constraint firstAttribute="trailing" secondItem="3F0-TA-1lq" secondAttribute="trailing" constant="15" id="LG2-3W-HAh"/>
                 <constraint firstItem="3F0-TA-1lq" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="ZEf-b4-RTt"/>
                 <constraint firstItem="Bxt-X1-TlR" firstAttribute="leading" secondItem="QuC-dZ-uSs" secondAttribute="leading" id="de4-b3-Ker"/>
-                <constraint firstItem="0Wv-ae-IsQ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="22" id="gEO-LS-Ml5"/>
+                <constraint firstItem="0Wv-ae-IsQ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="36" id="gEO-LS-Ml5"/>
                 <constraint firstItem="U8v-cO-xlA" firstAttribute="centerY" secondItem="0Wv-ae-IsQ" secondAttribute="centerY" id="lbp-ng-ku3"/>
                 <constraint firstItem="Bxt-X1-TlR" firstAttribute="top" secondItem="9Y0-bg-QhH" secondAttribute="bottom" constant="20" id="rBb-C5-04c"/>
                 <constraint firstItem="0Wv-ae-IsQ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="32" id="uux-ke-PSp"/>
