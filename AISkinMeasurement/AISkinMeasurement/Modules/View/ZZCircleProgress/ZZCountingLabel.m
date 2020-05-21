@@ -92,7 +92,18 @@
     }
     
     dispatch_async(dispatch_get_main_queue(), ^{
-        self.text = [NSString stringWithFormat:@"%.0f分",_increaseValue];
+//        self.text = [NSString stringWithFormat:@"%.0f分",_increaseValue];
+        NSString *allStr = [NSString stringWithFormat:@"%.0f分",self.increaseValue];
+        NSRange unitRange = [allStr rangeOfString:@"分"];
+        
+        NSMutableAttributedString *string = [[NSMutableAttributedString alloc] initWithString:allStr attributes: @{NSFontAttributeName: [UIFont boldSystemFontOfSize:28],NSForegroundColorAttributeName: [UIColor colorWithRed:19/255.0 green:27/255.0 blue:54/255.0 alpha:1.0]}];
+
+        [string addAttributes:@{NSForegroundColorAttributeName: [UIColor colorWithRed:19/255.0 green:27/255.0 blue:54/255.0 alpha:1]} range:NSMakeRange(0, 2)];
+
+        [string addAttributes:@{NSFontAttributeName: [UIFont systemFontOfSize:12], NSForegroundColorAttributeName: [UIColor colorWithRed:19/255.0 green:27/255.0 blue:54/255.0 alpha:1]} range:unitRange];
+
+        self.attributedText = string;
+        
     });
 }
 

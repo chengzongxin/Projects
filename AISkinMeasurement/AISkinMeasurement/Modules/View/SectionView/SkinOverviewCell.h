@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (strong, nonatomic) ZZCircleProgress *circleProgress;
 
+@property (weak, nonatomic) IBOutlet UILabel *contentLabel;
 
 
 @end

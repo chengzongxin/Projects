@@ -19,13 +19,13 @@
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="良好" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gaj-eP-pbD">
                         <rect key="frame" x="17" y="32" width="49" height="29"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                         <color key="textColor" red="0.043137254899999998" green="0.81176470590000005" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="肌肤良好指数" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NUR-Io-bEi">
                         <rect key="frame" x="89" y="39.5" width="74" height="14.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                         <color key="textColor" red="0.074509803921568626" green="0.10588235294117647" blue="0.21176470588235294" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -131,6 +131,9 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
             <size key="customSize" width="291" height="50"/>
+            <connections>
+                <outlet property="contentLabel" destination="rNC-1d-xZz" id="cw3-DS-8KG"/>
+            </connections>
             <point key="canvasLocation" x="-63.04347826086957" y="105.80357142857143"/>
         </collectionViewCell>
     </objects>

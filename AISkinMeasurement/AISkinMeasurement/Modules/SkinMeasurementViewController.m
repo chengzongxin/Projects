@@ -19,7 +19,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.datas = @[@"22",@1,@"88",@"66",@54];
+    self.title = @"测肤报告";
+    
+    self.datas = @[@"88",@1,@"90",@"99",@54];
     
     [self.adater reloadDataWithCompletion:nil];
     
