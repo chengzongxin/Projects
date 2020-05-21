@@ -36,8 +36,10 @@
     return !!self.datas;
 }
 
+// 通过xib获取cell尺寸
 - (CGSize)sizeForItemAtIndex:(NSInteger)index {
-    return CGSizeZero;
+    UIView *view = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self registerCellClass]) owner:nil options:nil] firstObject];
+    return CGSizeMake(self.viewController.view.bounds.size.width, view.bounds.size.height);
 }
 
 - (UICollectionViewCell *)cellForItemAtIndex:(NSInteger)index {
@@ -56,7 +58,13 @@
 }
 
 - (CGSize)sizeForSupplementaryViewOfKind:(NSString *)elementKind atIndex:(NSInteger)index {
-    return CGSizeZero;
+    if ([NSStringFromClass([self registerReusableViewClass]) isEqualToString:NSStringFromClass(IGListBaseReusableView.class)]) {
+        // 没有实现header协议方法
+        return CGSizeZero;
+    }
+    
+    UIView *view = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self registerReusableViewClass]) owner:nil options:nil] firstObject];
+    return CGSizeMake(self.viewController.view.bounds.size.width, view.bounds.size.height);
 }
 
 - (UICollectionReusableView *)viewForSupplementaryElementOfKind:(NSString *)elementKind atIndex:(NSInteger)index {
