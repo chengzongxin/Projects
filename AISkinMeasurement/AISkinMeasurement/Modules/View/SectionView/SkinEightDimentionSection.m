@@ -15,9 +15,9 @@
     return SkinEightDimentionCell.class;
 }
 
-//- (CGSize)sizeForItemAtIndex:(NSInteger)index{
-//    return CGSizeMake(self.viewController.view.bounds.size.width, 500);
-//}
+- (CGSize)sizeForItemAtIndex:(NSInteger)index{
+    return CGSizeMake(self.viewController.view.bounds.size.width, 661 + UIScreen.mainScreen.bounds.size.width - 375); // 宽屏手机
+}
 
 - (Class)registerReusableViewClass{
     return SkinSectionHeaderView.class;

@@ -80,6 +80,7 @@
 		59409984247633F8000A2AEA /* UIKitConvenient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIKitConvenient.h; sourceTree = "<group>"; };
 		59409985247633F8000A2AEA /* UIButton+Convenient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Convenient.m"; sourceTree = "<group>"; };
 		59409986247633F8000A2AEA /* NSDate+Convenient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Convenient.h"; sourceTree = "<group>"; };
+		5940998B2476583E000A2AEA /* MacroFunction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MacroFunction.h; sourceTree = "<group>"; };
 		597A08AD2474CFC6002FE680 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		597A08AE2474CFC6002FE680 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		597A08B02474D002002FE680 /* SkinCameraViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SkinCameraViewController.h; sourceTree = "<group>"; };
@@ -189,6 +190,7 @@
 				59409985247633F8000A2AEA /* UIButton+Convenient.m */,
 				59409983247633F8000A2AEA /* UIView+Convenient.h */,
 				59409980247633F8000A2AEA /* UIView+Convenient.m */,
+				5940998B2476583E000A2AEA /* MacroFunction.h */,
 			);
 			path = "UIKit+Convenient";
 			sourceTree = "<group>";

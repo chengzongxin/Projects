@@ -10,3 +10,5 @@
 #import "CALayer+Convenient.h"
 #import "UIView+Convenient.h"
 #import "NSDate+Convenient.h"
+#import "MacroFunction.h"
+
