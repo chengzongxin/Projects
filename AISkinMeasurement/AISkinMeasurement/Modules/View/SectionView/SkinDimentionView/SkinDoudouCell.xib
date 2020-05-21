@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="SkinDoudouCell">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="160"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="160"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="animation_man" translatesAutoresizingMaskIntoConstraints="NO" id="3F0-TA-1lq">
+                        <rect key="frame" x="210" y="0.0" width="150" height="150"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="150" id="99V-nO-Tzu"/>
+                            <constraint firstAttribute="height" constant="150" id="LEZ-B7-KhB"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="痘痘：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Wv-ae-IsQ">
+                        <rect key="frame" x="32" y="22" width="43" height="17"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                        <color key="textColor" red="0.074509803921568626" green="0.10588235294117647" blue="0.21176470588235294" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U8v-cO-xlA">
+                        <rect key="frame" x="76" y="19.5" width="11.5" height="22"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                        <color key="textColor" red="0.074509803920000006" green="0.1058823529" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="痘印：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QuC-dZ-uSs">
+                        <rect key="frame" x="32" y="49" width="43" height="17"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                        <color key="textColor" red="0.074509803920000006" green="0.1058823529" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="此处显示完成的显示总结报告的内容" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bxt-X1-TlR">
+                        <rect key="frame" x="32" y="88.5" width="132" height="29"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                        <color key="textColor" red="0.30588235294117649" green="0.33725490196078434" blue="0.42745098039215684" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Y0-bg-QhH">
+                        <rect key="frame" x="76" y="46.5" width="12" height="22"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                        <color key="textColor" red="0.074509803920000006" green="0.1058823529" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="QuC-dZ-uSs" firstAttribute="top" secondItem="0Wv-ae-IsQ" secondAttribute="bottom" constant="10" id="7mt-cQ-FhW"/>
+                <constraint firstItem="QuC-dZ-uSs" firstAttribute="leading" secondItem="0Wv-ae-IsQ" secondAttribute="leading" id="Bw7-W3-Sw4"/>
+                <constraint firstItem="U8v-cO-xlA" firstAttribute="leading" secondItem="0Wv-ae-IsQ" secondAttribute="trailing" constant="1" id="DWe-8u-SwC"/>
+                <constraint firstItem="9Y0-bg-QhH" firstAttribute="centerY" secondItem="QuC-dZ-uSs" secondAttribute="centerY" id="Fgx-nI-GK4"/>
+                <constraint firstAttribute="trailing" secondItem="3F0-TA-1lq" secondAttribute="trailing" constant="15" id="LG2-3W-HAh"/>
+                <constraint firstItem="3F0-TA-1lq" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="ZEf-b4-RTt"/>
+                <constraint firstItem="Bxt-X1-TlR" firstAttribute="leading" secondItem="QuC-dZ-uSs" secondAttribute="leading" id="de4-b3-Ker"/>
+                <constraint firstItem="0Wv-ae-IsQ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="22" id="gEO-LS-Ml5"/>
+                <constraint firstItem="U8v-cO-xlA" firstAttribute="centerY" secondItem="0Wv-ae-IsQ" secondAttribute="centerY" id="lbp-ng-ku3"/>
+                <constraint firstItem="Bxt-X1-TlR" firstAttribute="top" secondItem="9Y0-bg-QhH" secondAttribute="bottom" constant="20" id="rBb-C5-04c"/>
+                <constraint firstItem="0Wv-ae-IsQ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="32" id="uux-ke-PSp"/>
+                <constraint firstItem="9Y0-bg-QhH" firstAttribute="leading" secondItem="QuC-dZ-uSs" secondAttribute="trailing" constant="1" id="xiL-mj-AKO"/>
+                <constraint firstItem="3F0-TA-1lq" firstAttribute="leading" secondItem="Bxt-X1-TlR" secondAttribute="trailing" constant="46" id="ykg-mu-ExP"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
+            <point key="canvasLocation" x="140.57971014492756" y="116.51785714285714"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="animation_man" width="150" height="150"/>
+    </resources>
+</document>

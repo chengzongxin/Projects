@@ -32,13 +32,8 @@
     return self.datas;
 }
 
-- (IGListSectionController *)listAdapter:(IGListAdapter *)listAdapter sectionControllerForObject:(NSArray *)object {
-    id element = object.firstObject;
-    if ([element isKindOfClass:[NSString class]]) {
-        return IGListSectionController.new;
-    }else{
-        return nil;
-    }
+- (IGListSectionController *)listAdapter:(IGListAdapter *)listAdapter sectionControllerForObject:(id)object {
+    return IGListSectionController.new;
 }
 
 - (UIView *)emptyViewForListAdapter:(IGListAdapter *)listAdapter {

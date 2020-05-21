@@ -7,12 +7,10 @@
 //
 
 #import "IGListBaseReusableView.h"
-#import "SPMultipleSwitch.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SkinSectionHeaderView : IGListBaseReusableView
-
-@property (weak, nonatomic) IBOutlet SPMultipleSwitch *switchButton;
 
 @end
 

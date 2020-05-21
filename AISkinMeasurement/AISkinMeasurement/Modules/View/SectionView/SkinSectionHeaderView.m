@@ -11,28 +11,6 @@
 
 @implementation SkinSectionHeaderView
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    
-    [_switchButton initialWithItems:@[@"本人",@"动画"]];
-    _switchButton.titleFont = [UIFont boldSystemFontOfSize:12];
-    _switchButton.frame = CGRectMake(15, 180, 192, 24);
-    _switchButton.backgroundColor = UIColor.whiteColor;
-    _switchButton.selectedTitleColor = UIColor.whiteColor;
-    _switchButton.titleColor = [UIColor colorWithRed:0/255.0 green:195/255.0 blue:206/255.0 alpha:1.0];
-    _switchButton.contentInset = 0;
-    _switchButton.spacing = 10;
-    _switchButton.trackerColor = [UIColor colorWithRed:0/255.0 green:195/255.0 blue:206/255.0 alpha:1.0];
-    [_switchButton addTarget:self action:@selector(switchAction3:) forControlEvents:UIControlEventTouchUpInside];
-    
-    _switchButton.layer.borderColor = [UIColor colorWithRed:0/255.0 green:195/255.0 blue:206/255.0 alpha:1.0].CGColor;
-    _switchButton.layer.borderWidth = 0.5;
-}
-
-- (void)switchAction3:(SPMultipleSwitch *)multipleSwitch {
-    NSLog(@"点击了第%zd个",multipleSwitch.selectedSegmentIndex);
-}
-
 
 - (void)drawRect:(CGRect)rect{
     [super drawRect:rect];

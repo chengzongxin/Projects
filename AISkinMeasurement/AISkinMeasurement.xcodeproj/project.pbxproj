@@ -12,6 +12,26 @@
 		59409989247633F8000A2AEA /* CALayer+Convenient.m in Sources */ = {isa = PBXBuildFile; fileRef = 59409982247633F8000A2AEA /* CALayer+Convenient.m */; };
 		5940998A247633F8000A2AEA /* UIButton+Convenient.m in Sources */ = {isa = PBXBuildFile; fileRef = 59409985247633F8000A2AEA /* UIButton+Convenient.m */; };
 		5940998F24766BAB000A2AEA /* SPMultipleSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 5940998D24766BAB000A2AEA /* SPMultipleSwitch.m */; };
+		59409993247685A5000A2AEA /* SkinDoudouSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 59409992247685A5000A2AEA /* SkinDoudouSection.m */; };
+		59409996247685C4000A2AEA /* SkinBandianSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 59409995247685C4000A2AEA /* SkinBandianSection.m */; };
+		59409999247685D7000A2AEA /* SkinHeitouSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 59409998247685D7000A2AEA /* SkinHeitouSection.m */; };
+		5940999C247685E6000A2AEA /* SkinZhouwenSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 5940999B247685E6000A2AEA /* SkinZhouwenSection.m */; };
+		5940999F247685F7000A2AEA /* SkinMaokongSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 5940999E247685F7000A2AEA /* SkinMaokongSection.m */; };
+		594099A224768601000A2AEA /* SkinHeiyanquanSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 594099A124768601000A2AEA /* SkinHeiyanquanSection.m */; };
+		594099A62476865C000A2AEA /* SkinDoudouCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 594099A42476865C000A2AEA /* SkinDoudouCell.m */; };
+		594099A72476865C000A2AEA /* SkinDoudouCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 594099A52476865C000A2AEA /* SkinDoudouCell.xib */; };
+		594099AB24768670000A2AEA /* SkinBandianCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 594099A924768670000A2AEA /* SkinBandianCell.m */; };
+		594099AC24768670000A2AEA /* SkinBandianCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 594099AA24768670000A2AEA /* SkinBandianCell.xib */; };
+		594099B024768682000A2AEA /* SkinHeitouCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 594099AE24768682000A2AEA /* SkinHeitouCell.m */; };
+		594099B124768682000A2AEA /* SkinHeitouCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 594099AF24768682000A2AEA /* SkinHeitouCell.xib */; };
+		594099B524768690000A2AEA /* SkinZhouwenCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 594099B324768690000A2AEA /* SkinZhouwenCell.m */; };
+		594099B624768690000A2AEA /* SkinZhouwenCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 594099B424768690000A2AEA /* SkinZhouwenCell.xib */; };
+		594099BA2476869C000A2AEA /* SkinMaokongCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 594099B82476869C000A2AEA /* SkinMaokongCell.m */; };
+		594099BB2476869C000A2AEA /* SkinMaokongCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 594099B92476869C000A2AEA /* SkinMaokongCell.xib */; };
+		594099BF247686A9000A2AEA /* SkinHeiyanquanCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 594099BD247686A9000A2AEA /* SkinHeiyanquanCell.m */; };
+		594099C0247686A9000A2AEA /* SkinHeiyanquanCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 594099BE247686A9000A2AEA /* SkinHeiyanquanCell.xib */; };
+		594099C424768AFC000A2AEA /* SkinDimentionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 594099C224768AFC000A2AEA /* SkinDimentionHeaderView.m */; };
+		594099C524768AFC000A2AEA /* SkinDimentionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 594099C324768AFC000A2AEA /* SkinDimentionHeaderView.xib */; };
 		597A08AF2474CFC6002FE680 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 597A08AE2474CFC6002FE680 /* ViewController.m */; };
 		597A08B22474D002002FE680 /* SkinCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 597A08B12474D002002FE680 /* SkinCameraViewController.m */; };
 		599EC0842472859800C35EA0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 599EC0832472859800C35EA0 /* AppDelegate.m */; };
@@ -84,6 +104,39 @@
 		5940998B2476583E000A2AEA /* MacroFunction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MacroFunction.h; sourceTree = "<group>"; };
 		5940998D24766BAB000A2AEA /* SPMultipleSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPMultipleSwitch.m; sourceTree = "<group>"; };
 		5940998E24766BAB000A2AEA /* SPMultipleSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPMultipleSwitch.h; sourceTree = "<group>"; };
+		59409991247685A5000A2AEA /* SkinDoudouSection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SkinDoudouSection.h; sourceTree = "<group>"; };
+		59409992247685A5000A2AEA /* SkinDoudouSection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SkinDoudouSection.m; sourceTree = "<group>"; };
+		59409994247685C4000A2AEA /* SkinBandianSection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SkinBandianSection.h; sourceTree = "<group>"; };
+		59409995247685C4000A2AEA /* SkinBandianSection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SkinBandianSection.m; sourceTree = "<group>"; };
+		59409997247685D7000A2AEA /* SkinHeitouSection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SkinHeitouSection.h; sourceTree = "<group>"; };
+		59409998247685D7000A2AEA /* SkinHeitouSection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SkinHeitouSection.m; sourceTree = "<group>"; };
+		5940999A247685E6000A2AEA /* SkinZhouwenSection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SkinZhouwenSection.h; sourceTree = "<group>"; };
+		5940999B247685E6000A2AEA /* SkinZhouwenSection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SkinZhouwenSection.m; sourceTree = "<group>"; };
+		5940999D247685F7000A2AEA /* SkinMaokongSection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SkinMaokongSection.h; sourceTree = "<group>"; };
+		5940999E247685F7000A2AEA /* SkinMaokongSection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SkinMaokongSection.m; sourceTree = "<group>"; };
+		594099A024768601000A2AEA /* SkinHeiyanquanSection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SkinHeiyanquanSection.h; sourceTree = "<group>"; };
+		594099A124768601000A2AEA /* SkinHeiyanquanSection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SkinHeiyanquanSection.m; sourceTree = "<group>"; };
+		594099A32476865C000A2AEA /* SkinDoudouCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SkinDoudouCell.h; sourceTree = "<group>"; };
+		594099A42476865C000A2AEA /* SkinDoudouCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SkinDoudouCell.m; sourceTree = "<group>"; };
+		594099A52476865C000A2AEA /* SkinDoudouCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SkinDoudouCell.xib; sourceTree = "<group>"; };
+		594099A824768670000A2AEA /* SkinBandianCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SkinBandianCell.h; sourceTree = "<group>"; };
+		594099A924768670000A2AEA /* SkinBandianCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SkinBandianCell.m; sourceTree = "<group>"; };
+		594099AA24768670000A2AEA /* SkinBandianCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SkinBandianCell.xib; sourceTree = "<group>"; };
+		594099AD24768682000A2AEA /* SkinHeitouCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SkinHeitouCell.h; sourceTree = "<group>"; };
+		594099AE24768682000A2AEA /* SkinHeitouCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SkinHeitouCell.m; sourceTree = "<group>"; };
+		594099AF24768682000A2AEA /* SkinHeitouCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SkinHeitouCell.xib; sourceTree = "<group>"; };
+		594099B224768690000A2AEA /* SkinZhouwenCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SkinZhouwenCell.h; sourceTree = "<group>"; };
+		594099B324768690000A2AEA /* SkinZhouwenCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SkinZhouwenCell.m; sourceTree = "<group>"; };
+		594099B424768690000A2AEA /* SkinZhouwenCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SkinZhouwenCell.xib; sourceTree = "<group>"; };
+		594099B72476869C000A2AEA /* SkinMaokongCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SkinMaokongCell.h; sourceTree = "<group>"; };
+		594099B82476869C000A2AEA /* SkinMaokongCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SkinMaokongCell.m; sourceTree = "<group>"; };
+		594099B92476869C000A2AEA /* SkinMaokongCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SkinMaokongCell.xib; sourceTree = "<group>"; };
+		594099BC247686A9000A2AEA /* SkinHeiyanquanCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SkinHeiyanquanCell.h; sourceTree = "<group>"; };
+		594099BD247686A9000A2AEA /* SkinHeiyanquanCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SkinHeiyanquanCell.m; sourceTree = "<group>"; };
+		594099BE247686A9000A2AEA /* SkinHeiyanquanCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SkinHeiyanquanCell.xib; sourceTree = "<group>"; };
+		594099C124768AFC000A2AEA /* SkinDimentionHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SkinDimentionHeaderView.h; sourceTree = "<group>"; };
+		594099C224768AFC000A2AEA /* SkinDimentionHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SkinDimentionHeaderView.m; sourceTree = "<group>"; };
+		594099C324768AFC000A2AEA /* SkinDimentionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SkinDimentionHeaderView.xib; sourceTree = "<group>"; };
 		597A08AD2474CFC6002FE680 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		597A08AE2474CFC6002FE680 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		597A08B02474D002002FE680 /* SkinCameraViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SkinCameraViewController.h; sourceTree = "<group>"; };
@@ -205,6 +258,46 @@
 				5940998D24766BAB000A2AEA /* SPMultipleSwitch.m */,
 			);
 			path = SPMultipleSwitch;
+			sourceTree = "<group>";
+		};
+		594099902476857D000A2AEA /* SkinDimentionView */ = {
+			isa = PBXGroup;
+			children = (
+				594099C124768AFC000A2AEA /* SkinDimentionHeaderView.h */,
+				594099C224768AFC000A2AEA /* SkinDimentionHeaderView.m */,
+				594099C324768AFC000A2AEA /* SkinDimentionHeaderView.xib */,
+				59409991247685A5000A2AEA /* SkinDoudouSection.h */,
+				59409992247685A5000A2AEA /* SkinDoudouSection.m */,
+				594099A32476865C000A2AEA /* SkinDoudouCell.h */,
+				594099A42476865C000A2AEA /* SkinDoudouCell.m */,
+				594099A52476865C000A2AEA /* SkinDoudouCell.xib */,
+				59409994247685C4000A2AEA /* SkinBandianSection.h */,
+				59409995247685C4000A2AEA /* SkinBandianSection.m */,
+				594099A824768670000A2AEA /* SkinBandianCell.h */,
+				594099A924768670000A2AEA /* SkinBandianCell.m */,
+				594099AA24768670000A2AEA /* SkinBandianCell.xib */,
+				59409997247685D7000A2AEA /* SkinHeitouSection.h */,
+				59409998247685D7000A2AEA /* SkinHeitouSection.m */,
+				594099AD24768682000A2AEA /* SkinHeitouCell.h */,
+				594099AE24768682000A2AEA /* SkinHeitouCell.m */,
+				594099AF24768682000A2AEA /* SkinHeitouCell.xib */,
+				5940999A247685E6000A2AEA /* SkinZhouwenSection.h */,
+				5940999B247685E6000A2AEA /* SkinZhouwenSection.m */,
+				594099B224768690000A2AEA /* SkinZhouwenCell.h */,
+				594099B324768690000A2AEA /* SkinZhouwenCell.m */,
+				594099B424768690000A2AEA /* SkinZhouwenCell.xib */,
+				5940999D247685F7000A2AEA /* SkinMaokongSection.h */,
+				5940999E247685F7000A2AEA /* SkinMaokongSection.m */,
+				594099B72476869C000A2AEA /* SkinMaokongCell.h */,
+				594099B82476869C000A2AEA /* SkinMaokongCell.m */,
+				594099B92476869C000A2AEA /* SkinMaokongCell.xib */,
+				594099A024768601000A2AEA /* SkinHeiyanquanSection.h */,
+				594099A124768601000A2AEA /* SkinHeiyanquanSection.m */,
+				594099BC247686A9000A2AEA /* SkinHeiyanquanCell.h */,
+				594099BD247686A9000A2AEA /* SkinHeiyanquanCell.m */,
+				594099BE247686A9000A2AEA /* SkinHeiyanquanCell.xib */,
+			);
+			path = SkinDimentionView;
 			sourceTree = "<group>";
 		};
 		599EC0762472859700C35EA0 = {
@@ -366,6 +459,7 @@
 				599EC1722472A25200C35EA0 /* SkinEightDimentionCell.h */,
 				599EC1732472A25200C35EA0 /* SkinEightDimentionCell.m */,
 				599EC1742472A25200C35EA0 /* SkinEightDimentionCell.xib */,
+				594099902476857D000A2AEA /* SkinDimentionView */,
 			);
 			path = SectionView;
 			sourceTree = "<group>";
@@ -517,12 +611,19 @@
 				599EC19E2472A92700C35EA0 /* IGListBaseReusableView.xib in Resources */,
 				599EC1762472A25200C35EA0 /* SkinEightDimentionCell.xib in Resources */,
 				599EC16B247297CC00C35EA0 /* IGListBaseCell.xib in Resources */,
+				594099C524768AFC000A2AEA /* SkinDimentionHeaderView.xib in Resources */,
+				594099A72476865C000A2AEA /* SkinDoudouCell.xib in Resources */,
+				594099BB2476869C000A2AEA /* SkinMaokongCell.xib in Resources */,
 				599EC0922472859800C35EA0 /* LaunchScreen.storyboard in Resources */,
+				594099AC24768670000A2AEA /* SkinBandianCell.xib in Resources */,
+				594099B124768682000A2AEA /* SkinHeitouCell.xib in Resources */,
 				599EC16124728F6100C35EA0 /* SkinOverviewCell.xib in Resources */,
+				594099B624768690000A2AEA /* SkinZhouwenCell.xib in Resources */,
 				599EC08F2472859800C35EA0 /* Assets.xcassets in Resources */,
 				599EC1992472A8D200C35EA0 /* SkinSectionHeaderView.xib in Resources */,
 				59FBEE6D247544C90073A947 /* ZZCircleProgress.bundle in Resources */,
 				599EC08D2472859800C35EA0 /* Main.storyboard in Resources */,
+				594099C0247686A9000A2AEA /* SkinHeiyanquanCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -654,6 +755,9 @@
 				599EC0842472859800C35EA0 /* AppDelegate.m in Sources */,
 				59FBEE4D247537A00073A947 /* SkinViewModel.m in Sources */,
 				599EC16024728F6100C35EA0 /* SkinOverviewCell.m in Sources */,
+				594099C424768AFC000A2AEA /* SkinDimentionHeaderView.m in Sources */,
+				59409993247685A5000A2AEA /* SkinDoudouSection.m in Sources */,
+				5940999F247685F7000A2AEA /* SkinMaokongSection.m in Sources */,
 				599EC0952472859800C35EA0 /* main.m in Sources */,
 				599EC1982472A8D200C35EA0 /* SkinSectionHeaderView.m in Sources */,
 				599EC0872472859800C35EA0 /* SceneDelegate.m in Sources */,
@@ -661,19 +765,29 @@
 				59FBEE62247538690073A947 /* GBRadarChartDataItem.m in Sources */,
 				59409988247633F8000A2AEA /* NSDate+Convenient.m in Sources */,
 				59FBEE64247538690073A947 /* FacePreviewView.m in Sources */,
+				594099A224768601000A2AEA /* SkinHeiyanquanSection.m in Sources */,
 				599EC15124728B4200C35EA0 /* IGListBaseViewController.m in Sources */,
 				5940998A247633F8000A2AEA /* UIButton+Convenient.m in Sources */,
+				594099B524768690000A2AEA /* SkinZhouwenCell.m in Sources */,
 				59FBEE6E247544C90073A947 /* ZZCountingLabel.m in Sources */,
+				59409996247685C4000A2AEA /* SkinBandianSection.m in Sources */,
 				59FBEE61247538690073A947 /* GBRadarChart.m in Sources */,
 				599EC15724728DAF00C35EA0 /* IGListBaseSection.m in Sources */,
 				597A08B22474D002002FE680 /* SkinCameraViewController.m in Sources */,
+				594099AB24768670000A2AEA /* SkinBandianCell.m in Sources */,
+				594099BA2476869C000A2AEA /* SkinMaokongCell.m in Sources */,
+				594099BF247686A9000A2AEA /* SkinHeiyanquanCell.m in Sources */,
 				59409989247633F8000A2AEA /* CALayer+Convenient.m in Sources */,
 				597A08AF2474CFC6002FE680 /* ViewController.m in Sources */,
 				599EC16A247297CC00C35EA0 /* IGListBaseCell.m in Sources */,
 				599EC1752472A25200C35EA0 /* SkinEightDimentionCell.m in Sources */,
 				599EC15424728BA300C35EA0 /* SkinMeasurementViewController.m in Sources */,
+				5940999C247685E6000A2AEA /* SkinZhouwenSection.m in Sources */,
 				59FBEE63247538690073A947 /* SCPermissionsView.m in Sources */,
 				599EC15C24728F0400C35EA0 /* SkinOverviewSection.m in Sources */,
+				594099B024768682000A2AEA /* SkinHeitouCell.m in Sources */,
+				59409999247685D7000A2AEA /* SkinHeitouSection.m in Sources */,
+				594099A62476865C000A2AEA /* SkinDoudouCell.m in Sources */,
 				59FBEE6F247544C90073A947 /* ZZCircleProgress.m in Sources */,
 				599EC19D2472A92700C35EA0 /* IGListBaseReusableView.m in Sources */,
 				5940998F24766BAB000A2AEA /* SPMultipleSwitch.m in Sources */,
