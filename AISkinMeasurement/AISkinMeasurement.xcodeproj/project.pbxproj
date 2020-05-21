@@ -11,6 +11,7 @@
 		59409988247633F8000A2AEA /* NSDate+Convenient.m in Sources */ = {isa = PBXBuildFile; fileRef = 59409981247633F8000A2AEA /* NSDate+Convenient.m */; };
 		59409989247633F8000A2AEA /* CALayer+Convenient.m in Sources */ = {isa = PBXBuildFile; fileRef = 59409982247633F8000A2AEA /* CALayer+Convenient.m */; };
 		5940998A247633F8000A2AEA /* UIButton+Convenient.m in Sources */ = {isa = PBXBuildFile; fileRef = 59409985247633F8000A2AEA /* UIButton+Convenient.m */; };
+		5940998F24766BAB000A2AEA /* SPMultipleSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 5940998D24766BAB000A2AEA /* SPMultipleSwitch.m */; };
 		597A08AF2474CFC6002FE680 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 597A08AE2474CFC6002FE680 /* ViewController.m */; };
 		597A08B22474D002002FE680 /* SkinCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 597A08B12474D002002FE680 /* SkinCameraViewController.m */; };
 		599EC0842472859800C35EA0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 599EC0832472859800C35EA0 /* AppDelegate.m */; };
@@ -81,6 +82,8 @@
 		59409985247633F8000A2AEA /* UIButton+Convenient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Convenient.m"; sourceTree = "<group>"; };
 		59409986247633F8000A2AEA /* NSDate+Convenient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Convenient.h"; sourceTree = "<group>"; };
 		5940998B2476583E000A2AEA /* MacroFunction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MacroFunction.h; sourceTree = "<group>"; };
+		5940998D24766BAB000A2AEA /* SPMultipleSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPMultipleSwitch.m; sourceTree = "<group>"; };
+		5940998E24766BAB000A2AEA /* SPMultipleSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPMultipleSwitch.h; sourceTree = "<group>"; };
 		597A08AD2474CFC6002FE680 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		597A08AE2474CFC6002FE680 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		597A08B02474D002002FE680 /* SkinCameraViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SkinCameraViewController.h; sourceTree = "<group>"; };
@@ -195,6 +198,15 @@
 			path = "UIKit+Convenient";
 			sourceTree = "<group>";
 		};
+		5940998C24766BAB000A2AEA /* SPMultipleSwitch */ = {
+			isa = PBXGroup;
+			children = (
+				5940998E24766BAB000A2AEA /* SPMultipleSwitch.h */,
+				5940998D24766BAB000A2AEA /* SPMultipleSwitch.m */,
+			);
+			path = SPMultipleSwitch;
+			sourceTree = "<group>";
+		};
 		599EC0762472859700C35EA0 = {
 			isa = PBXGroup;
 			children = (
@@ -300,6 +312,7 @@
 			children = (
 				59FBEE66247539EC0073A947 /* SectionView */,
 				59FBEE67247544C80073A947 /* ZZCircleProgress */,
+				5940998C24766BAB000A2AEA /* SPMultipleSwitch */,
 				59FBEE55247538680073A947 /* RadarChart */,
 				59FBEE5A247538680073A947 /* PermissionsView */,
 				59FBEE5D247538680073A947 /* FacePreview */,
@@ -663,6 +676,7 @@
 				599EC15C24728F0400C35EA0 /* SkinOverviewSection.m in Sources */,
 				59FBEE6F247544C90073A947 /* ZZCircleProgress.m in Sources */,
 				599EC19D2472A92700C35EA0 /* IGListBaseReusableView.m in Sources */,
+				5940998F24766BAB000A2AEA /* SPMultipleSwitch.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -30,6 +30,22 @@
     [radarChart strokeChart];
     [self addSubview:radarChart];
     _radarChart = radarChart;
+    
+    
+    [_roughSwithButton initialWithItems:@[@"光滑",@"一般",@"粗糙"]];
+    _roughSwithButton.titleFont = [UIFont boldSystemFontOfSize:12];
+    _roughSwithButton.frame = CGRectMake(15, 180, 192, 24);
+    _roughSwithButton.backgroundColor = [UIColor colorWithRed:246/255.0 green:245/255.0 blue:248/255.0 alpha:1.0];
+    _roughSwithButton.selectedTitleColor = UIColor.whiteColor;
+    _roughSwithButton.titleColor = [UIColor colorWithRed:121/255.0 green:132/255.0 blue:156/255.0 alpha:1.0];
+    _roughSwithButton.contentInset = 0;
+    _roughSwithButton.spacing = 10;
+    _roughSwithButton.trackerColor = [UIColor colorWithRed:0/255.0 green:195/255.0 blue:206/255.0 alpha:1.0];
+    [_roughSwithButton addTarget:self action:@selector(switchAction3:) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)switchAction3:(SPMultipleSwitch *)multipleSwitch {
+    NSLog(@"点击了第%zd个",multipleSwitch.selectedSegmentIndex);
 }
 
 - (void)setModel:(id)model{
