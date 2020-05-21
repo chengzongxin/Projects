@@ -20,12 +20,25 @@
                     <color key="textColor" red="0.074509803921568626" green="0.10588235294117647" blue="0.21176470588235294" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QLl-xD-CIT" customClass="SPMultipleSwitch">
+                    <rect key="frame" x="224" y="23" width="81" height="24"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="24" id="0MD-Ki-IAC"/>
+                        <constraint firstAttribute="width" constant="81" id="HF9-RM-pB7"/>
+                    </constraints>
+                </view>
             </subviews>
             <constraints>
+                <constraint firstItem="9Gg-ye-v9C" firstAttribute="trailing" secondItem="QLl-xD-CIT" secondAttribute="trailing" constant="15" id="6oO-Gc-WUv"/>
                 <constraint firstItem="ljx-cg-mSV" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" constant="34" id="Drt-34-lMy"/>
+                <constraint firstItem="QLl-xD-CIT" firstAttribute="centerY" secondItem="U6b-Vx-4bR" secondAttribute="centerY" id="Txf-UP-EA1"/>
                 <constraint firstItem="ljx-cg-mSV" firstAttribute="centerY" secondItem="U6b-Vx-4bR" secondAttribute="centerY" id="y1X-dH-fjZ"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="9Gg-ye-v9C"/>
+            <connections>
+                <outlet property="switchButton" destination="QLl-xD-CIT" id="PzX-xk-TZQ"/>
+            </connections>
             <point key="canvasLocation" x="140.57971014492756" y="126.5625"/>
         </collectionReusableView>
     </objects>
