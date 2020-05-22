@@ -16,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (assign, nonatomic) CGRect facePosition;
 
+@property (nonatomic,copy) void (^countDown)(void);
+
 @end
 
 NS_ASSUME_NONNULL_END

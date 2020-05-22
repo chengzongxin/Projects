@@ -22,7 +22,6 @@
 @property (strong, nonatomic) AVCaptureVideoDataOutput *videoOutput;
 @property (strong, nonatomic) FacePreviewView *previewView;
 
-@property (strong, nonatomic) UIButton *switchCameraButton;
 @property (strong, nonatomic) UISlider *scaleSlider;
 @property (strong, nonatomic) UIImage *lastImage;
 
@@ -39,8 +38,8 @@
     } else {
         [self setupCaptureSession];
     }
-    
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"snapshot" style:UIBarButtonItemStyleDone target:self action:@selector(snapshot)];
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"switch_camera"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self action:@selector(switchCamere:)];
+    self.navigationItem.rightBarButtonItem = item;
 }
 
 - (void)setupCaptureSession{
@@ -60,13 +59,17 @@
         [self.view addSubview:self.previewView];
         self.previewView.videoPreviewLayer.session = self.captureSession;
         self.previewView.videoPreviewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
+        __weak __typeof__(self)weakSelf = self;
+        self.previewView.countDown = ^{
+            [weakSelf snapshot];
+        };
         
         // Note
         // If your app supports multiple interface orientations, use the preview layer’s connection to the capture session to set a videoOrientation matching that of your UI.
         [self.captureSession startRunning];
         
         // 放到preview 上层
-        [self.view addSubview:self.switchCameraButton];
+//        [self.view addSubview:self.switchCameraButton];
         
         [self.view addSubview:self.scaleSlider];
     });
@@ -274,59 +277,6 @@
 }
 
 
-
-//#pragma mark AVCapturePhotoCaptureDelegate
-//- (void)captureOutput:(AVCapturePhotoOutput *)output willBeginCaptureForResolvedSettings:(AVCaptureResolvedPhotoSettings *)resolvedSettings {
-//    // 拍摄准备完毕
-//    NSLog(@"%s",__FUNCTION__);
-//}
-//
-//- (void)captureOutput:(AVCapturePhotoOutput *)output willCapturePhotoForResolvedSettings:(AVCaptureResolvedPhotoSettings *)resolvedSettings {
-//    // 曝光开始
-//    NSLog(@"%s",__FUNCTION__);
-//}
-//
-//- (void)captureOutput:(AVCapturePhotoOutput *)output didCapturePhotoForResolvedSettings:(AVCaptureResolvedPhotoSettings *)resolvedSettings {
-//    // 曝光结束
-//    NSLog(@"%s",__FUNCTION__);
-//}
-//
-///// ios(11.0) 才有用的
-//- (void) captureOutput:(AVCapturePhotoOutput*)captureOutput didFinishProcessingPhoto:(AVCapturePhoto*)photo error:(nullable NSError*)error  API_AVAILABLE(ios(11.0)) {
-//    NSLog(@"%s",__FUNCTION__);
-//
-//    [self.captureSession stopRunning];
-//    // 这个就是HEIF(HEIC)的文件数据,直接保存即可
-//    NSData *data = photo.fileDataRepresentation;
-//    UIImage *image = [UIImage imageWithData:data];
-//
-////     保存图片到相册
-//    UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
-////    [self uploadImage:image];
-////
-////    [self uploadUI:image];
-//}
-//
-////- (void)captureOutput:(AVCapturePhotoOutput *)output didFinishProcessingPhotoSampleBuffer:(nullable CMSampleBufferRef)photoSampleBuffer previewPhotoSampleBuffer:(nullable CMSampleBufferRef)previewPhotoSampleBuffer resolvedSettings:(AVCaptureResolvedPhotoSettings *)resolvedSettings bracketSettings:(nullable AVCaptureBracketedStillImageSettings *)bracketSettings error:(nullable NSError *)error API_DEPRECATED("Use -captureOutput:didFinishProcessingPhoto:error: instead.", ios(10.0, 11.0)) {
-////    NSLog(@"%s",__FUNCTION__);
-////}
-//- (void)captureOutput:(AVCapturePhotoOutput *)output didFinishProcessingLivePhotoToMovieFileAtURL:(NSURL *)outputFileURL duration:(CMTime)duration photoDisplayTime:(CMTime)photoDisplayTime resolvedSettings:(AVCaptureResolvedPhotoSettings *)resolvedSettings error:(NSError *)error
-//
-//- (void)captureOutput:(AVCapturePhotoOutput *)output didFinishRecordingLivePhotoMovieForEventualFileAtURL:(NSURL *)outputFileURL resolvedSettings:(AVCaptureResolvedPhotoSettings *)resolvedSettings {
-//    NSLog(@"%s",__FUNCTION__);
-//    // 完成 Live Photo 停止拍摄
-//}
-//
-//- (void)captureOutput:(AVCapturePhotoOutput *)output didFinishProcessingLivePhotoToMovieFileAtURL:(NSURL *)outputFileURL duration:(CMTime)duration photoDisplayTime:(CMTime)photoDisplayTime resolvedSettings:(AVCaptureResolvedPhotoSettings *)resolvedSettings error:(nullable NSError *)error {
-//    NSLog(@"%s",__FUNCTION__);
-//}
-//
-//- (void) captureOutput:(AVCapturePhotoOutput*)captureOutput didFinishCaptureForResolvedSettings:(AVCaptureResolvedPhotoSettings*)resolvedSettings error:(NSError*)error {
-//    // 完成拍摄，可以在此处保存
-//    NSLog(@"%s",__FUNCTION__);
-//}
-
-
 - (UIStatusBarStyle)preferredStatusBarStyle{
     return UIStatusBarStyleLightContent;
 }
@@ -352,14 +302,6 @@
     return _previewView;
 }
 
-- (UIButton *)switchCameraButton{
-    if (!_switchCameraButton) {
-        _switchCameraButton = [[UIButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width - 60,64 + 40, 60, 30)];
-        [_switchCameraButton setTitle:@"switch" forState:UIControlStateNormal];
-        [_switchCameraButton addTarget:self action:@selector(switchCamere:) forControlEvents:UIControlEventTouchUpInside];
-    }
-    return _switchCameraButton;
-}
 
 - (UISlider *)scaleSlider{
     if (!_scaleSlider) {

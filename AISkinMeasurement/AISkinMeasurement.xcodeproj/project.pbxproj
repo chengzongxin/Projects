@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5925B9FD2477C89800D52E61 /* WZBCountdownLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5925B9FB2477C89800D52E61 /* WZBCountdownLabel.m */; };
 		59409987247633F8000A2AEA /* UIView+Convenient.m in Sources */ = {isa = PBXBuildFile; fileRef = 59409980247633F8000A2AEA /* UIView+Convenient.m */; };
 		59409988247633F8000A2AEA /* NSDate+Convenient.m in Sources */ = {isa = PBXBuildFile; fileRef = 59409981247633F8000A2AEA /* NSDate+Convenient.m */; };
 		59409989247633F8000A2AEA /* CALayer+Convenient.m in Sources */ = {isa = PBXBuildFile; fileRef = 59409982247633F8000A2AEA /* CALayer+Convenient.m */; };
@@ -92,6 +93,8 @@
 		27FACE9F6D2AD2196B10AF30 /* Pods_AISkinMeasurementTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AISkinMeasurementTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		43B582F785BFE227341F7585 /* Pods_AISkinMeasurement.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AISkinMeasurement.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B13BAE8D8DE34D6EEF055D5 /* Pods_AISkinMeasurement_AISkinMeasurementUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AISkinMeasurement_AISkinMeasurementUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5925B9FB2477C89800D52E61 /* WZBCountdownLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZBCountdownLabel.m; sourceTree = "<group>"; };
+		5925B9FC2477C89800D52E61 /* WZBCountdownLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZBCountdownLabel.h; sourceTree = "<group>"; };
 		5940997E247633F8000A2AEA /* CALayer+Convenient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+Convenient.h"; sourceTree = "<group>"; };
 		5940997F247633F8000A2AEA /* UIButton+Convenient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Convenient.h"; sourceTree = "<group>"; };
 		59409980247633F8000A2AEA /* UIView+Convenient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Convenient.m"; sourceTree = "<group>"; };
@@ -234,6 +237,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5925B9FA2477C88B00D52E61 /* WZBCountdownLabel */ = {
+			isa = PBXGroup;
+			children = (
+				5925B9FC2477C89800D52E61 /* WZBCountdownLabel.h */,
+				5925B9FB2477C89800D52E61 /* WZBCountdownLabel.m */,
+			);
+			path = WZBCountdownLabel;
+			sourceTree = "<group>";
+		};
 		5940997D247633F8000A2AEA /* UIKit+Convenient */ = {
 			isa = PBXGroup;
 			children = (
@@ -405,6 +417,7 @@
 			children = (
 				59FBEE66247539EC0073A947 /* SectionView */,
 				59FBEE67247544C80073A947 /* ZZCircleProgress */,
+				5925B9FA2477C88B00D52E61 /* WZBCountdownLabel */,
 				5940998C24766BAB000A2AEA /* SPMultipleSwitch */,
 				59FBEE55247538680073A947 /* RadarChart */,
 				59FBEE5A247538680073A947 /* PermissionsView */,
@@ -759,6 +772,7 @@
 				59409993247685A5000A2AEA /* SkinDoudouSection.m in Sources */,
 				5940999F247685F7000A2AEA /* SkinMaokongSection.m in Sources */,
 				599EC0952472859800C35EA0 /* main.m in Sources */,
+				5925B9FD2477C89800D52E61 /* WZBCountdownLabel.m in Sources */,
 				599EC1982472A8D200C35EA0 /* SkinSectionHeaderView.m in Sources */,
 				599EC0872472859800C35EA0 /* SceneDelegate.m in Sources */,
 				59409987247633F8000A2AEA /* UIView+Convenient.m in Sources */,
