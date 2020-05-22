@@ -22,7 +22,7 @@
         _imgV.image = [UIImage imageNamed:@"animation_man"];
     }else{
         _imgV.image = [UIImage imageNamed:@"qian"];
-        _imgV.image = [self imageWithOriginalName:_imgV.image signColor:[UIColor redColor] signPositionX:@[@0.0,@0.3] ignPositionY:@[@0.0,@0.7]];
+        _imgV.image = [self imageWithOriginalName:_imgV.image signColor:[UIColor redColor] signPositionX:@[@0.4,@0.3] ignPositionY:@[@0.5,@0.7]];
     }
 }
 
@@ -49,7 +49,7 @@
         CGFloat signX = numX.floatValue * image.size.width;
         CGFloat signY = numY.floatValue * image.size.height;
         
-        CGRect rect = CGRectMake(signX, signY, 40, 40);
+        CGRect rect = CGRectMake(signX, signY, signalImage.size.width, signalImage.size.height);
         [signalImage drawInRect:rect];
     }
     
