@@ -12,6 +12,7 @@
 #import "FacePreviewView.h"
 #import "SkinViewModel.h"
 #import "Slider.h"
+#import "SkinMeasurementViewController.h"
 
 @interface SkinCameraViewController () <SCPermissionsViewDelegate,AVCaptureVideoDataOutputSampleBufferDelegate>
 
@@ -120,9 +121,15 @@
     
     [SkinViewModel applyAnalysisCommand:_lastImage deviceNo:@"123" analysisPersonnelType:@"analysis_me" success:^(id  _Nonnull data) {
         NSLog(@"%@",data);
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self.previewView stopAnalysis];
+            [self.navigationController pushViewController:SkinMeasurementViewController.new animated:YES];
+        });
     } fail:^(NSString * _Nonnull message) {
         NSLog(@"%@",message);
     }];
+    
+    
 }
 
 - (void)switchCamere:(id)sender {
@@ -257,18 +264,8 @@
         
         //这里不考虑性能 直接怼Image
            dispatch_async(dispatch_get_main_queue(), ^{
-
                self.previewView.facePosition = faceFeature.bounds;
-//               UIImageWriteToSavedPhotosAlbum(faceImg, nil, nil, nil);
-//               [self.captureSession startRunning];
            });
-        
-
-//        [self.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
-//        UIView *view = [[UIView alloc] initWithFrame:faceFeature.bounds];
-//        view.backgroundColor = UIColor.orangeColor;
-//        [self.view addSubview:view];
-//        [self.captureSession stopRunning];
     }
     return features;
 }

@@ -36,16 +36,16 @@
 //    }];
     
     
-    if (_ana) {
-        [_ana stopAnimation];
-        [_ana removeFromSuperview];
-        _ana = nil;
-        return;
-    }
-    
-    SkinAnalysisView *ana = [[SkinAnalysisView alloc] initWithFrame:self.view.bounds];
-    [self.view addSubview:ana];
-    _ana = ana;
+//    if (_ana) {
+//        [_ana stopAnimation];
+//        [_ana removeFromSuperview];
+//        _ana = nil;
+//        return;
+//    }
+//
+//    SkinAnalysisView *ana = [[SkinAnalysisView alloc] initWithFrame:self.view.bounds];
+//    [self.view addSubview:ana];
+//    _ana = ana;
     
 }
 

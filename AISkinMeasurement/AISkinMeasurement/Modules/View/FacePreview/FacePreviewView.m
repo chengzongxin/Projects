@@ -16,6 +16,8 @@
 
 @property (strong, nonatomic) UILabel *promptLabel;
 
+@property (strong, nonatomic) SkinAnalysisView *analysisView;
+
 @end
 
 @implementation FacePreviewView
@@ -97,6 +99,11 @@
 - (void)showAnalysisView{
     SkinAnalysisView *ana = [[SkinAnalysisView alloc] initWithFrame:self.bounds];
     [self addSubview:ana];
+    _analysisView = ana;
+}
+
+- (void)stopAnalysis{
+    [self.analysisView stopAnimation];
 }
 
 @end
