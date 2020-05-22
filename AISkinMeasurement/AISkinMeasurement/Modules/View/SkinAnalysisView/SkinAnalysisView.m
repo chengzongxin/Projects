@@ -34,9 +34,7 @@
     [self addSubview:self.outsideCircle];
     [self addSubview:self.analysis];
     
-    [self animation:self.insideCircle clockwise:YES];
-    [self animation:self.middleCircle clockwise:NO];
-    [self animation:self.outsideCircle clockwise:YES];
+    [self startAnimation];
 }
 
 - (UIImageView *)insideCircle{
@@ -79,6 +77,18 @@
     animation.repeatCount = CGFLOAT_MAX;
     animation.keyPath = @"transform.rotation.z";
     [imageView.layer addAnimation:animation forKey:nil];
+}
+
+- (void)startAnimation{
+    [self animation:self.insideCircle clockwise:YES];
+    [self animation:self.middleCircle clockwise:NO];
+    [self animation:self.outsideCircle clockwise:YES];
+}
+
+- (void)stopAnimation{
+    [self.insideCircle.layer removeAllAnimations];
+    [self.middleCircle.layer removeAllAnimations];
+    [self.outsideCircle.layer removeAllAnimations];
 }
 
 

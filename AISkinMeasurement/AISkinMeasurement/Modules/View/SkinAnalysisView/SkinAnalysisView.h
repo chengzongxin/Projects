@@ -12,6 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SkinAnalysisView : UIView
 
+- (void)startAnimation;
+- (void)stopAnimation;
+
 @end
 
 NS_ASSUME_NONNULL_END

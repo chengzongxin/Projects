@@ -10,7 +10,9 @@
 #import "WZBCountdownLabel.h"
 #import "SkinAnalysisView.h"
 @interface ViewController ()
-@property (strong, nonatomic) UILabel *countingLabel;
+@property (strong, nonatomic) SkinAnalysisView *ana;
+
+
 @end
 
 @implementation ViewController
@@ -23,8 +25,6 @@
     
     self.navigationController.navigationBar.shadowImage = UIImage.new;
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
-    
-    [self.view addSubview:self.countingLabel];
 }
 
 
@@ -35,8 +35,18 @@
 //        NSLog(@"%s",__FUNCTION__);
 //    }];
     
+    
+    if (_ana) {
+        [_ana stopAnimation];
+        [_ana removeFromSuperview];
+        _ana = nil;
+        return;
+    }
+    
     SkinAnalysisView *ana = [[SkinAnalysisView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:ana];
+    _ana = ana;
+    
 }
 
 
