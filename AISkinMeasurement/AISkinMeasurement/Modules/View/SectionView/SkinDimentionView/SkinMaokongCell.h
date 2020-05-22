@@ -7,10 +7,11 @@
 //
 
 #import "IGListBaseCell.h"
-
+#import "SPMultipleSwitch.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SkinMaokongCell : IGListBaseCell
+@property (weak, nonatomic) IBOutlet SPMultipleSwitch *switchButton;
 
 @end
 

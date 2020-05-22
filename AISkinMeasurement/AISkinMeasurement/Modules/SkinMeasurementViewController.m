@@ -13,6 +13,9 @@
 #import "SkinDoudouSection.h"
 #import "SkinBandianSection.h"
 #import "SkinHeitouSection.h"
+#import "SkinZhouwenSection.h"
+#import "SkinMaokongSection.h"
+#import "SkinHeiyanquanSection.h"
 
 @interface SkinMeasurementViewController ()
 
@@ -25,7 +28,7 @@
     
     self.title = @"测肤报告";
     
-    self.datas = @[@88,@"肌肤八维",@"痘痘",@"斑点",@"黑头"];
+    self.datas = @[@88,@"肌肤八维",@"痘痘",@"斑点",@"黑头",@"皱纹",@"毛孔",@"黑眼圈"];
     
     UIBarButtonItem *cameraItem = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"skin_camera_switch"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:nil action:nil];
     UIBarButtonItem *shareItem = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"skin_share"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:nil action:nil];
@@ -54,6 +57,12 @@
             return SkinBandianSection.new;
         }else if ([object isEqualToString:self.datas[4]]) {
             return SkinHeitouSection.new;
+        }else if ([object isEqualToString:self.datas[5]]) {
+            return SkinZhouwenSection.new;
+        }else if ([object isEqualToString:self.datas[6]]) {
+            return SkinMaokongSection.new;
+        }else if ([object isEqualToString:self.datas[7]]) {
+            return SkinHeiyanquanSection.new;
         }else{
             return [super listAdapter:listAdapter sectionControllerForObject:object];
         }

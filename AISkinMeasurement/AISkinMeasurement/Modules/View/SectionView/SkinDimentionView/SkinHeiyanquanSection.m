@@ -7,7 +7,17 @@
 //
 
 #import "SkinHeiyanquanSection.h"
+#import "SkinHeiyanquanCell.h"
+#import "SkinDimentionHeaderView.h"
 
 @implementation SkinHeiyanquanSection
+
+- (Class)registerCellClass{
+    return SkinHeiyanquanCell.class;
+}
+
+- (Class)registerReusableViewClass{
+    return SkinDimentionHeaderView.class;
+}
 
 @end

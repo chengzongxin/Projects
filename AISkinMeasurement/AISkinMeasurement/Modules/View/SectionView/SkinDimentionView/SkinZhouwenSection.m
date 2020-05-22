@@ -7,7 +7,17 @@
 //
 
 #import "SkinZhouwenSection.h"
+#import "SkinZhouwenCell.h"
+#import "SkinDimentionHeaderView.h"
 
 @implementation SkinZhouwenSection
+
+- (Class)registerCellClass{
+    return SkinZhouwenCell.class;
+}
+
+- (Class)registerReusableViewClass{
+    return SkinDimentionHeaderView.class;
+}
 
 @end

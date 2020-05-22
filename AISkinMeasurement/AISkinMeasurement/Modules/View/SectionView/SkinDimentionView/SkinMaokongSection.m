@@ -7,7 +7,17 @@
 //
 
 #import "SkinMaokongSection.h"
+#import "SkinMaokongCell.h"
+#import "SkinDimentionHeaderView.h"
 
 @implementation SkinMaokongSection
+
+- (Class)registerCellClass{
+    return SkinMaokongCell.class;
+}
+
+- (Class)registerReusableViewClass{
+    return SkinDimentionHeaderView.class;
+}
 
 @end
