@@ -219,7 +219,7 @@
         CGFloat x = _centerX + maxLength*sinf(angle);
         CGFloat y = _centerY + maxLength*cosf(angle);
         NSInteger angleValue = (NSInteger)roundf(angle*180/M_PI);
-        NSLog(@"angleValue: %ld", angleValue);
+//        NSLog(@"angleValue: %ld", angleValue);
         CGFloat margin = 20;
         if (angleValue == 0) {
             x -= size.width/2;

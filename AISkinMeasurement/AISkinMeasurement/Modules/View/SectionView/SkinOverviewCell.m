@@ -27,6 +27,7 @@
     _circleProgress = [[ZZCircleProgress alloc] initWithFrame:CGRectMake(UIScreen.mainScreen.bounds.size.width - 88 - 25, 20, progressH, progressH) pathBackColor:rgba(234, 235, 246, 1) pathFillColor:rgba(0, 195, 206, 1) startAngle:0 strokeWidth:lineWidth];
     _circleProgress.startAngle = 135;
     _circleProgress.reduceAngle = 90;
+    _circleProgress.increaseFromLast = YES;
     // 创建原点图片
     UIView *pointView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, lineWidth * 3, lineWidth * 3)];
     pointView.backgroundColor = rgba(0, 195, 206, 1);
