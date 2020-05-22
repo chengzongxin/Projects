@@ -8,6 +8,7 @@
 
 #import "FacePreviewView.h"
 #import "WZBCountdownLabel.h"
+#import "SkinAnalysisView.h"
 
 @interface FacePreviewView ()
 
@@ -86,7 +87,16 @@
         if (weakSelf.countDown) {
             weakSelf.countDown();
         }
+        
+        self.faceImageView.hidden = YES;
+        
+        [weakSelf showAnalysisView];
     }];
+}
+
+- (void)showAnalysisView{
+    SkinAnalysisView *ana = [[SkinAnalysisView alloc] initWithFrame:self.bounds];
+    [self addSubview:ana];
 }
 
 @end
