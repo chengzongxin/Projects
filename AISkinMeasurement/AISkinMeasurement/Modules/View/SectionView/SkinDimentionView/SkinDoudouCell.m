@@ -61,40 +61,4 @@
     return newImage;
 }
 
-
-- (UIImage *)imageWithColor:(UIColor *)color
-{
-    CGRect rect = CGRectMake(0.0f, 0.0f, 10.0f, 10.0f);
-    UIGraphicsBeginImageContext(rect.size);
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    CGContextSetFillColorWithColor(context, [UIColor.clearColor CGColor]);
-    CGContextFillRect(context, rect);
-    UIImage *theImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    return theImage;
-}
-
-/**
- *  圆形图片
- *
- *  @return 圆形图片
- */
-- (UIImage *)circleImage:(UIImage *)image
-{
-    UIGraphicsBeginImageContext(image.size);
-    
-    CGContextRef imgRef = UIGraphicsGetCurrentContext();
-    
-    CGRect rect = CGRectMake(0, 0, image.size.width, image.size.height);
-    
-    CGContextAddEllipseInRect(imgRef, rect);
-    
-    CGContextClip(imgRef);
-    [image drawInRect:rect];
-    
-    UIImage *newImg = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    return newImg;
-}
-
 @end

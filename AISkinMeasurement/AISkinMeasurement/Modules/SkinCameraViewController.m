@@ -11,6 +11,7 @@
 #import "SCPermissionsView.h"
 #import "FacePreviewView.h"
 #import "SkinViewModel.h"
+#import "Slider.h"
 
 @interface SkinCameraViewController () <SCPermissionsViewDelegate,AVCaptureVideoDataOutputSampleBufferDelegate>
 
@@ -22,7 +23,7 @@
 @property (strong, nonatomic) AVCaptureVideoDataOutput *videoOutput;
 @property (strong, nonatomic) FacePreviewView *previewView;
 
-@property (strong, nonatomic) UISlider *scaleSlider;
+@property (strong, nonatomic) Slider *scaleSlider;
 @property (strong, nonatomic) UIImage *lastImage;
 
 @end
@@ -109,15 +110,11 @@
 
 - (void)snapshot{
 //    [_photoOutput capturePhotoWithSettings:AVCapturePhotoSettings.new delegate:self];
-    UIImageView *imageV = [[UIImageView alloc] initWithFrame:self.view.bounds];
-    imageV.contentMode = UIViewContentModeScaleAspectFill;
-    [self.view addSubview:imageV];
     
     AVCaptureDevicePosition currentPosition = self.videoDeviceInput.device.position;
     if (currentPosition == AVCaptureDevicePositionFront) {
        _lastImage = [UIImage imageWithCGImage:_lastImage.CGImage scale:_lastImage.scale orientation:UIImageOrientationLeftMirrored];
     }
-    imageV.image = _lastImage;
     
     [_captureSession stopRunning];
     
@@ -303,12 +300,18 @@
 }
 
 
-- (UISlider *)scaleSlider{
+- (Slider *)scaleSlider{
     if (!_scaleSlider) {
-        _scaleSlider = [[UISlider alloc] initWithFrame:CGRectMake(20, 64 + 40 + 30 + 30, 200, 20)];
+        _scaleSlider = [[Slider alloc] initWithFrame:CGRectMake(self.view.bounds.size.width - 22 - 10, 64 + 40 + 30 + 30, 100, 12)];
         _scaleSlider.minimumValue = 0;
         _scaleSlider.maximumValue = 10;
         [_scaleSlider addTarget:self action:@selector(scaleCamera:) forControlEvents:UIControlEventValueChanged];
+        //将其顺时针旋转90度，这下就变成纵向的了
+        _scaleSlider.transform = CGAffineTransformMakeRotation(M_PI_2);
+//        _scaleSlider.frame = CGRectMake(self.view.bounds.size.width - 44 - 10, 64 + 40 + 30 + 30, 200, 20);
+        CGRect frame = _scaleSlider.frame;
+        frame.origin.x = self.view.bounds.size.width - 22 - 10;
+        _scaleSlider.frame = frame;
     }
     return _scaleSlider;
 }
