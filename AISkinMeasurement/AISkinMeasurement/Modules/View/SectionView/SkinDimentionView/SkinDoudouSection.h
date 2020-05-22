@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SkinDoudouSection : IGListBaseSection
-
+@property (nonatomic,copy) void (^switchButtonClickBlock)(NSInteger index);
 @end
 
 NS_ASSUME_NONNULL_END

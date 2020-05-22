@@ -32,6 +32,11 @@
 
 - (void)switchAction3:(SPMultipleSwitch *)multipleSwitch {
     NSLog(@"点击了第%zd个",multipleSwitch.selectedSegmentIndex);
+    
+    __weak __typeof(&*self)weakSelf = self;
+    if (self.switchButtonClickBlock) {
+        weakSelf.switchButtonClickBlock(multipleSwitch.selectedSegmentIndex);
+    }
 }
 
 
@@ -65,7 +70,7 @@
     
     _titleLabel.text = model;
     
-    _switchButton.hidden = (![model isEqualToString:@"痘痘"]);
+    _switchButton.hidden = (![model containsString:@"痘痘"]);
     
 }
 

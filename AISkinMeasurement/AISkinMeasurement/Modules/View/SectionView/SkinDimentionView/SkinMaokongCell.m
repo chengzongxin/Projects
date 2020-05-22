@@ -30,4 +30,17 @@
     switchButton.userInteractionEnabled = NO;
 //    [switchButton addTarget:self action:@selector(switchAction3:) forControlEvents:UIControlEventTouchUpInside];
 }
+
+- (void)setModel:(NSString *)model{
+    [super setModel:model];
+    
+    if ([model containsString:@"1"]) {
+        _imgV.image = [UIImage imageNamed:@"qian"];
+    }else{
+        _imgV.image = [UIImage imageNamed:@"animation_man"];
+    }
+}
+
+
+
 @end

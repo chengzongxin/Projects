@@ -15,4 +15,15 @@
     // Initialization code
 }
 
+- (void)setModel:(NSString *)model{
+    [super setModel:model];
+    
+    if ([model containsString:@"1"]) {
+        _imgV.image = [UIImage imageNamed:@"qian"];
+    }else{
+        _imgV.image = [UIImage imageNamed:@"animation_man"];
+    }
+}
+
+
 @end

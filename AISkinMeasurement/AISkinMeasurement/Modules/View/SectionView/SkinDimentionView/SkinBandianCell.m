@@ -33,14 +33,21 @@
 //    [switchButton addTarget:self action:@selector(switchAction3:) forControlEvents:UIControlEventTouchUpInside];
 }
 
-- (void)setModel:(id)model{
+- (void)setModel:(NSString *)model{
     [super setModel:model];
     
     _quebanSwitch.selectedSegmentIndex = 0;
     _huanghebanSwith.selectedSegmentIndex = 1;
     _zhiSwitch.selectedSegmentIndex = 2;
     _otherSwith.selectedSegmentIndex = 3;
+    
+    if ([model containsString:@"1"]) {
+        _imgV.image = [UIImage imageNamed:@"qian"];
+    }else{
+        _imgV.image = [UIImage imageNamed:@"animation_man"];
+    }
 }
+
 
 
 @end

@@ -181,6 +181,7 @@
             <viewLayoutGuide key="safeArea" id="J5y-iK-oft"/>
             <connections>
                 <outlet property="huanghebanSwith" destination="OEq-T8-EKj" id="q2S-za-f5u"/>
+                <outlet property="imgV" destination="iWK-PE-pkn" id="QrU-Jw-c9B"/>
                 <outlet property="otherSwith" destination="uZ7-IW-ELg" id="ARS-UH-MfM"/>
                 <outlet property="quebanSwitch" destination="oYm-KK-JzF" id="CFY-eg-9sW"/>
                 <outlet property="zhiSwitch" destination="yvN-bF-55z" id="ThH-fk-uN2"/>

@@ -73,6 +73,9 @@
                 <constraint firstItem="S9S-0L-Eyb" firstAttribute="top" secondItem="dLT-gY-va6" secondAttribute="bottom" constant="20" id="wdM-bb-Het"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="68j-pr-oJs"/>
+            <connections>
+                <outlet property="imgV" destination="JuY-n3-ntm" id="OlR-kW-i4j"/>
+            </connections>
             <point key="canvasLocation" x="140.57971014492756" y="116.51785714285714"/>
         </collectionViewCell>
     </objects>

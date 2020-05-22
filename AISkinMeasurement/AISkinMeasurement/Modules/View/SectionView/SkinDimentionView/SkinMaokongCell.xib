@@ -70,6 +70,7 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="yBO-wO-qDk"/>
             <connections>
+                <outlet property="imgV" destination="SE2-4s-bBO" id="qRJ-bE-IhD"/>
                 <outlet property="switchButton" destination="2sO-hm-u8l" id="wpS-t9-s2I"/>
             </connections>
             <point key="canvasLocation" x="139.85507246376812" y="116.51785714285714"/>

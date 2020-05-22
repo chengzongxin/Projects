@@ -73,6 +73,9 @@
                 <constraint firstItem="3F0-TA-1lq" firstAttribute="leading" secondItem="Bxt-X1-TlR" secondAttribute="trailing" constant="46" id="ykg-mu-ExP"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
+            <connections>
+                <outlet property="imgV" destination="3F0-TA-1lq" id="kMa-zc-TFD"/>
+            </connections>
             <point key="canvasLocation" x="140.57971014492756" y="116.51785714285714"/>
         </collectionViewCell>
     </objects>

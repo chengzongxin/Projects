@@ -52,7 +52,17 @@
         if ([object isEqualToString:self.datas[1]]) {
             return SkinEightDimentionSection.new;
         }else if ([object isEqualToString:self.datas[2]]) {
-            return SkinDoudouSection.new;
+            SkinDoudouSection *section = SkinDoudouSection.new;
+            section.switchButtonClickBlock = ^(NSInteger index) {
+                NSLog(@"%s",__FUNCTION__);
+                if (index == 1) {
+                    self.datas = @[@88,@"肌肤八维",@"痘痘1",@"斑点1",@"黑头1",@"皱纹1",@"毛孔1",@"黑眼圈1"];
+                }else{
+                    self.datas = @[@88,@"肌肤八维",@"痘痘",@"斑点",@"黑头",@"皱纹",@"毛孔",@"黑眼圈"];
+                }
+                [self.adater reloadDataWithCompletion:nil];
+            };
+            return section;
         }else if ([object isEqualToString:self.datas[3]]) {
             return SkinBandianSection.new;
         }else if ([object isEqualToString:self.datas[4]]) {

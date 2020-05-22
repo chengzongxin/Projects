@@ -11,6 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SkinHeitouCell : IGListBaseCell
+@property (weak, nonatomic) IBOutlet UIImageView *imgV;
 
 @end
 

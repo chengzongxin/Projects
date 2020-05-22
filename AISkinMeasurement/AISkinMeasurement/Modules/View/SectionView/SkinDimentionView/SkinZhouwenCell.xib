@@ -121,6 +121,9 @@
                 <constraint firstItem="Rmh-68-Tu1" firstAttribute="centerY" secondItem="c5H-Kc-QZ8" secondAttribute="centerY" id="svR-yr-2fW"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="8AQ-f7-MXe"/>
+            <connections>
+                <outlet property="imgV" destination="w5j-mg-dda" id="kMu-FK-sYr"/>
+            </connections>
             <point key="canvasLocation" x="139.85507246376812" y="116.51785714285714"/>
         </collectionViewCell>
     </objects>

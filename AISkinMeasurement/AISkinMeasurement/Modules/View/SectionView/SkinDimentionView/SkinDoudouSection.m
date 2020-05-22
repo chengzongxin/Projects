@@ -20,4 +20,15 @@
     return SkinDimentionHeaderView.class;
 }
 
+- (UICollectionReusableView *)viewForSupplementaryElementOfKind:(NSString *)elementKind atIndex:(NSInteger)index{
+    SkinDimentionHeaderView *view = [super viewForSupplementaryElementOfKind:elementKind atIndex:index];
+    view.switchButtonClickBlock = self.switchButtonClickBlock;
+    if ([self.datas containsString:@"1"]) {
+        view.switchButton.selectedSegmentIndex = 1;
+    }else{
+        view.switchButton.selectedSegmentIndex = 0;
+    }
+    return view;
+}
+
 @end

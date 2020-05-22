@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet SPMultipleSwitch *huanghebanSwith;
 @property (weak, nonatomic) IBOutlet SPMultipleSwitch *zhiSwitch;
 @property (weak, nonatomic) IBOutlet SPMultipleSwitch *otherSwith;
+@property (weak, nonatomic) IBOutlet UIImageView *imgV;
 
 @end
 

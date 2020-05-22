@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SkinMaokongCell : IGListBaseCell
 @property (weak, nonatomic) IBOutlet SPMultipleSwitch *switchButton;
+@property (weak, nonatomic) IBOutlet UIImageView *imgV;
 
 @end
 
