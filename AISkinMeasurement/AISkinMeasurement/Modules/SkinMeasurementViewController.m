@@ -37,8 +37,8 @@
     self.navigationItem.rightBarButtonItems = @[cameraItem,shareItem];
     
     [self.adater reloadDataWithCompletion:nil];
-    
-    [SkinViewModel analysisInfoQuery:@"AiFA713466991557611520" recordNo:@"123" success:^(id  _Nonnull data) {
+//    @"AiFA713466991557611520"
+    [SkinViewModel analysisInfoQuery:@"123" recordNo:_recordNo success:^(id  _Nonnull data) {
         NSLog(@"%@",data);
     } fail:^(NSString * _Nonnull message) {
         NSLog(@"%@",message);

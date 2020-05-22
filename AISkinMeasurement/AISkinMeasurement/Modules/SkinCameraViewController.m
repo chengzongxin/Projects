@@ -121,10 +121,10 @@
     
     [SkinViewModel applyAnalysisCommand:_lastImage deviceNo:@"123" analysisPersonnelType:@"analysis_me" success:^(id  _Nonnull data) {
         NSLog(@"%@",data);
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [self.previewView stopAnalysis];
-            [self.navigationController pushViewController:SkinMeasurementViewController.new animated:YES];
-        });
+        [self.previewView stopAnalysis];
+        SkinMeasurementViewController *vc = SkinMeasurementViewController.new;
+        vc.recordNo = data;
+        [self.navigationController pushViewController:vc animated:YES];
     } fail:^(NSString * _Nonnull message) {
         NSLog(@"%@",message);
     }];

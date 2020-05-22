@@ -52,7 +52,7 @@
     NSString *urlString = @"http://192.168.199.201:19097/cosmetology-app/faceAnalysis/command/applyAnalysisCommand";
     NSDictionary *para = @{@"deviceNo":deviceNo,@"deviceType":@"ios",@"analysisPersonnelType":analysisPersonnelType};
 //    content = [content fixOrientation];
-    NSData *imageData = UIImageJPEGRepresentation(images, 0.3);
+    NSData *imageData = UIImageJPEGRepresentation(images, 1);
 
     //post请求
     [manager POST:urlString parameters:para constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
@@ -72,18 +72,14 @@
     } progress:^(NSProgress * _Nonnull uploadProgress) {
         float progress =  1.0 * uploadProgress.completedUnitCount/uploadProgress.totalUnitCount;
         NSLog(@"上传图片进度%f",progress);
-        
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-//        NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:[responseObject dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableContainers error:nil];
         NSLog(@"%@",responseObject);
-        //            NSDictionary *responseDict = [NSDictionary dictionaryWithJsonString:[responseObject mj_JSONString]];
-        //            NSLog(@"%@",responseDict);
-        //            MTFYResponseModel *model = [MTFYResponseModel mj_objectWithKeyValues:responseDict];
-        //            if (model.code == 200) {
-        //                success([model.data objectForKey:@"styled_image"]);
-        //            }else{
-        //                fail(model.message);
-        //            }
+        int code = [responseObject[@"code"] intValue];
+        if (code == 200) {
+            success(responseObject[@"data"]);
+        }else{
+            fail(responseObject[@"message"]);
+        }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"请求失败：%@",error);
         fail(error.description);

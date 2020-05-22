@@ -12,7 +12,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SkinMeasurementViewController : IGListBaseViewController
-
+@property (copy, nonatomic) NSString *recordNo;
 @end
 
 NS_ASSUME_NONNULL_END
