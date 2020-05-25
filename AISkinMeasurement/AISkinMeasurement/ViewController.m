@@ -10,9 +10,10 @@
 #import "WZBCountdownLabel.h"
 #import "SkinAnalysisView.h"
 #import "SkinMeasureAlert.h"
+#import "AlertBaseView.h"
 @interface ViewController ()
 @property (strong, nonatomic) SkinAnalysisView *ana;
-@property (strong, nonatomic) SkinMeasureAlert *alert;
+@property (strong, nonatomic) AlertBaseView *alert;
 
 
 @end
@@ -59,14 +60,17 @@
 //    [alert show];
 //    _alert = alert;
     
-    SkinMeasureAlert *alert = [[SkinMeasureAlert alloc] init];
+    AlertBaseView *alert = [[AlertBaseView alloc] init];
     [alert show];
-    
+    SkinMeasureAlert *customView =  [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([SkinMeasureAlert class]) owner:nil options:nil] firstObject];
+    alert.customView = customView;
     __weak __typeof__(self)weakSelf = self;
-    alert.tapItem = ^(int index) {
+    __weak __typeof__(AlertBaseView *)weakalert = alert;
+    customView.tapItem = ^(int index) {
         if (index == 2) {
             // 测肤记录
             [weakSelf.navigationController pushViewController:UIViewController.new animated:YES];
+            [weakalert dismiss];
         }
     };
     _alert = alert;

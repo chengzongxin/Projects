@@ -10,7 +10,7 @@
 
 @interface AlertBaseView ()
 
-@property (strong, nonatomic) UIView *customView;
+//@property (strong, nonatomic) UIView *customView;
 
 @end
 
@@ -21,17 +21,23 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.frame = UIScreen.mainScreen.bounds;
-        self.customView = [self prepareSubviews];
-        [self setupAlertView];
-        self.delegate = self;
+//        self.customView = [self prepareSubviews];
+//        [self setupAlertView];
+//        self.delegate = self;
     }
     return self;
 }
 
-- (UIView *)prepareSubviews{return [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class]) owner:nil options:nil] firstObject];}
+//- (UIView *)prepareSubviews{return [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class]) owner:nil options:nil] firstObject];}
 // 注意这里会把xib初始化的自己加到initWithFrame初始化的自己身上
-- (void)setupAlertView{
-    self.customView.center = self.center;
+//- (void)setupAlertView{
+//    self.customView.center = self.center;
+//    [self addSubview:self.customView];
+//}
+
+- (void)setCustomView:(UIView *)customView{
+    _customView = customView;
+    customView.center = self.center;
     [self addSubview:self.customView];
 }
 
@@ -93,13 +99,6 @@
         [self.superview removeFromSuperview];
     }
     [self removeFromSuperview];
-}
-
-- (void)onAction:(int)index{
-    if ([self.subviews.firstObject isKindOfClass:self.class]) {
-        AlertBaseView *subview = self.subviews.firstObject;
-        [subview onActionWithIndex:index];
-    }
 }
 
 @end
