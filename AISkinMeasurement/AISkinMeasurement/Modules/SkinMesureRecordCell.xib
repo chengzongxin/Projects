@@ -18,7 +18,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="分" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I2N-x0-4Ht">
-                        <rect key="frame" x="52" y="28" width="11" height="12"/>
+                        <rect key="frame" x="48" y="28" width="11" height="12"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
                         <color key="textColor" red="0.074509803921568626" green="0.10588235294117647" blue="0.21176470588235294" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -60,7 +60,7 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="K0M-sl-saU" firstAttribute="leading" secondItem="cQP-Wc-73j" secondAttribute="leading" id="1RM-dd-Jit"/>
-                    <constraint firstItem="I2N-x0-4Ht" firstAttribute="leading" secondItem="cQP-Wc-73j" secondAttribute="trailing" constant="4" id="2Ya-7b-z8O"/>
+                    <constraint firstItem="I2N-x0-4Ht" firstAttribute="leading" secondItem="cQP-Wc-73j" secondAttribute="trailing" id="2Ya-7b-z8O"/>
                     <constraint firstAttribute="trailing" secondItem="Gve-dg-JYi" secondAttribute="trailing" constant="14" id="4wo-VG-cjZ"/>
                     <constraint firstItem="cQP-Wc-73j" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="5Hc-iT-Pyg"/>
                     <constraint firstItem="qrC-Ej-FEA" firstAttribute="centerY" secondItem="Gve-dg-JYi" secondAttribute="centerY" id="Bmg-Rw-8JH"/>
