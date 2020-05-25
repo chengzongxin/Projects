@@ -31,6 +31,7 @@
 		5936B4F2247BAD2100D2BE92 /* SkinMesureRecordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5936B4F0247BAD2100D2BE92 /* SkinMesureRecordCell.xib */; };
 		5936B4F8247BBFE100D2BE92 /* NormalAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 5936B4F7247BBFE100D2BE92 /* NormalAlert.m */; };
 		5936B4FA247BBFEB00D2BE92 /* NormalAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5936B4F9247BBFEB00D2BE92 /* NormalAlert.xib */; };
+		5936B4FD247BD36600D2BE92 /* CombinationLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5936B4FC247BD36600D2BE92 /* CombinationLabel.m */; };
 		59409987247633F8000A2AEA /* UIView+Convenient.m in Sources */ = {isa = PBXBuildFile; fileRef = 59409980247633F8000A2AEA /* UIView+Convenient.m */; };
 		59409988247633F8000A2AEA /* NSDate+Convenient.m in Sources */ = {isa = PBXBuildFile; fileRef = 59409981247633F8000A2AEA /* NSDate+Convenient.m */; };
 		59409989247633F8000A2AEA /* CALayer+Convenient.m in Sources */ = {isa = PBXBuildFile; fileRef = 59409982247633F8000A2AEA /* CALayer+Convenient.m */; };
@@ -159,6 +160,8 @@
 		5936B4F6247BBFE100D2BE92 /* NormalAlert.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NormalAlert.h; sourceTree = "<group>"; };
 		5936B4F7247BBFE100D2BE92 /* NormalAlert.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NormalAlert.m; sourceTree = "<group>"; };
 		5936B4F9247BBFEB00D2BE92 /* NormalAlert.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NormalAlert.xib; sourceTree = "<group>"; };
+		5936B4FB247BD36600D2BE92 /* CombinationLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CombinationLabel.h; sourceTree = "<group>"; };
+		5936B4FC247BD36600D2BE92 /* CombinationLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CombinationLabel.m; sourceTree = "<group>"; };
 		5940997E247633F8000A2AEA /* CALayer+Convenient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+Convenient.h"; sourceTree = "<group>"; };
 		5940997F247633F8000A2AEA /* UIButton+Convenient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Convenient.h"; sourceTree = "<group>"; };
 		59409980247633F8000A2AEA /* UIView+Convenient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Convenient.m"; sourceTree = "<group>"; };
@@ -475,6 +478,8 @@
 				599EC0862472859800C35EA0 /* SceneDelegate.m */,
 				597A08AD2474CFC6002FE680 /* ViewController.h */,
 				597A08AE2474CFC6002FE680 /* ViewController.m */,
+				5936B4FB247BD36600D2BE92 /* CombinationLabel.h */,
+				5936B4FC247BD36600D2BE92 /* CombinationLabel.m */,
 				5936B4CA247BA97A00D2BE92 /* PageViewController */,
 				5936B450247B61B000D2BE92 /* AlertView */,
 				5940997D247633F8000A2AEA /* UIKit+Convenient */,
@@ -965,6 +970,7 @@
 				599EC15424728BA300C35EA0 /* SkinMeasurementViewController.m in Sources */,
 				5940999C247685E6000A2AEA /* SkinZhouwenSection.m in Sources */,
 				59FBEE63247538690073A947 /* SCPermissionsView.m in Sources */,
+				5936B4FD247BD36600D2BE92 /* CombinationLabel.m in Sources */,
 				599EC15C24728F0400C35EA0 /* SkinOverviewSection.m in Sources */,
 				594099B024768682000A2AEA /* SkinHeitouCell.m in Sources */,
 				59409999247685D7000A2AEA /* SkinHeitouSection.m in Sources */,

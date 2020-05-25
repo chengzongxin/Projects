@@ -13,9 +13,11 @@
 #import "AlertBaseView.h"
 #import "SkinMeasureRecordViewController.h"
 #import "SkinCameraViewController.h"
+#import "CombinationLabel.h"
 @interface ViewController ()
 @property (strong, nonatomic) SkinAnalysisView *ana;
 @property (strong, nonatomic) AlertBaseView *alert;
+
 
 
 @end
@@ -26,10 +28,19 @@
     [super viewDidLoad];
     
     
-    self.view.backgroundColor = UIColor.darkGrayColor;
+//    self.view.backgroundColor = UIColor.darkGrayColor;
     
     self.navigationController.navigationBar.shadowImage = UIImage.new;
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+    
+    
+    CombinationLabel *label = [[CombinationLabel alloc] initWithFrame:CGRectMake(100, 100, 100, 20)];
+//    label.backgroundColor = UIColor.whiteColor;
+    [label setLeftText:@"肌肤良好指数啦啦啦" rightText:@"好"];
+    [self.view addSubview:label];
+    
+    
+//    [self.combinationLabel setLeftText:@"肌肤良好指数" rightText:@"好"];
 }
 
 
