@@ -62,12 +62,11 @@
 //    [alert show];
 //    _alert = alert;
     
-    AlertBaseView *alert = [[AlertBaseView alloc] init];
-    SkinMeasureAlert *customView =  [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([SkinMeasureAlert class]) owner:nil options:nil] firstObject];
-    alert.customView = customView;
+    AlertBaseView *alert = [[AlertBaseView alloc] initWithXib:[SkinMeasureAlert class]];
     __weak __typeof__(self)weakSelf = self;
     __weak __typeof__(AlertBaseView *)weakalert = alert;
-    customView.tapItem = ^(int index) {
+    SkinMeasureAlert *custom = alert.customView;
+    custom.tapItem = ^(int index) {
         
         switch (index) {
             case 0:// 自己

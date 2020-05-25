@@ -39,6 +39,16 @@ static NSString *const AnimationKeyDismiss = @"AnimationKeyDismiss";
 //    [self addSubview:self.customView];
 //}
 
+- (instancetype)initWithXib:(Class)className{
+    self = [super init];
+    if (self) {
+        self.frame = UIScreen.mainScreen.bounds;
+        self.backgroundColor = [UIColor.blackColor colorWithAlphaComponent:0.5];
+        self.customView = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass(className) owner:nil options:nil] firstObject];
+    }
+    return self;
+}
+
 - (void)setCustomView:(UIView *)customView{
     _customView = customView;
     customView.center = self.center;

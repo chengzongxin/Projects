@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface AlertBaseView : UIView <CAAnimationDelegate>
 
+- (instancetype)initWithXib:(Class)className;
+
 @property (strong, nonatomic) UIView *customView;
 - (void)show;
 - (void)dismiss;
