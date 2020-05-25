@@ -9,8 +9,10 @@
 #import "ViewController.h"
 #import "WZBCountdownLabel.h"
 #import "SkinAnalysisView.h"
+#import "AlertView.h"
 @interface ViewController ()
 @property (strong, nonatomic) SkinAnalysisView *ana;
+@property (strong, nonatomic) AlertView *alert;
 
 
 @end
@@ -46,6 +48,16 @@
 //    SkinAnalysisView *ana = [[SkinAnalysisView alloc] initWithFrame:self.view.bounds];
 //    [self.view addSubview:ana];
 //    _ana = ana;
+    
+//    if (_alert) {
+//        [_alert dismiss];
+//        _alert = nil;
+//        return;
+//    }
+    
+    AlertView *alert = [[AlertView alloc] initWithTitle:@"123" subtitle:@"123123" confirm:@"confirm" cancel:@"cancel"];
+    [alert show];
+//    _alert = alert;
     
 }
 

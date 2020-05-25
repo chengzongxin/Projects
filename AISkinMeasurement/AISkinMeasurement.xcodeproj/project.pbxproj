@@ -11,6 +11,8 @@
 		5925BA012477D18800D52E61 /* SkinAnalysisView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5925BA002477D18800D52E61 /* SkinAnalysisView.m */; };
 		5925BA052477D65700D52E61 /* Slider.m in Sources */ = {isa = PBXBuildFile; fileRef = 5925BA042477D65700D52E61 /* Slider.m */; };
 		5925BA082477DA1E00D52E61 /* UIImage+Convenient.m in Sources */ = {isa = PBXBuildFile; fileRef = 5925BA072477DA1E00D52E61 /* UIImage+Convenient.m */; };
+		5936B474247B61B000D2BE92 /* AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5936B455247B61B000D2BE92 /* AlertView.m */; };
+		5936B485247B71C600D2BE92 /* AlertBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5936B484247B71C600D2BE92 /* AlertBaseView.m */; };
 		59409987247633F8000A2AEA /* UIView+Convenient.m in Sources */ = {isa = PBXBuildFile; fileRef = 59409980247633F8000A2AEA /* UIView+Convenient.m */; };
 		59409988247633F8000A2AEA /* NSDate+Convenient.m in Sources */ = {isa = PBXBuildFile; fileRef = 59409981247633F8000A2AEA /* NSDate+Convenient.m */; };
 		59409989247633F8000A2AEA /* CALayer+Convenient.m in Sources */ = {isa = PBXBuildFile; fileRef = 59409982247633F8000A2AEA /* CALayer+Convenient.m */; };
@@ -104,6 +106,10 @@
 		5925BA042477D65700D52E61 /* Slider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Slider.m; sourceTree = "<group>"; };
 		5925BA062477DA1E00D52E61 /* UIImage+Convenient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Convenient.h"; sourceTree = "<group>"; };
 		5925BA072477DA1E00D52E61 /* UIImage+Convenient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Convenient.m"; sourceTree = "<group>"; };
+		5936B451247B61B000D2BE92 /* AlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertView.h; sourceTree = "<group>"; };
+		5936B455247B61B000D2BE92 /* AlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertView.m; sourceTree = "<group>"; };
+		5936B483247B71C600D2BE92 /* AlertBaseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlertBaseView.h; sourceTree = "<group>"; };
+		5936B484247B71C600D2BE92 /* AlertBaseView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlertBaseView.m; sourceTree = "<group>"; };
 		5940997E247633F8000A2AEA /* CALayer+Convenient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+Convenient.h"; sourceTree = "<group>"; };
 		5940997F247633F8000A2AEA /* UIButton+Convenient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Convenient.h"; sourceTree = "<group>"; };
 		59409980247633F8000A2AEA /* UIView+Convenient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Convenient.m"; sourceTree = "<group>"; };
@@ -273,6 +279,17 @@
 			path = Slider;
 			sourceTree = "<group>";
 		};
+		5936B450247B61B000D2BE92 /* AlertView */ = {
+			isa = PBXGroup;
+			children = (
+				5936B451247B61B000D2BE92 /* AlertView.h */,
+				5936B455247B61B000D2BE92 /* AlertView.m */,
+				5936B483247B71C600D2BE92 /* AlertBaseView.h */,
+				5936B484247B71C600D2BE92 /* AlertBaseView.m */,
+			);
+			path = AlertView;
+			sourceTree = "<group>";
+		};
 		5940997D247633F8000A2AEA /* UIKit+Convenient */ = {
 			isa = PBXGroup;
 			children = (
@@ -372,6 +389,7 @@
 				599EC0862472859800C35EA0 /* SceneDelegate.m */,
 				597A08AD2474CFC6002FE680 /* ViewController.h */,
 				597A08AE2474CFC6002FE680 /* ViewController.m */,
+				5936B450247B61B000D2BE92 /* AlertView */,
 				5940997D247633F8000A2AEA /* UIKit+Convenient */,
 				599EC15824728E7A00C35EA0 /* IGListBaseViewController */,
 				599EC15924728E9E00C35EA0 /* Modules */,
@@ -806,8 +824,10 @@
 				5925BA082477DA1E00D52E61 /* UIImage+Convenient.m in Sources */,
 				5925B9FD2477C89800D52E61 /* WZBCountdownLabel.m in Sources */,
 				599EC1982472A8D200C35EA0 /* SkinSectionHeaderView.m in Sources */,
+				5936B474247B61B000D2BE92 /* AlertView.m in Sources */,
 				599EC0872472859800C35EA0 /* SceneDelegate.m in Sources */,
 				59409987247633F8000A2AEA /* UIView+Convenient.m in Sources */,
+				5936B485247B71C600D2BE92 /* AlertBaseView.m in Sources */,
 				59FBEE62247538690073A947 /* GBRadarChartDataItem.m in Sources */,
 				59409988247633F8000A2AEA /* NSDate+Convenient.m in Sources */,
 				59FBEE64247538690073A947 /* FacePreviewView.m in Sources */,
