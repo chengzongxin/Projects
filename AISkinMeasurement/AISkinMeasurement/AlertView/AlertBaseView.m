@@ -8,8 +8,31 @@
 
 #import "AlertBaseView.h"
 
+@interface AlertBaseView ()
+
+@property (strong, nonatomic) UIView *customView;
+
+@end
+
 @implementation AlertBaseView
 
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        self.frame = UIScreen.mainScreen.bounds;
+        self.customView = [self prepareSubviews];
+        [self setupAlertView];
+    }
+    return self;
+}
+
+- (UIView *)prepareSubviews{return [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class]) owner:nil options:nil] firstObject];}
+
+- (void)setupAlertView{
+    self.customView.center = self.center;
+    [self addSubview:self.customView];
+}
 
 - (void)show {
     UIWindow *window = [[[UIApplication sharedApplication] delegate] window];
@@ -64,6 +87,10 @@
 - (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag{
     self.opaque = 0;
     self.frame = CGRectZero;
+    // initWithFrame 时会初始化自己,把自己加一遍,这里再删除自己
+    if ([self.superview isKindOfClass:self.class]) {
+        [self.superview removeFromSuperview];
+    }
     [self removeFromSuperview];
 }
 

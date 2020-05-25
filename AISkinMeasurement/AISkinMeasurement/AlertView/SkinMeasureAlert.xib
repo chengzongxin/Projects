@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SkinMeasureAlert">
+            <rect key="frame" x="0.0" y="0.0" width="280" height="411"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8zG-bb-dku">
+                    <rect key="frame" x="0.0" y="0.0" width="280" height="308"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="skin_alert_bg" translatesAutoresizingMaskIntoConstraints="NO" id="L0R-wV-EMF">
+                            <rect key="frame" x="0.0" y="0.0" width="280" height="95"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="95" id="2sj-k1-22f"/>
+                            </constraints>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vVS-Lt-Gtk">
+                            <rect key="frame" x="28" y="144" width="224" height="44"/>
+                            <color key="backgroundColor" red="0.043137254899999998" green="0.81176470590000005" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="kIM-qF-bKh"/>
+                            </constraints>
+                            <state key="normal" title="自己测">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.corner">
+                                    <integer key="value" value="22"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="measureSelf:" destination="iN0-l3-epB" eventType="touchUpInside" id="omE-Eb-q84"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZI9-r7-7nJ">
+                            <rect key="frame" x="28" y="206" width="224" height="44"/>
+                            <color key="backgroundColor" red="0.043137254899999998" green="0.81176470590000005" blue="0.85490196080000003" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="VnT-8b-TUw"/>
+                            </constraints>
+                            <state key="normal" title="帮朋友测">
+                                <color key="titleColor" red="0.043137254899999998" green="0.81176470590000005" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.corner">
+                                    <integer key="value" value="22"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="measureFriend:" destination="iN0-l3-epB" eventType="touchUpInside" id="etp-j6-ner"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J0p-vx-7ob">
+                            <rect key="frame" x="82" y="269" width="116" height="15"/>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                            <state key="normal" title="查看我的测肤记录 " image="skin_alert_arrow">
+                                <color key="titleColor" red="0.074509803921568626" green="0.10588235294117647" blue="0.21176470588235294" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="checkMeasureList:" destination="iN0-l3-epB" eventType="touchUpInside" id="5wj-jt-FdH"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstItem="L0R-wV-EMF" firstAttribute="leading" secondItem="8zG-bb-dku" secondAttribute="leading" id="3ur-Gv-PSj"/>
+                        <constraint firstItem="L0R-wV-EMF" firstAttribute="top" secondItem="8zG-bb-dku" secondAttribute="top" id="6f1-na-J6Q"/>
+                        <constraint firstItem="J0p-vx-7ob" firstAttribute="top" secondItem="ZI9-r7-7nJ" secondAttribute="bottom" constant="19" id="7P1-Z0-2NG"/>
+                        <constraint firstItem="vVS-Lt-Gtk" firstAttribute="top" secondItem="L0R-wV-EMF" secondAttribute="bottom" constant="49" id="DHV-E8-WPq"/>
+                        <constraint firstAttribute="trailing" secondItem="L0R-wV-EMF" secondAttribute="trailing" id="G8B-OS-9qa"/>
+                        <constraint firstItem="ZI9-r7-7nJ" firstAttribute="top" secondItem="vVS-Lt-Gtk" secondAttribute="bottom" constant="18" id="IWF-am-HyI"/>
+                        <constraint firstAttribute="trailing" secondItem="vVS-Lt-Gtk" secondAttribute="trailing" constant="28" id="KGc-xT-nSM"/>
+                        <constraint firstItem="J0p-vx-7ob" firstAttribute="centerX" secondItem="8zG-bb-dku" secondAttribute="centerX" id="Q7V-LJ-yOO"/>
+                        <constraint firstItem="ZI9-r7-7nJ" firstAttribute="leading" secondItem="8zG-bb-dku" secondAttribute="leading" constant="28" id="VEW-Il-xgW"/>
+                        <constraint firstAttribute="trailing" secondItem="ZI9-r7-7nJ" secondAttribute="trailing" constant="28" id="WSv-CB-YQZ"/>
+                        <constraint firstAttribute="height" constant="308" id="pcO-P8-5h8"/>
+                        <constraint firstItem="vVS-Lt-Gtk" firstAttribute="leading" secondItem="8zG-bb-dku" secondAttribute="leading" constant="28" id="vUU-QM-Ebf"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.corner">
+                            <integer key="value" value="12"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5pV-qd-Hg4">
+                    <rect key="frame" x="123" y="377" width="34" height="34"/>
+                    <state key="normal" image="skin_alert_close"/>
+                    <connections>
+                        <action selector="close:" destination="iN0-l3-epB" eventType="touchUpInside" id="SiH-6s-Mgs"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="8zG-bb-dku" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="LM8-mc-MYf"/>
+                <constraint firstItem="5pV-qd-Hg4" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="fRX-Og-IYw"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="8zG-bb-dku" secondAttribute="trailing" id="gYb-am-02S"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="5pV-qd-Hg4" secondAttribute="bottom" id="kjr-8a-ceM"/>
+                <constraint firstItem="8zG-bb-dku" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="vaa-fI-jb1"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="141" y="118"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="skin_alert_arrow" width="14" height="14"/>
+        <image name="skin_alert_bg" width="280" height="95"/>
+        <image name="skin_alert_close" width="34" height="34"/>
+    </resources>
+</document>

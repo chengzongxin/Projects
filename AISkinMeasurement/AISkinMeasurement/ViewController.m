@@ -10,6 +10,7 @@
 #import "WZBCountdownLabel.h"
 #import "SkinAnalysisView.h"
 #import "AlertView.h"
+#import "SkinMeasureAlert.h"
 @interface ViewController ()
 @property (strong, nonatomic) SkinAnalysisView *ana;
 @property (strong, nonatomic) AlertView *alert;
@@ -55,9 +56,12 @@
 //        return;
 //    }
     
-    AlertView *alert = [[AlertView alloc] initWithTitle:@"123" subtitle:@"123123" confirm:@"confirm" cancel:@"cancel"];
-    [alert show];
+//    AlertView *alert = [[AlertView alloc] initWithTitle:@"123" subtitle:@"123123" confirm:@"confirm" cancel:@"cancel"];
+//    [alert show];
 //    _alert = alert;
+    
+    SkinMeasureAlert *alert = [[SkinMeasureAlert alloc] init];
+    [alert show];
     
 }
 
