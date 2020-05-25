@@ -11,6 +11,7 @@
 #import "SkinAnalysisView.h"
 #import "SkinMeasureAlert.h"
 #import "AlertBaseView.h"
+#import "SkinMeasureRecordViewController.h"
 @interface ViewController ()
 @property (strong, nonatomic) SkinAnalysisView *ana;
 @property (strong, nonatomic) AlertBaseView *alert;
@@ -69,7 +70,7 @@
     customView.tapItem = ^(int index) {
         if (index == 2) {
             // 测肤记录
-            [weakSelf.navigationController pushViewController:UIViewController.new animated:YES];
+            [weakSelf.navigationController pushViewController:SkinMeasureRecordViewController.new animated:YES];
             [weakalert dismiss];
         }
     };

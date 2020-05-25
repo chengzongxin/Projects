@@ -14,6 +14,21 @@
 		5936B485247B71C600D2BE92 /* AlertBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5936B484247B71C600D2BE92 /* AlertBaseView.m */; };
 		5936B488247B74A300D2BE92 /* SkinMeasureAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 5936B487247B74A300D2BE92 /* SkinMeasureAlert.m */; };
 		5936B48A247B75DA00D2BE92 /* SkinMeasureAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5936B489247B75DA00D2BE92 /* SkinMeasureAlert.xib */; };
+		5936B48D247BA86500D2BE92 /* SkinMeasureRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5936B48C247BA86500D2BE92 /* SkinMeasureRecordViewController.m */; };
+		5936B4DE247BA97A00D2BE92 /* PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5936B4CB247BA97A00D2BE92 /* PageViewController.m */; };
+		5936B4DF247BA97A00D2BE92 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 5936B4CE247BA97A00D2BE92 /* UIView+Frame.m */; };
+		5936B4E0247BA97A00D2BE92 /* coin_ls_btn_01@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5936B4D1247BA97A00D2BE92 /* coin_ls_btn_01@3x.png */; };
+		5936B4E1247BA97A00D2BE92 /* UIScrollView+PageContentScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5936B4D2247BA97A00D2BE92 /* UIScrollView+PageContentScrollView.m */; };
+		5936B4E2247BA97A00D2BE92 /* PageConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 5936B4D3247BA97A00D2BE92 /* PageConst.m */; };
+		5936B4E3247BA97A00D2BE92 /* PageBGScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5936B4D4247BA97A00D2BE92 /* PageBGScrollView.m */; };
+		5936B4E4247BA97A00D2BE92 /* UIViewController+Page.m in Sources */ = {isa = PBXBuildFile; fileRef = 5936B4D5247BA97A00D2BE92 /* UIViewController+Page.m */; };
+		5936B4E5247BA97A00D2BE92 /* PageTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5936B4D6247BA97A00D2BE92 /* PageTableView.m */; };
+		5936B4E6247BA97A00D2BE92 /* PageCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5936B4DA247BA97A00D2BE92 /* PageCollectionView.m */; };
+		5936B4E7247BA97A00D2BE92 /* coin_ls_btn_02@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5936B4DD247BA97A00D2BE92 /* coin_ls_btn_02@3x.png */; };
+		5936B4EA247BAA8B00D2BE92 /* SkinMeasureSelfViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5936B4E9247BAA8B00D2BE92 /* SkinMeasureSelfViewController.m */; };
+		5936B4ED247BAA9A00D2BE92 /* SkinMeasureFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5936B4EC247BAA9A00D2BE92 /* SkinMeasureFriendViewController.m */; };
+		5936B4F1247BAD2100D2BE92 /* SkinMesureRecordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5936B4EF247BAD2100D2BE92 /* SkinMesureRecordCell.m */; };
+		5936B4F2247BAD2100D2BE92 /* SkinMesureRecordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5936B4F0247BAD2100D2BE92 /* SkinMesureRecordCell.xib */; };
 		59409987247633F8000A2AEA /* UIView+Convenient.m in Sources */ = {isa = PBXBuildFile; fileRef = 59409980247633F8000A2AEA /* UIView+Convenient.m */; };
 		59409988247633F8000A2AEA /* NSDate+Convenient.m in Sources */ = {isa = PBXBuildFile; fileRef = 59409981247633F8000A2AEA /* NSDate+Convenient.m */; };
 		59409989247633F8000A2AEA /* CALayer+Convenient.m in Sources */ = {isa = PBXBuildFile; fileRef = 59409982247633F8000A2AEA /* CALayer+Convenient.m */; };
@@ -112,6 +127,33 @@
 		5936B486247B74A300D2BE92 /* SkinMeasureAlert.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SkinMeasureAlert.h; sourceTree = "<group>"; };
 		5936B487247B74A300D2BE92 /* SkinMeasureAlert.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SkinMeasureAlert.m; sourceTree = "<group>"; };
 		5936B489247B75DA00D2BE92 /* SkinMeasureAlert.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SkinMeasureAlert.xib; sourceTree = "<group>"; };
+		5936B48B247BA86500D2BE92 /* SkinMeasureRecordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SkinMeasureRecordViewController.h; sourceTree = "<group>"; };
+		5936B48C247BA86500D2BE92 /* SkinMeasureRecordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SkinMeasureRecordViewController.m; sourceTree = "<group>"; };
+		5936B4CB247BA97A00D2BE92 /* PageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageViewController.m; sourceTree = "<group>"; };
+		5936B4CC247BA97A00D2BE92 /* PageTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageTableView.h; sourceTree = "<group>"; };
+		5936B4CE247BA97A00D2BE92 /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
+		5936B4CF247BA97A00D2BE92 /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
+		5936B4D0247BA97A00D2BE92 /* PageCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageCollectionView.h; sourceTree = "<group>"; };
+		5936B4D1247BA97A00D2BE92 /* coin_ls_btn_01@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coin_ls_btn_01@3x.png"; sourceTree = "<group>"; };
+		5936B4D2247BA97A00D2BE92 /* UIScrollView+PageContentScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+PageContentScrollView.m"; sourceTree = "<group>"; };
+		5936B4D3247BA97A00D2BE92 /* PageConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageConst.m; sourceTree = "<group>"; };
+		5936B4D4247BA97A00D2BE92 /* PageBGScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageBGScrollView.m; sourceTree = "<group>"; };
+		5936B4D5247BA97A00D2BE92 /* UIViewController+Page.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Page.m"; sourceTree = "<group>"; };
+		5936B4D6247BA97A00D2BE92 /* PageTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageTableView.m; sourceTree = "<group>"; };
+		5936B4D7247BA97A00D2BE92 /* PageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageViewController.h; sourceTree = "<group>"; };
+		5936B4D8247BA97A00D2BE92 /* PageConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageConst.h; sourceTree = "<group>"; };
+		5936B4D9247BA97A00D2BE92 /* UIScrollView+PageContentScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+PageContentScrollView.h"; sourceTree = "<group>"; };
+		5936B4DA247BA97A00D2BE92 /* PageCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageCollectionView.m; sourceTree = "<group>"; };
+		5936B4DB247BA97A00D2BE92 /* UIViewController+Page.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Page.h"; sourceTree = "<group>"; };
+		5936B4DC247BA97A00D2BE92 /* PageBGScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageBGScrollView.h; sourceTree = "<group>"; };
+		5936B4DD247BA97A00D2BE92 /* coin_ls_btn_02@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coin_ls_btn_02@3x.png"; sourceTree = "<group>"; };
+		5936B4E8247BAA8B00D2BE92 /* SkinMeasureSelfViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SkinMeasureSelfViewController.h; sourceTree = "<group>"; };
+		5936B4E9247BAA8B00D2BE92 /* SkinMeasureSelfViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SkinMeasureSelfViewController.m; sourceTree = "<group>"; };
+		5936B4EB247BAA9A00D2BE92 /* SkinMeasureFriendViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SkinMeasureFriendViewController.h; sourceTree = "<group>"; };
+		5936B4EC247BAA9A00D2BE92 /* SkinMeasureFriendViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SkinMeasureFriendViewController.m; sourceTree = "<group>"; };
+		5936B4EE247BAD2100D2BE92 /* SkinMesureRecordCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SkinMesureRecordCell.h; sourceTree = "<group>"; };
+		5936B4EF247BAD2100D2BE92 /* SkinMesureRecordCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SkinMesureRecordCell.m; sourceTree = "<group>"; };
+		5936B4F0247BAD2100D2BE92 /* SkinMesureRecordCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SkinMesureRecordCell.xib; sourceTree = "<group>"; };
 		5940997E247633F8000A2AEA /* CALayer+Convenient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+Convenient.h"; sourceTree = "<group>"; };
 		5940997F247633F8000A2AEA /* UIButton+Convenient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Convenient.h"; sourceTree = "<group>"; };
 		59409980247633F8000A2AEA /* UIView+Convenient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Convenient.m"; sourceTree = "<group>"; };
@@ -293,6 +335,39 @@
 			path = AlertView;
 			sourceTree = "<group>";
 		};
+		5936B4CA247BA97A00D2BE92 /* PageViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5936B4CD247BA97A00D2BE92 /* Category */,
+				5936B4D1247BA97A00D2BE92 /* coin_ls_btn_01@3x.png */,
+				5936B4DD247BA97A00D2BE92 /* coin_ls_btn_02@3x.png */,
+				5936B4DC247BA97A00D2BE92 /* PageBGScrollView.h */,
+				5936B4D4247BA97A00D2BE92 /* PageBGScrollView.m */,
+				5936B4D0247BA97A00D2BE92 /* PageCollectionView.h */,
+				5936B4DA247BA97A00D2BE92 /* PageCollectionView.m */,
+				5936B4D8247BA97A00D2BE92 /* PageConst.h */,
+				5936B4D3247BA97A00D2BE92 /* PageConst.m */,
+				5936B4CC247BA97A00D2BE92 /* PageTableView.h */,
+				5936B4D6247BA97A00D2BE92 /* PageTableView.m */,
+				5936B4D7247BA97A00D2BE92 /* PageViewController.h */,
+				5936B4CB247BA97A00D2BE92 /* PageViewController.m */,
+				5936B4D9247BA97A00D2BE92 /* UIScrollView+PageContentScrollView.h */,
+				5936B4D2247BA97A00D2BE92 /* UIScrollView+PageContentScrollView.m */,
+				5936B4DB247BA97A00D2BE92 /* UIViewController+Page.h */,
+				5936B4D5247BA97A00D2BE92 /* UIViewController+Page.m */,
+			);
+			path = PageViewController;
+			sourceTree = "<group>";
+		};
+		5936B4CD247BA97A00D2BE92 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				5936B4CE247BA97A00D2BE92 /* UIView+Frame.m */,
+				5936B4CF247BA97A00D2BE92 /* UIView+Frame.h */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
 		5940997D247633F8000A2AEA /* UIKit+Convenient */ = {
 			isa = PBXGroup;
 			children = (
@@ -392,6 +467,7 @@
 				599EC0862472859800C35EA0 /* SceneDelegate.m */,
 				597A08AD2474CFC6002FE680 /* ViewController.h */,
 				597A08AE2474CFC6002FE680 /* ViewController.m */,
+				5936B4CA247BA97A00D2BE92 /* PageViewController */,
 				5936B450247B61B000D2BE92 /* AlertView */,
 				5940997D247633F8000A2AEA /* UIKit+Convenient */,
 				599EC15824728E7A00C35EA0 /* IGListBaseViewController */,
@@ -447,6 +523,15 @@
 				597A08B12474D002002FE680 /* SkinCameraViewController.m */,
 				599EC15224728BA300C35EA0 /* SkinMeasurementViewController.h */,
 				599EC15324728BA300C35EA0 /* SkinMeasurementViewController.m */,
+				5936B48B247BA86500D2BE92 /* SkinMeasureRecordViewController.h */,
+				5936B48C247BA86500D2BE92 /* SkinMeasureRecordViewController.m */,
+				5936B4E8247BAA8B00D2BE92 /* SkinMeasureSelfViewController.h */,
+				5936B4E9247BAA8B00D2BE92 /* SkinMeasureSelfViewController.m */,
+				5936B4EB247BAA9A00D2BE92 /* SkinMeasureFriendViewController.h */,
+				5936B4EC247BAA9A00D2BE92 /* SkinMeasureFriendViewController.m */,
+				5936B4EE247BAD2100D2BE92 /* SkinMesureRecordCell.h */,
+				5936B4EF247BAD2100D2BE92 /* SkinMesureRecordCell.m */,
+				5936B4F0247BAD2100D2BE92 /* SkinMesureRecordCell.xib */,
 				59FBEE4A247537A00073A947 /* ViewModel */,
 				59FBEE54247538680073A947 /* View */,
 			);
@@ -680,10 +765,13 @@
 				594099A72476865C000A2AEA /* SkinDoudouCell.xib in Resources */,
 				594099BB2476869C000A2AEA /* SkinMaokongCell.xib in Resources */,
 				599EC0922472859800C35EA0 /* LaunchScreen.storyboard in Resources */,
+				5936B4E0247BA97A00D2BE92 /* coin_ls_btn_01@3x.png in Resources */,
 				594099AC24768670000A2AEA /* SkinBandianCell.xib in Resources */,
+				5936B4E7247BA97A00D2BE92 /* coin_ls_btn_02@3x.png in Resources */,
 				594099B124768682000A2AEA /* SkinHeitouCell.xib in Resources */,
 				599EC16124728F6100C35EA0 /* SkinOverviewCell.xib in Resources */,
 				594099B624768690000A2AEA /* SkinZhouwenCell.xib in Resources */,
+				5936B4F2247BAD2100D2BE92 /* SkinMesureRecordCell.xib in Resources */,
 				599EC08F2472859800C35EA0 /* Assets.xcassets in Resources */,
 				599EC1992472A8D200C35EA0 /* SkinSectionHeaderView.xib in Resources */,
 				5936B48A247B75DA00D2BE92 /* SkinMeasureAlert.xib in Resources */,
@@ -817,9 +905,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5936B4E4247BA97A00D2BE92 /* UIViewController+Page.m in Sources */,
 				599EC1712472A20D00C35EA0 /* SkinEightDimentionSection.m in Sources */,
 				599EC0842472859800C35EA0 /* AppDelegate.m in Sources */,
 				59FBEE4D247537A00073A947 /* SkinViewModel.m in Sources */,
+				5936B4F1247BAD2100D2BE92 /* SkinMesureRecordCell.m in Sources */,
 				599EC16024728F6100C35EA0 /* SkinOverviewCell.m in Sources */,
 				594099C424768AFC000A2AEA /* SkinDimentionHeaderView.m in Sources */,
 				59409993247685A5000A2AEA /* SkinDoudouSection.m in Sources */,
@@ -828,8 +918,11 @@
 				5925BA082477DA1E00D52E61 /* UIImage+Convenient.m in Sources */,
 				5925B9FD2477C89800D52E61 /* WZBCountdownLabel.m in Sources */,
 				599EC1982472A8D200C35EA0 /* SkinSectionHeaderView.m in Sources */,
+				5936B4DE247BA97A00D2BE92 /* PageViewController.m in Sources */,
 				599EC0872472859800C35EA0 /* SceneDelegate.m in Sources */,
+				5936B4E2247BA97A00D2BE92 /* PageConst.m in Sources */,
 				59409987247633F8000A2AEA /* UIView+Convenient.m in Sources */,
+				5936B4E6247BA97A00D2BE92 /* PageCollectionView.m in Sources */,
 				5936B485247B71C600D2BE92 /* AlertBaseView.m in Sources */,
 				59FBEE62247538690073A947 /* GBRadarChartDataItem.m in Sources */,
 				59409988247633F8000A2AEA /* NSDate+Convenient.m in Sources */,
@@ -840,17 +933,24 @@
 				5940998A247633F8000A2AEA /* UIButton+Convenient.m in Sources */,
 				594099B524768690000A2AEA /* SkinZhouwenCell.m in Sources */,
 				59FBEE6E247544C90073A947 /* ZZCountingLabel.m in Sources */,
+				5936B4DF247BA97A00D2BE92 /* UIView+Frame.m in Sources */,
 				59409996247685C4000A2AEA /* SkinBandianSection.m in Sources */,
 				59FBEE61247538690073A947 /* GBRadarChart.m in Sources */,
+				5936B48D247BA86500D2BE92 /* SkinMeasureRecordViewController.m in Sources */,
+				5936B4E3247BA97A00D2BE92 /* PageBGScrollView.m in Sources */,
 				599EC15724728DAF00C35EA0 /* IGListBaseSection.m in Sources */,
 				5925BA012477D18800D52E61 /* SkinAnalysisView.m in Sources */,
+				5936B4E1247BA97A00D2BE92 /* UIScrollView+PageContentScrollView.m in Sources */,
 				597A08B22474D002002FE680 /* SkinCameraViewController.m in Sources */,
 				594099AB24768670000A2AEA /* SkinBandianCell.m in Sources */,
 				594099BA2476869C000A2AEA /* SkinMaokongCell.m in Sources */,
 				594099BF247686A9000A2AEA /* SkinHeiyanquanCell.m in Sources */,
 				59409989247633F8000A2AEA /* CALayer+Convenient.m in Sources */,
 				597A08AF2474CFC6002FE680 /* ViewController.m in Sources */,
+				5936B4E5247BA97A00D2BE92 /* PageTableView.m in Sources */,
+				5936B4EA247BAA8B00D2BE92 /* SkinMeasureSelfViewController.m in Sources */,
 				599EC16A247297CC00C35EA0 /* IGListBaseCell.m in Sources */,
+				5936B4ED247BAA9A00D2BE92 /* SkinMeasureFriendViewController.m in Sources */,
 				599EC1752472A25200C35EA0 /* SkinEightDimentionCell.m in Sources */,
 				599EC15424728BA300C35EA0 /* SkinMeasurementViewController.m in Sources */,
 				5940999C247685E6000A2AEA /* SkinZhouwenSection.m in Sources */,
