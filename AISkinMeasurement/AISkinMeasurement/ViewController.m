@@ -9,11 +9,10 @@
 #import "ViewController.h"
 #import "WZBCountdownLabel.h"
 #import "SkinAnalysisView.h"
-#import "AlertView.h"
 #import "SkinMeasureAlert.h"
 @interface ViewController ()
 @property (strong, nonatomic) SkinAnalysisView *ana;
-@property (strong, nonatomic) AlertView *alert;
+@property (strong, nonatomic) SkinMeasureAlert *alert;
 
 
 @end
@@ -62,6 +61,15 @@
     
     SkinMeasureAlert *alert = [[SkinMeasureAlert alloc] init];
     [alert show];
+    
+    __weak __typeof__(self)weakSelf = self;
+    alert.tapItem = ^(int index) {
+        if (index == 2) {
+            // 测肤记录
+            [weakSelf.navigationController pushViewController:UIViewController.new animated:YES];
+        }
+    };
+    _alert = alert;
     
 }
 

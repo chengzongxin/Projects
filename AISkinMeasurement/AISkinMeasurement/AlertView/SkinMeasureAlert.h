@@ -13,6 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SkinMeasureAlert : AlertBaseView
 
+@property (nonatomic,copy) void (^tapItem)(int index);
+
 @end
 
 NS_ASSUME_NONNULL_END
