@@ -8,6 +8,8 @@
 
 #import "SkinMeasureSelfViewController.h"
 #import "SkinMesureRecordCell.h"
+#import "SkinViewModel.h"
+#import "SkinMeasurementViewController.h"
 
 @interface SkinMeasureSelfViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -21,6 +23,12 @@
     [super viewDidLoad];
     
     [self.view addSubview:self.tableView];
+    
+    [SkinViewModel analysisListQuery:^(id  _Nonnull data) {
+        NSLog(@"%@",data);
+    } fail:^(NSString * _Nonnull message) {
+        NSLog(@"%@",message);
+    }];
 }
 
 #pragma mark UITableView Delegate
@@ -36,6 +44,10 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     SkinMesureRecordCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([SkinMesureRecordCell class]) forIndexPath:indexPath];
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [self.navigationController pushViewController:SkinMeasurementViewController.new animated:YES];
 }
 
 #pragma mark - Getter TableView

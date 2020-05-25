@@ -119,7 +119,7 @@
     
     [_captureSession stopRunning];
     
-    [SkinViewModel applyAnalysisCommand:_lastImage deviceNo:@"123" analysisPersonnelType:@"analysis_me" success:^(id  _Nonnull data) {
+    [SkinViewModel applyAnalysisCommand:_lastImage analysisPersonnelType:@"analysis_me" success:^(id  _Nonnull data) {
         NSLog(@"%@",data);
         [self.previewView stopAnalysis];
         SkinMeasurementViewController *vc = SkinMeasurementViewController.new;

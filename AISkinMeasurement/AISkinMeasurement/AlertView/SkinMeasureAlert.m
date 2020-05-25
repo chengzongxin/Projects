@@ -27,7 +27,7 @@
 }
 - (IBAction)close:(id)sender {
     if (self.tapItem) {
-        self.tapItem(2);
+        self.tapItem(3);
     }
 }
 

@@ -12,6 +12,7 @@
 #import "SkinMeasureAlert.h"
 #import "AlertBaseView.h"
 #import "SkinMeasureRecordViewController.h"
+#import "SkinCameraViewController.h"
 @interface ViewController ()
 @property (strong, nonatomic) SkinAnalysisView *ana;
 @property (strong, nonatomic) AlertBaseView *alert;
@@ -68,11 +69,21 @@
     __weak __typeof__(self)weakSelf = self;
     __weak __typeof__(AlertBaseView *)weakalert = alert;
     customView.tapItem = ^(int index) {
-        if (index == 2) {
-            // 测肤记录
-            [weakSelf.navigationController pushViewController:SkinMeasureRecordViewController.new animated:YES];
-            [weakalert dismiss];
+        
+        switch (index) {
+            case 0:// 自己
+                [weakSelf.navigationController pushViewController:SkinCameraViewController.new animated:YES];
+                break;
+            case 1:// 朋友
+                [weakSelf.navigationController pushViewController:SkinCameraViewController.new animated:YES];
+                break;
+            case 2:// 测肤记录
+                [weakSelf.navigationController pushViewController:SkinMeasureRecordViewController.new animated:YES];
+                break;
+            default:
+                break;
         }
+        [weakalert dismiss];
     };
     _alert = alert;
     

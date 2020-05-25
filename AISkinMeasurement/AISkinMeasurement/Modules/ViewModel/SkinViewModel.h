@@ -13,16 +13,17 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SkinViewModel : NSObject
 
-+ (void)analysisInfoQuery:(NSString *)deviceNo
-                 recordNo:(NSString *)recordNo
++ (void)analysisInfoQuery:(NSString *)recordNo
                   success:(void(^)(id data))success
                      fail:(void(^)(NSString *message))fail;
 
 + (void)applyAnalysisCommand:(UIImage *)images
-                    deviceNo:(NSString *)deviceNo
        analysisPersonnelType:(NSString *)analysisPersonnelType
                      success:(void(^)(id data))success
                         fail:(void(^)(NSString *message))fail;
+
++ (void)analysisListQuery:(void(^)(id data))success
+                     fail:(void(^)(NSString *message))fail;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -38,7 +38,7 @@
     
     [self.adater reloadDataWithCompletion:nil];
 //    @"AiFA713466991557611520"
-    [SkinViewModel analysisInfoQuery:@"123" recordNo:_recordNo?:@"" success:^(id  _Nonnull data) {
+    [SkinViewModel analysisInfoQuery:_recordNo?:@"" success:^(id  _Nonnull data) {
         NSLog(@"%@",data);
     } fail:^(NSString * _Nonnull message) {
         NSLog(@"%@",message);
