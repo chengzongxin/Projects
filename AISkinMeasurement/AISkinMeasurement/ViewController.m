@@ -63,7 +63,6 @@
 //    _alert = alert;
     
     AlertBaseView *alert = [[AlertBaseView alloc] init];
-    [alert show];
     SkinMeasureAlert *customView =  [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([SkinMeasureAlert class]) owner:nil options:nil] firstObject];
     alert.customView = customView;
     __weak __typeof__(self)weakSelf = self;
@@ -85,6 +84,7 @@
         }
         [weakalert dismiss];
     };
+    [alert show];
     _alert = alert;
     
 }

@@ -47,7 +47,6 @@
     SkinMesureRecordCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([SkinMesureRecordCell class]) forIndexPath:indexPath];
     cell.deleteClick = ^{
         AlertBaseView *alert = [[AlertBaseView alloc] init];
-        [alert show];
         NormalAlert *customView =  [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([NormalAlert class]) owner:nil options:nil] firstObject];
         alert.customView = customView;
         __weak __typeof__(self)weakSelf = self;
@@ -69,6 +68,7 @@
 //            }
             [weakalert dismiss];
         };
+        [alert show];
     };
     return cell;
 }

@@ -24,7 +24,7 @@ static NSString *const AnimationKeyDismiss = @"AnimationKeyDismiss";
     self = [super initWithFrame:frame];
     if (self) {
         self.frame = UIScreen.mainScreen.bounds;
-//        self.backgroundColor = [UIColor.blackColor colorWithAlphaComponent:0.5];
+        self.backgroundColor = [UIColor.blackColor colorWithAlphaComponent:0.5];
 //        self.customView = [self prepareSubviews];
 //        [self setupAlertView];
 //        self.delegate = self;
@@ -42,12 +42,12 @@ static NSString *const AnimationKeyDismiss = @"AnimationKeyDismiss";
 - (void)setCustomView:(UIView *)customView{
     _customView = customView;
     customView.center = self.center;
-    [self addSubview:self.customView];
 }
 
 - (void)show {
     UIWindow *window = [[[UIApplication sharedApplication] delegate] window];
     [window addSubview:self];
+    [self addSubview:self.customView];
     
     CAKeyframeAnimation *scaleAnimation = [CAKeyframeAnimation animationWithKeyPath:@"transform"];
     scaleAnimation.duration = 0.4;
@@ -71,7 +71,7 @@ static NSString *const AnimationKeyDismiss = @"AnimationKeyDismiss";
     animationGroup.removedOnCompletion = NO;
     animationGroup.fillMode = kCAFillModeForwards; // 动画结束后停留在最终位置
     
-    [self.layer addAnimation:animationGroup forKey:AnimationKeyShow];
+    [self.customView.layer addAnimation:animationGroup forKey:AnimationKeyShow];
 }
 
 - (void)dismiss {
@@ -94,14 +94,14 @@ static NSString *const AnimationKeyDismiss = @"AnimationKeyDismiss";
     animationGroup.delegate = self;
     animationGroup.removedOnCompletion = NO;
     animationGroup.fillMode = kCAFillModeForwards; // 动画结束后停留在最终位置
-    [self.layer addAnimation:animationGroup forKey:AnimationKeyDismiss];
+    [self.customView.layer addAnimation:animationGroup forKey:AnimationKeyDismiss];
 }
 
 - (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag{
-    if ([self.layer animationForKey:AnimationKeyShow] == anim) {
+    if ([self.customView.layer animationForKey:AnimationKeyShow] == anim) {
         // 显示动画x结束
-        self.backgroundColor = [UIColor.blackColor colorWithAlphaComponent:0.5];
-    }else if ([self.layer animationForKey:AnimationKeyDismiss] == anim) {
+//        self.backgroundColor = [UIColor.blackColor colorWithAlphaComponent:0.5];
+    }else if ([self.customView.layer animationForKey:AnimationKeyDismiss] == anim) {
         // 消失动画结束
         self.opaque = 0;
         self.frame = CGRectZero;
