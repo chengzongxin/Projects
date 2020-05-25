@@ -160,7 +160,7 @@
     animationGroup.removedOnCompletion = NO;
     animationGroup.fillMode = kCAFillModeForwards; // 动画结束后停留在最终位置
     
-    [self.container.layer addAnimation:animationGroup forKey:nil];
+    [self.layer addAnimation:animationGroup forKey:nil];
 }
 
 - (void)dismiss {
@@ -182,12 +182,12 @@
     animationGroup.delegate = self;
     animationGroup.removedOnCompletion = NO;
     animationGroup.fillMode = kCAFillModeForwards; // 动画结束后停留在最终位置
-    [self.container.layer addAnimation:animationGroup forKey:@"scale"];
+    [self.layer addAnimation:animationGroup forKey:@"scale"];
 }
 
 - (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag{
-    self.container.opaque = 0;
-    self.container.frame = CGRectZero;
+    self.opaque = 0;
+    self.frame = CGRectZero;
     [self removeFromSuperview];
 }
 
