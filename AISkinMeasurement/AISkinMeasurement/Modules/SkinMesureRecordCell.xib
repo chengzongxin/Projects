@@ -45,9 +45,12 @@
                         <state key="normal" title="删除">
                             <color key="titleColor" red="0.47450980392156861" green="0.51764705882352935" blue="0.61176470588235299" alpha="1" colorSpace="calibratedRGB"/>
                         </state>
+                        <connections>
+                            <action selector="deleteButtonClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="KP6-L5-HIX"/>
+                        </connections>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qrC-Ej-FEA">
-                        <rect key="frame" x="245" y="17" width="40" height="20"/>
+                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qrC-Ej-FEA">
+                        <rect key="frame" x="245" y="16" width="40" height="20"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="L7P-o0-pCE"/>
                             <constraint firstAttribute="width" constant="40" id="sNr-86-Qig"/>
@@ -56,6 +59,9 @@
                         <state key="normal" title="查看">
                             <color key="titleColor" red="0.043137254899999998" green="0.81176470590000005" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
                         </state>
+                        <connections>
+                            <action selector="checkButtonClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="3dT-x7-H5p"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>

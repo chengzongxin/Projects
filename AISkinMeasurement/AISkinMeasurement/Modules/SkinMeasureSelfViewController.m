@@ -10,6 +10,8 @@
 #import "SkinMesureRecordCell.h"
 #import "SkinViewModel.h"
 #import "SkinMeasurementViewController.h"
+#import "AlertBaseView.h"
+#import "NormalAlert.h"
 
 @interface SkinMeasureSelfViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -43,6 +45,31 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     SkinMesureRecordCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([SkinMesureRecordCell class]) forIndexPath:indexPath];
+    cell.deleteClick = ^{
+        AlertBaseView *alert = [[AlertBaseView alloc] init];
+        [alert show];
+        NormalAlert *customView =  [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([NormalAlert class]) owner:nil options:nil] firstObject];
+        alert.customView = customView;
+        __weak __typeof__(self)weakSelf = self;
+        __weak __typeof__(AlertBaseView *)weakalert = alert;
+        customView.tapItem = ^(int index) {
+            
+//            switch (index) {
+//                case 0:// 自己
+//                    [weakSelf.navigationController pushViewController:SkinCameraViewController.new animated:YES];
+//                    break;
+//                case 1:// 朋友
+//                    [weakSelf.navigationController pushViewController:SkinCameraViewController.new animated:YES];
+//                    break;
+//                case 2:// 测肤记录
+//                    [weakSelf.navigationController pushViewController:SkinMeasureRecordViewController.new animated:YES];
+//                    break;
+//                default:
+//                    break;
+//            }
+            [weakalert dismiss];
+        };
+    };
     return cell;
 }
 

@@ -46,6 +46,19 @@
     _deleteButton.layer.borderWidth = 0.5;
 }
 
+- (IBAction)deleteButtonClick:(id)sender {
+    if (self.deleteClick) {
+        self.deleteClick();
+    }
+}
+- (IBAction)checkButtonClick:(id)sender {
+    if (self.checkClick) {
+        self.checkClick();
+    }
+}
+
+
+
 - (void)setFrame:(CGRect)frame{
     frame.origin.x += 10;
     frame.origin.y += 12;

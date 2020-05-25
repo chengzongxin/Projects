@@ -17,6 +17,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIButton *checkButton;
 @property (weak, nonatomic) IBOutlet UIButton *deleteButton;
 
+@property (nonatomic,copy) void (^checkClick)(void);
+@property (nonatomic,copy) void (^deleteClick)(void);
+
 @end
 
 NS_ASSUME_NONNULL_END

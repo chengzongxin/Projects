@@ -8,6 +8,9 @@
 
 #import "AlertBaseView.h"
 
+static NSString *const AnimationKeyShow = @"AnimationKeyShow";
+static NSString *const AnimationKeyDismiss = @"AnimationKeyDismiss";
+
 @interface AlertBaseView ()
 
 //@property (strong, nonatomic) UIView *customView;
@@ -21,6 +24,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.frame = UIScreen.mainScreen.bounds;
+//        self.backgroundColor = [UIColor.blackColor colorWithAlphaComponent:0.5];
 //        self.customView = [self prepareSubviews];
 //        [self setupAlertView];
 //        self.delegate = self;
@@ -63,13 +67,15 @@
     CAAnimationGroup *animationGroup = [CAAnimationGroup animation];
     animationGroup.duration = 0.4;
     animationGroup.animations = @[scaleAnimation, opacityAnimation];
+    animationGroup.delegate = self;
     animationGroup.removedOnCompletion = NO;
     animationGroup.fillMode = kCAFillModeForwards; // 动画结束后停留在最终位置
     
-    [self.layer addAnimation:animationGroup forKey:nil];
+    [self.layer addAnimation:animationGroup forKey:AnimationKeyShow];
 }
 
 - (void)dismiss {
+    self.backgroundColor = UIColor.clearColor;
     CAAnimationGroup *animationGroup = [CAAnimationGroup animation];
     animationGroup.duration = 0.4;
 
@@ -88,17 +94,19 @@
     animationGroup.delegate = self;
     animationGroup.removedOnCompletion = NO;
     animationGroup.fillMode = kCAFillModeForwards; // 动画结束后停留在最终位置
-    [self.layer addAnimation:animationGroup forKey:@"scale"];
+    [self.layer addAnimation:animationGroup forKey:AnimationKeyDismiss];
 }
 
 - (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag{
-    self.opaque = 0;
-    self.frame = CGRectZero;
-    // initWithFrame 时会初始化自己,把自己加一遍,这里再删除自己
-    if ([self.superview isKindOfClass:self.class]) {
-        [self.superview removeFromSuperview];
+    if ([self.layer animationForKey:AnimationKeyShow] == anim) {
+        // 显示动画x结束
+        self.backgroundColor = [UIColor.blackColor colorWithAlphaComponent:0.5];
+    }else if ([self.layer animationForKey:AnimationKeyDismiss] == anim) {
+        // 消失动画结束
+        self.opaque = 0;
+        self.frame = CGRectZero;
+        [self removeFromSuperview];
     }
-    [self removeFromSuperview];
 }
 
 @end

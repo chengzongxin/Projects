@@ -29,6 +29,8 @@
 		5936B4ED247BAA9A00D2BE92 /* SkinMeasureFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5936B4EC247BAA9A00D2BE92 /* SkinMeasureFriendViewController.m */; };
 		5936B4F1247BAD2100D2BE92 /* SkinMesureRecordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5936B4EF247BAD2100D2BE92 /* SkinMesureRecordCell.m */; };
 		5936B4F2247BAD2100D2BE92 /* SkinMesureRecordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5936B4F0247BAD2100D2BE92 /* SkinMesureRecordCell.xib */; };
+		5936B4F8247BBFE100D2BE92 /* NormalAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 5936B4F7247BBFE100D2BE92 /* NormalAlert.m */; };
+		5936B4FA247BBFEB00D2BE92 /* NormalAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5936B4F9247BBFEB00D2BE92 /* NormalAlert.xib */; };
 		59409987247633F8000A2AEA /* UIView+Convenient.m in Sources */ = {isa = PBXBuildFile; fileRef = 59409980247633F8000A2AEA /* UIView+Convenient.m */; };
 		59409988247633F8000A2AEA /* NSDate+Convenient.m in Sources */ = {isa = PBXBuildFile; fileRef = 59409981247633F8000A2AEA /* NSDate+Convenient.m */; };
 		59409989247633F8000A2AEA /* CALayer+Convenient.m in Sources */ = {isa = PBXBuildFile; fileRef = 59409982247633F8000A2AEA /* CALayer+Convenient.m */; };
@@ -154,6 +156,9 @@
 		5936B4EE247BAD2100D2BE92 /* SkinMesureRecordCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SkinMesureRecordCell.h; sourceTree = "<group>"; };
 		5936B4EF247BAD2100D2BE92 /* SkinMesureRecordCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SkinMesureRecordCell.m; sourceTree = "<group>"; };
 		5936B4F0247BAD2100D2BE92 /* SkinMesureRecordCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SkinMesureRecordCell.xib; sourceTree = "<group>"; };
+		5936B4F6247BBFE100D2BE92 /* NormalAlert.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NormalAlert.h; sourceTree = "<group>"; };
+		5936B4F7247BBFE100D2BE92 /* NormalAlert.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NormalAlert.m; sourceTree = "<group>"; };
+		5936B4F9247BBFEB00D2BE92 /* NormalAlert.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NormalAlert.xib; sourceTree = "<group>"; };
 		5940997E247633F8000A2AEA /* CALayer+Convenient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+Convenient.h"; sourceTree = "<group>"; };
 		5940997F247633F8000A2AEA /* UIButton+Convenient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Convenient.h"; sourceTree = "<group>"; };
 		59409980247633F8000A2AEA /* UIView+Convenient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Convenient.m"; sourceTree = "<group>"; };
@@ -331,6 +336,9 @@
 				5936B486247B74A300D2BE92 /* SkinMeasureAlert.h */,
 				5936B487247B74A300D2BE92 /* SkinMeasureAlert.m */,
 				5936B489247B75DA00D2BE92 /* SkinMeasureAlert.xib */,
+				5936B4F6247BBFE100D2BE92 /* NormalAlert.h */,
+				5936B4F7247BBFE100D2BE92 /* NormalAlert.m */,
+				5936B4F9247BBFEB00D2BE92 /* NormalAlert.xib */,
 			);
 			path = AlertView;
 			sourceTree = "<group>";
@@ -758,6 +766,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				59FBEE65247538690073A947 /* face_position@3x.png in Resources */,
+				5936B4FA247BBFEB00D2BE92 /* NormalAlert.xib in Resources */,
 				599EC19E2472A92700C35EA0 /* IGListBaseReusableView.xib in Resources */,
 				599EC1762472A25200C35EA0 /* SkinEightDimentionCell.xib in Resources */,
 				599EC16B247297CC00C35EA0 /* IGListBaseCell.xib in Resources */,
@@ -922,6 +931,7 @@
 				599EC0872472859800C35EA0 /* SceneDelegate.m in Sources */,
 				5936B4E2247BA97A00D2BE92 /* PageConst.m in Sources */,
 				59409987247633F8000A2AEA /* UIView+Convenient.m in Sources */,
+				5936B4F8247BBFE100D2BE92 /* NormalAlert.m in Sources */,
 				5936B4E6247BA97A00D2BE92 /* PageCollectionView.m in Sources */,
 				5936B485247B71C600D2BE92 /* AlertBaseView.m in Sources */,
 				59FBEE62247538690073A947 /* GBRadarChartDataItem.m in Sources */,
