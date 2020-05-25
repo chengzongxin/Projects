@@ -12,6 +12,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SkinMesureRecordCell : UITableViewCell
 
+@property (strong, nonatomic) UIButton *scoreTagButtonLeft;
+@property (strong, nonatomic) UIButton *scoreTagButtonRight;
+@property (weak, nonatomic) IBOutlet UIButton *checkButton;
+@property (weak, nonatomic) IBOutlet UIButton *deleteButton;
+
 @end
 
 NS_ASSUME_NONNULL_END

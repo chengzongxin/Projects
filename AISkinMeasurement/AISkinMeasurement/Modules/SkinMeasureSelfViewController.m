@@ -24,8 +24,9 @@
 }
 
 #pragma mark UITableView Delegate
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 64;
+    return 92;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -52,6 +53,7 @@
         _tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
         // 自适应内容边距
         _tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentAlways;
+        _tableView.contentInset = UIEdgeInsetsMake(0, 0, 44 + UIApplication.sharedApplication.statusBarFrame.size.height + 44, 0);
         // 隐藏下面多出来的cell
         _tableView.tableFooterView = [UIView new];
         [_tableView registerNib:[UINib nibWithNibName:NSStringFromClass([SkinMesureRecordCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([SkinMesureRecordCell class])];
