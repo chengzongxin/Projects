@@ -65,7 +65,36 @@
     self.drawLeftWidth = leftSize.width + _margin * 2;
     self.drawRightWidth = rightSize.width + _margin * 2;
     
+    // 使用frame布局
     self.width = leftSize.width + rightSize.width + _margin * 4;
+/*
+    firstItem
+    <CombinationLabel: 0x101d0bf40; frame = (86 674; 83.54 34); clipsToBounds = YES; autoresize = RM+BM; layer = <CALayer: 0x2826d8ae0>>
+
+    firstAttribute
+    NSLayoutAttributeWidth
+
+    relation
+    NSLayoutRelationEqual
+
+    secondItem
+    nil
+ 
+    secondAttribute
+    NSLayoutAttributeNotAnAttribute
+ 
+    multiplier
+    1
+ 
+    constant
+    240
+ */
+    // 使用约束布局
+    [self.constraints enumerateObjectsUsingBlock:^(__kindof NSLayoutConstraint * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if (obj.firstAttribute == NSLayoutAttributeWidth) {
+            obj.constant = self.width;
+        }
+    }];
     
     [self setNeedsDisplay];
 }

@@ -18,6 +18,7 @@
 @property (strong, nonatomic) SkinAnalysisView *ana;
 @property (strong, nonatomic) AlertBaseView *alert;
 
+@property (weak, nonatomic) IBOutlet CombinationLabel *combinationLabel;
 
 
 @end
@@ -40,7 +41,7 @@
     [self.view addSubview:label];
     
     
-//    [self.combinationLabel setLeftText:@"肌肤良好指数" rightText:@"好"];
+    [self.combinationLabel setLeftText:@"肌肤良好指数" rightText:@"好"];
 }
 
 
