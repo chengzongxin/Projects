@@ -36,7 +36,6 @@
                                 <rect key="frame" x="86" y="674" width="240" height="34"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="6tU-9S-nDN"/>
                                     <constraint firstAttribute="height" constant="34" id="ybg-vX-8ZD"/>
                                 </constraints>
                             </view>
@@ -44,6 +43,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="t0N-f9-IZA" firstAttribute="leading" secondItem="PUg-AO-yqw" secondAttribute="leading" constant="86" id="SDA-E1-Zyn"/>
+                            <constraint firstItem="PUg-AO-yqw" firstAttribute="trailing" secondItem="t0N-f9-IZA" secondAttribute="trailing" constant="88" id="X0U-MK-gEA"/>
                             <constraint firstItem="PUg-AO-yqw" firstAttribute="bottom" secondItem="t0N-f9-IZA" secondAttribute="bottom" constant="154" id="bcx-Dc-pIc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PUg-AO-yqw"/>

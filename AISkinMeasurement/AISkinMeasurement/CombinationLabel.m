@@ -90,11 +90,20 @@
     240
  */
     // 使用约束布局
-    [self.constraints enumerateObjectsUsingBlock:^(__kindof NSLayoutConstraint * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        if (obj.firstAttribute == NSLayoutAttributeWidth) {
-            obj.constant = self.width;
+    [self.superview.constraints enumerateObjectsUsingBlock:^(__kindof NSLayoutConstraint * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if (obj.secondItem == self && obj.secondAttribute == NSLayoutAttributeTrailing) {
+            obj.active = NO;
         }
     }];
+    
+    [self.constraints enumerateObjectsUsingBlock:^(__kindof NSLayoutConstraint * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if (obj.firstAttribute == NSLayoutAttributeWidth) {
+            obj.active = NO;
+        }
+    }];
+    
+    NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:self.width];
+    [self addConstraint:constraint];
     
     [self setNeedsDisplay];
 }
