@@ -8,7 +8,7 @@
 
 #import "LoadMoreControl.h"
 #import <objc/message.h>
-#import "Masonry.h"
+//#import "Masonry.h"
 
 #define SCREEN_WIDTH UIScreen.mainScreen.bounds.size.width
 #define SCREEN_HEIGHT UIScreen.mainScreen.bounds.size.height
@@ -178,51 +178,51 @@
 }
 
 - (void)setLoadingType:(LoadingType)loadingType {
-    _loadingType = loadingType;
-    switch (loadingType) {
-        case LoadStateIdle:
-            [self setHidden:YES];
-            break;
-        case LoadStateLoading:{
-            [self setHidden:NO];
-            [_indicatorView setHidden:NO];
-            [_label setText:@"内容加载中..."];
-            [_label mas_updateConstraints:^(MASConstraintMaker *make) {
-                make.centerY.equalTo(self);
-                make.centerX.equalTo(self).offset(20);
-            }];
-            [_indicatorView mas_updateConstraints:^(MASConstraintMaker *make) {
-                make.centerY.equalTo(self);
-                make.right.equalTo(self.label.mas_left).inset(5);
-                make.width.height.mas_equalTo(15);
-            }];
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                [self startAnim];
-            });
-            break;
-        }
-        case LoadStateAll: {
-            [self setHidden:NO];
-            [_indicatorView setHidden:YES];
-            [_label setText:@"已经到底啦"];
-            [_label mas_updateConstraints:^(MASConstraintMaker *make) {
-                make.center.equalTo(self);
-            }];
-            [self stopAnim];
-            [self updateFrame];
-            break;
-        }
-        case LoadStateFailed:{
-            [self setHidden:NO];
-            [_indicatorView setHidden:YES];
-            [_label setText:@"加载更多"];
-            [_label mas_updateConstraints:^(MASConstraintMaker *make) {
-                make.center.equalTo(self);
-            }];
-            [self stopAnim];
-            break;
-        }
-    }
+//    _loadingType = loadingType;
+//    switch (loadingType) {
+//        case LoadStateIdle:
+//            [self setHidden:YES];
+//            break;
+//        case LoadStateLoading:{
+//            [self setHidden:NO];
+//            [_indicatorView setHidden:NO];
+//            [_label setText:@"内容加载中..."];
+//            [_label mas_updateConstraints:^(MASConstraintMaker *make) {
+//                make.centerY.equalTo(self);
+//                make.centerX.equalTo(self).offset(20);
+//            }];
+//            [_indicatorView mas_updateConstraints:^(MASConstraintMaker *make) {
+//                make.centerY.equalTo(self);
+//                make.right.equalTo(self.label.mas_left).inset(5);
+//                make.width.height.mas_equalTo(15);
+//            }];
+//            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//                [self startAnim];
+//            });
+//            break;
+//        }
+//        case LoadStateAll: {
+//            [self setHidden:NO];
+//            [_indicatorView setHidden:YES];
+//            [_label setText:@"已经到底啦"];
+//            [_label mas_updateConstraints:^(MASConstraintMaker *make) {
+//                make.center.equalTo(self);
+//            }];
+//            [self stopAnim];
+//            [self updateFrame];
+//            break;
+//        }
+//        case LoadStateFailed:{
+//            [self setHidden:NO];
+//            [_indicatorView setHidden:YES];
+//            [_label setText:@"加载更多"];
+//            [_label mas_updateConstraints:^(MASConstraintMaker *make) {
+//                make.center.equalTo(self);
+//            }];
+//            [self stopAnim];
+//            break;
+//        }
+//    }
 }
 
 - (void)updateFrame {
