@@ -96,7 +96,6 @@
         [weakalert dismiss];
     };
     [alert show];
-    _alert = alert;
     
 }
 
