@@ -125,7 +125,19 @@
     // 停止动画
     [self.gifView stopAnimating];
     
-    int pullingPercent = (int)(superScrollViewContentOffY / (float)self.height);
+    // 当前的contentOffset
+    CGFloat offsetY = superScrollViewContentOffY;
+    // 头部控件刚好出现的offsetY
+    CGFloat happenOffsetY = - self.orginScrollViewContentInset.top;
+    // 如果是向上滚动到看不见头部控件，直接返回
+    // >= -> >
+    if (offsetY > happenOffsetY) return;
+    
+    // 普通 和 即将刷新 的临界点
+//    CGFloat normal2pullingOffsetY = happenOffsetY - self.mj_h;
+    CGFloat pullingPercent = (happenOffsetY - offsetY) / K_HEADER_MAXOFFY;
+    
+//    int pullingPercent = (int)(superScrollViewContentOffY / (float)self.height);
     // 设置当前需要显示的图片
     NSUInteger index =  images.count * pullingPercent;
     if (index >= images.count) index = images.count - 1;
