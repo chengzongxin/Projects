@@ -14,6 +14,7 @@
 #import "SkinMeasureRecordViewController.h"
 #import "SkinCameraViewController.h"
 #import "CombinationLabel.h"
+#import "FaceChangePromptView.h"
 @interface ViewController ()
 @property (strong, nonatomic) SkinAnalysisView *ana;
 @property (strong, nonatomic) AlertBaseView *alert;
@@ -74,25 +75,12 @@
 //    [alert show];
 //    _alert = alert;
     
-    AlertBaseView *alert = [[AlertBaseView alloc] initWithXib:[SkinMeasureAlert class]];
+    AlertBaseView *alert = [[AlertBaseView alloc] initWithXib:[FaceChangePromptView class]];
     __weak __typeof__(self)weakSelf = self;
     __weak __typeof__(AlertBaseView *)weakalert = alert;
-    SkinMeasureAlert *custom = alert.customView;
+    FaceChangePromptView *custom = alert.customView;
     custom.tapItem = ^(int index) {
         
-        switch (index) {
-            case 0:// 自己
-                [weakSelf.navigationController pushViewController:SkinCameraViewController.new animated:YES];
-                break;
-            case 1:// 朋友
-                [weakSelf.navigationController pushViewController:SkinCameraViewController.new animated:YES];
-                break;
-            case 2:// 测肤记录
-                [weakSelf.navigationController pushViewController:SkinMeasureRecordViewController.new animated:YES];
-                break;
-            default:
-                break;
-        }
         [weakalert dismiss];
     };
     [alert show];

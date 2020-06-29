@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		591D427B24A9C20700D9F0B4 /* FaceChangePromptView.m in Sources */ = {isa = PBXBuildFile; fileRef = 591D427A24A9C20700D9F0B4 /* FaceChangePromptView.m */; };
+		591D427D24A9C21400D9F0B4 /* FaceChangePromptView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 591D427C24A9C21400D9F0B4 /* FaceChangePromptView.xib */; };
 		5925B9FD2477C89800D52E61 /* WZBCountdownLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5925B9FB2477C89800D52E61 /* WZBCountdownLabel.m */; };
 		5925BA012477D18800D52E61 /* SkinAnalysisView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5925BA002477D18800D52E61 /* SkinAnalysisView.m */; };
 		5925BA052477D65700D52E61 /* Slider.m in Sources */ = {isa = PBXBuildFile; fileRef = 5925BA042477D65700D52E61 /* Slider.m */; };
@@ -117,6 +119,9 @@
 		27FACE9F6D2AD2196B10AF30 /* Pods_AISkinMeasurementTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AISkinMeasurementTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		43B582F785BFE227341F7585 /* Pods_AISkinMeasurement.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AISkinMeasurement.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B13BAE8D8DE34D6EEF055D5 /* Pods_AISkinMeasurement_AISkinMeasurementUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AISkinMeasurement_AISkinMeasurementUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		591D427924A9C20700D9F0B4 /* FaceChangePromptView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FaceChangePromptView.h; sourceTree = "<group>"; };
+		591D427A24A9C20700D9F0B4 /* FaceChangePromptView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FaceChangePromptView.m; sourceTree = "<group>"; };
+		591D427C24A9C21400D9F0B4 /* FaceChangePromptView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FaceChangePromptView.xib; sourceTree = "<group>"; };
 		5925B9FB2477C89800D52E61 /* WZBCountdownLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZBCountdownLabel.m; sourceTree = "<group>"; };
 		5925B9FC2477C89800D52E61 /* WZBCountdownLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZBCountdownLabel.h; sourceTree = "<group>"; };
 		5925B9FF2477D18800D52E61 /* SkinAnalysisView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SkinAnalysisView.h; sourceTree = "<group>"; };
@@ -342,6 +347,9 @@
 				5936B4F6247BBFE100D2BE92 /* NormalAlert.h */,
 				5936B4F7247BBFE100D2BE92 /* NormalAlert.m */,
 				5936B4F9247BBFEB00D2BE92 /* NormalAlert.xib */,
+				591D427924A9C20700D9F0B4 /* FaceChangePromptView.h */,
+				591D427A24A9C20700D9F0B4 /* FaceChangePromptView.m */,
+				591D427C24A9C21400D9F0B4 /* FaceChangePromptView.xib */,
 			);
 			path = AlertView;
 			sourceTree = "<group>";
@@ -784,6 +792,7 @@
 				5936B4E7247BA97A00D2BE92 /* coin_ls_btn_02@3x.png in Resources */,
 				594099B124768682000A2AEA /* SkinHeitouCell.xib in Resources */,
 				599EC16124728F6100C35EA0 /* SkinOverviewCell.xib in Resources */,
+				591D427D24A9C21400D9F0B4 /* FaceChangePromptView.xib in Resources */,
 				594099B624768690000A2AEA /* SkinZhouwenCell.xib in Resources */,
 				5936B4F2247BAD2100D2BE92 /* SkinMesureRecordCell.xib in Resources */,
 				599EC08F2472859800C35EA0 /* Assets.xcassets in Resources */,
@@ -975,6 +984,7 @@
 				594099B024768682000A2AEA /* SkinHeitouCell.m in Sources */,
 				59409999247685D7000A2AEA /* SkinHeitouSection.m in Sources */,
 				594099A62476865C000A2AEA /* SkinDoudouCell.m in Sources */,
+				591D427B24A9C20700D9F0B4 /* FaceChangePromptView.m in Sources */,
 				59FBEE6F247544C90073A947 /* ZZCircleProgress.m in Sources */,
 				599EC19D2472A92700C35EA0 /* IGListBaseReusableView.m in Sources */,
 				5940998F24766BAB000A2AEA /* SPMultipleSwitch.m in Sources */,
