@@ -55,7 +55,7 @@ static NSString *const AnimationKeyDismiss = @"AnimationKeyDismiss";
 }
 
 - (void)show {
-    UIWindow *window = [[[UIApplication sharedApplication] delegate] window];
+    UIWindow *window = UIApplication.sharedApplication.keyWindow;
     [window addSubview:self];
     [self addSubview:self.customView];
     
