@@ -9,7 +9,6 @@
 #import "CountryViewModel.h"
 #import <AFNetworking/AFNetworking.h>
 #import <MJExtension/MJExtension.h>
-#import "NSArray+FP.h"
 
 @implementation CountryViewModel
 + (void)getMuseumCountries:(void(^)(MuseumCountriesModel *))success
@@ -23,8 +22,8 @@
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/html", nil];
 
 
-//    NSString *urlString = @"http://testone-mtfy-app-gw.matafy.com:8888/museum/getMuseumCountries";
-    NSString *urlString = @"https://mtfy-app-gw.matafy.com/museum/getMuseumCountries";
+    NSString *urlString = @"http://testone-mtfy-app-gw.matafy.com:8888/museum/getMuseumCountries";
+//    NSString *urlString = @"https://mtfy-app-gw.matafy.com/museum/getMuseumCountries";
     
     [manager GET:urlString parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
 //        NSLog(@"%@",responseObject);

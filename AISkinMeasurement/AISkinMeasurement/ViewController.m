@@ -17,6 +17,7 @@
 #import "FaceChangePromptView.h"
 #import "CountryViewModel.h"
 #import <MJExtension/MJExtension.h>
+#import "CountrySelectView.h"
 @interface ViewController ()
 @property (strong, nonatomic) SkinAnalysisView *ana;
 @property (strong, nonatomic) AlertBaseView *alert;
@@ -47,6 +48,9 @@
     
     [CountryViewModel getMuseumCountries:^(MuseumCountriesModel *  _Nonnull data) {
         NSLog(@"%@",[data mj_keyValues]);
+        CountrySelectView *view = CountrySelectView.new;
+        view.data = data;
+        [view show];
     } fail:^(NSString * _Nonnull message) {
         NSLog(@"%@",message);
     }];
@@ -55,6 +59,8 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     NSLog(@"%s",__FUNCTION__);
+    
+//    [CountrySelectView.new show];
     
 //    [WZBCountdownLabel playWithNumber:3 endTitle:nil success:^(WZBCountdownLabel *label) {
 //        NSLog(@"%s",__FUNCTION__);
