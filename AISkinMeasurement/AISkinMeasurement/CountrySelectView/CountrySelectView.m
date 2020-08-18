@@ -10,11 +10,15 @@
 #import "CountrySelectCell.h"
 #import "UIColor+Utils.h"
 #import "CountryIndexCell.h"
+#import "CountrySelectButtonView.h"
 @interface CountrySelectView ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UITableViewDataSource,UITableViewDelegate>
 
 @property (strong, nonatomic) UICollectionView *collectionView;
 @property (strong, nonatomic) UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray *selectCountries;
+@property (strong, nonatomic) CountrySelectButtonView *buttonView;
+//@property (strong, nonatomic) UIButton *resetButton;
+//@property (strong, nonatomic) UIButton *confirmButton;
 
 @end
 
@@ -28,6 +32,7 @@
         _selectCountries = [NSMutableArray array];
         [self addSubview:self.collectionView];
         [self addSubview:self.tableView];
+        [self addSubview:self.buttonView];
     }
     return self;
 }
@@ -198,5 +203,20 @@
     return _tableView;
 }
 
+- (CountrySelectButtonView *)buttonView{
+    if (!_buttonView) {
+        _buttonView = [CountrySelectButtonView xibView];
+        _buttonView.frame = CGRectMake(0, self.bounds.size.height - 60, self.bounds.size.width, 60);
+        __weak typeof(self) weakSelf = self;
+        _buttonView.tapItem = ^(int index) {
+            [weakSelf tapItem:index];
+        };
+    }
+    return _buttonView;
+}
+
+- (void)tapItem:(int)index{
+    NSLog(@"%d",index);
+}
 
 @end

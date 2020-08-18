@@ -42,6 +42,8 @@
 		593D0B1E24EBCD4300782445 /* UIColor+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 593D0B1C24EBCD4300782445 /* UIColor+Utils.m */; };
 		593D0B2224EBD86C00782445 /* CountryIndexCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 593D0B2024EBD86C00782445 /* CountryIndexCell.m */; };
 		593D0B2324EBD86C00782445 /* CountryIndexCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 593D0B2124EBD86C00782445 /* CountryIndexCell.xib */; };
+		593D0B2624EBDE7100782445 /* CountrySelectButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 593D0B2524EBDE7100782445 /* CountrySelectButtonView.m */; };
+		593D0B2824EBDE7900782445 /* CountrySelectButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 593D0B2724EBDE7900782445 /* CountrySelectButtonView.xib */; };
 		59409987247633F8000A2AEA /* UIView+Convenient.m in Sources */ = {isa = PBXBuildFile; fileRef = 59409980247633F8000A2AEA /* UIView+Convenient.m */; };
 		59409988247633F8000A2AEA /* NSDate+Convenient.m in Sources */ = {isa = PBXBuildFile; fileRef = 59409981247633F8000A2AEA /* NSDate+Convenient.m */; };
 		59409989247633F8000A2AEA /* CALayer+Convenient.m in Sources */ = {isa = PBXBuildFile; fileRef = 59409982247633F8000A2AEA /* CALayer+Convenient.m */; };
@@ -189,6 +191,9 @@
 		593D0B1F24EBD86C00782445 /* CountryIndexCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CountryIndexCell.h; sourceTree = "<group>"; };
 		593D0B2024EBD86C00782445 /* CountryIndexCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CountryIndexCell.m; sourceTree = "<group>"; };
 		593D0B2124EBD86C00782445 /* CountryIndexCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryIndexCell.xib; sourceTree = "<group>"; };
+		593D0B2424EBDE7100782445 /* CountrySelectButtonView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CountrySelectButtonView.h; sourceTree = "<group>"; };
+		593D0B2524EBDE7100782445 /* CountrySelectButtonView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CountrySelectButtonView.m; sourceTree = "<group>"; };
+		593D0B2724EBDE7900782445 /* CountrySelectButtonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountrySelectButtonView.xib; sourceTree = "<group>"; };
 		5940997E247633F8000A2AEA /* CALayer+Convenient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+Convenient.h"; sourceTree = "<group>"; };
 		5940997F247633F8000A2AEA /* UIButton+Convenient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Convenient.h"; sourceTree = "<group>"; };
 		59409980247633F8000A2AEA /* UIView+Convenient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Convenient.m"; sourceTree = "<group>"; };
@@ -420,6 +425,9 @@
 				593D0B1F24EBD86C00782445 /* CountryIndexCell.h */,
 				593D0B2024EBD86C00782445 /* CountryIndexCell.m */,
 				593D0B2124EBD86C00782445 /* CountryIndexCell.xib */,
+				593D0B2424EBDE7100782445 /* CountrySelectButtonView.h */,
+				593D0B2524EBDE7100782445 /* CountrySelectButtonView.m */,
+				593D0B2724EBDE7900782445 /* CountrySelectButtonView.xib */,
 				593D0B0B24EB897B00782445 /* CountryViewModel.h */,
 				593D0B0C24EB897B00782445 /* CountryViewModel.m */,
 				593D0B0E24EB8C4D00782445 /* MuseumCountriesModel.h */,
@@ -847,6 +855,7 @@
 				59FBEE6D247544C90073A947 /* ZZCircleProgress.bundle in Resources */,
 				599EC08D2472859800C35EA0 /* Main.storyboard in Resources */,
 				594099C0247686A9000A2AEA /* SkinHeiyanquanCell.xib in Resources */,
+				593D0B2824EBDE7900782445 /* CountrySelectButtonView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1009,6 +1018,7 @@
 				5936B4DF247BA97A00D2BE92 /* UIView+Frame.m in Sources */,
 				59409996247685C4000A2AEA /* SkinBandianSection.m in Sources */,
 				59FBEE61247538690073A947 /* GBRadarChart.m in Sources */,
+				593D0B2624EBDE7100782445 /* CountrySelectButtonView.m in Sources */,
 				5936B48D247BA86500D2BE92 /* SkinMeasureRecordViewController.m in Sources */,
 				5936B4E3247BA97A00D2BE92 /* PageBGScrollView.m in Sources */,
 				599EC15724728DAF00C35EA0 /* IGListBaseSection.m in Sources */,
