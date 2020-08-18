@@ -13,6 +13,8 @@
 
 @property (strong, nonatomic) UICollectionView *collectionView;
 
+@property (strong, nonatomic) NSMutableArray *selectCountries;
+
 @end
 
 @implementation CountrySelectView
@@ -21,6 +23,7 @@
 {
     self = [super initWithFrame:UIScreen.mainScreen.bounds];
     if (self) {
+        _selectCountries = [NSMutableArray array];
         [self addSubview:self.collectionView];
     }
     return self;
@@ -88,10 +91,15 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-//    MuseumListModelMuseum_list *model = self.data.museum_list[indexPath.item];
-//    MuseumDetailViewController *vc = MuseumDetailViewController.new;
-//    vc.m_museum_id = model.m_museum_id;
-//    [self.navigationController pushViewController:vc animated:YES];
+    NSString *country = _data.data.sortAll[indexPath.section].all[indexPath.item].cuntryname;
+    [_selectCountries addObject:country];
+    NSLog(@"%@",_selectCountries);
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath{
+    NSString *country = _data.data.sortAll[indexPath.section].all[indexPath.item].cuntryname;
+    [_selectCountries removeObject:country];
+    NSLog(@"%@",_selectCountries);
 }
 
 #pragma mark - Getter
@@ -124,6 +132,8 @@
         //4.设置代理
         _collectionView.delegate = self;
         _collectionView.dataSource = self;
+        
+        _collectionView.allowsMultipleSelection = YES;
         
     }
     return _collectionView;
