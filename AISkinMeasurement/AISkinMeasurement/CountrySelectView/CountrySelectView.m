@@ -8,7 +8,8 @@
 
 #import "CountrySelectView.h"
 #import "CountrySelectCell.h"
-@interface CountrySelectView ()<UICollectionViewDelegate,UICollectionViewDataSource>
+#import "UIColor+Utils.h"
+@interface CountrySelectView ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
 @property (strong, nonatomic) UICollectionView *collectionView;
 
@@ -53,6 +54,24 @@
 }
 
 //- (NSIndexPath *)collectionView:(UICollectionView *)collectionView indexPathForIndexTitle:(NSString *)title atIndex:(NSInteger)index
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section{
+    return CGSizeMake(40, 20);
+}
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+    if (kind == UICollectionElementKindSectionHeader) {
+        UICollectionReusableView *view = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:NSStringFromClass(UICollectionReusableView.class) forIndexPath:indexPath];
+        [view.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+        
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(20, 0, 40, 20)];
+        label.text = _data.data.sortAll[indexPath.section].firstletter;
+        label.textColor = [UIColor colorWithHexString:@"#2A323E"];
+        [view addSubview:label];
+        return view;
+    }
+    return 0;
+}
 
 - (NSArray<NSString *> *)indexTitlesForCollectionView:(UICollectionView *)collectionView{
     NSMutableArray *arr = [NSMutableArray array];
@@ -100,10 +119,12 @@
         //3.注册collectionViewCell
         //注意，此处的ReuseIdentifier 必须和 cellForItemAtIndexPath 方法中 一致 均为 cellId
         [_collectionView registerNib:[UINib nibWithNibName:NSStringFromClass(CountrySelectCell.class) bundle:nil] forCellWithReuseIdentifier:NSStringFromClass(CountrySelectCell.class)];
+        [_collectionView registerClass:UICollectionReusableView.class forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier: NSStringFromClass(UICollectionReusableView.class)];
         
         //4.设置代理
         _collectionView.delegate = self;
         _collectionView.dataSource = self;
+        
     }
     return _collectionView;
 }
