@@ -87,6 +87,14 @@
     
     // 去掉数组为0的元素
     NSMutableArray *filterArray = [NSMutableArray array];
+    
+    if (data.data.hot.count) {
+        MuseumCountriesModelDataSortAll *hot = MuseumCountriesModelDataSortAll.new;
+        hot.firstletter = @"热门城市";
+        hot.all = [data.data.hot copy];
+        [filterArray addObject:hot];
+    }
+    
     for (MuseumCountriesModelDataSortAll *obj in allArray) {
         if (obj.all.count) {
             [filterArray addObject:obj];

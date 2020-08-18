@@ -59,7 +59,7 @@
 //- (NSIndexPath *)collectionView:(UICollectionView *)collectionView indexPathForIndexTitle:(NSString *)title atIndex:(NSInteger)index
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section{
-    return CGSizeMake(40, 20);
+    return CGSizeMake(100, 20);
 }
 
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
@@ -67,7 +67,8 @@
         UICollectionReusableView *view = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:NSStringFromClass(UICollectionReusableView.class) forIndexPath:indexPath];
         [view.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
         
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(20, 0, 40, 20)];
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(20, 0, 100, 20)];
+        label.font = [UIFont boldSystemFontOfSize:14];
         label.text = _data.data.sortAll[indexPath.section].firstletter;
         label.textColor = [UIColor colorWithHexString:@"#2A323E"];
         [view addSubview:label];
