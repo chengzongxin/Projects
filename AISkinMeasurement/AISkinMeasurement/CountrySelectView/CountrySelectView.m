@@ -23,6 +23,7 @@
 {
     self = [super initWithFrame:UIScreen.mainScreen.bounds];
     if (self) {
+        self.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
         _selectCountries = [NSMutableArray array];
         [self addSubview:self.collectionView];
     }
@@ -122,14 +123,15 @@
         layout.sectionInset = UIEdgeInsetsMake(10, 15, 10, 15);
         //2.初始化collectionView
         CGRect frame = self.bounds;
-//        frame.size.height = frame.size.height - SafeAreaTopHeight - SafeAreaBottomHeight;
+        frame.origin.y = 123;
+        frame.size.height -= 123;
         _collectionView = [[UICollectionView alloc] initWithFrame:frame collectionViewLayout:layout];
         _collectionView.backgroundColor = UIColor.whiteColor;
         //3.注册collectionViewCell
         //注意，此处的ReuseIdentifier 必须和 cellForItemAtIndexPath 方法中 一致 均为 cellId
         [_collectionView registerNib:[UINib nibWithNibName:NSStringFromClass(CountrySelectCell.class) bundle:nil] forCellWithReuseIdentifier:NSStringFromClass(CountrySelectCell.class)];
         [_collectionView registerClass:UICollectionReusableView.class forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier: NSStringFromClass(UICollectionReusableView.class)];
-        
+        _collectionView.contentInset = UIEdgeInsetsMake(32, 0, 60, 0);
         //4.设置代理
         _collectionView.delegate = self;
         _collectionView.dataSource = self;
