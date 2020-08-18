@@ -131,8 +131,8 @@
         layout.sectionInset = UIEdgeInsetsMake(10, 25, 10, 25);
         //2.初始化collectionView
         CGRect frame = self.bounds;
-        frame.origin.y = 123;
-        frame.size.height -= 123;
+        frame.origin.y = 173;
+        frame.size.height -= 173;
         _collectionView = [[UICollectionView alloc] initWithFrame:frame collectionViewLayout:layout];
         _collectionView.backgroundColor = UIColor.whiteColor;
         //3.注册collectionViewCell
