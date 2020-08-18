@@ -119,11 +119,11 @@
         //    ayout.headerReferenceSize = CGSizeMake(self.view.frame.size.width, 242);
         //    layout.footerReferenceSize = CGSizeMake(self.view.bounds.size.width, 1000);
         //该方法也可以设置itemSize
-        CGFloat margin = 15, interval = 10;
+        CGFloat margin = 10, interval = 10;
         layout.itemSize = CGSizeMake(100, 32);
         layout.minimumInteritemSpacing = interval;
         layout.minimumLineSpacing = margin;
-        layout.sectionInset = UIEdgeInsetsMake(10, 15, 10, 15);
+        layout.sectionInset = UIEdgeInsetsMake(10, 25, 10, 25);
         //2.初始化collectionView
         CGRect frame = self.bounds;
         frame.origin.y = 123;
