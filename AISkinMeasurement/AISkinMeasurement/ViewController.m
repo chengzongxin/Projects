@@ -15,6 +15,7 @@
 #import "SkinCameraViewController.h"
 #import "CombinationLabel.h"
 #import "FaceChangePromptView.h"
+#import "CountryViewModel.h"
 @interface ViewController ()
 @property (strong, nonatomic) SkinAnalysisView *ana;
 @property (strong, nonatomic) AlertBaseView *alert;
@@ -43,6 +44,12 @@
     
     
     [self.combinationLabel setLeftText:@"肌肤良好指数" rightText:@"好"];
+    
+    [CountryViewModel getMuseumCountries:^(id  _Nonnull data) {
+        
+    } fail:^(NSString * _Nonnull message) {
+        
+    }];
 }
 
 
@@ -75,15 +82,15 @@
 //    [alert show];
 //    _alert = alert;
     
-    AlertBaseView *alert = [[AlertBaseView alloc] initWithXib:[FaceChangePromptView class]];
-    __weak __typeof__(self)weakSelf = self;
-    __weak __typeof__(AlertBaseView *)weakalert = alert;
-    FaceChangePromptView *custom = alert.customView;
-    custom.tapItem = ^(int index) {
-        
-        [weakalert dismiss];
-    };
-    [alert show];
+//    AlertBaseView *alert = [[AlertBaseView alloc] initWithXib:[FaceChangePromptView class]];
+//    __weak __typeof__(self)weakSelf = self;
+//    __weak __typeof__(AlertBaseView *)weakalert = alert;
+//    FaceChangePromptView *custom = alert.customView;
+//    custom.tapItem = ^(int index) {
+//
+//        [weakalert dismiss];
+//    };
+//    [alert show];
     
 }
 

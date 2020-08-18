@@ -34,6 +34,8 @@
 		5936B4F8247BBFE100D2BE92 /* NormalAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 5936B4F7247BBFE100D2BE92 /* NormalAlert.m */; };
 		5936B4FA247BBFEB00D2BE92 /* NormalAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5936B4F9247BBFEB00D2BE92 /* NormalAlert.xib */; };
 		5936B4FD247BD36600D2BE92 /* CombinationLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5936B4FC247BD36600D2BE92 /* CombinationLabel.m */; };
+		593D0B0D24EB897B00782445 /* CountryViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 593D0B0C24EB897B00782445 /* CountryViewModel.m */; };
+		593D0B1024EB8C4D00782445 /* MuseumCountriesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 593D0B0F24EB8C4D00782445 /* MuseumCountriesModel.m */; };
 		59409987247633F8000A2AEA /* UIView+Convenient.m in Sources */ = {isa = PBXBuildFile; fileRef = 59409980247633F8000A2AEA /* UIView+Convenient.m */; };
 		59409988247633F8000A2AEA /* NSDate+Convenient.m in Sources */ = {isa = PBXBuildFile; fileRef = 59409981247633F8000A2AEA /* NSDate+Convenient.m */; };
 		59409989247633F8000A2AEA /* CALayer+Convenient.m in Sources */ = {isa = PBXBuildFile; fileRef = 59409982247633F8000A2AEA /* CALayer+Convenient.m */; };
@@ -167,6 +169,10 @@
 		5936B4F9247BBFEB00D2BE92 /* NormalAlert.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NormalAlert.xib; sourceTree = "<group>"; };
 		5936B4FB247BD36600D2BE92 /* CombinationLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CombinationLabel.h; sourceTree = "<group>"; };
 		5936B4FC247BD36600D2BE92 /* CombinationLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CombinationLabel.m; sourceTree = "<group>"; };
+		593D0B0B24EB897B00782445 /* CountryViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CountryViewModel.h; sourceTree = "<group>"; };
+		593D0B0C24EB897B00782445 /* CountryViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CountryViewModel.m; sourceTree = "<group>"; };
+		593D0B0E24EB8C4D00782445 /* MuseumCountriesModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MuseumCountriesModel.h; sourceTree = "<group>"; };
+		593D0B0F24EB8C4D00782445 /* MuseumCountriesModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MuseumCountriesModel.m; sourceTree = "<group>"; };
 		5940997E247633F8000A2AEA /* CALayer+Convenient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+Convenient.h"; sourceTree = "<group>"; };
 		5940997F247633F8000A2AEA /* UIButton+Convenient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Convenient.h"; sourceTree = "<group>"; };
 		59409980247633F8000A2AEA /* UIView+Convenient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Convenient.m"; sourceTree = "<group>"; };
@@ -387,6 +393,17 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
+		593D0B0A24EB896500782445 /* CountrySelectView */ = {
+			isa = PBXGroup;
+			children = (
+				593D0B0B24EB897B00782445 /* CountryViewModel.h */,
+				593D0B0C24EB897B00782445 /* CountryViewModel.m */,
+				593D0B0E24EB8C4D00782445 /* MuseumCountriesModel.h */,
+				593D0B0F24EB8C4D00782445 /* MuseumCountriesModel.m */,
+			);
+			path = CountrySelectView;
+			sourceTree = "<group>";
+		};
 		5940997D247633F8000A2AEA /* UIKit+Convenient */ = {
 			isa = PBXGroup;
 			children = (
@@ -488,6 +505,7 @@
 				597A08AE2474CFC6002FE680 /* ViewController.m */,
 				5936B4FB247BD36600D2BE92 /* CombinationLabel.h */,
 				5936B4FC247BD36600D2BE92 /* CombinationLabel.m */,
+				593D0B0A24EB896500782445 /* CountrySelectView */,
 				5936B4CA247BA97A00D2BE92 /* PageViewController */,
 				5936B450247B61B000D2BE92 /* AlertView */,
 				5940997D247633F8000A2AEA /* UIKit+Convenient */,
@@ -949,6 +967,7 @@
 				5936B4E6247BA97A00D2BE92 /* PageCollectionView.m in Sources */,
 				5936B485247B71C600D2BE92 /* AlertBaseView.m in Sources */,
 				59FBEE62247538690073A947 /* GBRadarChartDataItem.m in Sources */,
+				593D0B0D24EB897B00782445 /* CountryViewModel.m in Sources */,
 				59409988247633F8000A2AEA /* NSDate+Convenient.m in Sources */,
 				59FBEE64247538690073A947 /* FacePreviewView.m in Sources */,
 				594099A224768601000A2AEA /* SkinHeiyanquanSection.m in Sources */,
@@ -979,6 +998,7 @@
 				599EC15424728BA300C35EA0 /* SkinMeasurementViewController.m in Sources */,
 				5940999C247685E6000A2AEA /* SkinZhouwenSection.m in Sources */,
 				59FBEE63247538690073A947 /* SCPermissionsView.m in Sources */,
+				593D0B1024EB8C4D00782445 /* MuseumCountriesModel.m in Sources */,
 				5936B4FD247BD36600D2BE92 /* CombinationLabel.m in Sources */,
 				599EC15C24728F0400C35EA0 /* SkinOverviewSection.m in Sources */,
 				594099B024768682000A2AEA /* SkinHeitouCell.m in Sources */,

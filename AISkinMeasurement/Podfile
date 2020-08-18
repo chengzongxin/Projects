@@ -8,6 +8,7 @@ target 'AISkinMeasurement' do
   # Pods for AISkinMeasurement
  	pod 'IGListKit'
   pod 'AFNetworking'
+  pod 'MJExtension'
 
   target 'AISkinMeasurementTests' do
     inherit! :search_paths
