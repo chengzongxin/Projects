@@ -27,7 +27,7 @@
     NSString *urlString = @"https://mtfy-app-gw.matafy.com/museum/getMuseumCountries";
     
     [manager GET:urlString parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSLog(@"%@",responseObject);
+//        NSLog(@"%@",responseObject);
         MuseumCountriesModel *model = [MuseumCountriesModel mj_objectWithKeyValues:responseObject];
         if (model.code == 200) {
             CFAbsoluteTime startTime =CFAbsoluteTimeGetCurrent();
@@ -45,6 +45,10 @@
 }
 
 + (void)sort:(MuseumCountriesModel *)data{
+    if (!data || data.data.all.count == 0) {
+        return;
+    }
+    
     NSDictionary *pinyinDic = @{ @"A": @(1), @"B": @(2), @"C": @(3), @"D": @(4), @"E": @(5), @"F": @(6), @"G": @(7), @"H": @(8), @"I": @(9), @"J": @(10), @"K": @(11), @"L": @(12), @"M": @(13), @"N": @(14), @"O": @(15), @"P": @(16), @"Q": @(17), @"R": @(18), @"S": @(19), @"T": @(20), @"U": @(21), @"V": @(22), @"W": @(23), @"X": @(24), @"Y": @(25), @"Z": @(26) };
     
     for (MuseumCountriesModelDataAll *obj in data.data.all) {
@@ -63,7 +67,7 @@
         NSComparisonResult resuest = [obj1 compare:obj2];
         return resuest;
     }];
-    NSLog(@"afterSortKeyArray:%@",afterSortKeyArray);
+//    NSLog(@"afterSortKeyArray:%@",afterSortKeyArray);
     
     for (int i = 0; i < 26; i ++) {
         MuseumCountriesModelDataSortAll *sortModel = MuseumCountriesModelDataSortAll.new;

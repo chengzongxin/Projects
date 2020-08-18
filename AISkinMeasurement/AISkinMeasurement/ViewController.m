@@ -16,6 +16,7 @@
 #import "CombinationLabel.h"
 #import "FaceChangePromptView.h"
 #import "CountryViewModel.h"
+#import <MJExtension/MJExtension.h>
 @interface ViewController ()
 @property (strong, nonatomic) SkinAnalysisView *ana;
 @property (strong, nonatomic) AlertBaseView *alert;
@@ -44,10 +45,10 @@
     
     [self.combinationLabel setLeftText:@"肌肤良好指数" rightText:@"好"];
     
-    [CountryViewModel getMuseumCountries:^(id  _Nonnull data) {
-        
+    [CountryViewModel getMuseumCountries:^(MuseumCountriesModel *  _Nonnull data) {
+        NSLog(@"%@",[data mj_keyValues]);
     } fail:^(NSString * _Nonnull message) {
-        
+        NSLog(@"%@",message);
     }];
 }
 
