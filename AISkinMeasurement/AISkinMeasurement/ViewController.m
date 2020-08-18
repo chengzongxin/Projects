@@ -31,11 +31,10 @@
     [super viewDidLoad];
     
     
-//    self.view.backgroundColor = UIColor.darkGrayColor;
+    self.view.backgroundColor = UIColor.whiteColor;
     
     self.navigationController.navigationBar.shadowImage = UIImage.new;
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
-    
     
     CombinationLabel *label = [[CombinationLabel alloc] initWithFrame:CGRectMake(100, 100, 100, 20)];
 //    label.backgroundColor = UIColor.whiteColor;

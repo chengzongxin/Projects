@@ -36,6 +36,7 @@
 		5936B4FD247BD36600D2BE92 /* CombinationLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5936B4FC247BD36600D2BE92 /* CombinationLabel.m */; };
 		593D0B0D24EB897B00782445 /* CountryViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 593D0B0C24EB897B00782445 /* CountryViewModel.m */; };
 		593D0B1024EB8C4D00782445 /* MuseumCountriesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 593D0B0F24EB8C4D00782445 /* MuseumCountriesModel.m */; };
+		593D0B1324EBB64B00782445 /* NSArray+FP.m in Sources */ = {isa = PBXBuildFile; fileRef = 593D0B1224EBB64B00782445 /* NSArray+FP.m */; };
 		59409987247633F8000A2AEA /* UIView+Convenient.m in Sources */ = {isa = PBXBuildFile; fileRef = 59409980247633F8000A2AEA /* UIView+Convenient.m */; };
 		59409988247633F8000A2AEA /* NSDate+Convenient.m in Sources */ = {isa = PBXBuildFile; fileRef = 59409981247633F8000A2AEA /* NSDate+Convenient.m */; };
 		59409989247633F8000A2AEA /* CALayer+Convenient.m in Sources */ = {isa = PBXBuildFile; fileRef = 59409982247633F8000A2AEA /* CALayer+Convenient.m */; };
@@ -173,6 +174,8 @@
 		593D0B0C24EB897B00782445 /* CountryViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CountryViewModel.m; sourceTree = "<group>"; };
 		593D0B0E24EB8C4D00782445 /* MuseumCountriesModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MuseumCountriesModel.h; sourceTree = "<group>"; };
 		593D0B0F24EB8C4D00782445 /* MuseumCountriesModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MuseumCountriesModel.m; sourceTree = "<group>"; };
+		593D0B1124EBB64B00782445 /* NSArray+FP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+FP.h"; sourceTree = "<group>"; };
+		593D0B1224EBB64B00782445 /* NSArray+FP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+FP.m"; sourceTree = "<group>"; };
 		5940997E247633F8000A2AEA /* CALayer+Convenient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+Convenient.h"; sourceTree = "<group>"; };
 		5940997F247633F8000A2AEA /* UIButton+Convenient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Convenient.h"; sourceTree = "<group>"; };
 		59409980247633F8000A2AEA /* UIView+Convenient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Convenient.m"; sourceTree = "<group>"; };
@@ -505,6 +508,8 @@
 				597A08AE2474CFC6002FE680 /* ViewController.m */,
 				5936B4FB247BD36600D2BE92 /* CombinationLabel.h */,
 				5936B4FC247BD36600D2BE92 /* CombinationLabel.m */,
+				593D0B1124EBB64B00782445 /* NSArray+FP.h */,
+				593D0B1224EBB64B00782445 /* NSArray+FP.m */,
 				593D0B0A24EB896500782445 /* CountrySelectView */,
 				5936B4CA247BA97A00D2BE92 /* PageViewController */,
 				5936B450247B61B000D2BE92 /* AlertView */,
@@ -954,6 +959,7 @@
 				599EC16024728F6100C35EA0 /* SkinOverviewCell.m in Sources */,
 				594099C424768AFC000A2AEA /* SkinDimentionHeaderView.m in Sources */,
 				59409993247685A5000A2AEA /* SkinDoudouSection.m in Sources */,
+				593D0B1324EBB64B00782445 /* NSArray+FP.m in Sources */,
 				5940999F247685F7000A2AEA /* SkinMaokongSection.m in Sources */,
 				599EC0952472859800C35EA0 /* main.m in Sources */,
 				5925BA082477DA1E00D52E61 /* UIImage+Convenient.m in Sources */,

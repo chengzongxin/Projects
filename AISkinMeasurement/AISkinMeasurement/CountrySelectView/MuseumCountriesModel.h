@@ -32,11 +32,17 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+@interface MuseumCountriesModelDataSortAll :NSObject
+@property (nonatomic , strong) NSMutableArray <MuseumCountriesModelDataAll *>              * all;
+@property (nonatomic , copy) NSString              * firstletter;
+
+@end
+
 
 @interface MuseumCountriesModelData :NSObject
 @property (nonatomic , strong) NSArray <MuseumCountriesModelDataHot *>              * hot;
 @property (nonatomic , strong) NSArray <MuseumCountriesModelDataAll *>              * all;
-
+@property (nonatomic , strong) NSArray <MuseumCountriesModelDataSortAll *>          * sortAll;
 @end
 
 

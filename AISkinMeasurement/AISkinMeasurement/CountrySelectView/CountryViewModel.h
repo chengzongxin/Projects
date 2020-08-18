@@ -12,7 +12,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CountryViewModel : NSObject
-+ (void)getMuseumCountries:(void(^)(id MuseumCountriesModel))success
++ (void)getMuseumCountries:(void(^)(MuseumCountriesModel *))success
                       fail:(void(^)(NSString *message))fail;
 @end
 
