@@ -40,6 +40,8 @@
 		593D0B1A24EBC7A400782445 /* CountrySelectCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 593D0B1824EBC7A400782445 /* CountrySelectCell.m */; };
 		593D0B1B24EBC7A400782445 /* CountrySelectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 593D0B1924EBC7A400782445 /* CountrySelectCell.xib */; };
 		593D0B1E24EBCD4300782445 /* UIColor+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 593D0B1C24EBCD4300782445 /* UIColor+Utils.m */; };
+		593D0B2224EBD86C00782445 /* CountryIndexCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 593D0B2024EBD86C00782445 /* CountryIndexCell.m */; };
+		593D0B2324EBD86C00782445 /* CountryIndexCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 593D0B2124EBD86C00782445 /* CountryIndexCell.xib */; };
 		59409987247633F8000A2AEA /* UIView+Convenient.m in Sources */ = {isa = PBXBuildFile; fileRef = 59409980247633F8000A2AEA /* UIView+Convenient.m */; };
 		59409988247633F8000A2AEA /* NSDate+Convenient.m in Sources */ = {isa = PBXBuildFile; fileRef = 59409981247633F8000A2AEA /* NSDate+Convenient.m */; };
 		59409989247633F8000A2AEA /* CALayer+Convenient.m in Sources */ = {isa = PBXBuildFile; fileRef = 59409982247633F8000A2AEA /* CALayer+Convenient.m */; };
@@ -184,6 +186,9 @@
 		593D0B1924EBC7A400782445 /* CountrySelectCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountrySelectCell.xib; sourceTree = "<group>"; };
 		593D0B1C24EBCD4300782445 /* UIColor+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Utils.m"; sourceTree = "<group>"; };
 		593D0B1D24EBCD4300782445 /* UIColor+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Utils.h"; sourceTree = "<group>"; };
+		593D0B1F24EBD86C00782445 /* CountryIndexCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CountryIndexCell.h; sourceTree = "<group>"; };
+		593D0B2024EBD86C00782445 /* CountryIndexCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CountryIndexCell.m; sourceTree = "<group>"; };
+		593D0B2124EBD86C00782445 /* CountryIndexCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryIndexCell.xib; sourceTree = "<group>"; };
 		5940997E247633F8000A2AEA /* CALayer+Convenient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+Convenient.h"; sourceTree = "<group>"; };
 		5940997F247633F8000A2AEA /* UIButton+Convenient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Convenient.h"; sourceTree = "<group>"; };
 		59409980247633F8000A2AEA /* UIView+Convenient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Convenient.m"; sourceTree = "<group>"; };
@@ -412,6 +417,9 @@
 				593D0B1724EBC7A400782445 /* CountrySelectCell.h */,
 				593D0B1824EBC7A400782445 /* CountrySelectCell.m */,
 				593D0B1924EBC7A400782445 /* CountrySelectCell.xib */,
+				593D0B1F24EBD86C00782445 /* CountryIndexCell.h */,
+				593D0B2024EBD86C00782445 /* CountryIndexCell.m */,
+				593D0B2124EBD86C00782445 /* CountryIndexCell.xib */,
 				593D0B0B24EB897B00782445 /* CountryViewModel.h */,
 				593D0B0C24EB897B00782445 /* CountryViewModel.m */,
 				593D0B0E24EB8C4D00782445 /* MuseumCountriesModel.h */,
@@ -827,6 +835,7 @@
 				594099AC24768670000A2AEA /* SkinBandianCell.xib in Resources */,
 				5936B4E7247BA97A00D2BE92 /* coin_ls_btn_02@3x.png in Resources */,
 				594099B124768682000A2AEA /* SkinHeitouCell.xib in Resources */,
+				593D0B2324EBD86C00782445 /* CountryIndexCell.xib in Resources */,
 				599EC16124728F6100C35EA0 /* SkinOverviewCell.xib in Resources */,
 				591D427D24A9C21400D9F0B4 /* FaceChangePromptView.xib in Resources */,
 				594099B624768690000A2AEA /* SkinZhouwenCell.xib in Resources */,
@@ -974,6 +983,7 @@
 				599EC16024728F6100C35EA0 /* SkinOverviewCell.m in Sources */,
 				594099C424768AFC000A2AEA /* SkinDimentionHeaderView.m in Sources */,
 				59409993247685A5000A2AEA /* SkinDoudouSection.m in Sources */,
+				593D0B2224EBD86C00782445 /* CountryIndexCell.m in Sources */,
 				5940999F247685F7000A2AEA /* SkinMaokongSection.m in Sources */,
 				599EC0952472859800C35EA0 /* main.m in Sources */,
 				5925BA082477DA1E00D52E61 /* UIImage+Convenient.m in Sources */,

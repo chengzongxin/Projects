@@ -90,7 +90,7 @@
     
     if (data.data.hot.count) {
         MuseumCountriesModelDataSortAll *hot = MuseumCountriesModelDataSortAll.new;
-        hot.firstletter = @"热门城市";
+        hot.firstletter = @"热门国家";
         hot.all = [data.data.hot copy];
         [filterArray addObject:hot];
     }

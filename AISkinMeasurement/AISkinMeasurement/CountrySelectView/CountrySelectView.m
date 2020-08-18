@@ -9,10 +9,11 @@
 #import "CountrySelectView.h"
 #import "CountrySelectCell.h"
 #import "UIColor+Utils.h"
-@interface CountrySelectView ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
+#import "CountryIndexCell.h"
+@interface CountrySelectView ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UITableViewDataSource,UITableViewDelegate>
 
 @property (strong, nonatomic) UICollectionView *collectionView;
-
+@property (strong, nonatomic) UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray *selectCountries;
 
 @end
@@ -26,6 +27,7 @@
         self.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
         _selectCountries = [NSMutableArray array];
         [self addSubview:self.collectionView];
+        [self addSubview:self.tableView];
     }
     return self;
 }
@@ -46,6 +48,7 @@
 - (void)setData:(MuseumCountriesModel *)data{
     _data = data;
     [self.collectionView reloadData];
+    [self.tableView reloadData];
 }
 
 #pragma mark - UICollectionView Delegate
@@ -142,6 +145,58 @@
     return _collectionView;
 }
 
+#pragma mark UITableView Delegate
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 25;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return _data.data.sortAll.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    CountryIndexCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([CountryIndexCell class])];
+    cell.backgroundColor = UIColor.clearColor;
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    NSString *text = _data.data.sortAll[indexPath.row].firstletter;
+    if ([text isEqualToString:@"热门国家"]) {
+        text = nil;
+    }
+    cell.titleLabel.text = text;
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSLog(@"%@",indexPath);
+    NSIndexPath *collectionIndexPath = [NSIndexPath indexPathForItem:0 inSection:indexPath.row];
+    [_collectionView scrollToItemAtIndexPath:collectionIndexPath atScrollPosition:UICollectionViewScrollPositionTop animated:YES];
+}
+#pragma mark - Getter TableView
+- (UITableView *)tableView{
+    if (!_tableView) {
+        CGRect frame = self.bounds;
+        frame.origin.x = self.bounds.size.width - 30;
+        frame.origin.y = self.collectionView.frame.origin.y;
+        frame.size.width = 30;
+        frame.size.height = 600;
+        _tableView = [[UITableView alloc] initWithFrame:frame style:UITableViewStylePlain];
+        _tableView.backgroundColor = [UIColor clearColor];
+        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        _tableView.delegate = self;
+        _tableView.dataSource = self;
+        _tableView.sectionHeaderHeight = 0;
+        _tableView.sectionFooterHeight = 0;
+        _tableView.estimatedRowHeight = 64;
+        // UITableViewStyleGrouped headerView占据35高度
+        _tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
+        // 自适应内容边距
+        _tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentAlways;
+        // 隐藏下面多出来的cell
+        _tableView.tableFooterView = [UIView new];
+        [_tableView registerNib:[UINib nibWithNibName:NSStringFromClass([CountryIndexCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([CountryIndexCell class])];
+    }
+    return _tableView;
+}
 
 
 @end
