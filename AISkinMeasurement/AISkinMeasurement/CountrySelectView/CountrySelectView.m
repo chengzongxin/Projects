@@ -11,14 +11,14 @@
 #import "UIColor+Utils.h"
 #import "CountryIndexCell.h"
 #import "CountrySelectButtonView.h"
+#import "CountrySelectShowView.h"
 @interface CountrySelectView ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UITableViewDataSource,UITableViewDelegate>
 
 @property (strong, nonatomic) UICollectionView *collectionView;
 @property (strong, nonatomic) UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray *selectCountries;
 @property (strong, nonatomic) CountrySelectButtonView *buttonView;
-//@property (strong, nonatomic) UIButton *resetButton;
-//@property (strong, nonatomic) UIButton *confirmButton;
+@property (strong, nonatomic) CountrySelectShowView *showView;
 
 @end
 
@@ -30,6 +30,7 @@
     if (self) {
         self.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
         _selectCountries = [NSMutableArray array];
+        [self addSubview:self.showView];
         [self addSubview:self.collectionView];
         [self addSubview:self.tableView];
         [self addSubview:self.buttonView];
@@ -104,12 +105,14 @@
     NSString *country = _data.data.sortAll[indexPath.section].all[indexPath.item].cuntryname;
     [_selectCountries addObject:country];
     NSLog(@"%@",_selectCountries);
+    self.showView.titles = _selectCountries;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath{
     NSString *country = _data.data.sortAll[indexPath.section].all[indexPath.item].cuntryname;
     [_selectCountries removeObject:country];
     NSLog(@"%@",_selectCountries);
+    self.showView.titles = _selectCountries;
 }
 
 #pragma mark - Getter
@@ -213,6 +216,13 @@
         };
     }
     return _buttonView;
+}
+
+- (CountrySelectShowView *)showView{
+    if (!_showView) {
+        _showView = [[CountrySelectShowView alloc] initWithFrame:CGRectMake(0, 123, self.bounds.size.width, 50)];
+    }
+    return _showView;
 }
 
 - (void)tapItem:(int)index{

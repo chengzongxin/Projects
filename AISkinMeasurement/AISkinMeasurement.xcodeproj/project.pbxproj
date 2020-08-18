@@ -44,6 +44,9 @@
 		593D0B2324EBD86C00782445 /* CountryIndexCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 593D0B2124EBD86C00782445 /* CountryIndexCell.xib */; };
 		593D0B2624EBDE7100782445 /* CountrySelectButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 593D0B2524EBDE7100782445 /* CountrySelectButtonView.m */; };
 		593D0B2824EBDE7900782445 /* CountrySelectButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 593D0B2724EBDE7900782445 /* CountrySelectButtonView.xib */; };
+		593D0B2B24EBE2D700782445 /* CountrySelectShowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 593D0B2A24EBE2D700782445 /* CountrySelectShowView.m */; };
+		593D0B2F24EBE39E00782445 /* CountrySelectShowViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 593D0B2D24EBE39E00782445 /* CountrySelectShowViewCell.m */; };
+		593D0B3024EBE39E00782445 /* CountrySelectShowViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 593D0B2E24EBE39E00782445 /* CountrySelectShowViewCell.xib */; };
 		59409987247633F8000A2AEA /* UIView+Convenient.m in Sources */ = {isa = PBXBuildFile; fileRef = 59409980247633F8000A2AEA /* UIView+Convenient.m */; };
 		59409988247633F8000A2AEA /* NSDate+Convenient.m in Sources */ = {isa = PBXBuildFile; fileRef = 59409981247633F8000A2AEA /* NSDate+Convenient.m */; };
 		59409989247633F8000A2AEA /* CALayer+Convenient.m in Sources */ = {isa = PBXBuildFile; fileRef = 59409982247633F8000A2AEA /* CALayer+Convenient.m */; };
@@ -194,6 +197,11 @@
 		593D0B2424EBDE7100782445 /* CountrySelectButtonView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CountrySelectButtonView.h; sourceTree = "<group>"; };
 		593D0B2524EBDE7100782445 /* CountrySelectButtonView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CountrySelectButtonView.m; sourceTree = "<group>"; };
 		593D0B2724EBDE7900782445 /* CountrySelectButtonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountrySelectButtonView.xib; sourceTree = "<group>"; };
+		593D0B2924EBE2D700782445 /* CountrySelectShowView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CountrySelectShowView.h; sourceTree = "<group>"; };
+		593D0B2A24EBE2D700782445 /* CountrySelectShowView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CountrySelectShowView.m; sourceTree = "<group>"; };
+		593D0B2C24EBE39E00782445 /* CountrySelectShowViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CountrySelectShowViewCell.h; sourceTree = "<group>"; };
+		593D0B2D24EBE39E00782445 /* CountrySelectShowViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CountrySelectShowViewCell.m; sourceTree = "<group>"; };
+		593D0B2E24EBE39E00782445 /* CountrySelectShowViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountrySelectShowViewCell.xib; sourceTree = "<group>"; };
 		5940997E247633F8000A2AEA /* CALayer+Convenient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+Convenient.h"; sourceTree = "<group>"; };
 		5940997F247633F8000A2AEA /* UIButton+Convenient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Convenient.h"; sourceTree = "<group>"; };
 		59409980247633F8000A2AEA /* UIView+Convenient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Convenient.m"; sourceTree = "<group>"; };
@@ -425,6 +433,11 @@
 				593D0B1F24EBD86C00782445 /* CountryIndexCell.h */,
 				593D0B2024EBD86C00782445 /* CountryIndexCell.m */,
 				593D0B2124EBD86C00782445 /* CountryIndexCell.xib */,
+				593D0B2924EBE2D700782445 /* CountrySelectShowView.h */,
+				593D0B2A24EBE2D700782445 /* CountrySelectShowView.m */,
+				593D0B2C24EBE39E00782445 /* CountrySelectShowViewCell.h */,
+				593D0B2D24EBE39E00782445 /* CountrySelectShowViewCell.m */,
+				593D0B2E24EBE39E00782445 /* CountrySelectShowViewCell.xib */,
 				593D0B2424EBDE7100782445 /* CountrySelectButtonView.h */,
 				593D0B2524EBDE7100782445 /* CountrySelectButtonView.m */,
 				593D0B2724EBDE7900782445 /* CountrySelectButtonView.xib */,
@@ -852,6 +865,7 @@
 				593D0B1B24EBC7A400782445 /* CountrySelectCell.xib in Resources */,
 				599EC1992472A8D200C35EA0 /* SkinSectionHeaderView.xib in Resources */,
 				5936B48A247B75DA00D2BE92 /* SkinMeasureAlert.xib in Resources */,
+				593D0B3024EBE39E00782445 /* CountrySelectShowViewCell.xib in Resources */,
 				59FBEE6D247544C90073A947 /* ZZCircleProgress.bundle in Resources */,
 				599EC08D2472859800C35EA0 /* Main.storyboard in Resources */,
 				594099C0247686A9000A2AEA /* SkinHeiyanquanCell.xib in Resources */,
@@ -996,10 +1010,12 @@
 				5940999F247685F7000A2AEA /* SkinMaokongSection.m in Sources */,
 				599EC0952472859800C35EA0 /* main.m in Sources */,
 				5925BA082477DA1E00D52E61 /* UIImage+Convenient.m in Sources */,
+				593D0B2B24EBE2D700782445 /* CountrySelectShowView.m in Sources */,
 				5925B9FD2477C89800D52E61 /* WZBCountdownLabel.m in Sources */,
 				599EC1982472A8D200C35EA0 /* SkinSectionHeaderView.m in Sources */,
 				5936B4DE247BA97A00D2BE92 /* PageViewController.m in Sources */,
 				599EC0872472859800C35EA0 /* SceneDelegate.m in Sources */,
+				593D0B2F24EBE39E00782445 /* CountrySelectShowViewCell.m in Sources */,
 				5936B4E2247BA97A00D2BE92 /* PageConst.m in Sources */,
 				59409987247633F8000A2AEA /* UIView+Convenient.m in Sources */,
 				5936B4F8247BBFE100D2BE92 /* NormalAlert.m in Sources */,
