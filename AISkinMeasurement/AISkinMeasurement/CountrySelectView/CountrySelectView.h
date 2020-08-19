@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (strong, nonatomic) MuseumCountriesModel* data;
 
+@property (nonatomic,copy) void (^selectCountriesBlock)(NSArray *coutries);
 @end
 
 NS_ASSUME_NONNULL_END

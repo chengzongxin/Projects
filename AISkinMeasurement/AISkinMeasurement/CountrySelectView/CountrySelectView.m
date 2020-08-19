@@ -16,7 +16,7 @@
 
 @property (strong, nonatomic) UICollectionView *collectionView;
 @property (strong, nonatomic) UITableView *tableView;
-@property (strong, nonatomic) NSMutableArray *selectCountries;
+@property (strong, nonatomic) NSMutableArray <NSString *>*selectCountries;
 @property (strong, nonatomic) CountrySelectButtonView *buttonView;
 @property (strong, nonatomic) CountrySelectShowView *showView;
 
@@ -78,7 +78,7 @@
         [view.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
         
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(20, 0, 100, 20)];
-        label.font = [UIFont boldSystemFontOfSize:14];
+        label.font = [UIFont fontWithName:@"PingFangSC-Medium" size:14];
         label.text = _data.data.sortAll[indexPath.section].firstletter;
         label.textColor = [UIColor colorWithHexString:@"#2A323E"];
         [view addSubview:label];
@@ -164,8 +164,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     CountryIndexCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([CountryIndexCell class])];
-    cell.backgroundColor = UIColor.clearColor;
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
     NSString *text = _data.data.sortAll[indexPath.row].firstletter;
     if ([text isEqualToString:@"热门国家"]) {
         text = nil;
@@ -221,12 +220,26 @@
 - (CountrySelectShowView *)showView{
     if (!_showView) {
         _showView = [[CountrySelectShowView alloc] initWithFrame:CGRectMake(0, 123, self.bounds.size.width, 50)];
+        __weak typeof(self) weakSelf = self;
+        _showView.dismiss = ^{
+            [weakSelf dismiss];
+        };
     }
     return _showView;
 }
 
 - (void)tapItem:(int)index{
     NSLog(@"%d",index);
+    if (index == 1) {
+        [_collectionView reloadData];
+        [_selectCountries removeAllObjects];
+        _showView.titles = [_selectCountries copy];
+    }else if (index == 2){
+        if (self.selectCountriesBlock) {
+            self.selectCountriesBlock([_selectCountries copy]);
+        }
+        [self dismiss];
+    }
 }
 
 @end

@@ -9,6 +9,7 @@
 #import "CountrySelectShowView.h"
 #import "CountrySelectShowViewCell.h"
 #import "UIColor+Utils.h"
+#import "UIView+Convenient.h"
 @interface CountrySelectShowView()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 @property (strong, nonatomic) UICollectionView *collectionView;
 @property (strong, nonatomic) UILabel *selectLabel;
@@ -22,6 +23,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor = UIColor.whiteColor;
+        [self halfCircleCornerDirect:UIRectCornerTopLeft|UIRectCornerTopRight radius:12];
         [self addSubview:self.selectLabel];
         [self addSubview:self.collectionView];
         [self addSubview:self.cancelButton];
@@ -47,7 +49,7 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
     NSString *text = _titles[indexPath.item];
-    CGFloat width = [text boundingRectWithSize:CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX) options:0 attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14]} context:nil].size.width + 10;
+    CGFloat width = [text boundingRectWithSize:CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX) options:0 attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:12]} context:nil].size.width + 16;
     return CGSizeMake(width, 20);
 }
 
@@ -91,6 +93,7 @@
     if (!_selectLabel) {
         _selectLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 56, self.bounds.size.height)];
         _selectLabel.textColor = [UIColor colorWithHexString:@"#8A98AD"];
+        _selectLabel.font = [UIFont systemFontOfSize:14];
         _selectLabel.text = @"已选";
         _selectLabel.textAlignment = NSTextAlignmentCenter;
     }
@@ -102,9 +105,17 @@
         _cancelButton = [UIButton buttonWithType:UIButtonTypeCustom];
         _cancelButton.frame = CGRectMake(self.bounds.size.width - 68, 0, 68, self.bounds.size.height);
         [_cancelButton setTitle:@"取消" forState:UIControlStateNormal];
-        [_cancelButton setTitleColor:[UIColor colorWithHexString:@"#3B434E"] forState:UIControlStateNormal];
+        [_cancelButton setTitleColor:[UIColor colorWithHexString:@"#2A323F"] forState:UIControlStateNormal];
+        _cancelButton.titleLabel.font = [UIFont systemFontOfSize:14];
+        [_cancelButton addTarget:self action:@selector(cancelButtonClick:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _cancelButton;
+}
+
+- (void)cancelButtonClick:(id)sender{
+    if (self.dismiss) {
+        self.dismiss();
+    }
 }
 
 @end

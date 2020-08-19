@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CountrySelectShowView : UIView
 @property (strong, nonatomic) NSArray *titles;
+@property (nonatomic,copy) void (^dismiss)(void);
 @end
 
 NS_ASSUME_NONNULL_END
