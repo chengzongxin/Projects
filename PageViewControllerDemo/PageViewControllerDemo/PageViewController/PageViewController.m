@@ -9,6 +9,7 @@
 #import "PageViewController.h"
 #import "PageBGScrollView.h"
 #import "UIView+Frame.h"
+#import "UIScrollView+PageContentScrollView.h"
 // 下划线额外宽度
 CGFloat const underLineAdditionW = 6;
 
@@ -291,6 +292,12 @@ CGFloat const underLineAdditionW = 6;
     CGFloat x = i * [UIScreen mainScreen].bounds.size.width;
     vc.view.frame = CGRectMake(x, 0, ScreenW  , self.contentScrollView.bounds.size.height);
     [self.contentScrollView addSubview:vc.view];
+    
+    [vc.view.subviews enumerateObjectsUsingBlock:^(__kindof UIScrollView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if ([obj isKindOfClass:UIScrollView.class]) {
+            [obj controlScroll];
+        }
+    }];
 }
 
 #pragma mark - 处理标题点击

@@ -22,6 +22,8 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (PageBGScrollView *)getPageScrollView;
 
+- (void)controlScroll;
+
 @end
 
 NS_ASSUME_NONNULL_END

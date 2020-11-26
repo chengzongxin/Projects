@@ -9,8 +9,6 @@
 #import <UIKit/UIKit.h>
 // 所有依赖头文件
 #import "UIViewController+Page.h"
-#import "PageTableView.h"
-#import "PageCollectionView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 @class PageConfig;

@@ -22,7 +22,7 @@
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     layout.scrollDirection = UICollectionViewScrollDirectionVertical;
     layout.itemSize = CGSizeMake(50, 50);
-    PageCollectionView *collectionView = [[PageCollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:layout];
+    UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:layout];
     collectionView.backgroundColor = UIColor.whiteColor;
     collectionView.delegate = self;
     collectionView.dataSource = self;

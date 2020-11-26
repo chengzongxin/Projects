@@ -10,8 +10,63 @@
 #import "PageBGScrollView.h"
 #import "UIView+Frame.h"
 #import "PageConst.h"
+#import <objc/runtime.h>
+
+@interface UIScrollView (PageContentScrollView) <UIGestureRecognizerDelegate>
+
+@end
 
 @implementation UIScrollView (PageContentScrollView)
+
+- (BOOL)page_gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer{
+//    return [self page_gestureRecognizer:gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:otherGestureRecognizer];
+    if ([otherGestureRecognizer.view isKindOfClass:PageBGScrollView.class]) {
+        return YES;
+    }
+    return NO;
+}
+
++ (void)load {
+    NSString *className = NSStringFromClass(self.class);
+    NSLog(@"classname %@", className);
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        Class class = [self class];
+        
+        // When swizzling a class method, use the following:
+        // Class class = object_getClass((id)self);
+        
+        SEL originalSelector = @selector(gestureRecognizer:shouldRecognizeSimultaneouslyWithGestureRecognizer:);
+        SEL swizzledSelector = @selector(page_gestureRecognizer:shouldRecognizeSimultaneouslyWithGestureRecognizer:);
+        
+        Method originalMethod = class_getInstanceMethod(class, originalSelector);
+        Method swizzledMethod = class_getInstanceMethod(class, swizzledSelector);
+        
+        BOOL didAddMethod =
+        class_addMethod(class,
+                        originalSelector,
+                        method_getImplementation(swizzledMethod),
+                        method_getTypeEncoding(swizzledMethod));
+        
+        if (didAddMethod) {
+            class_replaceMethod(class,
+                                swizzledSelector,
+                                method_getImplementation(originalMethod),
+                                method_getTypeEncoding(originalMethod));
+        } else {
+            method_exchangeImplementations(originalMethod, swizzledMethod);
+        }
+    });
+}
+
+- (void)controlScroll{
+    if (self.observationInfo) {
+        [self removeObservers];
+    }
+    
+        // 添加监听
+        [self addObservers];
+}
 
 
 - (void)bindNotificationWithSuperview:(UIView *)newSuperview{
