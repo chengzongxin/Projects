@@ -61,7 +61,7 @@
 //}
 
 - (void)pageViewController:(PageViewController *)pageViewController didScroll:(UIScrollView *)scrollView{
-    NSLog(@"%@",NSStringFromCGPoint(scrollView.contentOffset));
+//    NSLog(@"%@",NSStringFromCGPoint(scrollView.contentOffset));
 }
 
 - (void)pageViewController:(PageViewController *)pageViewController didSelectWithIndex:(NSInteger)index{

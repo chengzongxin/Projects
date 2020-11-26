@@ -18,48 +18,78 @@
 
 @implementation UIScrollView (PageContentScrollView)
 
-- (BOOL)page_gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer{
-//    BOOL should = [self page_gestureRecognizer:gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:otherGestureRecognizer];
+//- (BOOL)page_gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer{
+////    BOOL should = [self page_gestureRecognizer:gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:otherGestureRecognizer];
+//
+//    if ([otherGestureRecognizer.view isKindOfClass:PageBGScrollView.class]) {
+//        return YES;
+//    }else{
+//        return NO;
+//    }
+//}
+
+//+ (void)load {
+//    NSString *className = NSStringFromClass(self.class);
+//    NSLog(@"classname %@", className);
+//    static dispatch_once_t onceToken;
+//    dispatch_once(&onceToken, ^{
+//        Class class = [self class];
+//
+//        // When swizzling a class method, use the following:
+//        // Class class = object_getClass((id)self);
+//
+//        SEL originalSelector = @selector(gestureRecognizer:shouldRecognizeSimultaneouslyWithGestureRecognizer:);
+//        SEL swizzledSelector = @selector(page_gestureRecognizer:shouldRecognizeSimultaneouslyWithGestureRecognizer:);
+//
+//        Method originalMethod = class_getInstanceMethod(class, originalSelector);
+//        Method swizzledMethod = class_getInstanceMethod(class, swizzledSelector);
+//
+//        BOOL didAddMethod =
+//        class_addMethod(class,
+//                        originalSelector,
+//                        method_getImplementation(swizzledMethod),
+//                        method_getTypeEncoding(swizzledMethod));
+//
+//        if (didAddMethod) {
+//            class_replaceMethod(class,
+//                                swizzledSelector,
+//                                method_getImplementation(originalMethod),
+//                                method_getTypeEncoding(originalMethod));
+//        } else {
+//            method_exchangeImplementations(originalMethod, swizzledMethod);
+//        }
+//    });
+//}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer{
+    if ([gestureRecognizer.view isEqual:self] &&
+        ![otherGestureRecognizer.view isEqual:self] &&
+        [gestureRecognizer isKindOfClass:[UIPanGestureRecognizer class]] &&
+        [otherGestureRecognizer isKindOfClass:[UIPanGestureRecognizer class]] &&
+        [otherGestureRecognizer.view isKindOfClass:[PageBGScrollView class]]) {
+            UIPanGestureRecognizer *thisPanGes = (UIPanGestureRecognizer *)gestureRecognizer;
+            UIPanGestureRecognizer *otherPanGes = (UIPanGestureRecognizer*)otherGestureRecognizer;
+            CGPoint thisP = [thisPanGes translationInView:thisPanGes.view];
+            CGPoint otherP = [otherPanGes translationInView:otherPanGes.view];
+            
+            /**当子scrollView有左右横向滑动操作意图时，阻止多个手势同时被识别,即要么外层容器上下滑，要么子视图左右滑, 不能外层容器上下滑的同时子视图又左右滑，提升用户体验*/
+            if (otherP.x != 0) {
+                /** 需要判断otherP.view是否是横向滑动的scrollView,若是则返回NO，防止同时子内容横向滚动及外层容器上下滚动*/
+                CGSize contentSize = [(UIScrollView*)otherGestureRecognizer.view contentSize];
+                if (contentSize.height <= otherGestureRecognizer.view.bounds.size.height &&
+                    contentSize.width > otherGestureRecognizer.view.bounds.size.width) {
+                    return NO;
+                }
+            }
+            
+            return YES;
+            
+        }
     
-    if ([otherGestureRecognizer.view isKindOfClass:PageBGScrollView.class]) {
-        return YES;
-    }else{
-        return NO;
-    }
+    /** 仅针对嵌套的scrollview进行滑动手势同时识别*/
+    return NO;
 }
 
-+ (void)load {
-    NSString *className = NSStringFromClass(self.class);
-    NSLog(@"classname %@", className);
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        Class class = [self class];
-        
-        // When swizzling a class method, use the following:
-        // Class class = object_getClass((id)self);
-        
-        SEL originalSelector = @selector(gestureRecognizer:shouldRecognizeSimultaneouslyWithGestureRecognizer:);
-        SEL swizzledSelector = @selector(page_gestureRecognizer:shouldRecognizeSimultaneouslyWithGestureRecognizer:);
-        
-        Method originalMethod = class_getInstanceMethod(class, originalSelector);
-        Method swizzledMethod = class_getInstanceMethod(class, swizzledSelector);
-        
-        BOOL didAddMethod =
-        class_addMethod(class,
-                        originalSelector,
-                        method_getImplementation(swizzledMethod),
-                        method_getTypeEncoding(swizzledMethod));
-        
-        if (didAddMethod) {
-            class_replaceMethod(class,
-                                swizzledSelector,
-                                method_getImplementation(originalMethod),
-                                method_getTypeEncoding(originalMethod));
-        } else {
-            method_exchangeImplementations(originalMethod, swizzledMethod);
-        }
-    });
-}
 
 - (void)controlScroll{
     if (self.observationInfo) {
