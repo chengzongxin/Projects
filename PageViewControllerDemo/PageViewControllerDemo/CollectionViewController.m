@@ -9,7 +9,7 @@
 #import "CollectionViewController.h"
 #import "PageViewController.h"
 
-@interface CollectionViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
+@interface CollectionViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,PageChildViewController>
 
 @end
 
@@ -55,8 +55,8 @@
     return cell;
 }
 
-//- (void)scrollViewDidScroll:(PageCollectionView *)scrollView{
-//    [scrollView scrollViewDidScroll:scrollView];
-//}
+- (UIScrollView *)contentScrollView{
+    return self.view.subviews.firstObject;
+}
 
 @end

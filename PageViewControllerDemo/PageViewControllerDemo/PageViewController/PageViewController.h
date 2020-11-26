@@ -8,11 +8,10 @@
 
 #import <UIKit/UIKit.h>
 // 所有依赖头文件
-#import "UIViewController+Page.h"
 
 NS_ASSUME_NONNULL_BEGIN
 @class PageConfig;
-@protocol PageViewControllerDataSource,PageViewControllerDelegate;
+@protocol PageViewControllerDataSource,PageViewControllerDelegate,PageChildViewController;
 #pragma clang diagnostic push
 // To get rid of 'No protocol definition found' warnings which are not accurate
 #pragma clang diagnostic ignored "-Weverything"
@@ -24,7 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 /* 数据源,必须实现,数据源默认为自己(当前VC) */
 @property (nullable, nonatomic, weak) id <PageViewControllerDataSource> dataSource;
 /* 子控制器 */
-@property (nullable, nonatomic, readonly) NSArray<__kindof UIViewController *> *viewControllers;
+@property (nullable, nonatomic, readonly) NSArray<__kindof UIViewController<PageChildViewController> *> *viewControllers;
 // 滑动到某个ViewController
 - (void)scrollToIndex:(NSInteger)index animate:(BOOL)animate;
 
@@ -32,6 +31,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 #pragma mark - Public 交给子类实现
+
+@protocol PageChildViewController <NSObject>
+/* 返回滚动的scrollview 没有scrollView 不返回*/
+- (UIScrollView *)contentScrollView;
+
+@end
 
 @protocol PageViewControllerDataSource <NSObject>
 

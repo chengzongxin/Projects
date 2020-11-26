@@ -19,11 +19,13 @@
 @implementation UIScrollView (PageContentScrollView)
 
 - (BOOL)page_gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer{
-//    return [self page_gestureRecognizer:gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:otherGestureRecognizer];
+//    BOOL should = [self page_gestureRecognizer:gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:otherGestureRecognizer];
+    
     if ([otherGestureRecognizer.view isKindOfClass:PageBGScrollView.class]) {
         return YES;
+    }else{
+        return NO;
     }
-    return NO;
 }
 
 + (void)load {

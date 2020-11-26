@@ -20,7 +20,7 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = UIColor.grayColor;
     
-    self.notScrollView = YES;
+//    self.notScrollView = YES;
 }
 
 

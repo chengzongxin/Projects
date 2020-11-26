@@ -41,4 +41,8 @@
     return cell;
 }
 
+- (UIScrollView *)contentScrollView{
+    return self.view.subviews.firstObject;
+}
+
 @end

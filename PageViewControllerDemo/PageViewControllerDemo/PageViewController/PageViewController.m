@@ -282,9 +282,7 @@ CGFloat const underLineAdditionW = 6;
 - (void)setupOneViewController:(NSInteger)i
 {
     // 显示VC
-    UIViewController *vc = self.childViewControllers[i];
-    // 是否scrollView
-    self.bgScrollView.neverFixed = vc.notScrollView;
+    UIViewController<PageChildViewController> *vc = self.childViewControllers[i];
     if (vc.view.superview) {
         [vc viewWillAppear:YES];
         return;
@@ -293,11 +291,16 @@ CGFloat const underLineAdditionW = 6;
     vc.view.frame = CGRectMake(x, 0, ScreenW  , self.contentScrollView.bounds.size.height);
     [self.contentScrollView addSubview:vc.view];
     
-    [vc.view.subviews enumerateObjectsUsingBlock:^(__kindof UIScrollView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        if ([obj isKindOfClass:UIScrollView.class]) {
-            [obj controlScroll];
-        }
-    }];
+    UIScrollView *scrollView = nil;
+    if ([vc conformsToProtocol:@protocol(PageChildViewController)]) {
+        scrollView = [vc contentScrollView];
+    }
+    // 是否scrollView
+    if (scrollView) {
+        [scrollView controlScroll];
+    }else{
+        self.bgScrollView.neverFixed = YES;
+    }
 }
 
 #pragma mark - 处理标题点击
