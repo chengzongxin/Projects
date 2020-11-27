@@ -11,6 +11,7 @@
 #import "UIView+Frame.h"
 #import "PageConst.h"
 #import <objc/runtime.h>
+#import "Aspects.h"
 
 @interface UIScrollView (PageContentScrollView) <UIGestureRecognizerDelegate>
 
@@ -61,7 +62,7 @@
 //    });
 //}
 
-- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer{
+- (BOOL)hook_gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer{
     if ([gestureRecognizer.view isEqual:self] &&
         ![otherGestureRecognizer.view isEqual:self] &&
         [gestureRecognizer isKindOfClass:[UIPanGestureRecognizer class]] &&
@@ -96,8 +97,21 @@
         [self removeObservers];
     }
     
-        // 添加监听
-        [self addObservers];
+    
+    // 添加监听
+    [self addObservers];
+    [self aspect_hookSelector:@selector(gestureRecognizer:shouldRecognizeSimultaneouslyWithGestureRecognizer:)
+                                   withOptions:AspectPositionInstead
+                   usingBlock:^(id<AspectInfo> info,UIGestureRecognizer *gestureRecognizer,UIGestureRecognizer *otherGestureRecognizer){
+        
+        NSLog(@"info = %@",info);
+//        [self hook]
+        BOOL shouldScroll = [self hook_gestureRecognizer:gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:otherGestureRecognizer];
+        [info.instance setReturnValue:&shouldScroll];
+    }error:nil];
+    
+    SEL sel = @selector(gestureRecognizer:shouldRecognizeSimultaneouslyWithGestureRecognizer:);
+    class_addMethod(self, sel, class_getMethodImplementation(self, @selector(hook_gestureRecognizer:shouldRecognizeSimultaneouslyWithGestureRecognizer:)), "i@:@@");
 }
 
 
@@ -159,7 +173,7 @@
 - (void)didScroll{
     //    NSLog(@"%@",NSStringFromCGPoint(scrollView.contentOffset));
     PageBGScrollView *bgScrollView = [self getPageScrollView];
-    if ([bgScrollView isKindOfClass:UIScrollView.class]) {
+    if ([bgScrollView isMemberOfClass:UIScrollView.class]) {
         UIViewController *currentVC = [self currentViewController];
         CGFloat navH = ((currentVC.navigationController.navigationBar && !currentVC.navigationController.navigationBarHidden)? 44 : 0);
         if (bgScrollView.contentOffset.y < (bgScrollView.headerView.height - navH - kStatusH)) {

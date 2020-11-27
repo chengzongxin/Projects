@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1652D06F2570963C0095C180 /* Aspects.m in Sources */ = {isa = PBXBuildFile; fileRef = 1652D06E2570963B0095C180 /* Aspects.m */; };
 		5907272023C6BE51007ADF5A /* PageVCHeaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5907271F23C6BE51007ADF5A /* PageVCHeaderViewController.m */; };
 		5907272723C6C138007ADF5A /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 5907272623C6C138007ADF5A /* UIView+Frame.m */; };
 		5907273023C712EC007ADF5A /* PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5907272A23C712EB007ADF5A /* PageViewController.m */; };
@@ -48,6 +49,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1652D06D2570963B0095C180 /* Aspects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Aspects.h; sourceTree = "<group>"; };
+		1652D06E2570963B0095C180 /* Aspects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Aspects.m; sourceTree = "<group>"; };
 		5907271E23C6BE51007ADF5A /* PageVCHeaderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PageVCHeaderViewController.h; sourceTree = "<group>"; };
 		5907271F23C6BE51007ADF5A /* PageVCHeaderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PageVCHeaderViewController.m; sourceTree = "<group>"; };
 		5907272523C6C138007ADF5A /* UIView+Frame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
@@ -118,6 +121,8 @@
 		5907272423C6C106007ADF5A /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				1652D06D2570963B0095C180 /* Aspects.h */,
+				1652D06E2570963B0095C180 /* Aspects.m */,
 				5907272523C6C138007ADF5A /* UIView+Frame.h */,
 				5907272623C6C138007ADF5A /* UIView+Frame.m */,
 			);
@@ -346,6 +351,7 @@
 				59DBB65323C348680031F608 /* main.m in Sources */,
 				5907273023C712EC007ADF5A /* PageViewController.m in Sources */,
 				59DBB64523C348670031F608 /* AppDelegate.m in Sources */,
+				1652D06F2570963C0095C180 /* Aspects.m in Sources */,
 				5907273E23C728E1007ADF5A /* PageVCViewController.m in Sources */,
 				59637AA723CFF7DA001B02C0 /* PageConst.m in Sources */,
 				59C4422F23C853E9003F069F /* NormalViewController.m in Sources */,
