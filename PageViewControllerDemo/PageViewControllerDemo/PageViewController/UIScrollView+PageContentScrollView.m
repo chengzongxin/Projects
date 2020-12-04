@@ -110,8 +110,8 @@
         [info.instance setReturnValue:&shouldScroll];
     }error:nil];
     
-    SEL sel = @selector(gestureRecognizer:shouldRecognizeSimultaneouslyWithGestureRecognizer:);
-    class_addMethod(self, sel, class_getMethodImplementation(self, @selector(hook_gestureRecognizer:shouldRecognizeSimultaneouslyWithGestureRecognizer:)), "i@:@@");
+//    SEL sel = @selector(gestureRecognizer:shouldRecognizeSimultaneouslyWithGestureRecognizer:);
+//    class_addMethod(self, sel, class_getMethodImplementation(self, @selector(hook_gestureRecognizer:shouldRecognizeSimultaneouslyWithGestureRecognizer:)), "i@:@@");
 }
 
 
