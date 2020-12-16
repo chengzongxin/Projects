@@ -22,6 +22,7 @@
     
     _sourceImageView = [[UIImageView alloc] initWithFrame:CGRectMake(20, 100, 100, 100)];
     _sourceImageView.image = [UIImage imageNamed:@"timg-2"];
+    _sourceImageView.contentMode = UIViewContentModeScaleAspectFit;
     [self.view addSubview:_sourceImageView];
 }
 

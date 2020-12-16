@@ -20,7 +20,7 @@
     // Do any additional setup after loading the view.
     
     
-    _avatarImageView = [[UIImageView alloc] initWithFrame:self.view.bounds];
+    _avatarImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 100, self.view.bounds.size.width, self.view.bounds.size.width)];
     _avatarImageView.contentMode = UIViewContentModeScaleAspectFit;
     [self.view addSubview:_avatarImageView];
     // 1、在 SecondViewController 的 viewDidLoad() 方法中，加入滑动手势。
@@ -42,7 +42,7 @@
 // 3、在手势监听方法中，创建 UIPercentDrivenInteractiveTransition 属性，并实现手势百分比更新。
 - (void)edgePanGesture:(UIScreenEdgePanGestureRecognizer *)edgePan{
     // 进度值，这是左侧边界的算法，如果要改为右侧边界，改为self.view.bounds.size.width / [edgePan translationInView:self.view].x;
-    CGFloat progress = [edgePan translationInView:self.view].x / self.view.bounds.size.width;
+    CGFloat progress = [edgePan translationInView:self.view].y / self.view.bounds.size.width;
     if (edgePan.state == UIGestureRecognizerStateBegan) {
         self.percentDrivenTransition = [[UIPercentDrivenInteractiveTransition alloc] init];
         [self.navigationController popViewControllerAnimated:YES];
