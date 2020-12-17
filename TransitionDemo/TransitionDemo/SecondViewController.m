@@ -32,6 +32,7 @@
     UIPanGestureRecognizer * edgePan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(edgePanGesture:)];
 //    edgePan.edges = UIRectEdgeLeft;
     [self.view addGestureRecognizer:edgePan];
+    self.view.backgroundColor = UIColor.whiteColor;
 }
 
 // 2、遵循UINavigationControllerDelegate协议，因为navigationController的动画需要在这里执行，所以需要设置代理为自己
@@ -40,9 +41,13 @@
     self.navigationController.delegate = self;
 }
 // 3、在手势监听方法中，创建 UIPercentDrivenInteractiveTransition 属性，并实现手势百分比更新。
-- (void)edgePanGesture:(UIScreenEdgePanGestureRecognizer *)edgePan{
+- (void)edgePanGesture:(UIPanGestureRecognizer *)edgePan{
     // 进度值，这是左侧边界的算法，如果要改为右侧边界，改为self.view.bounds.size.width / [edgePan translationInView:self.view].x;
     CGFloat progress = [edgePan translationInView:self.view].y / self.view.bounds.size.width;
+    CGPoint point = [edgePan locationInView:self.view];
+    _avatarImageView.frame = CGRectMake(0, 0, 100, 100);
+    _avatarImageView.center = point;
+    NSLog(@"%@",NSStringFromCGPoint(point));
     if (edgePan.state == UIGestureRecognizerStateBegan) {
         self.percentDrivenTransition = [[UIPercentDrivenInteractiveTransition alloc] init];
         [self.navigationController popViewControllerAnimated:YES];
