@@ -133,25 +133,9 @@
 		169451FA25A55820001F7C05 /* Live */ = {
 			isa = PBXGroup;
 			children = (
-				169451FB25A55820001F7C05 /* AppDelegate.h */,
-				169451FC25A55820001F7C05 /* AppDelegate.m */,
-				169451FE25A55820001F7C05 /* SceneDelegate.h */,
-				169451FF25A55820001F7C05 /* SceneDelegate.m */,
-				1694520125A55820001F7C05 /* PushViewController.h */,
-				1694520225A55820001F7C05 /* PushViewController.m */,
-				1694526525A58A5C001F7C05 /* LiveViewController.h */,
-				1694526625A58A5C001F7C05 /* LiveViewController.m */,
-				1694524A25A55C31001F7C05 /* LiveConst.h */,
-				1694524B25A55C31001F7C05 /* LiveConst.m */,
-				1694527125A5A3D7001F7C05 /* LiveTool.h */,
-				1694527225A5A3D7001F7C05 /* LiveTool.m */,
-				1694526B25A58F2F001F7C05 /* NSString+md5.h */,
-				1694526C25A58F2F001F7C05 /* NSString+md5.m */,
-				1694520425A55820001F7C05 /* Main.storyboard */,
-				1694520725A55822001F7C05 /* Assets.xcassets */,
-				1694520925A55822001F7C05 /* LaunchScreen.storyboard */,
-				1694520C25A55822001F7C05 /* Info.plist */,
-				1694520D25A55822001F7C05 /* main.m */,
+				1694527F25A5A615001F7C05 /* VC */,
+				1694528025A5A615001F7C05 /* Tool */,
+				1694527E25A5A615001F7C05 /* Support */,
 			);
 			path = Live;
 			sourceTree = "<group>";
@@ -172,6 +156,46 @@
 				1694522425A55822001F7C05 /* Info.plist */,
 			);
 			path = LiveUITests;
+			sourceTree = "<group>";
+		};
+		1694527E25A5A615001F7C05 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				1694520425A55820001F7C05 /* Main.storyboard */,
+				1694520725A55822001F7C05 /* Assets.xcassets */,
+				1694520925A55822001F7C05 /* LaunchScreen.storyboard */,
+				1694520C25A55822001F7C05 /* Info.plist */,
+				1694520D25A55822001F7C05 /* main.m */,
+				169451FB25A55820001F7C05 /* AppDelegate.h */,
+				169451FC25A55820001F7C05 /* AppDelegate.m */,
+				169451FE25A55820001F7C05 /* SceneDelegate.h */,
+				169451FF25A55820001F7C05 /* SceneDelegate.m */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		1694527F25A5A615001F7C05 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				1694520125A55820001F7C05 /* PushViewController.h */,
+				1694520225A55820001F7C05 /* PushViewController.m */,
+				1694526525A58A5C001F7C05 /* LiveViewController.h */,
+				1694526625A58A5C001F7C05 /* LiveViewController.m */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		1694528025A5A615001F7C05 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				1694524A25A55C31001F7C05 /* LiveConst.h */,
+				1694524B25A55C31001F7C05 /* LiveConst.m */,
+				1694527125A5A3D7001F7C05 /* LiveTool.h */,
+				1694527225A5A3D7001F7C05 /* LiveTool.m */,
+				1694526B25A58F2F001F7C05 /* NSString+md5.h */,
+				1694526C25A58F2F001F7C05 /* NSString+md5.m */,
+			);
+			path = Tool;
 			sourceTree = "<group>";
 		};
 		75738B101C7EDB35A46EA037 /* Frameworks */ = {
@@ -581,7 +605,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5XB293ZE6R;
 				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = Live/Info.plist;
+				INFOPLIST_FILE = Live/Support/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -601,7 +625,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5XB293ZE6R;
 				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = Live/Info.plist;
+				INFOPLIST_FILE = Live/Support/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
