@@ -1,0 +1,16 @@
+PODS:
+  - TXLiteAVSDK_Professional (8.2.9808)
+
+DEPENDENCIES:
+  - TXLiteAVSDK_Professional
+
+SPEC REPOS:
+  trunk:
+    - TXLiteAVSDK_Professional
+
+SPEC CHECKSUMS:
+  TXLiteAVSDK_Professional: c06ec2238fed16a16078bc8a61c1d29e73be2e99
+
+PODFILE CHECKSUM: 805aabbb112334c5af6e4ff170b29f1b744cd47d
+
+COCOAPODS: 1.10.0
