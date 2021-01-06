@@ -20,14 +20,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _txLivePlayer = [[TXLivePlayer alloc] init];
-    //用 setupVideoWidget 给播放器绑定决定渲染区域的view，其首个参数 frame 在 1.5.2 版本后已经被废弃
+    
     _playerView = [[UIView alloc] initWithFrame:self.view.bounds];
-    _txLivePlayer.delegate = self;
+    _playerView.contentMode = UIViewContentModeScaleAspectFit;
     [self.view insertSubview:_playerView atIndex:0];
     
+    _txLivePlayer = [[TXLivePlayer alloc] init];
+    _txLivePlayer.delegate = self;
+    [_txLivePlayer setRenderRotation:HOME_ORIENTATION_DOWN];
+    [_txLivePlayer setRenderMode:RENDER_MODE_FILL_EDGE];
+    //用 setupVideoWidget 给播放器绑定决定渲染区域的view，其首个参数 frame 在 1.5.2 版本后已经被废弃
     [_txLivePlayer setupVideoWidget:_playerView.bounds containView:_playerView insertIndex:0];
-    
 //    NSString* flvUrl = [LiveTool LiveRtmpUrl];
 //    [_txLivePlayer startPlay:flvUrl type:PLAY_TYPE_LIVE_RTMP];
     NSString* testurl = @"rtmp://liveplay.to8to.com/live/95612_83b172176219_99babc3d37aa1998e782";
