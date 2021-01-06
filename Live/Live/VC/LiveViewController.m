@@ -24,7 +24,7 @@
     //用 setupVideoWidget 给播放器绑定决定渲染区域的view，其首个参数 frame 在 1.5.2 版本后已经被废弃
     _playerView = [[UIView alloc] initWithFrame:self.view.bounds];
     _txLivePlayer.delegate = self;
-    [self.view addSubview:_playerView];
+    [self.view insertSubview:_playerView atIndex:0];
     
     [_txLivePlayer setupVideoWidget:_playerView.bounds containView:_playerView insertIndex:0];
     

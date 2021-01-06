@@ -1,16 +1,20 @@
 PODS:
+  - Masonry (1.1.0)
   - TXLiteAVSDK_Professional (8.2.9808)
 
 DEPENDENCIES:
+  - Masonry
   - TXLiteAVSDK_Professional
 
 SPEC REPOS:
   trunk:
+    - Masonry
     - TXLiteAVSDK_Professional
 
 SPEC CHECKSUMS:
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   TXLiteAVSDK_Professional: c06ec2238fed16a16078bc8a61c1d29e73be2e99
 
-PODFILE CHECKSUM: 805aabbb112334c5af6e4ff170b29f1b744cd47d
+PODFILE CHECKSUM: fd8201d534b79f13f5270389083ff8d4180e9905
 
 COCOAPODS: 1.10.0

@@ -20,6 +20,13 @@
 		1694526725A58A5C001F7C05 /* LiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1694526625A58A5C001F7C05 /* LiveViewController.m */; };
 		1694526D25A58F2F001F7C05 /* NSString+md5.m in Sources */ = {isa = PBXBuildFile; fileRef = 1694526C25A58F2F001F7C05 /* NSString+md5.m */; };
 		1694527325A5A3D7001F7C05 /* LiveTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 1694527225A5A3D7001F7C05 /* LiveTool.m */; };
+		16A92A4125A5BC9C00C0C359 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A92A4025A5BC9C00C0C359 /* BaseViewController.m */; };
+		16A92A5C25A5BD0400C0C359 /* TCHttpUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A92A4B25A5BD0400C0C359 /* TCHttpUtil.m */; };
+		16A92A5D25A5BD0400C0C359 /* SmallButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A92A4E25A5BD0400C0C359 /* SmallButton.m */; };
+		16A92A5E25A5BD0400C0C359 /* ScanQRController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 16A92A5325A5BD0400C0C359 /* ScanQRController.mm */; };
+		16A92A5F25A5BD0400C0C359 /* QRCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A92A5525A5BD0400C0C359 /* QRCode.m */; };
+		16A92A6025A5BD0400C0C359 /* AddressBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A92A5725A5BD0400C0C359 /* AddressBarController.m */; };
+		16A92A6125A5BD0400C0C359 /* AddressBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A92A5A25A5BD0400C0C359 /* AddressBar.m */; };
 		37B848946DE2FB6DCA079489 /* Pods_LiveTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94112892C8FDC51E9575E79D /* Pods_LiveTests.framework */; };
 		D3C14125A43468B3A007D290 /* Pods_Live_LiveUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A689A3EB71A8A575A3C613C9 /* Pods_Live_LiveUITests.framework */; };
 		FC4471FD207BE02B8AB3AF70 /* Pods_Live.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C58DD9D2A68F7076A781F1F /* Pods_Live.framework */; };
@@ -70,6 +77,20 @@
 		1694526C25A58F2F001F7C05 /* NSString+md5.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+md5.m"; sourceTree = "<group>"; };
 		1694527125A5A3D7001F7C05 /* LiveTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiveTool.h; sourceTree = "<group>"; };
 		1694527225A5A3D7001F7C05 /* LiveTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiveTool.m; sourceTree = "<group>"; };
+		16A92A3F25A5BC9C00C0C359 /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		16A92A4025A5BC9C00C0C359 /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		16A92A4B25A5BD0400C0C359 /* TCHttpUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCHttpUtil.m; sourceTree = "<group>"; };
+		16A92A4C25A5BD0400C0C359 /* TCHttpUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCHttpUtil.h; sourceTree = "<group>"; };
+		16A92A4E25A5BD0400C0C359 /* SmallButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SmallButton.m; sourceTree = "<group>"; };
+		16A92A4F25A5BD0400C0C359 /* SmallButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmallButton.h; sourceTree = "<group>"; };
+		16A92A5225A5BD0400C0C359 /* ScanQRController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanQRController.h; sourceTree = "<group>"; };
+		16A92A5325A5BD0400C0C359 /* ScanQRController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ScanQRController.mm; sourceTree = "<group>"; };
+		16A92A5525A5BD0400C0C359 /* QRCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCode.m; sourceTree = "<group>"; };
+		16A92A5625A5BD0400C0C359 /* AddressBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressBar.h; sourceTree = "<group>"; };
+		16A92A5725A5BD0400C0C359 /* AddressBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressBarController.m; sourceTree = "<group>"; };
+		16A92A5825A5BD0400C0C359 /* QRCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCode.h; sourceTree = "<group>"; };
+		16A92A5925A5BD0400C0C359 /* AddressBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressBarController.h; sourceTree = "<group>"; };
+		16A92A5A25A5BD0400C0C359 /* AddressBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressBar.m; sourceTree = "<group>"; };
 		443774F8A5CCC462EC1BD5CC /* Pods-LiveTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiveTests.debug.xcconfig"; path = "Target Support Files/Pods-LiveTests/Pods-LiveTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6C58DD9D2A68F7076A781F1F /* Pods_Live.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Live.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		94112892C8FDC51E9575E79D /* Pods_LiveTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LiveTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -177,6 +198,8 @@
 		1694527F25A5A615001F7C05 /* VC */ = {
 			isa = PBXGroup;
 			children = (
+				16A92A3F25A5BC9C00C0C359 /* BaseViewController.h */,
+				16A92A4025A5BC9C00C0C359 /* BaseViewController.m */,
 				1694520125A55820001F7C05 /* PushViewController.h */,
 				1694520225A55820001F7C05 /* PushViewController.m */,
 				1694526525A58A5C001F7C05 /* LiveViewController.h */,
@@ -188,6 +211,7 @@
 		1694528025A5A615001F7C05 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				16A92A4825A5BD0400C0C359 /* LivePushCommon */,
 				1694524A25A55C31001F7C05 /* LiveConst.h */,
 				1694524B25A55C31001F7C05 /* LiveConst.m */,
 				1694527125A5A3D7001F7C05 /* LiveTool.h */,
@@ -196,6 +220,57 @@
 				1694526C25A58F2F001F7C05 /* NSString+md5.m */,
 			);
 			path = Tool;
+			sourceTree = "<group>";
+		};
+		16A92A4825A5BD0400C0C359 /* LivePushCommon */ = {
+			isa = PBXGroup;
+			children = (
+				16A92A4A25A5BD0400C0C359 /* TCHttpUtil */,
+				16A92A4D25A5BD0400C0C359 /* SmallButton */,
+				16A92A5125A5BD0400C0C359 /* QRScan */,
+				16A92A5425A5BD0400C0C359 /* AddressBar */,
+			);
+			path = LivePushCommon;
+			sourceTree = "<group>";
+		};
+		16A92A4A25A5BD0400C0C359 /* TCHttpUtil */ = {
+			isa = PBXGroup;
+			children = (
+				16A92A4B25A5BD0400C0C359 /* TCHttpUtil.m */,
+				16A92A4C25A5BD0400C0C359 /* TCHttpUtil.h */,
+			);
+			path = TCHttpUtil;
+			sourceTree = "<group>";
+		};
+		16A92A4D25A5BD0400C0C359 /* SmallButton */ = {
+			isa = PBXGroup;
+			children = (
+				16A92A4E25A5BD0400C0C359 /* SmallButton.m */,
+				16A92A4F25A5BD0400C0C359 /* SmallButton.h */,
+			);
+			path = SmallButton;
+			sourceTree = "<group>";
+		};
+		16A92A5125A5BD0400C0C359 /* QRScan */ = {
+			isa = PBXGroup;
+			children = (
+				16A92A5225A5BD0400C0C359 /* ScanQRController.h */,
+				16A92A5325A5BD0400C0C359 /* ScanQRController.mm */,
+			);
+			path = QRScan;
+			sourceTree = "<group>";
+		};
+		16A92A5425A5BD0400C0C359 /* AddressBar */ = {
+			isa = PBXGroup;
+			children = (
+				16A92A5525A5BD0400C0C359 /* QRCode.m */,
+				16A92A5625A5BD0400C0C359 /* AddressBar.h */,
+				16A92A5725A5BD0400C0C359 /* AddressBarController.m */,
+				16A92A5825A5BD0400C0C359 /* QRCode.h */,
+				16A92A5925A5BD0400C0C359 /* AddressBarController.h */,
+				16A92A5A25A5BD0400C0C359 /* AddressBar.m */,
+			);
+			path = AddressBar;
 			sourceTree = "<group>";
 		};
 		75738B101C7EDB35A46EA037 /* Frameworks */ = {
@@ -232,6 +307,7 @@
 				169451F425A55820001F7C05 /* Sources */,
 				169451F525A55820001F7C05 /* Frameworks */,
 				169451F625A55820001F7C05 /* Resources */,
+				0975F0E310BF8B2105EE26F0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -269,6 +345,7 @@
 				1694521A25A55822001F7C05 /* Sources */,
 				1694521B25A55822001F7C05 /* Frameworks */,
 				1694521C25A55822001F7C05 /* Resources */,
+				E9E1E6E48D1D20BE103BFC2D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -349,6 +426,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0975F0E310BF8B2105EE26F0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Live/Pods-Live-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Live/Pods-Live-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Live/Pods-Live-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		99925A9BF1FF1FB4CB833C19 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -393,6 +487,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		E9E1E6E48D1D20BE103BFC2D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Live-LiveUITests/Pods-Live-LiveUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Live-LiveUITests/Pods-Live-LiveUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Live-LiveUITests/Pods-Live-LiveUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		F2782185B8570AF92D3DF32E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -423,13 +534,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				1694526725A58A5C001F7C05 /* LiveViewController.m in Sources */,
+				16A92A6125A5BD0400C0C359 /* AddressBar.m in Sources */,
+				16A92A4125A5BC9C00C0C359 /* BaseViewController.m in Sources */,
+				16A92A5C25A5BD0400C0C359 /* TCHttpUtil.m in Sources */,
 				1694524C25A55C31001F7C05 /* LiveConst.m in Sources */,
 				1694520325A55820001F7C05 /* PushViewController.m in Sources */,
 				1694527325A5A3D7001F7C05 /* LiveTool.m in Sources */,
 				169451FD25A55820001F7C05 /* AppDelegate.m in Sources */,
+				16A92A6025A5BD0400C0C359 /* AddressBarController.m in Sources */,
 				1694520E25A55822001F7C05 /* main.m in Sources */,
+				16A92A5D25A5BD0400C0C359 /* SmallButton.m in Sources */,
 				1694526D25A58F2F001F7C05 /* NSString+md5.m in Sources */,
+				16A92A5E25A5BD0400C0C359 /* ScanQRController.mm in Sources */,
 				1694520025A55820001F7C05 /* SceneDelegate.m in Sources */,
+				16A92A5F25A5BD0400C0C359 /* QRCode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

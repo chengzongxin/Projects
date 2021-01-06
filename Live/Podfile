@@ -6,6 +6,7 @@ target 'Live' do
   use_frameworks!
 
   pod 'TXLiteAVSDK_Professional'
+  pod 'Masonry'
   # Pods for Live
 
   target 'LiveTests' do
