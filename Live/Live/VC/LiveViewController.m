@@ -26,9 +26,9 @@
     _txLivePlayer.delegate = self;
     [self.view addSubview:_playerView];
     
-    [_txLivePlayer setupVideoWidget:CGRectZero containView:_playerView insertIndex:0];
+    [_txLivePlayer setupVideoWidget:_playerView.bounds containView:_playerView insertIndex:0];
     
-    NSString* flvUrl = [LiveTool LiveRtmpUrl];
+//    NSString* flvUrl = [LiveTool LiveRtmpUrl];
 //    [_txLivePlayer startPlay:flvUrl type:PLAY_TYPE_LIVE_RTMP];
     NSString* testurl = @"rtmp://liveplay.to8to.com/live/95612_83b172176219_99babc3d37aa1998e782";
     [_txLivePlayer startPlay:testurl type:PLAY_TYPE_LIVE_RTMP];
@@ -37,11 +37,11 @@
 
 
 - (void)onPlayEvent:(int)EvtID withParam:(NSDictionary *)param{
-    
+    NSLog(@"onPlayEvent %d-%@",EvtID,param);
 }
 
 - (void)onNetStatus:(NSDictionary *)param{
-    
+    NSLog(@"onNetStatus %@",param);
 }
 
 

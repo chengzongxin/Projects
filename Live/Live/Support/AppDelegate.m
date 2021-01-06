@@ -13,7 +13,7 @@
 @end
 
 @implementation AppDelegate
-
+@synthesize window;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     //TXLiveBase 位于 "TXLiveBase.h" 头文件中
