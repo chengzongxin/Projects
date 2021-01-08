@@ -8,6 +8,7 @@ target 'Live' do
   pod 'TXLiteAVSDK_Professional'
   pod 'Masonry'
   pod 'TXIMSDK_iOS'
+  pod 'SDWebImage'
   # Pods for Live
 
   target 'LiveTests' do

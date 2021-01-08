@@ -7,6 +7,7 @@
 
 #import "MessageModel.h"
 #import "LiveTool.h"
+#import "User.h"
 
 @implementation MessageModel
 
@@ -17,6 +18,8 @@
     model.groupID = msg.groupID;
     model.text = msg.textElem.text;
     model.userID = msg.sender;
+    model.nickName = msg.nickName;
+    model.faceUrl = msg.faceURL;
     return model;
 }
 
@@ -26,6 +29,8 @@
     model.groupID = [LiveTool getGroupId];
     model.text = text;
     model.userID = [LiveTool getUserId];
+    model.nickName = User.shareInstance.nickName;
+    model.faceUrl = User.shareInstance.faceUrl;
     return model;
 }
 

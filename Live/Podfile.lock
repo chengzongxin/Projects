@@ -1,24 +1,30 @@
 PODS:
   - Masonry (1.1.0)
+  - SDWebImage (5.9.4):
+    - SDWebImage/Core (= 5.9.4)
+  - SDWebImage/Core (5.9.4)
   - TXIMSDK_iOS (5.1.14)
   - TXLiteAVSDK_Professional (8.2.9808)
 
 DEPENDENCIES:
   - Masonry
+  - SDWebImage
   - TXIMSDK_iOS
   - TXLiteAVSDK_Professional
 
 SPEC REPOS:
   trunk:
     - Masonry
+    - SDWebImage
     - TXIMSDK_iOS
     - TXLiteAVSDK_Professional
 
 SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  SDWebImage: b69257f4ab14e9b6a2ef53e910fdf914d8f757c1
   TXIMSDK_iOS: 1825ea5223fba21b9addef5cf57c11e52f0b3e66
   TXLiteAVSDK_Professional: c06ec2238fed16a16078bc8a61c1d29e73be2e99
 
-PODFILE CHECKSUM: cd8430bf6eda9c25968e73091846beaf70805acd
+PODFILE CHECKSUM: 9818dd86953a0d96dce17a8972c5bcd548e1a00a
 
 COCOAPODS: 1.10.0

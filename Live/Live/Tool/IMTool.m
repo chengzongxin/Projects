@@ -9,6 +9,7 @@
 #import <ImSDK.h>
 #import "LiveTool.h"
 #import "GenerateTestUserSig.h"
+#import "User.h"
 @interface IMTool ()
 <
 V2TIMSDKListener,
@@ -65,6 +66,7 @@ V2TIMAdvancedMsgListener
         }else{
             [self joinGroup];
         }
+        [self getUserInfo];
     } fail:^(int code, NSString *desc) {
         NSLog(@"login fail code = %d,desc = %@",code,desc);
     }];
@@ -100,13 +102,22 @@ V2TIMAdvancedMsgListener
     }];
 }
 
-
 - (void)joinGroup{
     [[V2TIMManager sharedInstance] joinGroup:[LiveTool getGroupId] msg:@"" succ:^{
         NSLog(@"join group succ");
         [self addGroupMsgLister];
     } fail:^(int code, NSString *desc) {
         NSLog(@"fail join group code = %d,msg =%@",code,desc);
+    }];
+}
+
+- (void)getUserInfo{
+    [[V2TIMManager sharedInstance] getUsersInfo:@[LiveTool.getUserId] succ:^(NSArray<V2TIMUserFullInfo *> *infoList) {
+        V2TIMUserFullInfo *info = infoList.firstObject;
+        User.shareInstance.nickName = info.nickName;
+        User.shareInstance.faceUrl = info.faceURL;
+    } fail:^(int code, NSString *desc) {
+        NSLog(@"getUserInfo fail %d, %@",code,desc);
     }];
 }
 

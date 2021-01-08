@@ -16,6 +16,8 @@
 		161AF09125A831D00037C224 /* SetMemberInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 161AF09025A831D00037C224 /* SetMemberInfoViewController.xib */; };
 		161AF09725A839F90037C224 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 161AF09625A839F90037C224 /* User.m */; };
 		161AF09D25A83B1C0037C224 /* IMTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 161AF09C25A83B1C0037C224 /* IMTool.m */; };
+		161AF0BD25A857DB0037C224 /* MessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 161AF0BB25A857DB0037C224 /* MessageCell.m */; };
+		161AF0BE25A857DB0037C224 /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 161AF0BC25A857DB0037C224 /* MessageCell.xib */; };
 		169451FD25A55820001F7C05 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 169451FC25A55820001F7C05 /* AppDelegate.m */; };
 		1694520025A55820001F7C05 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 169451FF25A55820001F7C05 /* SceneDelegate.m */; };
 		1694520325A55820001F7C05 /* PushViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1694520225A55820001F7C05 /* PushViewController.m */; };
@@ -78,6 +80,9 @@
 		161AF09625A839F90037C224 /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		161AF09B25A83B1C0037C224 /* IMTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IMTool.h; sourceTree = "<group>"; };
 		161AF09C25A83B1C0037C224 /* IMTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IMTool.m; sourceTree = "<group>"; };
+		161AF0BA25A857DB0037C224 /* MessageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageCell.h; sourceTree = "<group>"; };
+		161AF0BB25A857DB0037C224 /* MessageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageCell.m; sourceTree = "<group>"; };
+		161AF0BC25A857DB0037C224 /* MessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageCell.xib; sourceTree = "<group>"; };
 		169451F825A55820001F7C05 /* Live.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Live.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		169451FB25A55820001F7C05 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		169451FC25A55820001F7C05 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -174,6 +179,16 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		161AF0B325A8570B0037C224 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				161AF0BA25A857DB0037C224 /* MessageCell.h */,
+				161AF0BB25A857DB0037C224 /* MessageCell.m */,
+				161AF0BC25A857DB0037C224 /* MessageCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		169451EF25A55820001F7C05 = {
 			isa = PBXGroup;
 			children = (
@@ -258,6 +273,7 @@
 				161AF08A25A831820037C224 /* SetMemberInfoViewController.h */,
 				161AF08B25A831820037C224 /* SetMemberInfoViewController.m */,
 				161AF09025A831D00037C224 /* SetMemberInfoViewController.xib */,
+				161AF0B325A8570B0037C224 /* View */,
 				161AF06625A806B10037C224 /* Model */,
 			);
 			path = VC;
@@ -464,6 +480,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				161AF0BE25A857DB0037C224 /* MessageCell.xib in Resources */,
 				1694520B25A55822001F7C05 /* LaunchScreen.storyboard in Resources */,
 				1694520825A55822001F7C05 /* Assets.xcassets in Resources */,
 				1694520625A55820001F7C05 /* Main.storyboard in Resources */,
@@ -616,6 +633,7 @@
 				1694526D25A58F2F001F7C05 /* NSString+md5.m in Sources */,
 				16A92A5E25A5BD0400C0C359 /* ScanQRController.mm in Sources */,
 				1694520025A55820001F7C05 /* SceneDelegate.m in Sources */,
+				161AF0BD25A857DB0037C224 /* MessageCell.m in Sources */,
 				16A92A5F25A5BD0400C0C359 /* QRCode.m in Sources */,
 				161AF08C25A831820037C224 /* SetMemberInfoViewController.m in Sources */,
 			);

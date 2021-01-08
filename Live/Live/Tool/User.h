@@ -11,6 +11,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface User : NSObject
 
+@property (nonatomic, strong) NSString *userID;
+@property (nonatomic, strong) NSString *nickName;
+@property (nonatomic, strong) NSString *faceUrl;
+
 + (instancetype)shareInstance;
 
 
