@@ -13,7 +13,8 @@
 #import <Masonry/Masonry.h>
 #import "DefineHeader.h"
 #import "MessageModel.h"
-
+#import "MemberListViewController.h"
+#import "SetMemberInfoViewController.h"
 @interface IMViewController ()
 <
 V2TIMSDKListener,
@@ -39,10 +40,14 @@ UITextFieldDelegate
     [super viewDidLoad];
     
     self.title = [LiveTool getUserId];
-    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"SetMember" style:UIBarButtonItemStyleDone target:self action:@selector(setMember)];
     [self initSDK];
     
     [self setupSubviews];
+}
+
+- (void)setMember{
+    [self.navigationController pushViewController:SetMemberInfoViewController.new animated:YES];
 }
 
 - (void)setupSubviews{

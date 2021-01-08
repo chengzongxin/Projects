@@ -15,6 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString *groupID;
 @property (nonatomic, strong) NSString *text;
 @property (nonatomic, strong) NSString *userID;
+@property (nonatomic, strong) NSString *nickName;
+@property (nonatomic, strong) NSString *faceUrl;
 
 + (instancetype)modelWithV2TIMMessage:(V2TIMMessage *)msg;
 

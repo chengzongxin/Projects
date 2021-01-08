@@ -11,6 +11,11 @@
 		161AF05625A7EFA90037C224 /* GenerateTestUserSig.m in Sources */ = {isa = PBXBuildFile; fileRef = 161AF05425A7EFA80037C224 /* GenerateTestUserSig.m */; };
 		161AF05F25A7F1A70037C224 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 161AF05E25A7F1A70037C224 /* ViewController.m */; };
 		161AF06925A806BD0037C224 /* MessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 161AF06825A806BD0037C224 /* MessageModel.m */; };
+		161AF07325A82F180037C224 /* MemberListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 161AF07225A82F180037C224 /* MemberListViewController.m */; };
+		161AF08C25A831820037C224 /* SetMemberInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 161AF08B25A831820037C224 /* SetMemberInfoViewController.m */; };
+		161AF09125A831D00037C224 /* SetMemberInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 161AF09025A831D00037C224 /* SetMemberInfoViewController.xib */; };
+		161AF09725A839F90037C224 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 161AF09625A839F90037C224 /* User.m */; };
+		161AF09D25A83B1C0037C224 /* IMTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 161AF09C25A83B1C0037C224 /* IMTool.m */; };
 		169451FD25A55820001F7C05 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 169451FC25A55820001F7C05 /* AppDelegate.m */; };
 		1694520025A55820001F7C05 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 169451FF25A55820001F7C05 /* SceneDelegate.m */; };
 		1694520325A55820001F7C05 /* PushViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1694520225A55820001F7C05 /* PushViewController.m */; };
@@ -64,6 +69,15 @@
 		161AF06725A806BD0037C224 /* MessageModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageModel.h; sourceTree = "<group>"; };
 		161AF06825A806BD0037C224 /* MessageModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageModel.m; sourceTree = "<group>"; };
 		161AF06D25A809120037C224 /* DefineHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DefineHeader.h; sourceTree = "<group>"; };
+		161AF07125A82F180037C224 /* MemberListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MemberListViewController.h; sourceTree = "<group>"; };
+		161AF07225A82F180037C224 /* MemberListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MemberListViewController.m; sourceTree = "<group>"; };
+		161AF08A25A831820037C224 /* SetMemberInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SetMemberInfoViewController.h; sourceTree = "<group>"; };
+		161AF08B25A831820037C224 /* SetMemberInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SetMemberInfoViewController.m; sourceTree = "<group>"; };
+		161AF09025A831D00037C224 /* SetMemberInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SetMemberInfoViewController.xib; sourceTree = "<group>"; };
+		161AF09525A839F90037C224 /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		161AF09625A839F90037C224 /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		161AF09B25A83B1C0037C224 /* IMTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IMTool.h; sourceTree = "<group>"; };
+		161AF09C25A83B1C0037C224 /* IMTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IMTool.m; sourceTree = "<group>"; };
 		169451F825A55820001F7C05 /* Live.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Live.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		169451FB25A55820001F7C05 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		169451FC25A55820001F7C05 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -239,6 +253,11 @@
 				1694526625A58A5C001F7C05 /* LiveViewController.m */,
 				161AF04325A7E7EA0037C224 /* IMViewController.h */,
 				161AF04425A7E7EA0037C224 /* IMViewController.m */,
+				161AF07125A82F180037C224 /* MemberListViewController.h */,
+				161AF07225A82F180037C224 /* MemberListViewController.m */,
+				161AF08A25A831820037C224 /* SetMemberInfoViewController.h */,
+				161AF08B25A831820037C224 /* SetMemberInfoViewController.m */,
+				161AF09025A831D00037C224 /* SetMemberInfoViewController.xib */,
 				161AF06625A806B10037C224 /* Model */,
 			);
 			path = VC;
@@ -253,6 +272,10 @@
 				1694524B25A55C31001F7C05 /* LiveConst.m */,
 				1694527125A5A3D7001F7C05 /* LiveTool.h */,
 				1694527225A5A3D7001F7C05 /* LiveTool.m */,
+				161AF09B25A83B1C0037C224 /* IMTool.h */,
+				161AF09C25A83B1C0037C224 /* IMTool.m */,
+				161AF09525A839F90037C224 /* User.h */,
+				161AF09625A839F90037C224 /* User.m */,
 				161AF06D25A809120037C224 /* DefineHeader.h */,
 				1694526B25A58F2F001F7C05 /* NSString+md5.h */,
 				1694526C25A58F2F001F7C05 /* NSString+md5.m */,
@@ -444,6 +467,7 @@
 				1694520B25A55822001F7C05 /* LaunchScreen.storyboard in Resources */,
 				1694520825A55822001F7C05 /* Assets.xcassets in Resources */,
 				1694520625A55820001F7C05 /* Main.storyboard in Resources */,
+				161AF09125A831D00037C224 /* SetMemberInfoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -577,6 +601,7 @@
 				161AF04525A7E7EA0037C224 /* IMViewController.m in Sources */,
 				16A92A4125A5BC9C00C0C359 /* BaseViewController.m in Sources */,
 				16A92A5C25A5BD0400C0C359 /* TCHttpUtil.m in Sources */,
+				161AF09725A839F90037C224 /* User.m in Sources */,
 				1694524C25A55C31001F7C05 /* LiveConst.m in Sources */,
 				1694520325A55820001F7C05 /* PushViewController.m in Sources */,
 				1694527325A5A3D7001F7C05 /* LiveTool.m in Sources */,
@@ -586,10 +611,13 @@
 				1694520E25A55822001F7C05 /* main.m in Sources */,
 				16A92A5D25A5BD0400C0C359 /* SmallButton.m in Sources */,
 				161AF06925A806BD0037C224 /* MessageModel.m in Sources */,
+				161AF09D25A83B1C0037C224 /* IMTool.m in Sources */,
+				161AF07325A82F180037C224 /* MemberListViewController.m in Sources */,
 				1694526D25A58F2F001F7C05 /* NSString+md5.m in Sources */,
 				16A92A5E25A5BD0400C0C359 /* ScanQRController.mm in Sources */,
 				1694520025A55820001F7C05 /* SceneDelegate.m in Sources */,
 				16A92A5F25A5BD0400C0C359 /* QRCode.m in Sources */,
+				161AF08C25A831820037C224 /* SetMemberInfoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
