@@ -25,6 +25,7 @@ UITextFieldDelegate
 >
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) UITextField *textField;
+@property (nonatomic, strong) UIButton *customButton;
 @property (nonatomic, strong) NSMutableArray <MessageModel *> *messages;
 @end
 
@@ -64,8 +65,7 @@ UITextFieldDelegate
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
 }
 
-- (void)keyboardWillShow:(NSNotification *)aNotification
-{
+- (void)keyboardWillShow:(NSNotification *)aNotification{
     NSDictionary *userInfo = [aNotification userInfo];
     NSValue *aValue = [userInfo objectForKey:UIKeyboardFrameEndUserInfoKey];
     CGRect keyboardRect = [aValue CGRectValue];
@@ -76,16 +76,22 @@ UITextFieldDelegate
     }];
 }
 
-- (void)keyboardWillHide:(NSNotification *)aNotification
-{
+- (void)keyboardWillHide:(NSNotification *)aNotification{
     [self.textField mas_updateConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(self.view).inset(kSafeAreaBottomInset());
     }];
 }
 
+- (void)customButtonClick:(id)sender{
+    [IMTool.shareInstance sendCustomMessage:@{@"thumbup":@1} succ:^{
+        NSLog(@"thumbup");
+    } fail:^(int code, NSString * _Nonnull desc) {
+        NSLog(@"%d,%@",code,desc);
+    }];
+}
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
-    [[V2TIMManager sharedInstance] sendGroupTextMessage:textField.text to:[LiveTool getGroupId] priority:V2TIM_PRIORITY_DEFAULT succ:^{
+    [IMTool.shareInstance sendText:textField.text succ:^{
         NSLog(@"send success!");
         self.title = @"send success!";
         MessageModel *msg = [MessageModel modelWithText:textField.text];
@@ -137,8 +143,20 @@ UITextFieldDelegate
         _textField.borderStyle = UITextBorderStyleRoundedRect;
         _textField.backgroundColor = UIColor.grayColor;
         _textField.delegate = self;
+        _textField.rightView = self.customButton;
+        _textField.rightViewMode = UITextFieldViewModeAlways;
     }
     return _textField;
+}
+
+- (UIButton *)customButton{
+    if (!_customButton) {
+        _customButton = [UIButton buttonWithType:UIButtonTypeSystem];
+        _customButton.frame = CGRectMake(0, 0, 44, 44);
+        [_customButton setTitle:@"thumup" forState:UIControlStateNormal];
+        [_customButton addTarget:self action:@selector(customButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _customButton;
 }
 
 - (NSMutableArray<MessageModel *> *)messages{

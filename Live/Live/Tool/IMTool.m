@@ -144,10 +144,43 @@ V2TIMAdvancedMsgListener
 /// 收到新消息
 - (void)onRecvNewMessage:(V2TIMMessage *)msg{
     NSLog(@"onRecvNewMessage");
-    MessageModel *message = [MessageModel modelWithV2TIMMessage:msg];
+    
+    MessageModel *message;
+    switch (msg.elemType) {
+        case V2TIM_ELEM_TYPE_TEXT:
+        {
+            message = [MessageModel modelWithV2TIMMessage:msg];
+        }
+            break;
+        case V2TIM_ELEM_TYPE_CUSTOM:
+        {
+            message = [MessageModel modelWithV2TIMMessage:msg];
+            NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:msg.customElem.data options:NSJSONReadingMutableContainers error:nil];
+            NSMutableString *string = [NSMutableString string];
+            [dict enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
+                [string appendFormat:@"%@,%@",key,obj];
+            }];
+            message.text = string;
+        }
+            break;
+            
+        default:
+            break;
+    }
+    
     if ([self.listener respondsToSelector:@selector(onNewMessage:)]) {
         [self.listener onNewMessage:message];
     }
+}
+
+
+- (void)sendText:(NSString *)text succ:(IMSuccess)succ fail:(IMFail)fail{
+    [[V2TIMManager sharedInstance] sendGroupTextMessage:text to:[LiveTool getGroupId] priority:V2TIM_PRIORITY_DEFAULT succ:succ fail:fail];
+}
+
+- (void)sendCustomMessage:(NSDictionary *)dict succ:(IMSuccess)succ fail:(IMFail)fail{
+    NSData *data = [NSJSONSerialization dataWithJSONObject:dict options:NSJSONWritingPrettyPrinted error:nil];
+    [[V2TIMManager sharedInstance] sendGroupCustomMessage:data to:LiveTool.getGroupId priority:V2TIM_PRIORITY_DEFAULT succ:succ fail:fail];
 }
 
 

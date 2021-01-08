@@ -8,6 +8,10 @@
 #import <Foundation/Foundation.h>
 #import "MessageModel.h"
 NS_ASSUME_NONNULL_BEGIN
+/// 成功通用回调
+typedef void (^IMSuccess)(void);
+/// 失败通用回调
+typedef void (^IMFail)(int code, NSString * desc);
 
 @protocol MessageListenerDelegate <NSObject>
 @optional
@@ -34,6 +38,14 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype)shareInstance;
 
 - (void)startWithMsgListener:(id<MessageListenerDelegate>)listener;
+
+- (void)sendText:(NSString *)text
+            succ:(IMSuccess)succ
+            fail:(IMFail)fail;
+
+- (void)sendCustomMessage:(NSDictionary *)dict
+                     succ:(IMSuccess)succ
+                     fail:(IMFail)fail;
 
 @end
 
