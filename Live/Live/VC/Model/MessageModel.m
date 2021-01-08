@@ -6,15 +6,26 @@
 //
 
 #import "MessageModel.h"
+#import "LiveTool.h"
 
 @implementation MessageModel
 
-+ (instancetype)modelWithMsgID:(NSString *)msgID groupID:(NSString *)groupID sender:(V2TIMGroupMemberInfo *)info text:(NSString *)text{
+
++ (instancetype)modelWithV2TIMMessage:(V2TIMMessage *)msg{
     MessageModel *model = [[MessageModel alloc] init];
-    model.msgID = msgID;
-    model.groupID = groupID;
-    model.info = info;
+    model.msgID = msg.msgID;
+    model.groupID = msg.groupID;
+    model.text = msg.textElem.text;
+    model.userID = msg.sender;
+    return model;
+}
+
++ (instancetype)modelWithText:(NSString *)text{
+    MessageModel *model = [[MessageModel alloc] init];
+    model.msgID = @"";
+    model.groupID = [LiveTool getGroupId];
     model.text = text;
+    model.userID = [LiveTool getUserId];
     return model;
 }
 

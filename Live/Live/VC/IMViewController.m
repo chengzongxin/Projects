@@ -12,6 +12,7 @@
 #import "LiveTool.h"
 #import <Masonry/Masonry.h>
 #import "DefineHeader.h"
+#import "MessageModel.h"
 
 @interface IMViewController ()
 <
@@ -25,7 +26,7 @@ UITextFieldDelegate
 >
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) UITextField *textField;
-@property (nonatomic, strong) NSMutableArray <V2TIMMessage *> *msgs;
+@property (nonatomic, strong) NSMutableArray <MessageModel *> *messages;
 @end
 
 @implementation IMViewController
@@ -36,6 +37,8 @@ UITextFieldDelegate
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.title = [LiveTool getUserId];
     
     [self initSDK];
     
@@ -78,9 +81,6 @@ UITextFieldDelegate
 
 
 - (void)initSDK{
-    
-    
-    self.title = [LiveTool getUserId];
     // 1. 从 IM 控制台获取应用 SDKAppID，详情请参考 SDKAppID。
     // 2. 初始化 config 对象
     V2TIMSDKConfig *config = [[V2TIMSDKConfig alloc] init];
@@ -169,6 +169,10 @@ UITextFieldDelegate
     [[V2TIMManager sharedInstance] sendGroupTextMessage:textField.text to:[LiveTool getGroupId] priority:V2TIM_PRIORITY_DEFAULT succ:^{
         NSLog(@"send success!");
         self.title = @"send success!";
+        MessageModel *msg = [MessageModel modelWithText:textField.text];
+        [self.messages addObject:msg];
+        [self.tableView reloadData];
+        textField.text = nil;
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             self.title = nil;
         });
@@ -192,18 +196,19 @@ UITextFieldDelegate
 /// 收到新消息
 - (void)onRecvNewMessage:(V2TIMMessage *)msg{
     NSLog(@"onRecvNewMessage");
-    [self.msgs addObject:msg];
+    MessageModel *message = [MessageModel modelWithV2TIMMessage:msg];
+    [self.messages addObject:message];
     [self.tableView reloadData];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.msgs.count;
+    return self.messages.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(UITableViewCell.class) forIndexPath:indexPath];
-    V2TIMMessage *msg = self.msgs[indexPath.row];
-    cell.textLabel.text = [NSString stringWithFormat:@"%@ by :%@",msg.textElem.text,msg.sender];
+    MessageModel *msg = self.messages[indexPath.row];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@ by :%@",msg.text,msg.userID];
     return cell;
 }
 
@@ -227,11 +232,11 @@ UITextFieldDelegate
     return _textField;
 }
 
-- (NSMutableArray<V2TIMMessage *> *)msgs{
-    if (!_msgs) {
-        _msgs = [NSMutableArray array];
+- (NSMutableArray<MessageModel *> *)messages{
+    if (!_messages) {
+        _messages = [NSMutableArray array];
     }
-    return _msgs;
+    return _messages;
 }
 
 @end

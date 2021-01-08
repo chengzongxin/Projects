@@ -13,10 +13,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) NSString *msgID;
 @property (nonatomic, strong) NSString *groupID;
-@property (nonatomic, strong) V2TIMGroupMemberInfo *info;
 @property (nonatomic, strong) NSString *text;
+@property (nonatomic, strong) NSString *userID;
 
-+ (instancetype)modelWithMsgID:(NSString *)msgID groupID:(NSString *)groupID sender:(V2TIMGroupMemberInfo *)info text:(NSString *)text;
++ (instancetype)modelWithV2TIMMessage:(V2TIMMessage *)msg;
+
++ (instancetype)modelWithText:(NSString *)text;
 
 @end
 
