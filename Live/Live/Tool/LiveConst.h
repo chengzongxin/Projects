@@ -10,5 +10,6 @@
 
 FOUNDATION_EXPORT NSString *const licenceURL;
 FOUNDATION_EXPORT NSString *const licenceKey;
+FOUNDATION_EXPORT int const SDKAppID;
 FOUNDATION_EXPORT NSString *const pushRtmpUrl;
 FOUNDATION_EXPORT NSString *const liveRtmpUrl;

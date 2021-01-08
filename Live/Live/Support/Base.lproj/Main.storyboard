@@ -12,7 +12,7 @@
         <!--View Controller-->
         <scene sceneID="sWR-7c-ish">
             <objects>
-                <viewController id="5QH-UK-Gxk" sceneMemberID="viewController">
+                <viewController id="5QH-UK-Gxk" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1wz-IC-U8C">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -37,13 +37,26 @@
                                     <segue destination="YtK-M4-GQc" kind="show" id="slu-ZQ-wHW"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="82j-rn-9e5">
+                                <rect key="frame" x="50" y="426" width="314" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="1B8-h1-k1y"/>
+                                </constraints>
+                                <state key="normal" title="IM"/>
+                                <connections>
+                                    <segue destination="G1h-fa-Lno" kind="show" id="kOU-XB-UOn"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3ht-w0-oRL"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="LZ8-Xo-85m" firstAttribute="leading" secondItem="3ht-w0-oRL" secondAttribute="leading" constant="50" id="2P5-dW-gXH"/>
+                            <constraint firstItem="82j-rn-9e5" firstAttribute="leading" secondItem="3ht-w0-oRL" secondAttribute="leading" constant="50" id="ChL-a7-9ey"/>
                             <constraint firstItem="dsx-rX-luI" firstAttribute="leading" secondItem="3ht-w0-oRL" secondAttribute="leading" constant="50" id="Jju-un-deJ"/>
+                            <constraint firstItem="3ht-w0-oRL" firstAttribute="trailing" secondItem="82j-rn-9e5" secondAttribute="trailing" constant="50" id="OQy-8S-NiX"/>
                             <constraint firstItem="LZ8-Xo-85m" firstAttribute="top" secondItem="dsx-rX-luI" secondAttribute="bottom" constant="46" id="WEx-wI-7t2"/>
+                            <constraint firstItem="82j-rn-9e5" firstAttribute="top" secondItem="LZ8-Xo-85m" secondAttribute="bottom" constant="44" id="Wgm-Zi-GJu"/>
                             <constraint firstItem="3ht-w0-oRL" firstAttribute="trailing" secondItem="dsx-rX-luI" secondAttribute="trailing" constant="50" id="e34-bv-xX6"/>
                             <constraint firstItem="3ht-w0-oRL" firstAttribute="trailing" secondItem="LZ8-Xo-85m" secondAttribute="trailing" constant="50" id="mOo-c5-EFI"/>
                             <constraint firstItem="dsx-rX-luI" firstAttribute="top" secondItem="3ht-w0-oRL" secondAttribute="top" constant="160" id="yeY-sF-xzy"/>
@@ -54,6 +67,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cW9-MO-SjZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="499" y="75"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="UWE-FC-zsU">
+            <objects>
+                <viewController id="G1h-fa-Lno" customClass="IMViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZyM-BW-eas">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="zuT-d6-IQw"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="dyv-zM-OuI"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C3q-rW-Mpd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="514" y="723"/>
         </scene>
         <!--Live View Controller-->
         <scene sceneID="WGT-6C-aSj">

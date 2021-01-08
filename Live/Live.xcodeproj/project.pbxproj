@@ -3,10 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		161AF04525A7E7EA0037C224 /* IMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 161AF04425A7E7EA0037C224 /* IMViewController.m */; };
+		161AF05625A7EFA90037C224 /* GenerateTestUserSig.m in Sources */ = {isa = PBXBuildFile; fileRef = 161AF05425A7EFA80037C224 /* GenerateTestUserSig.m */; };
+		161AF05F25A7F1A70037C224 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 161AF05E25A7F1A70037C224 /* ViewController.m */; };
+		161AF06925A806BD0037C224 /* MessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 161AF06825A806BD0037C224 /* MessageModel.m */; };
 		169451FD25A55820001F7C05 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 169451FC25A55820001F7C05 /* AppDelegate.m */; };
 		1694520025A55820001F7C05 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 169451FF25A55820001F7C05 /* SceneDelegate.m */; };
 		1694520325A55820001F7C05 /* PushViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1694520225A55820001F7C05 /* PushViewController.m */; };
@@ -51,6 +55,15 @@
 
 /* Begin PBXFileReference section */
 		0C51A9AF80D741C48CD14667 /* Pods-Live.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Live.debug.xcconfig"; path = "Target Support Files/Pods-Live/Pods-Live.debug.xcconfig"; sourceTree = "<group>"; };
+		161AF04325A7E7EA0037C224 /* IMViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IMViewController.h; sourceTree = "<group>"; };
+		161AF04425A7E7EA0037C224 /* IMViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IMViewController.m; sourceTree = "<group>"; };
+		161AF05425A7EFA80037C224 /* GenerateTestUserSig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GenerateTestUserSig.m; sourceTree = "<group>"; };
+		161AF05525A7EFA80037C224 /* GenerateTestUserSig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GenerateTestUserSig.h; sourceTree = "<group>"; };
+		161AF05D25A7F1A70037C224 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		161AF05E25A7F1A70037C224 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		161AF06725A806BD0037C224 /* MessageModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageModel.h; sourceTree = "<group>"; };
+		161AF06825A806BD0037C224 /* MessageModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageModel.m; sourceTree = "<group>"; };
+		161AF06D25A809120037C224 /* DefineHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DefineHeader.h; sourceTree = "<group>"; };
 		169451F825A55820001F7C05 /* Live.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Live.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		169451FB25A55820001F7C05 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		169451FC25A55820001F7C05 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -129,6 +142,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		161AF05325A7EFA80037C224 /* GenerateTestUserSig */ = {
+			isa = PBXGroup;
+			children = (
+				161AF05525A7EFA80037C224 /* GenerateTestUserSig.h */,
+				161AF05425A7EFA80037C224 /* GenerateTestUserSig.m */,
+			);
+			path = GenerateTestUserSig;
+			sourceTree = "<group>";
+		};
+		161AF06625A806B10037C224 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				161AF06725A806BD0037C224 /* MessageModel.h */,
+				161AF06825A806BD0037C224 /* MessageModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		169451EF25A55820001F7C05 = {
 			isa = PBXGroup;
 			children = (
@@ -198,12 +229,17 @@
 		1694527F25A5A615001F7C05 /* VC */ = {
 			isa = PBXGroup;
 			children = (
+				161AF05D25A7F1A70037C224 /* ViewController.h */,
+				161AF05E25A7F1A70037C224 /* ViewController.m */,
 				16A92A3F25A5BC9C00C0C359 /* BaseViewController.h */,
 				16A92A4025A5BC9C00C0C359 /* BaseViewController.m */,
 				1694520125A55820001F7C05 /* PushViewController.h */,
 				1694520225A55820001F7C05 /* PushViewController.m */,
 				1694526525A58A5C001F7C05 /* LiveViewController.h */,
 				1694526625A58A5C001F7C05 /* LiveViewController.m */,
+				161AF04325A7E7EA0037C224 /* IMViewController.h */,
+				161AF04425A7E7EA0037C224 /* IMViewController.m */,
+				161AF06625A806B10037C224 /* Model */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -211,11 +247,13 @@
 		1694528025A5A615001F7C05 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				161AF05325A7EFA80037C224 /* GenerateTestUserSig */,
 				16A92A4825A5BD0400C0C359 /* LivePushCommon */,
 				1694524A25A55C31001F7C05 /* LiveConst.h */,
 				1694524B25A55C31001F7C05 /* LiveConst.m */,
 				1694527125A5A3D7001F7C05 /* LiveTool.h */,
 				1694527225A5A3D7001F7C05 /* LiveTool.m */,
+				161AF06D25A809120037C224 /* DefineHeader.h */,
 				1694526B25A58F2F001F7C05 /* NSString+md5.h */,
 				1694526C25A58F2F001F7C05 /* NSString+md5.m */,
 			);
@@ -533,8 +571,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				161AF05F25A7F1A70037C224 /* ViewController.m in Sources */,
 				1694526725A58A5C001F7C05 /* LiveViewController.m in Sources */,
 				16A92A6125A5BD0400C0C359 /* AddressBar.m in Sources */,
+				161AF04525A7E7EA0037C224 /* IMViewController.m in Sources */,
 				16A92A4125A5BC9C00C0C359 /* BaseViewController.m in Sources */,
 				16A92A5C25A5BD0400C0C359 /* TCHttpUtil.m in Sources */,
 				1694524C25A55C31001F7C05 /* LiveConst.m in Sources */,
@@ -542,8 +582,10 @@
 				1694527325A5A3D7001F7C05 /* LiveTool.m in Sources */,
 				169451FD25A55820001F7C05 /* AppDelegate.m in Sources */,
 				16A92A6025A5BD0400C0C359 /* AddressBarController.m in Sources */,
+				161AF05625A7EFA90037C224 /* GenerateTestUserSig.m in Sources */,
 				1694520E25A55822001F7C05 /* main.m in Sources */,
 				16A92A5D25A5BD0400C0C359 /* SmallButton.m in Sources */,
+				161AF06925A806BD0037C224 /* MessageModel.m in Sources */,
 				1694526D25A58F2F001F7C05 /* NSString+md5.m in Sources */,
 				16A92A5E25A5BD0400C0C359 /* ScanQRController.mm in Sources */,
 				1694520025A55820001F7C05 /* SceneDelegate.m in Sources */,

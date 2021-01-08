@@ -18,6 +18,14 @@
     return [[self alloc] generateUrl];
 }
 
++ (NSString *)getUserId{
+    return [[[UIDevice currentDevice] name] MD5];
+}
+
++ (NSString *)getGroupId{
+    return @"19881122";
+}
+
 - (NSString *)generateUrl{
     NSURL *url = [NSURL URLWithString:pushRtmpUrl];
     NSDictionary *dict = [self paramerWithURL:url];

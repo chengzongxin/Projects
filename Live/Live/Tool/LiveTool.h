@@ -15,6 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSString *)pushRtmpUrl;
 + (NSString *)LiveRtmpUrl;
++ (NSString *)getUserId;
++ (NSString *)getGroupId;
 
 @end
 
