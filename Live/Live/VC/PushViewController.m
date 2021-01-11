@@ -18,6 +18,12 @@
 
 @implementation PushViewController
 
+- (void)dealloc{
+    //结束推流
+    [_pusher stopPreview]; //如果已经启动了摄像头预览，请在结束推流时将其关闭。
+    [_pusher stopPush];
+}
+
 
 - (void)viewDidLoad{
     [super viewDidLoad];
@@ -39,10 +45,6 @@
     //启动推流
     NSString* rtmpUrl = pushRtmpUrl;   //此处填写您的 rtmp 推流地址
     [_pusher startPush:rtmpUrl];
-    
-    //结束推流
-    //    [_pusher stopPreview]; //如果已经启动了摄像头预览，请在结束推流时将其关闭。
-    //    [_pusher stopPush];
 }
 
 

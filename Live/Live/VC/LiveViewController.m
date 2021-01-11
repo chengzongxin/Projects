@@ -33,11 +33,17 @@
     [_txLivePlayer setupVideoWidget:_playerView.bounds containView:_playerView insertIndex:0];
 //    NSString* flvUrl = [LiveTool LiveRtmpUrl];
 //    [_txLivePlayer startPlay:flvUrl type:PLAY_TYPE_LIVE_RTMP];
-    NSString* testurl = @"rtmp://liveplay.to8to.com/live/95612_83b172176219_99babc3d37aa1998e782";
-    [_txLivePlayer startPlay:testurl type:PLAY_TYPE_LIVE_RTMP];
+//    NSString* testurl = @"rtmp://liveplay.to8to.com/live/95612_83b172176219_99babc3d37aa1998e782";
+//    [_txLivePlayer startPlay:testurl type:PLAY_TYPE_LIVE_RTMP];
 
 }
 
+- (void)onScanResult:(NSString *)result{
+    [super onScanResult:result];
+    
+//    [_txLivePlayer switchStream:result];
+    [_txLivePlayer startPlay:result type:PLAY_TYPE_LIVE_RTMP];
+}
 
 - (void)onPlayEvent:(int)EvtID withParam:(NSDictionary *)param{
     NSLog(@"onPlayEvent %d-%@",EvtID,param);

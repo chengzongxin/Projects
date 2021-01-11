@@ -18,6 +18,9 @@
 		161AF09D25A83B1C0037C224 /* IMTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 161AF09C25A83B1C0037C224 /* IMTool.m */; };
 		161AF0BD25A857DB0037C224 /* MessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 161AF0BB25A857DB0037C224 /* MessageCell.m */; };
 		161AF0BE25A857DB0037C224 /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 161AF0BC25A857DB0037C224 /* MessageCell.xib */; };
+		161E9A9D25A9A6EC00186CBA /* ToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 161E9A9C25A9A6EC00186CBA /* ToolBar.m */; };
+		161E9AA425A9A79200186CBA /* ToolBarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 161E9AA225A9A79200186CBA /* ToolBarCell.m */; };
+		161E9AA525A9A79200186CBA /* ToolBarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 161E9AA325A9A79200186CBA /* ToolBarCell.xib */; };
 		169451FD25A55820001F7C05 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 169451FC25A55820001F7C05 /* AppDelegate.m */; };
 		1694520025A55820001F7C05 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 169451FF25A55820001F7C05 /* SceneDelegate.m */; };
 		1694520325A55820001F7C05 /* PushViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1694520225A55820001F7C05 /* PushViewController.m */; };
@@ -83,6 +86,11 @@
 		161AF0BA25A857DB0037C224 /* MessageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageCell.h; sourceTree = "<group>"; };
 		161AF0BB25A857DB0037C224 /* MessageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageCell.m; sourceTree = "<group>"; };
 		161AF0BC25A857DB0037C224 /* MessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageCell.xib; sourceTree = "<group>"; };
+		161E9A9B25A9A6EC00186CBA /* ToolBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToolBar.h; sourceTree = "<group>"; };
+		161E9A9C25A9A6EC00186CBA /* ToolBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToolBar.m; sourceTree = "<group>"; };
+		161E9AA125A9A79200186CBA /* ToolBarCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToolBarCell.h; sourceTree = "<group>"; };
+		161E9AA225A9A79200186CBA /* ToolBarCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToolBarCell.m; sourceTree = "<group>"; };
+		161E9AA325A9A79200186CBA /* ToolBarCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ToolBarCell.xib; sourceTree = "<group>"; };
 		169451F825A55820001F7C05 /* Live.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Live.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		169451FB25A55820001F7C05 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		169451FC25A55820001F7C05 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -185,8 +193,21 @@
 				161AF0BA25A857DB0037C224 /* MessageCell.h */,
 				161AF0BB25A857DB0037C224 /* MessageCell.m */,
 				161AF0BC25A857DB0037C224 /* MessageCell.xib */,
+				161E9AA925A9A7A400186CBA /* ToolBar */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		161E9AA925A9A7A400186CBA /* ToolBar */ = {
+			isa = PBXGroup;
+			children = (
+				161E9A9B25A9A6EC00186CBA /* ToolBar.h */,
+				161E9A9C25A9A6EC00186CBA /* ToolBar.m */,
+				161E9AA125A9A79200186CBA /* ToolBarCell.h */,
+				161E9AA225A9A79200186CBA /* ToolBarCell.m */,
+				161E9AA325A9A79200186CBA /* ToolBarCell.xib */,
+			);
+			path = ToolBar;
 			sourceTree = "<group>";
 		};
 		169451EF25A55820001F7C05 = {
@@ -485,6 +506,7 @@
 				1694520825A55822001F7C05 /* Assets.xcassets in Resources */,
 				1694520625A55820001F7C05 /* Main.storyboard in Resources */,
 				161AF09125A831D00037C224 /* SetMemberInfoViewController.xib in Resources */,
+				161E9AA525A9A79200186CBA /* ToolBarCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -615,6 +637,7 @@
 				161AF05F25A7F1A70037C224 /* ViewController.m in Sources */,
 				1694526725A58A5C001F7C05 /* LiveViewController.m in Sources */,
 				16A92A6125A5BD0400C0C359 /* AddressBar.m in Sources */,
+				161E9AA425A9A79200186CBA /* ToolBarCell.m in Sources */,
 				161AF04525A7E7EA0037C224 /* IMViewController.m in Sources */,
 				16A92A4125A5BC9C00C0C359 /* BaseViewController.m in Sources */,
 				16A92A5C25A5BD0400C0C359 /* TCHttpUtil.m in Sources */,
@@ -625,6 +648,7 @@
 				169451FD25A55820001F7C05 /* AppDelegate.m in Sources */,
 				16A92A6025A5BD0400C0C359 /* AddressBarController.m in Sources */,
 				161AF05625A7EFA90037C224 /* GenerateTestUserSig.m in Sources */,
+				161E9A9D25A9A6EC00186CBA /* ToolBar.m in Sources */,
 				1694520E25A55822001F7C05 /* main.m in Sources */,
 				16A92A5D25A5BD0400C0C359 /* SmallButton.m in Sources */,
 				161AF06925A806BD0037C224 /* MessageModel.m in Sources */,

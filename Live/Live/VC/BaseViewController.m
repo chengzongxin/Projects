@@ -6,12 +6,9 @@
 //
 
 #import "BaseViewController.h"
-#import "AddressBarController.h"
-#import "ScanQRController.h"
 
 #define PLAY_URL    @"请输入或扫二维码获取播放地址"
-@interface BaseViewController ()<AddressBarControllerDelegate,ScanQRDelegate>
-@property (nonatomic, strong) AddressBarController *addressBarController;  // 播放地址/二维码扫描 工具栏
+@interface BaseViewController ()
 @end
 
 @implementation BaseViewController
