@@ -6,6 +6,7 @@ target 'THKAuthenticationViewDemo' do
   # use_frameworks!
   pod 'Masonry'
   pod 'YYKit'
+  pod 'MJExtension'
 
   # Pods for THKAuthenticationViewDemo
 

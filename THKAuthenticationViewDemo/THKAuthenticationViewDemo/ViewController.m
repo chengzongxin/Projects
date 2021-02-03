@@ -23,49 +23,49 @@
     
     THKIdentityView *i1 = [THKIdentityView identityViewWithType:999 style:THKIdentityViewStyle_Full];
     [self.view addSubview:i1];
-    
+
     THKIdentityView *i2 = [THKIdentityView identityViewWithType:10 style:THKIdentityViewStyle_Full];
     [self.view addSubview:i2];
-    
+
     THKIdentityView *i3 = [THKIdentityView identityViewWithType:11 style:THKIdentityViewStyle_Full];
     [self.view addSubview:i3];
-    
+
     THKIdentityView *i4 = [THKIdentityView identityViewWithType:12 style:THKIdentityViewStyle_Full];
     [self.view addSubview:i4];
-    
+
     THKIdentityView *i5 = [THKIdentityView identityViewWithType:13 style:THKIdentityViewStyle_Full];
     [self.view addSubview:i5];
-    
+
     THKIdentityView *i6 = [THKIdentityView identityViewWithType:14 style:THKIdentityViewStyle_Full];
     [self.view addSubview:i6];
-    
+
     NSLog(@"%@",NSStringFromCGSize(i6.viewSize));
-    
+
     [i1 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(50);
         make.top.mas_equalTo(100);
     }];
-    
+
     [i2 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(i1.mas_right).offset(20);
         make.top.mas_equalTo(100);
     }];
-    
+
     [i3 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(i2.mas_right).offset(20);
         make.top.mas_equalTo(100);
     }];
-    
+
     [i4 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(i3.mas_right).offset(20);
         make.top.mas_equalTo(100);
     }];
-    
+
     [i5 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(50);
         make.top.equalTo(i1.mas_bottom).offset(50);
     }];
-    
+
     [i6 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(i5.mas_right).offset(20);
         make.top.equalTo(i1.mas_bottom).offset(50);
@@ -80,13 +80,19 @@
     [self.view addSubview:imgV];
     [imgV mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(100);
-        make.top.equalTo(i6.mas_bottom).offset(50);
-        make.width.mas_equalTo(50);
-        make.height.mas_equalTo(50);
+        make.top.mas_equalTo(300);
+        make.width.mas_equalTo(100);
+        make.height.mas_equalTo(100);
     }];
     imgV.userInteractionEnabled = YES;
     [imgV addSubview:i7];
     
+    [i7 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.mas_equalTo(0);
+        make.bottom.mas_equalTo(0);
+        make.width.mas_equalTo(20);
+        make.height.mas_equalTo(20);
+    }];
     
 }
 

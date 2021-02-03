@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		164C5C6425CA43E30078F071 /* THKIdentityConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 164C5C6325CA43E30078F071 /* THKIdentityConfiguration.m */; };
-		164C5C7025CA97A60078F071 /* THKIdentityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 164C5C6F25CA97A60078F071 /* THKIdentityModel.m */; };
+		164C5C7025CA97A60078F071 /* THKIdentityTypeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 164C5C6F25CA97A60078F071 /* THKIdentityTypeModel.m */; };
+		165217A925CAB88A002DC45C /* App启动配置接口.json in Resources */ = {isa = PBXBuildFile; fileRef = 165217A825CAB88A002DC45C /* App启动配置接口.json */; };
 		16557AA825B6733700C350D4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 16557AA725B6733700C350D4 /* AppDelegate.m */; };
 		16557AAB25B6733700C350D4 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 16557AAA25B6733700C350D4 /* SceneDelegate.m */; };
 		16557AAE25B6733700C350D4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16557AAD25B6733700C350D4 /* ViewController.m */; };
@@ -25,8 +26,9 @@
 		164C5C5D25CA37D70078F071 /* THKIdentityIconView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THKIdentityIconView.h; sourceTree = "<group>"; };
 		164C5C6225CA43E30078F071 /* THKIdentityConfiguration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = THKIdentityConfiguration.h; sourceTree = "<group>"; };
 		164C5C6325CA43E30078F071 /* THKIdentityConfiguration.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = THKIdentityConfiguration.m; sourceTree = "<group>"; };
-		164C5C6E25CA97A60078F071 /* THKIdentityModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = THKIdentityModel.h; sourceTree = "<group>"; };
-		164C5C6F25CA97A60078F071 /* THKIdentityModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = THKIdentityModel.m; sourceTree = "<group>"; };
+		164C5C6E25CA97A60078F071 /* THKIdentityTypeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = THKIdentityTypeModel.h; sourceTree = "<group>"; };
+		164C5C6F25CA97A60078F071 /* THKIdentityTypeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = THKIdentityTypeModel.m; sourceTree = "<group>"; };
+		165217A825CAB88A002DC45C /* App启动配置接口.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "App启动配置接口.json"; sourceTree = "<group>"; };
 		16557AA325B6733700C350D4 /* THKAuthenticationViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = THKAuthenticationViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16557AA625B6733700C350D4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		16557AA725B6733700C350D4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				16557AB425B6733900C350D4 /* LaunchScreen.storyboard */,
 				16557AB725B6733900C350D4 /* Info.plist */,
 				16557AB825B6733900C350D4 /* main.m */,
+				165217A825CAB88A002DC45C /* App启动配置接口.json */,
 			);
 			path = THKAuthenticationViewDemo;
 			sourceTree = "<group>";
@@ -110,8 +113,8 @@
 				16557AC225B6735300C350D4 /* THKIdentityView.m */,
 				164C5C6225CA43E30078F071 /* THKIdentityConfiguration.h */,
 				164C5C6325CA43E30078F071 /* THKIdentityConfiguration.m */,
-				164C5C6E25CA97A60078F071 /* THKIdentityModel.h */,
-				164C5C6F25CA97A60078F071 /* THKIdentityModel.m */,
+				164C5C6E25CA97A60078F071 /* THKIdentityTypeModel.h */,
+				164C5C6F25CA97A60078F071 /* THKIdentityTypeModel.m */,
 				164C5C5D25CA37D70078F071 /* THKIdentityIconView.h */,
 				164C5C5C25CA37D70078F071 /* THKIdentityIconView.m */,
 			);
@@ -185,6 +188,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				16557AB625B6733900C350D4 /* LaunchScreen.storyboard in Resources */,
+				165217A925CAB88A002DC45C /* App启动配置接口.json in Resources */,
 				16557AB325B6733900C350D4 /* Assets.xcassets in Resources */,
 				16557AB125B6733700C350D4 /* Main.storyboard in Resources */,
 			);
@@ -227,7 +231,7 @@
 				16557AA825B6733700C350D4 /* AppDelegate.m in Sources */,
 				16557AB925B6733900C350D4 /* main.m in Sources */,
 				164C5C6425CA43E30078F071 /* THKIdentityConfiguration.m in Sources */,
-				164C5C7025CA97A60078F071 /* THKIdentityModel.m in Sources */,
+				164C5C7025CA97A60078F071 /* THKIdentityTypeModel.m in Sources */,
 				16557AAB25B6733700C350D4 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

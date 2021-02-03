@@ -133,7 +133,7 @@ static CGFloat const kImageTextInterval = 4;
         
         [self.iconImageView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.center.equalTo(self);
-            make.size.mas_equalTo(self.config.iconSize);
+            make.size.equalTo(self);
         }];
     }
 }
@@ -148,7 +148,7 @@ static CGFloat const kImageTextInterval = 4;
     }
     
     if (self.style == THKIdentityViewStyle_Icon) {
-        return self.config.iconSize;
+        return self.frame.size;
     }
     
     // 完整显示的时候，计算图标和文本宽高
@@ -224,7 +224,7 @@ static CGFloat const kImageTextInterval = 4;
 - (UIImageView *)iconImageView{
     if (!_iconImageView) {
         _iconImageView = [[UIImageView alloc] initWithImage:self.config.icon];
-        _iconImageView.layer.cornerRadius = self.config.iconSize.height/2;
+        _iconImageView.layer.cornerRadius = self.style == THKIdentityViewStyle_Full ? self.config.iconSize.height/2 : 0;
         _iconImageView.layer.masksToBounds = YES;
     }
     return _iconImageView;

@@ -6,6 +6,7 @@
 //
 
 #import "THKIdentityConfiguration.h"
+#import "THKIdentityTypeModel.h"
 #import <YYKit.h>
 @implementation THKIdentityConfiguration
 
@@ -13,11 +14,46 @@
     if (type == 0) {
         return nil;
     }
+    
     THKIdentityConfiguration *config = [[THKIdentityConfiguration alloc] init];
-    [config configDefaultWithType:type];
+    NSArray <THKIdentityTypeModel *> *models = [THKIdentityTypeModel model];
+    if (models) {
+        [config configWithModel:models type:type];
+    }else{
+        [config configDefaultWithType:type];
+        
+    }
+    
     return config;
 }
 
+
+/// 使用接口返回的模型配置
+/// @param type 认证类型
+- (void)configWithModel:(NSArray <THKIdentityTypeModel *> *)models type:(NSInteger)type{
+    
+    THKIdentityTypeModel *model;
+    
+    for (THKIdentityTypeModel *m in models) {
+        if (m.identificationType == type) {
+            model = m;
+            break;
+        }
+    }
+    
+    if (model) {
+        self.icon = [UIImage imageNamed:model.subCategory.identificationPic];
+        self.text = model.subCategory.textData.identificationDesc;
+        self.font = [UIFont systemFontOfSize:model.subCategory.textData.fontSize];
+        self.backgroundColor = [UIColor colorWithHexString:model.subCategory.textData.backgroundColor];
+        self.textColor = [UIColor colorWithHexString:model.subCategory.textData.textColor];
+        self.iconSize = CGSizeMake(model.subCategory.iconWidth, model.subCategory.iconHeight);
+    }else{
+        [self configDefaultWithType:type];
+    }
+    
+    
+}
 
 /// 配置接口不通的时候使用默认配置
 /// 10-家居达人 11-设计师机构 12-品牌商家 13-官方认证 14-装企认证

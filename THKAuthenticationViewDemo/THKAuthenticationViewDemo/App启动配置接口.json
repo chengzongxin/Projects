@@ -1,0 +1,98 @@
+{
+  "result": {
+    "identify": [
+      {
+        "identificationType": 999,
+        "subCategory": {
+          "subCategory": 1,
+          "identificationPic": "icon_identity_orange",
+          "iconWidth": 18,
+          "iconHeight": 18,
+          "textData": {
+            "identificationDesc": "作者",
+            "backgroundColor": "999999",
+            "textColor": "666666",
+            "fontSize": 12
+          }
+        }
+      },
+      {
+        "identificationType": 10,
+        "subCategory": {
+          "subCategory": 1,
+          "identificationPic": "icon_identity_yellow",
+          "iconWidth": 18,
+          "iconHeight": 18,
+          "textData": {
+            "identificationDesc": "家居达人",
+            "backgroundColor": "999999",
+            "textColor": "666666",
+            "fontSize": 12
+          }
+        }
+      },
+      {
+        "identificationType": 11,
+        "subCategory": {
+          "subCategory": 1,
+          "identificationPic": "icon_identity_orange",
+          "iconWidth": 18,
+          "iconHeight": 18,
+          "textData": {
+            "identificationDesc": "官方认证",
+            "backgroundColor": "999999",
+            "textColor": "666666",
+            "fontSize": 12
+          }
+        }
+      },
+      {
+        "identificationType": 12,
+        "subCategory": {
+          "subCategory": 1,
+          "identificationPic": "icon_identity_orange",
+          "iconWidth": 18,
+          "iconHeight": 18,
+          "textData": {
+            "identificationDesc": "设计机构",
+            "backgroundColor": "999999",
+            "textColor": "666666",
+            "fontSize": 12
+          }
+        }
+      },
+      {
+        "identificationType": 13,
+        "subCategory": {
+          "subCategory": 1,
+          "identificationPic": "icon_identity_green",
+          "iconWidth": 18,
+          "iconHeight": 18,
+          "textData": {
+            "identificationDesc": "品牌商家",
+            "backgroundColor": "999999",
+            "textColor": "666666",
+            "fontSize": 12
+          }
+        }
+      },
+      {
+        "identificationType": 14,
+        "subCategory": {
+          "subCategory": 1,
+          "identificationPic": "icon_identity_yellow",
+          "iconWidth": 18,
+          "iconHeight": 18,
+          "textData": {
+            "identificationDesc": "装修公司",
+            "backgroundColor": "999999",
+            "textColor": "666666",
+            "fontSize": 12
+          }
+        }
+      }
+    ],
+    "status": 200,
+    "message": "success"
+  }
+}

@@ -25,7 +25,8 @@ typedef NS_ENUM(NSInteger, THKIdentityViewStyle) {
  */
 
 /// 宽高自适应标识View
-/// 一般不需要设置宽高约束，可以直接当做Label使用（使用内置Size），如果设置宽度，可能文字会有裁剪（xyz...），高度取icon的图标上下扩大4个像素
+/// Full样式，按照Label使用方式（内置Size）不需要设置size约束，可以直接当做Label使用（使用内置Size），如果设置宽度，可能文字会有裁剪（xyz...），高度取icon的图标上下扩大4个像素
+/// Icon样式，按照View常规样式，因为每个业务的UI部分头像不一样，需要设置宽高Size，在右下角显示
 @interface THKIdentityView : UIView
 
 /// 类方法创建标识View
