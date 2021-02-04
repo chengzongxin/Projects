@@ -3,9 +3,39 @@
   "desc": "true",
   "data": {
     "identify": [
+        {
+          "identificationType": 6,
+          "subCategory": [
+            {
+              "subCategory": 0,
+              "identificationPic": "http://img.to8to.com/app/icon/designer_identity.png",
+              "iconWidth": 16,
+              "iconHeight": 16,
+              "textData": {
+                "identificationDesc": "设计机构",
+                "backgroundColor": "24C77E1A",
+                "textColor": "24C77E",
+                "fontSize": 12
+              }
+            },
+            {
+              "subCategory": 1,
+              "identificationPic": "http://img.to8to.com/app/icon/expert_identity.png",
+              "iconWidth": 16,
+              "iconHeight": 16,
+              "textData": {
+                "identificationDesc": "独立设计师",
+                "backgroundColor": "F0F1F5",
+                "textColor": "878B99",
+                "fontSize": 12
+              }
+            }
+          ]
+        },
       {
         "identificationType": 10,
         "subCategory": [
+            
           {
             "subCategory": 0,
             "identificationPic": "http://img.to8to.com/app/icon/expert_identity.png",

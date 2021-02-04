@@ -64,6 +64,14 @@ typedef NS_ENUM(NSInteger, THKIdentityViewStyle) {
 /// 认证标识View尺寸大小
 @property (nonatomic, assign, readonly) CGSize viewSize;
 
+
+/// 标识类型
+@property (nonatomic, assign) NSInteger type;
+/// 标识类型
+@property (nonatomic, assign) NSInteger subType;
+
+- (void)setType:(NSInteger)type subType:(NSInteger)subType;
+
 @end
 
 NS_ASSUME_NONNULL_END

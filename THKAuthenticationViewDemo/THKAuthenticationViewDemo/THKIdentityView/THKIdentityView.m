@@ -28,8 +28,6 @@ static CGFloat const kImageTextInterval = 4;
 @interface THKIdentityView ()
 /// 标识View配置对象
 @property (nonatomic, strong) THKIdentityConfiguration *config;
-/// 标识类型
-@property (nonatomic, assign) NSInteger type;
 /// 标识样式
 @property (nonatomic, assign) THKIdentityViewStyle style;
 /// 图标
@@ -70,11 +68,11 @@ static CGFloat const kImageTextInterval = 4;
     self = [super init]; // 调用 initWithFrame
     if (!self) return nil;
     
-    self.type = type;
-    self.style = style;
-    self.config = [THKIdentityConfiguration configWithIdentityType:self.type subType:subType];
+    _type = type;
+    _subType = subType;
+    _style = style;
     
-    [self setupSubviews];
+    [self updateUI];
     
     return self;
 }
@@ -171,26 +169,62 @@ static CGFloat const kImageTextInterval = 4;
     return size;
 }
 
-#pragma mark - Getter && Setter
-
-- (CGSize)viewSize{
-    [self layoutIfNeeded];
+- (void)updateUI{
     
-    if (self.width*self.height > self.intrinsicContentSize.width*self.intrinsicContentSize.height) {
-        return self.size;
-    }else{
-        return self.intrinsicContentSize;
-    }
+    _config = [THKIdentityConfiguration configWithIdentityType:_type subType:_subType];
+    
+    [self setupSubviews];
 }
+
+#pragma mark - Getter && Setter
 
 - (void)setType:(NSInteger)type{
     _type = type;
+    
+    _config = [THKIdentityConfiguration configWithIdentityType:_type subType:_subType];
+    
+    [self invalidateIntrinsicContentSize];
+//    [self updateUI];
+    
+    [self.iconImageView mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self).inset(kImageMargin + self.iconOffset.x);
+        make.centerY.equalTo(self.mas_centerY).offset(self.iconOffset.y);
+        make.size.mas_equalTo(self.config.iconSize);
+    }];
+    
+    
+    [self.textLabel mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.iconImageView.mas_right).offset(kImageTextInterval);
+        make.right.equalTo(self).inset(kImageMargin).priorityHigh();
+        make.centerY.equalTo(self.iconImageView.mas_centerY);
+    }];
+    
+    
+    [self.superview layoutIfNeeded];
+}
+
+- (void)setSubType:(NSInteger)subType{
+    _subType = subType;
+    
+    [self updateUI];
     
     [self invalidateIntrinsicContentSize];
 }
 
 - (void)setStyle:(THKIdentityViewStyle)style{
     _style = style;
+    
+    [self updateUI];
+    
+    [self invalidateIntrinsicContentSize];
+}
+
+- (void)setType:(NSInteger)type subType:(NSInteger)subType{
+    _type = type;
+    _subType = subType;
+    
+    
+    [self updateUI];
     
     [self invalidateIntrinsicContentSize];
 }
@@ -229,17 +263,25 @@ static CGFloat const kImageTextInterval = 4;
     }
 }
 
+
+- (CGSize)viewSize{
+    [self layoutIfNeeded];
+    
+    if (self.width*self.height > self.intrinsicContentSize.width*self.intrinsicContentSize.height) {
+        return self.size;
+    }else{
+        return self.intrinsicContentSize;
+    }
+}
+
+
 - (UIImageView *)iconImageView{
     if (!_iconImageView) {
         _iconImageView = [[UIImageView alloc] init];
         _iconImageView.layer.cornerRadius = self.style == THKIdentityViewStyle_Full ? self.config.iconSize.height/2 : 0;
         _iconImageView.layer.masksToBounds = YES;
         if (self.config.iconUrl) {
-            [_iconImageView setImageWithURL:[NSURL URLWithString:self.config.iconUrl] placeholder:self.config.iconLocal options:0 completion:^(UIImage * _Nullable image, NSURL * _Nonnull url, YYWebImageFromType from, YYWebImageStage stage, NSError * _Nullable error) {
-                if (error) {
-                    NSLog(@"%@",error);
-                }
-            }];
+            [_iconImageView loadImageWithUrlStr:self.config.iconUrl placeHolderImage:self.config.iconLocal];
         }else{
             _iconImageView.image = self.config.iconLocal;
         }

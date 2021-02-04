@@ -63,10 +63,11 @@
 
 + (UIImage *)iconImg:(NSInteger)type subType:(NSInteger)subType{
     switch (type) {
-        case 10:
-            return [UIImage imageNamed:@"icon_identity_orange"];
+        case 6:
         case 11:
             return subType ? [UIImage imageNamed:@"icon_identity_orange"] : [UIImage imageNamed:@"icon_identity_green"];
+        case 10:
+            return [UIImage imageNamed:@"icon_identity_orange"];
         case 12:
             return [UIImage imageNamed:@"icon_identity_yellow"];
         case 13:
