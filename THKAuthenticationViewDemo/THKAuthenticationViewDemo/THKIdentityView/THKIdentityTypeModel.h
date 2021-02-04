@@ -6,15 +6,25 @@
 //
 
 #import <UIKit/UIKit.h>
+@class THKIdentityTypeModelIdentify;
 @class THKIdentityTypeModelSubCategory;
 @class THKIdentityTypeModelSubCategoryTextData;
 NS_ASSUME_NONNULL_BEGIN
 
 @interface THKIdentityTypeModel : NSObject
+
+@property(nonatomic, strong) NSArray <THKIdentityTypeModelIdentify *> *identify;
+
+/// 创建默认配置模型
++ (instancetype)modelDefault;
+
+@end
+
+@interface THKIdentityTypeModelIdentify : NSObject
+
 @property(nonatomic, assign) NSInteger identificationType;
 @property(nonatomic, strong) NSArray <THKIdentityTypeModelSubCategory *> *subCategory;
 
-+ (NSArray *)model;
 
 @end
 

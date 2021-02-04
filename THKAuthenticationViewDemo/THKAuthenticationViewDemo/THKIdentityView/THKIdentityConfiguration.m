@@ -19,7 +19,7 @@
     // 先使用默认配置
 //    [config configDefaultWithType:type];
     // 本地默认json配置
-    NSArray <THKIdentityTypeModel *> *models = [THKIdentityTypeModel model];
+    NSArray <THKIdentityTypeModelIdentify *> *models = [THKIdentityTypeModel modelDefault].identify;
     
     [config configWithModel:models type:type subType:subType];
     config.iconLocal = [self iconImg:type subType:subType];
@@ -29,11 +29,11 @@
 
 /// 使用接口返回的模型配置
 /// @param type 认证类型
-- (void)configWithModel:(NSArray <THKIdentityTypeModel *> *)models type:(NSInteger)type subType:(NSInteger)subType{
+- (void)configWithModel:(NSArray <THKIdentityTypeModelIdentify *> *)models type:(NSInteger)type subType:(NSInteger)subType{
 
     THKIdentityTypeModelSubCategory *model;
 
-    for (THKIdentityTypeModel *m in models) {
+    for (THKIdentityTypeModelIdentify *m in models) {
         if (m.identificationType == type) {
             if (subType == 0) {
                 model = m.subCategory.firstObject;

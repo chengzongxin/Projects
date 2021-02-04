@@ -236,7 +236,9 @@ static CGFloat const kImageTextInterval = 4;
         _iconImageView.layer.masksToBounds = YES;
         if (self.config.iconUrl) {
             [_iconImageView setImageWithURL:[NSURL URLWithString:self.config.iconUrl] placeholder:self.config.iconLocal options:0 completion:^(UIImage * _Nullable image, NSURL * _Nonnull url, YYWebImageFromType from, YYWebImageStage stage, NSError * _Nullable error) {
-                NSLog(@"%@",error);
+                if (error) {
+                    NSLog(@"%@",error);
+                }
             }];
         }else{
             _iconImageView.image = self.config.iconLocal;
