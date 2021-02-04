@@ -67,7 +67,7 @@
             self.font = [UIFont systemFontOfSize:10 weight:UIFontWeightMedium];
             self.backgroundColor = UIColorHex(878B99);
             self.textColor = UIColor.whiteColor;
-            self.iconSize = self.iconLocal.size;
+            self.iconSize = CGSizeMake(16, 16);
         }
             break;
         case 10:
@@ -77,7 +77,7 @@
             self.font = [UIFont systemFontOfSize:12];
             self.backgroundColor = UIColorHex(FEF6E8);
             self.textColor = UIColorHex(EB9002);
-            self.iconSize = self.iconLocal.size;
+            self.iconSize = CGSizeMake(16, 16);
         }
             break;
         case 11:
@@ -87,7 +87,7 @@
             self.font = [UIFont systemFontOfSize:12];
             self.backgroundColor = [UIColorHex(24C77E) colorWithAlphaComponent:0.1];;
             self.textColor = UIColorHex(24C77E);
-            self.iconSize = self.iconLocal.size;
+            self.iconSize = CGSizeMake(16, 16);
         }
             break;
         case 12:
@@ -97,7 +97,7 @@
             self.font = [UIFont systemFontOfSize:12];
             self.backgroundColor = UIColorHex(ECF3FC);
             self.textColor = UIColorHex(3380D9);
-            self.iconSize = self.iconLocal.size;
+            self.iconSize = CGSizeMake(16, 16);
         }
             break;
         case 13:
@@ -107,7 +107,7 @@
             self.font = [UIFont systemFontOfSize:12];
             self.backgroundColor = UIColorHex(ECF3FC);
             self.textColor = UIColorHex(3380D9);
-            self.iconSize = self.iconLocal.size;
+            self.iconSize = CGSizeMake(16, 16);
         }
             break;
         case 14:
@@ -117,7 +117,7 @@
             self.font = [UIFont systemFontOfSize:12];
             self.backgroundColor = UIColorHex(ECF3FC);
             self.textColor = UIColorHex(3380D9);
-            self.iconSize = self.iconLocal.size;
+            self.iconSize = CGSizeMake(16, 16);
         }
             break;
             
