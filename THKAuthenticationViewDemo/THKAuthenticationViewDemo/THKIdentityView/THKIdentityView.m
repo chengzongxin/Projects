@@ -186,11 +186,7 @@ static CGFloat const kImageTextInterval = 4;
         _textLabel.textColor = self.config.textColor;
         _textLabel.font = self.config.font;
 //        [_iconImageView loadImageWithUrlStr:self.config.iconUrl placeHolderImage:self.config.iconLocal];
-        [_iconImageView setImageWithURL:[NSURL URLWithString:self.config.iconUrl] placeholder:self.config.iconLocal options:0 completion:^(UIImage * _Nullable image, NSURL * _Nonnull url, YYWebImageFromType from, YYWebImageStage stage, NSError * _Nullable error) {
-            if (error) {
-                NSLog(@"%@",error);
-            }
-        }];
+        [_iconImageView setImageWithURL:[NSURL URLWithString:self.config.iconUrl] placeholder:self.config.iconLocal];
         [self.iconImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self).inset(kImageMargin + self.iconOffset.x);
             make.centerY.equalTo(self.mas_centerY).offset(self.iconOffset.y);
@@ -206,11 +202,7 @@ static CGFloat const kImageTextInterval = 4;
         
     }else{
 //        [_iconImageView loadImageWithUrlStr:self.config.iconUrl placeHolderImage:self.config.iconLocal];
-        [_iconImageView setImageWithURL:[NSURL URLWithString:self.config.iconUrl] placeholder:self.config.iconLocal options:0 completion:^(UIImage * _Nullable image, NSURL * _Nonnull url, YYWebImageFromType from, YYWebImageStage stage, NSError * _Nullable error) {
-            if (error) {
-                NSLog(@"%@",error);
-            }
-        }];
+        [_iconImageView setImageWithURL:[NSURL URLWithString:self.config.iconUrl] placeholder:self.config.iconLocal];
         
         [self.iconImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.center.equalTo(self);
@@ -276,11 +268,7 @@ static CGFloat const kImageTextInterval = 4;
         _iconImageView.layer.masksToBounds = YES;
         if (self.config.iconUrl) {
 //            [_iconImageView loadImageWithUrlStr:self.config.iconUrl placeHolderImage:self.config.iconLocal];
-            [_iconImageView setImageWithURL:[NSURL URLWithString:self.config.iconUrl] placeholder:self.config.iconLocal options:0 completion:^(UIImage * _Nullable image, NSURL * _Nonnull url, YYWebImageFromType from, YYWebImageStage stage, NSError * _Nullable error) {
-                if (error) {
-                    NSLog(@"%@",error);
-                }
-            }];
+            [_iconImageView setImageWithURL:[NSURL URLWithString:self.config.iconUrl] placeholder:self.config.iconLocal];
         }else{
             _iconImageView.image = self.config.iconLocal;
         }
