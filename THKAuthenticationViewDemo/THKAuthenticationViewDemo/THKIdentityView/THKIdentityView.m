@@ -79,13 +79,13 @@ static CGFloat const kImageTextInterval = 4;
     return [self initWithType:0 style:THKIdentityViewStyle_Icon];
 }
 
-
+// init 方法会调用这里
 - (instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if (self) {
-        self.type = 0;
-        self.style = THKIdentityViewStyle_Icon;
-        self.config = [THKIdentityConfiguration configWithIdentityType:self.type];
+//        self.type = 0;
+//        self.style = THKIdentityViewStyle_Icon;
+//        self.config = [THKIdentityConfiguration configWithIdentityType:self.type];
     }
     return self;
 }
@@ -126,10 +126,10 @@ static CGFloat const kImageTextInterval = 4;
         // 显示icon
         [self addSubview:self.iconImageView];
         
-        [self mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.bottom.equalTo(self.superview).offset(self.iconOffset.y);
-            make.right.equalTo(self.superview).offset(self.iconOffset.x);
-        }];
+//        [self mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.bottom.equalTo(self.superview).offset(self.iconOffset.y);
+//            make.right.equalTo(self.superview).offset(self.iconOffset.x);
+//        }];
         
         [self.iconImageView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.center.equalTo(self);
@@ -168,10 +168,12 @@ static CGFloat const kImageTextInterval = 4;
 #pragma mark - Getter && Setter
 
 - (CGSize)viewSize{
-    if (self.superview) {
-        return self.intrinsicContentSize;
+    [self layoutIfNeeded];
+    
+    if (self.width*self.height > self.intrinsicContentSize.width*self.intrinsicContentSize.height) {
+        return self.size;
     }else{
-        return CGSizeZero;
+        return self.intrinsicContentSize;
     }
 }
 

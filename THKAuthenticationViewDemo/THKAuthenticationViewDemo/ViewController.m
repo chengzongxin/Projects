@@ -39,8 +39,6 @@
     THKIdentityView *i6 = [THKIdentityView identityViewWithType:14 style:THKIdentityViewStyle_Full];
     [self.view addSubview:i6];
 
-    NSLog(@"%@",NSStringFromCGSize(i6.viewSize));
-
     [i1 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(50);
         make.top.mas_equalTo(100);
@@ -88,12 +86,29 @@
     [imgV addSubview:i7];
     
     [i7 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.mas_equalTo(0);
-        make.bottom.mas_equalTo(0);
+        make.right.mas_equalTo(-10);
+        make.bottom.mas_equalTo(-10);
         make.width.mas_equalTo(20);
         make.height.mas_equalTo(20);
     }];
     
+    THKIdentityView *i8 = [THKIdentityView identityViewWithType:999 style:THKIdentityViewStyle_Full];
+    THKIdentityView *i9 = [THKIdentityView identityViewWithType:999 style:THKIdentityViewStyle_Icon];
+    i8.frame = CGRectMake(100, 500, 100, 50);
+    i9.frame = CGRectMake(100, 600, 50, 50);
+    [self.view addSubview:i8];
+    [self.view addSubview:i9];
+    
+    [self.view layoutIfNeeded];
+    NSLog(@"%@,%@",NSStringFromCGSize(i1.frame.size),NSStringFromCGSize(i1.viewSize));
+    NSLog(@"%@,%@",NSStringFromCGSize(i2.frame.size),NSStringFromCGSize(i2.viewSize));
+    NSLog(@"%@,%@",NSStringFromCGSize(i3.frame.size),NSStringFromCGSize(i3.viewSize));
+    NSLog(@"%@,%@",NSStringFromCGSize(i4.frame.size),NSStringFromCGSize(i4.viewSize));
+    NSLog(@"%@,%@",NSStringFromCGSize(i5.frame.size),NSStringFromCGSize(i5.viewSize));
+    NSLog(@"%@,%@",NSStringFromCGSize(i6.frame.size),NSStringFromCGSize(i6.viewSize));
+    NSLog(@"%@,%@",NSStringFromCGSize(i7.frame.size),NSStringFromCGSize(i7.viewSize));
+    NSLog(@"%@,%@",NSStringFromCGSize(i8.frame.size),NSStringFromCGSize(i8.viewSize));
+    NSLog(@"%@,%@",NSStringFromCGSize(i9.frame.size),NSStringFromCGSize(i9.viewSize));
 }
 
 - (void)test{
