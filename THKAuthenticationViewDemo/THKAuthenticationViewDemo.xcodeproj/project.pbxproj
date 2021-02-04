@@ -22,8 +22,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		164C5C5C25CA37D70078F071 /* THKIdentityIconView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THKIdentityIconView.m; sourceTree = "<group>"; };
-		164C5C5D25CA37D70078F071 /* THKIdentityIconView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THKIdentityIconView.h; sourceTree = "<group>"; };
 		164C5C6225CA43E30078F071 /* THKIdentityConfiguration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = THKIdentityConfiguration.h; sourceTree = "<group>"; };
 		164C5C6325CA43E30078F071 /* THKIdentityConfiguration.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = THKIdentityConfiguration.m; sourceTree = "<group>"; };
 		164C5C6E25CA97A60078F071 /* THKIdentityTypeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = THKIdentityTypeModel.h; sourceTree = "<group>"; };
@@ -101,7 +99,6 @@
 				16557AB425B6733900C350D4 /* LaunchScreen.storyboard */,
 				16557AB725B6733900C350D4 /* Info.plist */,
 				16557AB825B6733900C350D4 /* main.m */,
-				165217A825CAB88A002DC45C /* App启动配置接口.json */,
 			);
 			path = THKAuthenticationViewDemo;
 			sourceTree = "<group>";
@@ -115,8 +112,7 @@
 				164C5C6325CA43E30078F071 /* THKIdentityConfiguration.m */,
 				164C5C6E25CA97A60078F071 /* THKIdentityTypeModel.h */,
 				164C5C6F25CA97A60078F071 /* THKIdentityTypeModel.m */,
-				164C5C5D25CA37D70078F071 /* THKIdentityIconView.h */,
-				164C5C5C25CA37D70078F071 /* THKIdentityIconView.m */,
+				165217A825CAB88A002DC45C /* App启动配置接口.json */,
 			);
 			path = THKIdentityView;
 			sourceTree = "<group>";
