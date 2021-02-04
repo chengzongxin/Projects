@@ -87,25 +87,6 @@ static CGFloat const kImageTextInterval = 4;
     return [self initWithType:0 style:THKIdentityViewStyle_Icon];
 }
 
-// init 方法会调用这里
-//- (instancetype)initWithFrame:(CGRect)frame{
-//    self = [super initWithFrame:frame];
-//    if (self) {
-////        self.type = 0;
-////        self.style = THKIdentityViewStyle_Icon;
-////        self.config = [THKIdentityConfiguration configWithIdentityType:self.type];
-//    }
-//    return self;
-//}
-
-
-//- (void)didMoveToSuperview{
-//    if (!self.superview) {
-//        return;
-//    }
-//
-//    [self setupSubviews];
-//}
 
 - (void)setupSubviews{
     
@@ -182,6 +163,10 @@ static CGFloat const kImageTextInterval = 4;
 
 #pragma mark - Getter && Setter
 
+- (void)setType:(NSInteger)type{
+    [self setType:type subType:0];
+}
+
 - (void)setType:(NSInteger)type subType:(NSInteger)subType{
     _type = type;
     _subType = subType;
@@ -192,11 +177,15 @@ static CGFloat const kImageTextInterval = 4;
         
         self.backgroundColor = self.config.backgroundColor;
         self.layer.cornerRadius = (self.config.iconSize.height + kImageMargin * 2)/2;
+        // 一开始是Icon,后来改成Full形式，需要添加
+        if (!self.textLabel.superview) {
+            [self addSubview:self.textLabel];
+        }
         
         _textLabel.text = self.config.text;
         _textLabel.textColor = self.config.textColor;
         _textLabel.font = self.config.font;
-        
+//        [_iconImageView loadImageWithUrlStr:self.config.iconUrl placeHolderImage:self.config.iconLocal];
         [_iconImageView setImageWithURL:[NSURL URLWithString:self.config.iconUrl] placeholder:self.config.iconLocal options:0 completion:^(UIImage * _Nullable image, NSURL * _Nonnull url, YYWebImageFromType from, YYWebImageStage stage, NSError * _Nullable error) {
             if (error) {
                 NSLog(@"%@",error);
@@ -216,10 +205,16 @@ static CGFloat const kImageTextInterval = 4;
         }];
         
     }else{
+//        [_iconImageView loadImageWithUrlStr:self.config.iconUrl placeHolderImage:self.config.iconLocal];
         [_iconImageView setImageWithURL:[NSURL URLWithString:self.config.iconUrl] placeholder:self.config.iconLocal options:0 completion:^(UIImage * _Nullable image, NSURL * _Nonnull url, YYWebImageFromType from, YYWebImageStage stage, NSError * _Nullable error) {
             if (error) {
                 NSLog(@"%@",error);
             }
+        }];
+        
+        [self.iconImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.center.equalTo(self);
+            make.size.equalTo(self);
         }];
     }
     
@@ -258,7 +253,7 @@ static CGFloat const kImageTextInterval = 4;
 
 - (void)tapAction{
     if (self.tapBlock) {
-        self.tapBlock(self.type);
+        self.tapBlock(_type);
     }
 }
 
@@ -280,6 +275,7 @@ static CGFloat const kImageTextInterval = 4;
         _iconImageView.layer.cornerRadius = self.style == THKIdentityViewStyle_Full ? self.config.iconSize.height/2 : 0;
         _iconImageView.layer.masksToBounds = YES;
         if (self.config.iconUrl) {
+//            [_iconImageView loadImageWithUrlStr:self.config.iconUrl placeHolderImage:self.config.iconLocal];
             [_iconImageView setImageWithURL:[NSURL URLWithString:self.config.iconUrl] placeholder:self.config.iconLocal options:0 completion:^(UIImage * _Nullable image, NSURL * _Nonnull url, YYWebImageFromType from, YYWebImageStage stage, NSError * _Nullable error) {
                 if (error) {
                     NSLog(@"%@",error);

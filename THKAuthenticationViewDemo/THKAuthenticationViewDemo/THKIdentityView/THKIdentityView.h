@@ -67,7 +67,11 @@ typedef NS_ENUM(NSInteger, THKIdentityViewStyle) {
 
 /// 某些场景下是先通过懒加载创建IdentityView，后续数据回调再刷新IdentityVIew，需要把类型传过来，调用这个方法
 /// @param type V标识类型
-/// @param subType 二级标识分类，有些业务线会一个类型下会对应两个标识，比如11.1设计机构，11.2个人设计师
+- (void)setType:(NSInteger)type;
+
+/// 某些场景下是先通过懒加载创建IdentityView，后续数据回调再刷新IdentityVIew，需要把类型传过来，调用这个方法
+/// @param type V标识类型
+/// @param subType 二级标识分类, 没有传0即可，有些业务线会一个类型下会对应两个标识，比如11.1设计机构，11.2个人设计师
 - (void)setType:(NSInteger)type subType:(NSInteger)subType;
 
 @end
