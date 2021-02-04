@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) CGSize iconSize;
 
 
-+ (instancetype)configWithIdentityType:(NSInteger)type;
++ (instancetype)configWithIdentityType:(NSInteger)type subType:(NSInteger)subType;
 
 @end
 

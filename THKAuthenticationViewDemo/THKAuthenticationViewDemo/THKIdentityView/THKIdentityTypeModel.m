@@ -14,11 +14,10 @@
 }
 
 + (NSArray *)model{
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"App启动配置接口.json" ofType:nil];
-//    NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:path];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"V标识配置接口.json" ofType:nil];
     NSData *data = [NSData dataWithContentsOfFile:path];
     NSDictionary *json =[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
-    return [THKIdentityTypeModel mj_objectArrayWithKeyValuesArray:json[@"result"][@"identify"]];
+    return [THKIdentityTypeModel mj_objectArrayWithKeyValuesArray:json[@"data"][@"identify"]];
 }
 
 @end

@@ -63,12 +63,16 @@ static CGFloat const kImageTextInterval = 4;
 }
 
 - (instancetype)initWithType:(NSInteger)type style:(THKIdentityViewStyle)style{
+    return [self initWithType:type subType:0 style:style];
+}
+
+- (instancetype)initWithType:(NSInteger)type subType:(NSInteger)subType style:(THKIdentityViewStyle)style{
     self = [super init]; // 调用 initWithFrame
     if (!self) return nil;
     
     self.type = type;
     self.style = style;
-    self.config = [THKIdentityConfiguration configWithIdentityType:self.type];
+    self.config = [THKIdentityConfiguration configWithIdentityType:self.type subType:subType];
     
     [self setupSubviews];
     
@@ -231,7 +235,9 @@ static CGFloat const kImageTextInterval = 4;
         _iconImageView.layer.cornerRadius = self.style == THKIdentityViewStyle_Full ? self.config.iconSize.height/2 : 0;
         _iconImageView.layer.masksToBounds = YES;
         if (self.config.iconUrl) {
-            [_iconImageView setImageWithURL:[NSURL URLWithString:self.config.iconUrl] placeholder:self.config.iconLocal];
+            [_iconImageView setImageWithURL:[NSURL URLWithString:self.config.iconUrl] placeholder:self.config.iconLocal options:0 completion:^(UIImage * _Nullable image, NSURL * _Nonnull url, YYWebImageFromType from, YYWebImageStage stage, NSError * _Nullable error) {
+                NSLog(@"%@",error);
+            }];
         }else{
             _iconImageView.image = self.config.iconLocal;
         }

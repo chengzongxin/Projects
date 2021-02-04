@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		164C5C6425CA43E30078F071 /* THKIdentityConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 164C5C6325CA43E30078F071 /* THKIdentityConfiguration.m */; };
 		164C5C7025CA97A60078F071 /* THKIdentityTypeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 164C5C6F25CA97A60078F071 /* THKIdentityTypeModel.m */; };
-		165217A925CAB88A002DC45C /* App启动配置接口.json in Resources */ = {isa = PBXBuildFile; fileRef = 165217A825CAB88A002DC45C /* App启动配置接口.json */; };
 		16557AA825B6733700C350D4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 16557AA725B6733700C350D4 /* AppDelegate.m */; };
 		16557AAB25B6733700C350D4 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 16557AAA25B6733700C350D4 /* SceneDelegate.m */; };
 		16557AAE25B6733700C350D4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16557AAD25B6733700C350D4 /* ViewController.m */; };
@@ -18,6 +17,7 @@
 		16557AB625B6733900C350D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16557AB425B6733900C350D4 /* LaunchScreen.storyboard */; };
 		16557AB925B6733900C350D4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 16557AB825B6733900C350D4 /* main.m */; };
 		16557AC325B6735300C350D4 /* THKIdentityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 16557AC225B6735300C350D4 /* THKIdentityView.m */; };
+		1660BA7325CBA88200579815 /* V标识配置接口.json in Resources */ = {isa = PBXBuildFile; fileRef = 1660BA7225CBA88200579815 /* V标识配置接口.json */; };
 		C936831250BCA3DEE260FED5 /* libPods-THKAuthenticationViewDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DECCBB41ECA8641596B91F10 /* libPods-THKAuthenticationViewDemo.a */; };
 /* End PBXBuildFile section */
 
@@ -26,7 +26,6 @@
 		164C5C6325CA43E30078F071 /* THKIdentityConfiguration.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = THKIdentityConfiguration.m; sourceTree = "<group>"; };
 		164C5C6E25CA97A60078F071 /* THKIdentityTypeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = THKIdentityTypeModel.h; sourceTree = "<group>"; };
 		164C5C6F25CA97A60078F071 /* THKIdentityTypeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = THKIdentityTypeModel.m; sourceTree = "<group>"; };
-		165217A825CAB88A002DC45C /* App启动配置接口.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "App启动配置接口.json"; sourceTree = "<group>"; };
 		16557AA325B6733700C350D4 /* THKAuthenticationViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = THKAuthenticationViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16557AA625B6733700C350D4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		16557AA725B6733700C350D4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -41,6 +40,7 @@
 		16557AB825B6733900C350D4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		16557AC125B6735300C350D4 /* THKIdentityView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = THKIdentityView.h; sourceTree = "<group>"; };
 		16557AC225B6735300C350D4 /* THKIdentityView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = THKIdentityView.m; sourceTree = "<group>"; };
+		1660BA7225CBA88200579815 /* V标识配置接口.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "V标识配置接口.json"; sourceTree = "<group>"; };
 		941C0722DF7C10CC5D26504A /* Pods-THKAuthenticationViewDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-THKAuthenticationViewDemo.debug.xcconfig"; path = "Target Support Files/Pods-THKAuthenticationViewDemo/Pods-THKAuthenticationViewDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		B1BBD9CC5C0CDE95F34E883A /* Pods-THKAuthenticationViewDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-THKAuthenticationViewDemo.release.xcconfig"; path = "Target Support Files/Pods-THKAuthenticationViewDemo/Pods-THKAuthenticationViewDemo.release.xcconfig"; sourceTree = "<group>"; };
 		DECCBB41ECA8641596B91F10 /* libPods-THKAuthenticationViewDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-THKAuthenticationViewDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,7 +112,7 @@
 				164C5C6325CA43E30078F071 /* THKIdentityConfiguration.m */,
 				164C5C6E25CA97A60078F071 /* THKIdentityTypeModel.h */,
 				164C5C6F25CA97A60078F071 /* THKIdentityTypeModel.m */,
-				165217A825CAB88A002DC45C /* App启动配置接口.json */,
+				1660BA7225CBA88200579815 /* V标识配置接口.json */,
 			);
 			path = THKIdentityView;
 			sourceTree = "<group>";
@@ -184,7 +184,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				16557AB625B6733900C350D4 /* LaunchScreen.storyboard in Resources */,
-				165217A925CAB88A002DC45C /* App启动配置接口.json in Resources */,
+				1660BA7325CBA88200579815 /* V标识配置接口.json in Resources */,
 				16557AB325B6733900C350D4 /* Assets.xcassets in Resources */,
 				16557AB125B6733700C350D4 /* Main.storyboard in Resources */,
 			);

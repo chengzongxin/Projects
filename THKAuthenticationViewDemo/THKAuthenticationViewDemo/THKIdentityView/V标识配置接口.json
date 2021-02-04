@@ -1,0 +1,122 @@
+{
+  "status": 0,
+  "desc": "true",
+  "data": {
+    "identify": [
+      {
+        "identificationType": 10,
+        "subCategory": [
+          {
+            "subCategory": 0,
+            "identificationPic": "http://img.to8to.com/app/icon/expert_identity.png",
+            "iconWidth": 16,
+            "iconHeight": 16,
+            "textData": {
+              "identificationDesc": "家居达人",
+              "backgroundColor": "FEF6E8",
+              "textColor": "EB9002",
+              "fontSize": 12
+            }
+          }
+        ]
+      },
+      {
+        "identificationType": 11,
+        "subCategory": [
+          {
+            "subCategory": 0,
+            "identificationPic": "http://img.to8to.com/app/icon/designer_identity.png",
+            "iconWidth": 16,
+            "iconHeight": 16,
+            "textData": {
+              "identificationDesc": "设计机构",
+              "backgroundColor": "24C77E1A",
+              "textColor": "24C77E",
+              "fontSize": 12
+            }
+          },
+          {
+            "subCategory": 1,
+            "identificationPic": "http://img.to8to.com/app/icon/expert_identity.png",
+            "iconWidth": 16,
+            "iconHeight": 16,
+            "textData": {
+              "identificationDesc": "独立设计师",
+              "backgroundColor": "F0F1F5",
+              "textColor": "878B99",
+              "fontSize": 12
+            }
+          }
+        ]
+      },
+      {
+        "identificationType": 12,
+        "subCategory": [
+          {
+            "subCategory": 0,
+            "identificationPic": "http://img.to8to.com/app/icon/designer_identity.png",
+            "iconWidth": 16,
+            "iconHeight": 16,
+            "textData": {
+              "identificationDesc": "品牌商家",
+              "backgroundColor": "ECF3FC",
+              "textColor": "3380D9",
+              "fontSize": 12
+            }
+          }
+        ]
+      },
+      {
+        "identificationType": 13,
+        "subCategory": [
+          {
+            "subCategory": 0,
+            "identificationPic": "http://img.to8to.com/app/icon/authority_identity.png",
+            "iconWidth": 16,
+            "iconHeight": 16,
+            "textData": {
+              "identificationDesc": "官方认证",
+              "backgroundColor": "ECF3FC",
+              "textColor": "3380D9",
+              "fontSize": 12
+            }
+          }
+        ]
+      },
+      {
+        "identificationType": 14,
+        "subCategory": [
+          {
+            "subCategory": 0,
+            "identificationPic": "http://img.to8to.com/app/icon/designer_identity.png",
+            "iconWidth": 16,
+            "iconHeight": 16,
+            "textData": {
+              "identificationDesc": "装修公司",
+              "backgroundColor": "ECF3FC",
+              "textColor": "3380D9",
+              "fontSize": 12
+            }
+          }
+        ]
+      },
+      {
+        "identificationType": 999,
+        "subCategory": [
+          {
+            "subCategory": 0,
+            "identificationPic": "http://img.to8to.com/app/icon/expert_identity.png",
+            "iconWidth": 16,
+            "iconHeight": 16,
+            "textData": {
+              "identificationDesc": "作者",
+              "backgroundColor": "878B99",
+              "textColor": "FFFFFF",
+              "fontSize": 12
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

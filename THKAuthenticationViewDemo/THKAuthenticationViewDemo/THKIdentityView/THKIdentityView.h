@@ -48,6 +48,13 @@ typedef NS_ENUM(NSInteger, THKIdentityViewStyle) {
 /// @param style V标识样式
 - (instancetype)initWithType:(NSInteger)type style:(THKIdentityViewStyle)style;
 
+
+/// 初始化创建标识View
+/// @param type V标识类型
+/// @param subType 二级标识分类，有些业务线会一个类型下会对应两个标识，比如11.1设计机构，11.2个人设计师
+/// @param style V标识样式
+- (instancetype)initWithType:(NSInteger)type subType:(NSInteger)subType style:(THKIdentityViewStyle)style;
+
 /// 标识View点击回调，superView需要UserInteractionEnable = YES才会生效
 @property (nonatomic, copy) THKIdentityViewTapBlock tapBlock;
 

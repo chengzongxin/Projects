@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface THKIdentityTypeModel : NSObject
 @property(nonatomic, assign) NSInteger identificationType;
-@property(nonatomic, strong) THKIdentityTypeModelSubCategory *subCategory;
+@property(nonatomic, strong) NSArray <THKIdentityTypeModelSubCategory *> *subCategory;
 
 + (NSArray *)model;
 

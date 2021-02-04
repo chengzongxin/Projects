@@ -21,26 +21,34 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    THKIdentityView *i1 = [THKIdentityView identityViewWithType:999 style:THKIdentityViewStyle_Full];
+    THKIdentityView *i0 = [THKIdentityView identityViewWithType:10 style:THKIdentityViewStyle_Full];
+    [self.view addSubview:i0];
+
+    THKIdentityView *i1 = [THKIdentityView identityViewWithType:11 style:THKIdentityViewStyle_Full];
     [self.view addSubview:i1];
 
-    THKIdentityView *i2 = [THKIdentityView identityViewWithType:10 style:THKIdentityViewStyle_Full];
+    THKIdentityView *i2 = [[THKIdentityView alloc] initWithType:11 subType:1 style:THKIdentityViewStyle_Full];
     [self.view addSubview:i2];
-
-    THKIdentityView *i3 = [THKIdentityView identityViewWithType:11 style:THKIdentityViewStyle_Full];
+    
+    THKIdentityView *i3 = [THKIdentityView identityViewWithType:12 style:THKIdentityViewStyle_Full];
     [self.view addSubview:i3];
 
-    THKIdentityView *i4 = [THKIdentityView identityViewWithType:12 style:THKIdentityViewStyle_Full];
+    THKIdentityView *i4 = [THKIdentityView identityViewWithType:13 style:THKIdentityViewStyle_Full];
     [self.view addSubview:i4];
 
-    THKIdentityView *i5 = [THKIdentityView identityViewWithType:13 style:THKIdentityViewStyle_Full];
+    THKIdentityView *i5 = [THKIdentityView identityViewWithType:14 style:THKIdentityViewStyle_Full];
     [self.view addSubview:i5];
 
-    THKIdentityView *i6 = [THKIdentityView identityViewWithType:14 style:THKIdentityViewStyle_Full];
+    THKIdentityView *i6 = [THKIdentityView identityViewWithType:999 style:THKIdentityViewStyle_Full];
     [self.view addSubview:i6];
 
+    [i0 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(20);
+        make.top.mas_equalTo(100);
+    }];
+
     [i1 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(50);
+        make.left.equalTo(i0.mas_right).offset(20);
         make.top.mas_equalTo(100);
     }];
 
@@ -55,18 +63,18 @@
     }];
 
     [i4 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(i3.mas_right).offset(20);
-        make.top.mas_equalTo(100);
+        make.left.mas_equalTo(20);
+        make.top.equalTo(i3.mas_bottom).offset(50);
     }];
 
     [i5 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(50);
-        make.top.equalTo(i1.mas_bottom).offset(50);
+        make.left.equalTo(i4.mas_right).offset(20);
+        make.top.equalTo(i0.mas_bottom).offset(50);
     }];
-
+    
     [i6 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(i5.mas_right).offset(20);
-        make.top.equalTo(i1.mas_bottom).offset(50);
+        make.top.equalTo(i0.mas_bottom).offset(50);
     }];
     
     
