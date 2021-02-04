@@ -29,8 +29,9 @@ typedef NS_ENUM(NSInteger, THKIdentityViewStyle) {
 /// Icon样式，按照View常规样式，因为每个业务的UI部分头像不一样，需要设置宽高Size，在右下角显示
 @interface THKIdentityView : UIView
 
-/// 类方法创建标识View
-/// 默认为THKIdentityViewStyle_Icon，只显示右下角V标识，不建议用此方法初始化
+/// 类方法创建标识View，一般使用场景在懒加载形式，后赋值
+/// 默认为THKIdentityViewStyle_Icon，只显示右下角V标识，不建议用此方法初始化，
+/// 如果使用此方法，后续数据回调时须调用【 - (void)setType:(NSInteger)type subType:(NSInteger)subType 】设置标识类型
 + (instancetype)identityView;
 
 /// 类方法创建标识View
@@ -64,12 +65,9 @@ typedef NS_ENUM(NSInteger, THKIdentityViewStyle) {
 /// 认证标识View尺寸大小
 @property (nonatomic, assign, readonly) CGSize viewSize;
 
-
-/// 标识类型
-@property (nonatomic, assign) NSInteger type;
-/// 标识类型
-@property (nonatomic, assign) NSInteger subType;
-
+/// 某些场景下是先通过懒加载创建IdentityView，后续数据回调再刷新IdentityVIew，需要把类型传过来，调用这个方法
+/// @param type V标识类型
+/// @param subType 二级标识分类，有些业务线会一个类型下会对应两个标识，比如11.1设计机构，11.2个人设计师
 - (void)setType:(NSInteger)type subType:(NSInteger)subType;
 
 @end

@@ -117,6 +117,39 @@
     NSLog(@"%@,%@",NSStringFromCGSize(i7.frame.size),NSStringFromCGSize(i7.viewSize));
     NSLog(@"%@,%@",NSStringFromCGSize(i8.frame.size),NSStringFromCGSize(i8.viewSize));
     NSLog(@"%@,%@",NSStringFromCGSize(i9.frame.size),NSStringFromCGSize(i9.viewSize));
+    
+    THKIdentityView *i10 = [THKIdentityView identityViewWithType:0 style:THKIdentityViewStyle_Full];
+    [self.view addSubview:i10];
+    [i10 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(20);
+        make.top.equalTo(i6.mas_bottom).offset(50);
+    }];
+    
+    UILabel *label = [[UILabel alloc] init];
+    [self.view addSubview:label];
+    
+    [label mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(i10.mas_right).offset(20);
+        make.top.equalTo(i10);
+    }];
+    
+    label.text = @"hhdsahdas";
+    
+    
+    THKIdentityView *i11 = [THKIdentityView identityViewWithType:0 style:THKIdentityViewStyle_Icon];
+    [self.view addSubview:i11];
+    [i11 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(50);
+        make.top.mas_equalTo(i10.mas_bottom).offset(10);
+        make.width.mas_equalTo(10);
+        make.height.mas_equalTo(10);
+    }];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [i10 setType:12 subType:0];
+        [i11 setType:12 subType:0];
+//        label.text = @"hhdsahdas";
+    });
 }
 
 - (void)test{

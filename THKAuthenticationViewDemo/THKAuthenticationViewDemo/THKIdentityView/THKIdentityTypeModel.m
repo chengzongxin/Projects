@@ -18,7 +18,7 @@
 
 
 + (instancetype)modelDefault{
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"V标识配置接口.json" ofType:nil];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"V_Identity_Config.json" ofType:nil];
     NSData *data = [NSData dataWithContentsOfFile:path];
     NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
     return [THKIdentityTypeModel mj_objectWithKeyValues:json[@"data"]];
