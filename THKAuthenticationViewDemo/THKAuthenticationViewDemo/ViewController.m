@@ -70,7 +70,7 @@
     }];
     
     
-    THKIdentityView *i7 = [THKIdentityView identityViewWithType:11 style:THKIdentityViewStyle_Icon];
+    THKIdentityView *i7 = [THKIdentityView identityViewWithType:10 style:THKIdentityViewStyle_Icon];
     
     UIImageView *imgV = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"11611657654_.pic"]];
     imgV.layer.cornerRadius = 25;
@@ -92,8 +92,8 @@
         make.height.mas_equalTo(20);
     }];
     
-    THKIdentityView *i8 = [THKIdentityView identityViewWithType:999 style:THKIdentityViewStyle_Full];
-    THKIdentityView *i9 = [THKIdentityView identityViewWithType:999 style:THKIdentityViewStyle_Icon];
+    THKIdentityView *i8 = [THKIdentityView identityViewWithType:12 style:THKIdentityViewStyle_Full];
+    THKIdentityView *i9 = [THKIdentityView identityViewWithType:13 style:THKIdentityViewStyle_Icon];
     i8.frame = CGRectMake(100, 500, 100, 50);
     i9.frame = CGRectMake(100, 600, 50, 50);
     [self.view addSubview:i8];

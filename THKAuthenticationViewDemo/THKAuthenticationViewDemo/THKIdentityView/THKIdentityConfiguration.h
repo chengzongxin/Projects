@@ -10,7 +10,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface THKIdentityConfiguration : NSObject
-@property (nonatomic, strong) UIImage *icon;
+@property (nonatomic, strong) UIImage *iconLocal;
+@property (nonatomic, strong) NSString *iconUrl;
 @property (nonatomic, strong) NSString *text;
 @property (nonatomic, strong) UIFont *font;
 @property (nonatomic, strong) UIColor *textColor;

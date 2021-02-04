@@ -70,6 +70,8 @@ static CGFloat const kImageTextInterval = 4;
     self.style = style;
     self.config = [THKIdentityConfiguration configWithIdentityType:self.type];
     
+    [self setupSubviews];
+    
     return self;
 }
 
@@ -80,24 +82,24 @@ static CGFloat const kImageTextInterval = 4;
 }
 
 // init 方法会调用这里
-- (instancetype)initWithFrame:(CGRect)frame{
-    self = [super initWithFrame:frame];
-    if (self) {
-//        self.type = 0;
-//        self.style = THKIdentityViewStyle_Icon;
-//        self.config = [THKIdentityConfiguration configWithIdentityType:self.type];
-    }
-    return self;
-}
+//- (instancetype)initWithFrame:(CGRect)frame{
+//    self = [super initWithFrame:frame];
+//    if (self) {
+////        self.type = 0;
+////        self.style = THKIdentityViewStyle_Icon;
+////        self.config = [THKIdentityConfiguration configWithIdentityType:self.type];
+//    }
+//    return self;
+//}
 
 
-- (void)didMoveToSuperview{
-    if (!self.superview) {
-        return;
-    }
-    
-    [self setupSubviews];
-}
+//- (void)didMoveToSuperview{
+//    if (!self.superview) {
+//        return;
+//    }
+//
+//    [self setupSubviews];
+//}
 
 - (void)setupSubviews{
     
@@ -143,7 +145,7 @@ static CGFloat const kImageTextInterval = 4;
 - (CGSize)intrinsicContentSize{
     // 只有图标的时候,直接返回icon尺寸
     
-    if (!self.config.icon) {
+    if (!self.config.iconLocal && !self.config.iconUrl) {
         return CGSizeZero;
     }
     
@@ -225,9 +227,14 @@ static CGFloat const kImageTextInterval = 4;
 
 - (UIImageView *)iconImageView{
     if (!_iconImageView) {
-        _iconImageView = [[UIImageView alloc] initWithImage:self.config.icon];
+        _iconImageView = [[UIImageView alloc] init];
         _iconImageView.layer.cornerRadius = self.style == THKIdentityViewStyle_Full ? self.config.iconSize.height/2 : 0;
         _iconImageView.layer.masksToBounds = YES;
+        if (self.config.iconUrl) {
+            [_iconImageView setImageWithURL:[NSURL URLWithString:self.config.iconUrl] placeholder:self.config.iconLocal];
+        }else{
+            _iconImageView.image = self.config.iconLocal;
+        }
     }
     return _iconImageView;
 }
