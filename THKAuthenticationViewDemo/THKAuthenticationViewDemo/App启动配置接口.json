@@ -25,8 +25,8 @@
           "iconHeight": 18,
           "textData": {
             "identificationDesc": "家居达人",
-            "backgroundColor": "999999",
-            "textColor": "666666",
+            "backgroundColor": "987654",
+            "textColor": "123456",
             "fontSize": 12
           }
         }
@@ -40,8 +40,8 @@
           "iconHeight": 18,
           "textData": {
             "identificationDesc": "官方认证",
-            "backgroundColor": "999999",
-            "textColor": "666666",
+            "backgroundColor": "AABBCC",
+            "textColor": "342123",
             "fontSize": 12
           }
         }
@@ -55,8 +55,8 @@
           "iconHeight": 18,
           "textData": {
             "identificationDesc": "设计机构",
-            "backgroundColor": "999999",
-            "textColor": "666666",
+            "backgroundColor": "ACACAC",
+            "textColor": "546456",
             "fontSize": 12
           }
         }
@@ -70,8 +70,8 @@
           "iconHeight": 18,
           "textData": {
             "identificationDesc": "品牌商家",
-            "backgroundColor": "999999",
-            "textColor": "666666",
+            "backgroundColor": "111111",
+            "textColor": "DDDDDD",
             "fontSize": 12
           }
         }
@@ -86,7 +86,7 @@
           "textData": {
             "identificationDesc": "装修公司",
             "backgroundColor": "999999",
-            "textColor": "666666",
+            "textColor": "222222",
             "fontSize": 12
           }
         }

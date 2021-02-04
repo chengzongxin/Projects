@@ -16,13 +16,12 @@
     }
     
     THKIdentityConfiguration *config = [[THKIdentityConfiguration alloc] init];
+    // 先使用默认配置
+    [config configDefaultWithType:type];
+    
     NSArray <THKIdentityTypeModel *> *models = [THKIdentityTypeModel model];
-    if (models) {
-        [config configWithModel:models type:type];
-    }else{
-        [config configDefaultWithType:type];
-        
-    }
+    
+    [config configWithModel:models type:type];
     
     return config;
 }
@@ -41,15 +40,14 @@
         }
     }
     
-    // 先使用默认配置
-    [self configDefaultWithType:type];
-    // 通过接口覆盖，iconLocal还是本地
-    self.iconUrl = model.subCategory.identificationPic;
-    self.text = model.subCategory.textData.identificationDesc;
-    self.font = [UIFont systemFontOfSize:model.subCategory.textData.fontSize];
-    self.backgroundColor = [UIColor colorWithHexString:model.subCategory.textData.backgroundColor];
-    self.textColor = [UIColor colorWithHexString:model.subCategory.textData.textColor];
-    self.iconSize = CGSizeMake(model.subCategory.iconWidth, model.subCategory.iconHeight);
+    if (model) {
+        self.iconUrl = model.subCategory.identificationPic;
+        self.text = model.subCategory.textData.identificationDesc;
+        self.font = [UIFont systemFontOfSize:model.subCategory.textData.fontSize];
+        self.backgroundColor = [UIColor colorWithHexString:model.subCategory.textData.backgroundColor];
+        self.textColor = [UIColor colorWithHexString:model.subCategory.textData.textColor];
+        self.iconSize = CGSizeMake(model.subCategory.iconWidth, model.subCategory.iconHeight);
+    }
 }
 
 /// 配置接口不通的时候使用默认配置
@@ -74,7 +72,7 @@
             break;
         case 10:
         {
-            self.iconLocal = [UIImage imageNamed:@"icon_identity_green"];
+            self.iconLocal = [UIImage imageNamed:@"icon_identity_orange"];
             self.text = @"家居达人";
             self.font = [UIFont systemFontOfSize:12];
             self.backgroundColor = UIColorHex(FEF6E8);
@@ -84,7 +82,7 @@
             break;
         case 11:
         {
-            self.iconLocal = [UIImage imageNamed:@"icon_identity_orange"];
+            self.iconLocal = [UIImage imageNamed:@"icon_identity_green"];
             self.text = @"官方认证";
             self.font = [UIFont systemFontOfSize:12];
             self.backgroundColor = [UIColorHex(24C77E) colorWithAlphaComponent:0.1];;
@@ -94,7 +92,7 @@
             break;
         case 12:
         {
-            self.iconLocal = [UIImage imageNamed:@"icon_identity_orange"];
+            self.iconLocal = [UIImage imageNamed:@"icon_identity_yellow"];
             self.text = @"设计机构";
             self.font = [UIFont systemFontOfSize:12];
             self.backgroundColor = UIColorHex(ECF3FC);
@@ -104,7 +102,7 @@
             break;
         case 13:
         {
-            self.iconLocal = [UIImage imageNamed:@"icon_identity_orange"];
+            self.iconLocal = [UIImage imageNamed:@"icon_identity_yellow"];
             self.text = @"品牌商家";
             self.font = [UIFont systemFontOfSize:12];
             self.backgroundColor = UIColorHex(ECF3FC);
@@ -114,7 +112,7 @@
             break;
         case 14:
         {
-            self.iconLocal = [UIImage imageNamed:@"icon_identity_orange"];
+            self.iconLocal = [UIImage imageNamed:@"icon_identity_yellow"];
             self.text = @"装修公司";
             self.font = [UIFont systemFontOfSize:12];
             self.backgroundColor = UIColorHex(ECF3FC);
