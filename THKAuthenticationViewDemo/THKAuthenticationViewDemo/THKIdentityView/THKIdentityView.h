@@ -6,7 +6,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "THKIdentityConfiguration.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

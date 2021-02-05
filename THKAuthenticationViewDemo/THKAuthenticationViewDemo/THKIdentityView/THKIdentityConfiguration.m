@@ -7,78 +7,60 @@
 
 #import "THKIdentityConfiguration.h"
 #import "THKIdentityTypeModel.h"
-#import <YYKit.h>
+
 @implementation THKIdentityConfiguration
+//
+//+ (instancetype)configWithIdentityType:(NSInteger)type subType:(NSInteger)subType{
+//    if (type == 0) {
+//        return nil;
+//    }
+//    
+//    THKIdentityConfiguration *config = [[THKIdentityConfiguration alloc] init];
+//    // 先使用默认配置
+////    [config configDefaultWithType:type];
+//    // 本地默认json配置
+//    NSArray <THKIdentityTypeModelIdentify *> *models = [THKIdentityTypeModel modelDefault].identify;
+//    
+//    [config configWithModel:models type:type subType:subType];
+//    config.iconLocal = [self iconImg:type subType:subType];
+//    return config;
+//}
+//
+//
+///// 使用接口返回的模型配置
+///// @param type 认证类型
+//- (void)configWithModel:(NSArray <THKIdentityTypeModelIdentify *> *)models type:(NSInteger)type subType:(NSInteger)subType{
+//
+//    THKIdentityTypeModelSubCategory *model;
+//
+//    for (THKIdentityTypeModelIdentify *m in models) {
+//        if (m.identificationType == type) {
+//            if (subType == 0) {
+//                model = m.subCategory.firstObject;
+//            }else{
+//                if (subType > m.subCategory.count || m.subCategory.count == 0) {
+//                    break;
+//                }
+//                for (THKIdentityTypeModelSubCategory *category in m.subCategory) {
+//                    if (category.subCategory == subType) {
+//                        model = category;
+//                    }
+//                }
+//            }
+//            break;
+//        }
+//    }
+//
+//    if (model) {
+//        self.iconUrl = model.identificationPic;
+//        self.text = model.textData.identificationDesc;
+//        self.font = [UIFont systemFontOfSize:model.textData.fontSize];
+//        self.backgroundColor = [UIColor colorWithHexString:model.textData.backgroundColor];
+//        self.textColor = [UIColor colorWithHexString:model.textData.textColor];
+//        self.iconSize = CGSizeMake(model.iconWidth, model.iconHeight);
+//    }
+//}
 
-+ (instancetype)configWithIdentityType:(NSInteger)type subType:(NSInteger)subType{
-    if (type == 0) {
-        return nil;
-    }
-    
-    THKIdentityConfiguration *config = [[THKIdentityConfiguration alloc] init];
-    // 先使用默认配置
-//    [config configDefaultWithType:type];
-    // 本地默认json配置
-    NSArray <THKIdentityTypeModelIdentify *> *models = [THKIdentityTypeModel modelDefault].identify;
-    
-    [config configWithModel:models type:type subType:subType];
-    config.iconLocal = [self iconImg:type subType:subType];
-    return config;
-}
-
-
-/// 使用接口返回的模型配置
-/// @param type 认证类型
-- (void)configWithModel:(NSArray <THKIdentityTypeModelIdentify *> *)models type:(NSInteger)type subType:(NSInteger)subType{
-
-    THKIdentityTypeModelSubCategory *model;
-
-    for (THKIdentityTypeModelIdentify *m in models) {
-        if (m.identificationType == type) {
-            if (subType == 0) {
-                model = m.subCategory.firstObject;
-            }else{
-                if (subType > m.subCategory.count || m.subCategory.count == 0) {
-                    break;
-                }
-                for (THKIdentityTypeModelSubCategory *category in m.subCategory) {
-                    if (category.subCategory == subType) {
-                        model = category;
-                    }
-                }
-            }
-            break;
-        }
-    }
-
-    if (model) {
-        self.iconUrl = model.identificationPic;
-        self.text = model.textData.identificationDesc;
-        self.font = [UIFont systemFontOfSize:model.textData.fontSize];
-        self.backgroundColor = [UIColor colorWithHexString:model.textData.backgroundColor];
-        self.textColor = [UIColor colorWithHexString:model.textData.textColor];
-        self.iconSize = CGSizeMake(model.iconWidth, model.iconHeight);
-    }
-}
-
-+ (UIImage *)iconImg:(NSInteger)type subType:(NSInteger)subType{
-    switch (type) {
-        case 6:
-        case 11:
-            return subType ? [UIImage imageNamed:@"icon_identity_orange"] : [UIImage imageNamed:@"icon_identity_green"];
-        case 10:
-            return [UIImage imageNamed:@"icon_identity_orange"];
-        case 12:
-            return [UIImage imageNamed:@"icon_identity_yellow"];
-        case 13:
-            return [UIImage imageNamed:@"icon_identity_yellow"];
-        case 14:
-            return [UIImage imageNamed:@"icon_identity_yellow"];
-        default:
-            break;
-    }
-    return nil;
-}
 
 ///// 配置接口不通的时候使用默认配置
 ///// 10-家居达人 11-设计师机构 12-品牌商家 13-官方认证 14-装企认证

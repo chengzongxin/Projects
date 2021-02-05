@@ -7,6 +7,7 @@
 
 #import "ViewController.h"
 #import "THKIdentityView.h"
+#import "THKIdentityConfigManager.h"
 #import <Masonry.h>
 
 @interface ViewController ()
@@ -23,6 +24,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [THKIdentityConfigManager.shareInstane loadConfig];
     
     THKIdentityView *i0 = [THKIdentityView identityViewWithType:10 style:THKIdentityViewStyle_Full];
     [self.view addSubview:i0];
@@ -149,7 +152,7 @@
     }];
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [i10 setType:12 subType:0];
+        [i10 setType:10 subType:0];
         [i11 setType:12 subType:0];
 //        label.text = @"hhdsahdas";
     });

@@ -19,6 +19,7 @@
 		169FBC7125CCEDB000C946CE /* THKIdentityConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 169FBC6A25CCEDB000C946CE /* THKIdentityConfiguration.m */; };
 		169FBC7225CCEDB000C946CE /* V_Identity_Config.json in Resources */ = {isa = PBXBuildFile; fileRef = 169FBC6D25CCEDB000C946CE /* V_Identity_Config.json */; };
 		169FBC7325CCEDB000C946CE /* THKIdentityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 169FBC6F25CCEDB000C946CE /* THKIdentityView.m */; };
+		16CFF1FF25CD176D004863B9 /* THKIdentityConfigManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 16CFF1FE25CD176D004863B9 /* THKIdentityConfigManager.m */; };
 		C936831250BCA3DEE260FED5 /* libPods-THKAuthenticationViewDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DECCBB41ECA8641596B91F10 /* libPods-THKAuthenticationViewDemo.a */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +45,8 @@
 		169FBC6D25CCEDB000C946CE /* V_Identity_Config.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = V_Identity_Config.json; sourceTree = "<group>"; };
 		169FBC6E25CCEDB000C946CE /* THKIdentityConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THKIdentityConfiguration.h; sourceTree = "<group>"; };
 		169FBC6F25CCEDB000C946CE /* THKIdentityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THKIdentityView.m; sourceTree = "<group>"; };
+		16CFF1FD25CD176D004863B9 /* THKIdentityConfigManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = THKIdentityConfigManager.h; sourceTree = "<group>"; };
+		16CFF1FE25CD176D004863B9 /* THKIdentityConfigManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = THKIdentityConfigManager.m; sourceTree = "<group>"; };
 		941C0722DF7C10CC5D26504A /* Pods-THKAuthenticationViewDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-THKAuthenticationViewDemo.debug.xcconfig"; path = "Target Support Files/Pods-THKAuthenticationViewDemo/Pods-THKAuthenticationViewDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		B1BBD9CC5C0CDE95F34E883A /* Pods-THKAuthenticationViewDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-THKAuthenticationViewDemo.release.xcconfig"; path = "Target Support Files/Pods-THKAuthenticationViewDemo/Pods-THKAuthenticationViewDemo.release.xcconfig"; sourceTree = "<group>"; };
 		DECCBB41ECA8641596B91F10 /* libPods-THKAuthenticationViewDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-THKAuthenticationViewDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,6 +116,8 @@
 			children = (
 				169FBC6B25CCEDB000C946CE /* THKIdentityView.h */,
 				169FBC6F25CCEDB000C946CE /* THKIdentityView.m */,
+				16CFF1FD25CD176D004863B9 /* THKIdentityConfigManager.h */,
+				16CFF1FE25CD176D004863B9 /* THKIdentityConfigManager.m */,
 				169FBC6E25CCEDB000C946CE /* THKIdentityConfiguration.h */,
 				169FBC6A25CCEDB000C946CE /* THKIdentityConfiguration.m */,
 				169FBC6C25CCEDB000C946CE /* THKIdentityTypeModel.h */,
@@ -227,6 +232,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16CFF1FF25CD176D004863B9 /* THKIdentityConfigManager.m in Sources */,
 				169FBC7325CCEDB000C946CE /* THKIdentityView.m in Sources */,
 				16557AAE25B6733700C350D4 /* ViewController.m in Sources */,
 				169FBC7125CCEDB000C946CE /* THKIdentityConfiguration.m in Sources */,

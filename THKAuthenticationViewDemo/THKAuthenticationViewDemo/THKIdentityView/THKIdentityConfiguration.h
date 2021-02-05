@@ -10,6 +10,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface THKIdentityConfiguration : NSObject
+
 @property (nonatomic, strong) UIImage *iconLocal;
 @property (nonatomic, strong) NSString *iconUrl;
 @property (nonatomic, strong) NSString *text;
@@ -18,8 +19,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UIColor *backgroundColor;
 @property (nonatomic, assign) CGSize iconSize;
 
-
-+ (instancetype)configWithIdentityType:(NSInteger)type subType:(NSInteger)subType;
 
 @end
 

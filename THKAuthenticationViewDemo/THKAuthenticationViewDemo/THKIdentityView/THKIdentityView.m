@@ -8,6 +8,7 @@
 
 #import "THKIdentityView.h"
 #import "UIImageView+TCategory.h"
+#import "THKIdentityConfigManager.h"
 
 
 static CGFloat const kImageMargin = 4;
@@ -86,7 +87,6 @@ static CGFloat const kImageTextInterval = 4;
     
     _type = 0;
     _subType = 0;
-    _style = THKIdentityViewStyle_Full;
     
     [self updateData];
     
@@ -98,7 +98,7 @@ static CGFloat const kImageTextInterval = 4;
 
 - (void)updateData{
     
-    _config = [THKIdentityConfiguration configWithIdentityType:_type subType:_subType];
+    _config = [THKIdentityConfigManager.shareInstane fetchConfigWithType:_type subType:_subType];
     
     if (!_config) return;
     
