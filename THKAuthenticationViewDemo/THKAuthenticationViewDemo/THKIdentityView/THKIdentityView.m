@@ -5,20 +5,9 @@
 //  Created by Joe.cheng on 2021/1/19.
 //
 
-//typedef NS_ENUM(NSInteger, THKIdentityViewStyle) {
-//    THKIdentityViewStyle_None,      //无
-//    THKIdentityViewStyle_Author,    //作者
-//    THKIdentityViewStyle_1,         //家居达人
-//    THKIdentityViewStyle_2,         //官方认证
-//    THKIdentityViewStyle_3,         //设计机构
-//    THKIdentityViewStyle_4,         //品牌商家
-//    THKIdentityViewStyle_5,         //装修公司
-//};
-
 
 #import "THKIdentityView.h"
-#import <YYKit.h>
-#import <Masonry.h>
+#import "UIImageView+TCategory.h"
 
 
 static CGFloat const kImageMargin = 4;
@@ -76,6 +65,8 @@ static CGFloat const kImageTextInterval = 4;
     _subType = subType;
     _style = style;
     
+    [self updateData];
+    
     [self updateUI];
     
     return self;
@@ -87,40 +78,62 @@ static CGFloat const kImageTextInterval = 4;
     return [self initWithType:0 style:THKIdentityViewStyle_Icon];
 }
 
-
-- (void)setupSubviews{
+- (void)updateData{
     
-    if (self.style == THKIdentityViewStyle_Full) {
-        // 显示全部
+    _config = [THKIdentityConfiguration configWithIdentityType:_type subType:_subType];
+    
+    if (self.config.iconUrl) {
+        [self.iconImageView loadImageWithUrlStr:self.config.iconUrl placeHolderImage:self.config.iconLocal];
+    }else{
+        self.iconImageView.image = self.config.iconLocal;
+    }
+    
+    if (_style == THKIdentityViewStyle_Full) {
+        self.textLabel.text = self.config.text;
+        self.textLabel.textColor = self.config.textColor;
+        self.textLabel.font = self.config.font;
+    }
+}
+
+- (void)updateUI{
+    if (!self.iconImageView.superview) {
+        [self addSubview:self.iconImageView];
+    }
+    
+    if (_style == THKIdentityViewStyle_Full) {
+        
         self.backgroundColor = self.config.backgroundColor;
         self.layer.cornerRadius = (self.config.iconSize.height + kImageMargin * 2)/2;
+        // 一开始是Icon,后来改成Full形式，需要添加
+        if (!self.textLabel.superview) {
+            [self addSubview:self.textLabel];
+        }
         
-        [self addSubview:self.iconImageView];
-        [self addSubview:self.textLabel];
         
-        [self.iconImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        [self.iconImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self).inset(kImageMargin + self.iconOffset.x);
             make.centerY.equalTo(self.mas_centerY).offset(self.iconOffset.y);
             make.size.mas_equalTo(self.config.iconSize);
         }];
         
         
-        [self.textLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        [self.textLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self.iconImageView.mas_right).offset(kImageTextInterval);
             make.right.equalTo(self).inset(kImageMargin).priorityHigh();
             make.centerY.equalTo(self.iconImageView.mas_centerY);
         }];
         
     }else{
-        // 显示icon
-        [self addSubview:self.iconImageView];
         
-//        [self mas_makeConstraints:^(MASConstraintMaker *make) {
-//            make.bottom.equalTo(self.superview).offset(self.iconOffset.y);
-//            make.right.equalTo(self.superview).offset(self.iconOffset.x);
-//        }];
+        self.backgroundColor = UIColor.clearColor;
+        self.layer.cornerRadius = 0;
         
-        [self.iconImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        if (_textLabel) {
+            [_textLabel removeFromSuperview];
+            _textLabel = nil;
+        }
+        
+        [self.iconImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.center.equalTo(self);
             make.size.equalTo(self);
         }];
@@ -154,13 +167,6 @@ static CGFloat const kImageTextInterval = 4;
     return size;
 }
 
-- (void)updateUI{
-    
-    _config = [THKIdentityConfiguration configWithIdentityType:_type subType:_subType];
-    
-    [self setupSubviews];
-}
-
 #pragma mark - Getter && Setter
 
 - (void)setType:(NSInteger)type{
@@ -171,44 +177,9 @@ static CGFloat const kImageTextInterval = 4;
     _type = type;
     _subType = subType;
     
-    _config = [THKIdentityConfiguration configWithIdentityType:_type subType:_subType];
+    [self updateData];
     
-    if (_style == THKIdentityViewStyle_Full) {
-        
-        self.backgroundColor = self.config.backgroundColor;
-        self.layer.cornerRadius = (self.config.iconSize.height + kImageMargin * 2)/2;
-        // 一开始是Icon,后来改成Full形式，需要添加
-        if (!self.textLabel.superview) {
-            [self addSubview:self.textLabel];
-        }
-        
-        _textLabel.text = self.config.text;
-        _textLabel.textColor = self.config.textColor;
-        _textLabel.font = self.config.font;
-//        [_iconImageView loadImageWithUrlStr:self.config.iconUrl placeHolderImage:self.config.iconLocal];
-        [_iconImageView setImageWithURL:[NSURL URLWithString:self.config.iconUrl] placeholder:self.config.iconLocal];
-        [self.iconImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(self).inset(kImageMargin + self.iconOffset.x);
-            make.centerY.equalTo(self.mas_centerY).offset(self.iconOffset.y);
-            make.size.mas_equalTo(self.config.iconSize);
-        }];
-        
-        
-        [self.textLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(self.iconImageView.mas_right).offset(kImageTextInterval);
-            make.right.equalTo(self).inset(kImageMargin).priorityHigh();
-            make.centerY.equalTo(self.iconImageView.mas_centerY);
-        }];
-        
-    }else{
-//        [_iconImageView loadImageWithUrlStr:self.config.iconUrl placeHolderImage:self.config.iconLocal];
-        [_iconImageView setImageWithURL:[NSURL URLWithString:self.config.iconUrl] placeholder:self.config.iconLocal];
-        
-        [self.iconImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.center.equalTo(self);
-            make.size.equalTo(self);
-        }];
-    }
+    [self updateUI];
     
     // 重新计算内置size
     [self invalidateIntrinsicContentSize];
@@ -264,14 +235,6 @@ static CGFloat const kImageTextInterval = 4;
 - (UIImageView *)iconImageView{
     if (!_iconImageView) {
         _iconImageView = [[UIImageView alloc] init];
-        _iconImageView.layer.cornerRadius = self.style == THKIdentityViewStyle_Full ? self.config.iconSize.height/2 : 0;
-        _iconImageView.layer.masksToBounds = YES;
-        if (self.config.iconUrl) {
-//            [_iconImageView loadImageWithUrlStr:self.config.iconUrl placeHolderImage:self.config.iconLocal];
-            [_iconImageView setImageWithURL:[NSURL URLWithString:self.config.iconUrl] placeholder:self.config.iconLocal];
-        }else{
-            _iconImageView.image = self.config.iconLocal;
-        }
     }
     return _iconImageView;
 }
@@ -279,9 +242,6 @@ static CGFloat const kImageTextInterval = 4;
 - (UILabel *)textLabel{
     if (!_textLabel) {
         _textLabel = [[UILabel alloc] init];
-        _textLabel.text = self.config.text;
-        _textLabel.textColor = self.config.textColor;
-        _textLabel.font = self.config.font;
     }
     return _textLabel;
 }
