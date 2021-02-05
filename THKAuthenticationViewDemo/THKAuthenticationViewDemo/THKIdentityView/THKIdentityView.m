@@ -22,7 +22,7 @@ static CGFloat const kImageTextInterval = 4;
 /// 标识类型
 @property (nonatomic, assign) NSInteger subType;
 /// 标识样式
-@property (nonatomic, assign) THKIdentityViewStyle style;
+//@property (nonatomic, assign) THKIdentityViewStyle style;
 /// 图标
 @property (nonatomic, strong) UIImageView *iconImageView;
 /// 文本
@@ -78,9 +78,29 @@ static CGFloat const kImageTextInterval = 4;
     return [self initWithType:0 style:THKIdentityViewStyle_Icon];
 }
 
+/// xib创建
+- (instancetype)initWithCoder:(NSCoder *)coder{
+    self = [super initWithCoder:coder];
+    if (!self) return nil;
+    
+    
+    _type = 0;
+    _subType = 0;
+    _style = THKIdentityViewStyle_Full;
+    
+    [self updateData];
+    
+    [self updateUI];
+    
+    
+    return self;
+}
+
 - (void)updateData{
     
     _config = [THKIdentityConfiguration configWithIdentityType:_type subType:_subType];
+    
+    if (!_config) return;
     
     if (self.config.iconUrl) {
         [self.iconImageView loadImageWithUrlStr:self.config.iconUrl placeHolderImage:self.config.iconLocal];
@@ -96,6 +116,9 @@ static CGFloat const kImageTextInterval = 4;
 }
 
 - (void)updateUI{
+    
+    if (!_config) return;
+    
     if (!self.iconImageView.superview) {
         [self addSubview:self.iconImageView];
     }

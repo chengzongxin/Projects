@@ -11,6 +11,9 @@
 
 @interface ViewController ()
 
+@property (weak, nonatomic) IBOutlet THKIdentityView *xib1;
+@property (weak, nonatomic) IBOutlet THKIdentityView *xib2;
+
 @property (nonatomic, strong) THKIdentityView *view1;
 @property (nonatomic, strong) THKIdentityView *view2;
 @property (nonatomic, strong) THKIdentityView *view3;
@@ -238,6 +241,9 @@
     _view1.iconOffset = CGPointMake(_view1.iconOffset.x+1, _view1.iconOffset.y+1);
     _view2.iconOffset = CGPointMake(_view2.iconOffset.x+1, _view2.iconOffset.y+1);
     _view3.iconOffset = CGPointMake(_view3.iconOffset.x+1, _view3.iconOffset.y+1);
+    
+    [_xib1 setType:11];
+    [_xib2 setType:12];
 }
 
 

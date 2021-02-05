@@ -14,8 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 typedef void(^THKIdentityViewTapBlock)(NSInteger type);
 
 typedef NS_ENUM(NSInteger, THKIdentityViewStyle) {
-    THKIdentityViewStyle_Icon, // 只显示icon，默认位于右下角
-    THKIdentityViewStyle_Full, // 完整显示 eg ：V 认证机构
+    THKIdentityViewStyle_Icon = 0, // 只显示icon，默认位于右下角
+    THKIdentityViewStyle_Full = 1, // 完整显示 eg ：V 认证机构
 };
 
 /*
@@ -24,9 +24,10 @@ typedef NS_ENUM(NSInteger, THKIdentityViewStyle) {
  2.封装头像右下角的V标识和带文字的V标识，根据type从配置表中匹配对应的数据并展示，从8.15版本开始，都按此方案做；
  */
 
-/// 宽高自适应标识View
+
+/// 标识View，支持 Masonry，Frame，Xib，懒加载等形式
 /// Full样式，按照Label使用方式（内置Size）不需要设置size约束，可以直接当做Label使用（使用内置Size），如果设置宽度，可能文字会有裁剪（xyz...），高度取icon的图标上下扩大4个像素
-/// Icon样式，按照View常规样式，因为每个业务的UI部分头像不一样，需要设置宽高Size，在右下角显示
+/// Icon样式，按照View常规样式，因为每个业务的UI部分头像大小不一样，所以需要外部设置宽高Size，在右下角显示
 @interface THKIdentityView : UIView
 
 /// 类方法创建标识View，一般使用场景在懒加载形式，后赋值
@@ -73,6 +74,11 @@ typedef NS_ENUM(NSInteger, THKIdentityViewStyle) {
 /// @param type V标识类型
 /// @param subType 二级标识分类, 没有传0即可，有些业务线会一个类型下会对应两个标识，比如11.1设计机构，11.2个人设计师
 - (void)setType:(NSInteger)type subType:(NSInteger)subType;
+
+/// V 标识样式，THKIdentityViewStyle 类型，只显示小图标Icon或者显示图标和文本Full
+/// XIB 初始化时使用，在面板选择style类型，0=Icon，1=Full,
+/// 后期调用setType方法显示标识
+@property (nonatomic, assign) IBInspectable NSInteger style;
 
 @end
 

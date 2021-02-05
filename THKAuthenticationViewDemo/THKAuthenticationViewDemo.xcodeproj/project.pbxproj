@@ -111,13 +111,13 @@
 		169FBC6825CCEDB000C946CE /* THKIdentityView */ = {
 			isa = PBXGroup;
 			children = (
-				169FBC6925CCEDB000C946CE /* THKIdentityTypeModel.m */,
-				169FBC6A25CCEDB000C946CE /* THKIdentityConfiguration.m */,
 				169FBC6B25CCEDB000C946CE /* THKIdentityView.h */,
-				169FBC6C25CCEDB000C946CE /* THKIdentityTypeModel.h */,
-				169FBC6D25CCEDB000C946CE /* V_Identity_Config.json */,
-				169FBC6E25CCEDB000C946CE /* THKIdentityConfiguration.h */,
 				169FBC6F25CCEDB000C946CE /* THKIdentityView.m */,
+				169FBC6E25CCEDB000C946CE /* THKIdentityConfiguration.h */,
+				169FBC6A25CCEDB000C946CE /* THKIdentityConfiguration.m */,
+				169FBC6C25CCEDB000C946CE /* THKIdentityTypeModel.h */,
+				169FBC6925CCEDB000C946CE /* THKIdentityTypeModel.m */,
+				169FBC6D25CCEDB000C946CE /* V_Identity_Config.json */,
 			);
 			path = THKIdentityView;
 			sourceTree = "<group>";
