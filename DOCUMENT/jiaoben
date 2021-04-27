@@ -1,0 +1,6 @@
+xcodebuild archive -workspace $'/Users/admin/.jenkins/workspace/土巴兔销售/土巴兔销售iOS-集合版/T8TMarket.xcworkspace' -scheme T8TMarket -archivePath /Users/admin/Documents/Jenkins/OutputIPA/T8TMarketDeploy/1.2.0/Development/archive/T8TMarket-1.2.0.1-20210426-170036/T8TMarket.xcarchive -configuration Debug
+
+
+xcodebuild -exportArchive -archivePath /Users/admin/Documents/Jenkins/OutputIPA/T8TMarketDeploy/1.2.0/Development/archive/T8TMarket-1.2.0.1-20210426-170036/T8TMarket.xcarchive -exportOptionsPlist $'/Users/admin/.jenkins/workspace/土巴兔销售/土巴兔销售iOS-集合版/T8TMarket/BuildPlist/ExportOptions_Debug.plist' -allowProvisioningUpdates -exportPath /Users/admin/Documents/Jenkins/OutputIPA/T8TMarketDeploy/1.2.0/Development/T8TMarket-20210426-170036
+
+xcodebuild -exportArchive -archivePath /Users/admin/Documents/Jenkins/OutputIPA/T8TMarketDeploy/1.2.0/Development/archive/T8TMarket-1.2.0.1-20210426-170036/T8TMarket.xcarchive -exportOptionsPlist $'/Users/admin/.jenkins/workspace/土巴兔销售/土巴兔销售iOS-集合版/T8TMarket/BuildPlist/ExportOptions_Debug.plist' -allowProvisioningUpdates -exportPath ./

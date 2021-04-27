@@ -6,7 +6,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "THKView.h"
 NS_ASSUME_NONNULL_BEGIN
 
 
@@ -26,8 +26,8 @@ typedef NS_ENUM(NSInteger, THKIdentityViewStyle) {
 
 /// 标识View，支持 Masonry，Frame，Xib，懒加载等形式
 /// Full样式，按照Label使用方式（内置Size）不需要设置size约束，可以直接当做Label使用（使用内置Size），如果设置宽度，可能文字会有裁剪（xyz...），高度取icon的图标上下扩大4个像素
-/// Icon样式，按照View常规样式，因为每个业务的UI部分头像大小不一样，所以需要外部设置宽高Size，在右下角显示
-@interface THKIdentityView : UIView
+/// Icon样式，按照View常规样式，可以使用THKAvatarView，内部已集成标识组件，因为每个业务的UI部分头像大小不一样，所以需要外部设置宽高Size，在右下角显示
+@interface THKIdentityView : THKView
 
 /// 类方法创建标识View，一般使用场景在懒加载形式，后赋值
 /// 默认为THKIdentityViewStyle_Icon，只显示右下角V标识，不建议用此方法初始化，
@@ -62,7 +62,7 @@ typedef NS_ENUM(NSInteger, THKIdentityViewStyle) {
 /// 图标偏移
 @property (nonatomic, assign) CGPoint iconOffset;
 
-/// 认证标识View尺寸大小
+/// 获取认证标识View尺寸大小
 @property (nonatomic, assign, readonly) CGSize viewSize;
 
 /// 某些场景下是先通过懒加载创建IdentityView，后续数据回调再刷新IdentityVIew，需要把类型传过来，调用这个方法

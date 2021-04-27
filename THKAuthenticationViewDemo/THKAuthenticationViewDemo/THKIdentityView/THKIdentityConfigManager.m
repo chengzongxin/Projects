@@ -8,6 +8,7 @@
 #import "THKIdentityConfigManager.h"
 #import "THKIdentityTypeModel.h"
 #import <YYKit.h>
+#import "THKPersonalDesignerConfigRequest.h"
 
 @interface THKIdentityConfigManager ()
 
@@ -43,9 +44,14 @@
 }
 
 - (void)loadRemoteConfig{
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        self.remoteConfig = [THKIdentityTypeModel modelDefault];
-    });
+    THKPersonalDesignerConfigRequest *request = [[THKPersonalDesignerConfigRequest alloc] init];
+    @weakify(self);
+    [request.rac_requestSignal subscribeNext:^(THKPersonalDesignerConfigResponse *response) {
+        if (response.status == THKStatusSuccess) {
+            @strongify(self);
+            self.remoteConfig = response.data;
+        }
+    }];
 }
 
 

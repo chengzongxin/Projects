@@ -58,6 +58,10 @@ static CGFloat const kImageTextInterval = 4;
     return [self initWithType:type subType:0 style:style];
 }
 
+/// init 创建
+/// @param type 标识类型
+/// @param subType 二级类型
+/// @param style 样式
 - (instancetype)initWithType:(NSInteger)type subType:(NSInteger)subType style:(THKIdentityViewStyle)style{
     self = [super init]; // 调用 initWithFrame
     if (!self) return nil;
@@ -66,15 +70,13 @@ static CGFloat const kImageTextInterval = 4;
     _subType = subType;
     _style = style;
     
-    [self updateData];
-    
-    [self updateUI];
+    [self reloadData];
     
     return self;
 }
 
 - (instancetype)init {
-    NSAssert(0, @"THKIdentityView must be initialized with a type. Use 'initWithType:' instead." );
+//    NSAssert(0, @"THKIdentityView must be initialized with a type. Use 'initWithType:' instead." );
 //    @throw [NSException exceptionWithName:@"THKIdentityView init error" reason:@"THKIdentityView must be initialized with a type. Use 'initWithType:' instead." userInfo:nil];
     return [self initWithType:0 style:THKIdentityViewStyle_Icon];
 }
@@ -84,24 +86,33 @@ static CGFloat const kImageTextInterval = 4;
     self = [super initWithCoder:coder];
     if (!self) return nil;
     
-    
     _type = 0;
     _subType = 0;
     
-    [self updateData];
-    
-    [self updateUI];
-    
+    [self reloadData];
     
     return self;
 }
 
-- (void)updateData{
-    
+// MARK: 刷新数据和UI，初始化，xib，重新设置Type时调用
+- (void)reloadData{
     _config = [THKIdentityConfigManager.shareInstane fetchConfigWithType:_type subType:_subType];
     
-    if (!_config) return;
+    [self invalidateIntrinsicContentSize];
     
+    if (_config) {
+        self.hidden = NO;
+    }else{
+        self.hidden = YES;
+        return;
+    }
+    
+    [self updateData];
+    
+    [self updateUI];
+}
+
+- (void)updateData{
     if (self.config.iconUrl) {
         [self.iconImageView loadImageWithUrlStr:self.config.iconUrl placeHolderImage:self.config.iconLocal];
     }else{
@@ -116,9 +127,6 @@ static CGFloat const kImageTextInterval = 4;
 }
 
 - (void)updateUI{
-    
-    if (!_config) return;
-    
     if (!self.iconImageView.superview) {
         [self addSubview:self.iconImageView];
     }
@@ -167,6 +175,9 @@ static CGFloat const kImageTextInterval = 4;
 ///  完整显示文字时，需要做Size计算处理自适应宽度
 - (CGSize)intrinsicContentSize{
     // 只有图标的时候,直接返回icon尺寸
+    if (_type <= 0) {
+        return CGSizeZero;
+    }
     
     if (!self.config.iconLocal && !self.config.iconUrl) {
         return CGSizeZero;
@@ -200,12 +211,7 @@ static CGFloat const kImageTextInterval = 4;
     _type = type;
     _subType = subType;
     
-    [self updateData];
-    
-    [self updateUI];
-    
-    // 重新计算内置size
-    [self invalidateIntrinsicContentSize];
+    [self reloadData];
 }
 
 
