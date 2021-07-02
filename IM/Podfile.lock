@@ -1,0 +1,294 @@
+PODS:
+  - AFNetworking (4.0.1):
+    - AFNetworking/NSURLSession (= 4.0.1)
+    - AFNetworking/Reachability (= 4.0.1)
+    - AFNetworking/Security (= 4.0.1)
+    - AFNetworking/Serialization (= 4.0.1)
+    - AFNetworking/UIKit (= 4.0.1)
+  - AFNetworking/NSURLSession (4.0.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (4.0.1)
+  - AFNetworking/Security (4.0.1)
+  - AFNetworking/Serialization (4.0.1)
+  - AFNetworking/UIKit (4.0.1):
+    - AFNetworking/NSURLSession
+  - FBRetainCycleDetector (0.1.4)
+  - LookinServer (1.0.0)
+  - Masonry (1.1.0)
+  - MJExtension (3.2.4)
+  - MLeaksFinder (1.0.0):
+    - FBRetainCycleDetector
+  - ReactiveObjC (3.1.1)
+  - RongCloudIM/ChatRoom (5.1.3.1):
+    - RongCloudIM/IMLibCore
+  - RongCloudIM/CustomerService (5.1.3.1):
+    - RongCloudIM/IMLibCore
+  - RongCloudIM/Discussion (5.1.3.1):
+    - RongCloudIM/IMLibCore
+  - RongCloudIM/IMKit (5.1.3.1):
+    - RongCloudIM/IMLib
+  - RongCloudIM/IMLib (5.1.3.1):
+    - RongCloudIM/ChatRoom
+    - RongCloudIM/CustomerService
+    - RongCloudIM/Discussion
+    - RongCloudIM/IMLibCore
+    - RongCloudIM/Location
+    - RongCloudIM/PublicService
+  - RongCloudIM/IMLibCore (5.1.3.1)
+  - RongCloudIM/Location (5.1.3.1):
+    - RongCloudIM/IMLibCore
+  - RongCloudIM/PublicService (5.1.3.1):
+    - RongCloudIM/IMLibCore
+  - TMUIKit (1.0.0):
+    - Masonry (~> 1.1.0)
+    - TMUIKit/TMUIComponents (= 1.0.0)
+    - TMUIKit/TMUICore (= 1.0.0)
+    - TMUIKit/TMUIExtensions (= 1.0.0)
+    - TMUIKit/TMUIWidgets (= 1.0.0)
+  - TMUIKit/TMUIComponents (1.0.0):
+    - Masonry (~> 1.1.0)
+    - TMUIKit/TMUIComponents/ChainUI (= 1.0.0)
+    - TMUIKit/TMUIComponents/TMActionSheet (= 1.0.0)
+    - TMUIKit/TMUIComponents/TMContentAlert (= 1.0.0)
+    - TMUIKit/TMUIComponents/TMContentPicker (= 1.0.0)
+    - TMUIKit/TMUIComponents/TMEmptyView (= 1.0.0)
+    - TMUIKit/TMUIComponents/TMPopoverView (= 1.0.0)
+    - TMUIKit/TMUIComponents/TMSearchController (= 1.0.0)
+    - TMUIKit/TMUIComponents/TMShowBigImageController (= 1.0.0)
+    - TMUIKit/TMUIComponents/TMToast (= 1.0.0)
+    - TMUIKit/TMUIComponents/TMUIAppearance (= 1.0.0)
+    - TMUIKit/TMUIComponents/TMUIBadge (= 1.0.0)
+    - TMUIKit/TMUIComponents/TMUICellHeightCache (= 1.0.0)
+    - TMUIKit/TMUIComponents/TMUIModalPresentationViewController (= 1.0.0)
+    - TMUIKit/TMUIComponents/TMUIMultipleDelegates (= 1.0.0)
+    - TMUIKit/TMUIComponents/TMUIPageViewController (= 1.0.0)
+    - TMUIKit/TMUIComponents/TMUITableView (= 1.0.0)
+    - TMUIKit/TMUIComponents/TMUITheme (= 1.0.0)
+    - TMUIKit/TMUICore
+    - TMUIKit/TMUIExtensions
+  - TMUIKit/TMUIComponents/ChainUI (1.0.0):
+    - Masonry (~> 1.1.0)
+    - TMUIKit/TMUIComponents/ChainUI/Chainable (= 1.0.0)
+    - TMUIKit/TMUIComponents/ChainUI/Private (= 1.0.0)
+    - TMUIKit/TMUIComponents/ChainUI/Public (= 1.0.0)
+    - TMUIKit/TMUICore
+    - TMUIKit/TMUIExtensions
+  - TMUIKit/TMUIComponents/ChainUI/Chainable (1.0.0):
+    - Masonry (~> 1.1.0)
+    - TMUIKit/TMUIComponents/ChainUI/Private
+    - TMUIKit/TMUIComponents/ChainUI/Public
+    - TMUIKit/TMUICore
+    - TMUIKit/TMUIExtensions
+  - TMUIKit/TMUIComponents/ChainUI/Private (1.0.0):
+    - Masonry (~> 1.1.0)
+    - TMUIKit/TMUICore
+    - TMUIKit/TMUIExtensions
+  - TMUIKit/TMUIComponents/ChainUI/Public (1.0.0):
+    - Masonry (~> 1.1.0)
+    - TMUIKit/TMUIComponents/ChainUI/Private
+    - TMUIKit/TMUICore
+    - TMUIKit/TMUIExtensions
+  - TMUIKit/TMUIComponents/TMActionSheet (1.0.0):
+    - Masonry (~> 1.1.0)
+    - TMUIKit/TMUICore
+    - TMUIKit/TMUIExtensions
+  - TMUIKit/TMUIComponents/TMContentAlert (1.0.0):
+    - Masonry (~> 1.1.0)
+    - TMUIKit/TMUICore
+    - TMUIKit/TMUIExtensions
+  - TMUIKit/TMUIComponents/TMContentPicker (1.0.0):
+    - Masonry (~> 1.1.0)
+    - TMUIKit/TMUIComponents/TMContentPicker/TMCityPicker (= 1.0.0)
+    - TMUIKit/TMUIComponents/TMContentPicker/TMDatePicker (= 1.0.0)
+    - TMUIKit/TMUIComponents/TMContentPicker/TMMultiDataPicker (= 1.0.0)
+    - TMUIKit/TMUIComponents/TMContentPicker/TMNormalPicker (= 1.0.0)
+    - TMUIKit/TMUICore
+    - TMUIKit/TMUIExtensions
+  - TMUIKit/TMUIComponents/TMContentPicker/TMCityPicker (1.0.0):
+    - Masonry (~> 1.1.0)
+    - TMUIKit/TMUICore
+    - TMUIKit/TMUIExtensions
+  - TMUIKit/TMUIComponents/TMContentPicker/TMDatePicker (1.0.0):
+    - Masonry (~> 1.1.0)
+    - TMUIKit/TMUICore
+    - TMUIKit/TMUIExtensions
+  - TMUIKit/TMUIComponents/TMContentPicker/TMMultiDataPicker (1.0.0):
+    - Masonry (~> 1.1.0)
+    - TMUIKit/TMUICore
+    - TMUIKit/TMUIExtensions
+  - TMUIKit/TMUIComponents/TMContentPicker/TMNormalPicker (1.0.0):
+    - Masonry (~> 1.1.0)
+    - TMUIKit/TMUICore
+    - TMUIKit/TMUIExtensions
+  - TMUIKit/TMUIComponents/TMEmptyView (1.0.0):
+    - Masonry (~> 1.1.0)
+    - TMUIKit/TMUIComponents/TMEmptyView/Content (= 1.0.0)
+    - TMUIKit/TMUICore
+    - TMUIKit/TMUIExtensions
+  - TMUIKit/TMUIComponents/TMEmptyView/Content (1.0.0):
+    - Masonry (~> 1.1.0)
+    - TMUIKit/TMUICore
+    - TMUIKit/TMUIExtensions
+  - TMUIKit/TMUIComponents/TMPopoverView (1.0.0):
+    - Masonry (~> 1.1.0)
+    - TMUIKit/TMUICore
+    - TMUIKit/TMUIExtensions
+  - TMUIKit/TMUIComponents/TMSearchController (1.0.0):
+    - Masonry (~> 1.1.0)
+    - TMUIKit/TMUIComponents/TMSearchController/Extensions (= 1.0.0)
+    - TMUIKit/TMUIComponents/TMSearchController/Private (= 1.0.0)
+    - TMUIKit/TMUICore
+    - TMUIKit/TMUIExtensions
+  - TMUIKit/TMUIComponents/TMSearchController/Extensions (1.0.0):
+    - Masonry (~> 1.1.0)
+    - TMUIKit/TMUICore
+    - TMUIKit/TMUIExtensions
+  - TMUIKit/TMUIComponents/TMSearchController/Private (1.0.0):
+    - Masonry (~> 1.1.0)
+    - TMUIKit/TMUICore
+    - TMUIKit/TMUIExtensions
+  - TMUIKit/TMUIComponents/TMShowBigImageController (1.0.0):
+    - Masonry (~> 1.1.0)
+    - TMUIKit/TMUICore
+    - TMUIKit/TMUIExtensions
+  - TMUIKit/TMUIComponents/TMToast (1.0.0):
+    - Masonry (~> 1.1.0)
+    - TMUIKit/TMUICore
+    - TMUIKit/TMUIExtensions
+  - TMUIKit/TMUIComponents/TMUIAppearance (1.0.0):
+    - Masonry (~> 1.1.0)
+    - TMUIKit/TMUICore
+    - TMUIKit/TMUIExtensions
+  - TMUIKit/TMUIComponents/TMUIBadge (1.0.0):
+    - Masonry (~> 1.1.0)
+    - TMUIKit/TMUICore
+    - TMUIKit/TMUIExtensions
+  - TMUIKit/TMUIComponents/TMUICellHeightCache (1.0.0):
+    - Masonry (~> 1.1.0)
+    - TMUIKit/TMUICore
+    - TMUIKit/TMUIExtensions
+  - TMUIKit/TMUIComponents/TMUIModalPresentationViewController (1.0.0):
+    - Masonry (~> 1.1.0)
+    - TMUIKit/TMUICore
+    - TMUIKit/TMUIExtensions
+  - TMUIKit/TMUIComponents/TMUIMultipleDelegates (1.0.0):
+    - Masonry (~> 1.1.0)
+    - TMUIKit/TMUICore
+    - TMUIKit/TMUIExtensions
+  - TMUIKit/TMUIComponents/TMUIPageViewController (1.0.0):
+    - Masonry (~> 1.1.0)
+    - TMUIKit/TMUICore
+    - TMUIKit/TMUIExtensions
+  - TMUIKit/TMUIComponents/TMUITableView (1.0.0):
+    - Masonry (~> 1.1.0)
+    - TMUIKit/TMUICore
+    - TMUIKit/TMUIExtensions
+  - TMUIKit/TMUIComponents/TMUITheme (1.0.0):
+    - Masonry (~> 1.1.0)
+    - TMUIKit/TMUICore
+    - TMUIKit/TMUIExtensions
+  - TMUIKit/TMUICore (1.0.0):
+    - Masonry (~> 1.1.0)
+  - TMUIKit/TMUIExtensions (1.0.0):
+    - Masonry (~> 1.1.0)
+    - TMUIKit/TMUICore
+    - TMUIKit/TMUIExtensions/Foundation (= 1.0.0)
+    - TMUIKit/TMUIExtensions/UIKit (= 1.0.0)
+  - TMUIKit/TMUIExtensions/Foundation (1.0.0):
+    - Masonry (~> 1.1.0)
+    - TMUIKit/TMUICore
+    - TMUIKit/TMUIExtensions/Foundation/NSString (= 1.0.0)
+  - TMUIKit/TMUIExtensions/Foundation/NSString (1.0.0):
+    - Masonry (~> 1.1.0)
+    - TMUIKit/TMUICore
+  - TMUIKit/TMUIExtensions/UIKit (1.0.0):
+    - Masonry (~> 1.1.0)
+    - TMUIKit/TMUICore
+  - TMUIKit/TMUIWidgets (1.0.0):
+    - Masonry (~> 1.1.0)
+    - TMUIKit/TMUICore
+    - TMUIKit/TMUIExtensions
+    - TMUIKit/TMUIWidgets/TMUIButton (= 1.0.0)
+    - TMUIKit/TMUIWidgets/TMUILabel (= 1.0.0)
+    - TMUIKit/TMUIWidgets/TMUISegmentedControl (= 1.0.0)
+    - TMUIKit/TMUIWidgets/TMUISlider (= 1.0.0)
+    - TMUIKit/TMUIWidgets/TMUITextField (= 1.0.0)
+    - TMUIKit/TMUIWidgets/TMUITextView (= 1.0.0)
+  - TMUIKit/TMUIWidgets/TMUIButton (1.0.0):
+    - Masonry (~> 1.1.0)
+    - TMUIKit/TMUICore
+    - TMUIKit/TMUIExtensions
+  - TMUIKit/TMUIWidgets/TMUILabel (1.0.0):
+    - Masonry (~> 1.1.0)
+    - TMUIKit/TMUICore
+    - TMUIKit/TMUIExtensions
+  - TMUIKit/TMUIWidgets/TMUISegmentedControl (1.0.0):
+    - Masonry (~> 1.1.0)
+    - TMUIKit/TMUICore
+    - TMUIKit/TMUIExtensions
+  - TMUIKit/TMUIWidgets/TMUISlider (1.0.0):
+    - Masonry (~> 1.1.0)
+    - TMUIKit/TMUICore
+    - TMUIKit/TMUIExtensions
+  - TMUIKit/TMUIWidgets/TMUITextField (1.0.0):
+    - Masonry (~> 1.1.0)
+    - TMUIKit/TMUICore
+    - TMUIKit/TMUIExtensions
+  - TMUIKit/TMUIWidgets/TMUITextView (1.0.0):
+    - Masonry (~> 1.1.0)
+    - TMUIKit/TMUICore
+    - TMUIKit/TMUIExtensions
+  - YYKit (1.0.9):
+    - YYKit/no-arc (= 1.0.9)
+  - YYKit/no-arc (1.0.9)
+
+DEPENDENCIES:
+  - AFNetworking
+  - LookinServer
+  - Masonry
+  - MJExtension
+  - MLeaksFinder
+  - ReactiveObjC
+  - RongCloudIM/IMKit (~> 5.1.2)
+  - RongCloudIM/IMLib (~> 5.1.2)
+  - TMUIKit (from `https://github.com/chengzongxin/TMUIKit.git`)
+  - YYKit
+
+SPEC REPOS:
+  trunk:
+    - AFNetworking
+    - FBRetainCycleDetector
+    - LookinServer
+    - Masonry
+    - MJExtension
+    - MLeaksFinder
+    - ReactiveObjC
+    - RongCloudIM
+    - YYKit
+
+EXTERNAL SOURCES:
+  TMUIKit:
+    :git: https://github.com/chengzongxin/TMUIKit.git
+
+CHECKOUT OPTIONS:
+  TMUIKit:
+    :commit: 85790aadb8695246541b93e83fe77cb077111649
+    :git: https://github.com/chengzongxin/TMUIKit.git
+
+SPEC CHECKSUMS:
+  AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
+  FBRetainCycleDetector: 46f8179bbb1c587deee3ea838a1a3ee02acf5015
+  LookinServer: 0002891cd3cec5e082a910e897dfe71b4f06b89e
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MJExtension: 88e0900751b6cac8de1cf724ca9838a0b28d5acb
+  MLeaksFinder: 8c435bd2f6d070af18cff082b503b21adc130fc0
+  ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
+  RongCloudIM: 68186cbc17e695d49dc953612ccf80a6cc160ebf
+  TMUIKit: 113cef591ba603bd784e3d81763c31e8dc161fee
+  YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
+
+PODFILE CHECKSUM: 208db658364c02618d20541445f5455fde7c06ac
+
+COCOAPODS: 1.10.0

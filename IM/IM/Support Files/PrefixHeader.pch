@@ -1,0 +1,20 @@
+//
+//  PrefixHeader.pch
+//  IM
+//
+//  Created by Joe.cheng on 2021/7/1.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import <Masonry.h>
+#import <AFNetworking.h>
+#import <ReactiveObjC.h>
+#import <MJExtension.h>
+#import <TMUIKit.h>
+#import <YYKit.h>
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* PrefixHeader_pch */
