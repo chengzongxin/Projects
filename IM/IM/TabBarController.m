@@ -20,7 +20,11 @@
     // Do any additional setup after loading the view.
     
     CustomConversationListViewController *conversationListViewController = [[CustomConversationListViewController alloc] initWithDisplayConversationTypes:@[@(ConversationType_PRIVATE),@(ConversationType_GROUP),@(ConversationType_SYSTEM)] collectionConversationType:@[@(ConversationType_SYSTEM)]];
-    [self addChildViewController:conversationListViewController title:@"会话列表" imageName:[UIImage systemImageNamed:@"square.and.arrow.up"] selectedImaga:[UIImage systemImageNamed:@"pencil.circle"]];
+    
+    UIImage *norImage = [UIImage tmui_imageWithShape:TMUIImageShapeDetailButtonImage size:CGSizeMake(50, 50) tintColor:UIColor.tmui_randomColor];
+    UIImage *selImage = [UIImage tmui_imageWithShape:TMUIImageShapeDetailButtonImage size:CGSizeMake(50, 50) tintColor:UIColor.tmui_randomColor];
+    
+    [self addChildViewController:conversationListViewController title:@"会话列表" imageName:norImage selectedImaga:selImage];
     
 }
 - (void)addChildViewController:(UIViewController *)childVC title:(NSString *)title imageName:(UIImage *)image selectedImaga:(UIImage *)selectedImage{

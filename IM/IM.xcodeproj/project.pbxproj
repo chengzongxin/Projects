@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		16017A6B26C667D5006C3696 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 16017A6A26C667D5006C3696 /* User.m */; };
 		16ED9404268DD0E500B79D62 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 16ED9403268DD0E500B79D62 /* AppDelegate.m */; };
 		16ED940F268DD0E600B79D62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16ED940E268DD0E600B79D62 /* Assets.xcassets */; };
 		16ED9412268DD0E600B79D62 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16ED9410268DD0E600B79D62 /* LaunchScreen.storyboard */; };
@@ -19,6 +20,8 @@
 /* Begin PBXFileReference section */
 		01381CA98702190D5838CF94 /* Pods_IM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0978DBB8CA3870C15F5637C8 /* Pods-IM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IM.release.xcconfig"; path = "Target Support Files/Pods-IM/Pods-IM.release.xcconfig"; sourceTree = "<group>"; };
+		16017A6926C667D5006C3696 /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		16017A6A26C667D5006C3696 /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		16ED93FF268DD0E500B79D62 /* IM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16ED9402268DD0E500B79D62 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		16ED9403268DD0E500B79D62 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -81,6 +84,8 @@
 			children = (
 				16ED9402268DD0E500B79D62 /* AppDelegate.h */,
 				16ED9403268DD0E500B79D62 /* AppDelegate.m */,
+				16017A6926C667D5006C3696 /* User.h */,
+				16017A6A26C667D5006C3696 /* User.m */,
 				16ED940E268DD0E600B79D62 /* Assets.xcassets */,
 				16ED9410268DD0E600B79D62 /* LaunchScreen.storyboard */,
 				16ED9413268DD0E600B79D62 /* Info.plist */,
@@ -237,6 +242,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16017A6B26C667D5006C3696 /* User.m in Sources */,
 				16ED9404268DD0E500B79D62 /* AppDelegate.m in Sources */,
 				16ED943D268DD3EA00B79D62 /* TabBarController.m in Sources */,
 				16ED9430268DD2CE00B79D62 /* CustomConversationListViewController.m in Sources */,
@@ -380,6 +386,7 @@
 				DEVELOPMENT_TEAM = 5XB293ZE6R;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/IM/Support Files/PrefixHeader.pch";
 				INFOPLIST_FILE = "IM/Support Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -400,6 +407,7 @@
 				DEVELOPMENT_TEAM = 5XB293ZE6R;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/IM/Support Files/PrefixHeader.pch";
 				INFOPLIST_FILE = "IM/Support Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

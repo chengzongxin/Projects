@@ -6,7 +6,7 @@
 //
 
 #import "CustomConversationListViewController.h"
-
+#import "User.h"
 @interface CustomConversationListViewController ()
 
 @end
@@ -16,15 +16,31 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"开启单聊" style:UIBarButtonItemStylePlain target:self action:@selector
-                                    (rightBarButtonItemPressed:)];
-    self.navigationItem.rightBarButtonItem = rightButton;
+    UIBarButtonItem *private = [[UIBarButtonItem alloc] initWithTitle:@"开启单聊" style:UIBarButtonItemStylePlain target:self action:@selector
+                                    (private)];
+    UIBarButtonItem *group = [[UIBarButtonItem alloc] initWithTitle:@"开启群聊" style:UIBarButtonItemStylePlain target:self action:@selector
+                                    (group)];
+    self.navigationItem.rightBarButtonItems = @[private,group];
 }
 
-- (void)rightBarButtonItemPressed:(id)sender {
+- (void)private{
     RCConversationViewController *conversationVC = [[RCConversationViewController alloc] init];
     conversationVC.conversationType = ConversationType_PRIVATE;
-    conversationVC.targetId = @"888";
+    
+    if ([User.sharedInstance.user.ID isEqualToString:User.eren.ID]) {
+        conversationVC.targetId = User.mikasa.ID;
+    }else{
+        conversationVC.targetId = User.eren.ID;
+    }
+    conversationVC.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:conversationVC animated:YES];
+}
+
+- (void)group{
+    
+    RCConversationViewController *conversationVC = [[RCConversationViewController alloc] init];
+    conversationVC.conversationType = ConversationType_GROUP;
+    conversationVC.targetId = @"1";
     conversationVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:conversationVC animated:YES];
 }
